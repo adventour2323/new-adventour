@@ -1,5 +1,5 @@
 package adventour;
 
-public class CCC {
+public class C_getset {
 
 }
