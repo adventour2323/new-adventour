@@ -12,12 +12,14 @@
 
 <body>
 	<header>
-		<!-- header.html import-->
-    	<div id="header"></div>
+		<!-------------- header.html import------------->
+	   	<div id="header"></div>
+	   	<!-------------- header.html import------------->
 	</header>
 	
     <!-- 메인 컨텐츠 전체 박스 -->
     <div class="alMainB">
+    
         <!--메인페이지 글씨 박스-->
         <div class="mainTB">
             <p>문의사항</p>
@@ -26,15 +28,61 @@
         <!--메인 네비 컨테인한 박스 -->
         <div class="mainNCB"> 
 
-            <!-- mpg_nvbox.html import-->
-            <div id="mpg_nvbox"></div>
+			<!--------------mpg_nvbox.html import-------------->
+			<div id="mpg_nvbox"></div>
+            <!--------------mpg_nvbox.html import-------------->
             
-       
-        </div>
+            <!-- 문의 사항의 시작! 제일 큰 박스-->
+            <div class="questionbox">
+				<!-- 대문글 박스 -->
+                <div class="intro_tB">
+                    <p>고객센터</p>
+                </div>
+
+				<!-- 탭 기능을 넣을 친구들 박스. -->
+				<div class="frst_lne_ctgry">
+				    <div class="frstLTab"><p>문의 내역</p>
+				    </div>
+				    <div class="frstLTab"><p>자주 묻는 질문</p>
+				    </div>
+				    <div class="frstLTab"><p>문의하기</p>
+				    </div>
+				</div> 
+				
+				<!--문의내역 -->
+				<div class=""><div></div></div>
+				
+				<!-- 자주 묻는 질문 카테고리 탭박스/ js에서 cmon_qna 클릭했을 경우에만 보이게 만들기. -->
+				<div class="sec_lne_ctgry">
+				    <div class="secLTab tour_t"><p>tour</p>
+				    </div>
+				    <div class="secLTab"><p>Bus</p>
+				    </div>
+				    <div class="secLTab"><p>Hotel</p>
+				    </div>
+				    <div class="secLTab"><p>shop</p>
+				    </div>
+				    <div class="secLTab"><p>주문/결제</p>
+				    </div>
+				    <div class="secLTab cs_t"><p>회원 서비스</p>
+				    </div>
+				
+					<!-- qna제목 -->
+					<div class="">
+					    <div><ul class=""><li class=""></li></ul></div>
+					</div>
+
+				</div>    
+            </div><!--문의 사항의 시작, 제일 큰 박스 끝-->
+            
+        </div><!--메인 네비 컨테인한 박스 끝 -->
         
-    </div>
-   	<!-- footer.html import-->
-	<div id="footer"></div>
+    </div><!-- 메인 컨텐츠 전체 박스 끝-->
+    <footer>
+   		<!------------- footer.html import------------->
+		<div id="footer"></div>
+		<!------------- footer.html import------------->
+	</footer>
 </body>
 
 </html>
