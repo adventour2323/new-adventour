@@ -1,0 +1,372 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Pretendard-Regular';
+}
+
+body {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  width: 1903px;
+  height: 2600px;
+
+}
+/*---------------------------헤더-------------------------------------*/
+.header {
+  width: 1903px;
+  height: 132px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  color: rgb(20, 3, 78);
+}
+
+ /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
+ #logo{
+  margin-top: 10px;
+  margin-left: 400px;   
+}
+
+.homeli li,.menuli li {
+  list-style: none;
+  float: left;
+}
+
+.logo {
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  margin-top: 10px;
+  margin-left: 300px;
+  text-align: center;
+
+}
+.logo1{
+  width: 300px;
+  height: 80px;
+}
+
+.home {
+  width: 400px;
+  height: 25px;
+  margin-bottom: 55px;
+  margin-right: 270px;
+  float: right;
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+
+.homeli {
+  margin-top: 3px;
+}
+.home11 {
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+  text-align: center;
+  float: right;
+}
+
+.home1 {
+  width: 60px;
+height: 25px;
+margin-right: 10px;
+text-align: center;
+float: right;
+}
+
+
+.menu {
+  width: 1200px;
+  height: 42px;
+  display: flex;
+  float: left;
+  margin-left: 650px;
+  margin-top: -20px;
+
+}
+
+.menuli {
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: 10px;
+  padding-left: 0px;
+  text-align: center;
+}
+
+.menu1,.menu3,.menu4{
+  margin-right: 5px;
+  width: 100px;
+  height: 30px;
+
+}
+.menu2{
+  margin-right: 5px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px 15px 0px 0px;
+}
+.menuli p{
+  margin-top: 2px;
+}
+.movet{
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  height: 32px;
+  color:rgb(20, 3, 78);
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #fff;
+}
+.moveh{
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  height: 32px;
+  color:rgb(20, 3, 78);
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #fff;
+}
+.moves{
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  height: 32px;
+  color:rgb(20, 3, 78);
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #fff;
+}
+
+.moveb{
+  font-size: 18px;
+  width: 100px;
+  height: 32px;
+  text-align: center;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  color:rgb(20, 3, 78);
+}
+.movec{
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  height: 32px;
+  color:#fff;
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background-color: rgb(20, 3, 78);
+  margin-left: 10px;
+}
+.movem{
+  font-size: 18px;
+  font-weight: bold;
+  width: 100px;
+  height: 32px;
+  color:rgb(20, 3, 78);
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+  border-color: #fff;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #fff;
+  margin-left: 25px;
+}
+/*슬라이드 다운메뉴*/
+/*top 슬라이드메뉴*/
+.schtop{
+  z-index:2;
+  position: absolute;
+  width: 1903px;
+  height: 150px;
+  background-color:rgb(117, 165, 236);
+  margin-top: -30px;
+
+}
+.schtop li{
+  list-style: none;
+}
+.uk_top {
+  margin-top: -5px;
+  margin-left: 50px;
+
+}
+.ity_top{
+  margin-left: 200px;
+  margin-top: -117px;
+}
+.fra_top{
+  margin-left: 350px;
+  margin-top: -120px;
+}
+.spain_top{
+  margin-left: 500px;
+  margin-top: -120px;
+}
+.ukli,.ityli,.frali,.spainli{
+  list-style: none;
+  font-size: 15px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.move_lon,.move_roma,.move_paris,.move_mard{
+ margin-top: 10px;
+  width: 80px;
+  text-align: left;
+  font-weight: bold;
+  background-color:rgb(117, 165, 236);
+  border: none;
+}
+.move_liverp,.move_Edinb,.move_vene,.move_mila,.move_marc,.move_mona,.move_barc,.move_sev{
+  margin-top: 5px;
+  width: 80px; 
+  background-color:rgb(117, 165, 236);
+  border: none;
+  text-align: left;
+  font-weight: bold;
+}
+/*-------------------------------커뮤니티 입력----------------------------*/
+.c_div{ /*작성 폼전체*/
+  border: solid 1px;
+  width:  1300px;
+  height: 1200px;
+  margin-left: 200px;
+  margin-top: -30px;
+}
+.c_info_div{/*작성자 + 닐짜*/
+
+  width:  1050px;
+  height: 20px;
+  margin-left: 100px;
+  margin-top: 40px;
+  font-size: 13px;
+}
+.c_writer_div{/*작성자*/
+
+  width:  200px;
+  height: 20px;
+  margin-left: 0px;
+  
+}
+.c_writer{ /*작성자 디비받기 */
+
+  width:  140px;
+  height: 20px;
+  margin-left: 50px;
+  margin-top: -15px;
+}
+.c_date_div{/*날짜*/
+
+  width:  280px;
+  height: 20px;
+  margin-left: 190px;
+  margin-top: -20px;
+}
+.c_date{/*디비 현재시간으로 자동설정 부여*/
+
+  width:  200px;
+  height: 20px;
+  margin-left: 60px;
+  margin-top: -15px;
+}
+.c_num_div{/*글번호*/
+
+  width:  120px;
+  height: 20px;
+  margin-left: 480px;
+  margin-top: -20px;
+  }
+.c_num{/*글번호 디비 자동부여*/
+ 
+  width:  60px;
+  height: 20px;
+  margin-left: 55px;
+  margin-top: -15px;
+}
+.c_title_div{/*제목*/
+ 
+  width:  1100px;
+  height: 40px;
+  margin-left: 100px;
+  margin-top: 20px;
+  }
+  .c_title{
+  width:  1050px;
+  height: 30px;
+  }
+.c_city_div{
+ 
+  width:  1000px;
+  height: 30px;
+  margin-left: 140px;
+  margin-top: 10px;
+}  
+
+.c_con_div{ /*글 내용*/
+
+  width:  1100px;
+  height: 600px;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.c_con{/*글내용 작성*/
+  width:  1100px;
+  height: 600px;
+}
+.c_pho_title{
+  width:  600px;
+  height: 20px;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.c_pho1_div{/*사진 첨부파일*/
+
+  width:  600px;
+  height: 30px;
+  margin-left: 100px;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.c_pho_div{/*사진 첨부파일*/
+
+  width:  600px;
+  height: 30px;
+  margin-left: 100px;
+  font-size: 13px;
+}
+.c_pho{/*사진 이름 작성란*/
+  width:  350px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+
+.c_btn{
+
+  width:  70px;
+  height: 20px;
+  margin-left: 600px;
+  margin-top: 30px;
+}
+
+
