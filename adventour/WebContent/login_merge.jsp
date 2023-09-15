@@ -25,11 +25,11 @@ Connection conn = null;
 ResultSet rs = null;
 PreparedStatement pstmt = null;
 		try {
-	out.println("111");
-	out.println(id);
+	/* out.println("111"); */
+	/* out.println(id); */
 	Class.forName("com.mysql.jdbc.Driver");
-	out.println("222");
-	out.println(pw);
+	/* out.println("222"); */
+	/* out.println(pw); */
 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@");
 	String sql = "select count(*) as cnt from guide where g_id=? and g_pw=?";
 
@@ -46,8 +46,12 @@ PreparedStatement pstmt = null;
 		
 		response.sendRedirect("index.html");
 			}else {
-		response.sendRedirect("login_fail.jsp");
-		/* response.sendRedirect("login_merge_form.jsp"); */
+		%>
+		<script>
+		alert("로그인 실패");
+		location.href= "login_merge_form.jsp"
+		</script>
+		<%
 			}
  
 		}catch(Exception e) {
