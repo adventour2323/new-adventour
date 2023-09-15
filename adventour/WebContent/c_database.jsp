@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page import="java_prac0913.java_db1" %>
+<%@ page import="adventour.C_dbsave" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
@@ -24,13 +24,16 @@
     String c_pho5 = request.getParameter("c_pho5"); //이미지5
  
     
-    C_database c_db = new  C_database(); //데이터 처리를 하는 java_db1인 자바 파일을 객체로 만들어 
+    C_dbsave c_db = new  C_dbsave(); //데이터 처리를 하는 C_dbsave인 자바 파일을 객체로 만들어 
     c_db.dbsave(m_id, c_date, country, city, c_title, c_cont, c_pho1,c_pho2, c_pho3, c_pho4,c_pho5); 
          //매개변수를 담아서  데이터 처리 자바파일 호출 
-   alter("게시물이 저장 되었습니다.");  // 다음페이지는 아이디만출력을 보여주는 웹 파일로 연결
-    %>
+         
 
+    %>  
 
+ <script>
+        alert("게시물이 저장 되었습니다"); // 게시물이 저장 되었음을 알려줌
+   </script>
 
 
 </body>

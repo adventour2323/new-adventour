@@ -29,5 +29,5 @@ for (db3_table_0913 aaa : obj) { // 아이디 필드의 모든 아이디를 출�
 out.println("</table></body>");
 out.println("</html>");
 %>
-</body>
+</body>  
 </html>
