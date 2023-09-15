@@ -82,9 +82,15 @@ PreparedStatement pstmt = null;
 		if(rs.getString("cnt").equals("1")) {
 		session.setAttribute("id",id);
 		session.setAttribute("pw",pw);
-		response.sendRedirect("../index.html"); 
+		response.sendRedirect("index.html");
 		}else {
-		response.sendRedirect("g_login_done.jsp");
+	%>
+	<script>
+	alert("로그인 실패");
+	location.href= "login_merge_form.jsp"
+	</script>
+	
+	<%
 		}
  
 		}catch(Exception e) {
