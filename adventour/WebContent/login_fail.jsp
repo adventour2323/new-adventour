@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>실패 또는 로그아웃</h1>
+<h1>실패 또는 로그아웃</h1> 
+
+
+<script>
+alert("로그인 실패");
+location.href= "login_merge_form.jsp"
+</script>
+
+
 </body>
 </html>

@@ -43,10 +43,11 @@ PreparedStatement pstmt = null;
 	if(rs.getString("cnt").equals("1")) {
 		session.setAttribute("id",id);
 		session.setAttribute("pw",pw);
-		/* response.sendRedirect("g_login_end.jsp"); */
+		
 		response.sendRedirect("index.html");
 			}else {
 		response.sendRedirect("login_fail.jsp");
+		/* response.sendRedirect("login_merge_form.jsp"); */
 			}
  
 		}catch(Exception e) {
