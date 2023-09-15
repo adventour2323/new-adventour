@@ -111,8 +111,8 @@ body {
   }
   
   .logo {
-    width: 270px;
-    height: 108px;
+   /*  width: 270px;
+    height: 108px; */
     margin: auto;
     margin-top: 10px;
     margin-left: 800px;
@@ -121,8 +121,8 @@ body {
   
   }
   .logo1{
-    width: 270px;
-    height: 108px;
+  /*   width: 270px;
+    height: 108px; */
   }
 
   .home {

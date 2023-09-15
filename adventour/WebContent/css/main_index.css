@@ -1865,39 +1865,39 @@ section {
 /* BEST 인기상품 사진 */
 .main .best-goods .goods-view .goods-hotel .first {
     
-    background-image: url(../img/contents/paris_disney_hotel1.jpg);
+    background-image: url(../image/main_index/contents/paris_disney_hotel1.jpg);
 }
 
 .main .best-goods .goods-view .goods-hotel .second {
-    background-image: url(../img/contents/paris_hotel2.jpg);
+    background-image: url(../image/main_index/contents/paris_hotel2.jpg);
 }
 
 .main .best-goods .goods-view .goods-hotel .third {
-    background-image: url(../img/contents/barca_hotel2.jpg);
+    background-image: url(../image/main_index/contents/barca_hotel2.jpg);
 }
 
 .main .best-goods .goods-view .goods-rentcar .first {
-    background-image: url(../img/contents/versailles.jpg);
+    background-image: url(../image/main_index/contents/versailles.jpg);
 }
 
 .main .best-goods .goods-view .goods-rentcar .second {
-    background-image: url(../img/contents/beatles_tour.png);
+    background-image: url(../image/main_index/contents/beatles_tour.png);
 }
 
 .main .best-goods .goods-view .goods-rentcar .third {
-    background-image: url(../img/contents/flamenco.jpg);
+    background-image: url(../image/main_index/contents/flamenco.jpg);
 }
 
 .main .best-goods .goods-view .goods-place .first {
-    background-image: url(../img/contents/sim_2.png);
+    background-image: url(../image/main_index/contents/sim_2.png);
 }
 
 .main .best-goods .goods-view .goods-place .second {
-    background-image: url(../img/contents/museum_pass.jpg);
+    background-image: url(../image/main_index/contents/museum_pass.jpg);
 }
 
 .main .best-goods .goods-view .goods-place .third {
-    background-image: url(../img/contents/paris_disney1.jpg);
+    background-image: url(../image/main_index/contents/paris_disney1.jpg);
 }
 
 /* BEST 인기상품 사진 */
