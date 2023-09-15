@@ -67,12 +67,41 @@
 				    <div class="secLTab cs_t"><p>회원 서비스</p>
 				    </div>
 				
-					<!-- qna제목 -->
+					<!-- common qna제목 -->
 					<div class="">
 					    <div><ul class=""><li class=""></li></ul></div>
 					</div>
-
-				</div>    
+					
+				</div><!-- 자주 묻는 질문 카테고리 탭박스 끝 -->
+				
+				<!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우-->
+				<div class="">
+					<!--텍스트 박스 클래스-->
+					<div class="write">	
+						<h2>어드벤투어의 중심은 항상 고객님입니다.</h2>
+						<h5>어드벤투어를 이용하면서 느끼신 불편사항이나 바라는 점을 알려주세요.<br/>
+						고객님의 소중한 의견으로 한 뼘 더 자라는 어드벤투어가 되겠습니다.</h5>
+						<h6>문의량이 많아 답변은 24시간 이상 소요될 수 있습니다.</h6>
+					</div>
+					
+					<div class="">
+						<!--button펑션으로 폼의 정보를 ajax로 jsp페이지 연동.-->
+						<form class="" name="" method="post" onsubmit="return">
+							<select class="" name="" required>
+								<option value="">유형을 선택해주세요.</option>
+								<option>tour</option>
+								<option>Bus</option>
+								<option>shop</option>
+								<option>주문/결제</option>
+								<option>회원 서비스</option>
+							</select>
+							<input class="" type="text" name="" placeholder="" title="" required><br/>
+							<input class="" type="text" name="" placeholder="" title="" required><br/>
+							<input class="" type="button" name="" placeholder="" title="" value="보내기">
+						</form>
+					</div>
+				</div><!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우 박스 끝-->
+			
             </div><!--문의 사항의 시작, 제일 큰 박스 끝-->
             
         </div><!--메인 네비 컨테인한 박스 끝 -->
