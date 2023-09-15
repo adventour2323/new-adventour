@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>게시판 작성</title>
-  <link rel="stylesheet" type="text/css" href="community/community.css">
+  <link rel="stylesheet" type="text/css" href="css/community.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="community/community.js"></script>
+  <script src="js/community.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   </head>
@@ -83,14 +83,14 @@
   </div>
 </div><!--schtop-->
 
-<form name="c_form" action="community.jsp">
+<form name="c_form" action="c_database.jsp">
 
   <div class="c_div" name="c_div">
     <h2> < 여행여정 공유 > </h2>
 
     <div class="c_info_div">
      <div class="c_writer_div" name="c_writer_div">
-       작성자 : <div class="c_writer" name="c_writer">아이디이이이이</div>
+       작성자 : <input type="text" class="c_writer" name="c_writer" placeholder="아이디 자동" readonly> <!-- 확인용 아이디 로그인 후 자동으로 받아오도록 해야함 -->
      </div><!--c_writer_div-->
 
      <div class="c_date_div" name="c_date_div">
