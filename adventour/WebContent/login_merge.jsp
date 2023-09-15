@@ -44,9 +44,9 @@ PreparedStatement pstmt = null;
 		session.setAttribute("id",id);
 		session.setAttribute("pw",pw);
 		/* response.sendRedirect("g_login_end.jsp"); */
-		response.sendRedirect("../index.html");
+		response.sendRedirect("index.html");
 			}else {
-		response.sendRedirect("g_login_done.jsp");
+		response.sendRedirect("login_fail.jsp");
 			}
  
 		}catch(Exception e) {
