@@ -124,6 +124,7 @@ p{
     width: 200px;
     height: 50px; 
     float: left;
+    cursor: ;
 }
 /* 두 번째 탭 기능을 넣을 친구들 전체 박스 */
 .sec_lne_ctgry{
@@ -139,6 +140,7 @@ p{
     height: 28px; 
     float: left;
     text-align: center;
+    cursor: pointer;
     border:solid black;
     border-width: 0px 0px 0px 1px;
 }
@@ -148,10 +150,35 @@ p{
     border-bottom: 1px solid white;
 }
 
+.usual_qna_ttle{
+	width: 795px;
+	text-align: center;
+	border: solid black;
+	border-width: 0px 1px 1px 1px;
+}
+.hotel_qna{
+	width: 795px;
+	border: 0.5px solid black;
+	border-top-width: 0px;
+}
+.hotel_Q{
+	width: 795px;
+	font-size: 17px;
+	font-weight: bold;
+	border: solid black;
+	border-width: 0px 0px 0.5px 0px;
+}
+.hotel_A{
+	width: 795px;
+}
+
+
+
+
 /* 폼 박스 */
 .qna_info{
 	width: 795px;
-	height: 560px;
+	height: 585px;
 	font-size: 20px;
 	font-weight: bold;
 	border: 1px solid rgb(249, 187, 187, 0.6);
@@ -172,7 +199,7 @@ form[name=qna_info]{
 	}
 .qna_cntt_box{
 	width: 720px;
-	height: 350px;
+	height: 370px;
 }
 .qna_img_box{
 	width: 720px;

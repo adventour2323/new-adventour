@@ -25,7 +25,7 @@ create table qna(q_num int AUTO_INCREMENT primary key,
 m_id varchar(20) not null,
 q_title varchar(30) not null,
 q_cntt varchar(250) not null,
-q_date DATETIME not null,
+q_date DATETIME DEFAULT CURRENT_TIMESTAMP not null,
 FOREIGN KEY (m_id) REFERENCES member(m_id) ON DELETE CASCADE);
 
 

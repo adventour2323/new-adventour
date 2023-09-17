@@ -18,7 +18,7 @@ if(m_id		== null){throw new Exception("m_id is null");}
 List<Map<String, Object>> qnaList = mpg_q_dbsave.dbSelect(m_id);
 
 
-http://localhost:8080/adventour/mpg_questions_select.jsp?q_num=1
+// http://localhost:8080/adventour/mpg_questions_select.jsp?q_num=1
 %>
 <c:forEach var="qRow" items="${qnaList}">
 <c:out value="${qRow.q_num}"/>

@@ -1,6 +1,9 @@
 /*shop.js */
 
 $(document).ready(function () {
+	//헤더 푸터 로드
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
 
     // 나라, 도시, 카테고리 등등 정보. 나중에 파일 또는 디비에서 가져올 예정
     // 순서 보장을 위해 object.array가 아니라 object.object 사용
@@ -303,9 +306,6 @@ $(document).ready(function () {
     }
     setInterval(slideImages, 3000);
 
-    //헤더 푸터 로드
-    $("#header").load("header.html");
-    $("#footer").load("footer.html");
 
 });
 

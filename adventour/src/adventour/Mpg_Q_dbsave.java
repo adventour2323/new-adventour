@@ -54,7 +54,7 @@ public class Mpg_Q_dbsave {
 	
 	
 	//insert 메서드
-	public int dbInsert(int q_num, String q_title, String q_cntt, String m_id, String q_date) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
+	public int dbInsert(String q_title, String q_cntt, String m_id) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
 
 		int rowNum = 0;
 		
@@ -67,7 +67,7 @@ public class Mpg_Q_dbsave {
 			
 			String command = String.format(
 					"INSERT INTO qna (q_num, q_title, q_cntt, m_id, q_date )"
-							+"VALUES("+q_num+", '"+ q_title+"', '"+ q_cntt+"', '"+ m_id+"', '"+ q_date+"');" ); 
+							+"VALUES("+ q_title+"', '"+ q_cntt+"', '"+ m_id+"');" ); 
 			//데이터베이스 명령문 사용
 					
 			rowNum = stmt.executeUpdate(command);
