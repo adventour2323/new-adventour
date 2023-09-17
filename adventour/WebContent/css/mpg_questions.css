@@ -94,7 +94,7 @@ p{
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    background-color: rgb(86, 95, 230);
+    background-color: rgb(221, 0, 0, 0.3);
     color: white;
     margin: 0px;
     padding: 3px 0px 0px 3px;
@@ -146,5 +146,51 @@ p{
 .sec_lne_ctgry_hide{
     background-color: white;
     border-bottom: 1px solid white;
+}
+
+/* 폼 박스 */
+.qna_info{
+	width: 795px;
+	height: 560px;
+	font-size: 20px;
+	font-weight: bold;
+	border: 1px solid rgb(249, 187, 187, 0.6);
+	background-color: rgb(243, 213, 227, 0.5);
+/* 	border-width: 0px 0px 0px 0px; */
+}
+/* 폼 스타일 */
+.qna_selBox{
+	width: 200px;
+	height: 36px;
+}
+
+form[name=qna_info]{
+}
+.qna_ttl_box{
+	width: 510px;
+	height: 30px;
+	}
+.qna_cntt_box{
+	width: 720px;
+	height: 350px;
+}
+.qna_img_box{
+	width: 720px;
+	height: 30px;
+}
+.qna_btn{
+	width: 80px;
+	height: 35px;
+	border-color: rgb(249 187 187);
+	background-color: rgb(255 189 189);
+}
+.margin_t_lft{
+	margin-top: 15px;
+	margin-left: 30px;
+}
+
+.margin_lft60{
+	margin-top: 15px;
+	margin-left: 350px;
 }
 

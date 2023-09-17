@@ -84,10 +84,10 @@
 						<h6>문의량이 많아 답변은 24시간 이상 소요될 수 있습니다.</h6>
 					</div>
 					
-					<div class="">
+					<div class="qna_info">
 						<!--button펑션으로 폼의 정보를 ajax로 jsp페이지 연동.-->
-						<form class="" name="" method="post" onsubmit="return">
-							<select class="" name="" required>
+						<form class="margin_t_lft" name="qna_info" method="post" onsubmit="return">
+							<select class="qna_selBox" name="qna_slct_box" required>
 								<option value="">유형을 선택해주세요.</option>
 								<option>tour</option>
 								<option>Bus</option>
@@ -95,9 +95,10 @@
 								<option>주문/결제</option>
 								<option>회원 서비스</option>
 							</select>
-							<input class="" type="text" name="" placeholder="" title="" required><br/>
-							<input class="" type="text" name="" placeholder="" title="" required><br/>
-							<input class="" type="button" name="" placeholder="" title="" value="보내기">
+							<input class="qna_ttl_box" type="text" name="tltle" placeholder="제목을 입력해주세요" title="title" required><br/><br/>
+							<input class="qna_cntt_box" type="text" name="cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required><br/><br/>
+							<input class="qna_img_box" type="text" name="cntt" placeholder="이미지 첨부 파일" title="img" required><br/>
+							<input class="qna_btn margin_lft60" type="button" name="sndBtn" title="보내기 버튼" value="보내기">
 						</form>
 					</div>
 				</div><!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우 박스 끝-->

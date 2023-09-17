@@ -1,26 +1,5 @@
 /* mypage_index.css */
 
-/*-- menuli클래스 하위 li에 마우스 오버일때 글자색 변경--*/
-.menuli > li:hover {
-    color: white;
-    background-color:  rgb(20, 3, 78);
-}
-/* background-color: blue; */
-
-.mainNB input:hover{
-    color: white;
-    background-color: rgb(20, 3, 78);
-}
-
-.mainNB nav:nth-child(n+3):hover,  
-.mainNB nav:nth-child(n+3):hover,
-.mainNB nav:nth-child(n+3):hover, 
-.mainNB nav:nth-child(n+3):hover, 
-.mainNB nav:nth-child(n+3):hover
-{
-    color: white;
-    background-color: rgb(20, 3, 78);
-}
 
 .menuli {
     font-weight: bold;

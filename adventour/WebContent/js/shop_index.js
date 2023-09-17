@@ -180,7 +180,7 @@ $(document).ready(function () {
         } else if(type == 'Spain'){
             mainImg.src = 'image/shop/spain_shop_main.jpg';
         } else {
-            mainImg.src = 'image/shop/main_beach.jpg';
+            mainImg.src = 'image/shop/main_eu_city.jpg';
         }
     }
 
