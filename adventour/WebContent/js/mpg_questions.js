@@ -12,3 +12,7 @@ $(document).ready(function() {
     
     //두 번쨰 탭 기능 변수 선언    
 });
+
+function savePost(){
+//	ajax로 호출
+}
