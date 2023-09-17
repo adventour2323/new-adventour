@@ -172,15 +172,15 @@ $(document).ready(function () {
         // "2": { "engNm": "France", "korNm": "프랑스" },
         // "3": { "engNm": "Spain", "korNm": "스페인" }
         if(type == 'United Kingdom'){
-            mainImg.src = 'shop/shop_img/uk_shop_main.jpg';
+            mainImg.src = 'image/shop/uk_shop_main.jpg';
         } else if(type == 'Italy'){
-            mainImg.src = 'shop/shop_img/italy_shop_main.jpg';
+            mainImg.src = 'image/shop/italy_shop_main.jpg';
         } else if(type == 'France'){
-            mainImg.src = 'shop/shop_img/france_shop_main.jpg';
+            mainImg.src = 'image/shop/france_shop_main.jpg';
         } else if(type == 'Spain'){
-            mainImg.src = 'shop/shop_img/spain_shop_main.jpg';
+            mainImg.src = 'image/shop/spain_shop_main.jpg';
         } else {
-            mainImg.src = 'shop/shop_img/main_beach.jpg';
+            mainImg.src = 'image/shop/main_beach.jpg';
         }
     }
 

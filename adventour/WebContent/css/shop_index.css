@@ -42,12 +42,18 @@ p{
 .mImg {
     width: 1903px;
     height: 550px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
     color: rgb(70, 68, 68);
     border-color: rgb(70, 68, 68);
     /* border-width: 0px; */
 }
-
+.mImg img {
+    width: 1903px;
+    height: 550px;
+    float: left;
+    border-radius: 10px;
+    vertical-align: middle;
+}
 /*select박스*/
 .mImg div{
     width: 1000px;

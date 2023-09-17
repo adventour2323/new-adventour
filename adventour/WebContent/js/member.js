@@ -88,7 +88,7 @@ var idCheck = false;
 function idCheckF() {
     let m_id = $('#m_id').val();
     $.ajax({
-        url: 'mem/member_id_check_pjs.jsp',
+        url: 'member_id_check_pjs.jsp',
         type: 'post',
         data: {"m_id": m_id},
         aSync: false, // ajax 통신이 끝나야 다음줄 if(idCheck){ 가 실행되도록
@@ -117,7 +117,7 @@ function idCheckF() {
 function mInfoSendF() {
 	var myForm = $('form[name=myForm]');
 	$.ajax({
-		url: '/adventour/mem/member_pjs.jsp',
+		url: 'member_pjs.jsp',
 		type: 'POST',
 		dataType: 'text',
 		data: $('form[name=myForm]').serialize(),
@@ -126,7 +126,7 @@ function mInfoSendF() {
 			
 			if(data.indexOf('sucess') > -1){//member_pjs.jsp의 out.println("")중에 sucess가 있다면
 				alert("회원가입이 완료되었습니다.");
-				window.location.href = '/adventour/mem/m_login_form.jsp';
+				window.location.href = 'login_merge_form.jsp';
 			}else{
 				alert("일시적인 사유로 회원가입이 실패하였습니다.");
 			}
