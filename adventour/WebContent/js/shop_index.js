@@ -1,6 +1,9 @@
 /*shop.js */
 
 $(document).ready(function () {
+	//헤더 푸터 로드
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
 
     // 나라, 도시, 카테고리 등등 정보. 나중에 파일 또는 디비에서 가져올 예정
     // 순서 보장을 위해 object.array가 아니라 object.object 사용
@@ -172,15 +175,15 @@ $(document).ready(function () {
         // "2": { "engNm": "France", "korNm": "프랑스" },
         // "3": { "engNm": "Spain", "korNm": "스페인" }
         if(type == 'United Kingdom'){
-            mainImg.src = 'shop/shop_img/uk_shop_main.jpg';
+            mainImg.src = 'image/shop/uk_shop_main.jpg';
         } else if(type == 'Italy'){
-            mainImg.src = 'shop/shop_img/italy_shop_main.jpg';
+            mainImg.src = 'image/shop/italy_shop_main.jpg';
         } else if(type == 'France'){
-            mainImg.src = 'shop/shop_img/france_shop_main.jpg';
+            mainImg.src = 'image/shop/france_shop_main.jpg';
         } else if(type == 'Spain'){
-            mainImg.src = 'shop/shop_img/spain_shop_main.jpg';
+            mainImg.src = 'image/shop/spain_shop_main.jpg';
         } else {
-            mainImg.src = 'shop/shop_img/main_beach.jpg';
+            mainImg.src = 'image/shop/main_eu_city.jpg';
         }
     }
 
@@ -303,9 +306,6 @@ $(document).ready(function () {
     }
     setInterval(slideImages, 3000);
 
-    //헤더 푸터 로드
-    $("#header").load("header.html");
-    $("#footer").load("footer.html");
 
 });
 

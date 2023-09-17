@@ -12,7 +12,7 @@ public class C_dbsave {
 
     public void connec() throws Exception { // 데이터베이스 연결을 위한 매소드
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour", "root", "0521");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
         stmt = conn.createStatement();
     }
 
@@ -29,7 +29,7 @@ public class C_dbsave {
         }
     }
 
-    public void dbsave(String m_id, String c_date, String country, String city, String c_title, 
+    public void dbsave(String m_id, String country, String city, String c_title, 
     		String c_cont, String c_pho1,String c_pho2,String c_pho3,String c_pho4,String c_pho5) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
   
         try {
@@ -37,8 +37,8 @@ public class C_dbsave {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             String command = String.format(
-                    "INSERT INTO community (m_id, c_date, country,  city,c_title, c_cont, c_pho1, c_pho2, c_pho3, c_pho4, c_pho5 )"
-            +"VALUES('"+m_id+"', '"+ c_date+"', '"+ country+"', '"+ city+"', '"+ c_title+"', '"+ c_cont+"', '"+ c_pho1+"', '"+ c_pho2+"', '"+ c_pho3+"', '"+ c_pho4+"','"+c_pho5+"');" ); 
+                    "INSERT INTO community (m_id, country,  city,c_title, c_cont, c_pho1, c_pho2, c_pho3, c_pho4, c_pho5 )"
+            +"VALUES('"+m_id+"', '"+ country+"', '"+ city+"', '"+ c_title+"', '"+ c_cont+"', '"+ c_pho1+"', '"+ c_pho2+"', '"+ c_pho3+"', '"+ c_pho4+"','"+c_pho5+"');" ); 
               //데이터베이스 명령문 사용      
                     
             int rowNum = stmt.executeUpdate(command);
