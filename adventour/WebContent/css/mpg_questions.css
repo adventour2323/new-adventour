@@ -124,7 +124,7 @@ p{
     width: 200px;
     height: 50px; 
     float: left;
-    cursor: ;
+	cursor: pointer;
 }
 /* 두 번째 탭 기능을 넣을 친구들 전체 박스 */
 .sec_lne_ctgry{
@@ -173,9 +173,105 @@ p{
 }
 
 
+/*----------------------문의내역----------------------*/
+/*문의 내역 전체 박스*/
+.my_qna{
+	width: 798px;
+	height: 740px;	
+	float: left;
+	font-size: 14px;
+	margin-top: 10px;
+}
+/*내 문의 리스트*/
+.my_qna_listB{
+	width: 240px;
+	height: 730px;	
+	float: left;
+	padding-left: 10px;
+	border: 1px solid black;
+}
+/*내 문의 리스트 삭제 버튼 박스*/
+.delbox{
+	width: 30px;
+	float: left;
+	margin: 5px 0px 5px 190px;
+}
+/*내 문의 리스트 개별박스*/
+.myqnaCkB{
+	width: 240px;
+	float: left;
+}
+.myqnaCkB label{
+	width: 200px;
+	float: left;
+	font-size: 16px!important;
+}
+.myqnaCkB p{
+	width: 60px;	
+	float: left;
+	font-size: 12px;
+}
 
 
-/* 폼 박스 */
+/*내문의 리스트의 고객 안내 텍스트*/
+.text_box{
+	width: 200px;
+	height: 200px;	
+	float: left;
+}
+/*qna_dtail_box(문의 내역 클릭하면 자세하게 보이는 애들)*/
+.qna_dtail_box{
+	width: 540px;
+	height: 730px;	
+	float: left;
+	border: solid black;
+	border-width: 1px 1px 1px 0px;
+}
+
+.qna_dtail_box_band{
+	width: 440px;
+	height: 430px;	
+	float: left;
+	font-size: 16px;
+	margin: 100px 0px 0px 50px;
+}
+
+.myquestion{
+	width: 435px;
+	height: 220px;	
+	float: left;
+	padding: 5px 0px 5px 5px;
+}
+.answer_box{
+	width: 435px;
+	float: left;
+	background-color: rgb(243, 213, 227, 0.5);
+	margin-bottom: 20px;
+}
+
+.qna_dtail_box h4{
+	width: 435px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.qna_dtail_box p{
+	width: 435px;
+	float: left;
+	background-color: rgb(243, 213, 227, 0.5);
+	margin-bottom: 20px;
+}
+
+.go_write_btn{
+	width: 180px;
+	height: 40px;
+	float: right;
+}
+
+
+/*----------------------문의내역----------------------*/
+
+/*--------------------- 폼 박스---------------------- */
 .qna_info{
 	width: 795px;
 	height: 585px;
@@ -208,8 +304,6 @@ form[name=qna_info]{
 .qna_btn{
 	width: 80px;
 	height: 35px;
-	border-color: rgb(249 187 187);
-	background-color: rgb(255 189 189);
 }
 .margin_t_lft{
 	margin-top: 15px;
@@ -220,4 +314,12 @@ form[name=qna_info]{
 	margin-top: 15px;
 	margin-left: 350px;
 }
-
+.back_col{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	border-color: rgb(249 187 187);
+	background-color: rgb(255 189 189);
+}
+/*--------------------- 폼 박스---------------------- */
+/*----------문의 사항의 시작! 제일 큰 박스----------*/

@@ -18,6 +18,8 @@ $(document).ready(function() {
     secLCtg3.hide();
     
     frstLtab1.click(function () {    	
+    	loadMyQna();
+    	
     	secLCtg1.show();
     	secLCtg2.hide();
         secLCtg3.hide();
@@ -46,7 +48,7 @@ $(document).ready(function() {
 
 });
 
-
+//var formInputs = $(document.qna_info).find('input,textarea,select');
 
 //회원가입 Ajax: member_pjs.jsp와 연동
 function QInfoSendF() {
@@ -55,13 +57,16 @@ function QInfoSendF() {
 		url: 'mpg_questions_save.jsp',
 		type: 'POST',
 		dataType: 'text',
-		data: $('form[name=qna_info]').serialize(),
+		data: $('form[name=qna_info]').serialize()+"&m_id=qkqh4848",
 		success: function(data) {
-			console.log(data);
 			
-			if(data.indexOf('sucess') > -1){//member_pjs.jsp의 out.println("")중에 sucess가 있다면
+			if(data > 0){//member_pjs.jsp의 out.println("")중에 sucess가 있다면
 				alert("문의 등록이 완료되었습니다..");
-				window.location.href = 'mpg_questions.html.jsp';
+//				formInputs.each(function(){
+				$(document.qna_info).find('input,textarea,select').each(function(){
+				   this.value = ''; 
+				});
+//				window.location.href = 'mpg_questions.html.jsp';
 			}else{
 				alert("일시적인 사유로 문의 등록이 실패하였습니다.");
 			}
@@ -70,4 +75,36 @@ function QInfoSendF() {
 			console.error('Request error:', error);
 		}
 	});
+}
+function loadMyQna(){
+	
+	$.ajax({
+		url: 'mpg_questions_select.jsp',
+		type: 'POST',
+		dataType: 'text',
+		data: "m_id=qkqh4848",
+		success: function(data) {
+			try{
+				var myqnaCkB = $('#myqnaCkB');
+				myqnaCkB.empty();
+				var result = JSON.parse(data.trim());
+				for(var i in result){
+//					myqnaCkB.append($('<option>', {
+//						value: row.engNm,
+//						text: row.korNm
+//					}));
+					myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
+				}
+			}catch(error){
+//				error
+			}
+		},
+		error: function(error) {
+			console.error('Request error:', error);
+		}
+	});
+	
+	
+	
+	
 }
