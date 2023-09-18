@@ -113,8 +113,11 @@ function clock() {
 }
 clock();
 setInterval(clock, 60000); // 1초마다 실행
- 
+
 
  
+
+
+
 
 });

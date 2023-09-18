@@ -250,37 +250,36 @@ float: right;
   border: solid 1px;
   width:  1300px;
   height: 1200px;
-  margin-left: 200px;
+  margin-left: 300px;
   margin-top: -30px;
 }
 .c_info_div{/*작성자 + 닐짜*/
 
   width:  1050px;
-  height: 20px;
+  height: 30px;
   margin-left: 100px;
   margin-top: 40px;
   font-size: 13px;
 }
 .c_writer_div{/*작성자*/
 
-  width:  200px;
+  width:  220px;
   height: 20px;
   margin-left: 0px;
   
 }
-.c_writer{ /*작성자 디비받기 */
-
-  width:  140px;
+.c_writer{
+  width:  150px;
   height: 20px;
-  margin-left: 50px;
-  margin-top: -15px;
+  margin-left: 0px;
 }
+
 .c_date_div{/*날짜*/
 
   width:  280px;
   height: 20px;
-  margin-left: 190px;
-  margin-top: -20px;
+  margin-left: 210px;
+  margin-top: -15px;
 }
 .c_date{/*디비 현재시간으로 자동설정 부여*/
 

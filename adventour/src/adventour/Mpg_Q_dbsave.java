@@ -66,8 +66,8 @@ public class Mpg_Q_dbsave {
 			}
 			
 			String command = String.format(
-					"INSERT INTO qna (q_num, q_title, q_cntt, m_id, q_date )"
-							+"VALUES("+ q_title+"', '"+ q_cntt+"', '"+ m_id+"');" ); 
+					"INSERT INTO qna (q_title, q_cntt, m_id )"
+							+"VALUES('"+ q_title+"', '"+ q_cntt+"', '"+ m_id+"');" ); 
 			//데이터베이스 명령문 사용
 					
 			rowNum = stmt.executeUpdate(command);
@@ -113,6 +113,9 @@ public class Mpg_Q_dbsave {
 				resultList.add(tmpMap);
 			}
 			
+//			System.out.println("Mpg_Q_dbsave dbSelect");
+//			System.out.println(resultList);
+//			System.out.println("Mpg_Q_dbsave dbSelect");
 					
 		}catch(Exception e) {
 			e.printStackTrace();

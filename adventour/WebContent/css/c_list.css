@@ -1,346 +1,416 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-* {
-  font-family: 'Pretendard-Regular';
-}
-
-body {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-bottom: 0px;
-  width: 1903px;
-  height: 2600px;
-
-}
-/*---------------------------헤더-------------------------------------*/
-.header {
-  width: 1903px;
-  height: 102px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  color: rgb(20, 3, 78);
- 
-}
-
- /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
- #logo{
-  margin-top: 10px;
-  margin-left: 400px;   
-}
-
-.homeli li,.menuli li {
-  list-style: none;
-  float: left;
-}
-
-.logo {
-  width: 200px;
-  height: 70px;
-  margin: auto;
-  margin-top: 10px;
-  margin-left: 300px;
-  text-align: center;
-
-}
-.logo1{
-  width: 300px;
-  height: 80px;
-}
-
-.home {
-  width: 400px;
-  height: 25px;
-  margin-bottom: 55px;
-  margin-right: 270px;
-  float: right;
-  font-size: 17px;
-  font-weight: bolder;
-}
-
-
-.homeli {
-  margin-top: 3px;
-}
-.home11 {
-  width: 40px;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  * {
+    font-family: 'Pretendard-Regular';
+  }
+  
+  body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 1903px;
+    height: 1000px;
+  
+  }
+  /*---------------------------헤더-------------------------------------*/
+  .header {
+    width: 1903px;
+    height: 102px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    color: rgb(20, 3, 78);
+   
+  }
+  
+   /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
+   #logo{
+    margin-top: 10px;
+    margin-left: 400px;   
+  }
+  
+  .homeli li,.menuli li {
+    list-style: none;
+    float: left;
+  }
+  
+  .logo {
+    width: 200px;
+    height: 70px;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 300px;
+    text-align: center;
+  
+  }
+  .logo1{
+    width: 300px;
+    height: 80px;
+  }
+  
+  .home {
+    width: 400px;
+    height: 25px;
+    margin-bottom: 55px;
+    margin-right: 270px;
+    
+    float: right;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+  
+  
+  .homeli {
+    margin-top: 3px;
+  }
+  .home11 {
+    width: 40px;
+    height: 25px;
+    margin-right: 10px;
+    text-align: center;
+    float: right;
+   
+  }
+  
+  .home1 {
+    width: 60px;
   height: 25px;
   margin-right: 10px;
   text-align: center;
   float: right;
+  }
+  
+  
+  .menu {
+    width: 950px;
+    height: 42px;
+    display: flex;
+    float: left;
+    margin-left: 618px;
+    margin-top: -20px;
+  
+  }
+  
+  .menuli {
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+    padding-left: 0px;
+    text-align: center;
+  }
+  
+  .menu1,.menu3,.menu4{
+    margin-right: 5px;
+    width: 100px;
+    height: 30px;
+    color:rgb(20, 3, 78);
+  }
+  .menu2{
+    margin-right: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px 15px 0px 0px;
+    color:rgb(20, 3, 78);
+  }
+  .menuli p{
+    margin-top: 2px;
+  }
+  .movet{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    color:rgb(20, 3, 78);
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #fff;
+  }
+  .moveb{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    color:rgb(20, 3, 78);
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #fff;
+  }
+  .moves{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    color:rgb(20, 3, 78);
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #fff;
+  }
+  
+  .moveh{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    text-align: center;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    color:rgb(20, 3, 78);
+  }
+  .movec{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    color: #fff;
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    background-color:rgb(20, 3, 78);
+    margin-left: 10px;
+  }
+  .movem{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    height: 32px;
+    color:rgb(20, 3, 78);
+    border-style: solid;
+    border-width: 2px 2px 0px 2px;
+    border-color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #fff;
+    margin-left: 25px;
+  }
+  /*슬라이드 다운메뉴*/
+  /*top 슬라이드메뉴*/
+  .schtop{
+    z-index:2;
+    position: absolute;
+    width: 1903px;
+    height: 150px;
+    background-color:rgb(117, 165, 236);
+    margin-top: 0px;
+  
+  }
+  .schtop li{
+    list-style: none;
+  }
+  .uk_top {
+    margin-top: -5px;
+    margin-left: 640px;
+  
+  }
+  .ity_top{
+    margin-left: 750px;
+    margin-top: -117px;
+  }
+  .fra_top{
+    margin-left: 860px;
+    margin-top: -117px;
+  }
+  .spain_top{
+    margin-left: 970px;
+    margin-top: -117px;
+  }
+  .ukli,.ityli,.frali,.spainli{
+    list-style: none;
+    font-size: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+  }
+  .move_lon,.move_roma,.move_paris,.move_mard{
+   margin-top: 10px;
+    width: 80px;
+    text-align: left;
+    font-weight: bold;
+    background-color:rgb(117, 165, 236);
+    border: none;
+  }
+  .move_liverp,.move_Edinb,.move_vene,.move_mila,.move_marc,.move_mona,.move_barc,.move_sev{
+    margin-top: 5px;
+    width: 80px; 
+    background-color:rgb(117, 165, 236);
+    border: none;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /*---------------------------왼쪽 여행지 선택 메뉴-----------------*/
+  .c_city_menu{
+     width: 150px;
+     height: 600px;
+     border: solid 1px;
+     margin-left: 300px;
+     margin-top: 150px;
+  }
+  .c_city_menu ul{
+    width: 100px;
+    height: 150px;
+    margin-bottom: 0px;
+    margin-top: 00px;
+}
+.c_city_menu ul li{
+    width: 150px;
+    height: 5px; 
+    margin-bottom: 0px;
+}
+.c_city_menu1{
+    width: 150px;
+    height: 130px;
+
+}
+  .c_list_title1{
+  text-align: left;
+  }
+
+  /*-----------------------------------게시판 내용 리스트-------*/
+  
+  .c_list_div{ //리스트 전체 사이즈
+    width: 1300px;
+    height: 800px;
+    margin-left: 425px;
+    margin-top: -680px;
+  }
+  .c_list_div >h2{ //제목 값 설정
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+  .c_list_table{ // 리스트 사이즈 설정
+    width: 1100px;
+    height: 600px;
+    margin-left: 50px;
+    margin-top: 30px;
+    text-align: center;
+    table-layout: fixed;
+  }
+  thead{ 
+    border: solid;
+  }
+  th{
+   border:  solid ;
+   border-width: 0px 1px 0px 0px ;
+  }
  
-}
-
-.home1 {
-  width: 60px;
-height: 25px;
-margin-right: 10px;
-text-align: center;
-float: right;
-}
-
-
-.menu {
-  width: 950px;
-  height: 42px;
-  display: flex;
-  float: left;
-  margin-left: 618px;
-  margin-top: -20px;
-
-}
-
-.menuli {
-  font-weight: bold;
-  font-size: 17px;
-  margin-top: 10px;
-  padding-left: 0px;
-  text-align: center;
-}
-
-.menu1,.menu3,.menu4{
-  margin-right: 5px;
-  width: 100px;
-  height: 30px;
-  color:rgb(20, 3, 78);
-}
-.menu2{
-  margin-right: 5px;
-  width: 100px;
-  height: 30px;
-  border-radius: 15px 15px 0px 0px;
-  color:rgb(20, 3, 78);
-}
-.menuli p{
-  margin-top: 2px;
-}
-.movet{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moveb{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moves{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-
-.moveh{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  text-align: center;
-  background-color: #fff;
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  color:rgb(20, 3, 78);
-}
-.movec{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color: #fff;
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color:rgb(20, 3, 78);
-  margin-left: 10px;
-}
-.movem{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-  margin-left: 25px;
-}
-/*슬라이드 다운메뉴*/
-/*top 슬라이드메뉴*/
-.schtop{
-  z-index:2;
-  position: absolute;
-  width: 1903px;
-  height: 150px;
-  background-color:rgb(117, 165, 236);
-  margin-top: -30px;
-
-}
-.schtop li{
-  list-style: none;
-}
-.uk_top {
-  margin-top: -5px;
-  margin-left: 640px;
-
-}
-.ity_top{
-  margin-left: 750px;
-  margin-top: -117px;
-}
-.fra_top{
-  margin-left: 860px;
-  margin-top: -117px;
-}
-.spain_top{
-  margin-left: 970px;
-  margin-top: -117px;
-}
-.ukli,.ityli,.frali,.spainli{
-  list-style: none;
-  font-size: 15px;
-  padding-top: 10px;
-  font-weight: bold;
-}
-.move_lon,.move_roma,.move_paris,.move_mard{
- margin-top: 10px;
-  width: 80px;
-  text-align: left;
-  font-weight: bold;
-  background-color:rgb(117, 165, 236);
-  border: none;
-}
-.move_liverp,.move_Edinb,.move_vene,.move_mila,.move_marc,.move_mona,.move_barc,.move_sev{
-  margin-top: 5px;
-  width: 80px; 
-  background-color:rgb(117, 165, 236);
-  border: none;
-  text-align: left;
-  font-weight: bold;
-}
-/*-----------------------------------게시판 내용 리스트-------*/
-
-.c_list_div{
-  width: 1300px;
-  height: 800px;
-  border:  solid 1px;
-  margin-left: 300px;
-  margin-top: 0px;
-}
-.c_list_table{
-  width: 1200px;
-  height: 600px;
-  border:  solid 1px;
-  margin-left: 50px;
-  margin-top: 100px;
-}
-th{
-  width: 100px;
+  tr{ //높이고정
   height: 50px;
-}
-tr{
-  width: 100px;
-  height: 50px;
-  margin-top: 50px;
+  border:  solid ;
+  border-width: 0px 0px 1px 0px ;
+  }
+  .c_headnum{
+    width: 80px;
+  }
+  .c_list_title{
+    width: 500px;
+
+  }
+  .c_list_writer{
+    width: 150px;
+
+  }
+  .c_list_date{
+    width: 150px;
+
+  }
+  .c_country{
+    width: 80px;
+
+  }
+  .c_city{
+    width: 80px;
+ 
+  }
+  .pagination{
+
+    width: 100px;
+    height: 20px;
+    margin-left:500px;
+    margin-top:40px;
+  }
+
+/*-----------------------------footer---------------------------------*/
+/*푸터 전체 박스*/
+.footerB {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    background-color:  rgb(117, 165, 236, 0.9);
+  }
+  
+ /*푸터 네비 전체 박스*/
+  .fNvB{
+    width: 100%;
+    height: 25px;
+    margin: 0px;
+    border-top: 0.5px solid rgb(117, 165, 236);
+    border-bottom: 0.5px solid white;
 }
 
-  /*----------------------------------------footer---------------------------------*/
- /*-----------------------------footer---------------------------------*/
- .footerB {
-  width: 100%;
-  height: 200px;
-  text-align: center;
-  align-items: center;
-  background-color:rgb(117, 165, 236);
-  margin-bottom: 0px;
-}
-
-/*푸터네비 전체박스*/
-.fNvB{
-  width: 100%;
-  height: 35px;
-  opacity: 1;
-  color: white;
-  border-top: 0.5px solid rgb(117, 165, 236);
-  border-bottom: 0.5px solid white;
-}
-
-/* 왼쪽 마진때문에 어쩔 수 없이 만든 애*/
+/*푸터 네비 개별 박스 모양*/
 .fNvB div{
-  width: 70px;
-  height: 20px;
-  float: left;
-  margin-left: 550px;
+    width: 100px;
+    height: 20px;
+    float: left;
+    margin-left: 470px;
 }
 /* .fNvB{
-  width: 1300px;
-  height: 35px;
+    width: 1300px;
+    height: 35px;
 } */
 
-/*푸터네비 개별 박스*/
+/*푸터 네비 개별 박스*/
 .fNvB nav{
-  width: 70px;
-  height: 20px;
-  float: left;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 15px 5px 0px 5px;
+    width: 80px;
+    height: 20px;
+    color: white;
+    padding-top: 2px;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 
-/*로고이미지, 회사주소 전체 박스*/
+/*푸터 인포 전체 박스(로고이미지, 회사 정보 등)*/
 .fInfoB {
-  width: 1300px;
-  height: 130px;
-  opacity: 1;
-  margin-left: 180px;
+    width: 1300px;
+    height: 133px;
+    opacity: 1;
+    margin-left: 400px;
 }
 
-/*로고이미지, 회사 주소 개별 박스*/
+/*푸터 로고 이미지 박스*/
 .fInfoB img{
-  width: 200px;
-  height: 80px;
-  float: left;
-  margin-right: 200px;
-  padding: 35px 0px 0px 0px;
+    width: 250px;
+    height: 35px;
+    float: left;
+    margin-right: 100px;
+    margin-top: 10px;
+    padding: 35px 0px 0px 0px;
 }
-
+/*푸터 회사 정보 글씨 박스*/
 .fInfoB p{
-  width: 400px;
-  height: 100px;
-  float: left;
-  color: white;
-  font-size: 13px;
-  padding: 10px 0px 0px 0px;
+    width: 900px;
+    height: 80px;
+    float: left;
+    color: white;
+    font-size: 13px;
+    padding-TOP: 5px;
+    margin-top: 5px;
+    text-align: left;
+    line-height: 30px;
 }

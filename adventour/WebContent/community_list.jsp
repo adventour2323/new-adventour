@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    <%@ page import="java.util.*"%>
+    
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -123,35 +127,58 @@
 
    </div>
   
-  
-   <div class="c_list_div" name="c_list_div">
-    <h2> < 여행일정 공유 게시판 > </h3>
-    <table class="c_list_table" border="1">
-      <thead >
-          <tr >
-              <th class="c_headnum">글번호</th>
-              <th>글제목</th>
-              <th>작성자</th>
-              <th>작성일</th>
-              <th>나라명</th>
-              <th>도시명</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td class="c_headnum"> <input type="text" name="c_num" readonly>1</td>
-              <td class="c_list_title"><input type="text" name="c_title" readonly>첫 번째 글</td>
-              <td class="c_list_writer"><input type="text" name="c_writer" readonly>작성자1</td>
-              <td class="c_list_date"><input type="text" name="c_date" readonly>2023-09-15</td>
-              <td class="c_list_country"><input type="text" name="country" readonly>5</td>
-              <td class="c_list_city"><input type="text" name="city" readonly>100</td>
-          </tr>
-
-               
-      </tbody>
+<div class="c_list_div" name="c_list_div">
+  <h2>여행일정 공유 게시판</h2>
+  <table id="c_list_table" class="c_list_table" >
+    <tr>
+      <th class="c_headnum">글 번호</th>
+      <th class="c_list_title">제목</th>
+      <th class="c_list_writer">작성자</th>
+      <th class="c_list_date">작성일</th>
+      <th class="c_country">국가</th>
+      <th class="c_city">도시</th>
+    </tr>
+    
+    <jsp:useBean id="prac" class="adventour.C_dbsave" />
+    <%
+      int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
+      int thispage = 1; // 현재 페이지 번호
+      if (request.getParameter("page") != null) {
+    	  thispage = Integer.parseInt(request.getParameter("page"));
+      }
+      int startIndex = (thispage - 1) * itemsPerPage;
+      int endIndex = startIndex + itemsPerPage;
+      ArrayList<adventour.C_getset> communityList = prac.c_listshow();
+      for (int i = startIndex; i < Math.min(endIndex, communityList.size()); i++) {
+        adventour.C_getset obj = communityList.get(i);
+    %>
+    <tr>
+      <td><%= obj.getC_num() %></td>
+      <td class="c_list_title1"><%= obj.getC_title() %></td>
+      <td><%= obj.getM_id() %></td>
+      <td><%= obj.getC_date() %></td>
+      <td><%= obj.getCountry() %></td>
+      <td><%= obj.getCity() %></td>
+    </tr>
+    <%
+      }
+    %>
   </table>
-   </div>
-
+  
+  <!-- 페이징 버튼 -->
+  <div class="pagination">
+    <% int totalPages = (int) Math.ceil((double) communityList.size() / itemsPerPage);
+       for (int i = 1; i <= totalPages; i++) {
+           if (i == thispage) { %>
+               <span><%= i %></span>
+           <% } else { %>
+               <a href="?page=<%= i %>"><%= i %></a>
+           <% }
+       }
+    %>
+    <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.html' ">
+  </div>
+</div>
   <footer>
     <div class="footerB">
         <!-- 푸터 네비박스-->
