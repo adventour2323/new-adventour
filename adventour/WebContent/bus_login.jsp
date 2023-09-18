@@ -22,7 +22,7 @@
      
       <div class="home">
         <ul class="homeli">
-        		<li>
+        		<li class="home1">
           			<%
 						if(session.getAttribute("id") == null) {
 					%>
@@ -32,11 +32,12 @@
 					%>
 					<%= session.getAttribute("id") %>님 안녕하세요.
 					</li>
-					
-          <li class="home11">메뉴</li>
-          <li class="home1">장바구니</li>
+			
+          <li class="home11" onclick="location.href='./index_login_ing.jsp'" style="cursor: pointer"> 홈</li>
           <li class="home1" onclick="location.href='./g_logout.jsp'" style="cursor: pointer">로그아웃</li>
-          <li class="home11" onclick="location.href='./index_login_ing.jsp'" style="cursor: pointer"> 홈</li> 
+          <li class="home1">장바구니</li>
+          <li class="home11">메뉴</li>
+           
         </ul> 
       </div><!--home-->
 
@@ -46,7 +47,7 @@
       <ul class="menuli">
         <li class="menu1"><button class="movet" onclick = "location.href = './tour_login.jsp' "><p>투어</p></button> </li>
         <li class="menu2"><button class="moveb" ><p>버스</p> </li>
-          <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel.html' "><p>호텔</p></button> </li>
+          <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel_login.jsp' "><p>호텔</p></button> </li>
         <li class="menu4"><button class="moves" onclick = "location.href = 'shop_index.html' "><p>쇼핑</p></button> </li>
         <li class="menu5"><button class="movec" onclick = "location.href = 'shop_index.html' "><p>고객센터</p></button> </li>
         <li class="menu6"><button class="movem" onclick = "location.href = 'shop_index.html' "><p>마이페이지</p></button> </li>
@@ -359,7 +360,7 @@
             <div></div>
             <nav><a href="tour_login.jsp">가이드투어</a></nav>
             <nav><a href="bus_login.jsp">버스</a></nav>
-            <nav><a href="hotel.css">호텔</a></nav>
+            <nav><a href="hotel_login.jsp">호텔</a></nav>
             <nav><a href="shop_index.html">쇼핑몰</a></nav>
             <nav><a href="">고객센터</a></nav>
             <nav><a href="">게시판</a></nav>

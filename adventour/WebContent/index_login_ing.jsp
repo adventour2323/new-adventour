@@ -56,7 +56,7 @@
                 <ul class="gnb">
                     <li><a href="tour_login.jsp">투어</a></li>
                     <li><a href="./bus_login.jsp">버스</a></li>
-                    <li><a href="hotel.html">호텔</a></li>
+                    <li><a href="hotel_login.jsp">호텔</a></li>
                     <li><a href="shop_index.html">쇼핑몰</a></li>
                     <li><a href="community.html">고객센터</a></li>
                 </ul>
@@ -477,7 +477,7 @@
                                             <li><b class="hotel-option-submit">설정</b></li>
                                         </ul>
                                     </div>
-                                    <a href="hotel.html"><button class="res-tab-submit">숙소 검색</button></a>
+                                    <a href="hotel_login.jsp"><button class="res-tab-submit">숙소 검색</button></a>
                                 </div>
                             </li>
                         </ul>
