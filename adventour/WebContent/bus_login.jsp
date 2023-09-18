@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
   <meta charset="utf-8">
   <title>버스메인</title>
@@ -10,23 +11,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
   </head>
-
 <body>
 
-  <div class="header">
+<div class="header">
 
     <div class="header1">
-    <img id="logo" width="210px" height="30px" src="image/img/logo123.png">
+    <img id="logo" width="210px" height="30px" src="image/img/logo123.png" onclick="location.href = './index_login_ing.jsp'" style="cursor: pointer;">
      <!--<img id="logo" width="210px" height="30px" src="C:\Users\1\Desktop\adventour-master\adventour-master\adventour\WebContent\img\logo123.png">-->
 
      
       <div class="home">
         <ul class="homeli">
+        		<li>
+          			<%
+						if(session.getAttribute("id") == null) {
+					%>
+					<% response.sendRedirect("index_login_ing.jsp"); %>
+					<%
+						}
+					%>
+					<%= session.getAttribute("id") %>님 안녕하세요.
+					</li>
+					
           <li class="home11">메뉴</li>
           <li class="home1">장바구니</li>
-          <li class="home1" onclick = "location.href = 'member_pjs.html'" style="cursor: pointer">회원가입</li>
-          <li class="home1" onclick = "location.href = 'login_merge_form.jsp'" style="cursor: pointer">로그인</li>
-          <li class="home11" onclick = "location.href = 'index.html'" style="cursor: pointer"> 홈</li> 
+          <li class="home1" onclick="location.href='./g_logout.jsp'" style="cursor: pointer">로그아웃</li>
+          <li class="home11" onclick="location.href='./index_login_ing.jsp'" style="cursor: pointer"> 홈</li> 
         </ul> 
       </div><!--home-->
 
@@ -34,7 +44,7 @@
 
     <div class="menu">
       <ul class="menuli">
-        <li class="menu1"><button class="movet" onclick = "location.href = 'tour.html' "><p>투어</p></button> </li>
+        <li class="menu1"><button class="movet" onclick = "location.href = './tour_login.jsp' "><p>투어</p></button> </li>
         <li class="menu2"><button class="moveb" ><p>버스</p> </li>
           <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel.html' "><p>호텔</p></button> </li>
         <li class="menu4"><button class="moves" onclick = "location.href = 'shop_index.html' "><p>쇼핑</p></button> </li>
@@ -347,8 +357,8 @@
         <div class="fNvB">
             <!--푸터 네비 왼쪽 마진때문에 쩔 수 없이 만든 div임 -->
             <div></div>
-            <nav><a href="tour.html">가이드투어</a></nav>
-            <nav><a href="bus.html">버스</a></nav>
+            <nav><a href="tour_login.jsp">가이드투어</a></nav>
+            <nav><a href="bus_login.jsp">버스</a></nav>
             <nav><a href="hotel.css">호텔</a></nav>
             <nav><a href="shop_index.html">쇼핑몰</a></nav>
             <nav><a href="">고객센터</a></nav>
@@ -373,8 +383,5 @@
     </div>
 </footer><!---->
 
-  
-
 </body>
-
 </html>

@@ -37,7 +37,9 @@
 					<%
 						}
 					%>
-					<%= session.getAttribute("id") %>님 안녕하세요.</li>
+					<%= session.getAttribute("id") %>님 안녕하세요.
+					
+					</li>
                         <li><a href="index_login_ing.jsp">홈</a></li>
                         <li><a href="./g_logout.jsp">로그아웃</a></li>
                         <li><a href="./member_pjs.html">회원가입</a></li>
@@ -52,8 +54,8 @@
                     </a>
                 </div>
                 <ul class="gnb">
-                    <li><a href="tour.html">투어</a></li>
-                    <li><a href="bus.html">버스</a></li>
+                    <li><a href="tour_login.jsp">투어</a></li>
+                    <li><a href="./bus_login.jsp">버스</a></li>
                     <li><a href="hotel.html">호텔</a></li>
                     <li><a href="shop_index.html">쇼핑몰</a></li>
                     <li><a href="community.html">고객센터</a></li>
@@ -218,7 +220,7 @@
                                         </div>
                                     </div>
                                    
-                                    <a href="tour.html"><button class="res-tab-submit">투어 검색</button></a>
+                                    <a href="tour_login.jsp"><button class="res-tab-submit">투어 검색</button></a>
                                 </div>
                             </li>
 
