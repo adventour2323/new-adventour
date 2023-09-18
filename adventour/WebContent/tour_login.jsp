@@ -28,20 +28,16 @@
                 <ul class="homeli">
                 
                 <li>
-           <%
+      				<%
 						if(session.getAttribute("id") == null) {
 					%>
-					<% response.sendRedirect("g_logout.jsp"); %>
-					<%
-						}
-					%>
+					<%-- <% response.sendRedirect("g_logout.jsp"); }%> --%>
+					<% response.sendRedirect("tour.html"); }%>
 					<%= session.getAttribute("id") %>님 안녕하세요.
-         
-         
-					</li>
+				</li>
                 <li class="home1"><img class="himg" src="./tour/ADVENTOUR - TOUR_files/home.png" alt="(홈아이콘)"></li>
                 <li class="home1"><a href="./index_login_ing.jsp">홈</a></li> 
-                 <li class="home1"> <a href="./g_logout.jsp">로그아웃 </a> </li>
+                <li class="home1"> <a href="./g_logout.jsp">로그아웃 </a> </li>
                 <li class="home1">장바구니</li>
                 <li class="home1">=</li>
                 </ul>
@@ -53,8 +49,8 @@
 
             <div class="menu">
                 <ul class="menuli">
-               <li class="menu1"> <a href="./tour_login.jsp">투어</a></li>
-                <li class="menu1"><a href="./bus_login.jsp" >버스</a></li>
+               	<li class="menu1"> <a href="./tour_login.jsp">투어</a></li>
+                <li class="menu1"> <a href="./bus_login.jsp" >버스</a></li>
                 <li class="menu1"> <a href="./hotel_login.jsp">호텔 </a></li>
                 <li class="menu1"> <a href="./shop_login.jsp">쇼핑</a></li>
                 </ul>
@@ -94,7 +90,7 @@
     <section id="guide_uk">
         <p>
         <div style="display: flex; height: 200px; text-align: center">
-        <div onclick="location.href='https://www.naver.com'" style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br>영국1</div>
+        <div onclick="location.href='https://www.naver.com'" style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g19.png" style="margin-right: 10px;height: 200px"><br>영국1</div>
         <div onclick="location.href='https://www.naver.com'" style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g3.jpg" style="margin-right: 10px;height: 200px"><br>영국2</div>
         <div onclick="location.href='https://www.naver.com'" style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g4.jpg" style="margin-right: 10px;height: 200px"><br>영국3</div>
         <div onclick="location.href='https://www.naver.com'" style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g5.jpg" style="margin-right: 10px;height: 200px"><br>영국4</div>
