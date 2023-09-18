@@ -46,9 +46,9 @@
           <li class="menu1"><button class="movet" onclick = "location.href = 'tour_login.jsp' "><p>투어</p></button> </li>
           <li class="menu2"><button class="moveb" onclick = "location.href = 'bus_login.jsp' "><p>버스</p> </li>
             <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel_login.jsp' "><p>호텔</p></button> </li>
-          <li class="menu4"><button class="moves" onclick = "location.href = 'shop_index.html' "><p>쇼핑</p></button> </li>
-          <li class="menu5"><button class="movec" onclick = "location.href = 'shop_index.html' "><p>고객센터</p></button> </li>
-          <li class="menu6"><button class="movem" onclick = "location.href = 'shop_index.html' "><p>마이페이지</p></button> </li>
+          <li class="menu4"><button class="moves" onclick = "location.href = 'shop_login.jsp' "><p>쇼핑</p></button> </li>
+          <li class="menu5"><button class="movec" onclick = "location.href = 'shop_login.jsp' "><p>고객센터</p></button> </li>
+          <li class="menu6"><button class="movem" onclick = "location.href = 'shop_login.jsp' "><p>마이페이지</p></button> </li>
         </ul>
       </div><!--menu-->
     </div><!--header-->
@@ -297,7 +297,7 @@
             <nav><a href="tour_login.jsp">가이드투어</a></nav>
             <nav><a href="bus_login.jsp">버스</a></nav>
             <nav><a href="hotel_login.jsp">호텔</a></nav>
-            <nav><a href="shop_index.html">쇼핑몰</a></nav>
+            <nav><a href="shop_login.jsp">쇼핑몰</a></nav>
             <nav><a href="">고객센터</a></nav>
             <nav><a href="">게시판</a></nav>
             <nav><a href="">장바구니</a></nav>

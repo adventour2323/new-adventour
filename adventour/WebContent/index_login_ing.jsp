@@ -57,7 +57,7 @@
                     <li><a href="tour_login.jsp">투어</a></li>
                     <li><a href="./bus_login.jsp">버스</a></li>
                     <li><a href="hotel_login.jsp">호텔</a></li>
-                    <li><a href="shop_index.html">쇼핑몰</a></li>
+                    <li><a href="shop_login.jsp">쇼핑몰</a></li>
                     <li><a href="community.html">고객센터</a></li>
                 </ul>
                 <div class="more-menu">
@@ -76,12 +76,12 @@
                         <strong>시간</strong>
                     </div>
                     <ul class="sub-menu">
-                        <a href="package.html">
+                        <a href="tour_login.jsp">
                             <li>투어<i class="xi-angle-right"></i></li>
                         </a>
                     </ul>
                     <ul class="sub-menu">
-                        <a href="airport.html">
+                        <a href="bus_login.jsp">
                             <li>버스<i class="xi-angle-right"></i></li>
                         </a>
                         <!-- <a href="hotel.html">
@@ -92,7 +92,7 @@
                         </a> -->
                     </ul>
                     <ul class="sub-menu">
-                        <a href="active.html">
+                        <a href="hotel_login.jsp">
                             <li>호텔<i class="xi-angle-right"></i></li>
                         </a>
                         <!-- <a href="museum.html">
@@ -103,7 +103,7 @@
                         </a>
                     </ul>
                     <ul class="sub-menu">
-                        <a href="promotion.html">
+                        <a href="shop_login.jsp">
                             <li>쇼핑몰<i class="xi-angle-right"></i></li>
                         </a>
                         <a href="#">

@@ -55,8 +55,8 @@
                 <ul class="menuli">
                <li class="menu1"> <a href="./tour_login.jsp">투어</a></li>
                 <li class="menu1"><a href="./bus_login.jsp" >버스</a></li>
-                <li class="menu1"> <a href="./hotel.html">호텔 </a></li>
-                <li class="menu1">쇼핑</li>
+                <li class="menu1"> <a href="./hotel_login.jsp">호텔 </a></li>
+                <li class="menu1"> <a href="./shop_login.jsp">쇼핑</a></li>
                 </ul>
             </div><!--menu-->
 
