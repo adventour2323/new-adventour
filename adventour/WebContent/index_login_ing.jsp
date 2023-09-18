@@ -38,7 +38,7 @@
 						}
 					%>
 					<%= session.getAttribute("id") %>님 안녕하세요.</li>
-                        <li><a href="index.html">홈</a></li>
+                        <li><a href="index_login_ing.jsp">홈</a></li>
                         <li><a href="./g_logout.jsp">로그아웃</a></li>
                         <li><a href="./member_pjs.html">회원가입</a></li>
                         <li><a href="#">고객문의</a></li>
