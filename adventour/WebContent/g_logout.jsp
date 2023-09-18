@@ -9,7 +9,9 @@
 <body>
 
 <%
-if(session!=null) session.invalidate();
+/* if(session!=null) session.invalidate(); */
+
+if(session!=null) session.removeAttribute("id");
 response.sendRedirect("g_login_done.jsp");
 %>
 </body>
