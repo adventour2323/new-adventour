@@ -72,7 +72,8 @@ PreparedStatement pstmt = null;
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
-		String sql = "select count(*) as cnt from guide where g_id=? and g_pw=?";
+		/* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@"); */ /* 각자 비밀번호로 수정 필요  */
+		String sql = "select count(*) as cnt from member where m_id=? and m_pw=?";
 
 		pstmt = conn.prepareStatement(sql); 
 		pstmt.setString(1, id);

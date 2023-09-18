@@ -4184,24 +4184,26 @@ function index() {
     })
 
     // 항공권은 있어요
-    btnHaveAir.addEventListener('click', e => {
+/*    btnHaveAir.addEventListener('click', e => {
         e.currentTarget.classList.toggle('off');
         startTravelDepart.classList.toggle('off');
     })
     btnHaveAir_air.addEventListener('click', e => {
         e.currentTarget.classList.toggle('off');
         startTravelDepart_air.classList.toggle('off');
-    })
+    })*/
 
     // 우리끼리만 여행할래요
-    btnOnlyTeam.addEventListener('click', e => {
+/*    btnOnlyTeam.addEventListener('click', e => {
         e.currentTarget.classList.toggle('off');
     })
     btnOnlyTeam_air.addEventListener('click', e => {
         e.currentTarget.classList.toggle('off');
-    })
+    })*/
+    
 }
 
+/*
 function common() {
     let $links = getAll('a[href="#"]');
     $links.forEach(link => {
@@ -4210,8 +4212,9 @@ function common() {
         })
     })
 }
+*/
 
-function mainInit() {
+/*function mainInit() {
     header();
     common();
     if (location.pathname.split('/').pop() == 'index.html') {
@@ -4252,4 +4255,5 @@ function mainInit() {
 
 (() => {
     mainInit();
-})();
+})
+();*/
