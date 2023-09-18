@@ -7,16 +7,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class C_dbsave {
-	Connection conn = null; //¸Å¼Òµå ºĞ¸®¸¦ À§ÇØ Àü¿ªº¯¼ö·Î 
+	Connection conn = null; //ë§¤ì†Œë“œ ë¶„ë¦¬ë¥¼ ìœ„í•´ ì „ì—­ë³€ìˆ˜ë¡œ 
     Statement stmt = null;
 
-    public void connec() throws Exception { // µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» À§ÇÑ ¸Å¼Òµå
+    public void connec() throws Exception { // ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì„ ìœ„í•œ ë§¤ì†Œë“œ
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
         stmt = conn.createStatement();
     }
 
-    public void closecon() { // close¸¦ À§ÇÑ ¸Å¼Òµå - ¹İº¹ÀûÀ¸·Î »ç¿ëµÇ¾î ¸Å¼Òµå·ÎºĞ¸®
+    public void closecon() { // closeë¥¼ ìœ„í•œ ë§¤ì†Œë“œ - ë°˜ë³µì ìœ¼ë¡œ ì‚¬ìš©ë˜ì–´ ë§¤ì†Œë“œë¡œë¶„ë¦¬
         try {
             stmt.close();
         } catch (Exception e) {
@@ -30,26 +30,50 @@ public class C_dbsave {
     }
 
     public void dbsave(String m_id, String country, String city, String c_title, 
-    		String c_cont, String c_pho1,String c_pho2,String c_pho3,String c_pho4,String c_pho5) throws Exception { // ÀÔ·Â¹ŞÀº Á¤º¸¸¦ ÀúÀå insertÇÏ´Â ¸Å¼Òµå
+    		String c_cont, String c_pho1,String c_pho2,String c_pho3,String c_pho4,String c_pho5) throws Exception { // ì…ë ¥ë°›ì€ ì •ë³´ë¥¼ ì €ì¥ insertí•˜ëŠ” ë§¤ì†Œë“œ
   
         try {
             connec();
             if (conn == null)
-                throw new Exception("µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù");
+                throw new Exception("ë°ì´í„°ë² ì´ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
             String command = String.format(
                     "INSERT INTO community (m_id, country,  city,c_title, c_cont, c_pho1, c_pho2, c_pho3, c_pho4, c_pho5 )"
             +"VALUES('"+m_id+"', '"+ country+"', '"+ city+"', '"+ c_title+"', '"+ c_cont+"', '"+ c_pho1+"', '"+ c_pho2+"', '"+ c_pho3+"', '"+ c_pho4+"','"+c_pho5+"');" ); 
-              //µ¥ÀÌÅÍº£ÀÌ½º ¸í·É¹® »ç¿ë      
+              //ë°ì´í„°ë² ì´ìŠ¤ ëª…ë ¹ë¬¸ ì‚¬ìš©      
                     
             int rowNum = stmt.executeUpdate(command);
             if (rowNum < 1) {
-                throw new Exception("µ¥ÀÌÅÍ¸¦ DB¿¡ ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.");
+                throw new Exception("ë°ì´í„°ë¥¼ DBì— ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             }
         } finally {
             closecon();
         }
        
     } 
+    public ArrayList<C_getset> c_listshow() throws Exception { 
+        ArrayList<C_getset> arr = new ArrayList<C_getset>(); //ì—¬ë ¤ê°œì˜ ê°ì²´ë¥¼ ë°›ì•„ì„œ ê°€ì§€ê³  ì˜¤ê¸°ìœ„í•´ì„œ 
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("ë°ì´í„°ë² ì´ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM community\r\n ORDER BY c_date DESC;"); //ë°ì´í„°ë² ì´ìŠ¤ ëª…ë ¹ë¬¸ì‚¬ìš©
+            while (rs.next()) { //rsì˜ ê°’ì´ ì—†ì„ ë•Œ ê¹Œì§€ - ê°’ì„ ë°›ì•„ì˜¨ë‹¤
+            	C_getset obj = new C_getset();
+                obj.setC_num(rs.getString("c_num"));
+                obj.setC_title(rs.getString("c_title"));
+                obj.setM_id(rs.getString("m_id"));
+                obj.setC_date(rs.getString("c_date"));
+                obj.setCountry(rs.getString("country"));
+                obj.setCity(rs.getString("city"));
+           
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr; //ì—¬ëŸ¬ê°œì˜ ê°ì²´ë¥¼ ë‹´ì•„ì„œ ì •ë³´ë¥¼ ë³´ë‚´ê¸° ìœ„í•´ì„œ í•„ìš”
+    }
+    
 
    
 }
