@@ -1,45 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+    
 <head>
-    <meta charset="UTF-8">
-    
-    <!-- <meta name="robots" content="index,follow"> -->
-    
-    <!-- <meta property="og:type" content="website">
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="210" />
-    <meta property="og:image" content="이미지경로"> -->
-    
+
+<meta charset="UTF-8">
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   
     <link rel="stylesheet" href="./css/main_reset.css">
     <link rel="stylesheet" href="./css/main_index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-
-    <!-- <link rel="shortcut icon" href="images/header/fabi/favicon.ico">
-    <link rel="manifest" href="images/header/fabi/manifest.json"> -->
-    
-    <meta name="msapplication-TileColor" content="#ffffff">
+     <meta name="msapplication-TileColor" content="#ffffff">
 
     <meta name="msapplication-TileImage" content="images/header/fabi/ms-icon-144x144.png">
     <meta name="msapplication-TileImage" content="images/logo/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <title>ADVENTOUR</title>
-    
 </head>
 
 <body>
-    <p id="skipNav"><a href="#content">본문바로가기</a></p>
+
+ <p id="skipNav"><a href="#content">본문바로가기</a></p>
 
     <div id="wrap">
         <header id="header">
             <div class="top-menu-bg">
                 <div class="container">
                     <ul class="top-menu">
+                    <li>
+                    <%
+						if(session.getAttribute("id") == null) {
+					%>
+					<% response.sendRedirect("g_logout.jsp"); %>
+					<%
+						}
+					%>
+					<%= session.getAttribute("id") %>님 안녕하세요.</li>
                         <li><a href="index.html">홈</a></li>
-                        <li><a href="./login_merge_form.jsp">로그인</a></li>
+                        <li><a href="./g_logout.jsp">로그아웃</a></li>
                         <li><a href="./member_pjs.html">회원가입</a></li>
                         <li><a href="#">고객문의</a></li>
                     </ul>
@@ -970,6 +970,6 @@
     </div>
     
     <script src="./js/main_index.js"></script>
-</body>
 
+</body>
 </html>

@@ -44,7 +44,8 @@ PreparedStatement pstmt = null;
 		session.setAttribute("id",id);
 		session.setAttribute("pw",pw);
 		
-		response.sendRedirect("index.html");
+		/* response.sendRedirect("index.html"); */
+		response.sendRedirect("index_login_ing.jsp");
 			}else {
 		%>
 		<script>
@@ -82,7 +83,8 @@ PreparedStatement pstmt = null;
 		if(rs.getString("cnt").equals("1")) {
 		session.setAttribute("id",id);
 		session.setAttribute("pw",pw);
-		response.sendRedirect("index.html");
+		/* response.sendRedirect("index.html"); */
+		response.sendRedirect("index_login_ing.jsp");
 		}else {
 	%>
 	<script>
