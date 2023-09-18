@@ -47,7 +47,7 @@
             </div>
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="./image/share/main_logo_T_G.png" alt="ADVENTOUR">
+                    <a href="index_login_ing.jsp"><img src="./image/share/main_logo_T_G.png" alt="ADVENTOUR">
                     
                     </a>
                 </div>
@@ -218,7 +218,7 @@
                                         </div>
                                     </div>
                                    
-                                    <a href="package.html"><button class="res-tab-submit">투어 검색</button></a>
+                                    <a href="tour.html"><button class="res-tab-submit">투어 검색</button></a>
                                 </div>
                             </li>
 
@@ -345,7 +345,7 @@
                                         </div>
                                     </div>
                                      
-                                    <a href="airport.html"><button class="res-tab-submit">버스 검색</button></a>
+                                    <a href="bus.html"><button class="res-tab-submit">버스 검색</button></a>
                                 </div>
                             </li>
 
@@ -969,7 +969,9 @@
         <!-- // footer -->
     </div>
     
-    <script src="./js/main_index.js"></script>
+    <!-- <script src="./js/main_index.js"></script> -->
+
 
 </body>
+<script src="./js/main_index.js"></script>
 </html>
