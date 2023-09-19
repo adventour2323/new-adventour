@@ -18,7 +18,8 @@ System.out.println(m_id);
 try {
 Class.forName("com.mysql.jdbc.Driver");
 /*  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","dkssud2!!"); */ 
- conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@"); 
+/* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@"); */
+ conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521"); 
 String sql = "select count(*) as cnt  from member where m_id=?";
 
 pstmt = conn.prepareStatement(sql); 

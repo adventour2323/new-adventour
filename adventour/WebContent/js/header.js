@@ -2,6 +2,7 @@
   /*지역 선택 메뉴 슬라이드*/
 $(document).ready(function() {
 
+
     // 나라, 도시, 카테고리 등등 정보. 나중에 파일 또는 디비에서 가져올 예정
     // 순서 보장을 위해 object.array가 아니라 object.object 사용
     // 길이를 알기 위해서 Object.keys(obj).length 사용
@@ -13,7 +14,7 @@ $(document).ready(function() {
   });
 
   $('.movet').on('mouseleave', function() {
-    $(this).css('color', 'rgb(2,48,2)');
+    $(this).css('color', 'rgb(20, 3, 78)');
     $(this).css('background-color', '');
 
   });
@@ -25,7 +26,7 @@ $(document).ready(function() {
   });
 
   $('.moveh').on('mouseleave', function() {
-    $(this).css('color', 'rgb(2,48,2)'); 
+    $(this).css('color', 'rgb(20, 3, 78)'); 
     $(this).css('background-color', '');
 
   });
@@ -82,11 +83,22 @@ $(document).ready(function() {
   /*지역 선택 메뉴 슬라이드*/
   $(".schtop").hide();
  
+  $('.movet').on('mouseenter click', function() {
 
+	  $(".schtop").slideDown("fast");
+	});
 $('.moveb').on('mouseenter click', function() {
 
   $(".schtop").slideDown("fast");
 });
+$('.moveh').on('mouseenter click', function() {
+
+	  $(".schtop").slideDown("fast");
+	});
+$('.moves').on('mouseenter click', function() {
+
+	  $(".schtop").slideDown("fast");
+	});
 
 $('.schtop').on('mouseleave', function() {
 

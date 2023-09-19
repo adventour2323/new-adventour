@@ -90,7 +90,7 @@ Statement stmt = null;
 int rowNum = 0;
 try{
 	Class.forName("com.mysql.jdbc.Driver"); /*데이테베이스에 연결*/
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","dkssud2!!");
+	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","0521");
 // 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","qhdks12!@");
 // 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","0521");
 	if(conn== null)

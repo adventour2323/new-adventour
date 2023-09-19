@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	//헤더 푸터 로드
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
   // ----------------메뉴 클릭시 색 변경    
   $('.movet').on('mouseenter click', function() {
     $(this).css('color', 'white');
