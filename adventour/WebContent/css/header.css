@@ -17,6 +17,28 @@ body{
 	margin: 0px;
 	overflow-x: hidden;
 }
+/*header1 버튼에 먹이는 스타일.*/
+.menu button, .schtop button{
+	border: none;
+	outline: none;
+	background-color: inherit;
+}
+ul,li,p{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+a,p{
+	color: inherit;
+}
+/*---------------------------헤더-------------------------------------*/
+.header {
+  width: 1903px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  color: rgb(20, 3, 78);
+}
  /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
  #logo{
   margin-top: 10px;
@@ -24,7 +46,6 @@ body{
 }
 
 .homeli li,.menuli li {
-  list-style: none;
   float: left;
 }
 
@@ -48,13 +69,14 @@ body{
   margin-bottom: 55px;
   margin-right: 270px;
   float: right;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bolder;
 }
-
-
 .homeli {
-  margin-top: 3px;
+  margin-top: 10px;
+  width: 400px;
+  height: 25px;
+  float: right;
 }
 .home11 {
   width: 40px;
@@ -65,11 +87,11 @@ body{
 }
 
 .home1 {
-  width: 60px;
-height: 25px;
-margin-right: 10px;
-text-align: center;
-float: right;
+	width: 60px;
+	height: 25px;
+	margin-right: 10px;
+	text-align: center;
+	float: right;
 }
 
 
@@ -77,161 +99,79 @@ float: right;
   width: 1200px;
   height: 42px;
   display: flex;
-  float: left;
   margin-left: 650px;
   margin-top: -20px;
 
 }
 
 .menuli {
-  font-weight: bold;
+  float: left;;
   font-size: 17px;
   margin-top: 10px;
   padding-left: 0px;
+  font-weight: bold;
   text-align: center;
 }
 
-.menu1,.menu3,.menu4{
-  margin-right: 5px;
-  width: 100px;
-  height: 30px;
-
+.marginlft5{
+	margin-left: 10px;
 }
-.menu2{
-  margin-right: 5px;
+
+.menu1,.menu2,.menu3,.menu4, .menu5, .menu6{
   width: 100px;
   height: 30px;
-  border-radius: 15px 15px 0px 0px;
 }
 .menuli p{
   margin-top: 2px;
 }
-.movet{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
+.movet,.moveb,.moveh,.moves,.movec,.movem{
+  width: 120px;
   height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moveh{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
+  color: rgb(20, 3, 78);
   border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moves{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
+/*   border-width: 2px 2px 0px 2px; */
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px; 
+
 }
 
-.moveb{
-  font-size: 18px;
-  width: 100px;
-  height: 32px;
-  text-align: center;
-  background-color: rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  color: white; /* 흰색으로 변경 */
-}
-.movec{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-  margin-left: 10px;
-}
-.movem{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: #fff;
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-  margin-left: 25px;
-}
 /*슬라이드 다운메뉴*/
 /*top 슬라이드메뉴*/
 .schtop{
-  z-index:2;
-  position: absolute;
-  width: 1903px;
-  height: 150px;
-  background-color:rgb(117, 165, 236);
-  margin-top: -30px;
+	z-index:2;
+	width: 1903px;
+	height: 150px;
+	position: absolute;
+	background-color:rgb(117, 165, 236, 0.8);
+/*   margin-top: -30px; */
 
 }
-.schtop li{
-  list-style: none;
+/*마진을 주기 위한 박스*/
+.schtop_margin_box{
+	float: left;
+	width: 623px;
+	height: 150px;
+	margin-left: 700px;
 }
-.uk_top {
-  margin-top: -5px;
-  margin-left: 50px;
-
+/*나라 목록 ul*/
+.schtop_margin_box ul{
+	width: 155px;
+	height: 125px;
+	float: left;
+	margin: auto;
+	font-size: 15px;
+	padding-top: 10px; 
+	text-align: center;
 }
-.ity_top{
-  margin-left: 200px;
-  margin-top: -117px;
+/*리스트에 먹이는 스타일.*/
+.schtop li{	
+	text-align: left;
+	padding-top: 5px; 
+	font-weight: bold;
 }
-.fra_top{
-  margin-left: 350px;
-  margin-top: -120px;
-}
-.spain_top{
-  margin-left: 500px;
-  margin-top: -120px;
-}
-.ukli,.ityli,.frali,.spainli{
-  list-style: none;
-  font-size: 15px;
-  padding-top: 10px;
-  font-weight: bold;
-}
-.move_lon,.move_roma,.move_paris,.move_mard{
- margin-top: 10px;
-  width: 80px;
-  text-align: left;
-  font-weight: bold;
-  background-color:rgb(117, 165, 236);
-  border: none;
-}
-.move_liverp,.move_Edinb,.move_vene,.move_mila,.move_marc,.move_mona,.move_barc,.move_sev{
-  margin-top: 5px;
-  width: 80px; 
-  background-color:rgb(117, 165, 236);
-  border: none;
-  text-align: left;
-  font-weight: bold;
+.menuli>button:hover { 
+     color: white;
+     background-color: rgb(20, 3, 78);
 } 
-
