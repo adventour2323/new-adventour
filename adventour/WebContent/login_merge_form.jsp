@@ -10,13 +10,14 @@
 <title>login</title>
 </head>
 <body>
-  	<header id="header">
-    	 <jsp:include page="header.html"></jsp:include>
-	</header>    
+  	  
   
 	<%
 	request.setCharacterEncoding("utf-8");
 	%>
+	<header >
+    	 <jsp:include page="./header.html"></jsp:include>
+	</header>  
 	
 	<div class="login_form" style="text-align: center; margin-top: 200px; margin-bottom: 500px">
 			<h3>로그인</h3>
@@ -31,19 +32,14 @@
 	</div>
 
          
-    <footer id="">
-	<jsp:include page="footer.html"></jsp:include>
+    <footer>
+	<jsp:include page="./footer.html"></jsp:include>
 	</footer>
 
 	
 </body>
 
-<script type="text/javascript">
-$(document).ready(function () {
-$("#header").load("header.html");
-$("#footer").load("footer.html");
-}
-</script>
+
 
 
 </html>

@@ -17,26 +17,27 @@
   	<header>
     	 <jsp:include page="header.html"></jsp:include>
 	</header>
-
+	
         
       <div class="content" style="padding: 100px">
         <div style="text-align: center; margin-right: auto; margin-left: auto;">
        
 
+
  <jsp:useBean id="id" class="adventour.g_list_print">
 		<%	
 			ArrayList<g_getset> a1 = id.g1();
 			
+		out.println("<h1 style='text-align: center;'>가이드 리스트</h1>");
 			
-			out.println("<div>");
 			for(g_getset table  : a1){
 				
-			out.println("<div>");
-			out.println("<table border='1' height='200px' bordercolor='orange' cellspacing='5';>");
+			out.println("<div style='margin-top = 50px; '>");
+			out.println("<table border='1' style='height=200px; border-color= orange; cellspacing= 5;'>");
 			out.println("<td rowspan='10' style= 'width:200px;'><img src='"+table.getImg()+"' alt='가이드 사진' style='height: 200px; width: 200px; border: solid;'> </td>");
 			out.println("<tr align='center'>");
 			out.println("<th style= 'width:100px;'>이름</th>");
-			out.println("<td>"+ table.getName() + "</td>");
+			out.println("<td http://localhost:8080/adventour/g_list.jsp>"+ table.getName() + "</td>");
 			out.println("</tr>");
 			out.println("<tr align='center'>");
 			out.println("<th>국가</th>");
@@ -52,7 +53,8 @@
 			out.println("</div>");
 			/*  */
 			}
-/* 			for(g_getset table1  : a1){
+			/* out.println("<div style:'display: flex;'>");
+ 			for(g_getset table1  : a1){
 			out.println("<div>");
 			out.println("<table style='width: 100px; border-style: solid;'>");
 			out.println("<thead>");
@@ -63,9 +65,9 @@
 			out.println("<img src='"+table1.getImg()+"' height='200px' width='200px' >");
 			out.println("<figcaption>자세히보기</figcaption> </figure> </a> </th> </tr> </thead> ");
 			out.println("</div>");
-			} */
+			} 
 			
-			out.println("</div>");
+			out.println("</div>"); */
 			
 			
 		%>
@@ -105,8 +107,11 @@
 
 
 </div>
+</div>
 
-
+<footer>
+<jsp:include page="footer.html"></jsp:include>
+</footer>
 
 </body>
 </html>
