@@ -7,6 +7,9 @@ public class g_getset {
 	String theme;
 	String img;
 	
+	
+	
+	
 	public String getTheme() {
 		return theme;
 	}

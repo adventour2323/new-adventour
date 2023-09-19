@@ -9,6 +9,14 @@
 
 <title>login</title>
 </head>
+
+<style>
+.login_body{
+border: solid;
+height: 100%;
+}
+</style>
+
 <body>
   	  
   
@@ -18,6 +26,7 @@
 	<header >
     	 <jsp:include page="./header.html"></jsp:include>
 	</header>  
+	<div class="login_body">
 	
 	<div class="login_form" style="text-align: center; margin-top: 200px; margin-bottom: 500px">
 			<h3>로그인</h3>
@@ -29,6 +38,8 @@
 			<button type="button" style="margin-top: 10px;" onclick="location.href='g_member.html' ">가이드 가입</button>
 			<br>가이드 회원가입을 하고 싶으면 <a href="./g_member.html" style="cursor: pointer;">이곳을 누르세요</a>
 		</form>
+	</div>
+	
 	</div>
 
          
