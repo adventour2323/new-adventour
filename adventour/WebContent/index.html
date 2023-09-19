@@ -12,13 +12,16 @@
     <meta property="og:image" content="이미지경로"> -->
     
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!--  -->
+   <link rel="stylesheet" type="text/css" href="./css/main_index_2.css">
    
+   <!--  -->
     <link rel="stylesheet" href="./css/main_reset.css">
     <link rel="stylesheet" href="./css/main_index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 
-    <!-- <link rel="shortcut icon" href="images/header/fabi/favicon.ico">
-    <link rel="manifest" href="images/header/fabi/manifest.json"> -->
+    <link rel="shortcut icon" href="images/header/fabi/favicon.ico">
+    <link rel="manifest" href="images/header/fabi/manifest.json">
     
     <meta name="msapplication-TileColor" content="#ffffff">
 
@@ -31,100 +34,37 @@
 </head>
 
 <body>
-    <p id="skipNav"><a href="#content">본문바로가기</a></p>
+  <div class="header">
 
-    <div id="wrap">
-        <header id="header">
-            <div class="top-menu-bg">
-                <div class="container">
-                    <ul class="top-menu">
-                        <li><a href="index.html">홈</a></li>
-                        <li><a href="./login_merge_form.jsp">로그인</a></li>
-                        <li><a href="./member_pjs.html">회원가입</a></li>
-                        <li><a href="#">고객문의</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html"><img src="./image/share/main_logo_T_G.png" alt="ADVENTOUR">
-                    
-                    </a>
-                </div>
-                <ul class="gnb">
-                    <li><a href="tour.html">투어</a></li>
-                    <li><a href="bus.html">버스</a></li>
-                    <li><a href="hotel.html">호텔</a></li>
-                    <li><a href="shop_index.html">쇼핑몰</a></li>
-                    <li><a href="community.html">고객센터</a></li>
-                </ul>
-                <div class="more-menu">
-                    <li><i class="xi-search"></i><span>검색</span></li>
-                    <li><i class="xi-group"></i><span>단체</span></li>
-                    <li><i class="xi-network-company"></i><span>기업체</span></li>
-                    <li><i class="xi-market"></i><span>상품몰</span></li>
-                </div>
-            </div>
-            <div class="openDiv">
-                <div class="openDivInner">
-                    <div class="openingHours">
-                        <span class="date">날짜칸</span>
-                        <p>고객센터</p>
-                        <strong>운영시간</strong><br><br>
-                        <strong>시간</strong>
-                    </div>
-                    <ul class="sub-menu">
-                        <a href="package.html">
-                            <li>투어<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="airport.html">
-                            <li>버스<i class="xi-angle-right"></i></li>
-                        </a>
-                        <!-- <a href="hotel.html">
-                            <li>호텔<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="rent.html">
-                            <li>렌터카<i class="xi-angle-right"></i></li>
-                        </a> -->
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="active.html">
-                            <li>호텔<i class="xi-angle-right"></i></li>
-                        </a>
-                        <!-- <a href="museum.html">
-                            <li>공원/전시/박물관<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="food.html">
-                            <li>Restaurant<i class="xi-angle-right"></i></li> -->
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="promotion.html">
-                            <li>쇼핑몰<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="#">
-                            <li>제휴/멤버십<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="notice.html">
-                            <li>공지사항<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="qna.html">
-                            <li>자주 묻는 질문<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <a href="#">
-                        <div class="openDivBanner">
-                            <strong><em>앱 다운로드</em>로<br>더 스마트하고<br>편리하게!</strong>
-                            <img src=" " alt="googleplay">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </header>
+    <div class="header1">
+    <img id="logo" width="210px" height="30px" src="image/img/logo123.png">
+     <!--<img id="logo" width="210px" height="30px" src="C:\Users\1\Desktop\adventour-master\adventour-master\adventour\WebContent\img\logo123.png">-->
+
+     
+      <div class="home">
+        <ul class="homeli">
+          <li class="home11">메뉴</li>
+          <li class="home1">장바구니</li>
+          <li class="home1" onclick = "location.href = 'member_pjs.html'" style="cursor: pointer">회원가입</li>
+          <li class="home1" onclick = "location.href = 'login_merge_form.jsp'" style="cursor: pointer">로그인</li>
+          <li class="home11" onclick = "location.href = 'index.html'" style="cursor: pointer"> 홈</li> 
+        </ul> 
+      </div><!--home-->
+
+    </div><!--header1-->
+
+    <div class="menu">
+      <ul class="menuli">
+        <li class="menu1"><button class="movet" onclick = "location.href = 'tour.html' "><p>투어</p></button> </li>
+        <li class="menu2"><button class="moveb" onclick = "location.href = 'bus.html' " ><p>버스</p></button>  </li>
+        <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel.html' "><p>호텔</p></button> </li>
+        <li class="menu4"><button class="moves" onclick = "location.href = 'shop_index.html' "><p>쇼핑</p></button> </li>
+        <li class="menu5"><button class="movec" onclick = "location.href = 'shop_index.html' "><p>고객센터</p></button> </li>
+        <li class="menu6"><button class="movem" onclick = "location.href = 'shop_index.html' "><p>마이페이지</p></button> </li>
+      </ul>
+    </div><!--menu-->
+  </div><!--header-->
+
 
         <section id="visual" class="main-visual">
             <div class="inner">
@@ -970,6 +910,8 @@
     </div>
     
     <script src="./js/main_index.js"></script>
+    <script src="./js/main_index_2.js"></script>
+    <!-- <script src="js/bus.js"></script> -->
 </body>
 
 </html>
