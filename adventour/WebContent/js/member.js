@@ -157,6 +157,7 @@ function validation(){
 	}
 	
 	
+	
 //	필수 값 널인지 체크
 	var valiRequireds = true;
 	
