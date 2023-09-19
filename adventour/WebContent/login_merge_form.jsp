@@ -6,10 +6,11 @@
 
 <meta charset="UTF-8">
 
+
 <title>login</title>
 </head>
 <body>
-  	<header>
+  	<header id="header">
     	 <jsp:include page="header.html"></jsp:include>
 	</header>    
   
@@ -30,13 +31,18 @@
 	</div>
 
          
-    
+    <footer id="">
 	<jsp:include page="footer.html"></jsp:include>
-	
+	</footer>
 
 	
 </body>
 
-
+<script type="text/javascript">
+$(document).ready(function () {
+$("#header").load("header.html");
+$("#footer").load("footer.html");
+}
+</script>
 
 </html>
