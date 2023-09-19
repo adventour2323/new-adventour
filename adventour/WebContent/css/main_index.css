@@ -3,8 +3,8 @@
     min-width: 1600px;
 }
 /* 
-#header,
-#footer,
+
+
 #visual,
 #subVisual {
     width: 100%;
@@ -31,39 +31,30 @@ body {
 
 }
 /*---------------------------헤더-------------------------------------*/
-.header {
-  width: 1903px;
-  height: 132px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  color: rgb(20, 3, 78);
+a {
+	text-decoration: none;
+	line-height: 1.6;
+	font-size: 15px;
+	color: #333;
+	font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 
- /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
- #logo{
-  margin-top: 10px;
-  margin-left: 400px;   
+ol,
+ul,
+li {
+	list-style: none;
 }
+
+
+ /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
+ 
 
 .homeli li,.menuli li {
   list-style: none;
   float: left;
 }
 
-.logo {
-  width: 200px;
-  height: 70px;
-  margin: auto;
-  margin-top: 10px;
-  margin-left: 300px;
-  text-align: center;
 
-}
-.logo1{
-  width: 300px;
-  height: 80px;
-}
 
 .home {
   width: 400px;
@@ -332,149 +323,10 @@ float: right;
     font-weight: 300;
 }
 
-.openDiv {
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    border-top: 1px solid skyblue;
-    position: absolute;
-    z-index: 100;
-    background-color: #fff;
-    transition: 0.3s;
-}
 
-.openDiv.on {
-    height: 330px;
-    border-top: 2px solid #1288AC;
-}
 
-.openDivInner {
-    display: flex;
-    margin: auto;
-    width: 1200px;
-    height: 330px;
-    box-sizing: border-box;
-    background-image: url(../images/header/subbackground.png);
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: 500px 156px;
-    position: relative;
-}
 
-.openDivInner ul {
-    padding: 50px 0 0 60px;
-    width: 800px;
-    box-sizing: border-box;
-
-}
-
-.sub-menu {
-    display: none;
-}
-
-.sub-menu.on {
-    display: block;
-
-}
-
-.sub-menu li {
-    width: 180px;
-    height: 35px;
-    border-bottom: 1px solid #D8F1F1;
-    margin-bottom: 18px;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative;
-}
-
-.sub-menu li:hover {
-    border-bottom: 2px solid skyblue;
-}
-
-.sub-menu li:hover i {
-    color: skyblue;
-}
-
-.sub-menu a li {
-    font-weight: normal;
-    font-size: 18px;
-}
-
-.sub-menu li i {
-    width: 20px;
-    height: 20px;
-    text-align: right;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-60%);
-    color: #fff;
-}
-
-.openingHours,
-.openDivBanner {
-    width: 200px;
-    height: 330px;
-    box-sizing: border-box;
-}
-
-.openingHours {
-    background: url(../images/header/gnb_timeInfo_bg.png);
-    background-repeat: no-repeat;
-    background-position: 0 50px;
-    padding-top: 130px;
-    border-right: 1px solid #D8F1F1;
-}
-
-.openingHours .date {
-    font-size: 16px;
-    color: #888;
-    font-weight: 300;
-}
-
-.openingHours .date,
-.openingHours p,
-.openingHours strong {
-    line-height: 30px;
-}
-
-.openingHours p {
-    font-size: 20px;
-    color: #000;
-    font-weight: 300;
-}
-
-.openingHours strong {
-    font-size: 20px;
-    color: #000;
-    font-weight: 600;
-}
-
-.openDivBanner {
-    position: absolute;
-    right: 0;
-    box-sizing: border-box;
-    padding: 20px 0 0 30px;
-    background: rgba(135, 206, 235, 0.5);
-    overflow: hidden;
-}
-
-.openDivBanner strong {
-    font-size: 18px;
-}
-
-.openDivBanner em {
-    color: orangered;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.openDivBanner img {
-    width: 410px;
-    height: 440px;
-    transform: translate(-55%, -50%);
-    scale: 0.6;
-}
+.
 
 /* promotion.html */
 .inner,
@@ -1122,7 +974,7 @@ section {
 /* 메인 CSS */
 .main-visual {
     background: skyblue;
-
+	/* margin-top: 60px; */
 }
 
 .main-visual .inner {
@@ -6175,8 +6027,8 @@ section {
     min-width: 1600px;
 }
 
-#header,
-#footer,
+
+
 #visual,
 #subVisual {
     width: 100%;
