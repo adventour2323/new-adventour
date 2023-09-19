@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $('.moveh').on('mouseleave', function() {
-    $(this).css('color', 'rgb(2,48,2)');
+    $(this).css('color', 'rgb(2,48,2)'); 
     $(this).css('background-color', '');
 
   });
