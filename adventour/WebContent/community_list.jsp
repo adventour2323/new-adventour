@@ -46,89 +46,56 @@
       </div><!--menu-->
     </div><!--header-->
   
-    <div class="schtop">
-   
-      <div class="uk_top">
-      <ul class="h_cityli1">
-        <li class="ukli"> <영국></li>
-        <li class="h_lond"><button class="move_lon" onclick = "location.href = 'hotel_sc.html' ">런던</button> </li>
-        <li class="h_liverp"><button class="move_liverp" onclick = "location.href = 'hotel_sc.html' ">리버풀</button> </li>
-        <li class="h_Edinb"><button class="move_Edinb" onclick = "location.href = 'hotel_sc.html' ">에든버러</button> </li>
-      </ul>
-      </div>
-  
-      <div class="ity_top">
-      <ul class="h_cityli2">
-        <li class="ityli"> <이탈리아></li>
-        <li class="h_roma"><button class="move_roma" onclick = "location.href = 'hotel_sc.html' ">로마</button> </li>
-        <li class="h_vene"><button class="move_vene" onclick = "location.href = 'hotel_sc.html' ">베네치아</button> </li>
-        <li class="h_mila"><button class="move_mila" onclick = "location.href = 'hotel_sc.html' ">밀라노</button> </li>
-      </ul>
-    </div>
-  
-  <div class="fra_top">
-      <ul class="h_cityli3">
-        <li class="frali"> <프랑스></li>
-        <li class="h_paris"><button class="move_paris" onclick = "location.href = 'hotel_sc.html' ">파리</button> </li>
-        <li class="h_marc"><button class="move_marc" onclick = "location.href = 'hotel_sc.html' ">마르세유</button> </li>
-        <li class="h_mona"><button class="move_mona" onclick = "location.href = 'hotel_sc.html' ">모나코</button> </li>
-      </ul>
-      </div>
-  
-      <div class="spain_top">
-      <ul class="h_cityli4">
-        <li class="spainli"> <스페인></li>
-        <li class="h_mard"><button class="move_mard" onclick = "location.href = 'hotel_sc.html' ">마드리드</button> </li>
-        <li class="h_barc"><button class="move_barc" onclick = "location.href = 'hotel_sc.html' ">바르셀로나</button> </li>
-        <li class="h_sev"><button class="move_sev" onclick = "location.href = 'hotel_sc.html' ">세비야</button> </li>
-      </ul>
-    </div>
-  </div><!--schtop-->
 
+   <div class="c_list_mtitle">
+     <h3>  여행일정 공유 게시판</h3> 
+  </div>
 
-
+<div class="c_list_main">
 
    <div class="c_city_menu" >
     <div  class="c_city_menu1">
     <ul>
-     <li><h4>영국</h4></li>
-     <li><h6>런던</h6></li>
-     <li><h6>리버풀</h6></li>
-     <li><h6>에든버러</h6></li>
+     <li><h4>[ 영   국 ]</h4></li>
+     <li><h6>- 런던</h6></li>
+     <li><h6>- 리버풀</h6></li>
+     <li><h6>- 에든버러</h6></li>
     </ul>
   </div>
 
   <div  class="c_city_menu1">
     <ul>
-     <li><h4>이탈리아</h4></li>
-     <li><h6>로마</h6></li>
-     <li><h6>베네치아</h6></li>
-     <li><h6>밀라노</h6></li>
+     <li><h4>[ 이탈리아 ]</h4></li>
+     <li><h6>- 로마</h6></li>
+     <li><h6>- 베네치아</h6></li>
+     <li><h6>- 밀라노</h6></li>
     </ul>
   </div>
 
   <div  class="c_city_menu1">  
     <ul>
-      <li><h4>프랑스</h4></li>
-      <li><h6>파리</h6></li>
-      <li><h6>마르세유</h6></li>
-      <li><h6>모나코</h6></li>
+      <li><h4>[  프랑스  ]</h4></li>
+      <li><h6>- 파리</h6></li>
+      <li><h6>- 마르세유</h6></li>
+      <li><h6>- 모나코</h6></li>
     </ul>
   </div>
    
   <div  class="c_city_menu1">
     <ul>
-      <li><h4>스페인</h4></li>
-      <li><h6>마드리드</h6></li>
-      <li><h6>비르셀로나</h6></li>
-      <li><h6>세비야</h6></li>
+      <li><h4>[ 스페인  ]</h4></li>
+      <li><h6>- 마드리드</h6></li>
+      <li><h6>- 비르셀로나</h6></li>
+      <li><h6>- 세비야</h6></li>
     </ul>
   </div>
 
    </div>
+   
+
   
 <div class="c_list_div" name="c_list_div">
-  <h2>여행일정 공유 게시판</h2>
+   
   <table id="c_list_table" class="c_list_table" >
     <tr>
       <th class="c_headnum">글 번호</th>
@@ -178,6 +145,7 @@
     %>
     <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.html' ">
   </div>
+</div>
 </div>
   <footer>
     <div class="footerB">

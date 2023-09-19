@@ -7,6 +7,7 @@
 
 * {
   font-family: 'Pretendard-Regular';
+  cursor: pointer;
 }
 
 body {
@@ -15,23 +16,34 @@ body {
   margin-left: 0px;
   margin-bottom: 0px;
   width: 1903px;
-  height:1450px;
+  height:1200px;
 
 }
 
 /*-------------------------------커뮤니티 입력----------------------------*/
 .c_div{ /*작성 폼전체*/
-
-  width:  1300px;
-  height: 1200px;
-  margin-left: 300px;
+  border:solid 1px rgb(20, 3, 78);
+  width:  1050px;
+  height: 1000px;
+  margin-left: 425px;
   margin-top: 60px;
+
 }
+.c_div h2 { 
+  width:  1020px;
+  height: 50px;
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-left: 30px;
+  background-color: rgb(20, 3, 78);
+  color:#fff;
+}
+
 .c_info_div{/*작성자 + 닐짜*/
 
   width:  1050px;
   height: 30px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 40px;
   font-size: 13px;
 }
@@ -80,31 +92,31 @@ body {
  
   width:  1100px;
   height: 40px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 20px;
   }
   .c_title{
-  width:  1050px;
+  width:  900px;
   height: 30px;
   }
 .c_city_div{
- 
+
   width:  1000px;
   height: 30px;
-  margin-left: 140px;
+  margin-left: 90px;
   margin-top: 10px;
 }  
 
 .c_con_div{ /*글 내용*/
-
-  width:  1100px;
-  height: 600px;
-  margin-left: 100px;
-  margin-top: 20px;
+ 
+  width:  900px;
+  height: 400px;
+  margin-left: 90px;
+  margin-top: 10px;
 }
 .c_con{/*글내용 작성*/
-  width:  1100px;
-  height: 600px;
+  width:  900px;
+  height: 400px;
 }
 .c_pho_title{
   width:  600px;
@@ -138,7 +150,7 @@ body {
 
   width:  70px;
   height: 20px;
-  margin-left: 600px;
+  margin-left: 500px;
   margin-top: 30px;
 }
 
