@@ -1,4 +1,7 @@
 $(document).ready(function() {
+//	header 
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
   // ----------------메뉴 클릭시 색 변경    
   $('.menu1').on('mouseenter click', function() {
     $(this).css('color', 'white');

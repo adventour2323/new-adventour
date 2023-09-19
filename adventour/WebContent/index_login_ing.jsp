@@ -4,129 +4,26 @@
 <html>
     
 <head>
-
-<meta charset="UTF-8">
-
+   <meta charset="UTF-8">
+    
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!--  -->
+   <link rel="stylesheet" type="text/css" href="./css/main_index_2.css">
+   
+   <!--  -->
     <link rel="stylesheet" href="./css/main_reset.css">
     <link rel="stylesheet" href="./css/main_index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-     <meta name="msapplication-TileColor" content="#ffffff">
-
-    <meta name="msapplication-TileImage" content="images/header/fabi/ms-icon-144x144.png">
-    <meta name="msapplication-TileImage" content="images/logo/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
     <title>ADVENTOUR</title>
+    
 </head>
 
 <body>
-
- <p id="skipNav"><a href="#content">본문바로가기</a></p>
-
-    <div id="wrap">
-        <header id="header">
-            <div class="top-menu-bg">
-                <div class="container">
-                    <ul class="top-menu">
-                    <li>
-                    <%
-						if(session.getAttribute("id") == null) {
-					%>
-					<% response.sendRedirect("g_logout.jsp"); %>
-					<%
-						}
-					%>
-					<%= session.getAttribute("id") %>님 안녕하세요.
-					
-					</li>
-                        <li><a href="index_login_ing.jsp">홈</a></li>
-                        <li><a href="./g_logout.jsp">로그아웃</a></li>
-                        
-                        <li><a href="#">고객문의</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="container">
-                <div class="logo">
-                    <a href="index_login_ing.jsp"><img src="./image/share/main_logo_T_G.png" alt="ADVENTOUR">
-                    
-                    </a>
-                </div>
-                <ul class="gnb">
-                    <li><a href="tour_login.jsp">투어</a></li>
-                    <li><a href="./bus_login.jsp">버스</a></li>
-                    <li><a href="hotel_login.jsp">호텔</a></li>
-                    <li><a href="shop_login.jsp">쇼핑몰</a></li>
-                    <li><a href="community.html">고객센터</a></li>
-                </ul>
-                <div class="more-menu">
-                    <li><i class="xi-search"></i><span>검색</span></li>
-                    <li><i class="xi-group"></i><span>단체</span></li>
-                    <li><i class="xi-network-company"></i><span>기업체</span></li>
-                    <li><i class="xi-market"></i><span>상품몰</span></li>
-                </div>
-            </div>
-            <div class="openDiv">
-                <div class="openDivInner">
-                    <div class="openingHours">
-                        <span class="date">날짜칸</span>
-                        <p>고객센터</p>
-                        <strong>운영시간</strong><br><br>
-                        <strong>시간</strong>
-                    </div>
-                    <ul class="sub-menu">
-                        <a href="tour_login.jsp">
-                            <li>투어<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="bus_login.jsp">
-                            <li>버스<i class="xi-angle-right"></i></li>
-                        </a>
-                        <!-- <a href="hotel.html">
-                            <li>호텔<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="rent.html">
-                            <li>렌터카<i class="xi-angle-right"></i></li>
-                        </a> -->
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="hotel_login.jsp">
-                            <li>호텔<i class="xi-angle-right"></i></li>
-                        </a>
-                        <!-- <a href="museum.html">
-                            <li>공원/전시/박물관<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="food.html">
-                            <li>Restaurant<i class="xi-angle-right"></i></li> -->
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="shop_login.jsp">
-                            <li>쇼핑몰<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="#">
-                            <li>제휴/멤버십<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <ul class="sub-menu">
-                        <a href="notice.html">
-                            <li>공지사항<i class="xi-angle-right"></i></li>
-                        </a>
-                        <a href="qna.html">
-                            <li>자주 묻는 질문<i class="xi-angle-right"></i></li>
-                        </a>
-                    </ul>
-                    <a href="#">
-                        <div class="openDivBanner">
-                            <strong><em>앱 다운로드</em>로<br>더 스마트하고<br>편리하게!</strong>
-                            <img src=" " alt="googleplay">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </header>
+	<header>
+		<!-- header.html import-->
+    	<div id="header"></div>
+	</header>
 
         <section id="visual" class="main-visual">
             <div class="inner">
@@ -975,5 +872,6 @@
 
 
 </body>
-<script src="./js/main_index.js"></script>
+    <script src="./js/main_index.js"></script>
+    <script src="./js/main_index_2.js"></script>
 </html>

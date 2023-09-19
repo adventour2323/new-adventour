@@ -88,125 +88,9 @@ body {
 }
  
 
-  .header {
-    width: 100%;
-    height: 130px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    color: rgb(20, 3, 78);
-  }
-  
-  .header1 {
-    width: 100%;
-    height: 130px; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-   
-  li {
-    list-style: none;
-    float: left;
-  }
-  
-  .logo {
-   /*  width: 270px;
-    height: 108px; */
-    margin: auto;
-    margin-top: 10px;
-    margin-left: 800px;
-    text-align: center;
-    color:rgb(236, 236, 162);
-  
-  }
-  .logo1{
-  /*   width: 270px;
-    height: 108px; */
-  }
+ 
 
-  .home {
-    width: 400px;
-    height: 25px;
-    margin-bottom: 55px;
-    margin-right: 270px;
-    float: right;
-    font-size: 16px;
-    font-weight: 800;
-  }
-
-  .home11 {
-    width: 40px;
-    height: 25px;
-    margin-right: 10px;
-    text-align: center;
-    float: right;
-  }
   
-  .home1 {
-    width: 60px;
-    height: 25px;
-    margin-right: 10px;
-    text-align: center;
-    float: right;
-  }
-  
-
-  .himg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .head11 {
-    width: 100%;
-    height: 50px;
-    display: flex;
-  }
-  
-  .menu {
-    width: 500px;
-    height: 40px;
-    display: flex;
-    float: left;
-    margin-left: 400px;
-  
-  }
-  
-  .menuli {
-    font-weight: bold;
-    font-size: 22px;
-    margin-top: 10px;
-    padding-left: 0px;
-    text-align: center;
-  }
-  
-  .menu1,.menu2,.menu4{
-    margin-right: 20px;
-    width: 80px;
-    height: 30px;
-    color:rgb(20, 3, 78);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(153, 171, 233);
-    border-radius: 15px 15px 0px 0px;
-  }
-  .menu3{
-    margin-right: 20px;
-    width: 80px;
-    height: 30px;
-    background-color:rgb(117, 165, 236);
-    color: white;
-    border-style: solid;
-    border-width: 1px;
-    border-color:rgb(117, 165, 236);
-    border-radius: 15px 15px 0px 0px;
-  }
-  
-    .mimg {
-      width: 30px;
-      height: 30px;
-      padding-top: 0px;
-    }
 /*----------------------------------------content---------------------------*/
 
   .content {
@@ -281,7 +165,7 @@ body {
 }
 
 /*----------------------------------------footer---------------------------------*/
-.footer {
+/* .footer {
     width: 1900px;
     height: 200px;
     background-color: #85e7ff;
@@ -289,7 +173,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 0px;
-}
+} */
 
 /*  이미지 회전 */
 .slideshow-image{
