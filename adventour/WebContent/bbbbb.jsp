@@ -7,7 +7,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>게시판 메인</title>
+  <title>헤더푸터 삽입 확인용</title>
   <link rel="stylesheet" type="text/css" href="css/c_list.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js//c_list.js"></script>
@@ -24,11 +24,11 @@
        
         <div class="home">
           <ul class="homeli">
-            <li class="home11" onclick = "location.href = 'index.html' ">홈</li>
-            <li class="home1" onclick = "location.href = 'login_merge_form.jsp' ">로그인</li>
-            <li class="home1" onclick = "location.href = 'member_pjs.html' ">회원가입</li>
-            <li class="home1" >장바구니</li>
-            <li class="home11" >메뉴</li>
+            <li class="home11">홈</li>
+            <li class="home1">로그인</li>
+            <li class="home1" onclick = "location.href = 'join.html' ">회원가입</li>
+            <li class="home1">장바구니</li>
+            <li class="home11">메뉴</li>
           </ul>
         </div><!--home-->
   

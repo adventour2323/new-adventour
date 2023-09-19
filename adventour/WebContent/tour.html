@@ -12,44 +12,36 @@
     </head>
      
     <body>
-       
-        <div class="header">
+  <div class="header">
 
-          <div class="header1">
+    <div class="header1">
+    <img id="logo" width="210px" height="30px" src="image/img/logo123.png">
+     <!--<img id="logo" width="210px" height="30px" src="C:\Users\1\Desktop\adventour-master\adventour-master\adventour\WebContent\img\logo123.png">-->
 
-              
-            <a href="./index.html">
-            <div class="logo">
-            <img class="logo1" src="./image/share/main_logo_T_G.png" alt="Logo" style="width: 400px">          
-          </div><!--logo--> </a> 
+     
+      <div class="home">
+        <ul class="homeli">
+        <li class="home11" onclick = "location.href = 'index.html'" style="cursor: pointer"> 홈</li> 
+           <li class="home1" onclick = "location.href = 'login_merge_form.jsp'" style="cursor: pointer">로그인</li>
+            <li class="home1" onclick = "location.href = 'member_pjs.html'" style="cursor: pointer">회원가입</li>
+            <li class="home1" style="cursor: pointer">장바구니</li>
+          <li class="home11" style="cursor: pointer">메뉴</li>
+        </ul> 
+      </div><!--home-->
 
-              <div class="home">
-                <ul class="homeli">
-                <li class="home1"><img class="himg" src="./tour/ADVENTOUR - TOUR_files/home.png" alt="(홈아이콘)"></li>
-                <a href="./index.html"><li class="home1">홈</li></a> 
-                <a href="./login_merge_form.jsp"> <li class="home1">로그인</li></a>
-                <a href="./member_pjs.html" ><li class="home1"> 회원가입</li></a>
-                <li class="home1">장바구니</li>
-                <li class="home1">=</li>
-                </ul>
-            </div><!--home-->
+    </div><!--header1-->
 
-          </div><!--header1-->
-          
-          <div class="head11">
-
-            <div class="menu">
-                <ul class="menuli">
-               <a href="./tour.html"> <li class="menu1">투어</li></a>
-                <a href="./bus.html" ><li class="menu1">버스</li></a>
-               <a href="./hotel.html"> <li class="menu1">호텔</li></a>
-                <li class="menu1">쇼핑</li>
-                </ul>
-            </div><!--menu-->
-
-          </div><!--header11-->
-
-        </div><!--header-->
+    <div class="menu">
+      <ul class="menuli">
+        <li class="menu1"><button class="movet" onclick = "location.href = 'tour.html' "><p>투어</p></button> </li>
+        <li class="menu2"><button class="moveb" ><p>버스</p> </li>
+          <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel.html' "><p>호텔</p></button> </li>
+        <li class="menu4"><button class="moves" onclick = "location.href = 'shop_index.html' "><p>쇼핑</p></button> </li>
+        <li class="menu5"><button class="movec" onclick = "location.href = 'community_list.jsp' "><p>게시판</p></button> </li>
+        <li class="menu6"><button class="movem" onclick = "location.href = 'mypage_index.html' "><p>마이페이지</p></button> </li>
+      </ul>
+    </div><!--menu-->
+  </div><!--header-->
 
 	<!-- 본문  -->
 
