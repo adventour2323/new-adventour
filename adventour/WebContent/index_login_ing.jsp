@@ -7,10 +7,6 @@
    <meta charset="UTF-8">
     
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <!--  -->
-   <link rel="stylesheet" type="text/css" href="./css/main_index_2.css">
-   
-   <!--  -->
     <link rel="stylesheet" href="./css/main_reset.css">
     <link rel="stylesheet" href="./css/main_index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -21,9 +17,12 @@
 
 <body>
 	<header>
-		<!-- header.html import-->
-    	<div id="header"></div>
+    	 <jsp:include page="header_jsp.jsp"></jsp:include>
 	</header>
+			<%
+				if(session.getAttribute("id") == null) {
+					response.sendRedirect("g_logout.jsp"); }
+			%>
 
         <section id="visual" class="main-visual">
             <div class="inner">

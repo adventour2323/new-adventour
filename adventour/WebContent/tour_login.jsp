@@ -7,7 +7,8 @@
 		<title>
             ADVENTOUR - TOUR
         </title>
-        <link rel="stylesheet" type="text/css" href="./css/tour_index.css">     
+        <link rel="stylesheet" href="./css/main_reset.css">
+    	<link rel="stylesheet" href="./css/main_index.css">
         <script src="./tour/ADVENTOUR - TOUR_files/jquery-3.6.0.min.js"></script>
         <script src="./js/tour_incomplete.js"></script>
 
@@ -31,8 +32,8 @@
       				<%
 						if(session.getAttribute("id") == null) {
 					%>
-					<%-- <% response.sendRedirect("g_logout.jsp"); }%> --%>
-					<% response.sendRedirect("tour.html"); }%>
+					<% response.sendRedirect("g_logout.jsp"); }%> 
+					
 					<%= session.getAttribute("id") %>님 안녕하세요.
 				</li>
                 <li class="home1"><img class="himg" src="./tour/ADVENTOUR - TOUR_files/home.png" alt="(홈아이콘)"></li>
