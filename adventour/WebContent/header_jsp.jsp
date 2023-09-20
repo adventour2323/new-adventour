@@ -7,7 +7,7 @@
 <div class="header">
 
     <div class="header1">
-    <a href="index.html"><img id="logo" width="210px" height="30px" src="image/img/logo123.png"></a>
+    <a href="./index_login_ing.jsp"><img id="logo" width="210px" height="30px" src="image/img/logo123.png"></a>
      <!--<img id="logo" width="210px" height="30px" src="C:\Users\1\Desktop\adventour-master\adventour-master\adventour\WebContent\img\logo123.png">-->
 
      

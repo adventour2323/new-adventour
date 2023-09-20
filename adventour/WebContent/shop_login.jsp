@@ -13,17 +13,13 @@
 <body>
 
 	<header>
-		<!-- header.html import-->
-		 <%
-						if(session.getAttribute("id") == null) {
-					%>
-					<% response.sendRedirect("g_logout.jsp"); %>
-					<%
-						}
-					%>
-					<%= session.getAttribute("id") %>님 안녕하세요.
-    	<div id="header"></div>
+    	 <jsp:include page="header_jsp.jsp"></jsp:include>
 	</header>
+			<%
+				if(session.getAttribute("id") == null) {
+					response.sendRedirect("g_logout.jsp"); }
+			%>
+
 
     <!--메인 이미지 박스-->
     <div class="mImg">

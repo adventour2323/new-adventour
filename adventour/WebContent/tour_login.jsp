@@ -4,62 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<title>
+	        <title>
             ADVENTOUR - TOUR
         </title>
-        <link rel="stylesheet" href="./css/main_reset.css">
-    	<link rel="stylesheet" href="./css/main_index.css">
-        <script src="./tour/ADVENTOUR - TOUR_files/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/tour_index.css">  
+           
+        <script src="./js/jquery-3.6.0.min.js"></script>
         <script src="./js/tour_incomplete.js"></script>
-
+		<script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
 <body>
 
-        <div class="header">
-
-          <div class="header1">
-
-              
-            <a href="./index_login_ing.jsp">
-            <div class="logo">
-            <img class="logo1" src="./image/share/main_logo_T_G.png" alt="Logo" style="width: 400px">          
-          </div><!--logo--> </a> 
-
-              <div class="home">
-                <ul class="homeli">
-                
-                <li>
-      				<%
-						if(session.getAttribute("id") == null) {
-					%>
-					<% response.sendRedirect("g_logout.jsp"); }%> 
-					
-					<%= session.getAttribute("id") %>님 안녕하세요.
-				</li>
-                <li class="home1"><img class="himg" src="./tour/ADVENTOUR - TOUR_files/home.png" alt="(홈아이콘)"></li>
-                <li class="home1"><a href="./index_login_ing.jsp">홈</a></li> 
-                <li class="home1"> <a href="./g_logout.jsp">로그아웃 </a> </li>
-                <li class="home1">장바구니</li>
-                <li class="home1">=</li>
-                </ul>
-            </div><!--home-->
-
-          </div><!--header1-->
-          
-          <div class="head11">
-
-            <div class="menu">
-                <ul class="menuli">
-               	<li class="menu1"> <a href="./tour_login.jsp">투어</a></li>
-                <li class="menu1"> <a href="./bus_login.jsp" >버스</a></li>
-                <li class="menu1"> <a href="./hotel_login.jsp">호텔 </a></li>
-                <li class="menu1"> <a href="./shop_login.jsp">쇼핑</a></li>
-                </ul>
-            </div><!--menu-->
-
-          </div><!--header11-->
-
-        </div><!--header-->
+       <header>
+    	 <jsp:include page="header_jsp.jsp"></jsp:include>
+	</header>
+			<%
+				if(session.getAttribute("id") == null) {
+					response.sendRedirect("g_logout.jsp"); }
+			%>
 
 	<!-- 본문  -->
 

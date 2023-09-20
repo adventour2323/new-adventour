@@ -10,89 +10,21 @@
   <script src="js/bus.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+  <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
   </head>
 <body>
 
-<div class="header">
+	<header>
+    	 <jsp:include page="header_jsp.jsp"></jsp:include>
+	</header>
+			<%
+				if(session.getAttribute("id") == null) {
+					response.sendRedirect("g_logout.jsp"); }
+			%>
 
-    <div class="header1">
-    <img id="logo" width="210px" height="30px" src="image/img/logo123.png" onclick="location.href = './index_login_ing.jsp'" style="cursor: pointer;">
-     <!--<img id="logo" width="210px" height="30px" src="C:\Users\1\Desktop\adventour-master\adventour-master\adventour\WebContent\img\logo123.png">-->
 
-     
-      <div class="home">
-        <ul class="homeli">
-        		<li class="home1">
-          			<%
-						if(session.getAttribute("id") == null) {
-					%>
-					<% response.sendRedirect("index_login_ing.jsp"); %>
-					<%
-						}
-					%>
-					<%= session.getAttribute("id") %>님 안녕하세요.
-					</li>
-			
-          <li class="home11" onclick="location.href='./index_login_ing.jsp'" style="cursor: pointer"> 홈</li>
-          <li class="home1" onclick="location.href='./g_logout.jsp'" style="cursor: pointer">로그아웃</li>
-          <li class="home1">장바구니</li>
-          <li class="home11">메뉴</li>
-           
-        </ul> 
-      </div><!--home-->
 
-    </div><!--header1-->
 
-    <div class="menu">
-      <ul class="menuli">
-        <li class="menu1"><button class="movet" onclick = "location.href = './tour_login.jsp' "><p>투어</p></button> </li>
-        <li class="menu2"><button class="moveb" ><p>버스</p> </li>
-          <li class="menu3"><button class="moveh" onclick = "location.href = 'hotel_login.jsp' "><p>호텔</p></button> </li>
-        <li class="menu4"><button class="moves" onclick = "location.href = 'shop_login.jsp' "><p>쇼핑</p></button> </li>
-        <li class="menu5"><button class="movec" onclick = "location.href = 'shop_login.jsp' "><p>고객센터</p></button> </li>
-        <li class="menu6"><button class="movem" onclick = "location.href = 'shop_login.jsp' "><p>마이페이지</p></button> </li>
-      </ul>
-    </div><!--menu-->
-  </div><!--header-->
-
-  <div class="schtop">
- 
-    <div class="uk_top">
-    <ul class="h_cityli1">
-      <li class="ukli"> <영국></li>
-      <li class="h_lond"><button class="move_lon" onclick = "location.href = 'hotel_sc.html' ">런던</button> </li>
-      <li class="h_liverp"><button class="move_liverp" onclick = "location.href = 'hotel_sc.html' ">리버풀</button> </li>
-      <li class="h_Edinb"><button class="move_Edinb" onclick = "location.href = 'hotel_sc.html' ">에든버러</button> </li>
-    </ul>
-    </div>
-
-    <div class="ity_top">
-    <ul class="h_cityli2">
-      <li class="ityli"> <이탈리아></li>
-      <li class="h_roma"><button class="move_roma" onclick = "location.href = 'hotel_sc.html' ">로마</button> </li>
-      <li class="h_vene"><button class="move_vene" onclick = "location.href = 'hotel_sc.html' ">베네치아</button> </li>
-      <li class="h_mila"><button class="move_mila" onclick = "location.href = 'hotel_sc.html' ">밀라노</button> </li>
-    </ul>
-  </div>
-
-<div class="fra_top">
-    <ul class="h_cityli3">
-      <li class="frali"> <프랑스></li>
-      <li class="h_paris"><button class="move_paris" onclick = "location.href = 'hotel_sc.html' ">파리</button> </li>
-      <li class="h_marc"><button class="move_marc" onclick = "location.href = 'hotel_sc.html' ">마르세유</button> </li>
-      <li class="h_mona"><button class="move_mona" onclick = "location.href = 'hotel_sc.html' ">모나코</button> </li>
-    </ul>
-    </div>
-
-    <div class="spain_top">
-    <ul class="h_cityli4">
-      <li class="spainli"> <스페인></li>
-      <li class="h_mard"><button class="move_mard" onclick = "location.href = 'hotel_sc.html' ">마드리드</button> </li>
-      <li class="h_barc"><button class="move_barc" onclick = "location.href = 'hotel_sc.html' ">바르셀로나</button> </li>
-      <li class="h_sev"><button class="move_sev" onclick = "location.href = 'hotel_sc.html' ">세비야</button> </li>
-    </ul>
-  </div>
-</div><!--schtop-->
 
 
   <div class="busmain">
