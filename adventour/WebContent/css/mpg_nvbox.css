@@ -1,5 +1,10 @@
 /*mpg_nvbox.css*/
-
+.alMainB{
+    width: 1050px;
+    height: 1050px;
+    margin: 50px 425px 0px 440px;
+    border-width: 0px;
+}
 /*------------마이페이지 메뉴네비 전체 세로 박스--------------*/
 .mainNB {
     width: 185px;
