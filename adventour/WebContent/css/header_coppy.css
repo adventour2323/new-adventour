@@ -1,0 +1,176 @@
+/*heaser.css*/
+@font-face{
+	font-family: 'Pretendard-Regular';
+	src: url('https: //cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+*{
+	font-family: 'Pretendard-Regular';
+	list-style: none;
+	text-decoration: none;
+}
+
+body{
+	width: 1903px;
+	margin: 0px;
+	overflow-x: hidden;
+}
+/*header1 버튼에 먹이는 스타일.*/
+.menu button, .schtop button{
+	border: none;
+	outline: none;
+	background-color: inherit;
+}
+ul,li,p{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+a,p{
+	color: inherit;
+}
+/*---------------------------헤더-------------------------------------*/
+.header1{
+	width: 1903px;
+	margin: 10px 0px 0px 0px;
+	color: rgb(20, 3, 78);
+}
+ /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
+ #logo{
+	margin-top: 10px;
+	margin-left: 400px;
+ }
+
+.homeli li,.menuli li {
+	float: left;
+}
+
+.logo {
+	width: 200px;
+	height: 70px;
+	margin: auto;
+	margin-top: 10px;
+	margin-left: 300px;
+	text-align: center;
+	cursor: pointer;
+}
+.logo1{
+	width: 300px;
+	height: 80px;
+}
+
+.home {
+	width: 400px;
+	height: 25px;
+	margin-bottom: 55px;
+	margin-right: 270px;
+	float: right;
+	font-size: 14px;
+	font-weight: bolder;
+}
+.homeli {
+	margin-top: 10px;
+	width: 400px;
+	height: 25px;
+	float: right;
+}
+.home11 {
+	width: 40px;
+	height: 25px;
+	margin-right: 10px;
+	text-align: center;
+	float: right;
+}
+
+.home1 {
+	width: 60px;
+	height: 25px;
+	margin-right: 10px;
+	text-align: center;
+	float: right;
+}
+
+/*메뉴 네비 전체 박스 */
+.menu{
+	width: 1903px;
+	display: flex;
+	border: solid black;
+/* 	박스 윗줄 있는 애 */
+	border-width: 1px 0px 1px 0px; 
+/* 	박스 윗줄 없는 애 */
+/* 	border-width: 0px 0px 1px 0px;  */
+}
+
+.menuli {
+	width: 1903px;
+	margin-left: 480px;
+}
+	
+/*메뉴 네비 스타일 및 폼.*/
+.menuli a{
+	width: 150px;
+	height: 35px;
+	float: left;
+	text-align: center;
+	font-size: 17px;
+	padding: 15px 0px 5px 0px;
+	margin: 0px 0px 0px 0px;
+	font-weight: bold;
+	cursor: pointer;
+	
+}
+
+.marginlft5{
+	margin-left: 10px;
+}
+
+/*js 관련 class*/
+.movet,.moveb,.moveh,.moves,.movec,.movem{
+	color: rgb(20, 3, 78);
+}
+
+/*슬라이드 다운메뉴*/
+/*top 슬라이드메뉴*/
+.schtop{
+	z-index:2;
+	width: 1903px;
+	height: 150px;
+	margin: 0px;
+	position: absolute;
+	background-color:rgb(117, 165, 236);
+/*	margin-top: -30px; */
+
+}
+/*마진을 주기 위한 박스*/
+.schtop_margin_box{
+	float: left;
+	width: 623px;
+	height: 150px;
+	margin-left: 700px;
+}
+/*나라 목록 ul*/
+.schtop_margin_box ul{
+	width: 155px;
+	height: 125px;
+	float: left;
+	margin: auto;
+	font-size: 15px;
+	padding-top: 10px; 
+	text-align: center;
+}
+/*리스트에 먹이는 스타일.*/
+.schtop li{	
+	text-align: left;
+	padding-top: 5px; 
+	font-weight: bold;
+}
+.menuli>a:hover { 
+	color: white;
+	background-color: rgb(20, 3, 78);
+} 
+
+.marginleft20{
+	margin-left: 20px;
+}
