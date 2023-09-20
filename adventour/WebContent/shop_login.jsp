@@ -13,7 +13,7 @@
 <body>
 
 	<header>
-    	 <jsp:include page="header_jsp.jsp"></jsp:include>
+    	 <jsp:include page="header_login.jsp"></jsp:include>
 	</header>
 			<%
 				if(session.getAttribute("id") == null) {

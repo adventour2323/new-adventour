@@ -16,7 +16,7 @@
 <body>
 
     <header>
-    	 <jsp:include page="header_jsp.jsp"></jsp:include>
+    	 <jsp:include page="header_login.jsp"></jsp:include>
 	</header>
 			<%
 				if(session.getAttribute("id") == null) {
@@ -211,45 +211,9 @@
       </div>
 
     </div>
-
-
-
-
-
-
   </div>
 
-  <footer>
-    <div class="footerB">
-        <!-- 푸터 네비박스-->
-        <div class="fNvB">
-            <!--푸터 네비 왼쪽 마진때문에 쩔 수 없이 만든 div임 -->
-            <div></div>
-            <nav><a href="tour_login.jsp">가이드투어</a></nav>
-            <nav><a href="bus_login.jsp">버스</a></nav>
-            <nav><a href="hotel_login.jsp">호텔</a></nav>
-            <nav><a href="shop_login.jsp">쇼핑몰</a></nav>
-            <nav><a href="">고객센터</a></nav>
-            <nav><a href="">게시판</a></nav>
-            <nav><a href="">장바구니</a></nav>
-            <nav><a href="mypage_index.html">마이페이지</a></nav>
-            <nav><a href="member_pjs.html">회원가입</a></nav>
-            <nav><a href="login_merge_form.jsp">로그인</a></nav>
-        </div>
-        <!-- 푸터 회사 정보 박스-->
-        <div class="fInfoB">
-            <span><a><img src="img/logo123.png" title="logo"></a></span>
-            <span>
-                <p><a>회사주소</br></br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br>
-                    </a></p>
-            </span>
-            <span>
-                <p><a>회사 정보</br></br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br> 우리 회사 개쩔어</br>
-                    </a></p>
-            </span>
-        </div>
-    </div>
-</footer><!---->
+<div id="footer"></div>
 
 
 </body>
