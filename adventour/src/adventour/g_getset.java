@@ -11,7 +11,7 @@ public class g_getset {
 	String email;
 	String pnum;
 	String gender;
-	
+	  
 	
 	
 	

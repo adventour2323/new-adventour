@@ -38,9 +38,10 @@
                 <tbody><tr align="center">
                   <td rowspan="11" style="width: 200px"><img src="<%=info.getImg()%>" style="height: 200px; width: 200px; border: solid;"></td>
                   <td>이름</td>
+                   
                   <td><%= info.getName()%></td>
                 </tr>
-          
+          	
                 <tr align="center">
                   <td>지역</td>
                   <td><%= info.getCountry()%>, <%=info.getCity() %></td>
