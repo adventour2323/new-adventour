@@ -17,7 +17,7 @@ public class g_list_print {
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@");
 		stmt = conn.createStatement();
 	}
-	
+	 
 	public void discon() {
 		try {
 			stmt.close();

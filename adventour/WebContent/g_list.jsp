@@ -4,7 +4,7 @@
 <%@ page import = "adventour.g_list_print" %>
 <%@ page import = "adventour.g_getset" %>
 <%@ page import = "java.util.*" %>
-
+ 
 <!DOCTYPE html>
 <html>
 <head>
