@@ -144,6 +144,38 @@ function QInfoSendF() {
 		}
 	});
 }
+//function loadMyQna(){
+//	
+//	$.ajax({
+//		url: 'mpg_questions_select.jsp',
+//		type: 'POST',
+//		dataType: 'text',
+//		data: "m_id=qkqh4848",
+//		success: function(data) {
+//			try{
+//				var myqnaCkB = $('#myqnaCkB');
+//				myqnaCkB.empty();
+//				var result = JSON.parse(data.trim());
+//				for(var i in result){
+////					myqnaCkB.append($('<option>', {
+////						value: row.engNm,
+////						text: row.korNm
+////					}));
+//					myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
+//				}
+//			}catch(error){
+////				error
+//			}
+//		},
+//		error: function(error) {
+//			console.error('Request error:', error);
+//		}
+//	});
+//	
+//}
+
+
+
 function loadMyQna(){
 	
 	$.ajax({
@@ -154,7 +186,9 @@ function loadMyQna(){
 		success: function(data) {
 			try{
 				var myqnaCkB = $('#myqnaCkB');
+				var qnaDtB = $('.qna_dtail_box');
 				myqnaCkB.empty();
+				qnaDtB.empty();
 				var result = JSON.parse(data.trim());
 				for(var i in result){
 //					myqnaCkB.append($('<option>', {
@@ -162,6 +196,12 @@ function loadMyQna(){
 //						text: row.korNm
 //					}));
 					myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
+					var myQ = myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
+					/*var qtitle= $("#db_Pul_Title");*/
+					myQ.onclick =  myQ
+					if(myQ){
+						qnaDtB.append($('<div class="qna_dtail_box"><div class="qna_dtail_box_band"><div class="myquestion"><h4 class=""><span id="db_Pul_Title">'+result[i].q_title+'</span></h4><h4 class="">'+result[i].q_cntt+'</h4><h6>작성시간 : '+result[i].q_date+'</h6></div>'));
+					}
 				}
 			}catch(error){
 //				error
@@ -171,8 +211,5 @@ function loadMyQna(){
 			console.error('Request error:', error);
 		}
 	});
-	
-	
-	
 	
 }
