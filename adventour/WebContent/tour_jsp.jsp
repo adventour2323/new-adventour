@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ page import = "adventour.g_list_print" %>
+<%@ page import = "adventour.g_getset" %>
+<%@ page import = "java.util.*" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -12,11 +15,14 @@
         <script src="./js/tour_incomplete.js"></script>
         <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
-<body>
-<header>
-    	<div id="header"></div>
-</header>
+<body>  
 
+	<header>
+		<!-- header.html import-->
+    	<div id="header"></div>
+	</header>
+
+	<!-- 본문  -->
 
         <div class="content">
            
@@ -236,20 +242,15 @@
                           
                     </div>
     
+        <!--content-->
+  
+    <footer>
+	<div id="footer"></div>
+	</footer>
 
-
-
-
-
-
-
-
-
-<footer>
-		<div id="footer"></div>
-</footer>
 
 </body>
+
    <script>
             var slideIndex = 0;
             showSlides();
