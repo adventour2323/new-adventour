@@ -1,5 +1,6 @@
 /* mypage_questions.css */
 
+
 /* menuli클래스 하위 li에 마우스 오버일때 글자색 변경*/
 .menuli > li:hover {
     color: white;
@@ -296,6 +297,7 @@ form[name=qna_info]{
 .qna_cntt_box{
 	width: 720px;
 	height: 370px;
+	resize: none;
 }
 .qna_img_box{
 	width: 720px;
