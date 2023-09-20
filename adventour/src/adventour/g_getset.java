@@ -6,10 +6,45 @@ public class g_getset {
 	String city;
 	String theme;
 	String img;
+	String g_id;
+	String nick;
+	String email;
+	String pnum;
+	String gender;
 	
 	
 	
 	
+	public String getG_id() {
+		return g_id;
+	}
+	public void setG_id(String g_id) {
+		this.g_id = g_id;
+	}
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPnum() {
+		return pnum;
+	}
+	public void setPnum(String pnum) {
+		this.pnum = pnum;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getTheme() {
 		return theme;
 	}
