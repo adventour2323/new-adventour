@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>guide information</title>
+        <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
 
  
