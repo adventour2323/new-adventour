@@ -196,14 +196,23 @@ function loadMyQna(){
 //						text: row.korNm
 //					}));
 					myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
-					var myQ = myqnaCkB.append($('<label><input type="checkbox" title="" value="" name="">'+result[i].q_title+'</label><p>답변완료</p>'));
+//					var myQ = myqnaCkB.children('label').eq(i);
+					var myQ = myqnaCkB.find('input').eq(i);
 					/*var qtitle= $("#db_Pul_Title");*/
-					myQ.onclick =  myQ
+					
+//					var로하면 안 댐
+//					var divStr = '<div class="qna_dtail_box"><div class="qna_dtail_box_band"><div class="myquestion"><h4 class=""><span id="db_Pul_Title">'+result[i].q_title+'</span></h4><h4 class="">'+result[i].q_cntt+'</h4><h6>작성시간 : '+result[i].q_date+'</h6></div>'; 
+					let divStr = '<div class="qna_dtail_box"><div class="qna_dtail_box_band"><div class="myquestion"><h4 class=""><span id="db_Pul_Title_'+result[i].q_title+'">'+result[i].q_title+'</span></h4><h4 class="">'+result[i].q_cntt+'</h4><h6>작성시간 : '+result[i].q_date+'</h6></div>'; 
 					if(myQ){
-						qnaDtB.append($('<div class="qna_dtail_box"><div class="qna_dtail_box_band"><div class="myquestion"><h4 class=""><span id="db_Pul_Title">'+result[i].q_title+'</span></h4><h4 class="">'+result[i].q_cntt+'</h4><h6>작성시간 : '+result[i].q_date+'</h6></div>'));
+						myQ.click(function(){
+							qnaDtB.empty();
+//							qnaDtB.append($('<div class="qna_dtail_box"><div class="qna_dtail_box_band"><div class="myquestion"><h4 class=""><span id="db_Pul_Title">'+result[i].q_title+'</span></h4><h4 class="">'+result[i].q_cntt+'</h4><h6>작성시간 : '+result[i].q_date+'</h6></div>'));
+							qnaDtB.append($(divStr));
+						})
 					}
 				}
-			}catch(error){
+			}catch(e){
+				console.error(e);
 //				error
 			}
 		},

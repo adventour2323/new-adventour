@@ -103,7 +103,7 @@ p,h1,h2,h3,h4,h5,h6{
     margin: 0px;
     padding: 5px 0px 0px 3px;
     border-width: 0px;
-    background-color: rgb(221, 0, 0, 0.3);
+    background-color:	rgb(171 152 245);
 }
 /* 문의 컨텐츠 전체 박스. */
 .qna_cntnt_box{
@@ -291,8 +291,8 @@ p,h1,h2,h3,h4,h5,h6{
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-	border: 1px solid rgb(249, 187, 187, 0.6);
-	background-color: rgb(243, 213, 227, 0.5);
+    border: 1px solid rgb(245 227 227);
+    background-color: rgb(233 215 223);
 }
 /*고객에게 양해 구하는 텍스트 전체박스*/
 .qna_wrte_txt{

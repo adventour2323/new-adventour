@@ -15,15 +15,15 @@ public class Mpg_Q_dbsave {
 	 * @return
 	 * @throws Exception
 	 * 
-	 * db¿¬°á Connection »ı¼º
+	 * dbì—°ê²° Connection ìƒì„±
 	 * 
 	 */
-	private Connection getConnection() throws Exception { // µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» À§ÇÑ ¸Å¼Òµå
+	private Connection getConnection() throws Exception { // ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì„ ìœ„í•œ ë§¤ì†Œë“œ
 		Class.forName("com.mysql.jdbc.Driver");
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "dkssud2!!");
 	}
 	
-//	private Connection getConnection(String driver, String url, String id, String pw) throws Exception { // µ¥ÀÌÅÍº£ÀÌ½º ¿¬°áÀ» À§ÇÑ ¸Å¼Òµå
+//	private Connection getConnection(String driver, String url, String id, String pw) throws Exception { // ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°ì„ ìœ„í•œ ë§¤ì†Œë“œ
 //		Class.forName(driver);
 //		return DriverManager.getConnection(url+"?characterEncoding=utf-8", id, pw);
 //	}
@@ -33,7 +33,7 @@ public class Mpg_Q_dbsave {
 	 * @return
 	 * @throws Exception
 	 * 
-	 * statement »ı¼º
+	 * statement ìƒì„±
 	 * 
 	 */
 	private Statement getStmt(Connection conn) throws Exception {
@@ -49,30 +49,30 @@ public class Mpg_Q_dbsave {
 	 * @return
 	 * @throws Exception
 	 * 
-	 * db ÀúÀå.
+	 * db ì €ì¥.
 	 */
 	
 	
-	//insert ¸Ş¼­µå
-	public int dbInsert(String q_title, String q_cntt, String m_id) throws Exception { // ÀÔ·Â¹ŞÀº Á¤º¸¸¦ ÀúÀå insertÇÏ´Â ¸Å¼Òµå
+	//insert ë©”ì„œë“œ
+	public int dbInsert(String q_title, String q_cntt, String m_id) throws Exception { // ì…ë ¥ë°›ì€ ì •ë³´ë¥¼ ì €ì¥ insertí•˜ëŠ” ë§¤ì†Œë“œ
 
 		int rowNum = 0;
 		
-		// try Á¾·á ÈÄ () ¼±¾ğÇÑ º¯¼ö Á¾·á. close ÇÊ¿ä ¾øÀ½
+		// try ì¢…ë£Œ í›„ () ì„ ì–¸í•œ ë³€ìˆ˜ ì¢…ë£Œ. close í•„ìš” ì—†ìŒ
 		try (Connection conn = getConnection(); Statement stmt = getStmt(conn);){
 			
 			if (conn == null) {
-				throw new Exception("µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù");
+				throw new Exception("ë°ì´í„°ë² ì´ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			}
 			
 			String command = String.format(
 					"INSERT INTO qna (q_title, q_cntt, m_id )"
 							+"VALUES('"+ q_title+"', '"+ q_cntt+"', '"+ m_id+"');" ); 
-			//µ¥ÀÌÅÍº£ÀÌ½º ¸í·É¹® »ç¿ë
+			//ë°ì´í„°ë² ì´ìŠ¤ ëª…ë ¹ë¬¸ ì‚¬ìš©
 					
 			rowNum = stmt.executeUpdate(command);
 			if (rowNum < 1) {
-				throw new Exception("µ¥ÀÌÅÍ¸¦ DB¿¡ ÀÔ·ÂÇÒ ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("ë°ì´í„°ë¥¼ DBì— ì…ë ¥í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -82,7 +82,7 @@ public class Mpg_Q_dbsave {
 	}
 	
 	
-	//select ¸Ş¼­µå
+	//select ë©”ì„œë“œ
 	public List<Map<String, Object>> dbSelect(String m_id) throws Exception{
 		
 		List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
@@ -90,11 +90,11 @@ public class Mpg_Q_dbsave {
 		try (Connection conn = getConnection(); Statement stmt = getStmt(conn);){
 			
 			if (conn == null) {
-				throw new Exception("µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù");
+				throw new Exception("ë°ì´í„°ë² ì´ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			}
 			
 			String command = "SELECT * FROM qna where m_id = '"+m_id+"';"; 
-			//µ¥ÀÌÅÍº£ÀÌ½º ¸í·É¹® »ç¿ë
+			//ë°ì´í„°ë² ì´ìŠ¤ ëª…ë ¹ë¬¸ ì‚¬ìš©
 //			result = 
 			ResultSet rs =  stmt.executeQuery(command);
 			
@@ -125,21 +125,21 @@ public class Mpg_Q_dbsave {
 	}
 	
 	
-	//delete ¸Ş¼­µå
+	//delete ë©”ì„œë“œ
 	public int dbDelete(int q_num) throws Exception{
 		int rowNum = 0;
 		try (Connection conn = getConnection(); Statement stmt = getStmt(conn);){
 			
 			if (conn == null) {
-				throw new Exception("µ¥ÀÌÅÍº£ÀÌ½º¿¡ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù");
+				throw new Exception("ë°ì´í„°ë² ì´ìŠ¤ì— ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			}
 			
 			
 			String command = "delete FROM qna where q_num = "+q_num + ";";
-			//µ¥ÀÌÅÍº£ÀÌ½º ¸í·É¹® »ç¿ë
+			//ë°ì´í„°ë² ì´ìŠ¤ ëª…ë ¹ë¬¸ ì‚¬ìš©
 			rowNum = stmt.executeUpdate(command);
 			if(rowNum < 1) {
-				throw new Exception("µ¥ÀÌÅÍ¸¦ DB¿¡ »èÁ¦ÇÒ ¼ö ¾ø½À´Ï´Ù.");
+				throw new Exception("ë°ì´í„°ë¥¼ DBì— ì‚­ì œí•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 			
 		}catch(Exception e) {
