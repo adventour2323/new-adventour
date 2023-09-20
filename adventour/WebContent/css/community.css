@@ -117,6 +117,7 @@ body {
 .c_con{/*글내용 작성*/
   width:  900px;
   height: 400px;
+  resize: none;
 }
 .c_pho_title{
   width:  600px;

@@ -114,9 +114,15 @@ function clock() {
 clock();
 setInterval(clock, 60000); // 1초마다 실행
 
-
- 
-
+//테이블에 마우스 올리면
+$('tr').hover(
+        function() {
+          $(this).addClass('highlighted'); // 마우스를 올렸을 때 클래스 추가
+        },
+        function() {
+          $(this).removeClass('highlighted'); // 마우스를 떼면 클래스 제거
+        }
+      );
 
 
 

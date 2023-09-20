@@ -3,64 +3,6 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 
-  // ----------------메뉴 클릭시 색 변경    
-  $('.movet').on('mouseenter click', function() {
-    $(this).css('color', 'white');
-    $(this).css('background-color', 'rgb(20, 3, 78)');
-  
-  });
-
-  $('.movet').on('mouseleave', function() {
-    $(this).css('color', 'rgb(2,48,2)');
-    $(this).css('background-color', '');
-
-  });
-  $('.moveb').on('mouseenter click', function() {
-    $(this).css('color', 'white');
-   
-    $(this).css('background-color', 'rgb(20, 3, 78)');
-  
-  });
-
-  $('.moveb').on('mouseleave', function() {
-    $(this).css('color', 'rgb(2,48,2)');
-    $(this).css('background-color', '');
-
-  });
-  $('.moves').on('mouseenter click', function() {
-    $(this).css('color', 'white');
-    $(this).css('background-color', 'rgb(20, 3, 78)');
-  
-  });
-
-  $('.moves').on('mouseleave', function() {
-    $(this).css('color', 'rgb(20, 3, 78)');
-    $(this).css('background-color', '');
-
-  })
-  $('.movec').on('mouseenter click', function() {
-    $(this).css('color', 'white');
-    $(this).css('background-color', 'rgb(20, 3, 78)');
-  
-  });
-
-  $('.movec').on('mouseleave', function() {
-    $(this).css('color', 'rgb(20, 3, 78)');
-    $(this).css('background-color', '');
-
-  })
-  $('.movem').on('mouseenter click', function() {
-    $(this).css('color', 'white');
-    $(this).css('background-color', 'rgb(20, 3, 78)');
-  
-  });
-
-  $('.movem').on('mouseleave', function() {
-    $(this).css('color', 'rgb(20, 3, 78)');
-    $(this).css('background-color', '');
-
-  })
-
 
   
  //----------------------------------------top10 슬라이드--------------

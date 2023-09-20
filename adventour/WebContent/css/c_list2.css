@@ -48,71 +48,36 @@
 	width:1050px;
 	height:800px;
 	margin-left:400px;
-	
+	 margin-top:0px;
+
 }
   /*---------------------------왼쪽 여행지 선택 메뉴-----------------*/
    
   .c_city_menu{
      width: 150px;
-     height: 600px;
+     height: 550px;
      border: solid 1px;  
      margin-top: 0px;
-      cosor:pointer;
+     cosor:pointer;
+     margin-top:50px;
   }
-  .c_city_menu ul{
-    width: 100px;
-    height: 150px;
-    margin-bottom: 0px;
-    margin-top: 00px;
-}
-.c_city_menu ul li{
-    width: 150px;
-    height: 5px; 
-    margin-bottom: 0px;
-    list-style: none;
-}
-.c_city_menu ul li h4{
-	height: 20px;
-    text-align: center;
-}
-.c_city_menu ul li h6{
-   padding-left:20px;
-}
 
-.c_city_menu1{
-    width: 150px;
-    height: 130px;
-    margin-left: 0px;
-
-}
-  .c_list_title1{
-  text-align: left;
-  }
-  .c_city_menu ul li h4:hover{
-    background-color:rgb(20, 3, 78);
-    color: #fff;
-    cosor:pointer;
-}
- .c_city_menu ul li h6:hover{
-   cosor:pointer;
-   color: red;
-}
   /*-----------------------------------게시판 내용 리스트-------*/
   
   .c_list_div{ //리스트 전체 사이즈
     width: 900px;
     height: 800px;
     margin-left: 150px;
-    margin-top: -618px;
+    margin-top: -605px;
   }
 
   .c_list_table{ // 리스트 사이즈 설정
     width: 700px;
     height: 600px;
     margin-left: 50px;
-    margin-top: 30px;
     text-align: center;
     table-layout: fixed;
+
 
   }
 
@@ -123,18 +88,16 @@
    border:  solid ;
    border-width: 0px 1px 0px 0px ;
   }
- 
+  tr.highlighted {
+      background-color: yellow; /* 마우스를 올렸을 때의 배경색 */
+    }
   tr{ //높이고정
   height: 50px;
   border:  solid ;
   border-width: 0px 0px 1px 0px ;
   
   }
-  td:hover{
-  color:red;
-   cosor:pointer;
- 
-  }
+
   .c_headnum{
     width: 80px;
   }
@@ -162,7 +125,7 @@
 
     width: 100px;
     height: 20px;
-    margin-left:300px;
+    margin-left:340px;
     margin-top:40px;
   }
 

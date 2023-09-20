@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <title>게시판 메인</title>
-  <link rel="stylesheet" type="text/css" href="css/c_list.css">
+  <link rel="stylesheet" type="text/css" href="css/c_list2.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
   <script src="js//c_list.js"></script>
@@ -28,41 +28,7 @@
 <div class="c_list_main">
 
    <div class="c_city_menu" >
-    <div  class="c_city_menu1">
-    <ul>
-     <li><a><h4 class="c_uk">[ 영   국 ]</h4></a></li>
-     <li><a><h6 class="c_lon" >- 런던</h6></a></li>
-     <li><a><h6 class="c_liv">- 리버풀</h6></a></li>
-     <li><a><h6 class="c_edn">- 에든버러</h6></a></li>
-    </ul>
-  </div>
-
-  <div  class="c_city_menu1">
-    <ul>
-     <li><a><h4 class="c_ity">[ 이탈리아 ]</h4></a></li>
-     <li><a><h6 class="c_roma">- 로마</h6></a></li>
-     <li><a><h6 class="c_vene">- 베네치아</h6></a></li>
-     <li><a><h6 class="c_mila">- 밀라노</h6></a></li>
-    </ul>
-  </div>
-
-  <div  class="c_city_menu1">  
-    <ul>
-      <li><a><h4>[  프랑스  ]</h4></a></li>
-      <li><a><h6>- 파리</h6></a></li>
-      <li><a><h6>- 마르세유</h6></a></li>
-      <li><a><h6>- 모나코</h6></a></li>
-    </ul>
-  </div>
-   
-  <div  class="c_city_menu1">
-    <ul>
-      <li><a><h4>[ 스페인  ]</h4></a></li>
-      <li><a><h6>- 마드리드</h6></a></li>
-      <li><a><h6>- 비르셀로나</h6></a></li>
-      <li><a><h6>- 세비야</h6></a></li>
-    </ul>
-  </div>
+    <img src="image/img/c_event1.jpeg" style="width: 150px; height: 400px;">
 
    </div>
    
