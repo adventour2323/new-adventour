@@ -17,15 +17,19 @@
 </head>
 <body>  
 
+<jsp:useBean id="id" class="adventour.g_list_print">
 	<header>
 		<!-- header.html import-->
     	<div id="header"></div>
 	</header>
+	
+	<%
+	ArrayList<g_getset> a1 = id.g1();
+	%>
 
 	<!-- 본문  -->
 
         <div class="content">
-           
         
         	<div id="guide_of_the_month">
                 <div class="gom_ment">
@@ -47,54 +51,84 @@
 
     <input id="tab4" type="radio" name="tabs">
     <label class="g_label" for="tab4">이탈리아</label>
-    
+    <div style="float: right; cursor: pointer" onclick="location.href='./g_list.jsp'"> 전체보기 </div>
 
-    <section id="guide_uk">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br>영국1</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g3.jpg" style="margin-right: 10px;height: 200px"><br>영국2</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g4.jpg" style="margin-right: 10px;height: 200px"><br>영국3</div>
-        <div onclick="location.href='./g_list.jsp'" style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g5.jpg" style="margin-right: 10px;height: 200px"><br>영국4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
-        </div>
+    <section id="guide_uk" >
+        <p style="display: flex;">
+        <% 
+		for ( int i = 0; i < a1.size(); i++ ) {
+			g_getset g = a1.get(i);
+		if(g.getCountry().equals("영국") == true) { 
+		%>
+<div class="container" >
+	  <table style="width: 100px;  ">
+		  <thead>
+			  <tr>
+				  <th colspan="4"  style="cursor: pointer;" >
+					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+					  <figure>
+					  <img src=" <%= g.getImg() %> " width='200px' alt='img'>
+					  <figcaption>자세히보기</figcaption>
+					  </figure>
+					   </a>
+				  </th>
+			  </tr>
+		  </thead>
+        <tbody >
+            <tr>
+                <td style="text-align: center;">
+                <%=g.getName()%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
         </p>
+        <% }} %>
     </section>
+    
 
     <section id="guide_fr">
         <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g6.jpg" style="margin-right: 10px;height: 200px"><br>프랑스1</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g7.png" style="margin-right: 10px;height: 200px"><br>프랑스2</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g9.png" style="margin-right: 10px;height: 200px"><br>프랑스3</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g8.jpg" style="margin-right: 10px;height: 200px"><br>프랑스4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
+        <% 
+		for ( int i = 0; i < a1.size(); i++ ) {
+			g_getset g = a1.get(i);
+		if(g.getCountry().equals("프랑스") == true) { 
+		%>
+        <div style=" height: 200px; text-align: center">
+        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'" style="cursor:pointer; display: flex;">
+        <img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
         </div>
-        </p>	
+        </p>
+        <% }} %>
     </section>
 
     <section id="guide_es">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='./g_list.jsp'" style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g10.jpg" style="margin-right: 10px;height: 200px"><br>스페인1</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g11.jpg" style="margin-right: 10px;height: 200px"><br>스페인2</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g12.png" style="margin-right: 10px;height: 200px"><br>스페인3</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g13.jpg" style="margin-right: 10px;height: 200px"><br>스페인4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
+       <p>
+        <% 
+		for ( int i = 0; i < a1.size(); i++ ) {
+			g_getset g = a1.get(i);
+		if(g.getCountry().equals("스페인") == true) { 
+		%>
+        <div style=" height: 200px; text-align: center">
+        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'"  style="cursor:pointer; display: flex;"><img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
         </div>
         </p>
+        <% }} %>
     </section>
 
     <section id="guide_ita">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g14.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아1</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g15.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아2</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g16.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아3</div>
-        <div onclick="location.href='./g_list.jsp'" style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g17.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
+       <p>
+        <% 
+		for ( int i = 0; i < a1.size(); i++ ) {
+			g_getset g = a1.get(i);
+		if(g.getCountry().equals("이탈리아") == true) { 
+		%>
+        <div style=" height: 200px; text-align: center">
+        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'"  style="cursor:pointer; display: flex;"><img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
         </div>
         </p>
+        <% }} %>
     </section>
 
 </div>
@@ -107,8 +141,18 @@
                         <div class="slideshow_container">
                             <div class="Slidesbackground">
                                 <div class="mySlides fade" style="display: none;">
+                                
+                                	<div style="display: flex;">
+                                	<div>
                                 	<img alt="루브르" src="./image/tour/r_louvre_img.jpg" class="slideshow-image">
-                                		
+	                                </div>
+	                                <div>
+	                                <h1>루브르 박물관 가이드!</h1>
+                            		<h3>박물관 전문 가이드와 즐기는 가이드 투어!</h3>
+                            		<h2>명작의 이야기를 들으면서 재밌게 둘러 보세요</h2>           
+	                                </div>		
+	                                </div>
+	                                
                                 </div>
                                 
                                 <div class="mySlides fade" style="display: none;">
@@ -242,13 +286,15 @@
                           
                     </div>
     
+    
+    
         <!--content-->
   
     <footer>
 	<div id="footer"></div>
 	</footer>
 
-
+</jsp:useBean>
 </body>
 
    <script>

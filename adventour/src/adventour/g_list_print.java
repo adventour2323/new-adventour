@@ -121,7 +121,7 @@ public class g_list_print {
 			 */
 			 
 			
-			  ResultSet rs = stmt.executeQuery("select *from guide where g_country ='uk';");
+			  ResultSet rs = stmt.executeQuery("select *from guide where g_country ='영국';");
 			 
 		
 
