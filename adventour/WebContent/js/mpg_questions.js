@@ -17,22 +17,22 @@ $(document).ready(function() {
     secLCtg1.hide();
     secLCtg3.hide();
     
-    frstLtab1.click(function () {    	
-    	loadMyQna();
-    	
-    	secLCtg1.show();
-    	secLCtg2.hide();
-        secLCtg3.hide();
+    frstLtab1.click(function () {       
+       loadMyQna();
+       
+       secLCtg1.show();
+       secLCtg2.hide();
+       secLCtg3.hide();
     });
-    frstLtab2.click(function () {    	
-    	secLCtg2.show();
-    	secLCtg1.hide();
-    	secLCtg3.hide();
+    frstLtab2.click(function () {       
+       secLCtg2.show();
+       secLCtg1.hide();
+       secLCtg3.hide();
     });
-    frstLtab3.click(function () {    	
-    	secLCtg3.show();
-    	secLCtg1.hide();
-    	secLCtg2.hide();
+    frstLtab3.click(function () {       
+       secLCtg3.show();
+       secLCtg1.hide();
+       secLCtg2.hide();
     });
     
   //두번 째 탭기능 변수 선언   
@@ -43,14 +43,82 @@ $(document).ready(function() {
     var secLTab_s = $('.secLTab').eq(3);
     var secLTab_oP = $('.secLTab').eq(4);
     var secLTab_cs = $('.secLTab').eq(5);
-   
+    
+    var t_QnA_li = $('.t_qna_all').eq(0);
+    var b_QnA_li = $('.b_qna_all').eq(0);
+    var h_QnA_li = $('.h_qna_all').eq(0);
+    var s_QnA_li = $('.s_qna_all').eq(0);
+    var o_QnA_liP = $('.oP_qna_all').eq(0);
+    var c_QnA_lis = $('.cs_qna_all').eq(0);
+  
+    /*투어 탭 클릭했을 경우 투어 관련 문의 리스트만 나옴.*/
+    secLTab_t.click(function () {       
+        t_QnA_li.show();
+        b_QnA_li.hide();
+        h_QnA_li.hide();
+        s_QnA_li.hide();
+        oP_QnA_li.hide();
+        cs_QnA_li.hide();
+    });
+    
+    /*버스 탭 클릭했을 경우 버스 관련 문의 리스트만 나옴.*/
+    secLTab_b.click(function () {       
+    	b_QnA_li.show();
+    	t_QnA_li.hide();
+    	h_QnA_li.hide();
+    	s_QnA_li.hide();
+    	oP_QnA_li.hide();
+    	cs_QnA_li.hide();
+    });
+    
+    /*호텔 탭 클릭했을 경우 호텔 관련 문의 리스트만 나옴.*/
+    secLTab_h.click(function () {       
+    	h_QnA_li.show();
+    	t_QnA_li.hide();
+    	b_QnA_li.hide();
+    	s_QnA_li.hide();
+    	oP_QnA_li.hide();
+    	cs_QnA_li.hide();
+    });
+    
+    /*shop 탭 클릭했을 경우 shop 관련 문의 리스트만 나옴.*/
+    secLTab_s.click(function () {       
+    	s_QnA_li.show();
+    	t_QnA_li.hide();
+    	b_QnA_li.hide();
+    	h_QnA_li.hide();
+    	oP_QnA_li.hide();
+    	cs_QnA_li.hide();
+    });
+    
+    /*주문/결제 탭 클릭했을 경우 주문/결제 관련 문의 리스트만 나옴.*/
+    secLTab_oP.click(function () {       
+    	oP_QnA_li.show();
+    	t_QnA_li.hide();
+    	b_QnA_li.hide();
+    	h_QnA_li.hide();
+    	s_QnA_li.hide();
+    	cs_QnA_li.hide();
+    });
+    
+    /*회원서비스 탭 클릭했을 경우 회원 서비스 관련 문의 리스트만 나옴.*/
+    secLTab_cs.click(function () {       
+    	cs_QnA_li.show();
+    	t_QnA_li.hide();
+    	b_QnA_li.hide();
+    	h_QnA_li.hide();
+    	s_QnA_li.hide();
+    	oP_QnA_li.hide();
+    });
+    
+    /**/
     sndBtn.onclick = QInfoSendF
 
 });
 
 //var formInputs = $(document.qna_info).find('input,textarea,select');
 
-//회원가입 Ajax: member_pjs.jsp와 연동
+//문의 등록 Ajax: mpg_questions_save.jsp와 연동
 function QInfoSendF() {
 	var qna_info = $('form[name=qna_info]');
 	$.ajax({

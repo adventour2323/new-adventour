@@ -11,12 +11,12 @@
 
 
 <body>
-	<header>
-		<!-------------- header.html import------------->
-	   	<div id="header"></div>
-	   	<!-------------- header.html import------------->
-	</header>
-	
+   <header>
+      <!-------------- header.html import------------->
+         <div id="header"></div>
+         <!-------------- header.html import------------->
+   </header>
+   
     <!-- 메인 컨텐츠 전체 박스 -->
     <div class="alMainB">
     
@@ -28,158 +28,312 @@
         <!--메인 네비 컨테인한 박스 -->
         <div class="mainNCB"> 
 
-			<!--------------mpg_nvbox.html import-------------->
-			<div id="mpg_nvbox"></div>
+         <!--------------mpg_nvbox.html import-------------->
+         <div id="mpg_nvbox"></div>
             <!--------------mpg_nvbox.html import-------------->
             
             <!-- 문의 사항의 시작! 제일 큰 박스-->
             <div class="questionbox">
-				<!-- 대문글 박스 -->
+            <!-- 대문글 박스 -->
                 <div class="intro_tB">
                     <p>고객센터</p>
                 </div>
 
-				<!-- 탭 기능을 넣을 친구들 박스. -->
-				<div class="frst_lne_ctgry">
-				    <div class="frstLTab"><p>문의 내역</p>
-				    </div>
-				    <div class="frstLTab"><p>자주 묻는 질문</p>
-				    </div>
-				    <div class="frstLTab"><p>문의하기</p>
-				    </div>
-				</div> 
-				
-				
-				<!--문의내역 -->
-				<div class="my_qna">
-					<div class="my_qna_listB">
-						<div class="delbox"><input type="button" name="" value="삭제"></div>
-						
-						<!--나의 문의 목록 -->
-						<div id="myqnaCkB" class="myqnaCkB">
-							
-							<label><input type="checkbox" title="" value="" name="">데이터에서 가져올 문의 제목</label>
-							<p>답변완료</p>
-						</div>
-						
-						<div class='text_box'>
-							<h3>최근 문의내역을 모두 확인하셨습니다.</h3>
-							<h5>이전 문의내역이 필요하시면 고객센터에 문의해주세요.</h5>
-						</div>
-					</div>
-						<!--qna_dtail_box(문의 내역 클릭하면 자세하게 보이는 애들) -->
-						<div class="qna_dtail_box">
-							<div class="qna_dtail_box_band">
-								<div class="myquestion">
-									<h4 class="">데이터에서 가져올 문의 제목</h4>
-									<h4 class="">문의 내용</h4>
-									<p class="">데이터에서 가져올 문의 내용</p>
-									<h6>작성시간 : </h6>
-								</div>	
-								
-								<div class="answer_box">
-									<h4>어드벤투어</h4>
-									<p>답변 내용</p>
-									<h6>작성시간 : </h6>
-								</div>
-								<br/>다른 도움이 필요하신가요? 
-								<input class="go_write_btn back_col"  type="button" name="go_write_btn" value="새문의 남기기">
-							</div>
-						</div><!-- qna_dtail_box 끝 -->
-				</div><!--문의내역 박스 끝-->
-				
-				<!-- 자주 묻는 질문 카테고리 탭박스/ js에서 cmon_qna 클릭했을 경우에만 보이게 만들기. -->
-				<div class="sec_lne_ctgry">
-				    <div class="secLTab"><p>Tour</p>
-				    </div>
-				    <div class="secLTab"><p>Bus</p>
-				    </div>
-				    <div class="secLTab"><p>Hotel</p>
-				    </div>
-				    <div class="secLTab"><p>Shop</p>
-				    </div>
-				    <div class="secLTab"><p>주문/결제</p>
-				    </div>
-				    <div class="secLTab cs_t"><p>회원 서비스</p>
-				    </div>
-				
-					<!-- common qna제목 -->
-					
-					<div class="usual_qna_ttle"><h3>제목</h3></div>
-					    <div class="hotel_qna"><div class="hotel_Q">[호텔]예약을 하고 난 후 며칠 뒤 다시 보니 금액이 떨어져 있습니다. 보상 해 주나요?</div>
-					    <div class="hotel_A">어드벤투어 호텔 호텔은 여러 호텔 공급 업체를 통해 예약이 진행됩니다.
-							이에 환율에 따라 요금 변동이 있을 수도 있으며, 업체에서 판매 중이던 객실의 요금이 변동되는 경우도 있습니다.  따라서, 요금은 검색시기에 따라 달라질 수 있습니다.
-							** 경우에 따라 날짜가 많이 남은 시점에 이른 예약자를 위한 특가가 나오는 경우도 있으며, 임박하여 잔여 객실 판매를 위한 특가가 나오는 경우도 있습니다.
-							예약 후 동일 조건 요금 인하에 대한 별도 보상은 제공되지 않습니다.</div></div>
-					    <div class="hotel_qna"><div class="hotel_Q">[호텔] 호텔 예약을 하고 싶은데 일정은 현지 시간 기준인가요?</div>
-					    <div class="hotel_A">호텔 요금 조회시 일정은 국내 시간 기준이 아닌, 현지 시간 기준으로 확인 후 예약 해 주셔야 합니다.</div></div>
-					    <div class="hotel_qna"><div class="hotel_Q">[호텔] 예약을 했는데 "대기예약"상태입니다. 언제 확정이 나나요?</div>
-					    <div class="hotel_A">대기 예약 접수시 업무시간 기준 3시간~24시간 이내 가능여부를 확인 후 안내 드립니다.  
-							지역 및 호텔에 따라 확인 소요 시간은 24시간 초과될 수 있습니다.
-							또한, 자사 업무시간 이후 또는 주말/공휴일에 접수된 대기 예약은 업무일에 확인이 가능합니다.
-							업무시간: 평일 9시~18시(점심시간12시~13시) / 주말, 공휴일 휴무 </div></div>
-					    <div class="hotel_qna"><div class="hotel_Q">[호텔] 호텔예약시 예약자와 호텔투숙자가 달라도 되나요?</div>
-					    <div class="hotel_A">	
-							네, 가능합니다. 
-							
-							호텔예약시 호텔에는 투숙자명에 대한 정보만 들어가기 때문에 예약자와 투숙자는 달라도 예약가능합니다. 
-							
-							다만 기재해주시는 투숙자명은 실제 투숙자의 여권 상 영문 명과 정확해야 합니다.
-							
-							여권 상 영문명과 일치하지 않을 경우 체크인 시 문제가 될 수 있습니다.</div></div>
-					    <div class="hotel_qna"><div class="hotel_Q"></div>
-					    <div class="hotel_A"></div></div>
-					    <div class="hotel_qna"><div class="hotel_Q"></div>
-					    <div class="hotel_A"></div></div>
-					    <div class="hotel_qna"><div class="hotel_Q"></div>
-					    <div class="hotel_A"></div></div>
-					    <div class="hotel_qna"><div class="hotel_Q"></div>
-					    <div class="hotel_A"></div></div>
-					    <div class="hotel_qna"><div class="hotel_Q"></div>
-					    <div class="hotel_A"></div></div>
-					</div><!-- 자주 묻는 질문 카테고리 탭박스 끝 -->
-				
-				<!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우-->
-				<div class="write">
-					<!--텍스트 박스 클래스-->
-					<div class="qna_wrte_txt">	
-						<h2>어드벤투어의 중심은 항상 고객님입니다.</h2>
-						<h5>어드벤투어를 이용하면서 느끼신 불편사항이나 바라는 점을 알려주세요.<br/>
-						고객님의 소중한 의견으로 한 뼘 더 자라는 어드벤투어가 되겠습니다.</h5>
-						<h6>문의량이 많아 답변은 24시간 이상 소요될 수 있습니다.</h6>
+            <!-- 탭 기능을 넣을 친구들 박스. -->
+            <div class="frst_lne_ctgry">
+                <div class="frstLTab"><p>문의 내역</p>
+                </div>
+                <div class="frstLTab"><p>자주 묻는 질문</p>
+                </div>
+                <div class="frstLTab"><p>문의하기</p>
+                </div>
+            </div> 
+            
+            
+            <!--문의내역 -->
+            <div class="my_qna">
+               <div class="my_qna_listB">
+                  <div class="delbox"><input type="button" name="" value="삭제"></div>
+                  
+                  <!--나의 문의 목록 -->
+                  <div id="myqnaCkB" class="myqnaCkB">
+                     
+                     <label><input type="checkbox" title="" value="" name="">데이터에서 가져올 문의 제목</label>
+                     <p>답변완료</p>
+                  </div>
+                  
+                  <div class='text_box'>
+                     <h3>최근 문의내역을 모두 확인하셨습니다.</h3>
+                     <h5>이전 문의내역이 필요하시면 고객센터에 문의해주세요.</h5>
+                  </div>
+               </div>
+                  <!--qna_dtail_box(문의 내역 클릭하면 자세하게 보이는 애들) -->
+                  <div class="qna_dtail_box">
+                     <div class="qna_dtail_box_band">
+                        <div class="myquestion">
+                           <h4 class="">데이터에서 가져올 문의 제목</h4>
+                           <h4 class="">문의 내용</h4>
+                           <p class="">데이터에서 가져올 문의 내용</p>
+                           <h6>작성시간 : </h6>
+                        </div>    
+                        
+                        <div class="answer_box">
+                           <h4>어드벤투어</h4>
+                           <p>답변 내용</p>
+                           <h6>작성시간 : </h6>
+                        </div>
+                        <br/>다른 도움이 필요하신가요? 
+                        <input class="go_write_btn back_col"  type="button" name="go_write_btn" value="새문의 남기기">
+                     </div>
+                  </div><!-- qna_dtail_box 끝 -->
+            </div><!--문의내역 박스 끝-->
+            
+            <!-- 자주 묻는 질문 카테고리 탭박스/ js에서 cmon_qna 클릭했을 경우에만 보이게 만들기. -->
+            <div class="sec_lne_ctgry">
+                <div class="secLTab">
+                	<p>Tour</p>
+                </div>
+                <div class="secLTab">
+                	<p>Bus</p>
+                </div>
+                <div class="secLTab">
+                	<p>Hotel</p>
+                </div>
+                <div class="secLTab">
+                	<p>Shop</p>
+                </div>
+                <div class="secLTab">
+                	<p>주문/결제</p>
+                </div>
+                <div class="secLTab cs_t">
+                	<p>회원 서비스</p>
+                </div>
+            
+               <!-- common qna제목 -->
+				<div class="usual_qna">
+					<div class="usual_qna_ttle">
+						<h3>제목</h3>
 					</div>
 					
-					<div class="qna_info">
-						<!--button펑션으로 폼의 정보를 ajax로 jsp페이지 연동.-->
-						<form class="margin_t_lft" name="qna_info" method="post" onsubmit="return">
-							<select class="qna_selBox" name="q_num" required>
-								<option value="">유형을 선택해주세요.</option>
-								<option value="Tour">Tour</option>
-								<option value="Bus">Bus</option>
-								<option value="Hotel">Hotel</option>
-								<option value="Shop">Shop</option>
-								<option value="odr_pmnt">주문/결제</option>
-								<option value="cs">회원 서비스</option>
-							</select>
-							<input class="qna_ttl_box" type="text" name="q_title" placeholder="제목을 입력해주세요" title="title" required /><br/><br/>
-<!-- 							<input class="qna_cntt_box" type="text" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required /><br/><br/> -->
-							<textarea class="qna_cntt_box" type="text" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required></textarea><br/><br/>
-							<input class="qna_img_box" type="text" name="q_img" placeholder="이미지 첨부 파일" title="img" required /><br/>
-							<input class="qna_btn margin_lft60 back_col" type="button" name="sndBtn" title="보내기 버튼" value="보내기" />
-						</form>
-					</div>
-				</div><!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우 박스 끝-->
-			
+					<!-- 투어 자주하는 질문 전체박스-->
+	                    <div class="t_qna_all">
+		                   <div class="t_qna">
+			                   <div class="t_Q">
+			                   </div>
+			                   <div class="t_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="t_qna">
+			                   <div class="t_Q">
+			                   </div>
+			                   <div class="t_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="t_qna">
+			                   <div class="t_Q">
+			                   </div>
+			                   <div class="t_A">
+			                   </div>
+		                   </div>
+	                   </div>
+					
+					<!-- 버스 자주하는 질문 전체박스-->
+	                    <div class="b_qna_all">
+		                   <div class="b_qna">
+			                   <div class="b_Q">
+			                   </div>
+			                   <div class="b_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="b_qna">
+			                   <div class="b_Q">
+			                   </div>
+			                   <div class="b_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="b_qna">
+			                   <div class="b_Q">
+			                   </div>
+			                   <div class="b_A">
+			                   </div>
+		                   </div>
+	                   </div>
+					
+					<!-- 호텔 자주하는 질문 전체박스-->
+	                <div class="h_qna_all">
+	                    <div class="h_qna">
+	                        <div class="h_Q">
+	                        [호텔]예약을 하고 난 후 며칠 뒤 다시 보니 금액이 떨어져 있습니다. 보상 해 주나요?
+	                        </div>
+	                        
+	                        <div class="h_A">
+	                        어드벤투어 호텔 호텔은 여러 호텔 공급 업체를 통해 예약이 진행됩니다.
+	                        이에 환율에 따라 요금 변동이 있을 수도 있으며, 업체에서 판매 중이던 객실의 요금이 변동되는 경우도 있습니다.  따라서, 요금은 검색시기에 따라 달라질 수 있습니다.
+	                        ** 경우에 따라 날짜가 많이 남은 시점에 이른 예약자를 위한 특가가 나오는 경우도 있으며, 임박하여 잔여 객실 판매를 위한 특가가 나오는 경우도 있습니다.
+	                        예약 후 동일 조건 요금 인하에 대한 별도 보상은 제공되지 않습니다.
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="h_qna">
+	                        <div class="h_Q">
+	                        [호텔] 호텔 예약을 하고 싶은데 일정은 현지 시간 기준인가요?
+	                        </div>
+	                        
+	                        <div class="h_A">
+	                        호텔 요금 조회시 일정은 국내 시간 기준이 아닌, 현지 시간 기준으로 확인 후 예약 해 주셔야 합니다.
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="h_qna">
+	                        <div class="h_Q">
+	                        [호텔] 예약을 했는데 "대기예약"상태입니다. 언제 확정이 나나요?
+	                        </div>
+	                        
+	                        <div class="h_A">
+	                        대기 예약 접수시 업무시간 기준 3시간~24시간 이내 가능여부를 확인 후 안내 드립니다.  
+	                        지역 및 호텔에 따라 확인 소요 시간은 24시간 초과될 수 있습니다.
+	                        또한, 자사 업무시간 이후 또는 주말/공휴일에 접수된 대기 예약은 업무일에 확인이 가능합니다.
+	                        업무시간: 평일 9시~18시(점심시간12시~13시) / 주말, 공휴일 휴무
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="h_qna">
+	                        <div class="h_Q">
+	                        [호텔] 호텔예약시 예약자와 호텔투숙자가 달라도 되나요?
+	                        </div>
+	                    
+	                        <div class="h_A">   
+	                        네, 가능합니다. 
+	                        
+	                        호텔예약시 호텔에는 투숙자명에 대한 정보만 들어가기 때문에 예약자와 투숙자는 달라도 예약가능합니다. 
+	                        
+	                        다만 기재해주시는 투숙자명은 실제 투숙자의 여권 상 영문 명과 정확해야 합니다.
+	                        
+	                        여권 상 영문명과 일치하지 않을 경우 체크인 시 문제가 될 수 있습니다.
+	                        </div>
+	                   	</div>
+	                   </div>
+					
+					    <!-- shop 자주하는 질문 전체박스-->
+	                    <div class="s_qna_all">
+		                   <div class="s_qna">
+			                   <div class="s_Q">
+			                   </div>
+			                   <div class="s_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="s_qna">
+			                   <div class="s_Q">
+			                   </div>
+			                   <div class="s_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="s_qna">
+			                   <div class="s_Q">
+			                   </div>
+			                   <div class="s_A">
+			                   </div>
+		                   </div>
+	                   </div>
+	                   
+	                    <!-- 주문/결제 자주하는 질문 전체박스-->
+	                    <div class="oP_qna_all">
+		                   <div class="oP_qna">
+			                   <div class="oP_Q">
+			                   </div>
+			                   <div class="oP_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="oP_qna">
+			                   <div class="oP_Q">
+			                   </div>
+			                   <div class="oP_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="oP_qna">
+			                   <div class="oP_Q">
+			                   </div>
+			                   <div class="oP_A">
+			                   </div>
+		                   </div>
+	                   </div>
+	                   
+	                   
+	                    <!-- 회원서비스 자주하는 질문 전체박스-->
+	                    <div class="cs_qna_all">
+		                   <div class="cs_qna">
+			                   <div class="cs_Q">
+			                   </div>
+			                   <div class="cs_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="cs_qna">
+			                   <div class="cs_Q">
+			                   </div>
+			                   <div class="cs_A">
+			                   </div>
+		                   </div>
+		                   
+		                   <div class="cs_qna">
+			                   <div class="cs_Q">
+			                   </div>
+			                   <div class="cs_A">
+			                   </div>
+		                   </div>
+	                   </div>
+               	</div>    
+               </div><!-- 자주 묻는 질문 카테고리 탭박스 끝 -->
+            
+            <!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우-->
+            <div class="write">
+               <!--텍스트 박스 클래스-->
+               <div class="qna_wrte_txt">   
+                  <h3>어드벤투어의 중심은 항상 고객님입니다.</h3>
+                  <h5>어드벤투어를 이용하면서 느끼신 불편사항이나 바라는 점을 알려주세요.<br/>
+                  고객님의 소중한 의견으로 한 뼘 더 자라는 어드벤투어가 되겠습니다.</h5>
+                  <h6>문의량이 많아 답변은 24시간 이상 소요될 수 있습니다.</h6>
+               </div>
+               
+               <div class="qna_info">
+                  <!--button펑션으로 폼의 정보를 ajax로 jsp페이지 연동.-->
+                  <form class="margin_t_lft" name="qna_info" method="post" onsubmit="return">
+                     <select class="qna_selBox" name="q_num" required>
+                        <option value="">유형을 선택해주세요.</option>
+                        <option value="Tour">Tour</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Shop">Shop</option>
+                        <option value="odr_pmnt">주문/결제</option>
+                        <option value="cs">회원 서비스</option>
+                     </select>
+                     <input class="qna_ttl_box padding_left5" type="text" name="q_title" placeholder="제목을 입력해주세요" title="title" required /><br/><br/>
+				<!--<input class="qna_cntt_box" type="text" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required /><br/><br/> -->
+                     <textarea class="qna_cntt_box padding_left5" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required></textarea><br/><br/>
+                     <input class="qna_img_box padding_left5" type="text" name="q_img" placeholder="이미지 첨부 파일" title="img" /><br/>
+                     <input class="qna_btn margin_lft60 back_col" type="button" name="sndBtn" title="보내기 버튼" value="보내기" />
+                  </form>
+               </div>
+            </div><!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우 박스 끝-->
+         
             </div><!--문의 사항의 시작, 제일 큰 박스 끝-->
             
         </div><!--메인 네비 컨테인한 박스 끝 -->
         
     </div><!-- 메인 컨텐츠 전체 박스 끝-->
     <footer>
-   		<!------------- footer.html import------------->
-		<div id="footer"></div>
-		<!------------- footer.html import------------->
-	</footer>
+         <!------------- footer.html import------------->
+      <div id="footer"></div>
+      <!------------- footer.html import------------->
+   </footer>
 </body>
 
 </html>

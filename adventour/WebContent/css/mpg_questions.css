@@ -3,14 +3,14 @@
 
 /* menuli클래스 하위 li에 마우스 오버일때 글자색 변경*/
 .menuli > li:hover {
-    color: white;
-    background-color:  rgb(20, 3, 78);
+	color: white;
+	background-color:  rgb(20, 3, 78);
 }
 /* background-color: blue; */
 
 .mainNB input:hover{
-    color: white;
-    background-color: rgb(20, 3, 78);
+	color: white;
+	background-color: rgb(20, 3, 78);
 }
 
 .mainNB nav:nth-child(n+3):hover,  
@@ -19,8 +19,8 @@
 .mainNB nav:nth-child(n+3):hover, 
 .mainNB nav:nth-child(n+3):hover
 {
-    color: white;
-    background-color: rgb(20, 3, 78);
+	color: white;
+	background-color: rgb(20, 3, 78);
 }
 
 /* .menuli { */
@@ -45,7 +45,7 @@
 /*     border-radius: 10px 10px 10px 10px; */
 /* } */
 /* /*  */
-/* .mimg { */
+/* .mimg { 
     width: 30px;
     height: 30px;
     padding-top: 0px;
@@ -71,8 +71,8 @@
     width: 800px;
     height: 50px;
     float: left;
-    margin: 0px 0px 0px 0px;
     font-size: 25px;
+    margin: 0px 0px 0px 0px;
 }    
 /* --------메인 네비와 컨텐츠를 컨테인한 박스------- */
 .mainNCB{
@@ -80,33 +80,35 @@
 }
 
 /*----------문의 사항의 시작! 제일 큰 박스----------*/
-p{
+p,h1,h2,h3,h4,h5,h6{
     margin: 0px;
+    padding: 0px;
 }
+
 .questionbox{
     margin: 0px  0px 0px 50px;
     width: 799px;
+    float: left;
 }
+
 /*대문글 박스*/
 .intro_tB p{
     width: 795px;
-    height: 60px;    
+    height: 50px;    
     float: left;
     font-size: 30px;
-    text-align: center;
     font-weight: bold;
-    background-color: rgb(221, 0, 0, 0.3);
+    text-align: center;
     color: white;
     margin: 0px;
-    padding: 3px 0px 0px 3px;
+    padding: 5px 0px 0px 3px;
     border-width: 0px;
+    background-color: rgb(221, 0, 0, 0.3);
 }
 /* 문의 컨텐츠 전체 박스. */
 .qna_cntnt_box{
     width: 795px;
-    height: 500px;
-    /* font-size: 20px; */
-    font-weight: bold;
+    float: left;
     margin-left: 30px;
     padding: 0px;
     border-width: 0px;
@@ -115,34 +117,37 @@ p{
 /* 첫 번째 탭 기능을 넣을 친구들 전체 박스 */
 .frst_lne_ctgry{
     width: 795px;
-    height: 30px; 
     float: left;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-    border: 1px solid black;
+	border: 1px solid black;
 }
 /* 탭 기능을 넣을 친구들 개별 박스 */
 .frst_lne_ctgry p{
     width: 200px;
-    height: 50px; 
+    height: 35px; 
     float: left;
+	padding-top: 5px; 
 	cursor: pointer;
 }
 /* 두 번째 탭 기능을 넣을 친구들 전체 박스 */
 .sec_lne_ctgry{
     width: 795px;
-    height: 28px; 
     float: left;
     border: solid black;
     border-width: 0px 1px 1px 0px;
 }
+
 /* 탭 기능을 넣을 친구들 개별 박스 */
-.sec_lne_ctgry p{
+.secLTab p{
     width: 130.5px;
     height: 28px; 
     float: left;
-    text-align: center;
     cursor: pointer;
-    border:solid black;
+    padding-top: 2px;
+    text-align: center;
+    border: solid black;
     border-width: 0px 0px 0px 1px;
 }
 
@@ -151,136 +156,162 @@ p{
     border-bottom: 1px solid white;
 }
 
-.usual_qna_ttle{
-	width: 795px;
-	text-align: center;
-	border: solid black;
-	border-width: 0px 1px 1px 1px;
+.usual_qna_ttle h3{
+   width: 795px;
+   height: 30px;
+   float: left;
+   padding-top: 5px;
+   text-align: center;
+   border: solid black;
+   border-width: 1px 0px 1px 0px;
 }
 .hotel_qna{
-	width: 795px;
-	border: 0.5px solid black;
-	border-top-width: 0px;
+   width: 795px;
+   float: left;
+   border: 0.5px solid black;
+   border-top-width: 0px;
 }
 .hotel_Q{
-	width: 795px;
-	font-size: 17px;
-	font-weight: bold;
-	border: solid black;
-	border-width: 0px 0px 0.5px 0px;
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0px 0px 0.5px 0px;
 }
 .hotel_A{
-	width: 795px;
+   width: 795px;
+   float: left;
 }
 
 
 /*----------------------문의내역----------------------*/
 /*문의 내역 전체 박스*/
 .my_qna{
-	width: 798px;
-	height: 740px;	
-	float: left;
-	font-size: 14px;
-	margin-top: 10px;
+   width: 798px;
+   height: 740px;   
+   float: left;
+   font-size: 14px;
+   margin-top: 10px;
 }
 /*내 문의 리스트*/
 .my_qna_listB{
-	width: 240px;
-	height: 730px;	
-	float: left;
-	padding-left: 10px;
-	border: 1px solid black;
+   width: 240px;
+   height: 730px;   
+   float: left;
+   padding-left: 10px;
+   border: 1px solid black;
 }
 /*내 문의 리스트 삭제 버튼 박스*/
 .delbox{
-	width: 30px;
-	float: left;
-	margin: 5px 0px 5px 190px;
+   width: 30px;
+   float: left;
+   margin: 5px 0px 5px 190px;
 }
 /*내 문의 리스트 개별박스*/
 .myqnaCkB{
-	width: 240px;
-	float: left;
+   width: 240px;
+   float: left;
 }
 .myqnaCkB label{
-	width: 200px;
-	float: left;
-	font-size: 16px!important;
+   width: 200px;
+   float: left;
+   font-size: 16px!important;
 }
 .myqnaCkB p{
-	width: 60px;	
-	float: left;
-	font-size: 12px;
+   width: 60px;   
+   float: left;
+   font-size: 12px;
 }
 
 
 /*내문의 리스트의 고객 안내 텍스트*/
 .text_box{
-	width: 200px;
-	height: 200px;	
-	float: left;
+   width: 200px;
+   height: 200px;   
+   float: left;
 }
 /*qna_dtail_box(문의 내역 클릭하면 자세하게 보이는 애들)*/
 .qna_dtail_box{
-	width: 540px;
-	height: 730px;	
-	float: left;
-	border: solid black;
-	border-width: 1px 1px 1px 0px;
+   width: 540px;
+   height: 730px;   
+   float: left;
+   border: solid black;
+   border-width: 1px 1px 1px 0px;
 }
 
 .qna_dtail_box_band{
-	width: 440px;
-	height: 430px;	
-	float: left;
-	font-size: 16px;
-	margin: 100px 0px 0px 50px;
+   width: 440px;
+   height: 430px;   
+   float: left;
+   font-size: 16px;
+   margin: 100px 0px 0px 50px;
 }
 
 .myquestion{
-	width: 435px;
-	height: 220px;	
-	float: left;
-	padding: 5px 0px 5px 5px;
+   width: 435px;
+   height: 220px;   
+   float: left;
+   padding: 5px 0px 5px 5px;
 }
 .answer_box{
-	width: 435px;
-	float: left;
-	background-color: rgb(243, 213, 227, 0.5);
-	margin-bottom: 20px;
+   width: 435px;
+   float: left;
+   background-color: rgb(243, 213, 227, 0.5);
+   margin-bottom: 20px;
 }
 
 .qna_dtail_box h4{
-	width: 435px;
-	float: left;
-	margin-bottom: 20px;
+   width: 435px;
+   float: left;
+   margin-bottom: 20px;
 }
 
 .qna_dtail_box p{
-	width: 435px;
-	float: left;
-	background-color: rgb(243, 213, 227, 0.5);
-	margin-bottom: 20px;
+   width: 435px;
+   float: left;
+   background-color: rgb(243, 213, 227, 0.5);
+   margin-bottom: 20px;
 }
 
 .go_write_btn{
-	width: 180px;
-	height: 40px;
-	float: right;
+   width: 180px;
+   height: 40px;
+   float: right;
 }
 
 
 /*----------------------문의내역----------------------*/
 
 /*--------------------- 폼 박스---------------------- */
-.qna_info{
+/*문의하기 탭 클릭시 보여지는 전체 박스*/
+.write{
 	width: 795px;
-	height: 585px;
+	float: left;
 	font-size: 20px;
 	font-weight: bold;
 	border: 1px solid rgb(249, 187, 187, 0.6);
 	background-color: rgb(243, 213, 227, 0.5);
-/* 	border-width: 0px 0px 0px 0px; */
+}
+/*고객에게 양해 구하는 텍스트 전체박스*/
+.qna_wrte_txt{
+	width: 795px;
+	float: left;
+	padding: 10px 0px 10px 30px; 
+}
+/*위 클래스에 간격주고 싶어서 패딩*/
+.qna_wrte_txt h5,.qna_wrte_txt h6{
+	padding: 10px 0px 10px 5px; 
+}
+.qna_info{
+	width: 795px;
+	float: left;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border: 1px solid rgb(249, 187, 187, 0.6);
+	background-color: rgb(243, 213, 227, 0.5);
+/*	 border-width: 0px 0px 0px 0px; */
 }
 /* 폼 스타일 */
 .qna_selBox{
@@ -288,12 +319,10 @@ p{
 	height: 36px;
 }
 
-form[name=qna_info]{
-}
 .qna_ttl_box{
 	width: 510px;
 	height: 30px;
-	}
+}
 .qna_cntt_box{
 	width: 720px;
 	height: 370px;
@@ -307,6 +336,8 @@ form[name=qna_info]{
 	width: 80px;
 	height: 35px;
 }
+
+/*---------마진 클래스들.-----------*/
 .margin_t_lft{
 	margin-top: 15px;
 	margin-left: 30px;
@@ -314,7 +345,16 @@ form[name=qna_info]{
 
 .margin_lft60{
 	margin-top: 15px;
-	margin-left: 350px;
+	margin-left: 300px;
+}
+.padding_left5{
+	padding-left: 5px;
+}
+.padding_top10{
+	padding_top: 10px;
+}
+.padding_top20{
+	padding_top: 20px;
 }
 .back_col{
 	color: white;
