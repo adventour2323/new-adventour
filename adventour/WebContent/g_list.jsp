@@ -11,6 +11,7 @@
 		<meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="./css/tour_g_list.css">  
         <script src="./js/jquery-3.6.0.min.js"></script>
+        <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
         
         <title>가이드 목록</title>
 </head>
