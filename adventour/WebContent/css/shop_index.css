@@ -58,7 +58,6 @@ p{
 .mImg div{
     width: 1000px;
     height: 180px;
-    font-size: 25px;
     text-align: center;
     position: absolute;
     padding: 300px 0px 10px 450px;
@@ -68,10 +67,11 @@ p{
     width: 100px;
     height: 39.4px;
     padding-top: 1px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
     color: rgb(57, 100, 155);
-    font-size: 20px;
-    font-weight: bold;
 }
 /*검색텍스트박스*/
 #mSrchT {

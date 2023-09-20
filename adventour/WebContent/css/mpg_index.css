@@ -8,12 +8,12 @@
 } */
 
 /*메인 전체 박스*/
-.alMainB{
-    width: 1050px;
-    height: 1050px;
-    margin: 50px 425px 0px 440px;
-    border-width: 0px;
-}
+/* .alMainB{ */
+/*     width: 1050px; */
+/*     height: 1050px; */
+/*     margin: 50px 425px 0px 440px; */
+/*     border-width: 0px; */
+/* } */
 /*-------메인페이지 텍스트 박스--------*/
 .mainTB {
     width: 1050px;
