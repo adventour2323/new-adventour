@@ -32,58 +32,56 @@ a,p{
 	color: inherit;
 }
 /*---------------------------헤더-------------------------------------*/
-.header {
-  width: 1903px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  color: rgb(20, 3, 78);
+.header1{
+	width: 1903px;
+	margin: 10px 0px 0px 0px;
+	color: rgb(20, 3, 78);
 }
  /* --------------헤더안 로고 및 홈 메뉴-----------------*/ 
  #logo{
-  margin-top: 10px;
-  margin-left: 400px;   
-}
+	margin-top: 10px;
+	margin-left: 400px;
+ }
 
 .homeli li,.menuli li {
-  float: left;
+	float: left;
 }
 
 .logo {
-  width: 200px;
-  height: 70px;
-  margin: auto;
-  margin-top: 10px;
-  margin-left: 300px;
-  text-align: center;
-  cursor: pointer;
+	width: 200px;
+	height: 70px;
+	margin: auto;
+	margin-top: 10px;
+	margin-left: 300px;
+	text-align: center;
+	cursor: pointer;
 }
 .logo1{
-  width: 300px;
-  height: 80px;
+	width: 300px;
+	height: 80px;
 }
 
 .home {
-  width: 400px;
-  height: 25px;
-  margin-bottom: 55px;
-  margin-right: 270px;
-  float: right;
-  font-size: 14px;
-  font-weight: bolder;
+	width: 400px;
+	height: 25px;
+	margin-bottom: 55px;
+	margin-right: 270px;
+	float: right;
+	font-size: 14px;
+	font-weight: bolder;
 }
 .homeli {
-  margin-top: 10px;
-  width: 400px;
-  height: 25px;
-  float: right;
+	margin-top: 10px;
+	width: 400px;
+	height: 25px;
+	float: right;
 }
 .home11 {
-  width: 40px;
-  height: 25px;
-  margin-right: 10px;
-  text-align: center;
-  float: right;
+	width: 40px;
+	height: 25px;
+	margin-right: 10px;
+	text-align: center;
+	float: right;
 }
 
 .home1 {
@@ -94,48 +92,40 @@ a,p{
 	float: right;
 }
 
-
-.menu {
-  width: 1200px;
-  height: 42px;
-  display: flex;
-  margin-left: 580px;
-  margin-top: -20px;
-
+/*메뉴 네비 전체 박스 */
+.menu{
+	width: 1903px;
+	display: flex;
+	border: solid black;
+	border-width: 1px 0px 1px 0px; 
 }
 
 .menuli {
-  float: left;;
-  font-size: 17px;
-  margin-top: 10px;
-  padding-left: 0px;
-  font-weight: bold;
-  cursor: pointer;
+	width: 1903px;
+	margin-left: 480px;
+}
+	
+/*메뉴 네비 스타일 및 폼.*/
+.menuli a{
+	width: 150px;
+	height: 35px;
+	float: left;
+	text-align: center;
+	font-size: 17px;
+	padding: 15px 0px 5px 0px;
+	margin: 0px 0px 0px 0px;
+	font-weight: bold;
+	cursor: pointer;
+	
 }
 
 .marginlft5{
 	margin-left: 10px;
 }
 
-.menu1,.menu2,.menu3,.menu4, .menu5, .menu6{
-  width: 100px;
-  height: 30px;
-  text-align: center;
-}
-.menuli p{
-  margin-top: 2px;
-}
+/*js 관련 class*/
 .movet,.moveb,.moveh,.moves,.movec,.movem{
-  width: 120px;
-  height: 32px;
-  font-size: 18px;
-  font-weight: bold;
-  color: rgb(20, 3, 78);
-  border-style: solid;
-/*   border-width: 2px 2px 0px 2px; */
-  border-top-left-radius: 15px; 
-  border-top-right-radius: 15px; 
-
+	color: rgb(20, 3, 78);
 }
 
 /*슬라이드 다운메뉴*/
@@ -144,9 +134,10 @@ a,p{
 	z-index:2;
 	width: 1903px;
 	height: 150px;
+	margin: 0px;
 	position: absolute;
-	background-color:rgb(117, 165, 236, 0.8);
-/*   margin-top: -30px; */
+	background-color:rgb(117, 165, 236);
+/*	margin-top: -30px; */
 
 }
 /*마진을 주기 위한 박스*/
@@ -172,9 +163,9 @@ a,p{
 	padding-top: 5px; 
 	font-weight: bold;
 }
-.menuli>button:hover { 
-     color: white;
-     background-color: rgb(20, 3, 78);
+.menuli>a:hover { 
+	color: white;
+	background-color: rgb(20, 3, 78);
 } 
 
 .marginleft20{
