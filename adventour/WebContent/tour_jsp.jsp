@@ -37,7 +37,7 @@
                         	인기 가이드
                     </h1>
                 </div>
-                </div>
+                
                 
              <div class="tab_list">
     <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
@@ -51,23 +51,28 @@
 
     <input id="tab4" type="radio" name="tabs">
     <label class="g_label" for="tab4">이탈리아</label>
-    <div style="float: right; cursor: pointer" onclick="location.href='./g_list.jsp'"> 전체보기 </div>
+    <div style="float: right; cursor: pointer; margin-top: auto;" onclick="location.href='./g_list.jsp'"> 전체보기 </div>
 
     <section id="guide_uk" >
-        <p style="display: flex;">
+<!--  -->
+
+        <p >
         <% 
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("영국") == true) { 
 		%>
-<div class="container" >
-	  <table style="width: 100px;  ">
+<div class="container" style=" margin-left: 5px; float: left; ">
+
+	 <table style="width: 100px; ">
 		  <thead>
 			  <tr>
-				  <th colspan="4"  style="cursor: pointer;" >
+				  <th style="cursor: pointer;" >
 					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
 					  <figure>
-					  <img src=" <%= g.getImg() %> " width='200px' alt='img'>
+					  <%
+					  out.println("<img src='"+g.getImg()+"' width='200px' alt='img'>");
+					  %>
 					  <figcaption>자세히보기</figcaption>
 					  </figure>
 					   </a>
@@ -76,15 +81,17 @@
 		  </thead>
         <tbody >
             <tr>
-                <td style="text-align: center;">
-                <%=g.getName()%>
-                </td>
+                <td><%=g.getName()%></td>
             </tr>
         </tbody>
     </table>
-</div>
+	  
+  </div>
+<% }} %>
         </p>
-        <% }} %>
+        
+
+<!--  -->
     </section>
     
 
@@ -95,10 +102,31 @@
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("프랑스") == true) { 
 		%>
-        <div style=" height: 200px; text-align: center">
-        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'" style="cursor:pointer; display: flex;">
-        <img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
-        </div>
+        <div class="container" style=" margin-left: 5px; float: left; ">
+
+	 <table style="width: 100px; ">
+		  <thead>
+			  <tr>
+				  <th style="cursor: pointer;" >
+					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+					  <figure>
+					  <%
+					  out.println("<img src='"+g.getImg()+"' width='200px' alt='img'>");
+					  %>
+					  <figcaption>자세히보기</figcaption>
+					  </figure>
+					   </a>
+				  </th>
+			  </tr>
+		  </thead>
+        <tbody >
+            <tr>
+                <td><%=g.getName()%></td>
+            </tr>
+        </tbody>
+    </table>
+	  
+  </div>
         </p>
         <% }} %>
     </section>
@@ -110,9 +138,31 @@
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("스페인") == true) { 
 		%>
-        <div style=" height: 200px; text-align: center">
-        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'"  style="cursor:pointer; display: flex;"><img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
-        </div>
+        <div class="container" style=" margin-left: 5px; float: left; ">
+
+	 <table style="width: 100px; ">
+		  <thead>
+			  <tr>
+				  <th style="cursor: pointer;" >
+					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+					  <figure>
+					  <%
+					  out.println("<img src='"+g.getImg()+"' width='200px' alt='img'>");
+					  %>
+					  <figcaption>자세히보기</figcaption>
+					  </figure>
+					   </a>
+				  </th>
+			  </tr>
+		  </thead>
+        <tbody >
+            <tr>
+                <td><%=g.getName()%></td>
+            </tr>
+        </tbody>
+    </table>
+	  
+  </div>
         </p>
         <% }} %>
     </section>
@@ -124,16 +174,39 @@
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("이탈리아") == true) { 
 		%>
-        <div style=" height: 200px; text-align: center">
-        <div onclick="location.href='./g_info.jsp?g_id=<%=g.getG_id() %>'"  style="cursor:pointer; display: flex;"><img alt="가이드1" src="<%= g.getImg() %>" style="margin-right: 10px; height: 200px; display: flex;"><br><%= g.getName() %></div>
-        </div>
+        <div class="container" style=" margin-left: 5px; float: left; ">
+
+	 <table style="width: 100px; ">
+		  <thead>
+			  <tr>
+				  <th style="cursor: pointer;" >
+					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+					  <figure>
+					  <%
+					  out.println("<img src='"+g.getImg()+"' width='200px' alt='img'>");
+					  %>
+					  <figcaption>자세히보기</figcaption>
+					  </figure>
+					   </a>
+				  </th>
+			  </tr>
+		  </thead>
+        <tbody >
+            <tr>
+                <td><%=g.getName()%></td>
+            </tr>
+        </tbody>
+    </table>
+	  
+  </div>
         </p>
         <% }} %>
     </section>
 
 </div>
+</div>
 
-            <div style="margin-top: 50px;">
+            <div style="margin-top: 200px;">
 
                
                     <div style="display: flex;">
@@ -156,6 +229,7 @@
                                 </div>
                                 
                                 <div class="mySlides fade" style="display: none;">
+                                
                                     <img alt="구엘공원" src="./image/tour/guel_.jpg" class="slideshow-image">
                                 </div>
                                 
@@ -170,9 +244,9 @@
                         </div>
         
                         <div class="Slidesbackground" style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
-                            <!-- <h1>가우디 투어</h1>
+                            <h1>가우디 투어</h1>
                             <h3>최고 효율의 동선으로 최고의 만족!</h3>
-                            <h2>10년 경력의 베테랑 가이드와 함께하는 가우디 투어</h2>     -->
+                            <h2>10년 경력의 베테랑 가이드와 함께하는 가우디 투어</h2>    
                            <div name="test">
                            <div class="slidetext fade">
                             <h1>루브르 박물관 가이드!</h1>
