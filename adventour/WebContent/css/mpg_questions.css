@@ -34,6 +34,15 @@ p,h1,h2,h3,h4,h5,h6{
     padding: 0px;
 }
 
+
+/*-- 문의 사항의 시작! 제일 큰 박스----*/
+
+.frst_lne_ctgry div:hover{
+	color: white;
+	background-color: rgb(255 189 189);
+}
+
+/*문의사항 페이지를 모두 감싸는 박스*/
 .questionbox{
     margin: 0px  0px 0px 50px;
     width: 799px;
@@ -52,24 +61,16 @@ p,h1,h2,h3,h4,h5,h6{
     margin: 0px;
     padding: 5px 0px 0px 3px;
     border-width: 0px;
-    background-color:	rgb(171 152 245);
-}
-/* 문의 컨텐츠 전체 박스. */
-.qna_cntnt_box{
-    width: 795px;
-    float: left;
-    margin-left: 30px;
-    padding: 0px;
-    border-width: 0px;
-    /* box-shadow: 5px 5px 5px gray; */
+    background-color: rgb(171 152 245);
 }
 /* 첫 번째 탭 기능을 넣을 친구들 전체 박스 */
 .frst_lne_ctgry{
-    width: 795px;
+    width: 700px;
     float: left;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    padding-left:93px;
 	border: 1px solid black;
 }
 /* 탭 기능을 넣을 친구들 개별 박스 */
@@ -100,11 +101,7 @@ p,h1,h2,h3,h4,h5,h6{
     border-width: 0px 0px 0px 1px;
 }
 
-.sec_lne_ctgry_hide{
-    background-color: white;
-    border-bottom: 1px solid white;
-}
-
+/*--------------자주하는 qna 시작----------------*/
 .usual_qna_ttle h3{
    width: 795px;
    height: 30px;
@@ -112,29 +109,163 @@ p,h1,h2,h3,h4,h5,h6{
    padding-top: 5px;
    text-align: center;
    border: solid black;
-   border-width: 1px 0px 1px 0px;
+   border-width: 1px 0px 0px 1px;
 }
-.hotel_qna{
+/*---------------------------------투어-------------------------------------*/
+.t_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
+
+.t_qna{
    width: 795px;
    float: left;
-   border: 0.5px solid black;
-   border-top-width: 0px;
 }
-.hotel_Q{
+.t_Q{
    width: 795px;
    float: left;
    font-size: 17px;
    font-weight: bold;
    padding: 5px 0px 5px 5px;
    border: solid black;
-   border-width: 0px 0px 0.5px 0px;
+   border-width: 0.5px 0px 0.5px 0px;
 }
-.hotel_A{
+.t_A{
    width: 795px;
    float: left;
 }
 
+/*---------------------------------버스-------------------------------------*/
+.b_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
 
+.b_qna{
+   width: 795px;
+   float: left;
+}
+.b_Q{
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0.5px 0px 0.5px 0px;
+}
+.b_A{
+   width: 795px;
+   float: left;
+}
+
+/*---------------------------------호텔-------------------------------------*/
+.h_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
+
+.h_qna{
+   width: 795px;
+   float: left;
+}
+.h_Q{
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0.5px 0px 0.5px 0px;
+}
+.h_A{
+   width: 795px;
+   float: left;
+}
+
+/*---------------------------------쇼핑-------------------------------------*/
+.s_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
+
+.s_qna{
+   width: 795px;
+   float: left;
+}
+.s_Q{
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0.5px 0px 0.5px 0px;
+}
+.s_A{
+   width: 795px;
+   float: left;
+}
+
+/*---------------------------------주문/결제-------------------------------------*/
+.oP_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
+
+.oP_qna{
+   width: 795px;
+   float: left;
+}
+.oP_Q{
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0.5px 0px 0.5px 0px;
+}
+.oP_A{
+   width: 795px;
+   float: left;
+}
+
+/*---------------------------------회원서비스-------------------------------------*/
+.cs_qna_all{
+	width: 795px;
+	float: left;
+	border: solid black;
+	border-width: 0px 0px 0px 1px;
+}
+
+.cs_qna{
+   width: 795px;
+   float: left;
+}
+.cs_Q{
+   width: 795px;
+   float: left;
+   font-size: 17px;
+   font-weight: bold;
+   padding: 5px 0px 5px 5px;
+   border: solid black;
+   border-width: 0.5px 0px 0.5px 0px;
+}
+.cs_A{
+   width: 795px;
+   float: left;
+}
 /*----------------------문의내역----------------------*/
 /*문의 내역 전체 박스*/
 .my_qna{
@@ -152,34 +283,42 @@ p,h1,h2,h3,h4,h5,h6{
    padding-left: 10px;
    border: 1px solid black;
 }
-/*내 문의 리스트 삭제 버튼 박스*/
-.delbox{
-   width: 30px;
-   float: left;
-   margin: 5px 0px 5px 190px;
-}
+
 /*내 문의 리스트 개별박스*/
 .myqnaCkB{
    width: 240px;
    float: left;
+   margin: 15px 0px 0px 10px;
 }
-.myqnaCkB label{
-   width: 200px;
-   float: left;
-   font-size: 16px!important;
+/*디비에 저장된 문의를 담는 틀. */
+ lable{
+	width: 220px;
+	height: 30px;
+	float: left;
+	font-size: 18px!important;
+	font-weight: bold;
 }
+/*답변확인 텍스트 박스*/
 .myqnaCkB p{
-   width: 60px;   
+   width: 200px;   
    float: left;
    font-size: 12px;
 }
 
 
 /*내문의 리스트의 고객 안내 텍스트*/
-.text_box{
-   width: 200px;
-   height: 200px;   
+.text_box h3{
+   width: 220px;
+   height: 60px;   
    float: left;
+   margin: 20px 0px 10px 10px; 
+}
+
+.text_box h5{
+   width: 210px;
+   height: 30px;   
+   float: left;
+   margin: 0px 10px 10px 10px; 
 }
 /*qna_dtail_box(문의 내역 클릭하면 자세하게 보이는 애들)*/
 .qna_dtail_box{
@@ -195,7 +334,7 @@ p,h1,h2,h3,h4,h5,h6{
    height: 430px;   
    float: left;
    font-size: 16px;
-   margin: 100px 0px 0px 50px;
+   margin: 50px 0px 0px 40px;
 }
 
 .myquestion{
@@ -206,9 +345,10 @@ p,h1,h2,h3,h4,h5,h6{
 }
 .answer_box{
    width: 435px;
+   height: 220px;
    float: left;
-   background-color: rgb(243, 213, 227, 0.5);
-   margin-bottom: 20px;
+   padding: 5px 0px 5px 15px;
+   margin: 50px 0px 20px 0px;
 }
 
 .qna_dtail_box h4{
@@ -219,13 +359,14 @@ p,h1,h2,h3,h4,h5,h6{
 
 .qna_dtail_box p{
    width: 435px;
+   height: 100px;
    float: left;
-   background-color: rgb(243, 213, 227, 0.5);
    margin-bottom: 20px;
 }
 
+/*새문의 남기기 버튼*/
 .go_write_btn{
-   width: 180px;
+   width: 170px;
    height: 40px;
    float: right;
 }
@@ -259,7 +400,6 @@ p,h1,h2,h3,h4,h5,h6{
 	font-weight: bold;
 	padding-bottom: 10px;
 	border: 1px solid rgb(249, 187, 187, 0.6);
-	background-color: rgb(243, 213, 227, 0.5);
 /*	 border-width: 0px 0px 0px 0px; */
 }
 /* 폼 스타일 */
@@ -305,12 +445,16 @@ p,h1,h2,h3,h4,h5,h6{
 .padding_top20{
 	padding_top: 20px;
 }
-.back_col{
-	color: white;
+.font{
 	font-size: 20px;
 	font-weight: bold;
+}
+/*배경에 클래스로 스타일을 준다.*/
+.col_style{
+	color: white;
 	border-color: rgb(249 187 187);
 	background-color: rgb(255 189 189);
 }
+.
 /*--------------------- 폼 박스---------------------- */
 /*----------문의 사항의 시작! 제일 큰 박스----------*/

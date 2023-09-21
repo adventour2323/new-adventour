@@ -1,7 +1,7 @@
 create database adventour;
 use adventour;
 
---member Å×ÀÌºí create¹®
+--member í…Œì´ë¸” createë¬¸
 create table member(m_id varchar(20) not null,
 m_pw varchar(20) not null,
 m_lastname varchar(20) not null,
@@ -20,7 +20,7 @@ m_gender varchar(1),
 m_agree varchar(1),
 primary key(m_id));
 
---qnaÅ×ÀÌºí create¹®
+--qnaí…Œì´ë¸” createë¬¸
 create table qna(q_num int AUTO_INCREMENT primary key,
 m_id varchar(20) not null,
 q_title varchar(30) not null,

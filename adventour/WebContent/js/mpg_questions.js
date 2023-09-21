@@ -14,7 +14,7 @@ $(document).ready(function() {
     var secLCtg3 = $('.write').eq(0);//문의하기 클릭하면 보이는 카테고리.
     
     
-//    첫번 째 탭기능 디폴트
+    //첫번 째 탭기능 디폴트
     secLCtg1.hide();
     secLCtg3.hide();
 

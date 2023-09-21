@@ -189,10 +189,38 @@ margin-left: 20px!important;
 .star_col_red{
     color: tomato;
 }
-
-input[type="radio"]{
-    
+/*라디오 레이블*/
+lable{
+	line-height: 2rem;
+	padding: 0.2em 0.4em;
 }
+
+/*라디오 버튼 디자인 주기*/
+input[type="radio"]{
+	appearance: none;
+	vertical_align: middle;
+	border: max(2px, 0.1em) solid gray;
+	border-radius: 50%;
+	width: 1.25em;
+	height: 1.25em;
+	transition: border 0.5s ease-in-out;
+}
+
+/*체크된 라디오 버튼*/
+[type="radio"]:checked {
+  border: 0.4em solid tomato;
+}
+
+[type="radio"]:focus-visible {
+  outline: max(2px, 0.1em) dotted tomato;
+  outline-offset: max(2px, 0.1em);
+}
+
+[type="radio"]:hover+lable {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
 /* 체크박스 네모 크기 조절 클래스 */
 input[type="checkbox"]{
     width: 25px;
