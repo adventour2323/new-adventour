@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <%@ page import = "adventour.g_list_print" %>
 <%@ page import = "adventour.g_getset" %>
+<%@ page import = "adventour.t_getset" %>
 <%@ page import = "java.util.*" %>
 <html>
 <head>
@@ -206,10 +207,10 @@
 </div>
 </div>
 
-            <div style="margin-top: 200px;">
+            <!--    <div style="margin-top: 200px;">
 
                
-                    <div style="display: flex;">
+                 <div style="display: flex;">
                         
                         <div class="slideshow_container">
                             <div class="Slidesbackground">
@@ -279,21 +280,19 @@
                         </div>
                     </div>
                     
-
-            </div>
+            </div> -->
             
-            
-            <!--  -->
+            <!--  --> 
 
                     <div class="tour_banner">
                         <a href="./tour.html">
                         <div class="tour_banner_img">
-                            <!-- <img src="img/paris_Banner.jpg" alt="투어/관광지 이벤트 이미지"> -->
+                            
                             <!-- <img src="img/DSC05989 - 복사본1.jpg" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
                             <!-- <img src="img/Paris_banner_2.jpg" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
                             <!-- <img src="img/paris-banner_3.png" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
-                            <!-- <img src="img/spain_banner.jpg" style="width: 1100px;" alt="banner img"> -->
-                            <img src="./image/tour/paris_banner_3.jpg" alt="" style="width: 1100px;">
+                             <img src="./image/tour/spain_banner.jpg" style="width: 1100px;" alt="banner img"> 
+                           <img src="./image/tour/paris_banner_3.jpg" alt="" style="width: 1100px;"> 
                             <!-- <img src="img/spain_banner__.png" alt=""> -->
                         </div>
                     </a>
@@ -303,51 +302,80 @@
                         <h3>
                             인기 투어
                         </h3>
+                        <%
+						ArrayList<t_getset> a2 = id.t1();
+						%>
+				<% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("l_ston_tour") == true) { 
+				%>
                         <div class="recommend_city1">
                             <div class="r_c_1_img">
-                                <img src="./image/tour/r_vatican_img.jpg" style="width: 200px; height: 150px;" alt="추천도시 1">
+                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 1">
                             </div>                            
                             <h3 class="rocommend_1_title">
-                                바티칸 박물관 투어
+                                <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩35,000
+                                ₩<%= t.getT_price() %>
                             </div>
                         </div>
+                        <% }} %>
+                        
+                        <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("m_g_tour1") == true) { 
+				%>
                         <div class="recommend_city2">
-                            <div class="r_c_2_img">
-                            <img src="./image/tour/r_stonhenge_img.jpg" style="width: 200px; height: 150px;" alt="추천도시 2">
-                            </div>
-                            <h3 class="recommend_2_title">
-                                스톤헨지 당일치기
+                            <div class="r_c_1_img">
+                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 2">
+                            </div>                            
+                            <h3 class="rocommend_1_title">
+                                <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩55,000
+                                ₩<%= t.getT_price() %>
                             </div>
                         </div>
+                        <% }} %>
+                        
+                        <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("p_l_tour") == true) { 
+				%>
                         <div class="recommend_city3">
-                            <div class="r_C_3_img">
-                            <img src="./image/tour/r_guel_img.jpg" style="width: 200px; height: 150px;" alt="추천도시 3">
-                            </div>
-                            <h3 class="recommend_3_title">
-                                가우디 도보 투어 //입장권 별매
+                            <div class="r_c_1_img">
+                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 3">
+                            </div>                            
+                            <h3 class="rocommend_1_title">
+                                <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩45,000
+                                ₩<%= t.getT_price() %>
                             </div>
                         </div>
+                        <% }} %>
 
+                        <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("r_v_tour") == true) { 
+				%>
                         <div class="recommend_city4">
-                            <div class="r_C_4_img">
-                            <img src="./image/tour/r_louvre_img.jpg" style="width: 200px; height: 150px;" alt="추천도시 4">
-                            </div>
-                            <h3 class="recommend_4_title">
-                                루브르 박물관 가이드
+                            <div class="r_c_1_img">
+                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 4">
+                            </div>                            
+                            <h3 class="rocommend_1_title">
+                                <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩25,000
+                                ₩<%= t.getT_price() %>
                             </div>
                         </div>
+                        <% }} %>
                         
                     </div>
                     

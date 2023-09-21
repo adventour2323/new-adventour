@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <%@ page import = "adventour.g_list_print" %>
 <%@ page import = "adventour.g_getset" %>
+<%@ page import = "adventour.t_getset" %>
 <%@ page import = "java.util.*" %>
 <html>
 <head>
@@ -16,107 +17,41 @@
         <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
 <body>  
-<jsp:useBean id="id" class="adventour.g_list_print">
 
+<jsp:useBean id="id" class="adventour.g_list_print">
 	<header>
 		<!-- header.html import-->
     	<div id="header"></div>
 	</header>
 	
-	
-<%	
-			ArrayList<g_getset> a1 = id.g3();
-	
-			for(g_getset info : a1) {
-			
-			
-			%>
-	
-	
-	
-	
+	<%
+	ArrayList<g_getset> a1 = id.g1();
+	%>
+
 	<!-- 본문  -->
-	<div class="content">
-           
-        
-        	<div id="guide_of_the_month">
-                <div class="gom_ment">
-                    <h1 class="gom_comment" style="text-align: center;">
-                        	인기 가이드
-                    </h1>
-                </div>
-                </div>
-                
-             <div class="tab_list">
-    <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
-    <label class="g_label" for="tab1">영국</label>
 
-    <input id="tab2" type="radio" name="tabs">
-    <label class="g_label" for="tab2">프랑스</label>
+  <%
+						ArrayList<t_getset> a2 = id.t1();
+						%>
+				<% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("l_ston_tour") == true) { 
+				%>
+                        <div class="recommend_city1">
+                            <div class="r_c_1_img">
+                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 1">
+                            </div>                            
+                            <h3 class="rocommend_1_title">
+                                <%= t.getT_name() %>
+                            </h3>
+                            <div class="recommend_price">
+                                ₩<%= t.getT_price() %>
+                            </div>
+                        </div>
+                        <% }} %>
 
-    <input id="tab3" type="radio" name="tabs">
-    <label class="g_label" for="tab3">스페인</label>
-
-    <input id="tab4" type="radio" name="tabs">
-    <label class="g_label" for="tab4">이탈리아</label>
-    
-
-    <section id="guide_uk">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='<%= info.getImg()%>'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br><%= info.getName()%></div>
-        <div  onclick="location.href='<%= info.getImg()%>'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br><%= info.getName()%></div>
-        <div  onclick="location.href='<%= info.getImg()%>'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br><%= info.getName()%></div>
-        <div  onclick="location.href='<%= info.getImg()%>'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br><%= info.getName()%></div>
-        <div  onclick="location.href='<%= info.getImg()%>'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g2.jpg" style="margin-right: 10px;height: 200px"><br><%= info.getName()%></div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
-        </div>
-        </p>
-    </section>
-    
-    <% } %>
-
-    <section id="guide_fr">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g6.jpg" style="margin-right: 10px;height: 200px"><br>프랑스1</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g7.png" style="margin-right: 10px;height: 200px"><br>프랑스2</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g9.png" style="margin-right: 10px;height: 200px"><br>프랑스3</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g8.jpg" style="margin-right: 10px;height: 200px"><br>프랑스4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
-        </div>
-        </p>	
-    </section>
-
-    <section id="guide_es">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='./g_list.jsp'" style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g10.jpg" style="margin-right: 10px;height: 200px"><br>스페인1</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g11.jpg" style="margin-right: 10px;height: 200px"><br>스페인2</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g12.png" style="margin-right: 10px;height: 200px"><br>스페인3</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g13.jpg" style="margin-right: 10px;height: 200px"><br>스페인4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
-        </div>
-        </p>
-    </section>
-
-    <section id="guide_ita">
-        <p>
-        <div style="display: flex; height: 200px; text-align: center">
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드1" src="./image/tour/g14.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아1</div>
-        <div onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드2" src="./image/tour/g15.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아2</div>
-        <div  onclick="location.href='./g_list.jsp'"  style="cursor:pointer;"><img alt="가이드3" src="./image/tour/g16.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아3</div>
-        <div onclick="location.href='./g_list.jsp'" style="cursor:pointer;"><img alt="가이드4" src="./image/tour/g17.jpg" style="margin-right: 10px;height: 200px"><br>이탈리아4</div>
-        <div onclick="location.href='./g_list.jsp'" style="right: 0%; margin-top: 110px; margin-left: 50px; cursor:pointer;"> 전체 보기 </div>
-        </div>
-        </p>
-    </section>
-
-</div>
-
-           
-            </div>
-            
+                    
             
             <!--  -->
 
