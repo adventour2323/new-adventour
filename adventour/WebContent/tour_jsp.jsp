@@ -26,7 +26,9 @@
 	
 	<%
 	ArrayList<g_getset> a1 = id.g1();
+	ArrayList<t_getset> a2 = id.t1();
 	%>
+	
 
 	<!-- 본문  -->
 
@@ -57,13 +59,13 @@
     <section id="guide_uk" >
 <!--  -->
 
-        <p >
+   
         <% 
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("영국") == true) { 
 		%>
-<div class="container" style=" margin-left: 5px; float: left; ">
+<div class="container" style="margin-right: 50px ; float: left; ">
 
 	 <table style="width: 100px; ">
 		  <thead>
@@ -89,7 +91,7 @@
 	  
   </div>
 <% }} %>
-        </p>
+        
         
 
 <!--  -->
@@ -97,13 +99,13 @@
     
 
     <section id="guide_fr">
-        <p>
+        
         <% 
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("프랑스") == true) { 
 		%>
-        <div class="container" style=" margin-left: 5px; float: left; ">
+        <div class="container" style="margin-right: 50px ; float: left; ">
 
 	 <table style="width: 100px; ">
 		  <thead>
@@ -128,18 +130,18 @@
     </table>
 	  
   </div>
-        </p>
+        
         <% }} %>
     </section>
 
     <section id="guide_es">
-       <p>
+       
         <% 
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("스페인") == true) { 
 		%>
-        <div class="container" style=" margin-left: 5px; float: left; ">
+        <div class="container" style=" margin-right: 50px ; float: left; ">
 
 	 <table style="width: 100px; ">
 		  <thead>
@@ -164,18 +166,18 @@
     </table>
 	  
   </div>
-        </p>
+        
         <% }} %>
     </section>
 
     <section id="guide_ita">
-       <p>
+       
         <% 
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		if(g.getCountry().equals("이탈리아") == true) { 
 		%>
-        <div class="container" style=" margin-left: 5px; float: left; ">
+        <div class="container" style="margin-right: 50px ;  float: left; ">
 
 	 <table style="width: 100px; ">
 		  <thead>
@@ -200,7 +202,7 @@
     </table>
 	  
   </div>
-        </p>
+        
         <% }} %>
     </section>
 
@@ -284,27 +286,66 @@
             
             <!--  --> 
 
-                    <div class="tour_banner">
-                        <a href="./tour.html">
-                        <div class="tour_banner_img">
+                    <div class="tour_banner" style="margin-top: 30px;">
+                       <div class="Slidesbackground" style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
+
                             
-                            <!-- <img src="img/DSC05989 - 복사본1.jpg" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
-                            <!-- <img src="img/Paris_banner_2.jpg" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
-                            <!-- <img src="img/paris-banner_3.png" style="width: 1100px;" alt="투어/관광지 이벤트 이미지"> -->
-                             <img src="./image/tour/spain_banner.jpg" style="width: 1100px;" alt="banner img"> 
-                           <img src="./image/tour/paris_banner_3.jpg" alt="" style="width: 1100px;"> 
-                            <!-- <img src="img/spain_banner__.png" alt=""> -->
-                        </div>
-                    </a>
+               <div name="test">
+                           
+                <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("f_p_tour") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                           
+                <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("l_b_tour1") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="3" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                       		
+				<% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("m_g_tour1") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="2" src="<%= t.getT_img2()%>">                        
+                           </div>
+                           <% }} %>
+                           
+                <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("m_g_tour1") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img2()%>">                        
+                           </div>
+                           <% }} %>
+                           
+              </div>
+
+</div>
                     </div>
 
                     <div class="recommend_city">
                         <h3>
                             인기 투어
                         </h3>
-                        <%
-						ArrayList<t_getset> a2 = id.t1();
-						%>
+                        
 				<% 
 					for ( int i = 0; i < a2.size(); i++ ) {
 						t_getset t = a2.get(i);
@@ -318,7 +359,7 @@
                                 <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩<%= t.getT_price() %>
+                                <%= t.getT_price() %>원~
                             </div>
                         </div>
                         <% }} %>
@@ -336,7 +377,7 @@
                                 <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩<%= t.getT_price() %>
+                                <%= t.getT_price() %>원~
                             </div>
                         </div>
                         <% }} %>
@@ -354,7 +395,7 @@
                                 <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩<%= t.getT_price() %>
+                                <%= t.getT_price() %>원~
                             </div>
                         </div>
                         <% }} %>
@@ -372,7 +413,7 @@
                                 <%= t.getT_name() %>
                             </h3>
                             <div class="recommend_price">
-                                ₩<%= t.getT_price() %>
+                                <%= t.getT_price() %>원~
                             </div>
                         </div>
                         <% }} %>

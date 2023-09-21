@@ -74,7 +74,7 @@ $(document).ready(function() {
 });
 // 
 // 가이드 탭
-$(function() {
+/*$(function() {
   $('ul.guide_region_tab li').click(function() {
     var activeTab = $(this).attr('data-tab');
     $('ul.guide_region_tab li').removeClass('on');
@@ -82,6 +82,6 @@ $(function() {
     $(this).addClass('on');
     $('#' + activeTab).addClass('on');
   })
-});
+});*/
 
 

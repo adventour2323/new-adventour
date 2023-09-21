@@ -30,7 +30,7 @@
 
     <div class="menu">
       <ul class="menuli">
-        <li class="menu1"><a class="movet" href="tour_login.jsp">투어</a> </li>
+        <li class="menu1"><a class="movet" href="tour_jsp.jsp">투어</a> </li>
         <li class="menu2"><a class="moveb" href="bus_login.jsp">버스</a></li>
         <li class="menu3"><a class="moveh" href="hotel_login.jsp">호텔</a></li>
         <li class="menu4"><a class="moves" href="shop_login.jsp">쇼핑</a></li>

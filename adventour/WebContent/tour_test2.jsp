@@ -30,27 +30,66 @@
 
 	<!-- 본문  -->
 
-  <%
-						ArrayList<t_getset> a2 = id.t1();
-						%>
-				<% 
+  	<%
+	ArrayList<t_getset> a2 = id.t1();
+	%>
+				
+<!--  -->
+
+<div class="Slidesbackground" style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
+
+                            
+                           <div name="test">
+                           
+                <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("r_v_tour") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                           
+                           <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("p_l_tour") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                       		
+							 <% 
 					for ( int i = 0; i < a2.size(); i++ ) {
 						t_getset t = a2.get(i);
 					if(t.getT_id().equals("l_ston_tour") == true) { 
 				%>
-                        <div class="recommend_city1">
-                            <div class="r_c_1_img">
-                                <img src="<%= t.getT_img1() %>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 1">
-                            </div>                            
-                            <h3 class="rocommend_1_title">
-                                <%= t.getT_name() %>
-                            </h3>
-                            <div class="recommend_price">
-                                ₩<%= t.getT_price() %>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                           
+                            <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("m_g_tour1") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img1()%>">                        
+                           </div>
+                           <% }} %>
+                            
+                          
+                            
                             </div>
-                        </div>
-                        <% }} %>
 
+</div>
                     
             
             <!--  -->
