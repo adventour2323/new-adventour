@@ -2,9 +2,11 @@ package adventour;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 
 public class C_dbsave {
 	Connection conn = null; //매소드 분리를 위해 전역변수로 
@@ -74,7 +76,7 @@ public class C_dbsave {
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     }
     
-    public ArrayList<C_getset> c_country() throws Exception { 
+    public ArrayList<C_getset> c_country() throws Exception { // 게시판 리스트에 보여주는 매소드
         ArrayList<C_getset> arr = new ArrayList<C_getset>(); //여려개의 객체를 받아서 가지고 오기위해서 
         try {
             connec();
@@ -98,6 +100,34 @@ public class C_dbsave {
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     }
     
-
+    public ArrayList<C_getset> searchByKeyword(String keyword) throws Exception {
+        ArrayList<C_getset> arr = new ArrayList<C_getset>();
+        PreparedStatement pstmt = null; // 새로운 PreparedStatement 변수 선언
+        try {
+            connec();
+            if (conn == null) {
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            }
+            String query = "SELECT * FROM community WHERE c_title LIKE ? OR country LIKE ? OR city LIKE ? ORDER BY c_date DESC;";
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, "%" + keyword + "%"); 
+            pstmt.setString(2, "%" + keyword + "%");
+            pstmt.setString(3, "%" + keyword + "%");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                C_getset obj = new C_getset();
+                obj.setC_num(rs.getString("c_num"));
+                obj.setC_title(rs.getString("c_title"));
+                obj.setM_id(rs.getString("m_id"));
+                obj.setC_date(rs.getString("c_date"));
+                obj.setCountry(rs.getString("country"));
+                obj.setCity(rs.getString("city"));
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr;
+    }
    
 }

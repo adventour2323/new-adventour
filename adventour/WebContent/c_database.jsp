@@ -34,7 +34,7 @@
         %>
         <script>
             alert("게시물이 저장되었습니다");
-            window.location.href = "community_list.jsp"; // 성공 페이지 URL로 대체하세요
+            window.location.href = "community_list2.jsp"; // 성공 페이지 URL
         </script>
         <%
     }

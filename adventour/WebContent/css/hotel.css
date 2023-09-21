@@ -20,10 +20,9 @@ body {
 }
 
 
-.moveh{
-
-  background-color: rgb(20, 3, 78);
-  color: white; /* 흰색으로 변경 */
+  .moveh {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
 }
 
 
