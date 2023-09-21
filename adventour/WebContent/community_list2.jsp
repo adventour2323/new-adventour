@@ -50,7 +50,6 @@
         <div id="searchResultsDiv" class="c_list_div" name="c_list_div">
  
 
-
         <jsp:useBean id="prac" class="adventour.C_dbsave" />
         <%
           int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
