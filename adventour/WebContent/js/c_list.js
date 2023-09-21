@@ -14,33 +14,27 @@ $(document).ready(function() {
 		  $(this).parents('tr').css('background-color', '');
 		});
 
-//검색창기능 
-	  // 검색 버튼 클릭 시 이벤트 핸들러
-    $(".c_schbtn").click(function() {
-        // 검색어를 가져오기
-        var searchKeyword = $(".c_sch").val();
+	// 검색 버튼 클릭 시 AJAX 요청을 보냅니다.
+    $(".c_schbtn").click(function(e) {
+      e.preventDefault(); // 폼의 기본 동작 방지
 
-        // AJAX 요청
-        $.ajax({
-            type: "POST",
-            url: "c_listsearch.jsp", // 검색 결과를 처리하는 JSP 파일 경로
-            data: { keyword: searchKeyword }, // 서버로 보낼 데이터
-            dataType: "html", // HTML을 사용하는 경우
-            success: function(response) {
-                // 검색 결과를 표시할 div 태그 선택
-                var searchResultsDiv = $("#searchResultsDiv");
+      // 입력된 검색어 가져오기
+      var searchText = $(".c_sch").val();
 
-                // 검색 결과 표시
-                searchResultsDiv.html(response);
-            },
-            error: function(error) {
-                // 에러 처리
-                console.error("에러 발생: " + error);
-            }
-        });
+      // AJAX 요청 보내기
+      $.ajax({
+        type: "GET",
+        url: "c_listsearch.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+        data: { c_sch: searchText }, // 검색어를 서버로 전송
+        success: function(data) {
+          // 서버에서 받은 HTML 데이터를 결과 테이블의 tbody에 추가
+          $("#c_list_table tbody").html(data);
+        },
+        error: function() {
+          alert("검색 중 오류가 발생했습니다.");
+        }
+      });
     });
-    
-    
     
 });
 

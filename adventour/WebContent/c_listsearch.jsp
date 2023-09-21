@@ -6,6 +6,12 @@
 <head>
     <meta charset="utf-8">
     <title>검색 결과</title>
+      <link rel="stylesheet" type="text/css" href="css/c_search.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+  <script src="js/c_list.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 </head>
 <body>
     <%
@@ -22,12 +28,12 @@
         %>
         <table>
             <tr>
-                <th>글 번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-                <th>국가</th>
-                <th>도시</th>
+              <th class="c_headnum">글 번호</th>
+          <th class="c_list_title">제목</th>
+          <th class="c_list_writer">작성자</th>
+          <th class="c_list_date">작성일</th>
+          <th class="c_country">국가</th>
+          <th class="c_city">도시</th>
             </tr>
             <%
             for (adventour.C_getset obj : searchResults) {

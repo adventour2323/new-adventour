@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+@color-change{
+	background-color: yellow;
+}
+
+* {
+    font-family: 'Pretendard-Regular', sans-serif;
+    cursor: pointer;
+}
+  body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 1903px;
+    height: 800px;
+  
+  }
+  .movec {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
+}
+
+
+
+  
+ 
+  /*--------------------------게시판 제목--------------------*/
+    .c_list_mtitle{ /*제목 값 설정*/
+    font-size: 22px;
+    font-weight:bold;
+    width: 1050px;
+    height: 65px;
+    margin-top: 50px;
+    margin-left: 425px; 
+    padding-top:15px;
+    text-align:center;
+    background-color:rgb(20, 3, 78);
+    color: #fff;
+  }
+/*-------------------------검색창----------------------------*/
+
+.c_list_sch{ /* 검색창 전체*/
+    width:400px;
+    height:30px;
+	margin-left: 680px; 
+	margin-top:-10px;
+		
+}
+.c_sch{/* 검색에 입력창*/
+    width:250px;
+    height:25px;
+	background-color:#F6F6F6;
+}
+.c_schbtn{/* 검색 버튼*/
+	width:60px;
+    height:33px;
+    background-color:#F6F6F6;
+}
+  /*------------------게시판 전체 div----------------------------------*/
+.c_list_main{
+	width:1050px;
+	height:570px;
+	margin-left:425px;
+	margin-top:-20px;
+}
+
+  /*---------------------------왼쪽 여행지 선택 메뉴-----------------*/
+   
+  .c_city_menu{
+     width: 150px;
+     height: 550px;
+     border: solid 1px;  
+     margin-top: 30px;
+     cosor:pointer;
+     text-align: center;
+  
+  }
+   .c_city_menu h3{
+   padding-top:20px;
+   color:red;
+   animation: blink-effect 2s step-end infinite;
+   }
+   
+    .c_city_menu h4{
+     animation: blink-effect 2s step-end infinite;
+    }
+  /*-----------------------------------게시판 내용 리스트-------*/
+  
+
+table { /* 리스트 테이블 사이즈 설정 */
+  width: 680px;
+  max-height: 600px; /* 최대 높이 설정 */
+  overflow-y: auto; /* 스크롤바 추가되도록 설정 */
+  margin-left: 0px;
+  text-align: center;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 테이블 행의 높이를 고정 */
+.c_list_table tr {
+  height:40px; /* 고정된 높이 */
+}
+
+/* 테이블 헤더 행의 스타일 (선택사항) */
+.c_list_table th {
+  background-color: rgb(117, 165, 236); /* 헤더 배경색 설정 (선택사항) */
+  font-weight: bold; /* 헤더 텍스트 굵게 표시 (선택사항) */
+  height: 30px;
+  border: solid;
+  border-width: 1px 0px 1px 0px;
+}
+
+/* 테이블 데이터 행의 스타일 (선택사항) */
+.c_list_table td {
+  height: 40px;
+  border: solid;
+  border-width: 0px 0px 1px 0px;
+  white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 설정 */
+  text-overflow: ellipsis; /* 긴 텍스트일 경우 생략 부호(...) 표시 */
+  overflow: hidden;
+}
+
+thead {
+  border: solid;
+}
+
+
+tr { /*높이고정*/
+  height: 40px;
+  border: solid;
+  border-width: 0px 0px 1px 0px;
+}
+
+.c_headnum {
+  width: 80px;
+}
+.c_list_title {
+  width: 330px;
+}
+.c_list_writer {
+  width: 150px;
+}
+.c_list_date {
+  width: 150px;
+}
+.c_country {
+  width: 80px;
+}
+.c_city {
+  width: 80px;
+}
+
+.pagination {
+  width: 1050px;
+  height: 30px;
+  margin-left: 425px;
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+.c_writebtn{
+	 width: 60px;
+	  height: 30px;
+      float:right;
+	 margin-right: 0px;
+}
+.c_writebtn:hover{
+	background-color: yellow;
+}
+
