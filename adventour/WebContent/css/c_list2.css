@@ -34,23 +34,40 @@
     width: 1050px;
     height: 65px;
     margin-top: 50px;
-    margin-left: 400px; 
+    margin-left: 425px; 
     padding-top:15px;
     text-align:center;
     background-color:rgb(20, 3, 78);
     color: #fff;
-
-  
   }
+/*-------------------------검색창----------------------------*/
 
+.c_list_sch{ /* 검색창 전체*/
+    width:400px;
+    height:30px;
+	margin-left: 1160px; 
+	margin-top:30px;
+	
+	
+}
+.c_sch{/* 검색에 입력창*/
+    width:250px;
+    height:30px;
+	
+}
+.c_schbtn{/* 검색 버튼*/
+	width:50px;
+    height:30px;
+}
   /*------------------게시판 전체 div----------------------------------*/
 .c_list_main{
 	width:1050px;
 	height:800px;
-	margin-left:400px;
-	 margin-top:0px;
+	margin-left:425px;
+	margin-top:0px;
 
 }
+
   /*---------------------------왼쪽 여행지 선택 메뉴-----------------*/
    
   .c_city_menu{
@@ -68,7 +85,7 @@
     width: 900px;
     height: 800px;
     margin-left: 150px;
-    margin-top: -605px;
+    margin-top: -560px;
   }
 
   .c_list_table{ // 리스트 사이즈 설정
@@ -86,7 +103,11 @@
   }
   th{
    border:  solid ;
-   border-width: 0px 1px 0px 0px ;
+   border-width: 1px 0px 1px 0px ;
+  }
+   td{
+   border:  solid ;
+   border-width: 0px 0px 1px 0px ;
   }
   tr.highlighted {
       background-color: yellow; /* 마우스를 올렸을 때의 배경색 */
@@ -96,7 +117,7 @@
   border:  solid ;
   border-width: 0px 0px 1px 0px ;
   
-  }
+  } 
 
   .c_headnum{
     width: 80px;

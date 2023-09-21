@@ -24,6 +24,10 @@
    <div class="c_list_mtitle">
      <h3>  여행일정 공유 게시판</h3> 
   </div>
+  <div class="c_list_sch">
+     <input type="text" class="c_sch" name="c_sch" placeholder="검색어를 입력하세요.">
+     <input type="button" class="c_schbtn" name="c_sch" value="검색">
+  </div>
 
 <div class="c_list_main">
 
@@ -41,7 +45,7 @@
       <th class="c_headnum">글 번호</th>
       <th class="c_list_title">제목</th>
       <th class="c_list_writer">작성자</th>
-      <th class="c_list_date">작성일</th>
+      <th class="c_list_date">작성일</th> 
       <th class="c_country">국가</th>
       <th class="c_city">도시</th>
     </tr>
@@ -87,6 +91,8 @@
   </div>
 </div>
 </div>
+
+
   <footer>
 <jsp:include page="./footer.html"></jsp:include>
 </footer><!---->

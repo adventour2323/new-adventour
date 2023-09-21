@@ -26,7 +26,7 @@ $(document).ready(function() {
   $('.moves').on('mouseenter click', function() {
     $(this).css('color', 'white');
     $(this).css('background-color', 'rgb(20, 3, 78)');
-  
+   
   });
 
   $('.moves').on('mouseleave', function() {
@@ -123,6 +123,53 @@ $('tr').hover(
           $(this).removeClass('highlighted'); // 마우스를 떼면 클래스 제거
         }
       );
+
+//검색창기능 
+//검색 버튼 클릭 시 이벤트 핸들러
+$(".c_schbtn").click(function() {
+  // 검색어를 가져오기
+  var searchKeyword = $(".c_sch").val();
+
+  // AJAX 요청
+  $.ajax({
+    type: "POST", // 또는 "GET" 요청 방식을 선택하세요.
+    url: "검색을 처리하는 서버쪽 URL을 입력하세요",
+    data: { keyword: searchKeyword }, // 서버로 보낼 데이터
+    dataType: "json", // 응답 데이터 타입 (JSON을 사용하는 경우)
+    success: function(response) {
+      // 검색 결과를 처리하는 함수 호출
+      handleSearchResults(response);
+    },
+    error: function(error) {
+      // 에러 처리
+      console.error("에러 발생: " + error);
+    }
+  });
+});
+
+// 검색 결과를 처리하는 함수
+function handleSearchResults(results) {
+  // 결과를 표시할 HTML 요소 선택
+  var cListTable = $("#c_list_table");
+
+  // 테이블 초기화
+  cListTable.empty();
+
+  // 결과 반복해서 테이블에 추가
+  for (var i = 0; i < results.length; i++) {
+    var result = results[i];
+    var row = "<tr>" +
+              "<td>" + result.c_num + "</td>" +
+              "<td class='c_list_title1'>" + result.c_title + "</td>" +
+              "<td>" + result.m_id + "</td>" +
+              "<td>" + result.c_date + "</td>" +
+              "<td>" + result.country + "</td>" +
+              "<td>" + result.city + "</td>" +
+              "</tr>";
+
+    cListTable.append(row);
+  }
+}
 
 
 
