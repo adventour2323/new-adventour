@@ -20,24 +20,70 @@
   	<header>
     	 <jsp:include page="header.html"></jsp:include>
 	</header>
-	
-        
-      <div class="content" style="padding: 100px;  border: solid; " >
-        <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">
-        
- 		<jsp:useBean id="id" class="adventour.g_list_print">
+	<jsp:useBean id="id" class="adventour.g_list_print">
 		<%	
 			ArrayList<g_getset> a1 = id.g1();
 		%>
-		<h1 style='text-align: center;'>가이드 리스트</h1>
+        
+      <div class="content" style="padding: 100px;  border: solid; " >
+      <div> <!-- 국가  -->
+      <table style="text-align: left;">
+      
+      <th>
+      <h3>국가</h3>
+      </th>
+      
+      <tr>
+      <td>
+      <input type="checkbox" name="전체">전체
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <input type="checkbox" name="영국">영국
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <input type="checkbox" name="프랑스">프랑스
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <input type="checkbox" name="스페인">스페인
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <input type="checkbox" name="이탈리아">이탈리아
+      </td>
+      </tr>
+      
+      
+      <tr>
+      <label>
+      <input type="checkbox" name="일반">일반
+      </label>
+      </tr>
+      
+      </table>
+      </div>
+      
+      
+        <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">
+		<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
 		<!--  -->
 		
-		<div style="display: flex;">
+		<div style="display: flex;  ">
 		<% 
 		for ( int i = 0; i < 4; i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: 5px; ">
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
 	  <table style="width: 100px; border-style: solid;">
 		  <thead>
 			  <tr>
@@ -65,7 +111,7 @@
             <tr>
                 <td><%=g.getName()%></td>
                 <td><%=g.getCountry() %></td>
-                <td><%= g.getCity() %></td>
+                <td><%=g.getCity() %></td>
                 <td><%=g.getTheme() %></td>
             </tr>
         </tbody>
@@ -80,7 +126,7 @@
 		for ( int i = 4; i < 8; i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: 5px; ">
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
 	  <table style="width: 100px; border-style: solid;">
 		  <thead>
 			  <tr>
@@ -123,7 +169,7 @@
 		for ( int i = 8; i < 12; i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: 5px; ">
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
 	  <table style="width: 100px; border-style: solid;">
 		  <thead>
 			  <tr>
@@ -166,7 +212,7 @@
 		for ( int i = 12; i < 16; i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: 5px; ">
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
 	  <table style="width: 100px; border-style: solid;">
 		  <thead>
 			  <tr>
@@ -206,11 +252,12 @@
   
 		
 	
-			</jsp:useBean>
+			
 
 			</div>
 		</div>
-
+		
+</jsp:useBean>
 		<footer>
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>

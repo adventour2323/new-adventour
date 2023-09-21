@@ -125,9 +125,9 @@ a,p{
 }
 
 /*js 관련 class*/
-.movet,.moveb,.moveh,.moves,.movec,.movem{
+/*.movet,.moveb,.moveh,.moves,.movec,.movem{ 해당 페이지 접속시 색 변화업게 하려고 수정종
 	color: rgb(20, 3, 78);
-}
+}*/
 
 /*슬라이드 다운메뉴*/
 /*top 슬라이드메뉴*/
@@ -164,10 +164,6 @@ a,p{
 	padding-top: 5px; 
 	font-weight: bold;
 }
-.menuli>a:hover { 
-	color: white;
-	background-color: rgb(20, 3, 78);
-} 
 
 .marginleft20{
 	margin-left: 20px;
