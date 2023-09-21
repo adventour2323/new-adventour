@@ -9,7 +9,10 @@
     opacity: 0;
   }
 }
-
+ 
+@color-change{
+	background-color: yellow;
+}
 
 * {
     font-family: 'Pretendard-Regular', sans-serif;
@@ -140,9 +143,7 @@
 thead {
   border: solid;
 }
-tr.highlighted {
-  background-color: yellow; /* 마우스를 올렸을 때의 배경색 */
-}
+
 
 tr { /*높이고정*/
   height: 40px;
@@ -182,5 +183,8 @@ tr { /*높이고정*/
 	  height: 30px;
       float:right;
 	 margin-right: 0px;
+}
+.c_writebtn:hover{
+	background-color: yellow;
 }
 

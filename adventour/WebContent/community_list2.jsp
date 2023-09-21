@@ -19,15 +19,15 @@
 <body>
 
   <jsp:include page="./header.html"></jsp:include>
-
+<form class="c_listform" name="c_listform" action="c_listsearch.jsp"> <!-- 검색창 사용을 위해 사용 -->
   <div class="c_list_mtitle">
     <h3>여행일정 공유 게시판</h3>
      <div class="c_list_sch">
     <input type="text" class="c_sch" name="c_sch" placeholder="검색어를 입력하세요.">
-    <input type="button" class="c_schbtn" name="c_sch" value="검색">
+    <input type="submit" class="c_schbtn" name="c_sch" value="검색">
   </div>
   </div>
- 
+ </form>
   <div class="c_list_main">
 
     <div class="c_city_menu">
@@ -47,6 +47,9 @@
           <th class="c_country">국가</th>
           <th class="c_city">도시</th>
         </tr>
+        <div id="searchResultsDiv" class="c_list_div" name="c_list_div">
+ 
+
 
         <jsp:useBean id="prac" class="adventour.C_dbsave" />
         <%
@@ -109,6 +112,7 @@
         <%
           }
         %>
+        </div>
       </table>    
     </div>
   </div>
