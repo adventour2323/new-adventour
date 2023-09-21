@@ -5,6 +5,7 @@ $(document).ready(function() {
     $("#mpg_nvbox").load("mpg_nvbox.html");
     var sndBtn = document.getElementsByName("sndBtn")[0];//문의하기 보내기 버튼
     
+    
     //첫번 째 탭기능 변수 선언
     var frstLtab1 = $('.frstLTab p').eq(0);/*문의 내역*/
     var frstLtab2 = $('.frstLTab p').eq(1);/*자주 묻는 질문*/
