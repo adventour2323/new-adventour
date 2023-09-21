@@ -22,8 +22,15 @@ public class t_getset {
 	String t_img1;
 	String t_img2;
 	String t_img3;
+	String t_logo;
 	
 	
+	public String getT_logo() {
+		return t_logo;
+	}
+	public void setT_logo(String t_logo) {
+		this.t_logo = t_logo;
+	}
 	public String getT_info() {
 		return t_info;
 	}

@@ -162,7 +162,7 @@ public class g_list_print {
 			con();
 
 		
-		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3 from tour;");
+		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour;");
 		
 
 		while(rs.next()) {
@@ -210,6 +210,7 @@ public class g_list_print {
 			table.setT_img1(rs.getString("t_img1"));
 			table.setT_img2(rs.getString("t_img2"));
 			table.setT_img3(rs.getString("t_img3"));
+			table.setT_logo(rs.getString("t_logo1"));
 			arr.add(table);
 		}
 		
