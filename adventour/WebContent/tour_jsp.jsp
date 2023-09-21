@@ -313,6 +313,17 @@
                             <img alt="3" src="<%= t.getT_img1()%>">                        
                            </div>
                            <% }} %>
+                           
+                           <% 
+					for ( int i = 0; i < a2.size(); i++ ) {
+						t_getset t = a2.get(i);
+					if(t.getT_id().equals("r_v_tour") == true) { 
+				%>
+                           
+                           <div class="slidetext fade">
+                            <img alt="" src="<%= t.getT_img2()%>">                        
+                           </div>
+                           <% }} %>
                        		
 				<% 
 					for ( int i = 0; i < a2.size(); i++ ) {
@@ -325,16 +336,7 @@
                            </div>
                            <% }} %>
                            
-                <% 
-					for ( int i = 0; i < a2.size(); i++ ) {
-						t_getset t = a2.get(i);
-					if(t.getT_id().equals("m_g_tour1") == true) { 
-				%>
-                           
-                           <div class="slidetext fade">
-                            <img alt="" src="<%= t.getT_img2()%>">                        
-                           </div>
-                           <% }} %>
+                
                            
               </div>
 
