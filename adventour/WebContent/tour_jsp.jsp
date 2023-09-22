@@ -349,7 +349,7 @@
 			
 			
 			<div class="recommend_city" style="border: solid;">
-				
+				 
 
 				<%
 					for (int i = 0; i < a2.size(); i++) {
