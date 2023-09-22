@@ -15,6 +15,13 @@
         
         <title>가이드 목록</title>
 </head>
+
+<style>
+table, th, td {
+border: none;
+}
+</style>
+
 <body>
 
   	<header>
@@ -25,53 +32,181 @@
 			ArrayList<g_getset> a1 = id.g1();
 		%>
         
-      <div class="content" style="padding: 100px;  border: solid; " >
-      <div> <!-- 국가  -->
-      <table style="text-align: left;">
+      <div class="content" style="padding: 100px;  border: solid; " > <!-- body 전체  -->
       
-      <th>
-      <h3>국가</h3>
-      </th>
+<div style="display: flex; "> <!-- 표 묶음  -->
       
-      <tr>
-      <td>
-      <input type="checkbox" name="전체">전체
-      </td>
-      </tr>
+      <div style="margin-left: auto; margin-right: auto; "> <!-- 국가  -->
+      <table style="border: none;">
+      <thead>
+      	<tr>
+      <th>국가</th>
+    	</tr>
+      </thead>
       
-      <tr>
-      <td>
-      <input type="checkbox" name="영국">영국
-      </td>
-      </tr>
+      <tbody>
       
       <tr>
       <td>
-      <input type="checkbox" name="프랑스">프랑스
-      </td>
-      </tr>
-      
-      <tr>
-      <td>
-      <input type="checkbox" name="스페인">스페인
-      </td>
-      </tr>
-      
-      <tr>
-      <td>
-      <input type="checkbox" name="이탈리아">이탈리아
-      </td>
-      </tr>
-      
-      
-      <tr>
       <label>
-      <input type="checkbox" name="일반">일반
+      <input type="checkbox" name="영국"> 영국
       </label>
+      </td>
       </tr>
+      
+      <tr>
+      <td>
+      <label>
+      <input type="checkbox" name="프랑스"> 프랑스
+      </label>
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <label>
+      <input type="checkbox" name="스페인"> 스페인
+      </label>
+      </td>
+      </tr>
+      
+      <tr>
+      <td>
+      <label>
+      <input type="checkbox" name="이탈리아"> 이탈리아
+      </label>
+      </td>
+      </tr>
+      </tbody>
       
       </table>
       </div>
+      
+      <div style="margin-left: auto; margin-right: auto; margin-bottom: 20px; "> <!-- 도시  -->
+      <table>
+      <thead>
+      <tr>
+      <th style="text-align: center;" colspan="4"> <h3>도시</h3> </th>
+      </tr>
+      </thead>
+      
+      <tbody>
+      <tr style="text-align: center;">
+      <td>
+      <label>
+      	영국
+      </label>
+      </td>
+      <td>
+      <label>
+      	프랑스
+      </label>
+      </td>
+      <td>
+      <label>
+      	스페인
+      </label>
+      </td> 
+      <td>
+      <label>
+      	이탈리아
+      </label>
+      </td>           
+      </tr>
+      
+      <tr> <!-- 1열 -->
+      
+      <td>
+      <label>
+      <input type="checkbox" name="런던"> 런던
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="파리"> 파리
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="마드리드"> 마드리드
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="로마"> 로마
+      </label>
+      </td>
+      
+      </tr>
+      
+      <tr> <!-- 2열  -->
+      
+      <td>
+      <label>
+      <input type="checkbox" name="리버풀"> 리버풀
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="마르세유">마르세유
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="바르셀로나">바르셀로나
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="베네치아">베네치아
+      </label>
+      </td>
+      
+      </tr>
+      
+      <tr> <!-- 3열 -->
+      
+      <td>
+      <label>
+      <input type="checkbox" name="에든버러">에든버러
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="런던">모나코
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="세비야">세비야
+      </label>
+      </td>
+      
+      <td>
+      <label>
+      <input type="checkbox" name="밀라노">밀라노
+      </label>
+      </td>
+      
+      </tr>
+      
+      </tbody>
+      
+      
+      </table>
+      
+      </div>
+      
+      
+      </div> <!-- 표 묶음  -->
       
       
         <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">

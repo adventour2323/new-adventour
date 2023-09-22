@@ -23,8 +23,17 @@ public class t_getset {
 	String t_img2;
 	String t_img3;
 	String t_logo;
+//	
+	String g_name;
+//	
 	
-	
+	public String getG_name() {
+		return g_name;
+	}
+	public void setG_name(String g_name) {
+		this.g_name = g_name;
+	}
+//	
 	public String getT_logo() {
 		return t_logo;
 	}

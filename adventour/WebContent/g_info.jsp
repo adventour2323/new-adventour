@@ -4,6 +4,7 @@
 
 <%@ page import = "adventour.g_list_print" %>
 <%@ page import = "adventour.g_getset" %>
+<%@ page import = "adventour.t_getset" %>
 <%@ page import = "java.util.*" %>
 
 <html>
@@ -28,23 +29,35 @@
 			String g_id = request.getParameter("g_id");
        		
        		ArrayList<g_getset> a1 = id.g2(g_id);
+       		ArrayList<t_getset> a2 = id.t2(g_id);
 			
 			for(g_getset info : a1) {
 				
 			%>
        		
        		
-        <div style="text-align: center; margin-right: auto; margin-left: auto;">
-            <table border="1" width="100%" height="200" bordercolor="orange" cellspacing="5">
-                <tbody><tr align="center">
+        <div style="text-align: center; margin-right: auto; margin-left: auto; width: 700px;">
+            <table style="width: 700px" >
+                <tbody>
+                <tr align="center">
                   <td rowspan="11" style="width: 200px"><img src="<%=info.getImg()%>" style="height: 200px; width: 200px; border: solid;"></td>
                   <td>이름</td>
-                   
                   <td><%= info.getName()%></td>
                 </tr>
+
+                <tr align="center">
+					<th>성별</th>
+					<td><%=info.getGender()%></td>
+				</tr>
+				
+				<tr align="center">
+					<th>출생년도</th>
+					<td><%=info.getYear()%>년</td>
+				</tr>
+						
           	
                 <tr align="center">
-                  <td>지역</td>
+                  <td>가이드 지역</td>
                   <td><%= info.getCountry()%>, <%=info.getCity() %></td>
                 </tr>
                 <tr align="center">
@@ -60,13 +73,26 @@
                     <td>이메일</td>
                     <td><%= info.getEmail()%></td>
                 </tr>
-                <tr align="center">
-                    <td>모집 중인 투어</td>
-                    <td><a href="./tour.html">대영박물관 투어(클릭시 이동합니다)</a>
-                        <br>
-                        <a href="./tour.html">자연사박물관 투어(클릭시 이동합니다)</a>
-                    </td>
-                </tr>
+                <!--  -->
+                
+               <tr align="center">		
+					<th style="border: none;">모집 중인 투어</th>
+					<td>
+							<% 
+							for ( int i = 0; i < a2.size(); i++ ) {
+								t_getset tn = a2.get(i);
+							%>
+					<a href="./tour.html">
+						<%=tn.getT_name()%> </a><br> <% } %>
+					</td>
+				</tr>
+				
+				<tr align="center">
+					<th>자기소개</th>
+					<td><%=info.getG_introduce()%></td>
+				</tr>		
+                 
+                <!--  -->
               </tbody></table>
         </div>
         <div style="height: 400px; border-style: dotted">

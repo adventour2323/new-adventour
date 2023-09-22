@@ -342,26 +342,33 @@
 
 				</div>
 			</div>
-
-			<div class="recommend_city">
-				<h3>인기 투어</h3>
+	
+	
+			
+				<h1 style="text-align: center;">인기 투어</h1>
+			
+			
+			<div class="recommend_city" style="border: solid;">
+				
 
 				<%
 					for (int i = 0; i < a2.size(); i++) {
 							t_getset t = a2.get(i);
 							if (t.getT_id().equals("l_ston_tour") == true) {
 				%>
-				<div class="recommend_city1">
+				<div class="recommend_city1" style="border: dotted;">
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
 							style="width: 200px; height: 150px; cursor: pointer;"
 							alt="추천도시 1">
 					</div>
+					<div  style="text-overflow: ellipsis;">
 					<h3 class="rocommend_1_title">
 						<%=t.getT_name()%>
 					</h3>
-					<div class="recommend_price">
-						<%=t.getT_price()%>원~
+					</div>
+					<div class="recommend_price" style="float: right; font: red; ">
+					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
 				
@@ -378,17 +385,16 @@
 							style="width: 200px; height: 150px; cursor: pointer;"
 							alt="추천도시 2">
 					</div>
+					<div  style="text-overflow: ellipsis;">
 					<h3 class="rocommend_1_title">
 						<%=t.getT_name()%>
 					</h3>
+					</div>
 					<div class="recommend_price">
 						<%=t.getT_price()%>원~
 					</div>
 				</div>
-				<%
-					}
-						}
-				%>
+				<% }} %>
 
 				<%
 					for (int i = 0; i < a2.size(); i++) {
@@ -401,9 +407,11 @@
 							style="width: 200px; height: 150px; cursor: pointer;"
 							alt="추천도시 3">
 					</div>
+					<div  style="text-overflow: ellipsis;">
 					<h3 class="rocommend_1_title">
 						<%=t.getT_name()%>
 					</h3>
+					</div>
 					<div class="recommend_price">
 						<%=t.getT_price()%>원~
 					</div>
@@ -418,17 +426,17 @@
 							t_getset t = a2.get(i);
 							if (t.getT_id().equals("r_v_tour") == true) {
 				%>
-				<div class="recommend_city4">
+				<div class="recommend_city4"  style="text-overflow: ellipsis;">
 					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>"
-							style="width: 200px; height: 150px; cursor: pointer;"
-							alt="추천도시 4">
+						<img src="<%=t.getT_img1()%>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 4">
 					</div>
+					<div >
 					<h3 class="rocommend_1_title">
 						<%=t.getT_name()%>
 					</h3>
+					</div>
 					<div class="recommend_price">
-						<%=t.getT_price()%>원~
+					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
 				<%

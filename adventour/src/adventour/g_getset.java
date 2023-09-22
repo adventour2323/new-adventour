@@ -8,11 +8,26 @@ public class g_getset {
 	String img;
 	String g_id;
 	String nick;
+
 	String email;
 	String pnum;
 	String gender;
+	String year;
+	String g_introduce;
 	   
-	
+
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public String getG_introduce() {
+		return g_introduce;
+	}
+	public void setG_introduce(String g_introduce) {
+		this.g_introduce = g_introduce;
+	}
 	
 	
 	public String getG_id() {

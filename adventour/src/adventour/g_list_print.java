@@ -91,6 +91,8 @@ public class g_list_print {
 			table.setEmail(rs.getString("g_email"));
 			table.setGender(rs.getString("g_gender"));
 			table.setPnum(rs.getString("g_pnum"));
+			table.setYear(rs.getString("g_birth_y"));
+			table.setG_introduce(rs.getString("g_introduce"));
 					
 			arr2.add(table);
 		}
@@ -221,7 +223,35 @@ public class g_list_print {
 		
 		return arr;
 }
+//
 	
+	public ArrayList<t_getset> t2(String g_id) throws Exception {
+		
+
+		ArrayList<t_getset> arr = new ArrayList<t_getset>();
+
+		try{
+			con();
+
+		
+		ResultSet rs = stmt.executeQuery("select *from tour where g_id = '"+g_id+"';");
+		
+
+		while(rs.next()) {
+			t_getset table = new t_getset();
+			
+			table.setT_name(rs.getString("t_name"));
+			
+			arr.add(table);
+		}
+		
+	} finally {
+		discon();
+
+		}
+		
+		return arr;
+}
 	
 //	
 }
