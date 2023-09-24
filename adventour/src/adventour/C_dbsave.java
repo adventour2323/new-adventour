@@ -76,6 +76,29 @@ public class C_dbsave {
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     }
 
-    
+    public ArrayList<C_getset> c_contshow(String c_num ) throws Exception { 
+        ArrayList<C_getset> arr = new ArrayList<C_getset>(); //여려개의 객체를 받아서 가지고 오기위해서 
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM community where c_num='" + c_num + "';"); //데이터베이스 명령문사용
+            while (rs.next()) { //rs의 값이 없을 때 까지 - 값을 받아온다
+            	C_getset obj = new C_getset();
+                obj.setC_num(rs.getString("c_num"));
+                obj.setC_title(rs.getString("c_title"));
+                obj.setM_id(rs.getString("m_id"));
+                obj.setC_date(rs.getString("c_date"));
+                obj.setCountry(rs.getString("country"));
+                obj.setCity(rs.getString("city"));
+                obj.setC_cont(rs.getString("c_cont"));
+           
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
+    } 
 
 }

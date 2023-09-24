@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
+<%@ page import="adventour.C_getset" %>
 
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,7 @@
         <div id="searchResultsDiv" class="c_list_div" name="c_list_div">
  
 
-        <jsp:useBean id="prac" class="adventour.C_dbsave" />
+        <jsp:useBean id="prac" class="adventour.C_dbsave" /><!-- 데이터베이스 연결하고 처리하는 자바 파일 -->
         <%
           int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
           int thispage = 1; // 현재 페이지 번호
@@ -101,12 +102,12 @@
             }
         %>
         <tr>
-          <td><%= obj.getC_num() %></td>
-          <td class="c_list_title1"><%= obj.getC_title() %></td>
-          <td><%= obj.getM_id() %></td>
-          <td><%= obj.getC_date() %></td>
-          <td><%= countryName %></td>
-          <td><%= cityName %></td>
+          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_num() %></a></td>
+          <td class="c_list_title1"><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_title() %></a></td>
+          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getM_id() %></a></td>
+          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_date() %></a></td>
+          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= countryName %></a></td>
+          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= cityName %></a></td>
         </tr>
         <%
           }
