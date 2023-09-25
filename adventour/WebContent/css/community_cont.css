@@ -25,7 +25,8 @@ body {
 }
 
 /*-------------------------------커뮤니티 입력----------------------------*/
-.c_div{ /*작성 폼전체*/
+
+.c_cont_main{ /*작성 폼전체*/
   border:solid 1px rgb(20, 3, 78);
   width:  1050px;
   height: 1000px;
@@ -92,6 +93,7 @@ body {
   margin-left: 55px;
   margin-top: -15px;
 }
+
 .c_title_div{/*제목*/
  
   width:  1100px;
@@ -110,12 +112,22 @@ body {
   margin-left: 90px;
   margin-top: 10px;
 }  
+.c_country{
+  width:200px;
+  height: 30px;
+}
+.c_city{
+  width:200px;
+  height: 30px;
+  margin-left: 200px;
+  margin-top: -19px;
+}
 
 .c_con_div{ /*글 내용*/
  
   width:  900px;
   height: 400px;
-  margin-left: 90px;
+  margin-left: 0px;
   margin-top: 10px;
 }
 .c_con{/*글내용 작성*/
@@ -148,14 +160,14 @@ body {
   width:  350px;
   height: 20px;
   margin-left: 5px;
-}
+} 
 
 
-.c_btn{
+.c_to_listbtn{
 
   width:  70px;
   height: 20px;
-  margin-left: 500px;
+  margin-left: 450px;
   margin-top: 30px;
 }
 

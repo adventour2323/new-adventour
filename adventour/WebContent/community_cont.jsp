@@ -9,9 +9,9 @@
 <head>
   <meta charset="utf-8">
   <title>게시판 글내용 </title>
-  <link rel="stylesheet" type="text/css" href="css/community.css">
+  <link rel="stylesheet" type="text/css" href="css/community_cont.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/community.js"></script>
+  <script src="js/community_cont.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 </head>
@@ -61,8 +61,51 @@
     </div><!--c_title_div-->
 
     <div class="c_city_div" name="c_city_div">
-      <div class="c_country" name="c_country"><%= obj.getCountry() %></div>
-      <div class="c_city" name="c_city"><%= obj.getCity() %></div>
+      <div class="c_country" name="c_country">
+        <% String country = obj.getCountry(); %>
+    <% if ("uk".equals(country)) { %>
+      영국
+    <% } else if ("ity".equals(country)) { %>
+      이탈리아
+    <% } else if ("fra".equals(country)) { %>
+      프랑스
+    <% } else if ("spa".equals(country)) { %>
+      스페인
+    <% } else { %>
+      다른 나라
+    <% } %>
+  
+      <div class="c_city" name="c_city">
+       <% String city = obj.getCity(); %>
+   
+    <% if ("lon".equals(city)) { %>
+          런던
+        <% } else if ("liv".equals(city)) { %>
+          리버풀
+        <% } else if ("eden".equals(city)) { %>
+          에든버러
+        <% } else if ("roma".equals(city)) { %>
+          로마
+        <% } else if ("vene".equals(city)) { %>
+          베네치아
+        <% } else if ("mila".equals(city)) { %>
+          밀라노
+        <% } else if ("paris".equals(city)) { %>
+          파리
+        <% } else if ("mars".equals(city)) { %>
+          마르세유
+        <% } else if ("mona".equals(city)) { %>
+          모나코
+        <% } else if ("mard".equals(city)) { %>
+          마드리드
+        <% } else if ("barc".equals(city)) { %>
+          바르셀로나
+        <% } else if ("sev".equals(city)) { %>
+          세비야
+        <% } else { %>
+          다른 도시
+        <% } %>
+ 
     </div><!--c_city_div-->
 
     <div class="c_con_div" name="c_con_div">
@@ -71,8 +114,8 @@
 
     <div class="c_tolist" name="c_tolist">
       <input type="button" class="c_to_listbtn" name="c_to_listbtn" value="목   록">
-    </div><!--c_btn-->
-  </div><!--c_div-->
+    </div><!--c_to_listbtn-->
+  </div><!--c_cont_main-->
 
   <!-- footer.html import-->
   <div id="footer"></div>
