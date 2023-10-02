@@ -30,4 +30,10 @@ FOREIGN KEY (m_id) REFERENCES member(m_id) ON DELETE CASCADE);
 
 
 
+--확인용 회원가입 insert문
+INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `m_nickname`, `m_postcode`, `m_addr1`, `m_addr2`, `m_pnum1`, `m_pnum2`, `m_email`, `m_birth_y`, `m_birth_m`, `m_birth_d`, `m_gender`, `m_agree`) VALUES ('qwer', 'qwer12', '김', '요요', '요요쓰', '12345', '사울', '강남구', '01012341234', '01012341234', '1234@naver.com', '2000', '01', '01', 'f', 'y');
+INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `m_nickname`, `m_postcode`, `m_addr1`, `m_addr2`, `m_pnum1`, `m_pnum2`, `m_email`, `m_birth_y`, `m_birth_m`, `m_birth_d`, `m_gender`, `m_agree`) VALUES ('asdf', 'asdf12', '김', '야야', '야야쓰', '12345', '경기도', '성남시', '01023452345', '01023452345', '2345@naver.com', '2001', '02', '02', 'f', 'y');
+INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `m_nickname`, `m_postcode`, `m_addr1`, `m_addr2`, `m_pnum1`, `m_pnum2`, `m_email`, `m_birth_y`, `m_birth_m`, `m_birth_d`, `m_gender`, `m_agree`) VALUES ('zxcv', 'zxcv12', '김', '여여', '여여쓰', '12345', '서울', '서초구', '01034563456', '01034563456', '3456@naver.com', '2002', '03', '03', 'f', 'y');
+INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `m_nickname`, `m_postcode`, `m_addr1`, `m_addr2`, `m_pnum1`, `m_pnum2`, `m_email`, `m_birth_y`, `m_birth_m`, `m_birth_d`, `m_gender`, `m_agree`) VALUES ('wert', 'wert12', '김', '아아', '아아쓰', '12345', '경기도', '광주시', '01045674567', '01045674567', '4567@naver.com', '2003', '04', '04', 'f', 'y');
+INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `m_nickname`, `m_postcode`, `m_addr1`, `m_addr2`, `m_pnum1`, `m_pnum2`, `m_email`, `m_birth_y`, `m_birth_m`, `m_birth_d`, `m_gender`, `m_agree`) VALUES ('sdfg', 'sdfg12', '김', '어어', '어어쓰', '12345', '서울', '강북구', '01056785678', '01056785678', '5678@naver.com', '2004', '05', '05', 'f', 'y');
 

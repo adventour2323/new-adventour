@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dbmapper">
+    <select id="select_top10" resultType="getset.H_getset">
+SELECT
+    h_hotel.h_pho
+FROM
+    h_reserve
+INNER JOIN
+    h_room ON h_reserve.h_roomnum = h_room.h_roomnum
+INNER JOIN
+    h_hotel ON h_room.h_name_eng = h_hotel.h_name_eng
+GROUP BY
+    h_hotel.h_pho
+ORDER BY
+    COUNT(h_room.h_name_eng) DESC
+LIMIT 5;
+    </select>
+ 
+
+
+</mapper>

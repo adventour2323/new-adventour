@@ -8,6 +8,11 @@
 * {
   font-family: 'Pretendard-Regular';
 }
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
 
 body {
   margin-top: 0px;
@@ -320,6 +325,19 @@ body {
   margin-left: 100px;
   overflow : hidden;
 }  
+.bsale_title{
+  color:red;
+}
+.bsale_title h2{
+  animation: blink-effect s step-end infinite;
+  color:red;
+}
+.bsale_title h3{
+  animation: blink-effect s step-end infinite;
+  color:red;
+}
+
+}
 .h_retop10{
   width: 1350px;
   height: 350px;

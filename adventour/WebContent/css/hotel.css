@@ -298,12 +298,14 @@ body {
       
     }
 
-   .h_package{
+   .h_package{ 
+    margin-top:40px;
     width: 1600px;
-    height: 500px;
-    
+    height: 450px;
+
    }
    .package1,.package2,.package3,.package4{
+    margin-top:20px;
     width: 250px;
     height: 500px;
     margin-left: 50px;
