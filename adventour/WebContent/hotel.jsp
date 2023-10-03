@@ -78,7 +78,7 @@
              H_getset aaa = list.get(i);
 %>
         <div class="swiper-slide">
-          <img class="top<%= i + 1 %>" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
+          <img class="top<%= i + 1 %>" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" href="<%=aaa.getH_name_eng() %>.hotel?uname=<%=aaa.getH_name_eng() %>"/>
           <p class="top_contry"><%= aaa.getCountry_ko() %> - <%= aaa.getCity_ko() %> </p>
           <p class="top_name"><%= aaa.getH_name_ko() %></p>
         </div>
@@ -105,7 +105,7 @@
     <div class="h_recity">
 
       <h2 class="h_retitle"> 나라별 검색하기</h2>
-        
+
         <div class="h_recityimgs" >
           <div class="ukimg">
             <img class="h_recityimg1" src="image/img/uk.png">
@@ -138,63 +138,32 @@
     <h2> 투어와 함께하는 숙소를 추천해드려요.</h2>
 
     <div class="h_package">
-     
-      <div class="package1">
+                    <% 
+    List<H_getset> p_list = (List<H_getset>) request.getAttribute("p_list"); // null값이라 출력 x
+    if (p_list != null) {
+    	 for (int i = 0; i < 4; i++) {
+             H_getset list_package = list.get(i);
+%>     
+      <div class="package<%= i+1%>">
         <div class="package1_img">
-          <img src="image/img/pack1.jpeg">
+          <img src="image/img/<%= list_package.getP_pho() %>">
         </div>
         <div class="package1_con">
           <ul class="package1_ul">
-             <li class="pack_title">런던 호텔  + 브릿지투어</li>
-             <li class="pack_con1">조명이 가득한 브릿지 투어와</li>
-             <li class="pack_con2">편안한 호텔을 함께 즐겨보세요.</li>
-             <li class="pack_pri">349,000~</li>
+             <li class="pack_title"><%= list_package.getP_name_ko() %></li>
+             <li class="pack_con1"><%= list_package.getP_title1() %></li>
+             <li class="pack_con2"><%= list_package.getP_title2() %></li>
+             <li class="pack_pri"><%= list_package.getP_price() %></li>
           </ul>
         </div>
       </div><!--package1-->
 
-      <div class="package2">
-        <div class="package1_img">
-          <img src="image/img/pack2.jpeg">
-        </div>
-        <div class="package1_con">
-          <ul class="package1_ul">
-            <li class="pack_title">로마 호텔  + 산텔리아 성당투어</li>
-            <li class="pack_con1">로마의 향기가 가득한 투어와</li>
-            <li class="pack_con2">편안한 호텔을 함께 즐겨보세요.</li>
-            <li class="pack_pri">499,000~</li>
-         </ul>
-        </div>
-      </div>
-
-      <div class="package3">
-        <div class="package1_img">
-          <img src="image/img/pack3.jpeg">
-        </div>
-        <div class="package1_con">
-          <ul class="package1_ul">
-            <li class="pack_title">파리 호텔  + 에펠탑 포토투어</li>
-            <li class="pack_con1">야경 맛집 에펠탑에서 인생샷과 </li>
-            <li class="pack_con2">편안한 호텔을 함께 즐겨보세요.</li>
-            <li class="pack_pri">449,000~</li>
-         </ul>
-        </div>
-      </div>
-
-      <div class="package4">
-        <div class="package1_img">
-          <img src="image/img/pack4.jpeg">
-        </div>
-        <div class="package1_con">
-          <ul class="package1_ul">
-            <li class="pack_title">로마 호텔  + 버킹엄투어</li>
-            <li class="pack_con1">뷰맛집! 버킹엄 광장과</li>
-            <li class="pack_con2">편안한 호텔을 함께 즐겨보세요.</li>
-            <li class="pack_pri">349,000~</li>
-         </ul>
-        </div>
-      </div>
-
+<%
+    }
+} else {
+    out.println("null data"); // null값이 들어온 경우 출력되는 데이터
+}
+%>
     </div>
 
 

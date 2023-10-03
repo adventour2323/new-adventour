@@ -26,6 +26,58 @@ public class H_getset {
 	String h_roomtype;
 	String h_roompeo;
 	int h_roompri;
+	
+	String tour_id;
+	String p_name_eng;
+	String p_name_ko;
+	int p_price;
+	String p_title1;
+	String p_title2;
+	String p_pho;
+	
+	
+	public String getTour_id() {
+		return tour_id;
+	}
+	public void setTour_id(String tour_id) {
+		this.tour_id = tour_id;
+	}
+	public String getP_name_eng() {
+		return p_name_eng;
+	}
+	public void setP_name_eng(String p_name_eng) {
+		this.p_name_eng = p_name_eng;
+	}
+	public String getP_name_ko() {
+		return p_name_ko;
+	}
+	public void setP_name_ko(String p_name_ko) {
+		this.p_name_ko = p_name_ko;
+	}
+	public int getP_price() {
+		return p_price;
+	}
+	public void setP_price(int p_price) {
+		this.p_price = p_price;
+	}
+	public String getP_title1() {
+		return p_title1;
+	}
+	public void setP_title1(String p_title1) {
+		this.p_title1 = p_title1;
+	}
+	public String getP_title2() {
+		return p_title2;
+	}
+	public void setP_title2(String p_title2) {
+		this.p_title2 = p_title2;
+	}
+	public String getP_pho() {
+		return p_pho;
+	}
+	public void setP_pho(String p_pho) {
+		this.p_pho = p_pho;
+	}
 	public String getCountry_eng() {
 		return country_eng;
 	}

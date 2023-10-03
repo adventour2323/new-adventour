@@ -141,3 +141,22 @@ INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_use
 INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h1801', '1801', 'sdfg', '2', '220000');
 INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h2001', '2001', 'qwer', '2', '220000');
 
+-----------연습용 호텔 투어 패키지 creatre문
+ CREATE TABLE `adventour`.`packages` (
+    ->   `h_name_eng` VARCHAR(50) NOT NULL,
+    ->   `tour_id` VARCHAR(50) NOT NULL,
+    ->   `p_name_eng` VARCHAR(50) NOT NULL,
+    ->   `p_name_ko` VARCHAR(50) NOT NULL,
+    ->   `p_price` INT NOT NULL,
+    ->   `p_title1` VARCHAR(20) NOT NULL,
+    ->   `p_title2` VARCHAR(20) NOT NULL,
+    ->   `p_pho` VARCHAR(100) NOT NULL,
+    ->   PRIMARY KEY (`p_name_eng`));
+
+INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('parkplaza hotel', 'bridge tour', 'london hotel + bridge tour ', '런던 호텔 + 브릿지 투어', '349000', '조명이 가득한 브릿지투어와', '편안한 호텔을 함께 즐겨보세요.', 'pack1.jpeg');
+INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('hotel celio roma', 'santelia tour', 'roma hotel + santelia tour', '로마 호텔 + 산텔리아 성당투어', '499000', '로마의 향기가 가득한 투어와', '편안한 호텔을 함께 즐겨보세요.', 'pack2.jpeg');
+INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('novotel paris centre tour ', 'photo tour', 'paris hotel + photo tour', '파리호텔 + 에펠탑 포토 투어', '449000', '야경 맛집 에펠탑에서 인생샷과 ', '편안한 호텔을 함께 즐겨보세요.', 'pack3.jpeg');
+INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('hotel celio roma', 'buckingham tour', 'roma hotel + buckingham tour', '로마 호텔 + 버킹엄 투어', '349000', '뷰맛집 ! 버킹엄 광장과', '편안한 호텔을 함께 즐겨보세요.', 'pack4.jpeg');
+
+
+
