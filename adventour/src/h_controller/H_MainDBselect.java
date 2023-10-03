@@ -18,7 +18,7 @@ public class H_MainDBselect implements h_conn_interface { //데이터베이스
     @Override
     public String showdata(HttpServletRequest re, HttpServletResponse rs) throws Exception {
     	H_mainSelect_conn sin_interface = H_mainSelect_conn.instance();
-        List <H_getset> list = sin_interface.c_select();         
+        List <H_getset> list = sin_interface.h_select();         
         re.setAttribute("list", list);         
         return null;
     }       

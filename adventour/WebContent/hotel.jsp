@@ -63,50 +63,25 @@
 
   <div class="content">
 
-  <% 
-    List<H_getset> list = (List<H_getset>) request.getAttribute("list"); // null값이라 출력 x
-    if (list != null) {
-        for (H_getset aaa : list) {
-%>
-
     <div class="h_retop10">
 
     <h2 class="h_retitle"> 추천 인기호텔 TOP10</h2>
 
-    <section class="awards"> <!--이미지스위퍼 -->
-      <div class="inner">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img class="top1" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img  class="top2" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img class="top3" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img  class="top4" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img class="top5" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img  class="top6" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img class="top7" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img  class="top8" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img class="top9" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img  class="top10" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-            </div>
+<section class="awards"> <!--이미지스위퍼 -->
+  <div class="inner">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+            <% 
+    List<H_getset> list = (List<H_getset>) request.getAttribute("list"); // null값이라 출력 x
+    if (list != null) {
+    	 for (int i = 0; i < list.size(); i++) {
+             H_getset aaa = list.get(i);
+%>
+        <div class="swiper-slide">
+          <img class="top<%= i + 1 %>" src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
+          <p class="top_contry"><%= aaa.getCountry_ko() %> - <%= aaa.getCity_ko() %> </p>
+          <p class="top_name"><%= aaa.getH_name_ko() %></p>
+        </div>
 <%
     }
 } else {

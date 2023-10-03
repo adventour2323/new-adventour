@@ -18,10 +18,10 @@ public class H_mainSelect_conn {
 	SqlSessionFactory dbconnect = DB_conn.getSqlSession(); 
 	//데이터베이스를 연결하는 파일을 연결해서 받아온다 = 싱글톤 페턴으로 객체화
 	
-	public List<H_getset> c_select() {
+	public List<H_getset> h_select() {
 	    SqlSession ret_dbconn = dbconnect.openSession();
 	  //리턴타입 확인 후 객체화- openSession = 데이터베이스 명령문을 그대로 집어넣는게 아닌 클래스를 이용하기위해
-	    List<H_getset> list = ret_dbconn.selectList("selecttop10"); 
+	    List<H_getset> list = ret_dbconn.selectList("select_top10"); 
 	    //selectList 스페이스 울러서 확인 한 값
 	  //statement 안에 데이터베이스 명령문 작성해야함 selectList= 파일을 만들어서 연결 할 것(select문에 mapper의 해당문장 id를 받아와야함다 /
 	    ret_dbconn.close();//open을 했으면 닫아줘야함

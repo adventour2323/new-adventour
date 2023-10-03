@@ -5,7 +5,11 @@
 <mapper namespace="dbmapper">
     <select id="select_top10" resultType="getset.H_getset">
 SELECT
-    h_hotel.h_pho
+    h_hotel.h_pho,
+    h_hotel.country_ko,
+    h_hotel.city_ko,
+    h_hotel.h_name_ko,
+    COUNT(h_room.h_name_eng) AS room_count
 FROM
     h_reserve
 INNER JOIN
@@ -13,10 +17,10 @@ INNER JOIN
 INNER JOIN
     h_hotel ON h_room.h_name_eng = h_hotel.h_name_eng
 GROUP BY
-    h_hotel.h_pho
+    h_hotel.h_pho, h_hotel.country_ko, h_hotel.city_ko, h_hotel.h_name_ko
 ORDER BY
-    COUNT(h_room.h_name_eng) DESC
-LIMIT 5;
+    room_count DESC
+LIMIT 10;
     </select>
  
 
