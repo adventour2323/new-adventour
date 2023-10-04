@@ -33,11 +33,7 @@
   <div class="pagename">
     <h1 class="pagename1">HOTEL</h1>
   </div><!--htitle-->
-<%
-     List<H_getset> uklist = (List<H_getset>) request.getAttribute("uklist");
-      if(  uklist != null){
-    		 
-%>
+
 
 
   <div class="schnav"> <!--검색 네비 = sch -->
@@ -99,17 +95,12 @@
 
     </div>
 <%
-
-List<H_getset> uklist = (List<H_getset>) request.getAttribute("uklist");
- if(  uklist != null){
-
-
-for (int i = 0; i < list.size(); i++) {
-    H_getset ukAll = list.get(i);
+List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
+if (list != null) {
+    for (int i = 0; i < list.size(); i++) {
+        H_getset ukAll = list.get(i);
 %>
-   
        <div class="scdform<%= i+1 %>"> <!--티켓정보-->
-
 
          <div class="h_mainpic">
            <img class="h_img1" src="image/hotel/h_image/<%= ukAll.getH_pho() %>" >
@@ -135,14 +126,12 @@ for (int i = 0; i < list.size(); i++) {
           <button class="h_mapbtn" type="button" name="h_mapbtn">지도보기</button>
           </div>
 
-        
-
         </div><!--h_tiinfo-->
 
         <div class="h_priinfo">
 
          <div class="h_prices">
-          <h2 class="h_tiprice"><%= ukAll.getH_roompri() %></h2>
+          <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
           <button class="move_h" name="move_h" >호텔보기</button>
          </div>
 
@@ -164,12 +153,11 @@ for (int i = 0; i < list.size(); i++) {
     </div><!--scdform-->
 
 <%
-}
-}else{
-	System.out.println("null data");
+    }
+} else {
+    System.out.println("null data");
 }
 %>
-
 
 
 

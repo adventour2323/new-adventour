@@ -36,7 +36,15 @@ public class H_getset {
 	String p_pho;
 	int pp_price;
 	
+	int min_h_roompri;
 	
+	
+	public int getMin_h_roompri() {
+		return min_h_roompri;
+	}
+	public void setMin_h_roompri(int min_h_roompri) {
+		this.min_h_roompri = min_h_roompri;
+	}
 	public int getPp_price() {
 		return pp_price;
 	}
