@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="db_mapper">
+
+	<select id="guide_list" resultType="adventour.g_getset">
+		select *from guide; 
+		
+	</select>
+	
+	
+	<select id="tour_list" resultType="adventour.t_getset">
+		select 
+		t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, 
+		format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 
+		from tour;
+		
+	</select>
+	
+	<select id="guide_tourlist" resultType="adventour.t_getset">
+		select *from tour where g_id = '#{g_id}';
+		
+	</select>	
+
+
+
+
+</mapper>

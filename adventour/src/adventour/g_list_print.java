@@ -104,54 +104,51 @@ public class g_list_print {
 		
 		return arr2;
 }
+	// ↓↓ 확인l
 	
+/* public ArrayList<g_getset> g3(String g_country) throws Exception { */ 
 	
-	/* public ArrayList<g_getset> g3(String g_country) throws Exception { */ 
-	
-	public ArrayList<g_getset> g3( ) throws Exception { 
-		 
-		ArrayList<g_getset> arr3 = new ArrayList<g_getset>();
-
-		try{
-			con();
-
-		
+	/*
+	 * public ArrayList<g_getset> g3( ) throws Exception {
+	 * 
+	 * ArrayList<g_getset> arr3 = new ArrayList<g_getset>();
+	 * 
+	 * try{ con();
+	 */
 			
 			/*
 			 * ResultSet rs =
 			 * stmt.executeQuery("select *from guide where g_country ='"+g_country+"';");
 			 */
-			 
 			
-			  ResultSet rs = stmt.executeQuery("select *from guide where g_country ='영국';");
-			 
-		
-
-		while(rs.next()) {
-			g_getset table = new g_getset();
-			
-			table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
-			table.setCountry(rs.getString("g_country"));
-			table.setCity(rs.getString("g_city"));
-			table.setTheme(rs.getString("g_theme"));
-			table.setImg(rs.getString("g_img"));
-			table.setG_id(rs.getString("g_id"));
-			table.setNick(rs.getString("g_nickname"));
-			table.setEmail(rs.getString("g_email"));
-			table.setGender(rs.getString("g_gender"));
-			table.setPnum(rs.getString("g_pnum"));
-					
-			arr3.add(table);
-		}
-		
-	} finally {
-		discon();
-
-		}
-		
-		return arr3;
-}
+	/*
+	 * ResultSet rs =
+	 * stmt.executeQuery("select *from guide where g_country ='영국';");
+	 * 
+	 * 
+	 * 
+	 * while(rs.next()) { g_getset table = new g_getset();
+	 * 
+	 * table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+	 * table.setCountry(rs.getString("g_country"));
+	 * table.setCity(rs.getString("g_city"));
+	 * table.setTheme(rs.getString("g_theme")); table.setImg(rs.getString("g_img"));
+	 * table.setG_id(rs.getString("g_id"));
+	 * table.setNick(rs.getString("g_nickname"));
+	 * table.setEmail(rs.getString("g_email"));
+	 * table.setGender(rs.getString("g_gender"));
+	 * table.setPnum(rs.getString("g_pnum"));
+	 * 
+	 * arr3.add(table); }
+	 * 
+	 * } finally { discon();
+	 * 
+	 * }
+	 * 
+	 * return arr3; }
+	 */
 	
+	//
 	
 // 이 밑으론 투어 관련
 	

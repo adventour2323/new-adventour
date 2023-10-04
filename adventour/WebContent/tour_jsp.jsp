@@ -24,7 +24,7 @@
 
 		<%
 			ArrayList<g_getset> a1 = id.g1();
-				ArrayList<t_getset> a2 = id.t1();
+			ArrayList<t_getset> a2 = id.t1();
 		%>
 
 
@@ -81,11 +81,9 @@
 									</tr>
 								</tbody>
 							</table>
-
 						</div>
 						<%
-							}
-								}
+							}}
 						%>
 
 
@@ -127,8 +125,7 @@
 						</div>
 
 						<%
-							}
-								}
+							}}
 						%>
 					</section>
 
@@ -165,8 +162,7 @@
 						</div>
 
 						<%
-							}
-								}
+							}}
 						%>
 					</section>
 
@@ -203,8 +199,7 @@
 						</div>
 
 						<%
-							}
-								}
+							}}
 						%>
 					</section>
 
