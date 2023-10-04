@@ -16,15 +16,17 @@
 </head>
 <body>
 
-	<jsp:useBean id="id" class="adventour.g_list_print">
+	<%-- <jsp:useBean id="id" class="adventour.g_list_print"> --%>
 		<header>
 			<!-- header.html import-->
 			<div id="header"></div>
 		</header>
 
 		<%
-			ArrayList<g_getset> a1 = id.g1();
-			ArrayList<t_getset> a2 = id.t1();
+		List<g_getset> a1 = (List<g_getset>) request.getAttribute("list");
+		
+			/* ArrayList<g_getset> a1 = id.g1(); */
+			/* ArrayList<t_getset> a2 = id.t1(); */
 		%>
 
 
@@ -282,6 +284,9 @@
             </div> -->
 
 			<!--  -->
+			<!--  -->
+<jsp:useBean id="id" class="adventour.g_list_print">
+			<!--  -->
 
 			<div class="tour_banner" style="margin-top: 30px;">
 				<div class="Slidesbackground"
@@ -292,6 +297,9 @@
 						<!-- 배너 사진 -->
 
 						<%
+						/*  */
+						ArrayList<t_getset> a2 = id.t1();
+						/*  */
 							for (int i = 0; i < a2.size(); i++) {
 									t_getset t = a2.get(i);
 									if (t.getT_id().equals("f_p_tour") == true) {

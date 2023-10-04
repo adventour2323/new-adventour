@@ -10,19 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
+
 public class t_cto extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) 
 			throws ServletException, IOException {
 		
-		t_con_interface t_interface = t_g_db_sel.g_select();
+		/* t_con_interface t_interface = t_g_db_sel.g_select(); */
+		t_con_interface t_interface = null;
 		
-		String sel = rq.getParameter("sel");
+		String opt = rq.getParameter("main");
 				
 		try {
 			
-			if(sel.equals("select") ) {
+			if(opt.equals("main") ) {
+				
 				String g = t_interface.t_interf(rq, rs);
 				RequestDispatcher dispatcher = rq.getRequestDispatcher("tour_jsp.jsp");
 				dispatcher.forward(rq, rs);
@@ -32,5 +36,6 @@ public class t_cto extends HttpServlet {
 		}	
 		
 	}
+	
 
 }
