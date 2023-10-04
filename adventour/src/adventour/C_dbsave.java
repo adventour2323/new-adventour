@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import getset.H_getset;
+
 
 public class C_dbsave {
 	Connection conn = null; //매소드 분리를 위해 전역변수로 
@@ -100,5 +102,27 @@ public class C_dbsave {
         }
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     } 
+    public ArrayList<H_getset> h_PackageShow() throws Exception { 
+        ArrayList<H_getset> arr = new ArrayList<H_getset>(); //여려개의 객체를 받아서 가지고 오기위해서 
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM packages LIMIT 4;"); //데이터베이스 명령문사용
+            while (rs.next()) { //rs의 값이 없을 때 까지 - 값을 받아온다
+            	H_getset obj = new H_getset();
+                obj.setP_pho(rs.getString("p_pho"));
+                obj.setP_name_ko(rs.getString("p_name_ko"));
+                obj.setP_title1(rs.getString("p_title1"));
+                obj.setP_title2(rs.getString("p_title2"));
+                obj.setP_price(rs.getInt("p_price"));
+       
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
+    }
 
 }

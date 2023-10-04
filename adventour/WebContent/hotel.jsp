@@ -13,7 +13,9 @@
   <script src="js/hotel.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
   </head>
+
 
   <body>
      <header>
@@ -106,25 +108,25 @@
 
       <h2 class="h_retitle"> 나라별 검색하기</h2>
 
-        <div class="h_recityimgs" >
+        <a href="main.hotel?uname=ukAll"><div class="h_recityimgs" >
           <div class="ukimg">
-            <img class="h_recityimg1" src="image/img/uk.png">
+            <img class="h_recityimg1" src="image/img/uk.png" >
             <div class="ukname"><h2 > 영국</h2></div>
+          </div></a>
+
+          <div class="ityimg" href="main.hotel?uname=italyAll">
+            <img class="h_recityimg2" src="image/img/ity.png" href="main.hotel?uname=italyAll">
+            <h2 class="ityname" href="main.hotel?uname=italyAll"> 이탈리아</h2>
           </div>
 
-          <div class="ityimg">
-            <img class="h_recityimg2" src="image/img/ity.png">
-            <h2 class="ityname"> 이탈리아</h2>
+          <div class="fraimg" href="main.hotel?uname=franceAll">
+            <img class="h_recityimg3" src="image/img/fra.png" href="main.hotel?uname=franceAll" >
+            <h2 class="franame"href="main.hotel?uname=franceAll"> 프랑스</h2>
           </div>
 
-          <div class="fraimg">
-            <img class="h_recityimg3" src="image/img/fra.png">
-            <h2 class="franame"> 프랑스</h2>
-          </div>
-
-          <div class="spaimg">
-            <img class="h_recityimg4" src="image/img/spain.png">
-            <h2 class="spaname"> 스페인</h2>
+          <div class="spaimg" href="main.hotel?uname=spainAll">
+            <img class="h_recityimg4" src="image/img/spain.png" href="main.hotel?uname=spainAll">
+            <h2 class="spaname" href="main.hotel?uname=spainAll" > 스페인</h2>
           </div>
 
           
@@ -138,31 +140,33 @@
     <h2> 투어와 함께하는 숙소를 추천해드려요.</h2>
 
     <div class="h_package">
-                    <% 
-    List<H_getset> p_list = (List<H_getset>) request.getAttribute("p_list"); // null값이라 출력 x
-    if (p_list != null) {
-    	 for (int i = 0; i < 4; i++) {
-             H_getset list_package = list.get(i);
+    
+     <jsp:useBean id="prac" class="adventour.C_dbsave" />
+ <% 
+          ArrayList<H_getset> h_PList = prac.h_PackageShow();
+         for (int i = 0; i < 4; i++) {       	 
+         H_getset obj =  h_PList.get(i);
+       
+
+         
 %>     
-      <div class="package<%= i+1%>">
+      <div class="package<%= i+1 %>">
         <div class="package1_img">
-          <img src="image/img/<%= list_package.getP_pho() %>">
+          <img src="image/img/<%= obj.getP_pho() %>">
         </div>
         <div class="package1_con">
           <ul class="package1_ul">
-             <li class="pack_title"><%= list_package.getP_name_ko() %></li>
-             <li class="pack_con1"><%= list_package.getP_title1() %></li>
-             <li class="pack_con2"><%= list_package.getP_title2() %></li>
-             <li class="pack_pri"><%= list_package.getP_price() %></li>
+             <li class="pack_title"><%= obj.getP_name_ko() %></li>
+             <li class="pack_con1"><%= obj.getP_title1() %></li>
+             <li class="pack_con2"><%= obj.getP_title2() %></li>
+             <li class="pack_pri"><%= obj.getP_price() %>원 ~</li>
           </ul>
         </div>
       </div><!--package1-->
 
 <%
     }
-} else {
-    out.println("null data"); // null값이 들어온 경우 출력되는 데이터
-}
+
 %>
     </div>
 

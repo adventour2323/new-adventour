@@ -95,8 +95,7 @@ imageClasses.forEach(function(className) { //마우스오버
  
    $(".schtop").slideUp("fast");
  });
-  
-
+ 
 
 
 });

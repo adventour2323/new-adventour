@@ -34,8 +34,15 @@ public class H_getset {
 	String p_title1;
 	String p_title2;
 	String p_pho;
+	int pp_price;
 	
 	
+	public int getPp_price() {
+		return pp_price;
+	}
+	public void setPp_price(int pp_price) {
+		this.pp_price = pp_price;
+	}
 	public String getTour_id() {
 		return tour_id;
 	}
@@ -48,6 +55,7 @@ public class H_getset {
 	public void setP_name_eng(String p_name_eng) {
 		this.p_name_eng = p_name_eng;
 	}
+	
 	public String getP_name_ko() {
 		return p_name_ko;
 	}

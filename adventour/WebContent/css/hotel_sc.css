@@ -1,192 +1,36 @@
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+@color-change{
+	background-color: yellow;
 }
 
 * {
-  font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular', sans-serif;
+    cursor: pointer;
 }
-
-body {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-bottom: 0px;
-  width: 1903px;
-  height: 1650px;
-
+  body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 1903px;
+    height: 1300px;
+  
+  }
+  .moveh {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
 }
-
-.header {
-  width: 1903;
-  height: 130px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  color: rgb(20, 3, 78);
-}
-
-.header1 {
-  width: 100%;
-  height: 110px; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menuli li {
-  list-style: none;
-  float: left;
-}
-
-.logo {
-  width: 300px;
-  height: 80px;
-  margin: auto;
-  margin-top: 10px;
-  margin-left: 800px;
-  text-align: center;
-  color:rgb(236, 236, 162);
-
-}
-.logo1{
-  width: 300px;
-  height: 80px;
-}
-
-.home {
-  width: 400px;
-  height: 25px;
-  margin-bottom: 55px;
-  margin-right: 270px;
-  float: right;
-  font-size: 17px;
-  font-weight: bolder;
-}
-
-.homeli {
-  margin-top: 3px;
-  list-style: none;
-}
-.home11 {
-  width: 40px;
-  height: 25px;
-  margin-right: 10px;
-  text-align: center;
-  float: right;
-
-}
-
-.home1 {
-width: 60px;
-height: 25px;
-margin-right: 10px;
-text-align: center;
-float: right;
-}
-
-.himg {
-  width: 20px;
-  height: 20px;
-}
-
-.head11 {
-  width: 100%;
-  height: 50px;
-  display: flex;
-}
-
-.menu {
-  width: 1000px;
-  height: 42px;
-  display: flex;
-  float: left;
-  margin-left: 450px;
-  border-bottom: solid rgb(153, 171, 233) ;
-}
-
-.menuli {
-  font-weight: bold;
-  font-size: 17px;
-  margin-top: 10px;
-  padding-left: 0px;
-  text-align: center;
-
-}
-
-.menu1,.menu2,.menu4{
-  margin-right: 5px;
-  width: 100px;
-  height: 30px;
-
-
-}
-.menu3{
-  margin-right: 5px;
-  width: 100px;
-  height: 30px;
-  background-color: rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 1px;
-  border-color:reds;
-  border-radius: 15px 15px 0px 0px;
-}
-.menuli p{
-  margin-top: 2px;
-}
-
-.movet{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: rgb(153, 171, 233);
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moveb{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: rgb(153, 171, 233);
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-.moveh {
-  font-size: 18px;
-  width: 100px;
-  height: 30px;
-  text-align: center;
-  background-color: rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: rgb(20, 3, 78);
-  border-radius: 15px 15px 0px 0px;
-  color: white; /* 흰색으로 변경 */
-}
-.moves{
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
-  height: 32px;
-  color:rgb(20, 3, 78);
-  border-style: solid;
-  border-width: 2px 2px 0px 2px;
-  border-color: rgb(153, 171, 233);
-  border-radius: 15px 15px 0px 0px;
-  background-color: #fff;
-}
-
-
 .pagename {  /*헤더에 현재페이지 표시*/
   width: 140px;
   height: 140px;
@@ -203,6 +47,8 @@ float: right;
   text-align: center;
  
   }
+
+
  
   /*----------------------------------------content---------------------------*/
   .content {
@@ -268,14 +114,14 @@ float: right;
    border-width: 1.5px;
    color:rgb(20, 3, 78);
    margin-left: 160px;
-   margin-top: 140px;
+   margin-top: 70px;
 }
 
 .sch1{
  width: 200px;
  height: 70px;
  float: left;
- margin-top: 15px;
+ margin-top: 20px;
  margin-left: 15px;
 }
 .sch_title{
@@ -328,52 +174,6 @@ float: right;
 }
 
 
-/*top 슬라이드메뉴*/
-.schtop{
-  width: 1000px;
-  height: 120px;
-  background-color:rgb(117, 165, 236);
-  margin-top: -20px;
-  margin-left: 50px;
-}
-.h_cityli1{
-  margin-top: 0px;
-  margin-left: 50px;
-}
-.h_cityli2{
-  margin-left: 200px;
-  margin-top: -112px;
-}
-.h_cityli3{
-  margin-left: 350px;
-  margin-top: -112px;
-}
-.h_cityli4{
-  margin-left: 500px;
-  margin-top: -112px;
-}
-.ukli,.ityli,.frali,.spainli{
-  list-style: none;
-  font-size: 15px;
-  padding-top: 5px;
-  font-weight: bold;
-}
-.move_lon,.move_roma,.move_paris,.move_mard{
- margin-top: 10px;
-  width: 80px;
-  text-align: left;
-  font-weight: bold;
-  background-color:rgb(117, 165, 236);
-  border: none;
-}
-.move_liverp,.move_Edinb,.move_vene,.move_mila,.move_marc,.move_mona,.move_barc,.move_sev{
-  margin-top: 5px;
-  width: 80px; 
-  background-color:rgb(117, 165, 236);
-  border: none;
-  text-align: left;
-  font-weight: bold;
-}
 
 
 
@@ -383,7 +183,7 @@ float: right;
     border-style: dashed;
     width: 1000px;
     height: 250px;
-    margin-top: 30px;
+    margin-top: 120px;
     margin-left: 50px;
     color: rgb(20, 3, 78);
 }
@@ -422,7 +222,7 @@ float: right;
 margin-top: 0px;
 }
 .h_tinameko{
-  margin-top: -20px;
+  margin-top: 0px;
   }
 /*성급 , 별점*/
 .h_grade,.h_star{
@@ -470,16 +270,6 @@ margin-top: 0px;
 .h_tiprice{
   margin-top:0px ;
 }
-.move_h{
-  margin-left: 0px;
-  margin-top: 20px;
-  width: 150px;
-  height: 40px;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 20px;
-  background-color: rgb(117, 165, 236);
-}
 
 
 .selectTi{
@@ -504,61 +294,3 @@ margin-top: 0px;
 
 
 
-/*----------------------------------------footer---------------------------------*/
-footer{
-  width: 1903px;
-  height: 200px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  margin-top:0px;
-  background-color:  rgb(46, 78, 151);
-  overflow: hidden;
-
-}
-
-footer .footerB{
-  width: 1903px;
-  height: 200px;
-  align-items: center;
-  text-align: center;
-  margin-left: 300px;
-  font-size: 10px;
-  background-color:  rgb(46, 78, 151);
-
-  border-width: 0px 0px 0px 0px;
-}
-
-.footerB .fNvB{
-  width: 1500px;
-  height: 50px;
-  margin-left: 300px;
-  font-size: 13px;
-  padding: 20px 10px 0px 10px;
-  border-width: 0px 0px 0px 0px;
-}
-
-.fNvB nav{
-  width: 60px;
-  height: 18px;
-  float: left;
-  padding: 0px 5px  0px  5px;
-  border-width: 0px 0.2px 0px 0px;
-  border-color: white;
-  border-style: solid;
-}
-
-.footerB .fInfoB{
-  width: 1500px;
-  height: 130px;
-  margin-left: 150px;
-  padding-bottom: -20px;
-  border-width: 0px 0px 0px 0px;
-}
-
-.fInfoB span{
-  width: 300px;
-  height: 130px;
-  float: left;
-  border-width: 0px 0px 0px 0px;
-}
