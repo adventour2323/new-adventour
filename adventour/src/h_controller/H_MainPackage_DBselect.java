@@ -12,7 +12,7 @@ import mybatis.H_mainSelect_conn;
 public class H_MainPackage_DBselect implements h_conn_interface { //데이터베이스
     static H_MainPackage_DBselect h_interface = new H_MainPackage_DBselect();
 
-    public static H_MainPackage_DBselect im_inter() {
+    public static H_MainPackage_DBselect im_Pinter() {
         return h_interface;
     }
 

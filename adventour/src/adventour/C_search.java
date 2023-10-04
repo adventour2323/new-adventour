@@ -11,7 +11,7 @@ public class C_search {
     PreparedStatement pstmt = null;
 
     public void connec() throws Exception { // 데이터베이스 연결을 위한 메소드
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver"); //라이블러리를 불러오겠다
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
     }
 

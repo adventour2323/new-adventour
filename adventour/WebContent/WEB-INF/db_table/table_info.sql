@@ -39,7 +39,7 @@ INSERT INTO `adventour`.`member` (`m_id`, `m_pw`, `m_lastname`, `m_firstname`, `
 
 ----호텔 정보 h_hotel 테이블 create문
 
-SELECT * FROM adventour.h_hotel;CREATE TABLE `h_hotel` (
+CREATE TABLE `h_hotel` (
   `country_eng` varchar(30) NOT NULL,
   `country_ko` varchar(30) NOT NULL,
   `city_eng` varchar(30) NOT NULL,
@@ -93,25 +93,25 @@ INSERT INTO `adventour`.`h_hotel` (`country_eng`, `country_ko`, `city_eng`, `cit
 
 --------호텔 룸정보 h_room create문 ----->내용이 너무 많아서 csv 파일로 insert
 CREATE TABLE `adventour`.`h_room` (
-    ->   `h_name_eng` VARCHAR(50) NOT NULL,
-    ->   `h_date` DATE NOT NULL,
-    ->   `h_roomtype` VARCHAR(10) NOT NULL,
-    ->   `h_roompeo` INT NOT NULL,
-    ->   `h_roomnum` INT NOT NULL,
-    ->   `h_roompri` INT NOT NULL,
-    ->   INDEX `h_name_eng_idx` (`h_name_eng` ASC),
-    ->   CONSTRAINT `h_name_eng`
-    ->     FOREIGN KEY (`h_name_eng`)
-    ->     REFERENCES `adventour`.`h_hotel` (`h_name_eng`)
-    ->     ON DELETE NO ACTION
-    ->     ON UPDATE NO ACTION
-    -> )
-    -> ENGINE = InnoDB
-    -> DEFAULT CHARACTER SET = utf8;
+      `h_name_eng` VARCHAR(50) NOT NULL,
+    `h_date` DATE NOT NULL,
+       `h_roomtype` VARCHAR(10) NOT NULL,
+      `h_roompeo` INT NOT NULL,
+     `h_roomnum` INT NOT NULL,
+      `h_roompri` INT NOT NULL,
+       INDEX `h_name_eng_idx` (`h_name_eng` ASC),
+    CONSTRAINT `h_name_eng`
+       FOREIGN KEY (`h_name_eng`)
+      REFERENCES `adventour`.`h_hotel` (`h_name_eng`)
+       ON DELETE NO ACTION
+         ON UPDATE NO ACTION
+     )
+     ENGINE = InnoDB
+ DEFAULT CHARACTER SET = utf8;
     
  ----- 호텔 예약 확인용 테이블 생성 h_reserv create문
  CREATE TABLE `adventour`.`h_reserve` (
-  `h_tinum` INT NOT NULL,
+  `h_tinum` VARCHAR(20) NOT NULL,
   `h_roomnum` INT NOT NULL,
   `m_id` VARCHAR(20) NOT NULL,
   `h_room_user` INT NOT NULL,
@@ -143,15 +143,15 @@ INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_use
 
 -----------연습용 호텔 투어 패키지 creatre문
  CREATE TABLE `adventour`.`packages` (
-    ->   `h_name_eng` VARCHAR(50) NOT NULL,
-    ->   `tour_id` VARCHAR(50) NOT NULL,
-    ->   `p_name_eng` VARCHAR(50) NOT NULL,
-    ->   `p_name_ko` VARCHAR(50) NOT NULL,
-    ->   `p_price` INT NOT NULL,
-    ->   `p_title1` VARCHAR(20) NOT NULL,
-    ->   `p_title2` VARCHAR(20) NOT NULL,
-    ->   `p_pho` VARCHAR(100) NOT NULL,
-    ->   PRIMARY KEY (`p_name_eng`));
+      `h_name_eng` VARCHAR(50) NOT NULL,
+       `tour_id` VARCHAR(50) NOT NULL,
+       `p_name_eng` VARCHAR(50) NOT NULL,
+       `p_name_ko` VARCHAR(50) NOT NULL,
+       `p_price` INT NOT NULL,
+       `p_title1` VARCHAR(20) NOT NULL,
+       `p_title2` VARCHAR(20) NOT NULL,
+       `p_pho` VARCHAR(100) NOT NULL,
+       PRIMARY KEY (`p_name_eng`));
 
 INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('parkplaza hotel', 'bridge tour', 'london hotel + bridge tour ', '런던 호텔 + 브릿지 투어', '349000', '조명이 가득한 브릿지투어와', '편안한 호텔을 함께 즐겨보세요.', 'pack1.jpeg');
 INSERT INTO `adventour`.`packages` (`h_name_eng`, `tour_id`, `p_name_eng`, `p_name_ko`, `p_price`, `p_title1`, `p_title2`, `p_pho`) VALUES ('hotel celio roma', 'santelia tour', 'roma hotel + santelia tour', '로마 호텔 + 산텔리아 성당투어', '499000', '로마의 향기가 가득한 투어와', '편안한 호텔을 함께 즐겨보세요.', 'pack2.jpeg');
