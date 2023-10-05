@@ -16,7 +16,7 @@
 <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
 <body>
-
+ 
 	<%-- <jsp:useBean id="id" class="adventour.g_list_print"> --%>
 		<header>
 			<!-- header.html import-->
@@ -24,7 +24,7 @@
 		</header>
 
 		<%
-		List<guide_gs> a1 = (List<guide_gs>) request.getAttribute("main");
+		List<guide_gs> a1 = (List<guide_gs>) request.getAttribute("list");
 		
 			/* ArrayList<g_getset> a1 = id.g1(); */
 			/* ArrayList<t_getset> a2 = id.t1(); */
