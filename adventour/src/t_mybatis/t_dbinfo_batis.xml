@@ -18,7 +18,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="mybatis/language_mysql.xml"></mapper>
+		<mapper resource="t_mybatis/t_language_mysql.xml"></mapper>
 	</mappers>
 
 </configuration>

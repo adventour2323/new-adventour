@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import adventour.g_getset;
+import getset.guide_gs;
 import t_mybatis.t_db_con;
 
 public class t_g_sel_con {
@@ -19,10 +20,10 @@ public class t_g_sel_con {
 	SqlSessionFactory db_con = t_db_con.getSqlSession();
 	
 	
-	public List<g_getset> g_sel() {
+	public List<guide_gs> g_sel() {
 		SqlSession s = db_con.openSession();
 		
-		List<g_getset> list = s.selectList("guide_list");
+		List<guide_gs> list = s.selectList("guide_list");
 	
 		s.close();
 		return list;

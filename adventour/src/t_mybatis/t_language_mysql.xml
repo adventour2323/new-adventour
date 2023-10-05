@@ -4,7 +4,7 @@
 
 <mapper namespace="db_mapper">
 
-	<select id="guide_list" resultType="adventour.g_getset">
+	<select id="guide_list" resultType="getset.guide_gs">
 		select *from guide; 
 		
 	</select>

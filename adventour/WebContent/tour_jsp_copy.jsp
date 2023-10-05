@@ -4,7 +4,6 @@
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
-<%@ page import="getset.guide_gs"%>
 <%@ page import="java.util.*"%>
 <html>
 <head>
@@ -17,17 +16,15 @@
 </head>
 <body>
 
-	<%-- <jsp:useBean id="id" class="adventour.g_list_print"> --%>
+	<jsp:useBean id="id" class="adventour.g_list_print">
 		<header>
 			<!-- header.html import-->
 			<div id="header"></div>
 		</header>
 
 		<%
-		List<guide_gs> a1 = (List<guide_gs>) request.getAttribute("main");
-		
-			/* ArrayList<g_getset> a1 = id.g1(); */
-			/* ArrayList<t_getset> a2 = id.t1(); */
+			ArrayList<g_getset> a1 = id.g1();
+			ArrayList<t_getset> a2 = id.t1();
 		%>
 
 
@@ -59,9 +56,8 @@
 
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("영국") == true) {
-										
+									g_getset g = a1.get(i);
+									if (g.getCountry().equals("영국") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -72,7 +68,7 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
+														out.println("<img src='" + g.getImg() + "' width='200px' alt='img'>");
 													%>
 													<figcaption>자세히보기</figcaption>
 												</figure>
@@ -81,7 +77,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td><%=g.getName()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -100,8 +96,8 @@
 
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("프랑스") == true) {
+									g_getset g = a1.get(i);
+									if (g.getCountry().equals("프랑스") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -112,7 +108,7 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
+														out.println("<img src='" + g.getImg() + "' width='200px' alt='img'>");
 													%>
 													<figcaption>자세히보기</figcaption>
 												</figure>
@@ -121,7 +117,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td><%=g.getName()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -137,8 +133,8 @@
 
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("스페인") == true) {
+									g_getset g = a1.get(i);
+									if (g.getCountry().equals("스페인") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -149,7 +145,7 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
+														out.println("<img src='" + g.getImg() + "' width='200px' alt='img'>");
 													%>
 													<figcaption>자세히보기</figcaption>
 												</figure>
@@ -158,7 +154,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td><%=g.getName()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -174,8 +170,8 @@
 
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("이탈리아") == true) {
+									g_getset g = a1.get(i);
+									if (g.getCountry().equals("이탈리아") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -186,7 +182,7 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
+														out.println("<img src='" + g.getImg() + "' width='200px' alt='img'>");
 													%>
 													<figcaption>자세히보기</figcaption>
 												</figure>
@@ -195,7 +191,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td><%=g.getName()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -286,9 +282,6 @@
             </div> -->
 
 			<!--  -->
-			<!--  -->
-<jsp:useBean id="id" class="adventour.g_list_print">
-			<!--  -->
 
 			<div class="tour_banner" style="margin-top: 30px;">
 				<div class="Slidesbackground"
@@ -299,9 +292,6 @@
 						<!-- 배너 사진 -->
 
 						<%
-						/*  */
-						ArrayList<t_getset> a2 = id.t1();
-						/*  */
 							for (int i = 0; i < a2.size(); i++) {
 									t_getset t = a2.get(i);
 									if (t.getT_id().equals("f_p_tour") == true) {
