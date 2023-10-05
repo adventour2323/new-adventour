@@ -102,6 +102,10 @@
 if (list != null) {
     for (int i = 0; i < list.size(); i++) {
         H_getset ukAll = list.get(i);
+        
+        String grade = ukAll.getH_grade();
+        int starGrade = Integer.parseInt(grade);
+       
 %>
        <div class="scdform<%= i+1 %>"> <!--티켓정보-->
 
@@ -116,22 +120,20 @@ if (list != null) {
           <h3 class="h_tinameko">(<%=ukAll.getH_name_ko() %>)</h3>
           </div>
 
-          <div class="h_grade">
-        
-              <%
-         String grade = ukAll.getH_grade();
-         int starGrade = Integer.parseInt(grade);
-        for (int ii = 0; ii <= 5; i++) {
+<div class="h_grade">
+<!--    <h3><%= ukAll.getH_grade() %></h3>       --> 
+    <%
+    int starCount = Integer.parseInt(ukAll.getH_grade()); // 별 갯수 가져오기
+    for (int ii = 0; ii < starCount; ii++) {
     %>
-        <img src="image/hotel/h_image/star.png" alt="별 이미지">
+    <img id="grade_star" src="image/hotel/h_image/star.png" alt="별 이미지">
     <%
     }
     %>
-       
-          </div>
+</div>
 
-          <div class="h_star">
-          <h3 class="h_tistar">리뷰별점</h3>
+          <div class="h_restar">
+          <h3 class="h_tirestar">리뷰별점</h3> <!--  리뷰 작성 후 숫자로 보여줄것  -->
           </div>
 
           <div class="h_addr">

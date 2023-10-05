@@ -225,11 +225,15 @@ margin-top: 0px;
   margin-top: 0px;
   }
 /*성급 , 별점*/
-.h_grade,.h_star{
-  width: 100px;
+.h_grade,.h_restar{
+  width: 500px;
   height: 20px;
 }
-.h_tigrade,.h_tistar{
+#grade_star{
+  width: 25px;
+  height: 25px;
+}
+.h_tigrade,.h_tirestar{
   margin-top: 13px;
 }
 /*주소 & 지도보기*/
