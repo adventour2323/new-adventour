@@ -283,6 +283,36 @@
 
 			<!--  -->
 
+<div class="h_recity">
+
+      <h2 class="h_retitle"> 나라별 투어 검색하기</h2>
+        
+        <div class="h_recityimgs" >
+          <div class="ukimg">
+            <img class="h_recityimg1" src="image/img/uk.png">
+            <div class="ukname"><h2 > 영국</h2></div>
+          </div>
+
+          <div class="fraimg">
+            <img class="h_recityimg3" src="image/img/fra.png">
+            <h2 class="franame"> 프랑스</h2>
+          </div>
+
+          <div class="spaimg">
+            <img class="h_recityimg4" src="image/img/spain.png">
+            <h2 class="spaname"> 스페인</h2>
+          </div>
+          
+          <div class="ityimg">
+            <img class="h_recityimg2" src="image/img/ity.png">
+            <h2 class="ityname"> 이탈리아</h2>
+          </div>
+          
+        </div>
+
+			
+
+<!--  -->
 			<div class="tour_banner" style="margin-top: 30px;">
 				<div class="Slidesbackground"
 					style="margin-top: 200px; margin-bottom: 50px; text-align: center;">

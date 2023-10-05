@@ -29,8 +29,6 @@
 			/* ArrayList<g_getset> a1 = id.g1(); */
 			/* ArrayList<t_getset> a2 = id.t1(); */
 		%>
-
-
 		<!-- 본문  -->
 
 		<div class="content">
@@ -55,13 +53,10 @@
 
 					<section id="guide_uk">
 						<!--  -->
-
-
 						<%
 							for (int i = 0; i < a1.size(); i++) {
 								guide_gs g = a1.get(i);
 									if (g.getG_country().equals("영국") == true) {
-										
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -71,9 +66,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
-													%>
+													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -86,18 +79,11 @@
 								</tbody>
 							</table>
 						</div>
-						<%
-							}}
-						%>
-
-
-
+						<% }} %>
 						<!--  -->
 					</section>
 
-
 					<section id="guide_fr">
-
 						<%
 							for (int i = 0; i < a1.size(); i++) {
 								guide_gs g = a1.get(i);
@@ -111,9 +97,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
-													%>
+													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -127,14 +111,10 @@
 							</table>
 
 						</div>
-
-						<%
-							}}
-						%>
+						<% }} %>
 					</section>
 
 					<section id="guide_es">
-
 						<%
 							for (int i = 0; i < a1.size(); i++) {
 								guide_gs g = a1.get(i);
@@ -148,9 +128,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
-													%>
+													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -165,15 +143,11 @@
 
 						</div>
 
-						<%
-							}}
-						%>
+						<% }} %>
 					</section>
 
 					<section id="guide_ita">
-
-						<%
-							for (int i = 0; i < a1.size(); i++) {
+						<% for (int i = 0; i < a1.size(); i++) {
 								guide_gs g = a1.get(i);
 									if (g.getG_country().equals("이탈리아") == true) {
 						%>
@@ -185,9 +159,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<%
-														out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>");
-													%>
+													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -202,9 +174,7 @@
 
 						</div>
 
-						<%
-							}}
-						%>
+						<% }} %>
 					</section>
 
 				</div>
@@ -286,19 +256,55 @@
             </div> -->
 
 			<!--  -->
+			
 			<!--  -->
 <jsp:useBean id="id" class="adventour.g_list_print">
 			<!--  -->
 
+    <div class="h_recity" style="margin-top: 250px; border-style: solid">
+	
+	<div> 
+	<h2 class="h_retitle" style="float: left;"> 국가별 투어</h2>
+	<div style="float: right; cursor: pointer;" onclick="location.href='./t_list.jsp'">전체보기</div> 
+	</div>
+	 
+	
+        <div class="h_recityimgs" style="margin-top: 30px" >
+        
+          <div class="ukimg">
+            <img class="h_recityimg1" src="image/img/uk.png">
+            <h2 class="ukname"> 영국</h2>
+          </div>
+          
+          <div class="fraimg">
+            <img class="h_recityimg3" src="image/img/fra.png">
+            <h2 class="franame"> 프랑스</h2>
+          </div>
+
+          <div class="spaimg">
+            <img class="h_recityimg4" src="image/img/spain.png">
+            <h2 class="spaname"> 스페인</h2>
+          </div>
+          
+          <div class="ityimg">
+            <img class="h_recityimg2" src="image/img/ity.png">
+            <h2 class="ityname"> 이탈리아</h2>
+          </div>
+
+        </div>
+
+    </div><!--h_recity-->
+    			
+			
+			
 			<div class="tour_banner" style="margin-top: 30px;">
 				<div class="Slidesbackground"
 					style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
 
-
 					<div name="test">
 						<!-- 배너 사진 -->
 
-						<%
+						<% 
 						/*  */
 						ArrayList<t_getset> a2 = id.t1();
 						/*  */
@@ -311,6 +317,7 @@
 							<img alt="" src="<%=t.getT_logo()%>">
 						</div>
 				<% } } %>
+				
 						<%
 							for (int i = 0; i < a2.size(); i++) {
 									t_getset t = a2.get(i);
@@ -347,15 +354,11 @@
 
 				</div>
 			</div>
-	
-	
 			
 				<h1 style="text-align: center;">인기 투어</h1>
 			
-			
 			<div class="recommend_city" style="border: solid;">
-				 
-
+			
 				<%
 					for (int i = 0; i < a2.size(); i++) {
 							t_getset t = a2.get(i);
@@ -376,7 +379,6 @@
 					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
-				
 				<% } } %>
 
 				<%
@@ -421,10 +423,7 @@
 						<%=t.getT_price()%>원~
 					</div>
 				</div>
-				<%
-					}
-						}
-				%>
+				<% }} %>
 
 				<%
 					for (int i = 0; i < a2.size(); i++) {
@@ -444,10 +443,7 @@
 					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
-				<%
-					}
-						}
-				%>
+				<% }} %>
 
 			</div>
 
@@ -463,17 +459,14 @@
 					alt="추천 티켓/입장권 3">
 			</div>
 
-		</div>
-
-
-
-		<!--content-->
+	</jsp:useBean>
+		</div>  <!--content-->
 
 		<footer>
 			<div id="footer"></div>
 		</footer>
 
-	</jsp:useBean>
+	
 </body>
 
 <script>

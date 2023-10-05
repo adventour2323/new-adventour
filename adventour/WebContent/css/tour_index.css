@@ -12,6 +12,80 @@
   	padding: 0;
 } 
 
+
+/* 국기 */
+    .h_recity{
+      margin-top: 50px;
+      width: 1350px;
+      height: 350px;
+      
+      width: 100%;
+      margin-top: 50px;
+    }
+  
+    .h_recityimgs{
+      width: 1100px;
+      height: 250px;
+      padding-left: 150px;
+      margin:auto;
+      text-align: center;
+
+    }
+    .ukimg{
+      width: 150px;
+      height: 230px;
+      margin-top: 20px;
+  
+    }
+    .ukname{
+      width: 150px;
+      height:50px;
+      padding-top: 170px;
+      color:rgb(20, 3, 78);
+
+    }
+    .ityimg{
+      margin-left: 270px;
+      margin-top: -300px;
+    }
+    .ityname{
+      width: 150px;
+      height: 50px;
+      padding-top: 240px;
+      color:rgb(20, 3, 78);
+    }
+
+    .fraimg{
+      margin-left: 540px;
+      margin-top: -300px;
+    }
+    .franame{
+      width: 150px;
+      height: 50px;
+      padding-top: 250px;
+      color:rgb(20, 3, 78);
+    }
+    .spaimg{
+      margin-left: 810px;
+      margin-top: -300px;
+    }
+    .spaname{
+      width: 150px;
+      height: 50px;
+      padding-top: 250px;
+      color:rgb(20, 3, 78);
+    }
+    .h_recityimgs img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-left: 0px;
+      float: left;
+      border: solid 1.5px black;
+      filter: drop-shadow(10px 6px 6px #c3c3c3); /*그림자*/
+    }
+   /*  */
+
 /*  */
 /* 가이드 탭 리스트  */
  	.tab_list {
@@ -129,8 +203,6 @@ body {
 
 .recommend_city{
   display: flex;
-  
-  
   width: 1100px;
   margin-top: 100px;
   text-align: center;
@@ -163,16 +235,6 @@ body {
   margin-left: auto;
 }
 
-/*----------------------------------------footer---------------------------------*/
-/* .footer {
-    width: 1900px;
-    height: 200px;
-    background-color: #85e7ff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0px;
-} */
 
 /*  이미지 회전 */
 .slideshow-image{
@@ -221,7 +283,6 @@ a:active {
 
 table {
     width: 100%;
-    
     border-collapse: collapse;
   }
 

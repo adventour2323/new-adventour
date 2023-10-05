@@ -45,7 +45,52 @@ $(document).ready(function() {
   });
   $(document).ready(function() {
   let isRed = false;
+//
+////------------------------------------------지역으로 고르기------------
+//영국
+$('.h_recityimg1').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_recityimg1').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+});
 
+$('.h_recityimg1').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.h_recityimg1').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+
+
+
+//이탈리아
+
+$('.h_recityimg2').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_recityimg2').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+});
+
+$('.h_recityimg2').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.h_recityimg2').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+
+
+//프랑스
+
+$('.h_recityimg3').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_recityimg3').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+});
+$('.h_recityimg3').on('mouseleave', function() { //이미지위에 마우스가 없으면
+
+  $('.h_recityimg3').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+//스페인
+$('.h_recityimg4').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_recityimg4').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+});
+$('.h_recityimg4').on('mouseleave', function() { //이미지위에 마우스가 없으면
+
+  $('.h_recityimg4').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+  
+//  
   /* 하트누르면 색변환*/
   $('.beheart').on('click', function() {
     if (isRed) {
@@ -58,30 +103,10 @@ $(document).ready(function() {
      });
   });
 
-//   탭
-  // $(".guide_country_btn > li").click(function () {
-  //   var idx = $(this).index();
 
-  //   $(this).addClass("country_all").siblings().removeClass("country_all");
-
-  //   $(".total_rank_list .uk_rank_list .fra_rank_list .italy_rank_list")
-  //     .eq(idx)
-  //     .addClass("country_all")
-  //     .siblings(".tab_cont")
-  //     .removeClass("country_all");
-  // });
 
 });
-// 
-// 가이드 탭
-/*$(function() {
-  $('ul.guide_region_tab li').click(function() {
-    var activeTab = $(this).attr('data-tab');
-    $('ul.guide_region_tab li').removeClass('on');
-    $('.guide_list').removeClass('on');
-    $(this).addClass('on');
-    $('#' + activeTab).addClass('on');
-  })
-});*/
+
+
 
 
