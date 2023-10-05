@@ -24,7 +24,7 @@
     margin-left: 0px;
     margin-bottom: 0px;
     width: 1903px;
-    height: 1850px;
+    height: 1000px;
   
   }
   .moveh {
@@ -53,7 +53,7 @@
   /*----------------------------------------content---------------------------*/
   .content {
     width: 1100px;
-    height: 1850px;
+    height: 1000px;
     margin-top: -820px;
     margin-left: 400px;
  
@@ -172,119 +172,98 @@
  margin-left: 70px;
  margin-top: 30px;
 }
-
-
-
-
-
-
-/*-------------------------------------스케쥴 티켓 내용----------------------------*/
-.scdform1{
-    border-style: dashed;
-    width: 1000px;
-    height: 250px;
-    margin-top: 120px;
-    margin-left: 50px;
-    color: rgb(20, 3, 78);
-}
-.scdform2, .scdform3, .scdform4, .scdform5, .scdform6{
-  border-style: dashed;
+/*--------------------------------호텔 정보를 보여주는 div-----------------------*/
+#hotel_info{/*내용전체*/
+  border:solid 1px;
   width: 1000px;
-  height: 250px;
-  margin-top: 50px;
+  height: 1000px;
+  margin-top: 120px;
   margin-left: 50px;
-  color: rgb(20, 3, 78);
 }
-/*메인 사진*/
-.h_mainpic{
-  width: 230px;
-  height: 230px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-.h_img1{
-  width: 230px;
-  height: 230px;
-}
-/*티켓 안 정보란 이름등*/
-.h_tiinfo{
-  width: 600px;
-  height: 200px;
-  margin-top: -200px;
-  margin-left: 280px;
-}
-/*호텔이름*/
-.h_name{
-  width: 600px;
-  height: 60px;
-}
-.h_tiname{
-margin-top: 0px;
-}
-.h_tinameko{
+#hotel_info_phos{
+  background-color: antiquewhite;
+  width: 950px;
+  height: 400px;
   margin-top: 0px;
-  }
-/*성급 , 별점*/
-.h_grade,.h_star{
-  width: 100px;
-  height: 20px;
+  padding-top: 50px;
+  padding-left: 50px;
 }
-.h_tigrade,.h_tistar{
-  margin-top: 13px;
+#hotel_info_pho1{
+  border:solid 1px;
+  width: 300px;
+  height: 300px;
+  background-color: aliceblue;
 }
-/*주소 & 지도보기*/
-.h_addr{
-  width: 500px;
-  height: 80px;
-  margin-top: 15px;
+.h_info_title_pho1{
+  width: 300px;
+  height: 300px;
 }
-.h_tiaddr{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 500px;
-  height: 20px;
+#hotel_info_pho2{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: -325px;
+  margin-left: 350px;
 }
-.h_mapbtn{
-  width: 80px;
-  height: 20px;
-  background-color: rgb(117, 165, 236);
-  font-weight: 600;
-  border-radius: 10px;
-  margin-top: 10px;
+#hotel_info_pho3{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: 25px;
+  margin-left: 350px;
+}
+#hotel_info_pho4{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: -385px;
+  margin-left: 550px;
+}
+#hotel_info_pho5{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: 25px;
+  margin-left: 550px;
+}
+#hotel_info_pho6{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: -385px;
+  margin-left: 755px;
+}
+#hotel_info_pho7{
+  background-color: aqua;
+  width: 180px;
+  height: 180px;
+  margin-top: 25px;
+  margin-left: 755px;
+}
+.h_info_title_pho2,.h_info_title_pho3,.h_info_title_pho4,
+.h_info_title_pho5,.h_info_title_pho6,.h_info_title_pho7{
+  width: 180px;
+  height: 180px;
+}
+#hotel_info_engname{
+  border:solid 1px;
+  width: 800px;
+  height: 50px;
+  padding-top: 25px;
+  padding-left: 15px;
+}
+#hotel_info_koname{
+  border:solid 1px;
+  width: 800px;
+  height: 30px;
+  padding-left: 15px;
 }
 
-/*티켓가격 정보란*/
-.h_priinfo{
-
-  width: 150px;
-  height: 200px;
-  margin-left: 810px;
-  margin-top: -225px;
-}
-.h_prices{
-
-  width: 150px;
-  height: 40px;
-  margin-top: 50px;
-}
-.h_tiprice{
-  margin-top:0px ;
-}
 
 
-.selectTi{
-  width: 20px;
-  height: 20px;
-  margin-top: 110px;
-  margin-left: 70px;
-}
-.bbb{
-  margin-top: -24px;
-  margin-left: 100px;
-  font-size: 18px;
-}
-.beheart{
-  margin-top: -45px;
-  margin-left: 150px;
-  font-size: 28px;
-}
+
+
+
+
+
+

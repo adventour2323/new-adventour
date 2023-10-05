@@ -34,16 +34,11 @@
     <h1 class="pagename1">HOTEL</h1>
   </div><!--htitle-->
 
-<%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
-    H_getset sch_country = list.get(0);
-%>
-  
-
   <div class="schnav"> <!--검색 네비 = sch -->
 
     <div class="sch1">
       <h5 class="sch_title">☆ 지역</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="지역" value="<%= sch_country.getCountry_ko()%>">
+      <input type="text" class="sch_city" name="sch_city" placeholder="지역" >
     </div>
 
     <div class="sch1">
@@ -98,11 +93,59 @@
 
     </div>
 
+    <div id="hotel_info">
+
+      <div id="hotel_info_phos">
+
+        <div id="hotel_info_pho1">
+        <img class="h_info_title_pho1" name="h_info_title_pho1" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho2">
+          <img class="h_info_title_pho2" name="h_info_title_pho2" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho3">
+          <img class="h_info_title_pho3" name="h_info_title_pho3" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho4">
+          <img class="h_info_title_pho4" name="h_info_title_pho4" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho5">
+          <img class="h_info_title_pho5" name="h_info_title_pho5" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho6">
+          <img class="h_info_title_pho6" name="h_info_title_pho6" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+        <div id="hotel_info_pho7">
+          <img class="h_info_title_pho7" name="h_info_title_pho7" src="image/hotel/h_image/h_atolon.PNG" >
+        </div>
+      
+    </div><!--hotel_info_phos-->
+
+
+    <div id="hotel_info_engname">
+      <h2>호텔이름 영문으로 가져와</h2>
+    </div>
+
+    <div id="hotel_info_koname">
+      <h2>(호텔이름 한글로 가져와)</h2>
+    </div>
 
 
 
 
 
+
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div><!--hotel_info-->
 
   </div><!--content-->
 
