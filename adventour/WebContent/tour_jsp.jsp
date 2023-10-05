@@ -23,7 +23,7 @@
 		</header>
 
 		<%
-		List<g_getset> a1 = (List<g_getset>) request.getAttribute("list");
+		List<g_getset> a1 = (List<g_getset>) request.getAttribute("main");
 		
 			/* ArrayList<g_getset> a1 = id.g1(); */
 			/* ArrayList<t_getset> a2 = id.t1(); */

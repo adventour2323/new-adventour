@@ -17,7 +17,7 @@ public class t_cto extends HttpServlet {
 		/* t_con_interface t_interface = t_g_db_sel.g_select(); */
 //		t_con_interface t_interface = null;
 		String tour ="";
-		tour = rq.getParameter("tour");
+		tour = rq.getParameter("sel");
 //		t_con_interface inter = t_g_db_sel.g_select();
 		t_con_interface inter = null;
 		

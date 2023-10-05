@@ -22,28 +22,22 @@ public class g_list_print {
 		try {
 			stmt.close();
 			conn.close();
-		} catch(Exception e) {
-			
+		} catch(Exception e) {	
 		}
-		
 	}
 	
 	public ArrayList<g_getset> g1() throws Exception {
-		
 
 				ArrayList<g_getset> arr = new ArrayList<g_getset>();
 
 				try{
 					con();
 
-				
-				ResultSet rs = stmt.executeQuery("select *from guide;");
-				
-
+					ResultSet rs = stmt.executeQuery("select *from guide;");
 				while(rs.next()) {
 					g_getset table = new g_getset();
-					
-					table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+//					table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+					table.setName(rs.getString("g_name"));
 					table.setCountry(rs.getString("g_country"));
 					table.setCity(rs.getString("g_city"));
 					table.setTheme(rs.getString("g_theme"));
@@ -53,35 +47,27 @@ public class g_list_print {
 					table.setEmail(rs.getString("g_email"));
 					table.setGender(rs.getString("g_gender"));
 					table.setPnum(rs.getString("g_pnum"));
-							
 					arr.add(table);
 				}
-				
 			} finally {
 				discon();
-
 				}
-				
 				return arr;
 	}
 	
-	
 	public ArrayList<g_getset> g2(String g_id) throws Exception {
-		
- 
-		ArrayList<g_getset> arr2 = new ArrayList<g_getset>();
 
+		ArrayList<g_getset> arr2 = new ArrayList<g_getset>();
 		try{
 			con();
-
 		
 		ResultSet rs = stmt.executeQuery("select *from guide where g_id ='"+g_id+"';");
-		
 
 		while(rs.next()) {
 			g_getset table = new g_getset();
 			
-			table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+//			table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+			table.setName(rs.getString("g_name"));
 			table.setCountry(rs.getString("g_country"));
 			table.setCity(rs.getString("g_city"));
 			table.setTheme(rs.getString("g_theme"));
@@ -95,19 +81,15 @@ public class g_list_print {
 			table.setG_introduce(rs.getString("g_introduce"));
 					
 			arr2.add(table);
-		}
-		
-	} finally {
-		discon();
-
-		}
-		
+						}
+			} finally {
+				discon();
+					}
 		return arr2;
 }
 	// ↓↓ 확인l
 	
 /* public ArrayList<g_getset> g3(String g_country) throws Exception { */ 
-	
 	/*
 	 * public ArrayList<g_getset> g3( ) throws Exception {
 	 * 
@@ -154,15 +136,12 @@ public class g_list_print {
 	
 	public ArrayList<t_getset> t1() throws Exception {
 		
-
 		ArrayList<t_getset> arr = new ArrayList<t_getset>();
 
 		try{
 			con();
-
 		
 		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour;");
-		
 
 		while(rs.next()) {
 			t_getset table = new t_getset();
@@ -223,32 +202,24 @@ public class g_list_print {
 //
 	
 	public ArrayList<t_getset> t2(String g_id) throws Exception {
-		
 
 		ArrayList<t_getset> arr = new ArrayList<t_getset>();
 
 		try{
 			con();
-
 		
 		ResultSet rs = stmt.executeQuery("select *from tour where g_id = '"+g_id+"';");
-		
 
 		while(rs.next()) {
 			t_getset table = new t_getset();
-			
 			table.setT_name(rs.getString("t_name"));
-			
 			arr.add(table);
 		}
-		
 	} finally {
 		discon();
-
 		}
-		
 		return arr;
-}
+		}
 	
 //	
 }
