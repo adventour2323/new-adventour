@@ -21,21 +21,23 @@ public class H_Cto extends HttpServlet {
         h_conn_interface ukinter = H_MainukAll_DBselect.im_inter();
   
         
-//        System.out.println(uName); //파라미터 값이 잘 넘어오는지 확인 - 확인 ok
+       System.out.println(uName); //파라미터 값이 잘 넘어오는지 확인 - 확인 ok
 
         try {         
         	if (uName.equals("hmain")) {
                     String n = inter.showdata(request, response);                
                     RequestDispatcher dispatcher = request.getRequestDispatcher("hotel.jsp");
                     dispatcher.forward(request, response);                
-        	}else if(uName.equals("ukAll")){
-        		String uk = ukinter.showdata(request, response); 
+        	}else if(uName.equals("uk") || uName.equals("italy")  || uName.equals("france") || uName.equals("spain")){
+        		
+        		String contry_list = request.getParameter("uname"); //매개변수 전달 위해 작성
+        		System.out.println(contry_list);  //파라미터 값이 잘 넘어오는지 확인 - 확인 ok
+
+        	   String uk = ukinter.showdata(request, response); //select문을 하기위해 작성
                RequestDispatcher dispatcher = request.getRequestDispatcher("hotel_sc.jsp");
                dispatcher.forward(request, response);
         	}           
              
-             
-        	
             
         } catch (Exception e) {
             e.printStackTrace();

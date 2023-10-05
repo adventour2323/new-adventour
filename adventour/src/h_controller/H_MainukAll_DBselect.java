@@ -18,8 +18,14 @@ public class H_MainukAll_DBselect implements h_conn_interface { //데이터베�
 
     @Override
     public String showdata(HttpServletRequest re, HttpServletResponse rs) throws Exception {
+    	
     	H_Select_ukAll_conn sin_interface = H_Select_ukAll_conn.instance();
-        List <H_getset> ukAll_list = sin_interface.h_ukAllselect(); 
+    	
+    	String contry_list = re.getParameter("uname"); 
+ //    	System.out.println(contry_list); //uk
+    	 
+    	
+        List <H_getset> ukAll_list = sin_interface.h_ukAllselect(contry_list);  //select 결과 가져오기 위해 작성
 //        for (H_getset item : ukAll_list) {//값이 잘 넘어오는지 확인 - ok
 //            System.out.println(item.getH_name_eng());
 //            System.out.println(item.getH_name_ko());

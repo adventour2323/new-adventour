@@ -34,11 +34,34 @@ public class H_getset {
 	String p_title1;
 	String p_title2;
 	String p_pho;
+	public String getuName() {
+		return uName;
+	}
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
 	int pp_price;
 	
 	int min_h_roompri;
 	
+	String country_list;
 	
+	String uName;
+	String uname;
+	
+	
+	public String getCountry_list() {
+		return country_list;
+	}
+	public void setCountry_list(String country_list) {
+		this.country_list = country_list;
+	}
 	public int getMin_h_roompri() {
 		return min_h_roompri;
 	}

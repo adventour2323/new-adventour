@@ -7,9 +7,9 @@
 <head>
 <meta charset="utf-8">
  <title>호텔스케쥴</title>
-  <link rel="stylesheet" type="text/css" href="css/hotel_sc.css">
+  <link rel="stylesheet" type="text/css" href="css/hotel_info.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/hotel_sc.js"></script>
+  <script src="js/hotel_info.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
@@ -97,70 +97,6 @@
 
 
     </div>
-<%
-
-if (list != null) {
-    for (int i = 0; i < list.size(); i++) {
-        H_getset ukAll = list.get(i);
-%>
-       <div class="scdform<%= i+1 %>"> <!--티켓정보-->
-
-         <div class="h_mainpic">
-           <img class="h_img1" src="image/hotel/h_image/<%= ukAll.getH_pho() %>" >
-         </div>
-
-         <div class="h_tiinfo">
-
-          <div class="h_name">
-          <h1 class="h_tiname"><%=ukAll.getH_name_eng() %></h1>
-          <h3 class="h_tinameko">(<%=ukAll.getH_name_ko() %>)</h3>
-          </div>
-
-          <div class="h_grade">
-          <h3 class="h_tigrade"><%=ukAll.getH_grade() %>성급</h3>
-          </div>
-
-          <div class="h_star">
-          <h3 class="h_tistar">리뷰별점</h3>
-          </div>
-
-          <div class="h_addr">
-           <h4 class="h_tiaddr"><%= ukAll.getH_addr() %></h4> 
-          <button class="h_mapbtn" type="button" name="h_mapbtn">지도보기</button>
-          </div>
-
-        </div><!--h_tiinfo-->
-
-        <div class="h_priinfo">
-
-         <div class="h_prices">
-          <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
-          <button class="move_h" name="move_h" >호텔보기</button>
-         </div>
-
-        <div class="ti_select">  
-
-          <div class="selectTi1">   
-           <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
-           <p class="bbb">선택</p>
-          </div> 
-           
-           <div class="h_heart">
-           <h3 class="beheart"> ♥ </h3>
-          </div>
-
-        </div> <!--ti_select-->
-
-      </div><!--h_priinfo-->
- 
-    </div><!--scdform-->
-
-<%
-    }
-} else {
-    System.out.println("null data");
-}
-%>
 
 
 
