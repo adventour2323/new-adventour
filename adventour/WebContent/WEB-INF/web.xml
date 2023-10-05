@@ -25,12 +25,12 @@
 
 
 <servlet>
-<servlet-name>tour_cto</servlet-name>
+<servlet-name>t_cto</servlet-name>
 <servlet-class>t_controller.t_cto</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>tour_cto</servlet-name>
+<servlet-name>t_cto</servlet-name>
 <url-pattern>*.tour</url-pattern>
 </servlet-mapping>
 
