@@ -180,80 +180,7 @@
 				</div>
 			</div>
 
-			<!--    <div style="margin-top: 200px;">
-
-               
-                 <div style="display: flex;">
-                        
-                        <div class="slideshow_container">
-                            <div class="Slidesbackground">
-                                <div class="mySlides fade" style="display: none;">
-                                
-                                	<div style="display: flex;">
-                                	<div>
-                                	<img alt="루브르" src="./image/tour/r_louvre_img.jpg" class="slideshow-image">
-	                                </div>
-	                                <div>
-	                                <h1>루브르 박물관 가이드!</h1>
-                            		<h3>박물관 전문 가이드와 즐기는 가이드 투어!</h3>
-                            		<h2>명작의 이야기를 들으면서 재밌게 둘러 보세요</h2>           
-	                                </div>		
-	                                </div>
-	                                
-                                </div>
-                                
-                                <div class="mySlides fade" style="display: none;">
-                                
-                                    <img alt="구엘공원" src="./image/tour/guel_.jpg" class="slideshow-image">
-                                </div>
-                                
-                                <div class="mySlides fade" style="display: none;">
-                                    <img alt="런던"  src="./image/tour/london_city_tour.png" class="slideshow-image">
-                                </div>
-                                
-                                <div class="mySlides fade" style="display: none;">
-                                    <img alt="로마" src="./image/tour/rome_city_tour.jpg" class="slideshow-image">
-                                </div> 
-                            </div>
-                        </div>
-        
-                        <div class="Slidesbackground" style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
-                            <h1>가우디 투어</h1>
-                            <h3>최고 효율의 동선으로 최고의 만족!</h3>
-                            <h2>10년 경력의 베테랑 가이드와 함께하는 가우디 투어</h2>    
-                           <div name="test">
-                           <div class="slidetext fade">
-                            <h1>루브르 박물관 가이드!</h1>
-                            <h3>박물관 전문 가이드와 즐기는 가이드 투어!</h3>
-                            <h2>명작의 이야기를 들으면서 재밌게 둘러 보세요</h2>                             
-                           </div>
-                           <div class="slidetext fade">
-                            <h1>가우디 투어</h1>
-                            <h3>최고 효율의 동선으로 최고의 만족!</h3>
-                            <h2>10년 경력의 베테랑 가이드와 함께하는 가우디 투어</h2>
-                           </div>
-                       		
-							<div class="slidetext fade">
-                            <h1>런던 시티 투어</h1>
-                            <h3>2층 버스 타며 런던 한바퀴</h3>
-                            <h2>버스 타고 런던의 랜드마크를 한 번에 구경하자</h2>
-                           </div>
-                           <div class="slidetext fade">
-                            <h1>로마 시티 투어</h1>
-                            <h3>버스로 편하게 로마의 랜드마크 즐겨보세요</h3>
-                            <h2>오디오 가이드로 자세한 설명을 들을 수 있습니다.</h2>
-                            </div>
-                            
-                            <div style="width: 100px; margin-left: auto; margin-right: auto; padding: 20px; text-align: center;">
-                                	자세히보기
-                            </div>
-                            
-                            </div>
-
-                        </div>
-                    </div>
-                    
-            </div> -->
+			<!--  -->
 
 			<!--  -->
 			
@@ -261,34 +188,34 @@
 <jsp:useBean id="id" class="adventour.g_list_print">
 			<!--  -->
 
-    <div class="h_recity" style="margin-top: 250px; border-style: solid">
+    <div class="t_country" >
 	
 	<div> 
-	<h2 class="h_retitle" style="float: left;"> 국가별 투어</h2>
+	<h1 style="float: left;"> 국가별 투어</h1>
 	<div style="float: right; cursor: pointer;" onclick="location.href='./t_list.jsp'">전체보기</div> 
+	<br><br><hr>
 	</div>
-	 
 	
-        <div class="h_recityimgs" style="margin-top: 30px" >
+        <div class="t_flag">
         
-          <div class="ukimg">
-            <img class="h_recityimg1" src="image/img/uk.png">
-            <h2 class="ukname"> 영국</h2>
+          <div class="ukimg" id="country_name">
+            <img class="uk_flag" id="flag" src="image/img/uk.png">
+            <h2 class="ukname">영국</h2>
           </div>
           
-          <div class="fraimg">
-            <img class="h_recityimg3" src="image/img/fra.png">
-            <h2 class="franame"> 프랑스</h2>
+          <div class="fraimg" id="country_name">
+            <img class="fr_flag" id="flag" src="image/img/fra.png">
+            <h2 class="franame">프랑스</h2>
           </div>
 
-          <div class="spaimg">
-            <img class="h_recityimg4" src="image/img/spain.png">
-            <h2 class="spaname"> 스페인</h2>
+          <div class="spaimg" id="country_name">
+            <img class="es_flag" id="flag" src="image/img/spain.png">
+            <h2 class="spaname">스페인</h2>
           </div>
           
-          <div class="ityimg">
-            <img class="h_recityimg2" src="image/img/ity.png">
-            <h2 class="ityname"> 이탈리아</h2>
+          <div class="ityimg" id="country_name">
+            <img class="ita_flag" id="flag" src="image/img/ity.png">
+            <h2 class="ityname">이탈리아</h2>
           </div>
 
         </div>

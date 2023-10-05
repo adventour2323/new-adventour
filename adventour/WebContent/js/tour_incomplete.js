@@ -48,45 +48,39 @@ $(document).ready(function() {
 //
 ////------------------------------------------지역으로 고르기------------
 //영국
-$('.h_recityimg1').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
-  $('.h_recityimg1').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+$('.uk_flag').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.uk_flag').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
 });
 
-$('.h_recityimg1').on('mouseleave', function() { //이미지위에 마우스가 없으면
-  $('.h_recityimg1').css('filter','brightness(1)'); // 밝기는 돌아온다
+$('.uk_flag').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.uk_flag').css('filter','brightness(1)'); // 밝기는 돌아온다
 });
-
-
-
-
-//이탈리아
-
-$('.h_recityimg2').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
-  $('.h_recityimg2').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
-});
-
-$('.h_recityimg2').on('mouseleave', function() { //이미지위에 마우스가 없으면
-  $('.h_recityimg2').css('filter','brightness(1)'); // 밝기는 돌아온다
-});
-
-
 
 //프랑스
 
-$('.h_recityimg3').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
-  $('.h_recityimg3').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+$('.fr_flag').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.fr_flag').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
 });
-$('.h_recityimg3').on('mouseleave', function() { //이미지위에 마우스가 없으면
 
-  $('.h_recityimg3').css('filter','brightness(1)'); // 밝기는 돌아온다
+$('.fr_flag').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.fr_flag').css('filter','brightness(1)'); // 밝기는 돌아온다
 });
 //스페인
-$('.h_recityimg4').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
-  $('.h_recityimg4').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+$('.es_flag').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.es_flag').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
 });
-$('.h_recityimg4').on('mouseleave', function() { //이미지위에 마우스가 없으면
+$('.es_flag').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.es_flag').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
 
-  $('.h_recityimg4').css('filter','brightness(1)'); // 밝기는 돌아온다
+//이탈리아
+
+$('.ita_flag').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+$('.ita_flag').css('filter','brightness(0.5)'); //이미지의 색이 어두워지고
+});
+
+$('.ita_flag').on('mouseleave', function() { //이미지위에 마우스가 없으면
+$('.ita_flag').css('filter','brightness(1)'); // 밝기는 돌아온다
 });
 
   

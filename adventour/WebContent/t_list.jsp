@@ -28,8 +28,7 @@
 			ArrayList<t_getset> a1 = id.t1();
 		%>
 
-		<%
-			for (t_getset info : a1) {
+		<% for (t_getset info : a1) {
 		%>
 		<div>
 
@@ -63,21 +62,11 @@
 					<td><%=info.getT_theme()%></td>
 					</tr>
 
-
-
-
 				</table>
 			</div>
 
 		</div>
-
-
-
-
-
-		<%
-			}
-		%>
+<% } %>
 
 
 

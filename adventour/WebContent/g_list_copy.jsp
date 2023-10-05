@@ -52,54 +52,62 @@ border: none;
       	이탈리아
       </div>
       
-      
-      </div> <!-- 표 묶음  -->
+</div> <!-- 표 묶음  -->
       
       
         <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">
 		<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
 		<!--  -->
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--  -->
 		<div style="display: flex;  ">
+		
 		<% 
 		for ( int i = 0; i < 4; i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
-	  <table style="width: 100px; border-style: solid;">
-		  <thead>
-			  <tr>
-				  <th colspan="4"  style="cursor: pointer;" >
-					   <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
-					  <figure>
-					  <%
-					  out.println("<img src='"+g.getImg()+"' width='200px' alt='img'>");
-					  %>
-					  <figcaption>자세히보기</figcaption>
-					  </figure>
-					   </a>
-				  </th>
-			  </tr>
-		  </thead>
-        <thead>
-            <tr>
-                <th>이름</th>
-                <th>국가</th>
-                <th>도시</th>
-                <th>테마</th>
-            </tr>
-        </thead>
-        <tbody >
-            <tr>
-                <td><%=g.getName()%></td>
-                <td><%=g.getCountry() %></td>
-                <td><%=g.getCity() %></td>
-                <td><%=g.getTheme() %></td>
-            </tr>
-        </tbody>
-    </table>
+				<table style="height: 200px;">
+					<tr>
+					<td rowspan="10" style="width: 200px;">
+					<img alt="tour 사진" src="<%=g.getImg()%>" style="height: 200px; width: 200px;">
+					</td>
+					</tr>
+					<tr align='center'>
+						<th style='width: 100px;'>이름</th>
+						<td><%=g.getName()%></td>
+					</tr>
+					
+					<tr align='center'>
+						<th>국가</th>
+						<td><%=g.getCountry()%></td>
+					</tr>
+					<tr>
+					<th>도시</th>
+					<td><%=g.getCity()%></td>
+					</tr>
+					
+					<tr>
+					<th>테마</th>
+					<td><%=g.getTheme()%></td>
+					</tr>
+
+				</table>
+			</div>
+
+		</div>
 	  
-  </div>
+
   
   <% } %>
   </div>

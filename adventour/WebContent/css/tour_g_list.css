@@ -30,6 +30,31 @@ body {
     margin-top: 50px;
     margin-left: 300px;
 }
+#category{
+	border-style: solid;
+	cursor: pointer;
+	display: flex;
+	
+	margin-bottom: 30px;		
+}
+.all_country {
+	margin-left: auto;
+	
+	
+}
+.category_uk{
+	margin-left: 10px;
+	}
+.category_fr{
+	margin-left: 10px;
+}	
+.category_es{
+	margin-left: 10px;
+}
+.category_ita {
+	margin-left: 10px;
+	margin-right: auto;
+}
 
 
 /*  */
