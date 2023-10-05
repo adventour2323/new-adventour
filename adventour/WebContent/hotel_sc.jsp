@@ -117,7 +117,17 @@ if (list != null) {
           </div>
 
           <div class="h_grade">
-          <h3 class="h_tigrade"><%=ukAll.getH_grade() %>성급</h3>
+        
+              <%
+         String grade = ukAll.getH_grade();
+         int starGrade = Integer.parseInt(grade);
+        for (int ii = 0; ii <= 5; i++) {
+    %>
+        <img src="image/hotel/h_image/star.png" alt="별 이미지">
+    <%
+    }
+    %>
+       
           </div>
 
           <div class="h_star">
