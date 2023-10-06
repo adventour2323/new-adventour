@@ -44,9 +44,8 @@
 
 
 	<select id="select_top10_info" resultType="getset.H_getset">
-		SELECT * from h_hotel
-		where h_name_eng='{h_name_eng}';
-
+		SELECT * from h_room
+		where h_name_eng= #{h_name_eng};
 	</select>
 
 

@@ -86,17 +86,20 @@
     	 for (int i = 0; i < list.size(); i++) {
              H_getset aaa = list.get(i);
 %>
+                     
 							<div class="swiper-slide">
 								<img class="top<%= i + 1 %>"
 									src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt=""
-									href="<%=aaa.getH_name_eng() %>.hotel?uname=<%=aaa.getH_name_eng() %>" />
-								<p class="top_contry"><%= aaa.getCountry_ko() %>
+									href="information.hotel?uname=<%=aaa.getH_name_eng() %>" />
+								<p class="top_contry" href="information.hotel?uname=<%=aaa.getH_name_eng() %>"> <%= aaa.getCountry_ko() %>
 									-
 									<%= aaa.getCity_ko() %>
 								</p>
-								<p class="top_name"><%= aaa.getH_name_ko() %></p>
+								<p class="top_name" href="information.hotel?uname=<%=aaa.getH_name_eng() %>"><%= aaa.getH_name_ko() %></p>
 							</div>
-							<%
+							
+<%
+String bbb = aaa.getH_name_eng();
     }
 } else {
     out.println("null data"); // null값이 들어온 경우 출력되는 데이터
