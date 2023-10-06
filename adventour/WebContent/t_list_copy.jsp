@@ -58,7 +58,7 @@
 	  
 	  	</div>   <!-- 끝 -->
 	  
-	  </div>
+	  </div> 
 	  
 	<% } %>
 </jsp:useBean>
