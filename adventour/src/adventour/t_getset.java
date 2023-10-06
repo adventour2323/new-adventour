@@ -25,8 +25,21 @@ public class t_getset {
 	String t_logo;
 //	
 	String g_name;
+	String country_eng;
 //	
 	
+	/**
+	 * @return the country_eng
+	 */
+	public String getCountry_eng() {
+		return country_eng;
+	}
+	/**
+	 * @param country_eng the country_eng to set
+	 */
+	public void setCountry_eng(String country_eng) {
+		this.country_eng = country_eng;
+	}
 	public String getG_name() {
 		return g_name;
 	}
