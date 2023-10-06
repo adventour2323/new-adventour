@@ -10,7 +10,7 @@
 	</select>
 	
 	<select id="tour_list" resultType="adventour.t_getset">
-		select t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, t_price, t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour; 
+		select *from tour; 
 		
 	</select>	
 

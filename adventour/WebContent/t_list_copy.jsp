@@ -29,10 +29,8 @@
 
 		<% ArrayList<t_getset> a1 = id.t1(); %>
 		
+
 		
-		<div>
-		df  <%=  %> d
-		</div>
 
 		<% for (t_getset g : a1) { %>
 		
