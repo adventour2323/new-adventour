@@ -36,11 +36,16 @@ border: none;
       
 <div style="display: flex; "> <!-- 표 묶음  -->
       
+     
       <div id="category" class="all_country">
+      <a href="g_list.jsp">
       	전체
+      </a>
       </div>
       <div id="category" class="category_uk">
+      
       	영국
+      	      
       </div>
       <div id="category" class="category_fr" >
       	프랑스
@@ -101,115 +106,57 @@ border: none;
   <!--  -->
   
    <div style=" display: flex;">
-  		<% 
+  		<%-- <% 
 		for ( int i = 4; i < 8; i++ ) {
 			g_getset g = a1.get(i);
+		%> --%>
+		<% 
+		for ( int i = 0; i < a1.size(); i++ ) {
+			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
-	  <table style="height: 200px;">
-					<tr>
-					<td rowspan="10" style="width: 200px;">
-					<img alt="tour 사진" src="<%=g.getImg()%>" style="height: 200px; width: 200px;">
-					</td>
-					</tr>
-					<tr align='center'>
-						<th style='width: 100px;'>이름</th>
-						<td><%=g.getName()%></td>
-					</tr>
-					
-					<tr align='center'>
-						<th>국가</th>
-						<td><%=g.getCountry()%></td>
-					</tr>
-					<tr>
-					<th>도시</th>
-					<td><%=g.getCity()%></td>
-					</tr>
-					
-					<tr>
-					<th>테마</th>
-					<td><%=g.getTheme()%></td>
-					</tr>
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px; ">
+	  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #fff; white-space:normal;">
+                    <tbody>
+                        <tr>
+                            <td width="115"><a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <img src="<%=g.getImg()%>" width="115" height="148">
+                            </a></td>
 
-				</table>
-	  
+                            <td>
+                                <div style="margin: 0px 20px; width: 280px;">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                        class="guide_css" style="border-top: 1px solid #0066b3;">
+                                        <tbody>
+                                            <tr>
+                                                <th width="100">이름</th>
+                                                <td><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><%=g.getName()%></a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>국가</th>
+                                                <td><%=g.getCountry()%></td>
+                                            </tr>
+                                            <tr>
+                                                <th>도시</th>
+                                                <td><%=g.getCity()%></td>
+                                            </tr>
+                                            <tr>
+                                                <th>테마</th>
+                                                <td><%=g.getTheme()%></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
   </div>
+  
   <% } %>
   </div>
    
-    <div style=" display: flex;">
-  		<% 
-		for ( int i = 8; i < 12; i++ ) {
-			g_getset g = a1.get(i);
-		%>
-		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
-	  <table style="height: 200px;">
-					<tr>
-					<td rowspan="10" style="width: 200px;">
-					<img alt="tour 사진" src="<%=g.getImg()%>" style="height: 200px; width: 200px;">
-					</td>
-					</tr>
-					<tr align='center'>
-						<th style='width: 100px;'>이름</th>
-						<td><%=g.getName()%></td>
-					</tr>
-					
-					<tr align='center'>
-						<th>국가</th>
-						<td><%=g.getCountry()%></td>
-					</tr>
-					<tr>
-					<th>도시</th>
-					<td><%=g.getCity()%></td>
-					</tr>
-					
-					<tr>
-					<th>테마</th>
-					<td><%=g.getTheme()%></td>
-					</tr>
-
-				</table>
-	  
-  </div>
-  <% } %>
-  </div>
-  <br>
-    <div style=" display: flex;">
-  		<% 
-		for ( int i = 12; i < 16; i++ ) {
-			g_getset g = a1.get(i);
-		%>
-		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
-	  <table style="height: 200px;">
-					<tr>
-					<td rowspan="10" style="width: 200px;">
-					<img alt="tour 사진" src="<%=g.getImg()%>" style="height: 200px; width: 200px;">
-					</td>
-					</tr>
-					<tr align='center'>
-						<th style='width: 100px;'>이름</th>
-						<td><%=g.getName()%></td>
-					</tr>
-					
-					<tr align='center'>
-						<th>국가</th>
-						<td><%=g.getCountry()%></td>
-					</tr>
-					<tr>
-					<th>도시</th>
-					<td><%=g.getCity()%></td>
-					</tr>
-					
-					<tr>
-					<th>테마</th>
-					<td><%=g.getTheme()%></td>
-					</tr>
-
-				</table>
-	  
-  </div>
-  <% } %>
-  </div>
+    
   
   <!--  -->
   

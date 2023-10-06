@@ -192,7 +192,7 @@
 	
 	<div> 
 	<h1 style="float: left;"> 국가별 투어</h1>
-	<div style="float: right; cursor: pointer;" onclick="location.href='./t_list.jsp'">전체보기</div> 
+	<div style="float: right; cursor: pointer;" onclick="location.href='main.tour?tour=tourlist'">전체보기</div> 
 	<br><br><hr>
 	</div>
 	

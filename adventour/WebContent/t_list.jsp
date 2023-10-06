@@ -24,11 +24,15 @@
 
 	<jsp:useBean id="id" class="adventour.g_list_print">
 
-		<%
+	<%-- 	<%
 			ArrayList<t_getset> a1 = id.t1();
+		%> --%>
+		<%
+			List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
 		%>
 
-		<% for (t_getset info : a1) {
+		<% 
+			for (t_getset info : a1) {
 		%>
 		<div>
 

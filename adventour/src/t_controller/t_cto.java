@@ -25,7 +25,14 @@ public class t_cto extends HttpServlet {
 				String g = inter.t_interf(rq, rs);
 				RequestDispatcher dispatcher = rq.getRequestDispatcher("tour_jsp.jsp");
 				dispatcher.forward(rq, rs);
+				
+			} else if(tour.equals("tourlist")) {
+				inter = t_t_db_sel.t_select();
+				String tl = inter.t_interf(rq, rs);
+				RequestDispatcher dispatcher = rq.getRequestDispatcher("t_list.jsp");
+				dispatcher.forward(rq, rs);
 			}
+			
 		}  catch (Exception e) {
 			e.printStackTrace();
 		}	
