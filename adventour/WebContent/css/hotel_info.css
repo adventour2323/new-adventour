@@ -53,7 +53,7 @@
   /*----------------------------------------content---------------------------*/
   .content {
     width: 1100px;
-    height: 1000px;
+    height: 1300px;
     margin-top: -820px;
     margin-left: 400px;
  
@@ -65,11 +65,12 @@
 /*오른쪽 버튼네비*/
 .h_map{
   position: fixed;
-  top:180px;
+  top:190px;
   right: 100px;
   width: 290px;
   height: 290px;
   border: solid 1px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .rinav{
@@ -173,68 +174,81 @@
  margin-top: 30px;
 }
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
-#hotel_info{/*내용전체*/
-  border:solid 1px;
+#hotel_info{/*내용전체 content div와 함께수정 해야 함.*/
+
   width: 1000px;
-  height: 1000px;
+  height: 1300px;
   margin-top: 120px;
   margin-left: 50px;
+
 }
+
 #hotel_info_phos{
-  background-color: antiquewhite;
+ 
   width: 950px;
   height: 400px;
   margin-top: 0px;
   padding-top: 50px;
   padding-left: 50px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
 #hotel_info_pho1{
   border:solid 1px;
   width: 300px;
   height: 300px;
-  background-color: aliceblue;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+ 
+}
+#hotel_info_pho1:hover,#hotel_info_pho2:hover,#hotel_info_pho3:hover,
+#hotel_info_pho4:hover,#hotel_info_pho5:hover,#hotel_info_pho6:hover,
+#hotel_info_pho7:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 .h_info_title_pho1{
   width: 300px;
   height: 300px;
 }
 #hotel_info_pho2{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: -325px;
   margin-left: 350px;
+  
 }
 #hotel_info_pho3{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: 25px;
   margin-left: 350px;
 }
 #hotel_info_pho4{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: -385px;
   margin-left: 550px;
 }
 #hotel_info_pho5{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: 25px;
   margin-left: 550px;
 }
 #hotel_info_pho6{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: -385px;
   margin-left: 755px;
 }
 #hotel_info_pho7{
-  background-color: aqua;
+  border:solid 1px;
   width: 180px;
   height: 180px;
   margin-top: 25px;
@@ -244,24 +258,117 @@
 .h_info_title_pho5,.h_info_title_pho6,.h_info_title_pho7{
   width: 180px;
   height: 180px;
+  
 }
+/*---------------사진 밑 정보---------------------------------*/
 #hotel_info_engname{
-  border:solid 1px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
   width: 800px;
-  height: 50px;
+  height: 35px;
   padding-top: 25px;
-  padding-left: 15px;
+  padding-left: 50px;
 }
 #hotel_info_koname{
-  border:solid 1px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+  width: 800px;
+  height: 40px;
+  padding-left: 50px;
+}
+#hotel_info_addr{
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
   width: 800px;
   height: 30px;
-  padding-left: 15px;
+  padding-left: 50px;
 }
 
+#hotel_info_tel{
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+  width: 800px;
+  height: 30px;
+  padding-left: 50px;
+}
+#hotel_info_options{
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+  width: 800px;
+  height: 30px;
+  padding-left: 50px;
+}
+#hotel_info_breakfast,#hotel_info_pool,
+#hotel_info_rooftop{
+  width: 120px;
+  height: 30px;
+}
+#hotel_info_pool{
+  margin-left: 125px;
+  margin-top: -30px;
+}
+#hotel_info_rooftop{
+  margin-left: 260px;
+  margin-top: -30px;
+}
+/*----------------룸 별 정보 ---------------------------------------- */
+#hotel_room_info{
+ border:solid 1px;
+  width: 980px;
+  height: 300px;
+  margin-top: 20px;
+  padding-left: 20px;
 
+}
+#hotel_room_type{
+  width: 220px;
+  height: 30px;
+  padding-top: 15px;
+  text-align: center;
+}
+#h_room_pho{
+border: solid 1px;
+  width: 220px;
+  height: 220px;
+  margin-top: 20px;  
+}
+#h_room_options1{
 
+  width: 300px;
+  height: 250px;
+  margin-top: -230px;
+  margin-left: 275px; 
+}
+#h_room_options1 h4{
+ 
+  width: 300px;
+  height: 25px;
+  margin-top: 10px;
+}
+#h_room_options2{
+  
+  width: 300px;
+  height: 250px;
+  margin-top: -260px;
+  margin-left: 600px; 
+}
+#h_room_options2 h4{
 
+  width: 300px;
+  height: 25px;
+  margin-top: 10px;
+}
+#h_room_price{
+
+  width: 150px;
+  height: 25px;
+  margin-top: 30px;
+  float: right;
+}
+#roompay_btn{
+
+  width: 120px;
+  height: 50px;
+  margin-top: 30px;
+  margin-left: 150px;
+  font-size: 20px;
+ 
+}
 
 
 
