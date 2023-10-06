@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="getset.H_getset" %>
 <%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +81,7 @@
   <div class="content">
 
     <div class="h_map"> <!--왼쪽 지도-->
-      <div id="map" style="height: 300px;"> </div>
+      <div id="map" style="height: 290px;"> </div>
 
     <div class="rinav"> <!--장바구니 등 -->
 
@@ -123,15 +124,61 @@
 
 
     <div id="hotel_info_engname">
-      <h2>호텔이름 영문으로 가져와</h2>
+      <h2 name="hotel_info_engname ">호텔이름 영문으로 가져와</h2>
     </div>
 
     <div id="hotel_info_koname">
-      <h2>(호텔이름 한글로 가져와)</h2>
+      <h3 name="hotel_info_koname">(호텔이름 한글로 가져와)</h3>
     </div>
 
+    <div id="hotel_info_addr">
+      <h4 name="hotel_info_addr"> 주소 : 주소 가져와 </h4>
+    </div>
+
+    <div id="hotel_info_tel">
+      <h4 name="hotel_info_tel"> TEL : 전화번호 가져와 </h4>
+    </div>
+
+    <div id="hotel_info_options">
+
+      <div id="hotel_info_breakfast">
+        <h4 name="hotel_info_breakfast">조식 (y =가능)</h4>
+      </div><!--hotel_info_options-->
+      
+      <div id="hotel_info_pool">
+        <h4 name="hotel_info_pool">수영장  (y =있음)</h4>
+      </div><!--hotel_info_options-->
+      
+      <div id="hotel_info_rooftop">
+        <h4 name="hotel_info_rooftop">루프탑  (y =있음)</h4>
+      </div><!--hotel_info_options-->
+    
+    </div><!--hotel_info_options-->
+
+    <div id="hotel_room_info">
+      <h2 id="hotel_room_type" name="hotel_room_type">double room</h2>
+        <div id="h_room_pho" >
+          <img id="h_room_phoi" name="h_room_phoi" src="">
+        </div>
+        <div id="h_room_options1" >
+          <h4 name="h_room_peo"> 최대 가능인원 : 4명</h4>
+          <h4 name="h_room_bed"> 베드 타입 : 슈퍼 싱글, 2개</h4>
+          <h4 name="h_room_breakfast"> 조식 제공 안함</h4>
+          <h4 name="h_room_canael"> 취소 가능 여부 : 불가</h4>
+          <h4 name="h_room_window"> 창문 있음</h4>
+          <h4 name="h_room_smoke"> 금연 </h4>
+        </div><!--h_room_options1-->
+
+        <div id="h_room_options2" >
+          <h4 name="h_room_paynow"> 결제 : 즉시결제</h4>
+          <h4 name="h_room_intime"> 체크인 : 13:00 </h4>
+          <h4 name="h_room_outtime"> 체크아웃 : 12:00 </h4>
+          <h2 id="h_room_price" name="h_room_price"> 100000 </h2>
+          <input id="roompay_btn" type="button" name="roompay_btn" value="결제하기"/>
+        </div><!--h_room_options2-->
 
 
+    </div>
 
 
 

@@ -92,54 +92,75 @@ INSERT INTO `adventour`.`h_hotel` (`country_eng`, `country_ko`, `city_eng`, `cit
 
 
 --------호텔 룸정보 h_room create문 ----->내용이 너무 많아서 csv 파일로 insert
-CREATE TABLE `adventour`.`h_room` (
-      `h_name_eng` VARCHAR(50) NOT NULL,
-    `h_date` DATE NOT NULL,
-       `h_roomtype` VARCHAR(10) NOT NULL,
-      `h_roompeo` INT NOT NULL,
-     `h_roomnum` INT NOT NULL,
-      `h_roompri` INT NOT NULL,
-       INDEX `h_name_eng_idx` (`h_name_eng` ASC),
-    CONSTRAINT `h_name_eng`
-       FOREIGN KEY (`h_name_eng`)
-      REFERENCES `adventour`.`h_hotel` (`h_name_eng`)
-       ON DELETE NO ACTION
-         ON UPDATE NO ACTION
-     )
-     ENGINE = InnoDB
- DEFAULT CHARACTER SET = utf8;
+ CREATE TABLE `h_room` (
+  `h_name_eng` varchar(50) NOT NULL,
+  `h_roomtype` varchar(10) NOT NULL,
+  `h_roompeo` int(11) NOT NULL,
+  `h_roomnum` varchar(30) NOT NULL,
+  `h_roompri` int(11) NOT NULL,
+  `h_room_bed` varchar(10) NOT NULL,
+  `h_room_bedc` int(11) NOT NULL,
+  `h_room_breakfast` varchar(10) NOT NULL,
+  `h_room_cancel` varchar(10) NOT NULL,
+  `h_room_window` varchar(10) NOT NULL,
+  `h_room_smoke` varchar(10) NOT NULL,
+  `h_room_paynow` varchar(10) NOT NULL,
+  `h_room_intime` varchar(45) NOT NULL,
+  `h_room_outime` varchar(45) NOT NULL,
+  PRIMARY KEY (`h_roomnum`),
+  KEY `h_name_eng_idx` (`h_name_eng`),
+  CONSTRAINT `h_name_eng` FOREIGN KEY (`h_name_eng`) REFERENCES `h_hotel` (`h_name_eng`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
     
  ----- 호텔 예약 확인용 테이블 생성 h_reserv create문
- CREATE TABLE `adventour`.`h_reserve` (
-  `h_tinum` VARCHAR(20) NOT NULL,
-  `h_roomnum` INT NOT NULL,
-  `m_id` VARCHAR(20) NOT NULL,
-  `h_room_user` INT NOT NULL,
-  `h_total_price` INT NOT NULL,
-  PRIMARY KEY (`h_tinum`),
-  INDEX `h_roomnum_idx` (`h_roomnum` ASC),
-  CONSTRAINT `h_roomnum`
-    FOREIGN KEY (`h_roomnum`)
-    REFERENCES `adventour`.`h_room` (`h_roomnum`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+
+
+CREATE TABLE `adventour`.`h_reserve` (
+    `h_tinum` VARCHAR(20) NOT NULL,
+    `h_roomnum` VARCHAR(30) NOT NULL,
+    `m_id` VARCHAR(20) NOT NULL,
+    `h_room_user` INT NOT NULL,
+    `h_total_price` INT NOT NULL,
+    `h_indate` DATE NOT NULL,
+    `h_outdate` DATE NOT NULL,
+    PRIMARY KEY (`h_tinum`)
+); 
+
+--오류 때문에 fk 따로추가1
+ALTER TABLE `adventour`.`h_reserve`
+ADD CONSTRAINT `h_roomnum`
+  FOREIGN KEY (`h_roomnum`)
+  REFERENCES `adventour`.`h_room` (`h_roomnum`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+--오류 때문에 fk 따로추가2
+ALTER TABLE `adventour`.`h_reserve` 
+CHANGE COLUMN `m_id` `h_m_id` VARCHAR(20) NOT NULL ;
+ALTER TABLE `adventour`.`h_reserve` 
+ADD CONSTRAINT `h_m_id`
+  FOREIGN KEY (`h_m_id`)
+  REFERENCES `adventour`.`member` (`m_id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
 
 -----------------------------예약 번호 insert--------------------------------------------
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h101', '101', 'qwer', '4', '100000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231002h202', '202', 'qwer', '2', '200000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h301', '301', 'asdf', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231002h402', '402', 'asdf', '4', '220000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231011h411', '411', 'asdf', '2', '220000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h701', '701', 'zxcv', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h901', '901', 'wert', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h1301', '1301', 'sdfg', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h2101', '2101', 'xcvb', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h1501', '1501', 'wert', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h1701', '1701', 'sdfg', '4', '110000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h1801', '1801', 'sdfg', '2', '220000');
-INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `m_id`, `h_room_user`, `h_total_price`) VALUES ('231001h2001', '2001', 'qwer', '2', '220000');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hpont101', 'pont101', 'qwer', '4', '100000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231003Hpont102', 'pont101', 'qwer', '3', '100000', '2023-10-03', '2023-10-04');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231005Hpont205', 'pont205', 'qwer', '2', '200000', '2023-10-05', '2023-10-06');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hatolon209', 'atolon209', 'asdf', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231002Hatolon210', 'atolon209', 'asdf', '2', '200000', '2023-10-02', '2023-10-03');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001H novotel m106', ' novotel m106', 'zxcv', '2', '100000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Holympia210', 'olympia210', 'asdf', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hmaison207', 'maison207', 'qwer', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hberna205', 'berna205', 'wert', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hboston107', 'boston107', 'sdfg', '2', '130000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Htitanic210', 'titanic210', 'sdfg', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hvilliage105', 'villiage105', 'qwer', '2', '130000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hparkplaza203', 'parkplaza203', 'asdf', '2', '200000', '2023-10-01', '2023-10-02');
+INSERT INTO `adventour`.`h_reserve` (`h_tinum`, `h_roomnum`, `h_m_id`, `h_room_user`, `h_total_price`, `h_indate`, `h_outdate`) VALUES ('20231001Hhard207', 'hard207', 'zxcv', '2', '200000', '2023-10-01', '2023-10-02');
+
 
 -----------연습용 호텔 투어 패키지 creatre문
  CREATE TABLE `adventour`.`packages` (
