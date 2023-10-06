@@ -27,6 +27,7 @@ border: none;
   	<header>
     	 <jsp:include page="header.html"></jsp:include>
 	</header>
+	
 	<jsp:useBean id="id" class="adventour.g_list_print">
 		<%	
 			ArrayList<g_getset> a1 = id.g1();
@@ -62,50 +63,8 @@ border: none;
       
         <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">
 		<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
-		<!--  -->
-		
-		<!--  -->
-		<div style="display: flex;  ">
-		
-		<% 
-		for ( int i = 0; i < 4; i++ ) {
-			g_getset g = a1.get(i);
-		%>
-			<div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px;">
-	  <table style="height: 200px;">
-					<tr>
-					<td rowspan="10" style="width: 200px;">
-					<img alt="tour 사진" src="<%=g.getImg()%>" style="height: 200px; width: 200px;">
-					</td>
-					</tr>
-					<tr align='center'>
-						<th style='width: 100px;'>이름</th>
-						<td><%=g.getName()%></td>
-					</tr>
-					
-					<tr align='center'>
-						<th>국가</th>
-						<td><%=g.getCountry()%></td>
-					</tr>
-					<tr>
-					<th>도시</th>
-					<td><%=g.getCity()%></td>
-					</tr>
-					
-					<tr>
-					<th>테마</th>
-					<td><%=g.getTheme()%></td>
-					</tr>
 
-				</table>
-	  
-  </div>
-  
-  <% } %>
-  </div>
-  <!--  -->
-  
-   <div style=" display: flex;">
+   <div >
   		<%-- <% 
 		for ( int i = 4; i < 8; i++ ) {
 			g_getset g = a1.get(i);
@@ -114,7 +73,8 @@ border: none;
 		for ( int i = 0; i < a1.size(); i++ ) {
 			g_getset g = a1.get(i);
 		%>
-		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px; ">
+		  <div class="container" style=" margin-left: auto; margin-right: auto; margin-bottom: 30px; float: left;  ">
+		  
 	  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #fff; white-space:normal;">
                     <tbody>
                         <tr>
@@ -155,24 +115,19 @@ border: none;
   
   <% } %>
   </div>
-   
-    
-  
-  <!--  -->
-  
 
-  <!--  -->
   </div>
   <!--  -->
  
-
 			</div>
 
 		
 </jsp:useBean>
+		
+
+		</body>
+		
 		<footer>
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>
-
-		</body>
 	</html>

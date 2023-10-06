@@ -24,6 +24,7 @@ body {
 .content{
     width: 1300px;
     /* height: 2150px; */
+    height: 100%;
     margin-bottom: 40px;
     /* border-style: dashed; */
     border-color: blue;
