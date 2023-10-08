@@ -60,7 +60,7 @@ public class H_getset {
 	public void setH_room_breakfast(String h_room_breakfast) {
 		this.h_room_breakfast = h_room_breakfast;
 	}
-	public String getH_room_cancel() { 
+	public String getH_room_cancel() {  
 		return h_room_cancel;
 	}
 	public void setH_room_cancel(String h_room_cancel) {

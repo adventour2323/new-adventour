@@ -33,7 +33,7 @@
   <div class="pagename">
     <h1 class="pagename1">HOTEL</h1>
   </div><!--htitle-->
-
+ 
 <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
     H_getset sch_country = list.get(0);
 %>

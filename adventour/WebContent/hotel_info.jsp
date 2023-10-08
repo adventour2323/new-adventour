@@ -153,7 +153,7 @@ if (top_list != null) {
     <div id="hotel_info_options">
 
       <div id="hotel_info_breakfast">
-             <h4 class="hotel_info_breakfast">  
+             <h4 class="hotel_info_breakfast">   
             조식 
             <% if (aaa.getH_breakfast().equals("y")) { %>
                 가능

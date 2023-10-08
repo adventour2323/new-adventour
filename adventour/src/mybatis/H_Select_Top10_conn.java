@@ -37,6 +37,6 @@ public class H_Select_Top10_conn {
 	    ret_dbconn.close();//open을 했으면 닫아줘야함
 	    return top_list;
 	  //호출한 앞페이지로 리턴값 전달
-	} 
+	}  
 }
  
