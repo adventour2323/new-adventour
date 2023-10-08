@@ -46,7 +46,7 @@ public class H_getset {
 		return h_room_bed;
 	}
 	public void setH_room_bed(String h_room_bed) {
-		this.h_room_bed = h_room_bed;
+		this.h_room_bed = h_room_bed;  
 	}
 	public int getH_room_bedc() {
 		return h_room_bedc;
