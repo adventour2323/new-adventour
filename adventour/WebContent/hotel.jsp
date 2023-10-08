@@ -76,35 +76,33 @@
 			<h2 class="h_retitle">추천 인기호텔 TOP10</h2>
 
 			<section class="awards">
-				<!--이미지스위퍼 -->
+				<!-- 이미지 스와이퍼 -->
 				<div class="inner">
 					<div class="swiper">
 						<div class="swiper-wrapper">
-							<% 
-    List<H_getset> list = (List<H_getset>) request.getAttribute("list"); // null값이라 출력 x
-    if (list != null) {
-    	 for (int i = 0; i < list.size(); i++) {
-             H_getset aaa = list.get(i);
-%>
-                     
-							<div class="swiper-slide">
-								<img class="top<%= i + 1 %>"
-									src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt=""
-									href="information.hotel?uname=<%=aaa.getH_name_eng() %>" />
-								<p class="top_contry" href="information.hotel?uname=<%=aaa.getH_name_eng() %>"> <%= aaa.getCountry_ko() %>
-									-
-									<%= aaa.getCity_ko() %>
-								</p>
-								<p class="top_name" href="information.hotel?uname=<%=aaa.getH_name_eng() %>"><%= aaa.getH_name_ko() %></p>
-							</div>
-							
-<%
-String bbb = aaa.getH_name_eng();
-    }
-} else {
-    out.println("null data"); // null값이 들어온 경우 출력되는 데이터
-}
-%>
+							<%
+                List<H_getset> list = (List<H_getset>) request.getAttribute("list");
+                if (list != null) {
+                    for (int i = 0; i < list.size(); i++) {
+                        H_getset aaa = list.get(i);
+                       
+                %>
+<div class="swiper-slide">
+    <a href="information.hotel?uname=<%= aaa.getH_name_eng() %>">
+        <img class="top<%= i + 1 %>"
+        src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
+        <p class="top_contry"><%= aaa.getCountry_ko() %>
+            -
+            <%= aaa.getCity_ko() %></p>
+        <p class="top_name"><%= aaa.getH_name_ko() %></p>
+    </a>
+</div>
+							<%
+                    }
+                } else {
+                    out.println("null data");
+                }
+                %>
 						</div>
 					</div>
 				</div>
@@ -136,26 +134,20 @@ String bbb = aaa.getH_name_eng();
 							<h2>영국</h2>
 						</div>
 					</div>
-				</a> 
-				
-				<a href="main.hotel?uname=italy">
+				</a> <a href="main.hotel?uname=italy">
 					<div class="ityimg">
 						<img class="h_recityimg2" src="image/img/ity.png">
-						<h2 class="ityname" >이탈리아</h2>
+						<h2 class="ityname">이탈리아</h2>
 					</div>
-				</a> 
-				
-				<a href="main.hotel?uname=france">
+				</a> <a href="main.hotel?uname=france">
 					<div class="fraimg"">
 						<img class="h_recityimg3" src="image/img/fra.png">
-						<h2 class="franame" >프랑스</h2>
+						<h2 class="franame">프랑스</h2>
 					</div>
-				</a> 
-				
-				<a href="main.hotel?uname=spain">
-					<div class="spaimg" >
+				</a> <a href="main.hotel?uname=spain">
+					<div class="spaimg">
 						<img class="h_recityimg4" src="image/img/spain.png">
-						<h2 class="spaname" >스페인</h2>
+						<h2 class="spaname">스페인</h2>
 					</div>
 				</a>
 

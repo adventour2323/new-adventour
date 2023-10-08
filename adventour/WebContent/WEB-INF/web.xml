@@ -6,22 +6,14 @@
 
 
 <servlet>
-
 <servlet-name>hotel_cto</servlet-name>
 <servlet-class>h_controller.H_Cto</servlet-class>
-
 </servlet>
 
-
 <servlet-mapping>
-
 <servlet-name>hotel_cto</servlet-name>
 <url-pattern>*.hotel</url-pattern>
-
 </servlet-mapping>
-
-
-
 
 
 <servlet>

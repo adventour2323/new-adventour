@@ -53,7 +53,7 @@
   /*----------------------------------------content---------------------------*/
   .content {
     width: 1100px;
-    height: 1300px;
+    height: 1800px;
     margin-top: -820px;
     margin-left: 400px;
  
@@ -174,10 +174,10 @@
  margin-top: 30px;
 }
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
-#hotel_info{/*내용전체 content div와 함께수정 해야 함.*/
+#hotel_infos{/*내용전체 content div와 함께수정 해야 함.*/
 
   width: 1000px;
-  height: 1300px;
+  height: 1800px;
   margin-top: 120px;
   margin-left: 50px;
 
@@ -272,7 +272,7 @@
   text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
   width: 800px;
   height: 40px;
-  padding-left: 50px;
+  padding-left: 0px;
 }
 #hotel_info_addr{
   text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
@@ -327,6 +327,11 @@ border: solid 1px;
   height: 220px;
   margin-top: 20px;  
 }
+#h_room_phoi{
+  width: 220px;
+  height: 220px;
+}
+
 #h_room_options1{
 
   width: 300px;
@@ -344,8 +349,8 @@ border: solid 1px;
   
   width: 300px;
   height: 250px;
-  margin-top: -260px;
-  margin-left: 600px; 
+  margin-top: -210px;
+  margin-left: 300px; 
 }
 #h_room_options2 h4{
 

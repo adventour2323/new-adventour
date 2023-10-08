@@ -27,8 +27,6 @@ public class H_Select_ukAll_conn {
 	    H_getset contry_list2 = new H_getset();
 	    contry_list2.setCountry_list(contry_list);
 	    
-
-	   
 	    
 	    List<H_getset> ukAll_list = ret_dbconn.selectList("select_ukAll",contry_list2); 
 	    //selectList 스페이스 울러서 확인 한 값

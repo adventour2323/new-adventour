@@ -26,6 +26,71 @@ public class H_getset {
 	String h_roomtype;
 	String h_roompeo;
 	int h_roompri;
+	String h_room_bed;
+	int h_room_bedc;
+	String h_room_breakfast;
+	String h_room_cancel;
+	String h_room_window;
+	String h_room_smoke;
+	String h_room_paynow;
+	String h_room_intime;
+	String h_room_outime;
+	
+	public String getH_room_outime() {
+		return h_room_outime;
+	}
+	public void setH_room_outime(String h_room_outime) {
+		this.h_room_outime = h_room_outime;
+	}
+	public String getH_room_bed() {
+		return h_room_bed;
+	}
+	public void setH_room_bed(String h_room_bed) {
+		this.h_room_bed = h_room_bed;
+	}
+	public int getH_room_bedc() {
+		return h_room_bedc;
+	}
+	public void setH_room_bedc(int h_room_bedc) {
+		this.h_room_bedc = h_room_bedc;
+	}
+	public String getH_room_breakfast() {
+		return h_room_breakfast;
+	}
+	public void setH_room_breakfast(String h_room_breakfast) {
+		this.h_room_breakfast = h_room_breakfast;
+	}
+	public String getH_room_cancel() {
+		return h_room_cancel;
+	}
+	public void setH_room_cancel(String h_room_cancel) {
+		this.h_room_cancel = h_room_cancel;
+	}
+	public String getH_room_window() {
+		return h_room_window;
+	}
+	public void setH_room_window(String h_room_window) {
+		this.h_room_window = h_room_window;
+	}
+	
+	public String getH_room_smoke() {
+		return h_room_smoke;
+	}
+	public void setH_room_smoke(String h_room_smoke) {
+		this.h_room_smoke = h_room_smoke;
+	}
+	public String getH_room_paynow() {
+		return h_room_paynow;
+	}
+	public void setH_room_paynow(String h_room_paynow) {
+		this.h_room_paynow = h_room_paynow;
+	}
+	public String getH_room_intime() {
+		return h_room_intime;
+	}
+	public void setH_room_intime(String h_room_intime) {
+		this.h_room_intime = h_room_intime;
+	}
 	
 	String tour_id;
 	String p_name_eng;
