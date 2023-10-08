@@ -37,7 +37,7 @@
 <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
     H_getset sch_country = list.get(0);
 %>
-  
+   
 
   <div class="schnav"> <!--검색 네비 = sch -->
 

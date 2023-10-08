@@ -55,7 +55,7 @@
     AND h_room.h_roomtype = 'double'
   ORDER BY RAND()
   LIMIT 1
-)
+) 
 UNION
 (
   SELECT h_room.*, h_hotel.*
