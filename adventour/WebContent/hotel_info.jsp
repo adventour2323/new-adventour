@@ -214,7 +214,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 
     </div>
-      </div><!--hotel_info-->
+      </div>
 <%  
 }
 }
@@ -223,6 +223,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 }
 %>
 
+</div><!--hotel_info-->
 
   </div><!--content-->
 
