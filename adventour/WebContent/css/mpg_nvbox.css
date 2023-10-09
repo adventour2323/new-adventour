@@ -104,13 +104,21 @@ ul{
 /*     background-color: rgb(20, 3, 78,0.5); */
 /* } */
 
-.mainNB input:hover{
-    color: white;
-    background-color: rgb(20, 3, 78,0.5);
-}
+/* .mainNB nav<a:hover{ */
+/*     color: white; */
+/*     background-color: rgb(20, 3, 78,0.5); */
+/* } */
 
 /* 하위 네비 리스트 마우스오버할 경우 mpg_nvbox.js에서 사용하는 클래스*/
+.mainNB input:hover,
+.mainNB nav:hover,
 nav.enter{
     color: white;
     background-color: rgb(20, 3, 78, 0.6);   
+}
+
+/*네비 하위리스트들 마우스 오버할 경우 하위리스트 배경색 변화*/
+.mainNB ul>li:hover{
+    color: white;
+    background-color: rgb(20, 3, 78, 0.3);   
 }

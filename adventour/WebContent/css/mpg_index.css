@@ -48,11 +48,10 @@
     margin: 0px;
     padding: 0px;
     border-width: 0px;
-    box-shadow: 5px 5px 5px gray;
 }
 
 /*가장 빠른 예약 텍스트 박스*/
-.mainRB p:nth-child(1) {
+.mainRB > p{
     width: 795px;
     height: 36px;    
     float: left;
@@ -62,8 +61,17 @@
     border-width: 0px;
 }
 
+/*예약 컨텐트 묶는 박스, 섀도우&배경색*/
+.reContentB{
+	width: 795px;
+    height: 165px;
+    float: left;
+    box-shadow: 5px 5px 5px gray;
+    background-color: rgb(20, 2, 70, 0.1);
+}
+
 /*가장빠른 예약 이미지 박스*/
-.mainRB span img{
+.reContentB span img{
     width: 197px;
     height: 154.5px;
     float: left;
@@ -71,27 +79,28 @@
     padding: 1px 2px 2px 1px;
     font-size: 20px;
     border: 1px solid  rgb(20, 3, 78);
-}
+ }
 
-/*예약 내용 박스*/
-.mainRB div:nth-child(3) p:nth-child(1){
-    width: 590px;
+/*예약 대문 텍스트 박스*/
+.reContentB p:nth-child(1){
+    width: 560px;
     height: 30px;
     float: left;
     color: tomato;
     font-size: 18px;
     font-weight: bold;
+    margin-left: 10px;
     padding: 2px 0px 0px 10px;
     /* border: solid rgb(189, 181, 181);
     border-width: 1px 1px 0px 0px; */
 }
-
-.mainRB div:nth-child(3) p:nth-child(n+2):nth-child(-n+5){
-    width: 590px;
+/*예약 설명 텍스트 박스*/
+.reContentB p:nth-child(n+2){
+    width: 560px;
     height: 30px;
     float: left;
     font-size: 15px;
-    margin: 5px 0px -5px 0px;
+    margin: 5px 0px -5px 10px;
     padding-left: 10px;
     /* border: solid rgb(20, 102, 20);
     border-width: 0px 1px 1px 0px; */
