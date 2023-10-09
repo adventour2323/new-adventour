@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
@@ -8,61 +8,70 @@
 
 <html>
 <head>
-<meta charset="UTF-8">
-<script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
-<link rel="stylesheet" type="text/css" href="./css/tour_g_list.css">
-<script src="./js/jquery-3.6.0.min.js"></script>
-
-<title>Tour list</title>
+    <meta charset="UTF-8">
+    <title>Tour List</title>
+    <link rel="stylesheet" type="text/css" href="./css/t_list.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+    </style>
 </head>
+
 <body>
-
-
-	<header>
-		<jsp:include page="header.html"></jsp:include>
-	</header>
-
-	<div style="height: 100%; padding-left: 100px; ">
-	<jsp:useBean id="id" class="adventour.g_list_print">
+    <header>
+        <jsp:include page="header.html"></jsp:include>
+    </header>
+    
+<jsp:useBean id="id" class="adventour.g_list_print">
 	
-	
-		<% List<t_getset> a1 = (List<t_getset>) request.getAttribute("list"); %>
-		
-		<%  for (t_getset g : a1) { %>
-		
-		
-	<div class="container" style=" margin-left: 50px; margin-right: 30px;margin-top: 50px;  margin-bottom: 30px; float: left; ">
-	  
-	  	<div style="width: 250px; height: 310px;"> <!-- 시작  -->
-	  
-	  <div style="margin-bottom: 30px;"> <!-- img -->
-	  <a href="https://www.naver.com">
-	  <img alt="img<%=g.getT_name() %>" src="<%=g.getT_img1()%>" style=" width: 250px; height: 166px; " >
-	  </a>
-	  </div> <!-- img -->
-	  
-	  <div style="overflow: hidden; text-overflow: ellipsis; height: 100px;">
-	  	<h3>
-	  		<a href="https://www.naver.com">
-	  			<%= g.getT_name() %>
-	  		</a>
-	  	</h3>
-	  </div>
-	  
-	  <div style="bottom: 0px;  height: 44px; "> <!-- price -->
-	  ₩ <%= g.getT_price() %>~
-	  </div>
-	  
-	  	</div>   <!-- 끝 -->
-	  
-	  </div>
-<% } %>
-
-	</jsp:useBean>
+	<div class="list_title_div">
+	<h1 class="list_title">
+	투어 리스트
+	</h1>
 	</div>
-	<footer>
-		<jsp:include page="footer.html"></jsp:include>
-	</footer>
 
+    <div class="tour-container">
+        
+            <%
+                List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
+                for (t_getset g : a1) {
+            %>
+            
+            
+            <div class="tour-item">
+                <div class="tour-img">
+                    <a href="https://www.naver.com">
+                        <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">
+                    </a>
+                </div>
+                <div class="tour-info">
+                
+                	<div class="tour_title_div" >
+                    <h3 class="tour-title">
+                        <a href="https://www.naver.com"><%= g.getT_name() %></a>
+                    </h3>
+                    </div>
+                    
+                    <div class="tour_location_div">
+                    <p class="tour-location">
+                        <%= g.getCountry() %>, <%= g.getCity() %>
+                    </p>
+                    </div>
+                    <div class="tour_price_div">
+                    <p class="tour-price">
+                        ₩ <%= g.getT_price() %>~
+                    </p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <% } %>
+        
+    </div>
+</jsp:useBean>
+    <footer>
+        <jsp:include page="footer.html"></jsp:include>
+    </footer>
 </body>
 </html>

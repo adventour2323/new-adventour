@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Pretendard-Regular';
+  margin: 0;
+  padding: 0;
+}
+
+body {
+ width: 100%;
+ /*  width: 1903px; */
+  /*height: 1650px;*/
+  	height: 2000px;
+  	font-family: 'Pretendard-Regular', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+
+}
+
+/*----------------------------------------content---------------------------*/
+
+
+.content{
+    width: 1300px;
+    /* height: 2150px; */
+    height: 100%;
+    margin-bottom: 40px;
+    /* border-style: dashed; */
+    border-color: blue;
+    margin-top: 50px;
+    margin-left: 300px;
+}
+/**/
+        .tour-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .tour-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            margin: 0 10px 20px;
+        }
+
+        .tour-item img {
+            width: 380px;
+            height: 250px;
+        }
+
+        .tour-info {
+            padding: 20px;
+        }
+
+        .tour-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .tour-location {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .tour-price {
+            font-size: 16px;
+            margin-top: 10px;
+            color: red; /* 가격 텍스트 색상을 빨간색으로 변경 */
+        }
+
+        /* figure 효과를 tour-img 클래스에 적용 */
+        .tour-img {
+            position: relative;
+        }
+
+        .tour-img:before {
+            content: "자세히 보기";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .tour-img:hover:before {
+            opacity: 1;
+        }
+        .list_title_div{
+        margin-right: auto;
+        margin-left: auto;
+        }
+        .list_title{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        }
+        
+        .tour_location_div{
+			margin-top: 20px;
+		}
+		
+		.tour_title_div{
+			height: 30px
+		}
+       
+/**/
+.c_name_div{
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+/*  */
+
+
+table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+  }
+    th, td {
+    border: 1px solid #444444;
+    height: 50px;
+  }
+  
+  .container{
+	  text-align: center;
+  }
+
+.container a{
+  display: block; /* 영역적용위해 사용 */
+  width: 100%; height: 100%;
+
+  overflow: hidden;
+
+  position: relative; /* absolute의 기본기준은 body로 처리 - 현재 요소로 기준변경 */
+}
+
+.container figcaption{
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+
+  position: absolute; /* 이미지와 겹치게 처리 */
+  top: 0; left: 0;
+
+  color: #fff; text-align: center;
+  line-height: 200px;
+
+  opacity: 0; /* 처음엔 안보이고 */
+
+  transition: 0.3s;
+}
+
+.container a:hover figcaption, .container a:focus figcaption{
+  /* 마우스를 올리면 보이게 처리 */
+  opacity: 1;
+}
+
+  /*  */
+  a {
+    text-decoration-line: none;
+  }
+  a:link {
+    color : black;
+  }
+  a:visited {
+    color : black;
+  }
+  a:hover {
+    color : red;
+  }
+  a:active {
+    color : green;
+  }
+
+
+
+/*  */
+
+
+
+/*  */

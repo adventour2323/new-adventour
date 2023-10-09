@@ -284,17 +284,17 @@
 			
 				<h1 style="text-align: center;">인기 투어</h1>
 			
-			<div class="recommend_city" style="border: solid;">
+			<div class="recommend_city" style="">
 			
 				<%
 					for (int i = 0; i < a2.size(); i++) {
 							t_getset t = a2.get(i);
 							if (t.getT_id().equals("l_ston_tour") == true) {
 				%>
-				<div class="recommend_city1" style="border: dotted;">
+				<div class="recommend_city1" style="">
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
-							style="width: 200px; height: 150px; cursor: pointer;"
+							style="width: 237px; height: 154px; cursor: pointer;"
 							alt="추천도시 1">
 					</div>
 					<div  style="text-overflow: ellipsis;">
@@ -302,7 +302,7 @@
 						<%=t.getT_name()%>
 					</h3>
 					</div>
-					<div class="recommend_price" style="float: right; font: red; ">
+					<div class="recommend_price" style="">
 					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
@@ -316,7 +316,7 @@
 				<div class="recommend_city2">
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
-							style="width: 200px; height: 150px; cursor: pointer;"
+							style="width: 237px; height: 154px; cursor: pointer;"
 							alt="추천도시 2">
 					</div>
 					<div  style="text-overflow: ellipsis;">
@@ -325,7 +325,7 @@
 					</h3>
 					</div>
 					<div class="recommend_price">
-						<%=t.getT_price()%>원~
+						₩ <%=t.getT_price()%>
 					</div>
 				</div>
 				<% }} %>
@@ -338,7 +338,7 @@
 				<div class="recommend_city3">
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
-							style="width: 200px; height: 150px; cursor: pointer;"
+							style="width: 237px; height: 154px; cursor: pointer;"
 							alt="추천도시 3">
 					</div>
 					<div  style="text-overflow: ellipsis;">
@@ -347,7 +347,7 @@
 					</h3>
 					</div>
 					<div class="recommend_price">
-						<%=t.getT_price()%>원~
+						₩ <%=t.getT_price()%>
 					</div>
 				</div>
 				<% }} %>
@@ -359,7 +359,9 @@
 				%>
 				<div class="recommend_city4"  style="text-overflow: ellipsis;">
 					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>" style="width: 200px; height: 150px; cursor: pointer;" alt="추천도시 4">
+						<img src="<%=t.getT_img1()%>" 
+						style="width: 237px; height: 154px; cursor: pointer;" 
+						alt="추천도시 4">
 					</div>
 					<div >
 					<h3 class="rocommend_1_title">
@@ -374,16 +376,22 @@
 
 			</div>
 
-			<div class="recommend_ticket">
+			<div class="recommend_ticket" style="margin-bottom: 50px;">
 				<h3 style="text-align: center;">추천상품</h3>
+				<div class="recommend_img">
 				<img src="./image/tour/usim_.png"
-					style="width: 300px; margin-left: 50px;" alt="추천 티켓/입장권 1"> <img
+					style="width: 300px; margin-left: 50px;" alt="추천 티켓/입장권 1">
+				</div>
+				<div class="recommend_img"> 
+				<img
 					src="./image/tour/pass_museum_paris.jpg"
-					style="width: 300px; margin-left: 30px; margin-bottom: 10px"
-					alt="추천 티켓/입장권 2"> <img
+					style="width: 300px; margin-left: 30px; margin-bottom: 10px" alt="추천 티켓/입장권 2">
+				</div>
+				<div class="recommend_img">
+				<img
 					src="./image/tour/colosseum_ticket.png"
-					style="width: 300px; margin-left: 30px; margin-bottom: 20px;"
-					alt="추천 티켓/입장권 3">
+					style="width: 300px; margin-left: 30px; margin-bottom: 20px;" alt="추천 티켓/입장권 3">
+				</div>
 			</div>
 
 	</jsp:useBean>
