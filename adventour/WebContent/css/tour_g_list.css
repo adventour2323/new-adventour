@@ -14,7 +14,8 @@
 body {
  width: 100%;
  /*  width: 1903px; */
-  height: 1650px;
+  /*height: 1650px;*/
+  height: 2000px;
 
 }
 
@@ -32,7 +33,7 @@ body {
     margin-left: 300px;
 }
 #category{
-	border-style: solid;
+	/*border-style: solid;*/
 	cursor: pointer;
 	display: flex;
 	

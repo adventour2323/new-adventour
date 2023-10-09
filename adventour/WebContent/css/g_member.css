@@ -132,7 +132,8 @@ select{
 /* 이름(first name) */
 .m_size{
   /* width: 175px; */
-  width:275px;
+  /*width:275px;*/
+  width: 510px;
   height: 45px;
   margin-top: 5px; 
   margin-bottom: 10px;
@@ -167,6 +168,10 @@ select{
     margin-bottom: 10px;
 }
 
+.s_btn btn_color{
+	cursor: pointer; 
+	}
+
 /* ------------------버튼클래스 주기-------------------------  */
 /* 스몰 버튼 기본 클래스 */
 .s_btn{
@@ -200,3 +205,6 @@ input[type="checkbox"]{
     width: 25px;
     height: 25px;
 }
+
+
+	
