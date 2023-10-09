@@ -83,6 +83,11 @@ PreparedStatement pstmt = null;
  
 		if(rs.getString("cnt").equals("1")) {
 		session.setAttribute("id",id);
+		
+		//쿠키에 로그인된 아이디를 담는다.
+        Cookie idCookie = new Cookie("id", String.valueOf(session.getAttribute("id")));
+        response.addCookie(idCookie);
+		
 		session.setAttribute("pw",pw);
 		/* response.sendRedirect("index.html"); */
 		response.sendRedirect("index_login_ing.jsp");

@@ -59,7 +59,6 @@
     border-radius: 5px;
     background-color: rgb(87, 134, 221);
     border-color: rgb(87, 134, 221);
-    opacity: 0.7;
     color: rgb(255, 255, 255);
 }
 /*인기 상품 텍스트 박스*/
@@ -91,10 +90,16 @@ div h1{
 
 /*오숑제안,좋할상품 이미지 박스 5개씩 모음*/
 .tdShpOfCB, 
-.lkeGdsCB,
-.gdGdsCB{
+.lkeGdsCB{
     width: 1300px;
     height: 450px;
+    /* border: 1px solid black; */
+}
+
+/*가이드연계상품*/
+.gdGdsCB{
+    width: 1400px;
+    height: 320px;
     /* border: 1px solid black; */
 }
 
@@ -122,7 +127,7 @@ div h1{
     height: 80px;
     font-size: 20px;
     font-weight: bold;
-    margin: 0px 0px 0px 0px;
+    margin: 0px;
 }
 /* 탭박스 소개글 개별 박스 */
 .cgTboxS{
@@ -156,15 +161,13 @@ div h1{
     float: left;
     margin: 17px 0px 0px 20px;
     box-shadow: 8px 8px 8px grey;
-    /* border: 1px solid #84BF96; */
 }
 /*탭박스 상품 개별 이미지 박스*/
 .gdsTBxPc img{
     width: 280px;
     height: 300px;
-    margin:5px 0px 10px 10px;
-    /* border: 1px solid #84BF96; */
     border-radius: 10px;
+    margin:5px 0px 10px 10px;
 }
 /*탭박스 상품 개별 텍스트 박스*/
 .gdsTBxPc h6{
@@ -172,15 +175,13 @@ div h1{
     height: 30px;
     float: left;
     font-size: 15px;
-    margin: 0px;
-    margin-left: 15px;
+    margin: 0px 0px 0px 15px;
 }
 /* 탭박스 상품탭*/
 .cgTboxS span{
     width: 100px;
     height: 80px;
     float: left;
-    /* padding: 5px 0px 0px 0.5px; */
 }
 /* 탭박스 상품탭 이미지 */
 .cgTboxS img{
@@ -198,7 +199,6 @@ div h1{
 .bor_radi_top_left{
     border-top-left-radius: 10px;
 }
-.cgTboxS 
 
 /*탭박스 상품카테고리 소개글 마우스 후버*/
 .cgTboxS p:hover {
@@ -215,8 +215,6 @@ div h1{
     font-size: 12px;
     margin-top: -4.5px;
     border-width: 0px;
-    /* padding: 5px 0px 0px 0.5px; */
-    /* border: 1px solid #84BF96; */
 }
 
 
@@ -238,7 +236,6 @@ div h1{
 .gdsBxPc img{
     width: 215px;
     height: 275px;
-    /* border: 1px solid #84BF96; */
     margin: 5px 0px 10px 8px;
     border-radius: 10px;
 }
@@ -300,40 +297,40 @@ div.cgTBox > span.cgTboxS:hover{
     background-color: white;
     border-bottom: 1px solid white;
 }
+
+/*탭박스 글씨 색 hover 설정*/
 div.cgTBox > span.cgTboxS:hover p{
     color: black;
 }
-div.cgTBox > span.cgTboxS p{
-    color: white;
-}
+
+/*탭박스 배경색및 보더 색*/
 div.cgTBox > span.cgTboxS{
-    background-color:  rgb(68, 133, 252);
-    opacity: 0.8;
+    color: white;
     border-bottom: 1px solid white;
+    background-color:  rgb(68, 133, 252,0.7);
 }
 
 div.cgTBox > span.cgTboxS.gdsTBxPc_on{
+    color: black;
     background-color: white;
     border-bottom: 1px solid white;
 }
 .gdsTBxPc_on{
+    color: black;
     background-color: white;
     border-bottom: 1px solid white;
 }
-.gdsTBxPc_on p{
-    color: rgb(20, 3, 78)!important;
-}
+/* .gdsTBxPc_on p{ */
+/*     color: rgb(20, 3, 78); */
+/* } */
 
-.gdsBxPc a.like {
+.gdsBxPc a.like,
+.gdsBxPcG a.like {
     position: relative;
     display: inline-block;
 }
 
-/* a.like img {
-    transition: opacity 0.3s;
-} */
-
-.gdsBxPc a.like div.hover_text {
+div.hover_text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -344,11 +341,11 @@ div.cgTBox > span.cgTboxS.gdsTBxPc_on{
     transition: opacity 0.3s;
 }
 
-.gdsBxPc a.like:hover img {
+a.like:hover img {
     opacity: 0.3;
 }
 
-.gdsBxPc a.like:hover div.hover_text {
+a.like:hover div.hover_text {
     opacity: 1;
 }
 
@@ -357,55 +354,60 @@ div.cgTBox > span.cgTboxS.gdsTBxPc_on{
 
 /* 이미지 슬라이드 */
 .gdGdsCBWrap {
+	margin-left: 40px;
     overflow: hidden; /* 슬라이드 밖의 내용 숨김 */
-    width: 100%; /* 필요에 따라 조정 */
+    width: 1235px; /* 필요에 따라 조정 */
     position: relative; /* 자식 요소의 위치를 상대적으로 조정할 수 있게 함 */
     /* height: 470px; */
 }
 
-.gdGdsCB .gdsBxPc {
+.gdGdsCB .gdsBxPcG {
     display: flex; 
     width: 300%; 
-    height: 275px;/* 15개 상품, 5개씩 표시 => 3배의 너비 필요 */
-    transition: transform 0.5s ease; /* 부드러운 슬라이드 이동 */
+    height: 320px;/* 15개 상품, 5개씩 표시 => 3배의 너비 필요 */
+    transition: transform 0.5s ease; 부드러운 슬라이드 이동
 }
 
 
+/*가이드 투어 연계 화살표*/
 .gdGdsCB .slide-arrow {
     position: absolute;
     z-index: 10; /* 상품 이미지 위에 위치 */
-    top: 2500px; /* 상위 요소의 중간에 위치
+/*     top: 2500px; 상위 요소의 중간에 위치
     transform: translateY(-50%); /* 화살표의 중간을 기준으로 조정 */
     cursor: pointer; /* 마우스 오버 시 손 모양으로 변경 */
     width: 50px; /* 화살표의 너비를 조정. 필요한 경우 값 변경 */
     height: auto; /* 화살표의 높이를 자동 조정 */
 }
+/*왼쪽*/
+.left-arrow {
+	left: 250px;
+	top: 2650px;	
+/*     왼쪽에 위치. 슬라이드 바깥으로 0px만큼 이동 */
+}
+/*오른쪽*/
+.right-arrow {
+	float: left;
+	top: 2650px;
+	left: 1650px;
+/*     오른쪽에 위치. 슬라이드 바깥으로 0px만큼 이동 */
+}
 
-.gdGdsCB .gdsBxPc span {
-    width: 200px;
-    height: 275px;
-    /* width: 6.66%; */
+.gdsBxPcG span{
+    width: 230px;
+    height: 320px;
+    float: left;
+    margin-right: 16px;
+    border: 1px solid white;
     flex: 0 0 auto; 
 }
-
-.left-arrow {
-    margin: 150px 0px 0px 270px;
-    float: left;
-    left: 0px; /* 왼쪽에 위치. 슬라이드 바깥으로 60px만큼 이동 */
+/*오숑제안,좋할상품 상품 개별 이미지 박스 */
+.gdsBxPcG img{
+    width: 230px;
+    height: 310px;
+    margin-top: 5px;
+    border-radius: 10px;
 }
 
-.right-arrow {
-    margin: 150px 200px 0px 0px;
-    float: right;
-    right: 0px; /* 오른쪽에 위치. 슬라이드 바깥으로 60px만큼 이동 */
-}
-
-
-
-.gdGdsCB {
-    width: 1300px;
-    height: 460px;
-    /* border: 1px solid black; */
-}
 
 /* 이미지 슬라이드 */

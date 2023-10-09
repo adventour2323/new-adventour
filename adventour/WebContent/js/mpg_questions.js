@@ -150,12 +150,14 @@ function QInfoSendF() {
 
 /*문의 내역 클릭할 경우 문의한 내역들 로드되는 펑션*/
 function loadMyQna(){
+	getCookie(id);
 	
 	$.ajax({
 		url: 'mpg_questions_select.jsp',
 		type: 'POST',
 		dataType: 'text',
-		data: "m_id=qkqh4848",
+//		data: "m_id=qkqh4848",
+		data: "m_id="+getCookie("id"),
 		success: function(data) {
 			try{
 				var myqnaCkB = $('#myqnaCkB');
@@ -206,3 +208,4 @@ function loadMyQna(){
 	});
 	
 }
+

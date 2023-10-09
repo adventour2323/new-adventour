@@ -27,5 +27,12 @@
 </servlet-mapping>
 
 
-
+ <servlet>
+    <servlet-name>shop_cto</servlet-name>
+    <servlet-class>s_controller.S_Cto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>shop_cto</servlet-name>
+    <url-pattern>*.shop</url-pattern>
+  </servlet-mapping>
 </web-app>

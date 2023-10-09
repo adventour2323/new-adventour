@@ -63,7 +63,7 @@ a,p{
 }
 
 .home {
-	width: 400px;
+	width: 560px;
 	height: 25px;
 	margin-bottom: 55px;
 	margin-right: 270px;
@@ -73,7 +73,7 @@ a,p{
 }
 .homeli {
 	margin-top: 10px;
-	width: 400px;
+	width: 560px;
 	height: 25px;
 	float: right;
 }
@@ -90,6 +90,15 @@ a,p{
 	height: 25px;
 	margin-right: 10px;
 	text-align: center;
+	float: right;
+}
+/*로그인 **님 환영합니다.*/
+.home2 {
+	width: 170px;
+	height: 25px;
+	margin-right: 10px;
+	text-align: center;
+	font-weight: bold;
 	float: right;
 }
 

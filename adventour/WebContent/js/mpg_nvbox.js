@@ -31,6 +31,11 @@ $(document).ready(function() {
         paymentNav.removeClass('enter');
     });
 
-    $("#header").load("header.html");
-    $("#footer").load("footer.html");
+    if(getCookie('id')==null|| getCookie('id') == ""){
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");	
+	}else if(getCookie('id')!= null|| getCookie('id') != ""){
+		$("#header").load("header_login.html");
+		$("#footer").load("footer_login.html");
+	}
 });

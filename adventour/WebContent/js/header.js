@@ -1,5 +1,11 @@
 
 $(document).ready(function() {
+	var welcomeId = $('#welcomeId');
+	if(getCookie('id')){
+		welcomeId.empty();
+		welcomeId.append(getCookie('id'));
+	}
+	
 	"use strict";
 	 /*나라, 도시, 카테고리 등등 정보. 나중에 파일 또는 디비에서 가져올 예정
 	 순서 보장을 위해 object.array가 아니라 object.object 사용
