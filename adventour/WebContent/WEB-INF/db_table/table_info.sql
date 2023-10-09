@@ -58,6 +58,41 @@ CREATE TABLE `h_hotel` (
   PRIMARY KEY (`h_name_eng`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--------h_hotel 컬럼 추가------
+ALTER TABLE `adventour`.`h_hotel` 
+ADD COLUMN `h_pho1` VARCHAR(150) NOT NULL AFTER `h_tel`,
+ADD COLUMN `h_pho2` VARCHAR(150) NOT NULL AFTER `h_pho1`,
+ADD COLUMN `h_pho3` VARCHAR(150) NOT NULL AFTER `h_pho2`,
+ADD COLUMN `h_pho4` VARCHAR(150) NOT NULL AFTER `h_pho3`,
+ADD COLUMN `h_pho5` VARCHAR(150) NOT NULL AFTER `h_pho4`,
+ADD COLUMN `h_pho6` VARCHAR(150) NOT NULL AFTER `h_pho5`;
+---------h_hotel 사진 추가 -------
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_atolon1.PNG', `h_pho2` = 'h_atolon2.PNG', `h_pho3` = 'h_atolon3.PNG', `h_pho4` = 'h_atolon4.PNG', `h_pho5` = 'h_atolon5.PNG', `h_pho6` = 'h_atolon6.PNG' WHERE (`h_name_eng` = 'atolon park hotel');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_eurostars1.PNG', `h_pho2` = 'h_eurostars2.PNG', `h_pho3` = 'h_eurostars3.PNG', `h_pho4` = 'h_eurostars4.PNG', `h_pho5` = 'h_eurostars5.PNG', `h_pho6` = 'h_eurostars6.PNG' WHERE (`h_name_eng` = 'eurostars madrid tower');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_harddays1.PNG', `h_pho2` = 'h_harddays.2PNG', `h_pho3` = 'h_harddays3.PNG', `h_pho4` = 'h_harddays4.PNG', `h_pho5` = 'h_harddays5.PNG', `h_pho6` = 'h_harddays6.PNG' WHERE (`h_name_eng` = 'hard days night  hotel');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_hilton1.PNG', `h_pho2` = 'h_hilton2.PNG', `h_pho3` = 'h_hilton3.PNG', `h_pho4` = 'h_hilton4.PNG', `h_pho5` = 'h_hilton5.PNG', `h_pho6` = 'h_hilton6.PNG' WHERE (`h_name_eng` = 'hilton garden inn sevilla');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_pont1.PNG', `h_pho2` = 'h_pont2.PNG', `h_pho3` = 'h_pont3.PNG', `h_pho4` = 'h_pont4.PNG', `h_pho5` = 'h_pont5.PNG', `h_pho6` = 'h_pont6.PNG' WHERE (`h_name_eng` = 'hotel au petit pont');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_sants1.PNG', `h_pho2` = 'h_sants2.PNG', `h_pho3` = 'h_sants3.PNG', `h_pho4` = 'h_sants4.PNG', `h_pho5` = 'h_sants5.PNG', `h_pho6` = 'h_sants6.PNG' WHERE (`h_name_eng` = 'hotel barcelo sants');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_universal1.PNG', `h_pho2` = 'h_universal2.PNG', `h_pho3` = 'h_universal3.PNG', `h_pho4` = 'h_universal4.PNG', `h_pho5` = 'h_universal5.PNG', `h_pho6` = 'h_universal6.PNG' WHERE (`h_name_eng` = 'hotel barcelona universal');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_hotel berna1.PNG', `h_pho2` = 'h_hotel berna2.PNG', `h_pho3` = 'h_hotel berna3.PNG', `h_pho4` = 'h_hotel berna4.PNG', `h_pho5` = 'h_hotel berna5.PNG', `h_pho6` = 'h_hotel berna6.PNG' WHERE (`h_name_eng` = 'hotel berna');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_boston1.PNG', `h_pho2` = 'h_boston2.PNG', `h_pho3` = 'h_boston3.PNG', `h_pho4` = 'h_boston4.PNG', `h_pho5` = 'h_boston5.PNG', `h_pho6` = 'h_boston6.PNG' WHERE (`h_name_eng` = 'hotel boston');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_celio1.PNG', `h_pho2` = 'h_celio2.PNG', `h_pho3` = 'h_celio3.PNG', `h_pho4` = 'h_celio4.PNG', `h_pho5` = 'h_celio5.PNG', `h_pho6` = 'h_celio6.PNG' WHERE (`h_name_eng` = 'hotel celio roma');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_ NH collection1.PNG', `h_pho2` = 'h_ NH collection2.PNG', `h_pho3` = 'h_ NH collection3.PNG', `h_pho4` = 'h_ NH collection4.PNG', `h_pho5` = 'h_ NH collection5.PNG', `h_pho6` = 'h_ NH collection6.PNG' WHERE (`h_name_eng` = 'hotel NH collection sevilla');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_novotelmonte1.PNG', `h_pho2` = 'h_novotelmonte2.PNG', `h_pho3` = 'h_novotelmonte3.PNG', `h_pho4` = 'h_novotelmonte4.PNG', `h_pho5` = 'h_novotelmonte5.PNG', `h_pho6` = 'h_novotelmonte6.PNG' WHERE (`h_name_eng` = 'hotel novotel monte carlo');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_olympia1.PNG', `h_pho2` = 'h_olympia2.PNG', `h_pho3` = 'h_olympia3.PNG', `h_pho4` = 'h_olympia4.PNG', `h_pho5` = 'h_olympia5.PNG', `h_pho6` = 'h_olympia6.PNG' WHERE (`h_name_eng` = 'hotel olympia');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_rialto1.PNG', `h_pho2` = 'h_rialto2.PNG', `h_pho3` = 'h_rialto3.PNG', `h_pho4` = 'h_rialto4.PNG', `h_pho5` = 'h_rialto5.PNG', `h_pho6` = 'h_rialto6.PNG' WHERE (`h_name_eng` = 'hotel rialto');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_santo1.PNG', `h_pho2` = 'h_santo2.PNG', `h_pho3` = 'h_santo3.PNG', `h_pho4` = 'h_santo4.PNG', `h_pho5` = 'h_santo5.PNG', `h_pho6` = 'h_santo6.PNG' WHERE (`h_name_eng` = 'hotel santo domingo madrid');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_imperial1.PNG', `h_pho2` = 'h_imperial2.PNG', `h_pho3` = 'h_imperial3.PNG', `h_pho4` = 'h_imperial4.PNG', `h_pho5` = 'h_imperial5.PNG', `h_pho6` = 'h_imperial6.PNG' WHERE (`h_name_eng` = 'imperial rooms');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_novotel_eden1.PNG', `h_pho2` = 'h_novotel_eden2.PNG', `h_pho3` = 'h_novotel_eden3.PNG', `h_pho4` = 'h_novotel_eden4.PNG', `h_pho5` = 'h_novotel_eden5.PNG', `h_pho6` = 'h_novotel_eden6.PNG' WHERE (`h_name_eng` = 'novotel edinburgh center');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_novotelparis1.PNG', `h_pho2` = 'h_novotelparis2.PNG', `h_pho3` = 'h_novotelparis3.PNG', `h_pho4` = 'h_novotelparis4.PNG', `h_pho5` = 'h_novotelparis5.PNG', `h_pho6` = 'h_novotelparis6.PNG' WHERE (`h_name_eng` = 'novotel paris centre tour ');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_parkplaza1.PNG', `h_pho2` = 'h_parkplaza2.PNG', `h_pho3` = 'h_parkplaza3.PNG', `h_pho4` = 'h_parkplaza4.PNG', `h_pho5` = 'h_parkplaza5.PNG', `h_pho6` = 'h_parkplaza6.PNG' WHERE (`h_name_eng` = 'parkplaza hotel');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_smart hotel.1PNG', `h_pho2` = 'h_smart hotel2.PNG', `h_pho3` = 'h_smart hotel3.PNG', `h_pho4` = 'h_smart hotel4.PNG', `h_pho5` = 'h_smart hotel5.PNG', `h_pho6` = 'h_smart hotel6.PNG' WHERE (`h_name_eng` = 'smart hotel holiday');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_masion1.PNG', `h_pho2` = 'h_masion2.PNG', `h_pho3` = 'h_masion3.PNG', `h_pho4` = 'h_masion4.PNG', `h_pho5` = 'h_masion5.PNG', `h_pho6` = 'h_masion6.PNG' WHERE (`h_name_eng` = 'the originals boutique, hotel maison montmartre');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_thetower1.PNG', `h_pho2` = 'h_thetower2.PNG', `h_pho3` = 'h_thetower3.PNG', `h_pho4` = 'h_thetower4.PNG', `h_pho5` = 'h_thetower5.PNG', `h_pho6` = 'h_thetower6.PNG' WHERE (`h_name_eng` = 'the tower hotel');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_thevillage1.PNG', `h_pho2` = 'h_thevillage2.PNG', `h_pho3` = 'h_thevillage3.PNG', `h_pho4` = 'h_thevillage4.PNG', `h_pho5` = 'h_thevillage5.PNG', `h_pho6` = 'h_thevillage6.PNG' WHERE (`h_name_eng` = 'the villiage hotel');
+UPDATE `adventour`.`h_hotel` SET `h_pho1` = 'h_titanic1.PNG', `h_pho2` = 'h_titanic2.PNG', `h_pho3` = 'h_titanic3.PNG', `h_pho4` = 'h_titanic4.PNG', `h_pho5` = 'h_titanic5.PNG', `h_pho6` = 'h_titanic6.PNG' WHERE (`h_name_eng` = 'titanic hotel liverpool');
+
+
 --------호텔 정보 insert문
 INSERT INTO `adventour`.`h_hotel` (`country_eng`, `country_ko`, `city_eng`, `city_ko`, `h_name_eng`, `h_name_ko`, `h_grade`, `h_addr`, `h_lat`, `h_lon`, `h_pho`, `h_breakfast`, `h_pool`, `h_rooftop`, `h_tel`) VALUES ('uk', '영국', 'london', '런던', 'parkplaza', '파크플라자', '4', '200 Westminster Bridge Rd', '51.5010106', '-0.1169471', 'h_parkplaza', 'y', 'y', 'y', '0');
 INSERT INTO `adventour`.`h_hotel` (`country_eng`, `country_ko`, `city_eng`, `city_ko`, `h_name_eng`, `h_name_ko`, `h_grade`, `h_addr`, `h_lat`, `h_lon`, `h_pho`, `h_breakfast`, `h_pool`, `h_rooftop`, `h_tel`) VALUES ('uk', '영국', 'london', '런던', 'the tower', '더 타워', '4', 'St Katharine\'s Way, London E1W 1LD ', '51.5067938', '-0.0739672', 'h_thetower.PNG', 'y', 'y',  'y', '0');
@@ -111,6 +146,10 @@ INSERT INTO `adventour`.`h_hotel` (`country_eng`, `country_ko`, `city_eng`, `cit
   KEY `h_name_eng_idx` (`h_name_eng`),
   CONSTRAINT `h_name_eng` FOREIGN KEY (`h_name_eng`) REFERENCES `h_hotel` (`h_name_eng`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-------- 호텔 room 추가----------------
+ALTER TABLE `adventour`.`h_room` 
+ADD COLUMN `h_roompho` VARCHAR(45) NOT NULL AFTER `h_room_outime`;
     
  ----- 호텔 예약 확인용 테이블 생성 h_reserv create문
 

@@ -113,22 +113,22 @@ if (top_list != null) {
         <img class="h_info_title_pho1" class="h_info_title_pho1" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
         </div>
         <div id="hotel_info_pho2">
-          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
         </div>
         <div id="hotel_info_pho3">
-          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>" >
         </div>
         <div id="hotel_info_pho4">
-          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>" >
         </div>
         <div id="hotel_info_pho5">
-          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>" >
         </div>
         <div id="hotel_info_pho6">
-          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>" >
         </div>
         <div id="hotel_info_pho7">
-          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" >
         </div>
       
     </div><!--hotel_info_phos-->
@@ -194,7 +194,7 @@ for (int ii = 0; i < top_list.size(); i++) {
     <div id="hotel_room_info">
       <h2 id="hotel_room_type" class="hotel_room_type"><%=  bbb.getH_roomtype()%> room</h2>
         <div id="h_room_pho" >
-          <img id="h_room_phoi" class="h_room_phoi" src="image/hotel/h_image/<%=  bbb.getH_pho() %>">
+          <img id="h_room_phoi" class="h_room_phoi" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
         </div>
         <div id="h_room_options1" >
           <h4 class="h_room_peo"> 최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4>

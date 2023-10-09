@@ -35,7 +35,57 @@ public class H_getset {
 	String h_room_paynow;
 	String h_room_intime;
 	String h_room_outime;
+	String h_roompho;
+	String h_pho1;
+	String h_pho2;
+	String h_pho3;
+	String h_pho4;
+	String h_pho5;
+	String h_pho6;
 	
+	
+	public String getH_pho1() {
+		return h_pho1;
+	}
+	public void setH_pho1(String h_pho1) {
+		this.h_pho1 = h_pho1;
+	}
+	public String getH_pho2() {
+		return h_pho2;
+	}
+	public void setH_pho2(String h_pho2) {
+		this.h_pho2 = h_pho2;
+	}
+	public String getH_pho3() {
+		return h_pho3;
+	}
+	public void setH_pho3(String h_pho3) {
+		this.h_pho3 = h_pho3;
+	}
+	public String getH_pho4() {
+		return h_pho4;
+	}
+	public void setH_pho4(String h_pho4) {
+		this.h_pho4 = h_pho4;
+	}
+	public String getH_pho5() {
+		return h_pho5;
+	}
+	public void setH_pho5(String h_pho5) {
+		this.h_pho5 = h_pho5;
+	}
+	public String getH_pho6() {
+		return h_pho6;
+	}
+	public void setH_pho6(String h_pho6) {
+		this.h_pho6 = h_pho6;
+	}
+	public String getH_roompho() {
+		return h_roompho;
+	}
+	public void setH_roompho(String h_roompho) {
+		this.h_roompho = h_roompho;
+	}
 	public String getH_room_outime() {
 		return h_room_outime;
 	}
