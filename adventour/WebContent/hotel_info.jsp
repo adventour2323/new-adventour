@@ -103,7 +103,7 @@ if (top_list != null) {
 
 	
 	for (int i = 0; i <1; i++) {
-	    H_getset aaa = top_list.get(i);
+	    H_getset aaa = top_list.get(i); 
 
 %>
  
