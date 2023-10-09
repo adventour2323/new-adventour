@@ -3,6 +3,7 @@
 
     
 <link rel="stylesheet" href="css/header.css">
+<script src="js/commonF.js"></script>
 <script src="js/header.js"></script>
 <div class="header">
 
