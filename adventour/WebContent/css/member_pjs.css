@@ -114,8 +114,11 @@ select{
     color:#999;display:none"
 }
 /* ------------------개별 마진 클래스------------------------  */
+.margin_lft10{
+	margin-left: 10px;
+}
 .margin_lft{
-margin-left: 20px!important;
+	margin-left: 20px!important;
 }
 
 .margin_rght{
@@ -124,7 +127,10 @@ margin-left: 20px!important;
 .margin_btm{
     margin-bottom: 20px!important;
 }
-.margin_top{
+.margin_top10{
+    margin-top: 10px;
+}
+.margin_top20{
     margin-top: 20px!important;
 }
 /* ------------------인풋 클래스 주기 -------------------------  */
@@ -196,9 +202,90 @@ margin-left: 20px!important;
     color: tomato;
 }
 
-input[type="radio"]{
-    
+/*----------------------------라디오 버튼 꾸미기--------------------------------*/
+.radio_lable_B{
+	width: 600px;
+	height: 50px;
 }
+
+.radio_box { 
+	width: 600px;
+	height: 50px;
+	float: left;
+	display: inline-block; 
+	*display: inline; 
+	*zoom: 1; 
+	position: relative; 
+	padding-left: 25px; 
+	margin-right: 10px; 
+	cursor: pointer; 
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	-ms-user-select: none; 
+}
+
+.radio_lable_B div{
+	width: 200px;
+	height: 50px;
+	float: left;
+	margin-left:10px;
+}
+
+.radio_lable_B span{
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin: 20px 60px 0px 0px;
+	font-size: 20px; 
+}
+.radio_lable_B p{
+	width: 60px;
+	height: 50px;
+	float: left;
+	margin-left:20px;
+	font-size: 20px; 
+}
+
+[type="radio"], .radio_box span, .radio_lable_B p {
+	vertical-align: middle;
+}
+
+/* 기본 라디오 버튼 숨기기 */
+.radio_box input[type="radio"] { 
+	display: none; 
+}
+
+/* 선택되지 않은 라디오 버튼 스타일 꾸미기 */
+.on { 
+	background: #ddd; 
+	border-radius: 50%; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+}
+
+/* 선택된 라디오 버튼 스타일 꾸미기 */
+.radio_box input[type="radio"]:checked + .on { 
+	background: #f86480; 
+}
+.on:after { 
+	content: ""; 
+	position: absolute; 
+	display: none; 
+}
+.radio_box input[type="radio"]:checked + .on:after { 
+	display: block; 
+}
+.on:after { 
+	width: 13px; 
+	height: 13px; 
+	background: #fff; 
+	border-radius: 50%; 
+	position: absolute; 
+	left: 8px; 
+	top: 8px; 
+}
+/*----------------------------라디오 버튼 꾸미기 끝--------------------------------*/
 /* 체크박스 네모 크기 조절 클래스 */
 input[type="checkbox"]{
     width: 25px;

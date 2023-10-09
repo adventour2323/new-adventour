@@ -109,8 +109,21 @@
 
             
             성별<br/>
-            <label><input class="gd" type="radio" name="m_gender" title="성별" value="F"> 여자 </label>
-            <label><input class="gd" type="radio" name="m_gender" title="성별" value="M"> 남자</label><br/><br/><br/>
+            <div class="radio_lable_B">
+	            <div>
+		            <label for="female" class="radio_box">
+			            <input class="gd" type="radio" name="m_gender" title="성별" id="female" value="F"/> 
+			            <span class="on margin_rght"></span><p class="text_dp"> 여자 </p>
+		            </label>
+	        	</div>
+	        	<div>    
+		            <label for="male" class="radio_box margin_lft10">
+			            <input class="gd" type="radio" name="m_gender" title="성별" id="male" value="M"/>
+			            <span class="on margin_rght"></span><p class="text_dp"> 남자 </p>
+		            </label>
+	            </div>
+            </div>
+            <br/><br/><br/>
 
 			<!--동의체크박스 -->
             <div class="all_ck_box">
