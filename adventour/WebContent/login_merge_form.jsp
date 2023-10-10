@@ -79,13 +79,13 @@
         <form action="login_merge.jsp" method="post" style="text-align: center;">
             <table align="center" style="padding: 0 20px;"> 
                 <tr>
-                    <td><label for="id">아이디:</label></td>
+                    <td><label for="id">아이디</label></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="id" id="id" style="width: 200px;"></td> 
                 </tr>
                 <tr>
-                    <td><label for="pw">비밀번호:</label></td>
+                    <td><label for="pw">비밀번호</label></td>
                 </tr>
                 <tr>
                     <td><input type="password" name="pw" id="pw" style="width: 200px;"></td>
