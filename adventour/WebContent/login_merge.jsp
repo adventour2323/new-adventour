@@ -45,7 +45,7 @@ PreparedStatement pstmt = null;
 		session.setAttribute("pw",pw);
 		
 		/* response.sendRedirect("index.html"); */
-		response.sendRedirect("index_login_ing.jsp");
+		response.sendRedirect("header_login.jsp");
 			}else {
 		%>
 		<script>

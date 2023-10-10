@@ -25,10 +25,20 @@
 
 <body>
 
-     <header>
-		<!-- header.html import-->
-    	<div id="header"></div>
-	</header>
+  <header>
+<%
+if (session.getAttribute("id") == null) {
+%>
+    <!-- header.html import -->
+    <div id="header"></div>
+<%
+} else {
+%>
+    <jsp:include page="header_login.jsp"></jsp:include>
+<%
+}
+%>
+</header>
 
   <div class="pagename">
     <h1 class="pagename1">HOTEL</h1>
