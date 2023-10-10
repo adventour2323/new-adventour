@@ -24,7 +24,6 @@ public class t_t_db_sel implements t_con_interface {
 		List<tourlist_gs> list = ts.t_sel();
 		rq.setAttribute("list", list);
 		
-		
 		return null;
 	}
 

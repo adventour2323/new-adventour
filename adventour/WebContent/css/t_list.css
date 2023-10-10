@@ -69,7 +69,17 @@ body {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
-        }
+
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+   
+}
+
+        
+        /*  */
 
         .tour-location {
             font-size: 16px;
@@ -122,7 +132,27 @@ body {
 		}
 		
 		.tour_title_div{
-			height: 30px
+			height: 30px;
+			width: 338px;
+			overflow: hidden;         /* 넘치는 텍스트 숨김 */
+			text-overflow : ellipsis;  /* 넘치는 텍스트에 "..." 표시 */
+			white-space: nowrap;      /* 텍스트 줄 바꿈 방지 */
+
+    		max-width: 100%;          /* 최대 너비 설정 */
+  
+		}
+		
+		
+		.country_list{
+		display: flex;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+		}
+		
+		.country_content{
+		margin-right: 10px;
+		cursor: pointer;
 		}
        
 /**/

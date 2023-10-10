@@ -16,7 +16,11 @@ body {
  /*  width: 1903px; */
   /*height: 1650px;*/
   /*height: 2000px;*/
-  height: 1000px;
+  	height: 1000px;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
 
 }
 
@@ -33,13 +37,53 @@ body {
     margin-top: 50px;
     margin-left: 300px;
 }
-.c_name_div{
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
+
+
+	.tour-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        
+	.tour-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            
+            margin: 0 10px 20px; /* 원하는 좌우 간격으로 조절 (상하 좌우 순서로 지정) */
+    		
+        }
+	.tour-item img {
+ 			width: 380px; /* 원하는 가로 크기로 설정 */
+    		height: 350px; /* 원하는 세로 크기로 설정 */
+    		
+		}
+        
+
+	.tour-info {
+            padding: 20px;
+        }
+
+	.tour-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+	.tour-price {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        
 
 /*  */
 
