@@ -37,8 +37,6 @@ if (session.getAttribute("id") == null) {
 </header>
 
 
-
-
 	<div class="busmain">
 		<img class="busmainpic" src="image/img/hotel01.jpg">
 		<div class="b_piccont">

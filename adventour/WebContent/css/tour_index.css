@@ -11,6 +11,9 @@
     margin: 0;
   	padding: 0;
 } 
+body{
+ font-family: 'Pretendard-Regular';	
+}
 
 
 /* 국기 */
@@ -38,6 +41,11 @@
     
     }
    /*  */
+   /* tab 색상 유지 */
+     .movet {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
+}
 
 /*  */
 /* 가이드 탭 리스트  */

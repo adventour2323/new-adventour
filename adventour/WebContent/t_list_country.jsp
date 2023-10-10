@@ -41,7 +41,7 @@
 			<div class="tour-container">
             <% for (t_getset g : a1) { %>
             
-                <div class="tour-item">
+                <div class="tour-item" style="float: left;">
                     <a href="https://www.naver.com">
                         <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">
                     </a>

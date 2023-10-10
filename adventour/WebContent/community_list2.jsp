@@ -19,7 +19,21 @@
 
 <body>
 
-  <jsp:include page="./header.html"></jsp:include>
+   <header>
+<%
+if (session.getAttribute("id") == null) {
+%>
+    <!-- header.html import -->
+    <div id="header"></div>
+<%
+} else {
+%>
+    <jsp:include page="header_login.jsp"  flush="true"></jsp:include>
+<%
+}
+%>
+</header>
+
 <form class="c_listform" name="c_listform" action="c_listsearch.jsp"> <!-- 검색창 사용을 위해 사용 -->
   <div class="c_list_mtitle">
     <h3>여행일정 공유 게시판</h3>
@@ -129,7 +143,13 @@
             <% }
           }
         %>
-        <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.html' ">
+        
+       <% if (session.getAttribute("id") == null) { %> 
+  <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='login_merge_form.jsp' ">
+<% } else { %>
+  <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.html' ">
+<% } %>
+    
       </div>
 
   <footer>

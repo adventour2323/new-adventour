@@ -34,7 +34,7 @@ if (session.getAttribute("id") == null) {
 
         <section id="visual" class="main-visual">
             <div class="inner">
-                <div class="visualSearchBox">
+                <div class="visualSearchBox" style="margin-top: 100px;">
                     <strong>
                         <em>어떤 곳으로 떠날까요?</em>
                     </strong>
@@ -531,7 +531,10 @@ if (session.getAttribute("id") == null) {
                                             <div class="imgcover2"><img src="./image/main_index/package/barca_hotel1.png" alt="이베로스타 셀렉션 파세오 데 그라시아">
                                             </div>
                                             <div class="pack3-txt">
-                                                <strong>이베로스타 셀렉션 파세오 데 그라시아</strong>
+                                                <strong style="    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;">이베로스타 셀렉션 파세오 데 그라시아</strong>
                                                 <span>가우디 핵심 투어 + 숙박 1박2일</span>
                                                 <button class="more">더보기</button>
                                             </div>

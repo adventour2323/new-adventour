@@ -360,6 +360,12 @@ body {
   .pack_title{
     font-size:17px;
     font-weight: bolder;
+	/*  */
+	overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    /*  */
   }
   .pack_con1{
     margin-top: 15px;

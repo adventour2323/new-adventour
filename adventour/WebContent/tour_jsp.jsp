@@ -85,7 +85,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -117,7 +117,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -148,7 +148,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -179,7 +179,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><%=g.getG_name()%></td>
+										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -192,12 +192,9 @@
 				</div>
 			</div>
 
-			<!--  -->
 
-			<!--  -->
-			
-			<!--  -->
-<jsp:useBean id="id" class="adventour.g_list_print">
+
+	<jsp:useBean id="id" class="adventour.g_list_print">
 			<!--  -->
 
     <div class="t_country" >

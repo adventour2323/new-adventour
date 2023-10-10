@@ -3,6 +3,7 @@
     <%@ page import="java.util.*"%>
 <%@ page import="adventour.C_getset" %>
 <%@ page import="adventour.C_dbsave" %><!-- 변수 get set들이 있는 자바파일 -->
+<jsp:include page="header_login.jsp" flush="true" />
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -18,9 +19,18 @@
 
 <body>
 
-  <header>
+<%
+if (session.getAttribute("id") == null) {
+%>
+    <!-- header.html import -->
     <div id="header"></div>
-  </header>
+<%
+} else {
+%>
+    <jsp:include page="header_login.jsp"  flush="true"></jsp:include>
+<%
+}
+%>
 
   <div class="c_cont_main">
     <h2>게시글 상세 보기</h2>

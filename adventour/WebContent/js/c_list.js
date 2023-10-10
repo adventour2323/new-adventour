@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-
+	//헤더 푸터 로드
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
 
 
 //테이블에 마우스 올리면

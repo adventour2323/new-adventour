@@ -30,7 +30,8 @@ PreparedStatement pstmt = null;
 	Class.forName("com.mysql.jdbc.Driver");
 	/* out.println("222"); */
 	/* out.println(pw); */
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@");
+	/* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@"); */
+	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
 	String sql = "select count(*) as cnt from guide where g_id=? and g_pw=?";
 
 	pstmt = conn.prepareStatement(sql); 
