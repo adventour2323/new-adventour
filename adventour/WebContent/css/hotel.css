@@ -105,13 +105,21 @@ body {
   margin-left: -200px;
   margin-top: 0px;
 }
-.b_mainde,.b_mainarr,.b_maintime,.b_maintpeo{
+.b_mainde{
+  width: 220px;
+  height: 45px;
+  padding-top: 1px;
+  border-radius: 5px;
+  margin-right: 0px; 
+}
+.b_mainarr,.b_maintime,.b_maintpeo{
   width: 220px;
   height: 40px;
   padding-top: 1px;
   border-radius: 5px;
   margin-right: 0px; 
 }
+
 
 
 .b_piccont input[type="text"],
@@ -126,6 +134,8 @@ body {
 
 /*버튼*/
 .b_maintbtn {
+width:100px;
+height:48px;
   font-size: 15px;
   padding: 10px 20px;
   font-weight: bold;

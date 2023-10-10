@@ -53,7 +53,7 @@
   /*----------------------------------------content---------------------------*/
   .content {
     width: 1100px;
-    height: 1350px;
+    height: 1500px;
     margin-top: -820px;
     margin-left: 400px;
  
@@ -172,12 +172,19 @@
  height: 30px;
  margin-left: 70px;
  margin-top: 30px;
+    background-color:#555;
+    color:white;
+ 
 }
+.sch_btn:hover {
+    background-color:#111;
+}
+
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
 #hotel_infos{/*내용전체 content div와 함께수정 해야 함.*/
 
   width: 1000px;
-  height: 1350px;
+  height: 1500px;
   margin-top: 120px;
   margin-left: 50px;
 
@@ -205,7 +212,7 @@
 #hotel_info_pho1:hover,#hotel_info_pho2:hover,#hotel_info_pho3:hover,
 #hotel_info_pho4:hover,#hotel_info_pho5:hover,#hotel_info_pho6:hover,
 #hotel_info_pho7:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scale(1.6);
 }
 .h_info_title_pho1{
   width: 300px;
@@ -262,33 +269,39 @@
 }
 /*---------------사진 밑 정보---------------------------------*/
 #hotel_info_engname{
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+
   width: 800px;
   height: 35px;
   padding-top: 25px;
   padding-left: 50px;
+ 
+}
+#hotel_info_engname1{
+	 margin-top: 50px;
 }
 #hotel_info_koname{
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+ /* text-shadow: 1px 1px 1px rgba(0,0,0,0.22); */
   width: 800px;
   height: 40px;
   padding-left: 0px;
+   margin-top: 15px;
 }
+
 #hotel_info_addr{
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+ 
   width: 800px;
   height: 30px;
   padding-left: 50px;
 }
 
 #hotel_info_tel{
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+ 
   width: 800px;
   height: 30px;
   padding-left: 50px;
 }
 #hotel_info_options{
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.22); 
+   
   width: 800px;
   height: 30px;
   padding-left: 50px;
@@ -311,7 +324,7 @@
  border:solid 1px;
   width: 980px;
   height: 300px;
-  margin-top: 20px;
+  margin-top: 70px;
   padding-left: 20px;
 
 }
@@ -371,13 +384,14 @@ border: solid 1px;
   margin-top: 30px;
   margin-left: 150px;
   font-size: 20px;
-    background-color:rgb(117, 165, 236);
+    background-color:#555;
     color:white;
  
 }
 #roompay_btn:hover {
-    background-color:rgb(46, 78, 151);
+    background-color:#111;
 }
+
 
 
 
