@@ -53,6 +53,13 @@ $(document).ready(function() {
     var s_QnA_li = $('.s_qna_all').eq(0);
     var oP_QnA_li = $('.oP_qna_all').eq(0);
     var cs_QnA_li = $('.cs_qna_all').eq(0);
+    
+    t_QnA_li.show();
+    b_QnA_li.hide();
+    h_QnA_li.hide();
+    s_QnA_li.show();
+    oP_QnA_li.show();
+    cs_QnA_li.hide();
   
     /*투어 탭 클릭했을 경우 투어 관련 문의 리스트만 나옴.*/
     secLTab_t.click(function () {       

@@ -28,6 +28,13 @@
     display: flex;
 }
 
+/*마이페이지 문의하기 버튼*/
+.mainNB nav:last-child {
+    color: white!important;
+    border-top-width: 0px!important;
+    border-right-width: 1px!important;
+    background-color: rgb(20, 3, 78, 0.6)!important;
+}
 
 /*----------문의 사항의 시작! 제일 큰 박스----------*/
 p,h1,h2,h3,h4,h5,h6{
