@@ -17,7 +17,9 @@
 </head>
 
 <style>
-
+table, th, td {
+border: none;
+}
 
 
 </style>
