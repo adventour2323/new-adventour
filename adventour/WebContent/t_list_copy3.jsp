@@ -92,7 +92,11 @@
 	                String country = request.getParameter("country");
 	                ArrayList<t_getset> a1 = id.t3(countryEng);
 	            %>
-	
+			<div>
+			<h1>
+			<%=country %>
+			</h1>
+			</div>
 	            <% for (t_getset g : a1) { %>
 	            
 	                <div class="tour-item">
