@@ -201,8 +201,6 @@ if (session.getAttribute("id") == null) {
 
 %>
 		</div>
-
-
 	</div>
 
 	<!-- footer.html import-->

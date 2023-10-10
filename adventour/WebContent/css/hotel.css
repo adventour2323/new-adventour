@@ -175,19 +175,23 @@ body {
     height: 350px;
  
   }
-  .h_retitle{
-  color:rgb(20, 3, 78);
-  }
+
   .top_contry{
    padding-top:10px;
    font-size: 17px;
    font-weight:bold;
-   color:rgb(20, 3, 78);
+  	overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
   }
   .top_name{
    font-size: 20px;
    font-weight:bold;
-   color:rgb(20, 3, 78);
+   	overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
   }
   .awards {
     width: 1350px;
@@ -234,16 +238,15 @@ body {
     width: 200px;
     height: 200px;
     margin-top: 25px;
-    filter: drop-shadow(10px 6px 6px #c3c3c3); /*그림자*/
+    filter: drop-shadow(3px 1px 1px #c3c3c3); /*그림자*/
    }
  
 
-   /*나라별 선택하기*/
+   /*--------------나라별 선택하기-------------------*/
     .h_recity{
       margin-top: 50px;
       width: 1350px;
-      height: 350px;
-      
+      height: 300px;
       width: 100%;
       margin-top: 50px;
     }
@@ -266,7 +269,6 @@ body {
       width: 150px;
       height:50px;
       padding-top: 170px;
-      color:rgb(20, 3, 78);
 
     }
     .ityimg{
@@ -277,7 +279,6 @@ body {
       width: 150px;
       height: 50px;
       padding-top: 240px;
-      color:rgb(20, 3, 78);
     }
 
     .fraimg{
@@ -288,7 +289,6 @@ body {
       width: 150px;
       height: 50px;
       padding-top: 250px;
-      color:rgb(20, 3, 78);
     }
     .spaimg{
       margin-left: 810px;
@@ -298,7 +298,6 @@ body {
       width: 150px;
       height: 50px;
       padding-top: 250px;
-      color:rgb(20, 3, 78);
     }
     .h_recityimgs img{
       width: 150px;
@@ -314,34 +313,39 @@ body {
     .h_packages{
       width: 1600px;
       height: 600px;
-      margin-left: 150px;
-      
+      margin-left: 150px;  
+      margin-top: -50px;   
     }
-     .h_packages h2{
-     color:rgb(20, 3, 78);
+      .h_packages h2{ 
+      margin-left: 120px;     
     }
-
    .h_package{ 
     margin-top:40px;
     width: 1600px;
     height: 450px;
 
    }
-   .package1,.package2,.package3,.package4{
+   .package1{
     margin-top:20px;
     width: 250px;
     height: 500px;
-    margin-left: 50px;
-    filter: drop-shadow(10px 6px 6px #c3c3c3); /*그림자*/
+    margin-left: 200px;
+
+   }
+    .package2,.package3,.package4{
+    margin-top:20px;
+    width: 250px;
+    height: 500px;
+
    }
    .package1_img{
-    width: 250px;
+    width: 252px;
     height: 250px;
     border-radius: 20px 20px 0px 0px;
    }
 
    .package1_img img{
-     width: 250px;
+     width: 252px;
     height: 250px;
     border-radius: 20px 20px 0px 0px;
    }
@@ -352,10 +356,12 @@ body {
     border:solid 1px;
    }
   .h_packages ul{
+    width: 254px;
+    height: 250px;
     list-style: none;
     padding-top:20px;
     padding-left:20px;
-    color:rgb(20, 3, 78);
+
   }
   .pack_title{
     font-size:17px;
@@ -382,16 +388,16 @@ body {
   }
 
    .package2{
-    margin-left: 450PX;
+    margin-left: 500PX;
     margin-top: -500px;
    }
 
    .package3{
-    margin-left: 850px;
+    margin-left: 800px;
     margin-top: -500px;
    }
    .package4{
-    margin-left: 1250px;
+    margin-left: 1100px;
     margin-top: -500px;
    }
 

@@ -37,7 +37,7 @@ var imageClasses = [".top1", ".top2", ".top3", ".top4", ".top5", ".top6", ".top7
 imageClasses.forEach(function(className) { //마우스오버
   $(className).hover(function(){
     $('.imageClasses').css('filter','brightness(0.5)');
-    $(this).css("transform", "translate(-30px, -30px)");
+    $(this).css("transform", "translate(-7px, -7px)");
     $(this).css("transition", "transform 0.2s ease-in-out");
   
   }, function(){

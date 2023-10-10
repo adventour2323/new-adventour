@@ -218,7 +218,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_paynow"> 결제 : <%=  bbb.getH_room_paynow()%></h4>
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
-          <h2 id="h_room_price" class="h_room_price"> <%=  bbb.getH_roompri()%> </h2>
+          <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%> </h2>
           <input id="roompay_btn" type="button" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 

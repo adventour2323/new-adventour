@@ -43,7 +43,7 @@
   float:left;
   margin-left: 210px;
   font-size: 45px;
-  color: rgb(20, 3, 78);
+ /* color: rgb(20, 3, 78);*/
   text-align: center;
  
   }
@@ -89,18 +89,18 @@
     border-width: 1px;
     border-radius: 20px;
     border-color: rgb(117, 165, 236);
-    background-color:rgb(117, 165, 236);
+    background-color:#555;
     color:white;
 }
 
 .eur:hover {
-    background-color:rgb(46, 78, 151);
+    background-color:#111;
 }
 .cart:hover {
-    background-color: rgb(46, 78, 151);
+    background-color: #111;
 }
 .pay:hover {
-    background-color: rgb(46, 78, 151);
+    background-color: #111;
 }
 
 
@@ -185,7 +185,7 @@
     height: 250px;
     margin-top: 120px;
     margin-left: 50px;
-    color: rgb(20, 3, 78);
+ /* color: rgb(20, 3, 78);*/
 }
 .scdform2, .scdform3, .scdform4, .scdform5, .scdform6{
   border-style: dashed;
@@ -193,7 +193,7 @@
   height: 250px;
   margin-top: 50px;
   margin-left: 50px;
-  color: rgb(20, 3, 78);
+ /* color: rgb(20, 3, 78);*/
 }
 /*메인 사진*/
 .h_mainpic{
@@ -220,6 +220,7 @@
 }
 .h_tiname{
 margin-top: 0px;
+font-size:26px;
 }
 .h_tinameko{
   margin-top: 0px;
@@ -250,7 +251,7 @@ margin-top: 0px;
 }
 .h_mapbtn{
   width: 80px;
-  height: 20px;
+  height: 30px;
   background-color: rgb(117, 165, 236);
   font-weight: 600;
   border-radius: 10px;
@@ -288,7 +289,22 @@ margin-top: 0px;
   font-size: 18px;
 }
 .beheart{
-  margin-top: -45px;
+  margin-top: -25px;
   margin-left: 150px;
   font-size: 28px;
+}
+.move_h{
+  width: 90px;
+  height: 40px;
+  background-color: #555;
+  color:white;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 30px;
+   margin-left: 50px;
+  
+}
+.move_h:hover{
+	color:white;
+	 background-color: #111;
 }
