@@ -66,7 +66,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
+													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -129,7 +129,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
+													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -160,7 +160,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %>
+													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
