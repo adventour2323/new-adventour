@@ -17,42 +17,7 @@
 </head>
 
 <style>
-table, th, td {
-border: none;
-}
 
-/* 이미지 컨테이너에 대한 스타일 */
-.image-container {
-    position: relative;
-}
-
-/* 오버레이를 감추기 위한 초기 스타일 */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 초기에 투명 배경 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s; /* 부드러운 투명도 전환 효과 */
-}
-
-/* 오버레이 내용 스타일 */
-.overlay-content {
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-}
-
-/* 이미지 위에 마우스를 올렸을 때 오버레이를 나타내는 스타일 */
-.image-container:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* 마우스 오버시 배경 투명도 변경 */
-    opacity: 1; /* 오버레이 표시 */
-}
 
 
 </style>
