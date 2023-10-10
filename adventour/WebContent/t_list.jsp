@@ -23,10 +23,17 @@
     </header>
     
 <jsp:useBean id="id" class="adventour.g_list_print">
+	<%
+    String countryEng = request.getParameter("country_eng");
+    String country = request.getParameter("country");
+	%>
+	
 	
 	<div class="list_title_div">
 	<h1 class="list_title">
-	투어 리스트
+	투어 리스트 <br>
+	
+	<%= country  %>
 	</h1>
 	</div>
 	
@@ -53,6 +60,7 @@
     <div class="tour-container">
         
             <%
+            
                 List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
                 for (t_getset g : a1) {
             %>
