@@ -30,7 +30,7 @@ $(document).ready(function() {
     nextEl: '.awards .swiper-next'
   }
 });
-////// top1 -10 에니메이션
+////// top1 -10 에니메이션  
 // 움직임을 주고자 하는 이미지들의 클래스 이름을 배열로 저장
 var imageClasses = [".top1", ".top2", ".top3", ".top4", ".top5", ".top6", ".top7", ".top8", ".top9", ".top10"];
 

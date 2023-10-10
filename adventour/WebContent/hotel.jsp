@@ -185,7 +185,7 @@ if (session.getAttribute("id") == null) {
 				<div class="package1_img">
 					<img src="image/img/<%= obj.getP_pho() %>">
 				</div>
-				<div class="package1_con">
+				<div class="package1_con"> 
 					<ul class="package1_ul">
 						<li class="pack_title"><%= obj.getP_name_ko() %></li>
 						<li class="pack_con1"><%= obj.getP_title1() %></li>
