@@ -2,7 +2,20 @@ $(document).ready(function() {
 	//헤더 푸터 로드
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
-
+//	var id = session.getAttribute("id"); // 세션에서 "id" 값을 가져옵니다.
+//
+//    if (id) {
+//        // "id" 값이 존재하면 header_login.jsp를 로드합니다.
+//        $("#header").load("header_login.jsp");
+//    } else {
+//        // "id" 값이 존재하지 않으면 header.html을 로드합니다.
+//        $("#header").load("header.html");
+//    }
+//
+//    // 항상 footer.html을 로드합니다.
+//    $("#footer").load("footer.html");
+//
+//
 
   
  //----------------------------------------top10 슬라이드--------------

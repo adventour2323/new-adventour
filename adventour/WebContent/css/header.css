@@ -155,11 +155,20 @@ a,p{
 	float: left;
 	width: 623px;
 	height: 150px;
-	margin-left: 700px;
+	margin-left: 680px;
 }
-/*나라 목록 ul*/
-.schtop_margin_box ul{
-	width: 155px;
+/*나라 목록 ul -- 간격 조정을 위해 수정*/
+/*.schtop_margin_box ul{
+	width: 140px;
+	height: 125px;
+	float: left;
+	margin: auto;
+	font-size: 15px;
+	padding-top: 10px; 
+	text-align: center;
+}*/
+.h_cityli1, .h_cityli2{
+	width: 135px;
 	height: 125px;
 	float: left;
 	margin: auto;
@@ -167,6 +176,16 @@ a,p{
 	padding-top: 10px; 
 	text-align: center;
 }
+.h_cityli3, .h_cityli4{
+	width: 135px;
+	height: 125px;
+	float: left;
+	margin-left: 20px;
+	font-size: 15px;
+	padding-top: 10px; 
+	text-align: center;
+}
+
 /*리스트에 먹이는 스타일.*/
 .schtop li{	
 	text-align: left;
