@@ -123,22 +123,22 @@ if (top_list != null) {
         <img class="h_info_title_pho1" class="h_info_title_pho1" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
         </div>
         <div id="hotel_info_pho2">
-          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
+          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>"  onclick="window.open(this.src)">
         </div>
         <div id="hotel_info_pho3">
-          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>" >
+          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>"  onclick="window.open(this.src)">
         </div>
         <div id="hotel_info_pho4">
-          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>" >
+          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>"  onclick="window.open(this.src)">
         </div>
         <div id="hotel_info_pho5">
-          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>" >
+          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>"  onclick="window.open(this.src)">
         </div>
         <div id="hotel_info_pho6">
-          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>" >
+          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>"  onclick="window.open(this.src)">
         </div>
         <div id="hotel_info_pho7">
-          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" >
+          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" onclick="window.open(this.src)">
         </div>
       
     </div><!--hotel_info_phos-->
