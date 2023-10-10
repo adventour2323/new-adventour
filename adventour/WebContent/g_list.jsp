@@ -32,12 +32,12 @@ border: none;
 			ArrayList<g_getset> a1 = id.g1();
 		%>
         
-      <div class="content" style="padding: 100px;  border: dotted; " > <!-- body 전체  -->
+      <div class="content" style="padding: 100px;  " > <!-- body 전체  -->
       
 
       
       
-        <div style="text-align: center; border: solid; margin-right: auto; margin-left: auto;">
+        <div style="text-align: center;  margin-right: auto; margin-left: auto;">
 		<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
 		<!--  -->
 		<div style="display: flex; "> <!-- 표 묶음  -->
