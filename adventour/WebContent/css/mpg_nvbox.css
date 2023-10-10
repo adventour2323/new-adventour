@@ -60,11 +60,8 @@
 
 /*마이페이지 메인페이지 버튼*/
 .mainNB nav:nth-child(4) {
-    width: 183px;
-    color: white;
-    border-top-width: 0px;
-    border-right-width: 1px;
-    background-color: rgb(20, 3, 78, 0.6);
+    border: solid rgb(96, 71, 180);
+    border-width: 1px 0px 1px 0px;
 }
 
 .mainNB nav:nth-child(5) {

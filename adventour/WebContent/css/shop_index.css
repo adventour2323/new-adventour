@@ -25,11 +25,23 @@
 /*select박스*/
 .mImg div{
     width: 1000px;
-    height: 180px;
+    height: 150px;
     text-align: center;
     position: absolute;
-    padding: 300px 0px 10px 450px;
+    top: 480px;
+    bottom: 10px; 
+    left: 450px;
     color: rgb(255, 255, 255);
+    background-color: rgb(71, 97, 135, 0.5);
+}
+.mImg p{
+    width: 1000px;
+    height: 60px;
+    float: left;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
 }
 .mImg select{
     width: 100px;
@@ -75,7 +87,7 @@ div h1{
 /*쇼핑몰 상품 전체 박스*/
 .stffAllB {
     width: 1300px;
-    height: 2300px;
+    height: 2100px;
     margin: 0px 320px 30px 330px;
     border-width: 1px;
     color:  rgb(20, 3, 78);
@@ -99,7 +111,7 @@ div h1{
 /*가이드연계상품*/
 .gdGdsCB{
     width: 1400px;
-    height: 320px;
+    height: 450px;
     /* border: 1px solid black; */
 }
 
@@ -245,8 +257,7 @@ div h1{
     height: 30px;
     float: left;
     font-size: 15px;
-    margin: 0px;
-    margin-left: 15px;
+    margin: 0px 0px 0px 15px;
 }
 /*오숑제안,좋할상품 상품카테고리 소개글*/
 .cgBox span{
@@ -383,14 +394,12 @@ a.like:hover div.hover_text {
 .left-arrow {
 	left: 250px;
 	top: 2650px;	
-/*     왼쪽에 위치. 슬라이드 바깥으로 0px만큼 이동 */
 }
 /*오른쪽*/
 .right-arrow {
 	float: left;
 	top: 2650px;
 	left: 1650px;
-/*     오른쪽에 위치. 슬라이드 바깥으로 0px만큼 이동 */
 }
 
 .gdsBxPcG span{
@@ -401,7 +410,7 @@ a.like:hover div.hover_text {
     border: 1px solid white;
     flex: 0 0 auto; 
 }
-/*오숑제안,좋할상품 상품 개별 이미지 박스 */
+/*가이드투어 연계 상품 개별 이미지 박스 */
 .gdsBxPcG img{
     width: 230px;
     height: 310px;

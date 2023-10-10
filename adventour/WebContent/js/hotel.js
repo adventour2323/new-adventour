@@ -30,14 +30,14 @@ $(document).ready(function() {
     nextEl: '.awards .swiper-next'
   }
 });
-////// top1 -10 에니메이션
+////// top1 -10 에니메이션  
 // 움직임을 주고자 하는 이미지들의 클래스 이름을 배열로 저장
 var imageClasses = [".top1", ".top2", ".top3", ".top4", ".top5", ".top6", ".top7", ".top8", ".top9", ".top10"];
 
 imageClasses.forEach(function(className) { //마우스오버
   $(className).hover(function(){
     $('.imageClasses').css('filter','brightness(0.5)');
-    $(this).css("transform", "translate(-30px, -30px)");
+    $(this).css("transform", "translate(-7px, -7px)");
     $(this).css("transition", "transform 0.2s ease-in-out");
   
   }, function(){

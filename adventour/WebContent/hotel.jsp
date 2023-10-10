@@ -50,7 +50,24 @@ if (session.getAttribute("id") == null) {
 			</div>
 
 			<div class="b_picsch">
-				<input type="text" class="b_mainde" name="b_mainde" placeholder="지역">
+				<select  class="b_mainde" name="b_mainde" placeholder="지역선택">
+				<option  value="uk">영국</option>
+				<option  value="london">영국 런던</option>
+				<option  value="liverpool">영국 리버풀</option>
+				<option  value="edinburgh">영국 에든버러</option>
+				<option  value="italy">이탈리아</option>
+				<option  value="rome">이탈리아 로마</option>
+				<option  value="venice">이탈리아 베네치아</option>
+				<option  value="milano">이탈리아 밀라노 </option>
+				<option  value="france">프랑스</option>
+				<option  value="psris">프랑스 파리</option>
+				<option  value="marseille">프랑스 마르세유</option>
+				<option  value="monaco">프랑스 모나코</option>
+				<option  value="spain">스페인</option>
+				<option  value="madrid">프랑스 마드리드</option>
+				<option  value="barcelona">프랑스 바르셀로나</option>
+				<option  value="sevilla">프랑스 세비야</option>				
+				</select>
 				<input type="text" class="b_mainarr" name="b_mainarr"
 					placeholder="체크인"> <input type="text" class="b_maintime"
 					name="b_maintime" placeholder="체크아웃"> <input type="text"
@@ -185,7 +202,7 @@ if (session.getAttribute("id") == null) {
 				<div class="package1_img">
 					<img src="image/img/<%= obj.getP_pho() %>">
 				</div>
-				<div class="package1_con">
+				<div class="package1_con"> 
 					<ul class="package1_ul">
 						<li class="pack_title"><%= obj.getP_name_ko() %></li>
 						<li class="pack_con1"><%= obj.getP_title1() %></li>
@@ -201,8 +218,6 @@ if (session.getAttribute("id") == null) {
 
 %>
 		</div>
-
-
 	</div>
 
 	<!-- footer.html import-->

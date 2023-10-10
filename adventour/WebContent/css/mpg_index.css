@@ -34,6 +34,15 @@
 .mainNCB{
     display: flex;
 }
+
+/*마이페이지 메인페이지 버튼*/
+.mainNB nav:nth-child(4) {
+    color: white!important;
+    border-top-width: 0px!important;
+    border-right-width: 1px!important;
+    background-color: rgb(20, 3, 78, 0.6)!important;
+}
+
 /*----------가장 빠른 예약, 캘린더 전체 박스----------*/
 .mrMcalB{
     margin: 0px  0px 0px 50px;

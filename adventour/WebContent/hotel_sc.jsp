@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
 
-        <script defer src="googlemap_API/index.js"></script>
+        <script defer src="googlemap_API/index.js"></script> 
         <script
           defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
@@ -126,7 +126,7 @@ if (list != null) {
          <div class="h_tiinfo">
 
           <div class="h_name">
-          <h1 class="h_tiname"><%=ukAll.getH_name_eng() %></h1>
+          <h2 class="h_tiname"><%=ukAll.getH_name_eng() %></h2>
           <h3 class="h_tinameko">(<%=ukAll.getH_name_ko() %>)</h3>
           </div>
 

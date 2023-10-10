@@ -523,7 +523,7 @@ section {
 .main-visual .visualSearchBox .visual-res .visual-res-tab li .ban-option button:hover {
     border: 1px solid #111;
 }
-.main-visual .visualSearchBox .visual-res .visual-res-tab li .ban-option button.off {
+.main-visual .visualSearchBox .visual-res .visual-res-tab li .ban-option button.off { 
     border: 1px solid #111;
 }
 .main-visual .visualSearchBox .visual-res .visual-res-tab li .ban-option button:hover i {
