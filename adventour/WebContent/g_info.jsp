@@ -13,6 +13,14 @@
 <title>guide information</title>
         <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
 </head>
+<style>
+   /* tab 색상 유지 */
+     .movet {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
+}
+
+</style>
 
  
 <body>
