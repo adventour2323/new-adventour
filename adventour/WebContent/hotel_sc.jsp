@@ -45,7 +45,10 @@ if (session.getAttribute("id") == null) {
   </div><!--htitle-->
  
 <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
-    H_getset sch_country = list.get(0);
+H_getset sch_country = null;
+if (list != null && !list.isEmpty()) {
+    sch_country = list.get(0);
+}
 %>
    
 
@@ -58,18 +61,21 @@ if (session.getAttribute("id") == null) {
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM_DD">
+      <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM_DD" >
+          <!--   <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM_DD" value="<%= sch_country.getH_indateY()%> - <%= sch_country.getH_indateM()%> - <%= sch_country.getH_indateD()%>"> -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-      <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM_DD">
+       <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM_DD" > 
+    <!--    <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM_DD" value="<%= sch_country.getH_outdateY()%> - <%= sch_country.getH_outdateM()%> - <%= sch_country.getH_outdateD()%>">  -->
     </div>
 
+   
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      성인 : <input type="text" class="sch_adult" name="sch_adult" placeholder="성인"></br>
-      유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수"></br>
+ <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
     <div class="sch1">
@@ -81,8 +87,8 @@ if (session.getAttribute("id") == null) {
     <div class="sch12">
       <h5 class="sch_title" >☆ 옵션</h5>
       <input type="checkbox" class="h_twin"  name="h_twin" value="1">트윈</br>
-      <input type="checkbox" class="h_double"  name="h_double" value="1">더블</br>
-      <input type="checkbox" class="h_queen"  name="h_queen" value="1">퀸</br>
+      <input type="checkbox" class="h_double"  name="h_double" value="슈퍼싱글">더블</br>
+      <input type="checkbox" class="h_queen"  name="h_queen" value="퀸">퀸</br>
     </div>
 
 

@@ -34,6 +34,15 @@ public class H_MainSch_DBselect implements h_conn_interface { //데이터베이�
            String h_outdateD = re.getParameter("h_outdateD");
            String h_roompeo = re.getParameter("h_mainpeo");
           
+           System.out.println(country_eng);
+           System.out.println(city_eng);
+           System.out.println(h_indateY);
+           System.out.println(h_indateM);
+           System.out.println(h_indateD);
+           System.out.println(h_outdateY);
+           System.out.println(h_outdateM);
+           System.out.println(h_outdateD);
+           System.out.println(h_roompeo);
            
     	 
     	

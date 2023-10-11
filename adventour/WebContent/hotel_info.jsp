@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="utf-8">
- <title>호텔스케쥴</title>
+ <title>호텔 상세</title>
   <link rel="stylesheet" type="text/css" href="css/hotel_info.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/hotel_info.js"></script>

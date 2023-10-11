@@ -51,8 +51,8 @@ public class H_Cto extends HttpServlet {
                  String h_outdateY = request.getParameter("h_outdateY");
                  String h_outdateM = request.getParameter("h_outdateM");
                  String h_outdateD = request.getParameter("h_outdateD");
-                 String h_mainpeo = request.getParameter("h_mainpeo");
-                 int h_roompeo =Integer.valueOf(h_mainpeo);
+                 String h_roompeo = request.getParameter("h_mainpeo");
+               
                  
                  System.out.println(country_eng);
                  System.out.println(city_eng);
@@ -62,7 +62,6 @@ public class H_Cto extends HttpServlet {
                  System.out.println(h_outdateY);
                  System.out.println(h_outdateM);
                  System.out.println(h_outdateD);
-                 System.out.println( h_mainpeo);
                  System.out.println(h_roompeo);
                  
         	    String hmsearch = htop10inter1.showdata(request, response);  

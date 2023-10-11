@@ -87,9 +87,9 @@ if (session.getAttribute("id") == null) {
 					<option vlaue="2">2</option>
 					<option vlaue="3">3</option>
 					<option vlaue="4">4</option>
-					<option vlaue="4">5</option>
-					<option vlaue="4">6</option>
-					<option vlaue="4">7</option>
+					<option vlaue="5">5</option>
+					<option vlaue="6">6</option>
+					<option vlaue="7">7</option>
 					<option vlaue="8">8</option>
 					<option vlaue="9">9</option>
 					<option vlaue="10">10</option>
