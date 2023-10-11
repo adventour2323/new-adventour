@@ -28,8 +28,7 @@
 		LIMIT 10;
 	</select>
 
-	<select id="select_ukAll" resultType="getset.H_getset"
-		parameterType="getset.H_getset">
+	<select id="select_ukAll" resultType="getset.H_getset" parameterType="getset.H_getset">
 		SELECT
 		h_hotel.*,
 		MIN(h_room.h_roompri) AS min_h_roompri
@@ -47,25 +46,37 @@
 
 
 	<select id="select_top10_info" resultType="getset.H_getset" parameterType="getset.H_getset">
-(
-  SELECT h_room.*, h_hotel.*
-  FROM h_room
-  INNER JOIN h_hotel ON h_room.h_name_eng = h_hotel.h_name_eng
-  WHERE h_room.h_name_eng = '${h_name_eng}'  -- 변수를 따옴표로 둘러싸서 문자열로 처리
-    AND h_room.h_roomtype = 'double'
-  ORDER BY RAND()
-  LIMIT 1
-)  
-UNION
-(
-  SELECT h_room.*, h_hotel.*
-  FROM h_room
-  INNER JOIN h_hotel ON h_room.h_name_eng = h_hotel.h_name_eng
-  WHERE h_room.h_name_eng = '${h_name_eng}'  -- 변수를 따옴표로 둘러싸서 문자열로 처리
-    AND h_room.h_roomtype = 'suite'
-  ORDER BY RAND()
-  LIMIT 1
-);
+		(
+		SELECT h_room.*, h_hotel.*
+		FROM h_room
+		INNER JOIN h_hotel
+		ON h_room.h_name_eng = h_hotel.h_name_eng
+		WHERE h_room.h_name_eng =
+		'${h_name_eng}'
+		AND h_room.h_roomtype = 'double'
+		ORDER BY RAND()
+		LIMIT 1
+		)
+		UNION
+		(
+		SELECT h_room.*, h_hotel.*
+		FROM h_room
+		INNER JOIN h_hotel ON
+		h_room.h_name_eng = h_hotel.h_name_eng
+		WHERE h_room.h_name_eng =
+		'${h_name_eng}'
+		AND h_room.h_roomtype = 'suite'
+		ORDER BY RAND()
+		LIMIT 1
+		);
+	</select>
+
+
+	<select id="select_main_search" resultType="getset.H_getset" parameterType="getset.H_getset">
+		SELECT h_hotel.*
+		FROM h_hotel
+	    WHERE country_eng = '${country_eng}';
+
 	</select>
 
 

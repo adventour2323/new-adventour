@@ -15,8 +15,93 @@ $(document).ready(function() {
 //    // 항상 footer.html을 로드합니다.
 //    $("#footer").load("footer.html");
 //
-//
+//----------------------------------------메인 검색창 select--------------------
+	//셀렉박스 나라별 옵션 설정
+	$('.h_mainde').on('change', function() {
+        var country = $(this).val();
+        var citySelect = $('.h_maincity');
+        
+        // 모든 옵션을 보이게 설정
+        citySelect.find('option').show();
+        
+        // 선택 가능한 도시 옵션만 보이도록 설정
+        if (country === 'uk') {
+            citySelect.find('option').not('[value="london"], [value="liverpool"], [value="edinburgh"]').hide();
+        } else if (country === 'italy') {
+            citySelect.find('option').not('[value="rome"], [value="venice"], [value="milano"]').hide();
+        } else if (country === 'france') {
+            citySelect.find('option').not('[value="paris"], [value="marseille"], [value="monaco"]').hide();
+        } else if (country === 'spain') {
+            citySelect.find('option').not('[value="madrid"], [value="barcelona"], [value="sevilla"]').hide();
+        } else if (country === 'all') {
+            citySelect.find('option').not('[value="all"]').hide();
+        }
+    });
+	
+	$('.h_maincity').on('change', function() {
+        var city = $(this).val();
+        var countrySelect = $('.h_mainde');
+        
+        // 모든 옵션을 보이게 설정
+        countrySelect.find('option').show();
+        
+        // 선택 가능한 도시 옵션만 보이도록 설정
+        if (city === 'london' || city === 'liverpool' ||city === 'edinburgh') {
+        	countrySelect.find('option').not('[value="uk"]').hide();
+        } else if (country === 'rome' || country === 'venice'|| country === 'milano') {
+        	countrySelect.find('option').not('[value="italy"]').hide();
+        } else if (city === 'paris'||city === 'marseille'||city === 'monaco') {
+        	countrySelect.find('option').not('[value="france"]').hide();
+        } else if (city === 'madrid'||city === 'barcelona'||city === 'sevilla') {
+        	countrySelect.find('option').not('[value="spain"]').hide();
+        } else if (city === 'all') {
+        	countrySelect.find('option').not('[value="all"]').hide();
+        }
+    });
+	
+	
+	// 각 달별로 날짜 select
+	
+	$('.h_indateM').on('change', function() {
+	    var MM = $(this).val();
+	    
 
+	    
+	    if (MM === '1' || MM === '3' || MM === '5' || MM === '7' || MM === '8' || MM === '10') {
+	        for (var i = 1; i < 32; i++) {
+	            $('.h_indateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    } else if (MM === '2') {
+	        for (var i = 1; i < 29; i++) {
+	            $('.h_indateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    } else if (MM === '4' || MM === '6' || MM === '9' || MM === '11') {
+	        for (var i = 1; i < 31; i++) {
+	            $('.h_indateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    }
+	});
+	
+	$('.h_outdateM').on('change', function() {
+	    var MM = $(this).val();
+	    
+
+	    
+	    if (MM === '1' || MM === '3' || MM === '5' || MM === '7' || MM === '8' || MM === '10') {
+	        for (var i = 1; i < 32; i++) {
+	            $('.h_outdateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    } else if (MM === '2') {
+	        for (var i = 1; i < 29; i++) {
+	            $('.h_outdateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    } else if (MM === '4' || MM === '6' || MM === '9' || MM === '11') {
+	        for (var i = 1; i < 31; i++) {
+	            $('.h_outdateD').append('<option value="' + i + '">' + i + '</option>');
+	        }
+	    }
+	});
+  
   
  //----------------------------------------top10 슬라이드--------------
  new Swiper('.awards .swiper', {
@@ -109,6 +194,5 @@ imageClasses.forEach(function(className) { //마우스오버
    $(".schtop").slideUp("fast");
  });
  
-
 
 });

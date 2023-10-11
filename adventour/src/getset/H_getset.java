@@ -43,7 +43,59 @@ public class H_getset {
 	String h_pho5;
 	String h_pho6;
 	
+	String h_indateY;
+	String h_indateM;
+	String h_indateD;
+	String h_outdateY;
+	String h_outdateM;
+	String h_outdateD;
+	int h_roompeo1;
 	
+	
+	
+	
+	public String getH_indateY() {
+		return h_indateY;
+	}
+	public void setH_indateY(String h_indateY) {
+		this.h_indateY = h_indateY;
+	}
+	public String getH_indateM() {
+		return h_indateM;
+	}
+	public void setH_indateM(String h_indateM) {
+		this.h_indateM = h_indateM;
+	}
+	public String getH_indateD() {
+		return h_indateD;
+	}
+	public void setH_indateD(String h_indateD) {
+		this.h_indateD = h_indateD;
+	}
+	public String getH_outdateY() {
+		return h_outdateY;
+	}
+	public void setH_outdateY(String h_outdateY) {
+		this.h_outdateY = h_outdateY;
+	}
+	public String getH_outdateM() {
+		return h_outdateM;
+	}
+	public void setH_outdateM(String h_outdateM) {
+		this.h_outdateM = h_outdateM;
+	}
+	public String getH_outdateD() {
+		return h_outdateD;
+	}
+	public void setH_outdateD(String h_outdateD) {
+		this.h_outdateD = h_outdateD;
+	}
+	public int getH_roompeo1() {
+		return h_roompeo1;
+	}
+	public void setH_roompeo1(int h_roompeo1) {
+		this.h_roompeo1 = h_roompeo1;
+	}
 	public String getH_pho1() {
 		return h_pho1;
 	}

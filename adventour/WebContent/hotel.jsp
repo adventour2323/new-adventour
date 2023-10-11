@@ -19,24 +19,25 @@
 </head>
 
 
+
 <body>
 
-<header>
-<%
+	<header>
+		<%
 if (session.getAttribute("id") == null) {
 %>
-    <!-- header.html import -->
-    <div id="header"></div>
-<%
+		<!-- header.html import -->
+		<div id="header"></div>
+		<%
 } else {
 %>
-    <jsp:include page="header_login.jsp"></jsp:include>
-<%
+		<jsp:include page="header_login.jsp"></jsp:include>
+		<%
 }
 %>
-</header>
+	</header>
 
-
+<form name="h_main_sch_form" action="mainsch.hotel?uname=hotelSearch" method="post">
 	<div class="busmain">
 		<img class="busmainpic" src="image/img/hotel01.jpg">
 		<div class="b_piccont">
@@ -45,41 +46,103 @@ if (session.getAttribute("id") == null) {
 			<div class="b_picti">
 				<p class="sch1">원하는 지역이 어디신가요?</p>
 				<p class="sch2">체크인</p>
-				<p class="sch4">체크아웃</p>
-				<p class="sch3">인원수</p>
+				<p class="sch3">체크아웃</p>
+				<p class="sch4">인원수</p>
 			</div>
 
 			<div class="b_picsch">
-				<select  class="b_mainde" name="b_mainde" placeholder="지역선택">
-				<option  value="uk">영국</option>
-				<option  value="london">영국 런던</option>
-				<option  value="liverpool">영국 리버풀</option>
-				<option  value="edinburgh">영국 에든버러</option>
-				<option  value="italy">이탈리아</option>
-				<option  value="rome">이탈리아 로마</option>
-				<option  value="venice">이탈리아 베네치아</option>
-				<option  value="milano">이탈리아 밀라노 </option>
-				<option  value="france">프랑스</option>
-				<option  value="psris">프랑스 파리</option>
-				<option  value="marseille">프랑스 마르세유</option>
-				<option  value="monaco">프랑스 모나코</option>
-				<option  value="spain">스페인</option>
-				<option  value="madrid">프랑스 마드리드</option>
-				<option  value="barcelona">프랑스 바르셀로나</option>
-				<option  value="sevilla">프랑스 세비야</option>				
+
+				<select class="h_mainde" name="h_mainde" placeholder="나라 선택">
+					<option value="">나라 선택</option>
+					<option value="all">어디든지</option>
+					<option value="uk">영국</option>
+					<option value="italy">이탈리아</option>
+					<option value="france">프랑스</option>
+					<option value="spain">스페인</option>
+				</select> 
+				<select class="h_maincity" name="h_maincity" placeholder="도시 선택">
+					<option value="">도시 선택</option>
+					<option value="all">어디든지</option>
+					<option value="london">런던</option>
+					<option value="liverpool">리버풀</option>
+					<option value="edinburgh">에든버러</option>
+					<option value="rome">로마</option>
+					<option value="venice">베네치아</option>
+					<option value="milano">밀라노</option>
+					<option value="paris">파리</option>
+					<option value="marseille">마르세유</option>
+					<option value="monaco">모나코</option>
+					<option value="madrid">마드리드</option>
+					<option value="barcelona">바르셀로나</option>
+					<option value="sevilla">세비야</option>
+				</select> 
+				<select class="h_indateY" name="h_indateY" placeholder="체크인">
+					<option vlaue="">년</option>
+					<option vlaue="2023">2023</option>
+					<option vlaue="2024">2024</option>
+				</select> 
+				<select class="h_indateM" name="h_indateM" placeholder="체크인">
+					<option vlaue="">월</option>
+					<option vlaue="1">1</option>
+					<option vlaue="2">2</option>
+					<option vlaue="3">3</option>
+					<option vlaue="4">4</option>
+					<option vlaue="4">5</option>
+					<option vlaue="4">6</option>
+					<option vlaue="4">7</option>
+					<option vlaue="8">8</option>
+					<option vlaue="9">9</option>
+					<option vlaue="10">10</option>
+					<option vlaue="11">11</option>
+					<option vlaue="12">12</option>
+
+				</select> 
+				<select class="h_indateD" name="h_indateD" placeholder="체크인">
+					<option vlaue="">일</option>
+
+				</select> 
+				<select class="h_outdateY" name="h_outdateY" placeholder="체크아웃">
+					<option vlaue="">년</option>
+					<option vlaue="2023">2023</option>
+					<option vlaue="2024">2024</option>
 				</select>
-				<input type="text" class="b_mainarr" name="b_mainarr"
-					placeholder="체크인"> <input type="text" class="b_maintime"
-					name="b_maintime" placeholder="체크아웃"> <input type="text"
-					class="b_maintpeo" name="b_mainpeo" placeholder="총 인원수">
-				<button class="b_maintbtn" type="button" name="bsch_btn">검색하기</button>
+				 <select class="h_outdateM" name="h_outdateM" placeholder="체크아웃">
+					<option vlaue="">월</option>
+					<option vlaue="1">1</option>
+					<option vlaue="2">2</option>
+					<option vlaue="3">3</option>
+					<option vlaue="4">4</option>
+					<option vlaue="4">5</option>
+					<option vlaue="4">6</option>
+					<option vlaue="4">7</option>
+					<option vlaue="8">8</option>
+					<option vlaue="9">9</option>
+					<option vlaue="10">10</option>
+					<option vlaue="11">11</option>
+					<option vlaue="12">12</option>
+
+				</select> 
+				<select class="h_outdateD" name="h_outdateD" placeholder="체크아웃">
+					<option vlaue="">일</option>
+
+				</select>
+				
+				 <select class="h_maintpeo" name="h_mainpeo" placeholder="총 인원수">
+				    <option vlaue="1">1</option>
+					<option vlaue="2">2</option>
+					<option vlaue="3">3</option>
+					<option vlaue="4">4</option>
+				</select>
+				
+			   <input type="submit" class="b_maintbtn"  name="bsch_btn" value="검색하기">
+			    
 			</div>
 			<!--b_picsch-->
 		</div>
 		<!--b_piccont-->
 	</div>
 	<!--busmain-->
-
+</form>
 
 	<div class="h_eventban">
 
@@ -114,16 +177,16 @@ if (session.getAttribute("id") == null) {
                         H_getset aaa = list.get(i);
                        
                 %>
-<div class="swiper-slide">
-    <a href="information.hotel?uname=<%= aaa.getH_name_eng() %>">
-        <img class="top<%= i + 1 %>"
-        src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
-        <p class="top_contry"><%= aaa.getCountry_ko() %>
-            -
-            <%= aaa.getCity_ko() %></p>
-        <p class="top_name"><%= aaa.getH_name_ko() %></p>
-    </a>
-</div>
+							<div class="swiper-slide">
+								<a name="<%= aaa.getH_name_eng() %>" href="information.hotel?uname=<%= aaa.getH_name_eng() %>">
+									<img class="top<%= i + 1 %>"
+									src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
+									<p class="top_contry"><%= aaa.getCountry_ko() %>
+										-
+										<%= aaa.getCity_ko() %></p>
+									<p class="top_name"><%= aaa.getH_name_ko() %></p>
+								</a>
+							</div>
 							<%
                     }
                 } else {
@@ -144,8 +207,8 @@ if (session.getAttribute("id") == null) {
 			</section>
 			<!--이미지스위퍼 끝-->
 
-		</div> 
-		<!--h_retop10 끝 --> 
+		</div>
+		<!--h_retop10 끝 -->
 
 
 		<div class="h_recity">
@@ -202,7 +265,7 @@ if (session.getAttribute("id") == null) {
 				<div class="package1_img">
 					<img src="image/img/<%= obj.getP_pho() %>">
 				</div>
-				<div class="package1_con"> 
+				<div class="package1_con">
 					<ul class="package1_ul">
 						<li class="pack_title"><%= obj.getP_name_ko() %></li>
 						<li class="pack_con1"><%= obj.getP_title1() %></li>
