@@ -60,7 +60,7 @@
             
             <div class="tour-item">
                 <div class="tour-img">
-                    <a href="https://www.naver.com">
+                    <a href="t_info.jsp?<%=g.getT_id() %>">
                         <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">
                     </a>
                 </div>
@@ -68,7 +68,9 @@
                 
                 	<div class="tour_title_div" >
                     <h3 class="tour-title">
-                        <a href="https://www.naver.com"><%= g.getT_name() %></a>
+                        <a href="t_info.jsp?<%=g.getT_id() %>">
+                        	<%= g.getT_name() %>
+                        </a>
                     </h3>
                     </div>
                     <hr>

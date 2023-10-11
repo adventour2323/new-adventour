@@ -253,4 +253,41 @@ public class g_list_print {
 		}
 	
 //	
+	
+
+	public ArrayList<t_getset> t4(String t_id) throws Exception {
+
+		ArrayList<t_getset> arr = new ArrayList<t_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("select *from tour where t_id = '"+t_id+"';");
+
+		while(rs.next()) {
+			t_getset table = new t_getset();
+			table.setT_id(rs.getString("t_id"));
+			table.setT_name(rs.getString("t_name"));
+			table.setCountry(rs.getString("country"));
+			table.setCity(rs.getString("city"));
+			table.setD_time(rs.getString("depart_time"));
+			table.setM_spot(rs.getString("meeting_spot"));
+			table.setM_x(rs.getString("meeting_x"));
+			table.setM_y(rs.getString("meeting_y"));
+			table.setT_price(rs.getString("t_price"));
+			table.setT_theme(rs.getString("t_theme"));
+			table.setT_info(rs.getString("t_info"));	
+			table.setT_spot1(rs.getString("t_spot1"));
+			table.setT_spot2(rs.getString("t_spot2"));
+			table.setT_spot3(rs.getString("t_spot3"));
+			table.setT_img1(rs.getString("t_img1"));
+			table.setT_img2(rs.getString("t_img2"));
+			table.setT_img3(rs.getString("t_img3"));
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
 }
