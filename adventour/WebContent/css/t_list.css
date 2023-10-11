@@ -81,9 +81,7 @@ body {
     max-width: 100%;
     text-overflow: ellipsis;
    
-}
-
-        
+	}
         /*  */
 
         .tour-location {
@@ -122,6 +120,7 @@ body {
         .tour-img:hover:before {
             opacity: 1;
         }
+        
         .list_title_div{
         margin-right: auto;
         margin-left: auto;

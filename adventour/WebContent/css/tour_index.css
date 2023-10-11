@@ -11,14 +11,14 @@
     margin: 0;
   	padding: 0;
 } 
+
 body{
  font-family: 'Pretendard-Regular';	
 }
 
-
 /* 국기 */
 .t_country{
-	margin-top: 350px;
+	margin-top: 100px;
 }
 .t_flag{
 	margin-top: 50px;
@@ -55,7 +55,9 @@ body{
             width: 1000px;
             padding: 50px;
             margin: 0 auto;
-            background: #ffffff;}
+            background: #ffffff;
+            
+            }
 
         /* section { */
         	#guide_uk {
@@ -91,7 +93,9 @@ body{
             font-weight: 600;
             text-align: center;
             color: #bbb;
-            border: 1px solid transparent;}
+            border: 1px solid transparent;
+            background: 
+            }
 		
 		.g_label:hover{
             color: #2e9cdf;

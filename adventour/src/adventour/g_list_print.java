@@ -14,12 +14,10 @@ public class g_list_print {
 	
 	public void con() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
-		/*
-		 * conn =
-		 * DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root",
-		 * "qhdks12!@");
-		 */
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
+		
+		 conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root", "qhdks12!@");
+		
+//		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
 		stmt = conn.createStatement();
 	}
 	 
@@ -197,6 +195,14 @@ public class g_list_print {
 		while(rs.next()) {
 			t_getset table = new t_getset();
 			table.setT_name(rs.getString("t_name"));
+			table.setCountry(rs.getString("country"));
+			table.setCity(rs.getString("city"));
+			table.setT_price(rs.getString("t_price"));
+			table.setT_theme(rs.getString("t_theme"));
+			table.setT_info(rs.getString("t_info"));	
+			table.setT_img1(rs.getString("t_img1"));
+			table.setT_img2(rs.getString("t_img2"));
+			table.setT_img3(rs.getString("t_img3"));
 			arr.add(table);
 		}
 	} finally {

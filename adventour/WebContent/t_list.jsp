@@ -27,11 +27,7 @@
 	
 	
 	<div class="list_title_div">
-	<h1 class="list_title">
-	투어 리스트 <br>
-	
-	
-	</h1>
+	<h1 class="list_title"> 투어 리스트 <br> </h1>
 	</div>
 	
 	<div class="country_list" >

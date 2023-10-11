@@ -1,17 +1,4 @@
 
-
-/* ol,
-ul,
-li {
-	list-style: none;
-} */
-
-/* bus 헤더 참조  */
-
-
-
-
-
 .on {
     display: block;
 }
@@ -30,7 +17,6 @@ section {
 }
 
 /* 공통 */
-
 
 /* 메인 CSS */
 .main-visual {

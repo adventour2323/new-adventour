@@ -20,7 +20,8 @@ public class Mpg_Q_dbsave {
 	 */
 	private Connection getConnection() throws Exception { // 데이터베이스 연결을 위한 매소드
 		Class.forName("com.mysql.jdbc.Driver");
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
+//		return DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "qlqjs");
 	}
 	
 //	private Connection getConnection(String driver, String url, String id, String pw) throws Exception { // 데이터베이스 연결을 위한 매소드

@@ -46,19 +46,20 @@
 
 			<div id="guide_of_the_month">
 				<div class="gom_ment">
-					<h1 class="gom_comment" style="text-align: center;">인기 가이드</h1>
+					<h1 class="gom_comment" style="text-align: center; margin-bottom: 20px;">인기 가이드</h1>
 				</div>
 
 
-				<div class="tab_list">
+				<div class="tab_list"  style=" height: 300px; background-color: #f5f5f5">
 					<input id="tab1" type="radio" name="tabs" checked>
 					<!--디폴트 메뉴-->
-					<label class="g_label" for="tab1">영국</label> <input id="tab2"
-						type="radio" name="tabs"> <label class="g_label"
-						for="tab2">프랑스</label> <input id="tab3" type="radio" name="tabs">
-					<label class="g_label" for="tab3">스페인</label> <input id="tab4"
-						type="radio" name="tabs"> <label class="g_label"
-						for="tab4">이탈리아</label>
+					<label class="g_label" for="tab1">영국</label> 
+					<input id="tab2" type="radio" name="tabs"> 
+						<label class="g_label" for="tab2">프랑스</label> 
+					<input id="tab3" type="radio" name="tabs">
+						<label class="g_label" for="tab3">스페인</label> 
+					<input id="tab4" type="radio" name="tabs"> 
+						<label class="g_label" for="tab4">이탈리아</label>
 					<div style="float: right; cursor: pointer; margin-top: auto;"
 						onclick="location.href='./g_list.jsp'">전체보기</div>
 
@@ -74,13 +75,14 @@
 							<table style="width: 100px;">
 								<thead>
 									<tr>
-										<th style="cursor: pointer;"><a
-											href="g_info.jsp?g_id=<%=g.getG_id()%>">
+										<th style="cursor: pointer;">
+										<a href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
-										</a></th>
+										</a>
+										</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -293,14 +295,14 @@
 			
 				<h1 style="text-align: center;">인기 투어</h1>
 			
-			<div class="recommend_city" style="">
+			<div class="recommend_city" >
 			
 				<%
 					for (int i = 0; i < a2.size(); i++) {
 							t_getset t = a2.get(i);
 							if (t.getT_id().equals("l_ston_tour") == true) {
 				%>
-				<div class="recommend_city1" style="">
+				<div class="recommend_city1" >
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
 							style="width: 237px; height: 154px; cursor: pointer;"
@@ -311,7 +313,7 @@
 						<%=t.getT_name()%>
 					</h3>
 					</div>
-					<div class="recommend_price" style="">
+					<div class="recommend_price" >
 					 	₩ <%=t.getT_price()%>
 					</div>
 				</div>
@@ -325,8 +327,7 @@
 				<div class="recommend_city2">
 					<div class="r_c_1_img">
 						<img src="<%=t.getT_img1()%>"
-							style="width: 237px; height: 154px; cursor: pointer;"
-							alt="추천도시 2">
+							style="width: 237px; height: 154px; cursor: pointer;" alt="추천도시 2">
 					</div>
 					<div  style="text-overflow: ellipsis;">
 					<h3 class="rocommend_1_title">
