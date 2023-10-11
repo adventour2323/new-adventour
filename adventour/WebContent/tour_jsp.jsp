@@ -285,9 +285,11 @@
 
 				</div>
 			</div>
-			
+				
+				<div>
 				<h1 style="text-align: center;">인기 투어</h1>
-			
+				</div>
+				
 			<div class="recommend_city" >
 			
 				<%

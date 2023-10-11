@@ -144,7 +144,7 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour;");
+		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, city, depart_time, meeting_spot, meeting_x, meeting_y, format(t_price,0), t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour;");
 
 		while(rs.next()) {
 			t_getset table = new t_getset();
@@ -156,8 +156,7 @@ public class g_list_print {
 			table.setCountry(rs.getString("country"));
 			table.setCity(rs.getString("city"));
 			table.setD_time(rs.getString("depart_time"));
-			table.setS_date(rs.getString("start_date"));
-			table.setE_date(rs.getString("end_date"));
+			
 			table.setM_spot(rs.getString("meeting_spot"));
 			table.setM_x(rs.getString("meeting_x"));
 			table.setM_y(rs.getString("meeting_y"));
@@ -218,7 +217,7 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, country_eng, city, depart_time, start_date, end_date, meeting_spot, meeting_x, meeting_y, t_price, t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour where country_eng = '"+country_eng+"';");
+		ResultSet rs = stmt.executeQuery("select t_id, t_name, g_id, country, country_eng, city, depart_time, meeting_spot, meeting_x, meeting_y, t_price, t_theme, t_info, t_spot1, t_spot2, t_spot3, t_img1, t_img2, t_img3, t_logo1 from tour where country_eng = '"+country_eng+"';");
 
 		while(rs.next()) {
 			t_getset table = new t_getset();
@@ -230,8 +229,7 @@ public class g_list_print {
 			table.setCountry_eng(rs.getString("country_eng"));
 			table.setCity(rs.getString("city"));
 			table.setD_time(rs.getString("depart_time"));
-			table.setS_date(rs.getString("start_date"));
-			table.setE_date(rs.getString("end_date"));
+			
 			table.setM_spot(rs.getString("meeting_spot"));
 			table.setM_x(rs.getString("meeting_x"));
 			table.setM_y(rs.getString("meeting_y"));

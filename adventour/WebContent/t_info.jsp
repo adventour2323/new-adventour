@@ -81,6 +81,10 @@
 		
 		
 		</div> <!-- bottom_area -->
+		
+		<div>
+			<input type="text"> 
+		</div>
 
 
 

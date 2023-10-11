@@ -8,8 +8,7 @@ public class t_getset {
 	String country;
 	String city;
 	String d_time;
-	String s_date;
-	String e_date;
+	
 	String m_spot;
 	String m_x;
 	String m_y;
@@ -101,18 +100,7 @@ public class t_getset {
 	public void setD_time(String d_time) {
 		this.d_time = d_time;
 	}
-	public String getS_date() {
-		return s_date;
-	}
-	public void setS_date(String s_date) {
-		this.s_date = s_date;
-	}
-	public String getE_date() {
-		return e_date;
-	}
-	public void setE_date(String e_date) {
-		this.e_date = e_date;
-	}
+	
 	public String getM_spot() {
 		return m_spot;
 	}
