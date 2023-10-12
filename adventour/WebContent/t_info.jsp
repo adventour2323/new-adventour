@@ -85,17 +85,23 @@ a.next:hover {
 </style>
 
 
-
-
-
+<jsp:useBean id="id" class="adventour.g_list_print">
 			<%
+                String t_id = request.getParameter("t_id");
+                
+                ArrayList<t_getset> a1 = id.t4(t_id);
+            %>
+            <% for (t_getset g : a1) { %>
+
+
+<%-- 			<%
                 String t_id = request.getParameter("t_id");
             %>
 			
 			<%
                 List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
                 for (t_getset g : a1) {
-            %>
+            %> --%>
             
 <body>
 
@@ -179,7 +185,7 @@ a.next:hover {
 		
 		<hr>
 		<div class="bottom_area" style="margin-top: 20px;">
-				<div >
+				<div style="text-align: center;">
 					<h3>여행 정보</h3>
 				</div>
 				
@@ -215,7 +221,8 @@ a.next:hover {
 					
 				<div >
 					여행 소개
-					<div>
+					<div class="tour_info" id="tour_info">
+											
 						<%= g.getT_info() %>
 					</div>
 				</div>
@@ -376,6 +383,19 @@ function count(type)  {
 </script>
 
 
+<script> /* db 출력 텍스트에 <br> 적용 */
+  document.addEventListener('DOMContentLoaded', function() {
+    const tourInfoElement = document.querySelector('.tour_info'); // tour_info 클래스를 가진 요소를 선택합니다.
+
+    if (tourInfoElement) {
+      const originalText = tourInfoElement.innerHTML;
+      const modifiedText = originalText.replace(/\\n/g, '<br>').replace(/\\r/g, '<br>'); // 문자열에서 \n 또는 \r을 <br>로 변환합니다.
+      tourInfoElement.innerHTML = modifiedText; // 변환된 문자열을 요소에 적용합니다.
+    }
+  });
+</script>
+
+
 
 
 
@@ -384,7 +404,7 @@ function count(type)  {
 <%} %> <!-- for문 종료 -->
 <!--  -->
 
-
+</jsp:useBean>
 <!--  -->
 
 </html>
