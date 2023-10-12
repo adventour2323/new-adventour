@@ -17,7 +17,7 @@
 <style>
 
 body{
-height: 1000px;
+height: 1150px;
 }
 
     .content {
@@ -27,7 +27,7 @@ height: 1000px;
         height: 100vh; /* 화면의 수직 중앙 정렬을 위해 사용합니다. */
         flex-direction: column; /* 내용을 수직 방향으로 정렬합니다. */
 
-    	margin-top: 130px; /* Header의 높이만큼 여백을 둡니다. */
+    	margin-top: 150px; /* Header의 높이만큼 여백을 둡니다. */
 	    margin-bottom: 100px; /* Footer의 높이만큼 여백을 둡니다. */
 	    
 }
@@ -103,12 +103,21 @@ a.next:hover {
     		<jsp:include page="header_login.jsp"></jsp:include>
 			<% } %>
 		</header>
+	
+		<div style="height: 150px; border-style: solid; text-align: center; padding-top: 30px;">
+		<h1 ><%= g.getCountry() %> ! </h1>
+		<h4 ><%= g.getCity() %></h4>
+		</div>
+
 			
 
 	<div class="content" style="margin-left: auto; margin-right: auto;"  > <!-- 전체 content -->
 		
+
 		
 		<div class="top_area" style="display: flex;">
+		
+		
 			<div class="top_left" style="margin-right: 30px;">
 			
 			<div class="t_img_div">
@@ -159,10 +168,10 @@ a.next:hover {
 									
 				<div class="price_cal" style="display: flex; font: red; ">
     				<label style="margin-right: 10px;"><h5>합계</h5></label>
-    				<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
+    				<label style="margin-right: 10px; "><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
 				</div>
 				
-				<div style="margin-top: 50px;" >
+				<div style="margin-top: 80px;" >
     				<button style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer; ">❤️ 찜하기</button>
     				<button style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer; ">구매하기</button>
 				</div>
@@ -173,9 +182,13 @@ a.next:hover {
 		</div> <!-- top_area -->
 		
 		
-		<hr>
+		
 		<div class="bottom_area" style="margin-top: 20px;">
-			
+		<hr>
+				<div style="margin-right: auto; margin-left: auto; text-align: center; margin-bottom: 30px;" >
+					<h3 style="text-align: center;">여행 정보</h3>
+				</div>
+				
 			<div class="meeting_div" >
 				<div class="map_div" id="map_div" style="height: 230px; width: 700px; ">
 					<!--지도 -->
@@ -193,11 +206,34 @@ a.next:hover {
 					</div>
 				</div> <!-- meeting-info -->
 			</div>
+			<!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
 			
-			<div class="t-info" style="margin-top: 20px;">
-				<div >
-					<h3>여행 정보</h3>
+			
+			<div class="meeting_div" style="display: flex; margin-top: 30px; margin-right: auto; margin-left: auto;">
+				<div class="map_div2" id="map_div2" style="height: 230px; width: 450px; ">
+					<!--지도 -->
 				</div>
+				
+				<div class="meeting-info" style="text-align: center; margin-left: 40px; margin-top: 30px;" >
+					
+					<div class="meeting_spot" style="margin-bottom: 30px; text-align: center;">
+							<label><img alt="" src="./image/tour/spot.png"> <strong style="margin-left: 10px;">집합 장소</strong> </label>
+						<div style="margin-top: 10px;"><%=g.getM_spot() %></div>
+					</div>
+					
+					<div class="meeting_time" style="text-align: center;">
+						<label><img alt="" src="./image/tour/time.png"><strong style="margin-left: 10px;">집합 시간</strong> </label>
+						<div style="margin-top: 10px;"><%=g.getD_time() %></div>
+					</div>
+				</div> <!-- meeting-info -->
+			</div>
+			
+			
+			<!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
+			<div class="t-info" style="margin-top: 20px;">
+				<!-- <div >
+					<h3>여행 정보</h3>
+				</div> -->
 				
 				<div >
 					주요 방문 장소
@@ -208,7 +244,8 @@ a.next:hover {
 					
 				<div >
 					여행 소개
-					<div>
+					<div class="tour_info" id="tour_info">
+											
 						<%= g.getT_info() %>
 					</div>
 				</div>
@@ -275,6 +312,32 @@ a.next:hover {
 <script>
     initMap(); // initMap 함수 호출
 </script>
+
+<!--  -->
+<script>
+    function initMap2() {
+        var mapOptions2 = {
+            center: { lat: <%=g.getM_x() %>, lng: <%=g.getM_y() %> },
+            zoom: 15
+        };
+        
+        var map2 = new google.maps.Map(document.getElementById('map_div2'), mapOptions2);
+
+        // 마커를 추가할 위치의 위도와 경도
+        var markerLatLng2 = { lat: <%=g.getM_x() %>, lng:<%=g.getM_y() %>  };
+
+        // 마커 생성
+        var marker = new google.maps.Marker({
+            position: markerLatLng2,
+            map: map,
+            title: '집합 장소'
+        });
+    }
+</script>
+<script>
+    initMap2(); // initMap 함수 호출
+</script>
+<!--  -->
 
 <script> /* slide effect 	 */
 	var slideIndex = 1;
@@ -366,6 +429,20 @@ function count(type)  {
     document.getElementById('totalPrice').innerText = formattedTotalPrice ;
   }
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tourInfoElement = document.querySelector('.tour_info'); // tour_info 클래스를 가진 요소를 선택합니다.
+
+    if (tourInfoElement) {
+      const originalText = tourInfoElement.innerHTML;
+      const modifiedText = originalText.replace(/\\n/g, '<br>').replace(/\\r/g, '<br>'); // 문자열에서 \n 또는 \r을 <br>로 변환합니다.
+      tourInfoElement.innerHTML = modifiedText; // 변환된 문자열을 요소에 적용합니다.
+    }
+  });
+</script>
+
 
 
 

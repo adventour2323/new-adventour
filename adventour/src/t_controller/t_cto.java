@@ -17,6 +17,7 @@ public class t_cto extends HttpServlet {
 		
 		t_con_interface inter = null;
 		String tour  = rq.getParameter("tour");
+		String t_id = rq.getParameter("")
 				
 		try {
 			
@@ -34,7 +35,7 @@ public class t_cto extends HttpServlet {
 			} else if(tour.equals("tourinformation")) {
 				inter = t_t_db_sel.t_select();
 				String ti = inter.t_interf(rq, rs);
-				RequestDispatcher dispatcher = rq.getRequestDispatcher("t_info.jsp");
+				RequestDispatcher dispatcher = rq.getRequestDispatcher("t_info.jsp"+"?");
 			}
 			
 		}  catch (Exception e) {

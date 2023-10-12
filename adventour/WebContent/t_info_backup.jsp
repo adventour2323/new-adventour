@@ -138,17 +138,31 @@ a.next:hover {
 			
 			<div class="option_div" style="border-style: solid;">
 				<label><h5>옵션 선택</h5></label>
+				<hr>
 				<div class="date_select" style="display: flex; margin-top: 20px; ">
 					<label style="margin-right: 10px;"><h5>날짜</h5></label>
 					<input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" />
 				</div>
 				
-				<div class="t_price" style="display: flex; ">
+				<div class="t_price_info" style="display: flex; margin-top: 20px; ">
 					<label style="margin-right: 10px;"><h5>가격</h5></label>
-					<label><%= g.getT_price() %> 원</label>
+					<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
 				</div>
 				
-				<div >
+				<div class="people_num" style="display: flex; margin-top: 20px;">
+    				<label style="margin-right: 10px;"><h5>인원</h5></label>
+    				<input type='button' onclick='updateCount(-1)' value='-' style="border: none; cursor: pointer;">
+    				<div id='result'>1</div>
+    				<input type='button' onclick='updateCount(1)' value='+' style="border: none; cursor: pointer;">
+				</div>
+							<hr style="margin-top: 40px;">
+									
+				<div class="price_cal" style="display: flex; font: red; ">
+    				<label style="margin-right: 10px;"><h5>합계</h5></label>
+    				<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
+				</div>
+				
+				<div style="margin-top: 50px;" >
     				<button style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer; ">❤️ 찜하기</button>
     				<button style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer; ">구매하기</button>
 				</div>
@@ -188,13 +202,13 @@ a.next:hover {
 				<div >
 					주요 방문 장소
 					<div>
-						<%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %>
+						<%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %> !
 					</div>
 				</div>
 					
 				<div >
 					여행 소개
-					<div>
+					<div class="tour_info" id="tour_info">
 						<%= g.getT_info() %>
 					</div>
 				</div>
@@ -302,6 +316,59 @@ a.next:hover {
         slides[slideIndex - 1].style.display = "block";
     }
 </script>
+
+<script>
+
+function count(type)  {
+	  // 결과를 표시할 element
+	  const resultElement = document.getElementById('result');
+	  
+	  // 현재 화면에 표시된 값
+	  let number = resultElement.innerText;
+	  
+	  // 더하기/빼기
+	  if(type === 'plus') {
+	    number = parseInt(number) + 1;
+	  }else if(type === 'minus')  {
+	    number = parseInt(number) - 1;
+	  }
+	  
+	  // 결과 출력
+	  resultElement.innerText = number;
+	}
+
+</script>
+
+<script>
+  let currentCount = 1; // 초기 인원 수
+  let tPrice = '<%= g.getT_price() %>'; // 상품 가격 
+  // 숫자 포맷 함수
+  function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  // 초기 가격에 대한 포맷 적용
+  tPrice = formatNumberWithCommas(parseInt(tPrice));
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // 페이지가 로드될 때 초기 가격과 합계 가격에 대한 포맷 적용
+    document.getElementById('totalPrice').innerText = tPrice;
+  });
+
+  function updateCount(change) {
+    currentCount += change;
+    // 최소 1명, 최대 10명으로 제한
+    currentCount = Math.min(Math.max(currentCount, 1), 10);
+    // 결과 업데이트
+    document.getElementById('result').innerText = currentCount;
+    // 가격 업데이트
+    const totalPrice = parseInt(tPrice.replace(/,/g, '')) * currentCount; // 컴마 제거 후 계산
+    const formattedTotalPrice = formatNumberWithCommas(totalPrice); // 컴마가 붙은 숫자
+    document.getElementById('totalPrice').innerText = formattedTotalPrice ;
+  }
+</script>
+
+
+
 
 <%} %>
 <!--  -->
