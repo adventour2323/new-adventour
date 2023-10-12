@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
         <title>google map api</title>  
 
-            <script defer src="./index.js"></script>
+            <script defer src="js/map_index.js"></script>
             <script
               defer
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"

@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-  <script defer src="googlemap_API/index.js"></script> 
+  <script defer src="js/map_index.js"></script> 
    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -159,8 +159,9 @@ if (list != null) {
 
           <div class="h_addr">
            <h4 class="h_tiaddr"><%= ukAll.getH_addr() %></h4> 
-           <a href="location.hotel?uname=location">
-          <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기">지도보기
+          <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= ukAll.getH_lat()%>, <%= ukAll.getH_lon()%>)">
+          <input type="hidden" class="hh_lat" name="hh_lat" value="<%= ukAll.getH_lat()%>" />
+           <input type="hidden" class="hh_lng" name="hh_lng" value="<%= ukAll.getH_lon()%>" />
           </a>
           </div>
 

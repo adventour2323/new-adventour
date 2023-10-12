@@ -21,6 +21,11 @@
           defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
         ></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
    
   </head>
 
@@ -48,38 +53,44 @@ if (session.getAttribute("id") == null) {
 
   <div class="schnav"> <!--검색 네비 = sch -->
 
-    <div class="sch1">
-      <h5 class="sch_title">☆ 지역</h5>
-      <input type="text" class="sch_city" class="sch_city" placeholder="지역" >
+   <div class="sch1">
+      <h5 class="sch_title">☆ 나라</h5>
+      <input type="text" class="sch_country" name="sch_country" placeholder="나라" >
     </div>
+    
+     <div class="sch1">
+      <h5 class="sch_title">☆ 도시</h5>
+      <input type="text" class="sch_city" name="sch_city" placeholder="도시" >
+    </div>
+    
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" class="sch_indate" class="sch_indate" placeholder="YYYY-MM_DD">
+      <input type="text" id="sch_indate" class="datepicker" name="sch_indate"placeholder="YYYY-MM_DD">
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-      <input type="text" class="sch_outdate" class="sch_outdate" placeholder="YYYY-MM_DD">
+      <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM_DD">
     </div>
 
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
       성인 : <input type="text" class="sch_adult" class="sch_adult" placeholder="성인"></br>
-      유아 : <input type="text" class="sch_kid" class="sch_kid" placeholder="유/소아"></br>
+     <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 가격</h5>
-      <input type="text" class="sch_minpri" class="sch_minpri" placeholder="최소가격">
-      ~  <input type="text" class="sch_maxpri" class="sch_maxpri" placeholder="최대가격">
+      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격">
+      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격">
     </div>
 
-    <div class="sch12">
+    <div class="sch123">
       <h5 class="sch_title" >☆ 옵션</h5>
-      <input type="checkbox" class="h_twin"  class="h_twin" value="1">트윈</br>
-      <input type="checkbox" class="h_double"  class="h_double" value="1">더블</br>
-      <input type="checkbox" class="h_queen"  class="h_queen" value="1">퀸</br>
+      <input type="checkbox" class="h_twin"  name="h_twin" value="트윈">트윈</br>
+      <input type="checkbox" class="h_double"  name="h_double" value="슈퍼싱글">더블</br>
+      <input type="checkbox" class="h_queen"  name="h_queen" value="퀸">퀸</br>
     </div>
 
 

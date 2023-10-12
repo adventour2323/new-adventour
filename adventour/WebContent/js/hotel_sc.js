@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 
  /* 하트누르면 색변환*/
-  $(document).ready(function() {
+ 
     let isRed = false;
   
   $('.beheart').on('click', function() {
@@ -18,7 +18,7 @@ $(document).ready(function() {
       $(this).css('color', 'red');
       isRed = true;
     }
-     });
+    
   });
   
   
@@ -41,33 +41,8 @@ $(document).ready(function() {
 	  $('.datepicker').datepicker();
 	});
 	
-	
-	$(".h_mapbtn").click(function() {
-		$.ajax({
-			url : "data.json", // 어디로 갈거니? // 갈 때 데이터
-			type : "get", // 타입은 뭘 쓸거니?
-			datatype : "json",
-			success : function(data) { // 갔다온 다음 결과값
-			//	alert('seccuss');	// 나오면 파일을 찾았다는 것
-			//	alert(data);  // [object Object],[object Object],[object Object]
-				
-			// 데이터를 확인하고 싶을 때.
-			//	let str = JSON.stringify(data); // <> parse()
-			//	alert(str); 
 
-				$.each(data, function(index, item) { // 데이터 =item
-					$("#demo").append(index + " "); // index가 끝날때까지 
-					$("#demo").append(item.name + " ");
-					$("#demo").append(item.age + " ");
-					$("#demo").append(item.address + " ");
-					$("#demo").append(item.phone + "<br>");
-				});
-			},
-			error : function() {
-				alert('error');			
-			}
-		});
-	});
+
 	
 	
 	

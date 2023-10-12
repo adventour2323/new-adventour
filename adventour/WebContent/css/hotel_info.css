@@ -110,7 +110,7 @@
 .schnav{
   font-weight: bold;
    width: 240px;
-   height: 700px;
+   height: 750px;
    border-style: solid;
    border-width: 1.5px;
    color:rgb(20, 3, 78);
@@ -131,53 +131,67 @@
  font-size: 18px;
  padding: 0px;
 }
-.sch_city,.sch_indate,.sch_outdate{
- width: 190px;
- height: 30px;
- float: left;
- margin-left: 0px;
- margin-top: 10px;
-  padding-left: 10px;
-  color: rgb(20, 3, 78);
+.sch_country, .sch_city, #sch_indate, #sch_outdate {
+	width: 190px;
+	height: 30px;
+	float: left;
+	margin-left: 0px;
+	margin-top: 10px;
+	padding-left: 10px;
+	font-weight: bold;
+	font-size: 16px;
 }
-.sch12{
- width: 200px;
- height: 110px;
- float: left;
- margin-top: 15px;
- margin-left: 15px;
+.sch12 {
+	width: 200px;
+	height: 70px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
 }
-.sch_adult,.sch_kid{
- width: 80px;
- height: 30px;
- margin-left: 0px;
- margin-top: 10px;
- padding-left: 10px;
- color: rgb(20, 3, 78);
-}
-
-.sch_minpri,.sch_maxpri{
- width: 70px;
- height: 30px;
- margin-left: 3px;
- margin-top: 10px;
- padding-left: 10px;
-}
-.h_twin{
- margin-top: 15px;
+.sch123 {
+	width: 200px;
+	height: 90px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
 }
 
-.sch_btn{
- width: 80px;
- height: 30px;
- margin-left: 70px;
- margin-top: 30px;
-    background-color:#555;
-    color:white;
- 
+.sch_adult { /*sch_city*/
+	width: 80px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 10px;
+	padding-left: 10px;
+	color: rgb(20, 3, 78);
 }
-.sch_btn:hover {
-    background-color:#111;
+
+.sch_minpri, .sch_maxpri {
+	width: 70px;
+	height: 30px;
+	margin-left: 3px;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.h_twin {
+	margin-top: 15px;
+}
+.sch_title checkbox{
+ accent-color: purple;
+}
+
+.sch_btn {
+	width: 80px;
+	height: 30px;
+	margin-left: 80px;
+	margin-top: 30px;
+	border-radius: 5px;
+	background-color: #555;
+	color: white;
+}
+
+.sch_btn:hover, .h_mapbtn:hover {
+	background-color: #111;
 }
 
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
