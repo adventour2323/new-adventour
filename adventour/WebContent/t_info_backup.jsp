@@ -29,12 +29,15 @@ height: 1000px;
 
     	margin-top: 130px; /* Header의 높이만큼 여백을 둡니다. */
 	    margin-bottom: 100px; /* Footer의 높이만큼 여백을 둡니다. */
+	    
 }
     .option_div {
     background-color: #f4f4f4; /* 배경색 지정 */
     border: 1px solid #ddd; /* 테두리 스타일 지정 */
     padding: 20px; /* 내부 여백 설정 */
     text-align: left; /* 텍스트 정렬 지정 */
+    
+    border: 1px solid #ddd; padding: 20px; background-color: #f4f4f4;
 }
     /* 이전 버튼에 마우스 커서 스타일 적용 */
 a.prev:hover {
@@ -65,22 +68,31 @@ a.next:hover {
         
     }
     
+    .meeting_div{
+    margin-right: auto;
+    margin-left: auto;
+    }
+    .map_div{
+    margin-right: auto;
+    margin-left: auto;
+    }
+    
+    .date_select{
+    margin-bottom: 10px;
+    }
+    
+    
 </style>
 
 
 
-
+<jsp:useBean id="id" class="adventour.g_list_print">
 			<%
                 String t_id = request.getParameter("t_id");
                 
+                ArrayList<t_getset> a1 = id.t4(t_id);
             %>
-			
-			<%
-            
-                List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
-                for (t_getset g : a1) {
-            %>
-            
+            <% for (t_getset g : a1) { %>
 <body>
 
 		<header>
@@ -126,18 +138,19 @@ a.next:hover {
 			
 			<div class="option_div" style="border-style: solid;">
 				<div class="date_select" style="display: flex; ">
-					<label><h5>날짜</h5></label>
+					    <label style="margin-right: 10px;"><h5>날짜</h5></label>
 					<input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" />
 				</div>
 				
 				<div class="t_price" style="display: flex; ">
-					<label><h5>가격</h5></label>
-					<label><%= g.getT_price() %></label>
+					    <label style="margin-right: 10px;"><h5>가격</h5></label>
+						<label><%= g.getT_price() %> 원</label>
 				</div>
 				<div>
-				<button>❤️</button>
-				<button>구매하기</button>
+    				<button style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer;">❤️ 좋아요</button>
+    				<button style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer;">구매하기</button>
 				</div>
+
 			</div> <!-- option_div -->
 		
 		
@@ -290,7 +303,7 @@ a.next:hover {
 
 <%} %>
 <!--  -->
-
+</jsp:useBean>
 
 <!--  -->
 

@@ -42,21 +42,21 @@ border: none;
 		</div>      
 <div style="display: flex; "> <!-- 표 묶음  -->
 
-      <div id="category" class="all_country">
-      	<a href="g_list.jsp"> 전체 </a>
-      </div>
-      <div id="category" class="category_uk">
-      	영국
-      </div>
-      <div id="category" class="category_fr" >
-      	프랑스
-      </div>
-      <div id="category" class="category_es" >
-      	스페인
-      </div>
-      <div id="category" class="category_ita" >
-      	이탈리아
-      </div>
+      	<div id="category" class="all_country" style="margin-left: auto;">
+			<a href="g_list.jsp"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
+		</div>
+		<div id="category" class="category_uk">
+		 	<a href=""> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
+		</div>
+		<div id="category" class="category_fr" >
+			<a href=""> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+		</div>
+		<div id="category" class="category_es" >
+			<a href=""> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+		</div>
+		<div id="category" class="category_ita"  style="margin-right: auto;">
+			<a href=""> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+		</div>
       
 </div> <!-- 표 묶음  -->
       

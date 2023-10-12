@@ -31,6 +31,10 @@ public class t_cto extends HttpServlet {
 				String tl = inter.t_interf(rq, rs);
 				RequestDispatcher dispatcher = rq.getRequestDispatcher("t_list.jsp");
 				dispatcher.forward(rq, rs);
+			} else if(tour.equals("tourinformation")) {
+				inter = t_t_db_sel.t_select();
+				String ti = inter.t_interf(rq, rs);
+				RequestDispatcher dispatcher = rq.getRequestDispatcher("t_info.jsp");
 			}
 			
 		}  catch (Exception e) {
