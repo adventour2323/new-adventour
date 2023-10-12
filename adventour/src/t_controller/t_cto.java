@@ -17,7 +17,7 @@ public class t_cto extends HttpServlet {
 		
 		t_con_interface inter = null;
 		String tour  = rq.getParameter("tour");
-		String t_id = rq.getParameter("")
+		String t_id = rq.getParameter("");
 				
 		try {
 			

@@ -431,7 +431,7 @@ function count(type)  {
 </script>
 
 
-<script>
+<script> /* db 출력 텍스트에 <br> 적용 */
   document.addEventListener('DOMContentLoaded', function() {
     const tourInfoElement = document.querySelector('.tour_info'); // tour_info 클래스를 가진 요소를 선택합니다.
 
