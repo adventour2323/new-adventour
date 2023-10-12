@@ -59,16 +59,16 @@
             %>
             
             <div class="tour-item">
-                <div class="tour-img">
-                    <a href="t_info.jsp?<%=g.getT_id() %>">
-                        <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">
-                    </a>
-                </div>
+                <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
+                	<div class="tour-img">
+                        <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">                    
+                	</div>
+                </a>
                 <div class="tour-info">
                 
                 	<div class="tour_title_div" >
                     <h3 class="tour-title">
-                        <a href="t_info.jsp?<%=g.getT_id() %>">
+                        <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
                         	<%= g.getT_name() %>
                         </a>
                     </h3>

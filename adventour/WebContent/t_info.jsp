@@ -50,6 +50,20 @@ a.next:hover {
     text-align: center; /* 텍스트를 중앙 정렬합니다. */
     margin-top: 20px; /* 필요한 여백을 조절하세요. */
 }
+
+ .slideshow-container {
+        position: relative;
+        max-width: 500px; /* 슬라이드 컨테이너의 최대 너비 조정 */
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slideshow-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지를 컨테이너에 맞게 조절 */
+        
+    }
     
 </style>
 
@@ -80,27 +94,25 @@ a.next:hover {
 		<div class="top_area" style="display: flex;">
 			<div class="top_left" style="margin-right: 30px;">
 			
-			<div class="t_img_div" style="position: relative;">
-    			<div class="slideshow-container">
-        			<div class="mySlides fade">
-            			<img alt="img1" src="<%= g.getT_img1() %>" width="500px" height="500px">
-        			</div>
-        			<div class="mySlides fade">
-            			<img alt="img2" src="<%= g.getT_img2() %>" width="500px" height="500px">
-        			</div>
-        			<div class="mySlides fade">
-            			<img alt="img3" src="<%= g.getT_img3() %>" width="500px" height="500px">
-        			</div>
-
-        			<!-- 이미지 버튼으로 대체된 이전 및 다음 버튼 -->
-        			<a class="prev" onclick="plusSlides(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
-            			<img src="./image/tour/leftbtn.png" alt="이전">
-        			</a>
-        			<a class="next" onclick="plusSlides(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-            			<img src="./image/tour/rightbtn.png" alt="다음">
-        			</a>
-    			</div>
-			</div> <!-- t_img_div -->
+			<div class="t_img_div">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
+        </div>
+        <div class="mySlides fade">
+            <img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
+        </div>
+        <div class="mySlides fade">
+            <img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+            <img src="./image/tour/leftbtn.png" alt="이전">
+        </a>
+        <a class="next" onclick="plusSlides(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+            <img src="./image/tour/rightbtn.png" alt="다음">
+        </a>
+    </div>
+</div> <!-- t_img_div -->
 				
 				<div class="t_name">
 					<h2><%=g.getT_name() %></h2>
@@ -110,7 +122,7 @@ a.next:hover {
 			<div class="option_div" style="border-style: solid;">
 				<div class="date_select" style="display: flex; ">
 					<label><h5>날짜</h5></label>
-					<input type="date" id="start" name="trip-start" value="2023-10-11" min="2023-01-01" max="2024-12-31" />
+					<input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" />
 				</div>
 				
 				<div class="t_price" style="display: flex; ">
@@ -248,6 +260,27 @@ a.next:hover {
     	}
     	slides[slideIndex - 1].style.display = "block";
 	}
+</script>
+
+<script>
+    // 이미지 슬라이딩 관련 JavaScript 코드 (이전과 다음 슬라이드 이동)
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
 </script>
 
 <%} %>
