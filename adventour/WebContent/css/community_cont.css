@@ -29,12 +29,13 @@ body {
 .c_cont_main{ /*작성 폼전체*/
   border:solid 1px rgb(20, 3, 78);
   width:  1050px;
-  height: 1000px;
+  height: 900px;
   margin-left: 425px;
   margin-top: 60px;
+  margin-bottom: 100px;
 
 }
-.c_div h2 { 
+.c_cont_main h2 { 
   width:  1020px;
   height: 50px;
   margin-top: 0px;
@@ -42,6 +43,7 @@ body {
   padding-left: 30px;
   background-color: rgb(20, 3, 78);
   color:#fff;
+  text-align: center;
 }
 
 .c_info_div{/*작성자 + 닐짜*/
@@ -161,7 +163,6 @@ body {
   height: 20px;
   margin-left: 5px;
 } 
-
 
 .c_to_listbtn{
 

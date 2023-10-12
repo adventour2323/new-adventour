@@ -43,30 +43,17 @@ public class H_Cto extends HttpServlet {
         	
         	}else if(uName.equals("hotelSearch")) { // 호텔 메인에 셀렉박스 검색창
         		 
-                 String country_eng = request.getParameter("h_mainde");
-                 String city_eng = request.getParameter("h_maincity");
-                 String h_indateY = request.getParameter("h_indateY");
-                 String h_indateM = request.getParameter("h_indateM");
-                 String h_indateD = request.getParameter("h_indateD");
-                 String h_outdateY = request.getParameter("h_outdateY");
-                 String h_outdateM = request.getParameter("h_outdateM");
-                 String h_outdateD = request.getParameter("h_outdateD");
-                 String h_roompeo = request.getParameter("h_mainpeo");
-               
-                 
-                 System.out.println(country_eng);
-                 System.out.println(city_eng);
-                 System.out.println(h_indateY);
-                 System.out.println(h_indateM);
-                 System.out.println(h_indateD);
-                 System.out.println(h_outdateY);
-                 System.out.println(h_outdateM);
-                 System.out.println(h_outdateD);
-                 System.out.println(h_roompeo);
-                 
+             
         	    String hmsearch = htop10inter1.showdata(request, response);  
         	    RequestDispatcher dispatcher2 = request.getRequestDispatcher("hotel_sc.jsp");
         	    dispatcher2.forward(request, response);
+        	}else if (uName.equals("location")) {
+        	  
+
+ 
+        	    String sc_map = htop10inter.showdata(request, response);  
+        	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info.jsp");
+        	    dispatcher1.forward(request, response);
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 

@@ -84,7 +84,7 @@ public class C_dbsave {
             connec();
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
-            ResultSet rs = stmt.executeQuery("SELECT * FROM community where c_num='" + c_num + "';"); //데이터베이스 명령문사용
+            ResultSet rs = stmt.executeQuery("SELECT * FROM community WHERE c_num='" + c_num + "';"); //데이터베이스 명령문사용
             while (rs.next()) { //rs의 값이 없을 때 까지 - 값을 받아온다
             	C_getset obj = new C_getset();
                 obj.setC_num(rs.getString("c_num"));

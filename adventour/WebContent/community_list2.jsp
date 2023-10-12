@@ -147,7 +147,7 @@ if (session.getAttribute("id") == null) {
        <% if (session.getAttribute("id") == null) { %> 
   <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='login_merge_form.jsp' ">
 <% } else { %>
-  <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.html' ">
+  <input type="button" class="c_writebtn" name="c_writebtn" value="글 쓰기" onclick="location.href ='community.jsp' ">
 <% } %>
     
       </div>

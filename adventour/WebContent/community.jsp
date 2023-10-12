@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -15,27 +17,23 @@
 
 	<header>
 		<%
-if (session.getAttribute("id") == null) {
+if (session.getAttribute("id") != null) {
 %>
-		<!-- header.html import -->
-		<div id="header"></div>
-		<%
-} else {
-%>
-		<jsp:include page="header_login.jsp"></jsp:include>
+	<jsp:include page="header_login.jsp"></jsp:include>
 		<%
 }
 %>
+
 	</header>
 
-<form name="c_form" action="c_database.jsp">
+<form name="c_form" action="c_fileupload.jsp"  enctype="multipart/form-data">
 
   <div class="c_div" name="c_div">
     <h2> < 여행여정  공유  글  작성 > </h2>
 
     <div class="c_info_div">
      <div class="c_writer_div" name="c_writer_div">
-       작성자 : <input type="text" class="c_writer" name="c_writer" > <!-- 확인용 아이디 로그인 후 자동으로 받아오도록 해야함 -->
+       작성자 : <input type="text" class="c_writer" name="c_writer" readonly  value="<%= session.getAttribute("id")%>"/> <!-- 확인용 아이디 로그인 후 자동으로 받아오도록 해야함 -->
      </div><!--c_writer_div-->
 
      <div class="c_date_div" name="c_date_div">
@@ -48,7 +46,7 @@ if (session.getAttribute("id") == null) {
 
 
     <div class="c_title_div" name="c_title_div">
-      제목 : <input type="text" class="c_title" name="c_title" placeholder="제목을 입력하세요.">
+      제목 : <input type="text" class="c_title" name="c_title" placeholder="제목을 입력하세요."/>
     </div><!--c_title_div-->
 
     <div class="c_city_div" name="c_city_div">
@@ -82,18 +80,23 @@ if (session.getAttribute("id") == null) {
     </div><!--c_con_div-->
 
     <h4 class="c_pho_title" name="c_pho_title"> * 이미지파일 첨부(선택)  </h4>
+    
     <div class="c_pho1_div" name="c_pho1_div">
-      이미지1 : <input type="text" class="c_pho" name="c_pho1" placeholder="이미지1을 첨부하세요.">
+    <label for = "fileName1">이미지1 : </label> <input type="file" name="fileName1" id = "fileName1"> 
     </div><!--c_pho1_div-->
+    
     <div class="c_pho_div" name="c_pho2_div">
       이미지2 : <input type="text" class="c_pho" name="c_pho2" placeholder="이미지2을 첨부하세요.">
     </div><!--c_pho1_div-->
+   
     <div class="c_pho_div" name="c_pho3_div">
       이미지3 : <input type="text" class="c_pho" name="c_pho3" placeholder="이미지3을 첨부하세요.">
     </div><!--c_pho1_div-->
+   
     <div class="c_pho_div" name="c_pho4_div">
       이미지4 : <input type="text" class="c_pho" name="c_pho4" placeholder="이미지4을 첨부하세요.">
     </div><!--c_pho1_div-->
+   
     <div class="c_pho_div" name="c_pho5_div">
       이미지5 : <input type="text" class="c_pho" name="c_pho5" placeholder="이미지5을 첨부하세요.">
     </div><!--c_pho1_div-->
@@ -102,7 +105,7 @@ if (session.getAttribute("id") == null) {
 
 
 <div class="c_btn" name="c_btn">
-  <input type="submit" value="글 올리기">
+  <input id="c_btn" type="submit" value="글 올리기">
 </div><!--c_btn-->
   </div><!--c_div-->
 

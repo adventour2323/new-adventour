@@ -51,8 +51,7 @@ public class H_getset {
 	String h_outdateD;
 	int h_roompeo1;
 	
-	
-	
+
 	
 	public String getH_indateY() {
 		return h_indateY;

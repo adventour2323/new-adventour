@@ -3,7 +3,7 @@
     <%@ page import="java.util.*"%>
 <%@ page import="adventour.C_getset" %>
 <%@ page import="adventour.C_dbsave" %><!-- 변수 get set들이 있는 자바파일 -->
-<jsp:include page="header_login.jsp" flush="true" />
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -33,7 +33,7 @@ if (session.getAttribute("id") == null) {
 %>
 
   <div class="c_cont_main">
-    <h2>게시글 상세 보기</h2>
+    <h2>게시글 내용</h2>
     
     <% 
       // C_getset 객체 생성
@@ -72,7 +72,7 @@ if (session.getAttribute("id") == null) {
 
     <div class="c_city_div" name="c_city_div">
       <div class="c_country" name="c_country">
-        <% String country = obj.getCountry(); %>
+       나라 :  <% String country = obj.getCountry(); %>
     <% if ("uk".equals(country)) { %>
       영국
     <% } else if ("ity".equals(country)) { %>
@@ -84,6 +84,7 @@ if (session.getAttribute("id") == null) {
     <% } else { %>
       다른 나라
     <% } %>
+    </div>
   
       <div class="c_city" name="c_city">
        <% String city = obj.getCity(); %>
@@ -125,6 +126,7 @@ if (session.getAttribute("id") == null) {
     <div class="c_tolist" name="c_tolist">
       <input type="button" class="c_to_listbtn" name="c_to_listbtn" value="목   록">
     </div><!--c_to_listbtn-->
+  </div><!--c_city_div-->
   </div><!--c_cont_main-->
 
   <!-- footer.html import-->

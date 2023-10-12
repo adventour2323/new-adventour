@@ -24,27 +24,49 @@ $('.c_country').on('change', function() {
   }
 });
 
-function clock() {
-  var Target = document.getElementById("clock");
-  var time = new Date();
-
-  var year = time.getYear();
-  var month = time.getMonth();
-  var date = time.getDate();
-  var day = time.getDay();
-  var week = ['일', '월', '화', '수', '목', '금', '토'];
-
-  var hours = time.getHours();
-  var minutes = time.getMinutes();
- 
-
-  Target.innerText = 
-  `${year+1900}년${month + 1}월 ${date}일 ${week[day]}요일 ` +
-  `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
-      
-}
+//function clock() {
+//  var Target = document.getElementById("clock");
+//  var time = new Date();
+//
+//  var year = time.getYear();
+//  var month = time.getMonth();
+//  var date = time.getDate();
+//  var day = time.getDay();
+//  var week = ['일', '월', '화', '수', '목', '금', '토'];
+//
+//  var hours = time.getHours();
+//  var minutes = time.getMinutes();
+// 
+//
+//  Target.innerText = 
+//  `${year+1900}년${month + 1}월 ${date}일 ${week[day]}요일 ` +
+//  `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
+//      
+//}
 clock();
 setInterval(clock, 60000); // 1초마다 실행
+
+function clock() {
+	  var Target = document.getElementById("clock");
+	  var time = new Date();
+
+	  var year = time.getFullYear();
+	  var month = time.getMonth() + 1; // 월을 1을 더해서 정상적인 월로 변환
+	  var date = time.getDate();
+	  var day = time.getDay();
+	  var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+	  var hours = time.getHours();
+	  var minutes = time.getMinutes();
+
+	  // 날짜와 시간을 정규적인 형식으로 표시
+	  Target.innerText =
+	    `${year}년 ${month}월 ${date}일 ${week[day]}요일 ` +
+	    `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
+	}
+
+	clock();
+	setInterval(clock, 60000); // 1분마다 실행
  
 
  

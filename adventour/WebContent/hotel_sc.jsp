@@ -11,15 +11,15 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/hotel_sc.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-
-        <script defer src="googlemap_API/index.js"></script> 
-        <script
-          defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
-        ></script>
+  <script defer src="googlemap_API/index.js"></script> 
+   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+        
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
   </head>
 
@@ -55,26 +55,31 @@ if (list != null && !list.isEmpty()) {
   <div class="schnav"> <!--검색 네비 = sch -->
 
     <div class="sch1">
-      <h5 class="sch_title">☆ 지역</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="지역" value="<%= sch_country.getCountry_ko()%>">
+      <h5 class="sch_title">☆ 나라</h5>
+      <input type="text" class="sch_country" name="sch_country" placeholder="나라" value="<%= sch_country.getCountry_ko()%>">
+    </div>
+    
+    <div class="sch1">
+      <h5 class="sch_title">☆ 도시</h5>
+      <input type="text" class="sch_city" name="sch_city" placeholder="도시" >
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM_DD" >
-          <!--   <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM_DD" value="<%= sch_country.getH_indateY()%> - <%= sch_country.getH_indateM()%> - <%= sch_country.getH_indateD()%>"> -->
+      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" >
+          <!--   <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_indateY()%> - <%= sch_country.getH_indateM()%> - <%= sch_country.getH_indateD()%>"> -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-       <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM_DD" > 
-    <!--    <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM_DD" value="<%= sch_country.getH_outdateY()%> - <%= sch_country.getH_outdateM()%> - <%= sch_country.getH_outdateD()%>">  -->
+       <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" > 
+    <!--    <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_outdateY()%> - <%= sch_country.getH_outdateM()%> - <%= sch_country.getH_outdateD()%>">  -->
     </div>
 
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수"></br>
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수">
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
@@ -84,9 +89,9 @@ if (list != null && !list.isEmpty()) {
       ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격">
     </div>
 
-    <div class="sch12">
+    <div class="sch123">
       <h5 class="sch_title" >☆ 옵션</h5>
-      <input type="checkbox" class="h_twin"  name="h_twin" value="1">트윈</br>
+      <input type="checkbox" class="h_twin"  name="h_twin" value="트윈">트윈</br>
       <input type="checkbox" class="h_double"  name="h_double" value="슈퍼싱글">더블</br>
       <input type="checkbox" class="h_queen"  name="h_queen" value="퀸">퀸</br>
     </div>
@@ -154,7 +159,9 @@ if (list != null) {
 
           <div class="h_addr">
            <h4 class="h_tiaddr"><%= ukAll.getH_addr() %></h4> 
-          <button class="h_mapbtn" type="button" name="h_mapbtn">지도보기</button>
+           <a href="location.hotel?uname=location">
+          <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기">지도보기
+          </a>
           </div>
 
         </div><!--h_tiinfo-->
@@ -163,7 +170,9 @@ if (list != null) {
 
          <div class="h_prices">
           <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
-          <button class="move_h" name="move_h" >호텔보기</button>
+          <a href="information.hotel?uname=<%= ukAll.getH_name_eng() %>">
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=<%= ukAll.getH_name_eng() %>">
+          </a>
          </div>
 
         <div class="ti_select">  
@@ -172,10 +181,17 @@ if (list != null) {
            <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
            <p class="bbb">선택</p>
           </div> 
-           
-           <div class="h_heart">
-           <h3 class="beheart"> ♥ </h3>
-          </div>
+    <%
+if (session.getAttribute("id") != null) {
+%>
+    <div class="h_heart">
+         <h3 class="beheart"> ♥ </h3>
+       </div>
+<%
+} 
+%>
+ 
+     
 
         </div> <!--ti_select-->
 
@@ -189,9 +205,6 @@ if (list != null) {
     System.out.println("null data");
 }
 %>
-
-
-
 
 
 
