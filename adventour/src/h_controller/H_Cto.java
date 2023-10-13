@@ -46,14 +46,7 @@ public class H_Cto extends HttpServlet {
              
         	    String hmsearch = htop10inter1.showdata(request, response);  
         	    RequestDispatcher dispatcher2 = request.getRequestDispatcher("hotel_sc.jsp");
-        	    dispatcher2.forward(request, response);
-        	}else if (uName.equals("location")) {
-        	  
-
- 
-        	    String sc_map = htop10inter.showdata(request, response);  
-        	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info.jsp");
-        	    dispatcher1.forward(request, response);
+        	    dispatcher2.forward(request, response);   	
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 
