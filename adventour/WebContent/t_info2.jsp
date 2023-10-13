@@ -12,11 +12,77 @@
 <title>상품 페이지</title>
 </head>
 <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
-<link rel="stylesheet" type="text/css" href="./css/t_info_css.css">
+
 
 <style>
 
+body{
+height: 1000px;
+}
 
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* 화면의 수직 중앙 정렬을 위해 사용합니다. */
+        flex-direction: column; /* 내용을 수직 방향으로 정렬합니다. */
+
+    	margin-top: 130px; /* Header의 높이만큼 여백을 둡니다. */
+	    margin-bottom: 100px; /* Footer의 높이만큼 여백을 둡니다. */
+	    
+}
+    .option_div {
+    background-color: #f4f4f4; /* 배경색 지정 */
+    border: 1px solid #ddd; /* 테두리 스타일 지정 */
+    padding: 20px; /* 내부 여백 설정 */
+    text-align: left; /* 텍스트 정렬 지정 */
+    
+    border: 1px solid #ddd; padding: 20px; background-color: #f4f4f4;
+}
+    /* 이전 버튼에 마우스 커서 스타일 적용 */
+a.prev:hover {
+    cursor: pointer;
+}
+
+/* 다음 버튼에 마우스 커서 스타일 적용 */
+a.next:hover {
+    cursor: pointer;
+}
+
+    .t-info {
+    text-align: center; /* 텍스트를 중앙 정렬합니다. */
+    margin-top: 20px; /* 필요한 여백을 조절하세요. */
+}
+
+ .slideshow-container {
+        position: relative;
+        max-width: 500px; /* 슬라이드 컨테이너의 최대 너비 조정 */
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slideshow-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지를 컨테이너에 맞게 조절 */
+        
+    }
+    
+    .meeting_div{
+    margin-right: auto;
+    margin-left: auto;
+    }
+    .map_div{
+    margin-right: auto;
+    margin-left: auto;
+    }
+    
+    .date_select{
+    margin-bottom: 10px;
+    }
+    
+    
+    
     
 </style>
 
@@ -51,11 +117,11 @@
 		</header>
 			
 
-	<div class="content"   > <!-- 전체 content -->
+	<div class="content" style="margin-left: auto; margin-right: auto;"  > <!-- 전체 content -->
 		
 		
-		<div class="top_area" >
-			<div class="top_left" >
+		<div class="top_area" style="display: flex;">
+			<div class="top_left" style="margin-right: 30px;">
 			
 			<div class="t_img_div">
 			    <div class="slideshow-container">
@@ -68,10 +134,10 @@
         			<div class="mySlides fade">
 	            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
     			    </div>
-        			<a class="prev" onclick="plusSlides(-1)" >
+        			<a class="prev" onclick="plusSlides(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
             			<img src="./image/tour/leftbtn.png" alt="이전">
         			</a>
-        			<a class="next" onclick="plusSlides(1)" >
+        			<a class="next" onclick="plusSlides(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
             			<img src="./image/tour/rightbtn.png" alt="다음">
         			</a>
     			</div>
@@ -82,20 +148,20 @@
 				</div>
 			</div> <!-- top_left -->
 			
-			<div class="option_div" >
+			<div class="option_div" style="border-style: solid;">
 				<label><h5>옵션 선택</h5></label>
 				<hr>
-				<div class="date_select" >
+				<div class="date_select" style="display: flex; margin-top: 20px; ">
 					<label style="margin-right: 10px;"><h5>날짜</h5></label>
 					<input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" />
 				</div>
 				
-				<div class="t_price_info" >
+				<div class="t_price_info" style="display: flex; margin-top: 20px; ">
 					<label style="margin-right: 10px;"><h5>가격</h5></label>
 					<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
 				</div>
 				
-				<div class="people_num" >
+				<div class="people_num" style="display: flex; margin-top: 20px;">
     				<label style="margin-right: 10px;"><h5>인원</h5></label>
     				<input type='button' onclick='updateCount(-1)' value='-' style="border: none; cursor: pointer;">
     				<div id='result'>1</div>
@@ -103,14 +169,14 @@
 				</div>
 							<hr style="margin-top: 40px;">
 									
-				<div class="price_cal" >
+				<div class="price_cal" style="display: flex; font: red; ">
     				<label style="margin-right: 10px;"><h5>합계</h5></label>
     				<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
 				</div>
 				
-				<div class="buttons">
-    				<button class="wishlist_btn" style="">❤️ 찜하기</button>
-    				<button class="buy_btn" style="">구매하기</button>
+				<div style="margin-top: 50px;" >
+    				<button style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer; ">❤️ 찜하기</button>
+    				<button style="background-color: green; color: white; padding: 10px 20px; border: none; cursor: pointer; ">구매하기</button>
 				</div>
 
 			</div> <!-- option_div -->
@@ -120,60 +186,52 @@
 		
 		
 		
-		<div class="bottom_area" >
-			<hr>
+		<div class="bottom_area" style="margin-top: 20px;">
+		<hr>
 				<div style=" text-align: center; margin-bottom: 30px;" >
 					<h3 style="text-align: center;">여행 정보</h3>
 				</div>
-			<!--  -->	
-			
-			<div class="tab">
-  				<button class="tablinks" onclick="openTab(event, 'meeting_div')">집합 장소</button>
-  				<button class="tablinks" onclick="openTab(event, 'tour_spot')">투어 코스</button>
-  				<button class="tablinks" onclick="openTab(event, 'tour_info_div')">투어 소개</button>
-			</div>
-
-			<div id="meeting_div" class="tabcontent">
-	
-				<div class="meeting_div" >
-					<div class="map_div" id="map_div" >
+				
+			<div class="meeting_div" >
+				<div class="map_div" id="map_div" style="height: 230px; width: 700px; ">
 					<!--지도 -->
-					</div>
-					<div class="meeting-info" >
+				</div>
+				<div class="meeting-info" style=" display: flex; margin-top: 20px; ">
 					
-						<div class="meeting_spot" style="">
+					<div class="meeting_spot" style="margin-right: 30px; margin-left: auto; ">
 							<label><img alt="" src="./image/tour/spot.png"> <strong>집합 장소</strong> </label>
-							<div style="margin-left: 20px;"><%=g.getM_spot() %></div>
-						</div>
-					
-						<div class="meeting_time" >
-							<label><img alt="" src="./image/tour/time.png"><strong>집합 시간</strong> </label>
-							<div style="margin-left: 20px;"><%=g.getD_time() %></div>
-						</div>
-					</div> <!-- meeting-info -->
-				</div>
-
-			</div>
-
-			<div id="tour_spot" class="tabcontent">
-				<div class="tour_spot_div" >
-					<h3 style="text-align: center;">투어 코스</h3>
-						<div class="tour_spot">
-							<%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %>
-						</div>
+						<div style="margin-left: 20px;"><%=g.getM_spot() %></div>
 					</div>
-			</div>
-
-			<div id="tour_info_div" class="tabcontent">
-				<div class="tour_info_div" >
-					<h3 style="text-align: center;">투어 소개</h3>
-						<div class="tour_info" id="tour_info">						
-							<%= g.getT_info() %>
-						</div>
-				</div>
+					
+					<div class="meeting_time" style=" margin-right: auto;">
+						<label><img alt="" src="./image/tour/time.png"><strong>집합 시간</strong> </label>
+						<div style="margin-left: 20px;"><%=g.getD_time() %></div>
+					</div>
+				</div> <!-- meeting-info -->
 			</div>
 			
-			<!--  -->
+			<div class="t-info" style="margin-top: 20px;">
+<!-- 				<div >
+					<h3>여행 정보</h3>
+				</div> -->
+				
+				<div class="tour_spot" style="margin-bottom: 20px;" >
+					<h3>투어 코스</h3>
+					<div>
+						<%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %>
+					</div>
+				</div>
+					
+				<div class="tour_info_div" >
+					<h3>투어 소개</h3>
+					<div class="tour_info" id="tour_info">
+											
+						<%= g.getT_info() %>
+					</div>
+				</div>
+			
+			</div> <!-- t-info -->
+		
 		</div> <!-- bottom_area -->
 		
 		<hr>
@@ -196,6 +254,8 @@
 			</form>	 
 		
 		</div>
+
+
 
 
 	</div> <!-- 전체 content -->
@@ -230,7 +290,6 @@
         });
     }
 </script>
-
 <script>
     initMap(); // initMap 함수 호출
 </script>
@@ -333,55 +392,12 @@ function count(type)  {
 
     if (tourInfoElement) {
       const originalText = tourInfoElement.innerHTML;
-      const modifiedText = originalText.replace(/\\n/g, '<br>').replace(/\\r/g, '<br>'); // 문자열에서 \n 또는 \r을 <br>로 변환.
+      const modifiedText = originalText.replace(/\\n/g, '<br>').replace(/\\r/g, '<br>'); // 문자열에서 \n 또는 \r을 <br>로 변환합니다.
       tourInfoElement.innerHTML = modifiedText; // 변환된 문자열을 요소에 적용합니다.
     }
   });
 </script>
 
-
-<script>
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 페이지 로드 시 첫 번째 탭 활성화
-    openTab(event, 'meeting_div'); 
-});
-
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
 
 
 
