@@ -78,7 +78,7 @@
 			</div> <!-- t_img_div -->
 				
 				<div class="t_name">
-					<h1><%=g.getT_name() %></h1>
+					<h1><%=g.getT_name() %>!</h1>
 				</div>
 			</div> <!-- top_left -->
 			
@@ -159,7 +159,15 @@
 				<div class="tour_spot_div" >
 					<h3 style="text-align: center;">투어 코스</h3>
 						<div class="tour_spot">
-							<%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %>
+							<%-- <%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %> --%>
+							<%=g.getT_spot1() %> 
+							<% if(g.getT_spot2() != null) {
+								out.println(", "+g.getT_spot2());
+								if(g.getT_spot3()!=null){
+									out.println(", "+g.getT_spot3());
+								}
+							}
+									%>
 						</div>
 					</div>
 			</div>
@@ -235,25 +243,30 @@
     initMap(); // initMap 함수 호출
 </script>
 
-<script> /* slide effect 	 */
-	var slideIndex = 1;
-		showSlides(slideIndex);
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-	function plusSlides(n) {
-    	showSlides(slideIndex += n);
-	}
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-	function showSlides(n) {
-    	var i;
-    	var slides = document.getElementsByClassName("mySlides");
-    	if (n > slides.length) { slideIndex = 1 }
-    	if (n < 1) { slideIndex = slides.length }
-    	for (i = 0; i < slides.length; i++) {
-	        slides[i].style.display = "none";
-    	}
-    	slides[slideIndex - 1].style.display = "block";
-	}
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+
+        // 이미지를 전환할 때마다 top_area의 크기를 고정 값으로 설정
+        var topArea = document.querySelector(".top_area");
+        topArea.style.height = "300px"; // 위에서 지정한 높이로 설정
+    }
 </script>
+
 
 <script>
     // 이미지 슬라이딩 관련 JavaScript 코드 (이전과 다음 슬라이드 이동)
