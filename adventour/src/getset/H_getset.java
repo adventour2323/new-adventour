@@ -43,6 +43,22 @@ public class H_getset {
 	String h_pho5;
 	String h_pho6;
 	
+	String h_indate;
+	public String getH_indate() {
+		return h_indate;
+	}
+	public void setH_indate(String h_indate) {
+		this.h_indate = h_indate;
+	}
+	public String getH_outdate() {
+		return h_outdate;
+	}
+	public void setH_outdate(String h_outdate) {
+		this.h_outdate = h_outdate;
+	}
+
+	String h_outdate;
+	
 	String h_indateY;
 	String h_indateM;
 	String h_indateD;
@@ -51,8 +67,39 @@ public class H_getset {
 	String h_outdateD;
 	int h_roompeo1;
 	
+	int sch_minpri;
+	int sch_maxpri;
+	
+	String sch_indate;
+	public String getSch_indate() {
+		return sch_indate;
+	}
+	public void setSch_indate(String sch_indate) {
+		this.sch_indate = sch_indate;
+	}
+
+	String sch_outdate;
+	
 
 	
+	public String getSch_outdate() {
+		return sch_outdate;
+	}
+	public void setSch_outdate(String sch_outdate) {
+		this.sch_outdate = sch_outdate;
+	}
+	public int getSch_minpri() {
+		return sch_minpri;
+	}
+	public void setSch_minpri(int sch_minpri) {
+		this.sch_minpri = sch_minpri;
+	}
+	public int getSch_maxpri() {
+		return sch_maxpri;
+	}
+	public void setSch_maxpri(int sch_maxpri) {
+		this.sch_maxpri = sch_maxpri;
+	}
 	public String getH_indateY() {
 		return h_indateY;
 	}

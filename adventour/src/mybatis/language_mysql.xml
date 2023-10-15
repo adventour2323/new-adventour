@@ -84,7 +84,22 @@
       )
       AND h_room.h_roompeo >= ${h_roompeo}
       GROUP BY h_hotel.h_name_eng;
-
+	</select>
+	
+	<select id="select_sc_search" resultType="getset.H_getset" parameterType="getset.H_getset">
+SELECT h_hotel.*, MIN(h_room.h_roompri) AS min_h_roompri
+FROM h_hotel
+JOIN h_room ON h_hotel.h_name_eng = h_room.h_name_eng
+WHERE h_hotel.country_eng = '${country_eng}' AND h_hotel.city_eng = '${city_eng}'
+AND h_room.h_roomnum NOT IN (
+  SELECT h_roomnum
+  FROM h_reserve
+  WHERE STR_TO_DATE('${h_indate}', '%Y-%m-%d') BETWEEN h_indate AND h_outdate
+  OR STR_TO_DATE('${h_outdate}', '%Y-%m-%d') BETWEEN h_indate AND h_outdate
+)
+AND h_room.h_roompeo >= ${h_roompeo}
+AND h_room.h_roompri BETWEEN ${h_minpri} AND ${h_maxpri}
+GROUP BY h_hotel.h_name_eng;
 	</select>
 
 

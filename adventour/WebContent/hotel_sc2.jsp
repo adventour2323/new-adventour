@@ -61,32 +61,32 @@ if (list != null && !list.isEmpty()) {
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" >
+      <input type="text" class="sch_city" name="sch_city" placeholder="도시" value="<%= sch_country.getCity_ko()%>">
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" >
+      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD"  value="<%= sch_country.getSch_indate()%>">
           <!--   <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_indateY()%> - <%= sch_country.getH_indateM()%> - <%= sch_country.getH_indateD()%>"> -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-       <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" > 
+       <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" value="<%= sch_country.getSch_outdate()%>"> 
     <!--    <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_outdateY()%> - <%= sch_country.getH_outdateM()%> - <%= sch_country.getH_outdateD()%>">  -->
     </div>
 
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수">
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="<%= sch_country.getH_roompeo1()%>">
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 가격</h5>
-      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격">
-      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격">
+      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격" value="<%= sch_country.getSch_minpri()%>" >
+      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격"  value="<%= sch_country.getSch_maxpri()%>">
     </div>
 
     <div class="sch123">
