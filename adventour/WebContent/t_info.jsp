@@ -226,7 +226,7 @@
 				<input type="submit" value="등록하기">
 			</form>	 
 			
-			<table>
+			<table style="margin-top: 20px;">
 				<tr id="review_top">
 					<td>번호</td>
 					<td>내용</td>
