@@ -129,10 +129,13 @@
 					</div>
 				
 					<div class="buttons">
-    					<button class="wishlist_btn" onclick="location.href=''">❤️ 찜하기</button>
+    					
     					<input type="submit" value="구매하기" class="buy_btn">
 					</div>
 				</form>
+				<div>
+					<button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button>
+				</div>
 			</div> <!-- option_div -->
 		
 		

@@ -133,6 +133,8 @@ a.next:hover {
 	padding: 10px 20px; 
 	border: none; 
 	cursor: pointer; 
+	width: 147px;
+	margin-top: 20px;
 }
 .buy_btn{
 	background-color: green; 
@@ -140,6 +142,8 @@ a.next:hover {
 	padding: 10px 20px;
 	border: none; 
 	cursor: pointer; 
+	
+	width: 147px;
 }
 
 /*bottom  */
