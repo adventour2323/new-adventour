@@ -16,7 +16,7 @@ $(document).ready(function() {
 		  $(this).parents('tr').css('background-color', '');
 		});
 
-	// 검색 버튼 클릭 시 AJAX 요청을 보냅니다.
+// 검색창 버튼 클릭 시 AJAX 요청을 보냅니다.
     $(".c_schbtn").click(function(e) {
       e.preventDefault(); // 폼의 기본 동작 방지
 
