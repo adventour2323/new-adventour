@@ -10,7 +10,7 @@
 
 <%
 /* if(session!=null) session.invalidate(); */
-
+ 
 if(session!=null) session.removeAttribute("id");
 Cookie idNullCookie = new Cookie("id", "");
 response.addCookie(idNullCookie);
