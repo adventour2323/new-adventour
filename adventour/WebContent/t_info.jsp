@@ -109,7 +109,7 @@
 					<div class="t_price_info" >
 						<label style="margin-right: 10px;"><h5>가격</h5></label>
 						<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
-						<input type="hidden" name="tour_price" value="<%= g.getT_price() %>">
+						<input type="hidden" id="tour_price" name="tour_price" value="<%= g.getT_price() %>">
 					</div>
 				
 					<div class="people_num" >
@@ -125,7 +125,7 @@
     					<label style="margin-right: 10px;"><h5>합계</h5></label>
     					<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
     					
-    					 <input type="hidden" id="tour_price" name="total_price" value="<%= g.getT_price() %>">
+    					 <input type="hidden" id="total_price" name="total_price" value="<%= g.getT_price() %>">
 					</div>
 				
 					<div class="buttons">
@@ -225,6 +225,17 @@
 				<input type="text" id="comment">
 				<input type="submit" value="등록하기">
 			</form>	 
+			
+			<table>
+				<tr id="review_top">
+					<td>번호</td>
+					<td>내용</td>
+					<td>작성자</td>
+					<td>날짜</td>
+					<td>평점</td>
+				</tr>
+			
+			</table>
 		
 		</div>
 
@@ -347,6 +358,7 @@ function count(type)  {
   document.addEventListener('DOMContentLoaded', function() {
     // 페이지가 로드될 때 초기 가격과 합계 가격에 대한 포맷 적용
     document.getElementById('totalPrice').innerText = tPrice;
+    
   });
 
 /*   function updateCount(change) {
@@ -376,8 +388,8 @@ function count(type)  {
 	  const formattedTotalPrice = formatNumberWithCommas(totalPrice); // 컴마가 붙은 숫자
 	  document.getElementById('totalPrice').innerText = formattedTotalPrice;
 
-	  // "tour_price" 입력 필드 업데이트
-	  document.getElementById('tour_price').value = totalPrice;
+	  // "total_price" 입력 필드 업데이트
+	  document.getElementById('total_price').value = totalPrice;
 	}
 
 
