@@ -6,6 +6,13 @@
     <meta charset="UTF-8">
     <title>login</title>
 </head>
+<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    response.setDateHeader("Expires", 0); // Proxies.
+%>
+
+
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
 <style>
 
@@ -71,9 +78,28 @@
 <%
     request.setCharacterEncoding("utf-8");
 %>
-<header>
-    <jsp:include page="./header.html"></jsp:include>
-</header>
+
+<%
+String id = (String) session.getAttribute("id");
+if (id != null) {
+%>
+    <script>
+    history.back();
+    </script>
+<%
+}
+%>
+
+
+
+		<header>
+			<% if (session.getAttribute("id") == null) { %>
+    		<!-- header.html import -->
+    		<jsp:include page="header.html"></jsp:include>
+			<% } else { %>
+    		<jsp:include page="header_login.jsp"></jsp:include>
+			<% } %>
+		</header>
 
 <div class="login_body">
     <div class="login_form">

@@ -14,7 +14,10 @@
 <meta charset="UTF-8">
 <title>상품 페이지</title>
 </head>
-<script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="./css/t_info_css.css">
 
 <style>
@@ -88,7 +91,7 @@
 			<div class="option_div" >
 				<label><h5>옵션 선택</h5></label>
 					<hr>
-				<form action="t_payment.jsp" method="post">
+				<form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return validateForm();">
 					<div class="date_select" >
 						<label style="margin-right: 10px;"><h5>날짜</h5></label>
 
@@ -99,7 +102,7 @@
 						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 						String formattedDate = sdf.format(today);
 					%>
-						 <input type="date" id="start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
+						 <input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
 						
 					</div>
 				
@@ -233,7 +236,7 @@
 		
 		
 		<!-- google map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+
 
 <script>
     function initMap() {
@@ -437,7 +440,7 @@ function openTab(evt, tabName) {
 
 
 
-<script> 
+<!-- <script> 
 function validateForm() {
     // 선택한 날짜 가져오기
     var selectedDate = document.getElementById("trip-start").value;
@@ -451,8 +454,31 @@ function validateForm() {
     // 날짜가 선택되었다면 폼을 제출합니다.
     return true;
 }
-</script>
+</script> -->
 
+<script>
+function validateForm() {
+    // 선택한 날짜 가져오기
+    var selectedDate = document.getElementById("trip-start").value;
+
+    // 날짜가 선택되었는지 확인
+    if (selectedDate === "") {
+        alert("날짜를 선택해주세요.");
+        return false; // 폼 전송을 막습니다.
+    }
+
+    // 세션 ID의 존재 여부 확인
+    var sessionID = "<%= session.getAttribute("id") %>";
+    console.log(sessionID);
+    if (!sessionID) {
+        alert("로그인이 필요합니다.");
+        return false; // 폼 전송을 막습니다.
+    }
+
+    // 날짜가 선택되었고 세션 ID가 존재하면 폼을 제출합니다.
+    return true;
+}
+</script>
 
 
 

@@ -76,6 +76,17 @@
     </style>
 </head>
 <body>
+<%
+if(session.getAttribute("id") == null) {
+%>
+<script>
+  alert("로그인이 필요합니다.");
+  history.back();
+</script>
+<%
+}
+%>
+
     <header>
         <% if (session.getAttribute("id") == null) { %>
         <!-- header.html import -->
@@ -120,7 +131,7 @@
     </table>
 </div>
 
-        <form class="payment-form" action="process_payment.jsp" method="POST">
+        <form class="payment-form" action=" " method="POST"><!--action 채워야 됨  -->
             <input type="hidden" name="total_people" value="<%= totalPeople %>">
             <input type="hidden" name="tour_date" value="<%= tourDate %>">
             <input type="hidden" name="tour_price" value="<%= totalPrice %>">

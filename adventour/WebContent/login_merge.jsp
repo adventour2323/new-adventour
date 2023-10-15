@@ -51,7 +51,8 @@ PreparedStatement pstmt = null;
 		%>
 		<script>
 		alert("로그인 실패");
-		location.href= "login_merge_form.jsp"
+		/* location.href= "login_merge_form.jsp" */
+		history.back();
 		</script>
 		<%
 			}

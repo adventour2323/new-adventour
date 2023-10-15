@@ -17,20 +17,14 @@
 
 <body>
 
- <header>
-<%
-if (session.getAttribute("id") == null) {
-%>
-    <!-- header.html import -->
-    <div id="header"></div>
-<%
-} else {
-%>
-    <jsp:include page="header_login.jsp"></jsp:include>
-<%
-}
-%>
-</header>
+		<header>
+			<% if (session.getAttribute("id") == null) { %>
+    		<!-- header.html import -->
+    		<div id="header"></div>
+			<% } else { %>
+    		<jsp:include page="header_login.jsp"></jsp:include>
+			<% } %>
+		</header>
 
         <section id="visual" class="main-visual">
             <div class="inner">

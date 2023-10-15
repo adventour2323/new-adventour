@@ -18,9 +18,14 @@
 </head>
 
 <body>
-    <header>
-        <jsp:include page="header.html"></jsp:include>
-    </header>
+		<header>
+			<% if (session.getAttribute("id") == null) { %>
+    		<!-- header.html import -->
+    		<jsp:include page="header.html"></jsp:include>
+			<% } else { %>
+    		<jsp:include page="header_login.jsp"></jsp:include>
+			<% } %>
+		</header>
     
 <jsp:useBean id="id" class="adventour.g_list_print">
 
