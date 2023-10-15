@@ -5,6 +5,9 @@
 <%@ page import="adventour.t_getset"%>
 <%@ page import="java.util.*"%>
 
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,41 +81,55 @@
 			</div> <!-- t_img_div -->
 				
 				<div class="t_name">
-					<h1><%=g.getT_name() %>!</h1>
+					<h1 class="t_name_text"><%=g.getT_name() %>!</h1>
 				</div>
 			</div> <!-- top_left -->
 			
 			<div class="option_div" >
 				<label><h5>옵션 선택</h5></label>
-				<hr>
-				<div class="date_select" >
-					<label style="margin-right: 10px;"><h5>날짜</h5></label>
-					<input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" />
-				</div>
+					<hr>
+				<form action="t_payment.jsp" method="post">
+					<div class="date_select" >
+						<label style="margin-right: 10px;"><h5>날짜</h5></label>
+
+						<!-- <input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" required> -->
+					<%
+						// 오늘 날짜를 가져오고, yyyy-MM-dd 형식으로 포맷
+						Date today = new Date();
+						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+						String formattedDate = sdf.format(today);
+					%>
+						 <input type="date" id="start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
+						
+					</div>
 				
-				<div class="t_price_info" >
-					<label style="margin-right: 10px;"><h5>가격</h5></label>
-					<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
-				</div>
+					<div class="t_price_info" >
+						<label style="margin-right: 10px;"><h5>가격</h5></label>
+						<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
+						<input type="hidden" name="tour_price" value="<%= g.getT_price() %>">
+					</div>
 				
-				<div class="people_num" >
-    				<label style="margin-right: 10px;"><h5>인원</h5></label>
-    				<input type='button' onclick='updateCount(-1)' value='-' style="border: none; cursor: pointer;">
-    				<div id='result'>1</div>
-    				<input type='button' onclick='updateCount(1)' value='+' style="border: none; cursor: pointer;">
-				</div>
+					<div class="people_num" >
+    					<label style="margin-right: 10px;"><h5>인원</h5></label>
+    					<input type='button' onclick='updateCount(-1)' value='-' style="border: none; cursor: pointer;">
+    					<div id='result'>1</div>
+    					<input type='button' onclick='updateCount(1)' value='+' style="border: none; cursor: pointer;">
+    					<input type="hidden" name="total_people" value="1" id="totalPeopleInput">
+					</div>
 							<hr style="margin-top: 40px;">
 									
-				<div class="price_cal" >
-    				<label style="margin-right: 10px;"><h5>합계</h5></label>
-    				<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
-				</div>
+					<div class="price_cal" >
+    					<label style="margin-right: 10px;"><h5>합계</h5></label>
+    					<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
+    					
+    					 <input type="hidden" id="tour_price" name="total_price" value="<%= g.getT_price() %>">
+					</div>
 				
-				<div class="buttons">
-    				<button class="wishlist_btn" style="">❤️ 찜하기</button>
-    				<button class="buy_btn" style="">구매하기</button>
-				</div>
-
+					<div class="buttons">
+    					<button class="wishlist_btn" onclick="location.href=''">❤️ 찜하기</button>
+    					<input type="submit" value="구매하기" class="buy_btn">
+					</div>
+				</form>
 			</div> <!-- option_div -->
 		
 		
@@ -263,7 +280,7 @@
 
         // 이미지를 전환할 때마다 top_area의 크기를 고정 값으로 설정
         var topArea = document.querySelector(".top_area");
-        topArea.style.height = "300px"; // 위에서 지정한 높이로 설정
+        topArea.style.height = "400px"; // 위에서 지정한 높이로 설정
     }
 </script>
 
@@ -326,7 +343,7 @@ function count(type)  {
     document.getElementById('totalPrice').innerText = tPrice;
   });
 
-  function updateCount(change) {
+/*   function updateCount(change) {
     currentCount += change;
     // 최소 1명, 최대 10명으로 제한
     currentCount = Math.min(Math.max(currentCount, 1), 10);
@@ -336,7 +353,29 @@ function count(type)  {
     const totalPrice = parseInt(tPrice.replace(/,/g, '')) * currentCount; // 컴마 제거 후 계산
     const formattedTotalPrice = formatNumberWithCommas(totalPrice); // 컴마가 붙은 숫자
     document.getElementById('totalPrice').innerText = formattedTotalPrice ;
-  }
+  } */
+  function updateCount(change) {
+	  currentCount += change;
+	  // 최소 1명, 최대 10명으로 제한
+	  currentCount = Math.min(Math.max(currentCount, 1), 10);
+
+	  // 결과 업데이트
+	  document.getElementById('result').innerText = currentCount;
+
+	  // "total_people" 입력 필드 업데이트
+	  document.getElementById('totalPeopleInput').value = currentCount;
+
+	  // 가격 계산 및 업데이트
+	  const totalPrice = currentCount * parseInt('<%= g.getT_price() %>'); // 현재 수량에 가격을 곱함
+	  const formattedTotalPrice = formatNumberWithCommas(totalPrice); // 컴마가 붙은 숫자
+	  document.getElementById('totalPrice').innerText = formattedTotalPrice;
+
+	  // "tour_price" 입력 필드 업데이트
+	  document.getElementById('tour_price').value = totalPrice;
+	}
+
+
+  
 </script>
 
 
@@ -397,6 +436,22 @@ function openTab(evt, tabName) {
 </script>
 
 
+
+<script> 
+function validateForm() {
+    // 선택한 날짜 가져오기
+    var selectedDate = document.getElementById("trip-start").value;
+    
+    // 날짜가 선택되었는지 확인
+    if (selectedDate === "") {
+        alert("날짜를 선택해주세요.");
+        return false; // 폼 전송을 막습니다.
+    }
+    
+    // 날짜가 선택되었다면 폼을 제출합니다.
+    return true;
+}
+</script>
 
 
 

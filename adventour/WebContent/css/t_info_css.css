@@ -14,19 +14,37 @@ height: 1000px;
 }
 	.top_area{
 	display: flex;
+	width: 850px;
+	
+	margin-bottom: 20px;
+	
+	height: 500px;
+	
 	}
 	
 	.top_left{
 	margin-right: 30px;
 	}
 
-	.t_name {
-  white-space: normal; /* 긴 텍스트에서 줄바꿈 활성화 */
-  word-wrap: break-word; /* 긴 단어에서 줄바꿈 활성화 */
+/*	.t_name {
+  white-space: normal;  긴 텍스트에서 줄바꿈 활성화 
+  word-wrap: break-word;  긴 단어에서 줄바꿈 활성화 
+}*/
+
+.t_name {
+	width: 500px; /* 원하는 너비로 설정하세요. */
+	margin-top: 25px;
 }
 
+.t_name_text{
+
+  	overflow-wrap: break-word;
+	
+}
+
+
 .t_img_div .mySlides img {
-    width: 100%;
+    width: 500px;
     height: 300px; /* 원하는 가로폭으로 설정하세요. */
     object-fit: cover;
 }
@@ -51,6 +69,11 @@ height: 1000px;
 	left: 10px; 
 	top: 50%; 
 	transform: translateY(-50%);
+/**/
+    border: 1px solid rgba(0, 0, 0, 0.5); /* 테두리 스타일 및 불투명도 색상 지정 */
+    background-color: rgba(255, 255, 255, 0.5); /* 배경색 불투명도 지정 */
+    
+    	
 }
 .next{
 	position: absolute; 
@@ -76,6 +99,7 @@ a.next:hover {
     text-align: left; /* 텍스트 정렬 지정 */
     
     border: 1px solid #ddd; padding: 20px; background-color: #f4f4f4;
+    
 }
 
 .date_select{
@@ -98,6 +122,10 @@ a.next:hover {
 
 .buttons{
 	margin-top: 50px;	
+	/**/
+	display: flex; /* 버튼을 수평으로 정렬합니다. */
+	height: 36px;
+	/**/
 }
 .wishlist_btn{
 	background-color: red; 
