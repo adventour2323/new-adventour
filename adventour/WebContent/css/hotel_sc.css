@@ -29,7 +29,8 @@ body {
 	margin-left: 0px;
 	margin-bottom: 0px;
 	width: 1903px;
-	height: 1850px;
+	max-height:1850px;
+	min-height: 800px;
 }
 
 .moveh {
@@ -57,7 +58,8 @@ body {
 /*----------------------------------------content---------------------------*/
 .content {
 	width: 1100px;
-	height: 1850px;
+	max-height:1850px;
+	min-height: 800px;
 	margin-top: -820px;
 	margin-left: 400px;
 }
@@ -338,3 +340,11 @@ body {
 	color: white;
 	background-color: #111;
 }
+.no-results{
+	
+	margin-top:300px;
+	margin-left:400px;
+}
+
+/*------------------footer----------------------*/
+	#footer{margin-top: 50px;}

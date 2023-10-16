@@ -44,66 +44,61 @@ if (session.getAttribute("id") == null) {
     <h1 class="pagename1">HOTEL</h1>
   </div><!--htitle-->
  
-<%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
-H_getset sch_country = null;
-if (list != null && !list.isEmpty()) {
-    sch_country = list.get(0);
-}
-%>
-   
 
+<form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post">
   <div class="schnav"> <!--검색 네비 = sch -->
 
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" value="<%= sch_country.getCountry_ko()%>">
+      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required">
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" >
+      <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" >
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" >
-          <!--   <input type="text" class="sch_indate" name="sch_indate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_indateY()%> - <%= sch_country.getH_indateM()%> - <%= sch_country.getH_indateD()%>"> -->
+      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required">
+ 
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-       <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" > 
-    <!--    <input type="text" class="sch_outdate" name="sch_outdate" placeholder="YYYY-MM-DD" value="<%= sch_country.getH_outdateY()%> - <%= sch_country.getH_outdateM()%> - <%= sch_country.getH_outdateD()%>">  -->
+      <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"> 
+
     </div>
 
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수">
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1">
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 가격</h5>
-      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격">
-      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격">
+      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격 " value="">
+      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격"  value="">
     </div>
 
     <div class="sch123">
       <h5 class="sch_title" >☆ 옵션</h5>
-      <input type="radio" class="h_twin"  name="h_twin" value="트윈">트윈</br>
-      <input type="radio" class="h_double"  name="h_double" value="슈퍼싱글">더블</br>
-      <input type="radio" class="h_queen"  name="h_queen" value="퀸">퀸</br>
+      <input type="radio" class="h_twin"  name="h_type" value="트윈">트윈</br>
+      <input type="radio" class="h_double"  name="h_type" value="슈퍼싱글" checked>더블</br>
+      <input type="radio" class="h_queen"  name="h_type" value="퀸">퀸</br>
     </div>
 
 
     <div class="sch13">
-    <a href=scsearch.hotel?uname=hotelSCSearch>
-      <button class="sch_btn" type="button" name="sch_btn">검색하기</button>
-     </a>
+<!--    <a href=scsearch.hotel?uname=hotelSCSearch> --> 
+      <button class="sch_btn" type="submit" name="sch_btn">검색하기</button>
+<!--      </a> --> 
     </div>
 
     </div><!--schnav-->
+</form>
   
   <div class="content">
 
@@ -120,6 +115,13 @@ if (list != null && !list.isEmpty()) {
 
 
     </div>
+    <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
+H_getset sch_country = null;
+if (list != null && !list.isEmpty()) {
+    sch_country = list.get(0);
+}
+%>
+   
 <%
 
 if (list != null) {
@@ -208,8 +210,6 @@ if (session.getAttribute("id") != null) {
     System.out.println("null data");
 }
 %>
-
-
 
 
   </div><!--content-->

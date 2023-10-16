@@ -97,8 +97,9 @@ AND h_room.h_roomnum NOT IN (
   WHERE STR_TO_DATE('${h_indate}', '%Y-%m-%d') BETWEEN h_indate AND h_outdate
   OR STR_TO_DATE('${h_outdate}', '%Y-%m-%d') BETWEEN h_indate AND h_outdate
 )
+AND h_room.h_roomtype = '${h_roomtype}'
 AND h_room.h_roompeo >= ${h_roompeo}
-AND h_room.h_roompri BETWEEN ${h_minpri} AND ${h_maxpri}
+AND h_room.h_roompri BETWEEN ${sch_minpri} AND ${sch_maxpri}
 GROUP BY h_hotel.h_name_eng;
 	</select>
 

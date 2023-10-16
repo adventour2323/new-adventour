@@ -43,6 +43,29 @@ public class H_getset {
 	String h_pho5;
 	String h_pho6;
 	
+	String h_double;
+	String h_twin;
+	String h_queen;
+	
+	public String getH_double() {
+		return h_double;
+	}
+	public void setH_double(String h_double) {
+		this.h_double = h_double;
+	}
+	public String getH_twin() {
+		return h_twin;
+	}
+	public void setH_twin(String h_twin) {
+		this.h_twin = h_twin;
+	}
+	public String getH_queen() {
+		return h_queen;
+	}
+	public void setH_queen(String h_queen) {
+		this.h_queen = h_queen;
+	}
+
 	String h_indate;
 	public String getH_indate() {
 		return h_indate;

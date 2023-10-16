@@ -16,6 +16,10 @@ public class H_Cto extends HttpServlet {
     @Override
     public void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        
     	String uName ="";
     	uName = request.getParameter("uname");
     	
@@ -52,6 +56,14 @@ public class H_Cto extends HttpServlet {
         		
         		String hscsc = request.getParameter("uname");
         		 System.out.println(hscsc); //파라미터 값이 잘 넘어오는지 확인 -ok
+        		 
+        	
+        	        String country_ko = request.getParameter("sch_country");
+        	        String sch_adult = request.getParameter("sch_adult");
+        	        System.out.println("한글확인 1");
+        	        System.out.println(country_ko);
+        	        System.out.println(sch_adult);
+        	        System.out.println("한글확인 1 끝");
              
         	    String hscsearch = hscinter.showdata(request, response);  
         	    RequestDispatcher dispatcher2 = request.getRequestDispatcher("hotel_sc2.jsp");
