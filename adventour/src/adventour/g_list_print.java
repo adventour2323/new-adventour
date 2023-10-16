@@ -194,6 +194,7 @@ public class g_list_print {
 		while(rs.next()) {
 			t_getset table = new t_getset();
 			table.setT_name(rs.getString("t_name"));
+			table.setT_id(rs.getString("t_id"));
 			table.setCountry(rs.getString("country"));
 			table.setCity(rs.getString("city"));
 			table.setT_price(rs.getString("t_price"));
@@ -283,6 +284,12 @@ public class g_list_print {
 			table.setT_img1(rs.getString("t_img1"));
 			table.setT_img2(rs.getString("t_img2"));
 			table.setT_img3(rs.getString("t_img3"));
+			table.setSpot1_x(rs.getString("spot1_x"));
+			table.setSpot1_y(rs.getString("spot1_y"));
+			table.setSpot2_x(rs.getString("spot2_x"));
+			table.setSpot2_y(rs.getString("spot2_y"));
+			table.setSpot3_x(rs.getString("spot3_x"));
+			table.setSpot3_y(rs.getString("spot3_y"));
 			arr.add(table);
 		}
 	} finally {

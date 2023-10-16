@@ -127,22 +127,22 @@
         		</div>
         		
         		<div class="tour-container" style="height: 200px; ">
-	            	<div class="item-box" div style=" display: flex; margin-right: auto; margin-left: auto; " >
+	            	<div class="item-box" style=" display: flex; margin-right: auto; margin-left: auto; " >
 						<%  for ( int i = 0; i < a2.size(); i++ ) {
 							t_getset tn = a2.get(i);
 						%>
 									
 						<div class="tour-item">
-                			<div class="tour-img">
-                    			<a href=" ">
+							<a href="t_info.jsp?t_id=<%=tn.getT_id() %>">
+                				<div class="tour-img">
                         			<img src="<%=tn.getT_img1()%>" alt="img<%=tn.getT_name() %>">
-                    			</a>
-	                		</div>
+	                			</div>
+	                		</a>
     	            		<div class="tour-info">
                 
         	        			<div class="tour_title_div" >
             	        			<h3 class="tour-title">
-                	    	    		<a href=" "><%= tn.getT_name() %></a>
+                	    	    		<a href="t_info.jsp?t_id=<%=tn.getT_id() %>"><%= tn.getT_name() %></a>
                     				</h3>
                     			</div>
                     <hr>

@@ -181,16 +181,29 @@
 			<div id="tour_spot" class="tabcontent">
 				<div class="tour_spot_div" >
 					<h3 style="text-align: center;">투어 코스</h3>
-						<div class="tour_spot">
+						<div class="tour_spot" style="display: flex;">
 							<%-- <%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %> --%>
-							<%=g.getT_spot1() %> 
-							<% if(g.getT_spot2() != null) {
-								out.println(", "+g.getT_spot2());
-								if(g.getT_spot3()!=null){
-									out.println(", "+g.getT_spot3());
-								}
-							}
-									%>
+							<div class="spot1_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
+								<div class="spot1_map" id="spot1_map" style="width: 260px; height: 230px; margin-bottom: 15px;">
+								</div>
+								<%=g.getT_spot1() %>
+							</div> 
+							<% if(g.getT_spot2() != null) { %>	
+								<div class="spot2_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
+									<div class="spot2_map" id="spot2_map"  style="width: 260px; height: 230px; margin-bottom: 15px;">
+									</div>
+									<%=g.getT_spot2() %>
+								</div>
+								
+								<%if(g.getT_spot3() != null) { %>
+									<div class="spot3_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
+										<div class="spot3_map" id="spot3_map" style="width: 260px; height: 230px; margin-bottom: 15px; ">
+										</div>
+										<%=g.getT_spot3() %>
+									</div>
+							<% } } %>
+							 
+
 						</div>
 					</div>
 			</div>
@@ -276,6 +289,82 @@
 <script>
     initMap(); // initMap 함수 호출
 </script>
+<!--  -->
+<script>
+  // Google 지도를 생성하고 spot1_map에 표시하는 코드
+  function initSpot1Map() {
+    var mapOptions = {
+      center: { lat: <%=g.getSpot1_x() %>, lng: <%=g.getSpot1_y() %> },
+      zoom: 14
+    };
+
+    var map = new google.maps.Map(document.getElementById('spot1_map'), mapOptions);
+
+    // 마커를 추가할 위치의 위도와 경도
+    var markerLatLng = { lat: <%=g.getSpot1_x() %>, lng: <%=g.getSpot1_y() %> };
+
+    // 마커 생성
+    var marker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map,
+      title: '<%=g.getT_spot1() %>'
+    });
+  }
+
+  initSpot1Map(); // initSpot1Map 함수 호출
+</script>
+
+<script>
+  // Google 지도를 생성하고 spot2_map에 표시하는 코드
+  function initSpot2Map() {
+    var mapOptions = {
+      center: { lat: <%=g.getSpot2_x() %>, lng: <%=g.getSpot2_y() %> },
+      zoom: 14
+    };
+
+    var map = new google.maps.Map(document.getElementById('spot2_map'), mapOptions);
+
+    // 마커를 추가할 위치의 위도와 경도
+    var markerLatLng = { lat: <%=g.getSpot2_x() %>, lng: <%=g.getSpot2_y() %> };
+
+    // 마커 생성
+    var marker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map,
+      title: '<%=g.getT_spot2() %>'
+    });
+  }
+
+  initSpot2Map(); // initSpot2Map 함수 호출
+</script>
+
+<script>
+  // Google 지도를 생성하고 spot3_map에 표시하는 코드
+  function initSpot3Map() {
+    var mapOptions = {
+      center: { lat: <%=g.getSpot3_x() %>, lng: <%=g.getSpot3_y() %> },
+      zoom: 14
+    };
+
+    var map = new google.maps.Map(document.getElementById('spot3_map'), mapOptions);
+
+    // 마커를 추가할 위치의 위도와 경도
+    var markerLatLng = { lat: <%=g.getSpot3_x() %>, lng: <%=g.getSpot3_y() %> };
+
+    // 마커 생성
+    var marker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map,
+      title: '<%=g.getT_spot3() %>'
+    });
+  }
+
+  initSpot3Map(); // initSpot3Map 함수 호출
+</script>
+
+
+<!--  -->
+
 
 <script>
     var slideIndex = 1;
@@ -453,23 +542,6 @@ function openTab(evt, tabName) {
 }
 </script>
 
-
-
-<!-- <script> 
-function validateForm() {
-    // 선택한 날짜 가져오기
-    var selectedDate = document.getElementById("trip-start").value;
-    
-    // 날짜가 선택되었는지 확인
-    if (selectedDate === "") {
-        alert("날짜를 선택해주세요.");
-        return false; // 폼 전송을 막습니다.
-    }
-    
-    // 날짜가 선택되었다면 폼을 제출합니다.
-    return true;
-}
-</script> -->
 
 <script>
 function validateForm() {

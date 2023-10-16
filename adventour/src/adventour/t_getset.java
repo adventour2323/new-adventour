@@ -25,8 +25,86 @@ public class t_getset {
 //	
 	String g_name;
 	String country_eng;
+	String spot1_x;
+	String spot1_y;
+	String spot2_x;
+	String spot2_y;
+	String spot3_x;
+	String spot3_y;
 //	
 	
+	/**
+	 * @return the spot1_x
+	 */
+	public String getSpot1_x() {
+		return spot1_x;
+	}
+	/**
+	 * @param spot1_x the spot1_x to set
+	 */
+	public void setSpot1_x(String spot1_x) {
+		this.spot1_x = spot1_x;
+	}
+	/**
+	 * @return the spot1_y
+	 */
+	public String getSpot1_y() {
+		return spot1_y;
+	}
+	/**
+	 * @param spot1_y the spot1_y to set
+	 */
+	public void setSpot1_y(String spot1_y) {
+		this.spot1_y = spot1_y;
+	}
+	/**
+	 * @return the spot2_x
+	 */
+	public String getSpot2_x() {
+		return spot2_x;
+	}
+	/**
+	 * @param spot2_x the spot2_x to set
+	 */
+	public void setSpot2_x(String spot2_x) {
+		this.spot2_x = spot2_x;
+	}
+	/**
+	 * @return the spot2_y
+	 */
+	public String getSpot2_y() {
+		return spot2_y;
+	}
+	/**
+	 * @param spot2_y the spot2_y to set
+	 */
+	public void setSpot2_y(String spot2_y) {
+		this.spot2_y = spot2_y;
+	}
+	/**
+	 * @return the spot3_x
+	 */
+	public String getSpot3_x() {
+		return spot3_x;
+	}
+	/**
+	 * @param spot3_x the spot3_x to set
+	 */
+	public void setSpot3_x(String spot3_x) {
+		this.spot3_x = spot3_x;
+	}
+	/**
+	 * @return the spot3_y
+	 */
+	public String getSpot3_y() {
+		return spot3_y;
+	}
+	/**
+	 * @param spot3_y the spot3_y to set
+	 */
+	public void setSpot3_y(String spot3_y) {
+		this.spot3_y = spot3_y;
+	}
 	/**
 	 * @return the country_eng
 	 */
