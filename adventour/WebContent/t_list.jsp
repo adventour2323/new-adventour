@@ -40,7 +40,7 @@
 	<div class="country_list" >
 		
 		<div id="country_all" class="country_content" style="margin-left: auto;">
-		<a href="t_list.jsp"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
+		<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
 		</div>
 		<div id="country_uk" class="country_content">
 			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>

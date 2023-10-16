@@ -17,7 +17,7 @@ body {
   /*height: 1650px;*/
   /*height: 2000px;*/
   	height: 1000px;
-	font-family: Arial, sans-serif;
+  	font-family: 'Pretendard-Regular', sans-serif;
 	margin: 0;
 	padding: 0;
 	background-color: #f4f4f4;
@@ -54,24 +54,20 @@ body {
             padding: 20px;
         }
         
-	.tour-item {
+        .tour-item {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
-            
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: calc(33.33% - 20px);
             box-sizing: border-box;
-            
-            margin: 0 10px 20px; /* 원하는 좌우 간격으로 조절 (상하 좌우 순서로 지정) */
-    		
+            margin: 0 10px 20px;
         }
-	.tour-item img {
- 			width: 380px; /* 원하는 가로 크기로 설정 */
-    		height: 350px; /* 원하는 세로 크기로 설정 */
-    		
-		}
+        .tour-item img {
+            width: 380px;
+            height: 250px;
+        }
         
 
 	.tour-info {
@@ -82,11 +78,25 @@ body {
             font-size: 18px;
             font-weight: bold;
             margin: 0;
+            
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    text-overflow: ellipsis;
+   
         }
+        
+        .tour-location {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
 
 	.tour-price {
             font-size: 16px;
             margin-top: 10px;
+            color: red; /* 가격 텍스트 색상을 빨간색으로 변경 */            
         }
 
         

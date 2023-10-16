@@ -126,7 +126,15 @@ body{
     text-align: center; /* 텍스트 정렬 설정 */
     display: inline-block; /* 인라인 블록 요소로 표시 */
     width: 250px; /* 너비 설정 */
+    
+    
+    height: 250px;
 }
+    .popular_tour {
+        margin-top: 40px; /* 마진 상단 간격을 줄입니다. */
+        text-align: center;
+        
+    }
 
 .recommend_city img {
     max-width: 100%; /* 이미지 최대 너비 설정 */

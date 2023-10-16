@@ -203,23 +203,31 @@
         <div class="t_flag">
         
           <div class="ukimg" id="country_name">
-            <img class="uk_flag" id="flag" src="image/img/uk.png">
-            <h2 class="ukname">영국</h2>
+			<a href="t_list_country.jsp?country_eng=uk&country=영국">
+            	<img class="uk_flag" id="flag" src="image/img/uk.png">
+            	<h2 class="ukname">영국</h2>
+			</a>            
           </div>
           
           <div class="fraimg" id="country_name">
-            <img class="fr_flag" id="flag" src="image/img/fra.png">
-            <h2 class="franame">프랑스</h2>
+			<a href="t_list_country.jsp?country_eng=france&country=프랑스">
+            	<img class="fr_flag" id="flag" src="image/img/fra.png">
+            	<h2 class="franame">프랑스</h2>
+			</a>
           </div>
 
           <div class="spaimg" id="country_name">
-            <img class="es_flag" id="flag" src="image/img/spain.png">
-            <h2 class="spaname">스페인</h2>
+          	<a href="t_list_country.jsp?country_eng=spain&country=스페인">
+            	<img class="es_flag" id="flag" src="image/img/spain.png">
+            	<h2 class="spaname">스페인</h2>
+            </a>
           </div>
           
           <div class="ityimg" id="country_name">
-            <img class="ita_flag" id="flag" src="image/img/ity.png">
-            <h2 class="ityname">이탈리아</h2>
+          	<a href="t_list_country.jsp?country_eng=italia&country=이탈리아">
+            	<img class="ita_flag" id="flag" src="image/img/ity.png">
+            	<h2 class="ityname">이탈리아</h2>
+            </a>
           </div>
 
         </div>
@@ -234,31 +242,24 @@
 
 					<div name="test">
 						<!-- 배너 사진 -->
-
+					
 						<% 
 						/*  */
 						ArrayList<t_getset> a2 = id.t1();
 						/*  */
 							for (int i = 0; i < a2.size(); i++) {
 									t_getset t = a2.get(i);
-									if (t.getT_id().equals("f_p_tour") == true) {
+									if (t.getT_id().equals("p_e_tour") == true) {
 						%>
-
+					
 						<div class="slidetext fade">
-							<img alt="" src="<%=t.getT_logo()%>">
+							<a href="t_info.jsp?t_id=p_e_tour">
+								<img alt="1" src="<%=t.getT_logo()%>">
+							</a>
 						</div>
-				<% } } %>
+						<% } } %>
 				
-						<%
-							for (int i = 0; i < a2.size(); i++) {
-									t_getset t = a2.get(i);
-									if (t.getT_id().equals("l_b_tour1") == true) {
-						%>
 
-						<div class="slidetext fade">
-							<img alt="3" src="<%=t.getT_logo()%>">
-						</div>
-				<% } } %>
 
 						<%
 							for (int i = 0; i < a2.size(); i++) {
@@ -267,7 +268,9 @@
 						%>
 
 						<div class="slidetext fade">
-							<img alt="" src="<%=t.getT_logo()%>">
+							<a href="t_info.jsp?t_id=r_v_tour">
+								<img alt="2" src="<%=t.getT_logo()%>">
+							</a>
 						</div>
 				<% } } %>
 
@@ -278,7 +281,9 @@
 						%>
 
 						<div class="slidetext fade">
-							<img alt="2" src="<%=t.getT_logo()%>">
+							<a href="t_info.jsp?t_id=m_g_tour1">
+								<img alt="3" src="<%=t.getT_logo()%>">
+							</a>
 						</div>
 				<% } } %>
 					</div>
@@ -286,8 +291,8 @@
 				</div>
 			</div>
 				
-				<div>
-				<h1 style="text-align: center;">인기 투어</h1>
+				<div class="popular_tour">
+					<h1 style="text-align: center;">인기 투어</h1>
 				</div>
 				
 			<div class="recommend_city" >
@@ -304,9 +309,9 @@
 							alt="추천도시 1">
 					</div>
 					<div  style="text-overflow: ellipsis;">
-					<h3 class="rocommend_1_title">
+						<h3 class="rocommend_1_title">
 						<%=t.getT_name()%>
-					</h3>
+						</h3>
 					</div>
 					<div class="recommend_price" >
 					 	₩ <%=t.getT_price()%>

@@ -128,11 +128,27 @@ body {
         margin-left: auto;
         padding-top: 50px;
         }
+        /* t_list_country  */
+        .t_country_div{
+		height: 150px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 50px;
+        }
+        
+        /*  */
         .list_title{
         margin-top: 30px;
         margin-bottom: 30px;
         text-align: center;
         }
+        /*t_list_country  */
+        .t_country{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        }
+        /*  */
         
         .tour_location_div{
 			margin-top: 20px;
