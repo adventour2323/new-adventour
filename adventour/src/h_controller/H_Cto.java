@@ -66,8 +66,8 @@ public class H_Cto extends HttpServlet {
         	        System.out.println("한글확인 1 끝");
              
         	    String hscsearch = hscinter.showdata(request, response);  
-        	    RequestDispatcher dispatcher2 = request.getRequestDispatcher("hotel_sc2.jsp");
-        	    dispatcher2.forward(request, response);
+        	    RequestDispatcher dispatcher3 = request.getRequestDispatcher("hotel_sc2.jsp");
+        	    dispatcher3.forward(request, response);
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 

@@ -27,7 +27,9 @@ public class H_SCSch_DBselect implements h_conn_interface { //데이터베이스
         String h_roompeo = re.getParameter("sch_adult");
         String sch_minpri1 = re.getParameter("sch_minpri");
         String sch_maxpri1 = re.getParameter("sch_maxpri");
-        String h_roomtype = re.getParameter("h_type");
+        String h_room_bed = re.getParameter("h_type");
+        
+    
 
 
         int sch_minpri = 0;
@@ -59,11 +61,11 @@ public class H_SCSch_DBselect implements h_conn_interface { //데이터베이스
         System.out.println(h_roompeo);
         System.out.println(sch_minpri1);
         System.out.println(sch_maxpri1);
-        System.out.println(h_roomtype);
+        System.out.println(h_room_bed);
 
         System.out.println("연결 1 끝");
  
-        List<H_getset> scsearch_list = sin_interface.h_scsch(country_ko, city_ko, h_indate, h_outdate, h_roompeo, sch_minpri, sch_maxpri, h_roomtype);  //select 결과 가져오기 위해 작성
+        List<H_getset> scsearch_list = sin_interface.h_scsch(country_ko, city_ko, h_indate, h_outdate, h_roompeo, sch_minpri, sch_maxpri, h_room_bed);  //select 결과 가져오기 위해 작성
         re.setAttribute("scsearch_list", scsearch_list);
         return null;
     }

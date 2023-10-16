@@ -123,8 +123,9 @@ if (session.getAttribute("id") == null) {
         if (list_scsearch1 != null && !list_scsearch1.isEmpty()) {
             for (int i = 0; i < list_scsearch1.size(); i++) {
                 H_getset h_sclist = list_scsearch1.get(i);
+             
         %>
-        <!-- 아래 코드는 데이터가 있는 경우에만 실행됩니다. -->
+        <!-- 아래 코드는 데이터가 있는 경우에만 실행 -->
         <div class="scdform<%= i + 1 %>">
          <div class="h_mainpic">
            <img class="h_img1" src="image/hotel/h_image/<%= h_sclist.getH_pho() %>" >
@@ -201,6 +202,7 @@ if (session.getAttribute("id") != null) {
         %>
         <div class="no-results">
             <h3>검색 결과가 없습니다.</h3>
+            <h3>검색 조건을 다시 설정해 주세요.</h3>
         </div>
         <%
         }
