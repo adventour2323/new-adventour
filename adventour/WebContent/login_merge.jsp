@@ -49,7 +49,9 @@ PreparedStatement pstmt = null;
 		/* response.sendRedirect("index_login_ing.jsp"); */
 		%>
 		<script>
-		history.back();
+		location.href = document.referrer;
+		/* history.back(); */
+		
 		</script>
 		<%
 			}else {
@@ -58,6 +60,7 @@ PreparedStatement pstmt = null;
 		alert("로그인 실패");
 		/* location.href= "login_merge_form.jsp" */
 		history.back();
+		
 		</script>
 		<%
 			}

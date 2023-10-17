@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tour List</title>
-    <link rel="stylesheet" type="text/css" href="./css/t_list.css">
+    <link rel="stylesheet" type="text/css" href="./css/t_list_country.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <style>
@@ -38,11 +38,33 @@
                 ArrayList<t_getset> a1 = id.t3(countryEng);
             %>
 			
-			<div class="t_country_div" style="margin: 20px, auto;">
-				<h1 class="t_country" style="margin-top: 30px; margin-bottom: 30px; text-align: center;" >
-					<%=country %>
-				</h1>
-			</div>
+<div class="t_country_div" style="text-align: center;">
+    <div style="display: inline-block;">
+        <%
+        if ("영국".equals(country)) {
+        %>
+            <img alt="영국" src="./image/tour/ukflag.png" height="30px">
+        <%
+        } else if ("프랑스".equals(country)) {
+        %>
+            <img alt="프랑스" src="./image/tour/frflag.png" height="30px">
+        <%
+        } else if ("스페인".equals(country)) {
+        %>
+            <img alt="스페인" src="./image/tour/esflag.png" height="30px">
+        <%
+        } else if ("이탈리아".equals(country)) {
+        %>
+            <img alt="이탈리아" src="./image/tour/itaflag.png" height="30px">
+        <%
+        }
+        %>
+    </div>
+    <h1 class="t_country" style="display: inline-block; ">
+        <%=country %>
+    </h1>
+</div>
+
 			<!--  -->
 	
 	<div class="country_list" >
@@ -69,7 +91,7 @@
 			<div class="tour-container">
             <% for (t_getset g : a1) { %>
             
-                            <div class="tour-item">
+			<div class="tour-item">
                 <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
                 	<div class="tour-img">
                         <img src="<%=g.getT_img1()%>" alt="img<%=g.getT_name() %>">                    

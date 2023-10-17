@@ -14,8 +14,24 @@ public class g_getset {
 	String gender;
 	String year;
 	String g_introduce;
+	
+	String g_country_eng;
+	
+	
 	   
 
+	/**
+	 * @return the g_country_eng
+	 */
+	public String getG_country_eng() {
+		return g_country_eng;
+	}
+	/**
+	 * @param g_country_eng the g_country_eng to set
+	 */
+	public void setG_country_eng(String g_country_eng) {
+		this.g_country_eng = g_country_eng;
+	}
 	public String getYear() {
 		return year;
 	}

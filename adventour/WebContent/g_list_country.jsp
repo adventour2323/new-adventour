@@ -9,7 +9,7 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="./css/tour_g_list.css">  
+        <link rel="stylesheet" type="text/css" href="./css/tour_g_list_country.css">  
         <script src="./js/jquery-3.6.0.min.js"></script>
         <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
         
@@ -32,13 +32,19 @@ border: none;
 	
 	<jsp:useBean id="id" class="adventour.g_list_print">
 		<%	
+		String country_eng = request.getParameter("g_country_eng");
+        String country = request.getParameter("country");
+			ArrayList<g_getset> a1 = id.g3(country_eng);
+		%> 
+<%-- 		<%	
 			ArrayList<g_getset> a1 = id.g1();
-		%>
+		%> --%>
         
       <div class="content"  > <!-- body 전체  -->
 
 		<div class="g_title">
-			<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
+			<!-- <h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1> -->
+			<h1 style='text-align: center; margin-bottom: 30px;'><%= country %></h1>
 		</div>      
 <div style="display: flex; text-align: center; margin-bottom: 10px; "> <!-- 표 묶음  -->
 
