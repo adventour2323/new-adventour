@@ -1,0 +1,364 @@
+@font-face {
+	font-family: 'Pretendard-Regular';
+	src:
+		url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@
+keyframes blink-effect { 50% {
+	opacity: 0;
+}
+
+}
+@
+color-change {
+	background-color: yellow;
+}
+
+* {
+	font-family: 'Pretendard-Regular', sans-serif;
+	cursor: pointer;
+}
+
+body {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	width: 1903px;
+	max-height:1850px;
+	min-height: 800px;
+}
+
+.moveh {
+	background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+	color: white !important; /* 글자색을 원하는 색상으로 설정 */
+}
+
+.pagename { /*헤더에 현재페이지 표시*/
+	width: 140px;
+	height: 140px;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	margin-left: 0px;
+	float: left;
+}
+
+.pagename1 { /*검색창 메뉴 위  글씨*/
+	float: left;
+	margin-left: 210px;
+	font-size: 45px;
+	/* color: rgb(20, 3, 78);*/
+	text-align: center;
+}
+
+/*----------------------------------------content---------------------------*/
+.content {
+	width: 1100px;
+	max-height:1850px;
+	min-height: 800px;
+	margin-top: -820px;
+	margin-left: 400px;
+}
+
+/*----------------------------------------nav-------------------------*/
+/*오른쪽 버튼네비*/
+.h_map {
+	position: fixed;
+	top: 180px;
+	right: 100px;
+	width: 290px;
+	height: 290px;
+	border: solid 1px;
+}
+
+.rinav {
+	position: fixed;
+	top: 500px;
+	right: 250px;
+	width: 150px;
+	height: 250px;
+}
+
+.eur, .cart, .pay {
+	width: 120px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-width: 1px;
+	border-radius: 5px;
+	background-color: #555;
+	color: white;
+}
+
+.eur:hover {
+	background-color: #111;
+}
+
+.cart:hover {
+	background-color: #111;
+}
+
+.pay:hover {
+	background-color: #111;
+}
+
+/*--------------------------------------sch nav 검색창 네비---------------------------*/
+/* 왼쪽 검색네비*/
+.schnav {
+	font-weight: bold;
+	width: 240px;
+	height: 750px;
+	border-style: solid;
+	border-width: 1.5px;
+	margin-left: 160px;
+	margin-top: 70px;
+}
+
+.sch1 {
+	width: 200px;
+	height: 70px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+.sch_title {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 18px;
+	padding: 0px;
+}
+
+.sch_country, .sch_city, #sch_indate, #sch_outdate {
+	width: 190px;
+	height: 30px;
+	float: left;
+	margin-left: 0px;
+	margin-top: 10px;
+	padding-left: 10px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.sch12 {
+	width: 200px;
+	height: 70px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+.sch123 {
+	width: 200px;
+	height: 90px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.sch_adult { /*sch_city*/
+	width: 80px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 10px;
+	padding-left: 10px;
+	color: rgb(20, 3, 78);
+}
+
+.sch_minpri, .sch_maxpri {
+	width: 70px;
+	height: 30px;
+	margin-left: 3px;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.h_twin {
+	margin-top: 15px;
+}
+.sch_title checkbox{
+ accent-color: purple;
+}
+
+.sch_btn {
+	width: 80px;
+	height: 30px;
+	margin-left: 80px;
+	margin-top: 30px;
+	border-radius: 5px;
+	background-color: #555;
+	color: white;
+}
+
+.sch_btn:hover, .h_mapbtn:hover {
+	background-color: #111;
+}
+/*--------------------------------------검색내용 보여줌----------------------------*/
+.h_searching_info{
+	width: 1090px;
+	height: 100px;
+	background-color: yellow;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+/*-------------------------------------스케쥴 티켓 내용----------------------------*/
+.scdform1 {
+	border-style: dashed;
+	width: 1000px;
+	height: 250px;
+	margin-top: -180px;
+	margin-left: -1060px;
+	/* color: rgb(20, 3, 78);*/
+}
+
+.scdform2, .scdform3, .scdform4, .scdform5, .scdform6 {
+	border-style: dashed;
+	width: 1000px;
+	height: 250px;
+	margin-top: 50px;
+	margin-left: -1060px;
+
+	/* color: rgb(20, 3, 78);*/
+}
+/*메인 사진*/
+.h_mainpic {
+	width: 230px;
+	height: 230px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.h_img1 {
+	width: 230px;
+	height: 230px;
+}
+/*티켓 안 정보란 이름등*/
+.h_tiinfo {
+	width: 600px;
+	height: 200px;
+	margin-top: -200px;
+	margin-left: 280px;
+}
+/*호텔이름*/
+.h_name {
+	width: 600px;
+	height: 60px;
+}
+
+.h_tiname {
+	margin-top: 0px;
+	font-size: 26px;
+}
+
+.h_tinameko {
+	margin-top: 0px;
+}
+/*성급 , 별점*/
+.h_grade, .h_restar {
+	width: 500px;
+	height: 20px;
+}
+
+#grade_star {
+	width: 25px;
+	height: 25px;
+}
+
+.h_tigrade, .h_tirestar {
+	margin-top: 13px;
+}
+/*주소 & 지도보기*/
+.h_addr {
+	width: 500px;
+	height: 80px;
+	margin-top: 15px;
+}
+
+.h_tiaddr {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 500px;
+	height: 20px;
+}
+
+.h_mapbtn {
+	width: 80px;
+	height: 30px;
+	font-weight: 600;
+	border-radius: 5px;
+	margin-top: 10px;
+	background-color: #555;
+	color: white;
+}
+
+/*티켓가격 정보란*/
+.h_priinfo {
+	width: 150px;
+	height: 200px;
+	margin-left: 810px;
+	margin-top: -225px;
+}
+
+.h_prices {
+	width: 150px;
+	height: 40px;
+	margin-top: 50px;
+}
+
+.h_tiprice {
+	margin-top: 0px;
+}
+
+.selectTi {
+	width: 20px;
+	height: 20px;
+	margin-top: 110px;
+	margin-left: 70px;
+}
+
+.bbb {
+	margin-top: -24px;
+	margin-left: 100px;
+	font-size: 18px;
+}
+
+.beheart {
+	margin-top: -25px;
+	margin-left: 150px;
+	font-size: 28px;
+}
+
+.move_h {
+	width: 90px;
+	height: 40px;
+	background-color: #555;
+	color: white;
+	font-weight: 600;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 50px;
+}
+
+.move_h:hover {
+	color: white;
+	background-color: #111;
+}
+.no-results{
+	/*border:solid 1px;*/
+	text-align:center;
+	margin-top:300px;
+	margin-left:400px;
+	width: 300px;
+}
+
+/*------------------footer----------------------*/
+	#footer{
+
+	margin-top: 50px;
+	}
