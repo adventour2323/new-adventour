@@ -47,10 +47,16 @@ if (session.getAttribute("id") == null) {
 
 <form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post">
   <div class="schnav"> <!--검색 네비 = sch -->
-
+  
+    <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
+H_getset sch_country = null;
+if (list != null && !list.isEmpty()) {
+    sch_country = list.get(0);
+}
+%>
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required">
+      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= sch_country.getCountry_ko() %>">
     </div>
     
     <div class="sch1">
@@ -115,12 +121,7 @@ if (session.getAttribute("id") == null) {
 
 
     </div>
-    <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
-H_getset sch_country = null;
-if (list != null && !list.isEmpty()) {
-    sch_country = list.get(0);
-}
-%>
+
    
 <%
 

@@ -120,29 +120,29 @@ $(document).ready(function() {
 
 		      }
 		    }
-	  //현재의 이전 날짜를 선택하지 못하도록 설절
-	  function getCurrentDate() {
-	      var today = new Date();
-	      var year = today.getFullYear();
-	      var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
-	      var day = today.getDate();
-	      return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-	  }
-
-	  // 검색시 날짜 비교 및 안내 메시지 표시
-	  $('form[name="h_main_sch_form"]').on('submit', function(event) {
-	      var currentDate = getCurrentDate();
-	      var h_indate = $('#sch_indate').val() ;
-	      var h_outdate = $('#sch_outdate').val() ;
-
-	      if (h_indate < currentDate || h_outdate < currentDate) {
-	          alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
-	          event.preventDefault(); // 폼 제출을 중단합니다.
-	      } else if (h_indate > h_outdate) {
-	          alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
-	          event.preventDefault(); // 폼 제출을 중단합니다.
-	      }
-	  });
+//	  //현재의 이전 날짜를 선택하지 못하도록 설절
+//	  function getCurrentDate() {
+//	      var today = new Date();
+//	      var year = today.getFullYear();
+//	      var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
+//	      var day = today.getDate();
+//	      return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+//	  }
+//
+//	  // 검색시 날짜 비교 및 안내 메시지 표시
+//	  $('form[name="h_main_sch_form"]').on('submit', function(event) {
+//	      var currentDate = getCurrentDate();
+//	      var h_indate = $('#sch_indate').val() ;
+//	      var h_outdate = $('#sch_outdate').val() ;
+//
+//	      if (h_indate < currentDate || h_outdate < currentDate) {
+//	          alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
+//	          event.preventDefault(); // 폼 제출을 중단합니다.
+//	      } else if (h_indate > h_outdate) {
+//	          alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
+//	          event.preventDefault(); // 폼 제출을 중단합니다.
+//	      }
+//	  });
 
 	
 });

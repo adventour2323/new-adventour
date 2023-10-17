@@ -66,10 +66,11 @@ a,p{
 	width: 560px;
 	height: 25px;
 	margin-bottom: 55px;
-	margin-right: 270px;
+	margin-right: 100px;
 	float: right;
 	font-size: 14px;
 	font-weight: bolder;
+
 }
 .homeli {
 	margin-top: 10px;
@@ -83,6 +84,7 @@ a,p{
 	margin-right: 10px;
 	text-align: center;
 	float: right;
+
 }
 
 .home1 {
@@ -108,11 +110,13 @@ a,p{
 	display: flex;
 	border: solid black;
 	border-width: 0px 0px 1px 0px; 
+
 }
 
 .menuli {
-	width: 1903px;
-	margin-left: 480px;
+	width: 750px;
+	margin-left: 575px;
+	
 }
 	
 /*메뉴 네비 스타일 및 폼.*/
