@@ -57,6 +57,8 @@
         color: #fff;
         border: none;
         padding: 10px 20px;
+        width: 200px;
+        font-size: 20px;
         border-radius: 3px;
         cursor: pointer;
     }
@@ -124,10 +126,15 @@ if (id != null) {
                 <tr>
                     <td>
                         <input type="submit" value="로그인">
-                        <button type="button" onclick="location.href='member_pjs.html' " class="register_button">회원 가입</button>
-                        <button type="button" onclick="location.href='g_member.html' " class="register_button">가이드 가입</button>
+                        
                         <!-- <br>가이드 회원가입을 하고 싶으면 <a href="./g_member.html" style="cursor: pointer;">이곳을 누르세요</a> -->
                     </td>
+                </tr>
+                <tr>
+                	<td>
+                	<button type="button" onclick="location.href='member_pjs.html' " class="register_button">회원 가입</button>
+                    <button type="button" onclick="location.href='g_member.html' " class="register_button">가이드 가입</button>
+                	</td>
                 </tr>
             </table>
         </form>
