@@ -7,7 +7,7 @@ function initMap(lat, lng) {
         // 만약 lat 및 lng 값이 존재한다면, 맵을 설정합니다
         map = new google.maps.Map(document.getElementById("map"), {
             center: { lat: lat, lng: lng }, // 전달된 lat 및 lng 값을 사용하여 중심을 설정합니다
-            zoom: 10, // 줌 레벨을 설정합니다
+            zoom: 15, // 줌 레벨을 설정합니다
         });
 
         // 전달된 lat 및 lng를 기반으로 마커를 추가합니다
@@ -36,3 +36,30 @@ function initMap(lat, lng) {
 function showMap(lat, lng) {
     initMap(lat, lng);
 }
+///////////////////////////////////h_sc 지도보기 클릭 끝///////////////////////
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

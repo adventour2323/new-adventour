@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
 
-        <script defer src="googlemap_API/index.js"></script>
+       <script defer src="js/map_index.js"></script> 
         <script
           defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
@@ -46,12 +46,12 @@ if (session.getAttribute("id") == null) {
 %>
 </header>
 
-
+<!--  검색창 부분 삭제  
   <div class="pagename">
     <h1 class="pagename1">HOTEL</h1>
-  </div><!--htitle-->
+  </div>
 
-  <div class="schnav"> <!--검색 네비 = sch -->
+  <div class="schnav"> 
 
    <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
@@ -77,7 +77,7 @@ if (session.getAttribute("id") == null) {
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
       성인 : <input type="text" class="sch_adult" class="sch_adult" placeholder="성인"></br>
-     <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
+
     </div>
 
     <div class="sch1">
@@ -98,14 +98,15 @@ if (session.getAttribute("id") == null) {
       <button class="sch_btn" type="button" class="sch_btn">검색하기</button>
     </div>
 
-    </div><!--schnav-->
-  
+    </div>
+ --> 
   <div class="content">
 
-    <div class="h_map"> <!--왼쪽 지도-->
+  <!-- 지도부분 삭제   
+  <div class="h_map">
       <div id="map" style="height: 290px;"> </div>
 
-    <div class="rinav"> <!--장바구니 등 -->
+    <div class="rinav"> 
 
       <button class="eur" type="button">고객센터</button>
       <button class="cart" type="button">장바구니 담기</button>
@@ -116,6 +117,7 @@ if (session.getAttribute("id") == null) {
 
   
     </div>
+   -->
 
     <div id="hotel_infos">
 <%  List<H_getset> top_list = (List<H_getset>) request.getAttribute("top_list"); 
@@ -156,19 +158,19 @@ if (top_list != null) {
 
 
     <div id="hotel_info_engname1">
-      <h2 class="hotel_info_engname" ><%= aaa.getH_name_eng()%></h2>
+      <h1 class="hotel_info_engname" ><%= aaa.getH_name_eng()%></h1>
     </div>
 
     <div id="hotel_info_koname">
-      <h3 class="hotel_info_koname">(<%= aaa.getH_name_ko()%>)</h3>
+      <h1 class="hotel_info_koname">(<%= aaa.getH_name_ko()%>)</h1>
     </div>
 
     <div id="hotel_info_addr">
-      <h4 class="hotel_info_addr"> 주소 : <%= aaa.getH_addr()%> </h4>
+      <h3 class="hotel_info_addr"> 주소 : <%= aaa.getH_addr()%> </h3>
     </div>
 
     <div id="hotel_info_tel">
-      <h4 class="hotel_info_tel"> TEL : <%= aaa.getH_tel()%> </h4>
+      <h3 class="hotel_info_tel"> TEL : <%= aaa.getH_tel()%> </h3>
     </div>
 
     <div id="hotel_info_options">
@@ -206,6 +208,14 @@ if (top_list != null) {
       
     
     </div><!--hotel_info_options-->
+    
+ <div id="map" style="width: 1100px; height: 500px;" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> 
+ <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)">
+  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
+  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
+ 
+ </div>
+ 
     
 <%	
 for (int ii = 0; i < top_list.size(); i++) {

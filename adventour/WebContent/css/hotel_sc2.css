@@ -198,14 +198,22 @@ body {
 .sch_btn:hover, .h_mapbtn:hover {
 	background-color: #111;
 }
+/*--------------------------------------검색내용 보여줌----------------------------*/
+.h_searching_info{
+	width: 1090px;
+	height: 100px;
+	background-color: yellow;
+	margin-left: 10px;
+	margin-top: 20px;
+}
 
 /*-------------------------------------스케쥴 티켓 내용----------------------------*/
 .scdform1 {
 	border-style: dashed;
 	width: 1000px;
 	height: 250px;
-	margin-top: 120px;
-	margin-left: 50px;
+	margin-top: -180px;
+	margin-left: -1060px;
 	/* color: rgb(20, 3, 78);*/
 }
 
@@ -214,7 +222,8 @@ body {
 	width: 1000px;
 	height: 250px;
 	margin-top: 50px;
-	margin-left: 50px;
+	margin-left: -1060px;
+
 	/* color: rgb(20, 3, 78);*/
 }
 /*메인 사진*/
@@ -290,7 +299,7 @@ body {
 
 /*티켓가격 정보란*/
 .h_priinfo {
-	width: 200px;
+	width: 150px;
 	height: 200px;
 	margin-left: 810px;
 	margin-top: -225px;
@@ -303,11 +312,7 @@ body {
 }
 
 .h_tiprice {
-	width: 140px;
-	height: 58px;
 	margin-top: 0px;
-	margin-left: 30px;
-
 }
 
 .selectTi {

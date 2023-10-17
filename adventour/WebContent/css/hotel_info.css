@@ -24,7 +24,7 @@
     margin-left: 0px;
     margin-bottom: 0px;
     width: 1903px;
-    height: 1000px;  
+    height: 2400px;  
   
   } 
   .moveh {
@@ -49,15 +49,6 @@
   }
 
 
- 
-  /*----------------------------------------content---------------------------*/
-  .content {
-    width: 1100px;
-    height: 1500px;
-    margin-top: -820px;
-    margin-left: 400px;
- 
-  }
 
 
   
@@ -193,26 +184,33 @@
 .sch_btn:hover, .h_mapbtn:hover {
 	background-color: #111;
 }
+ 
+  /*----------------------------------------content---------------------------*/
+  .content {
+    width: 1800px;
+    height: 1800px;
+ 
+ 
+  }
 
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
 #hotel_infos{/*내용전체 content div와 함께수정 해야 함.*/
-
-  width: 1000px;
-  height: 1500px;
-  margin-top: 120px;
-  margin-left: 50px;
+  width: 1800px;
+  height: 1800px;
 
 }
 
 #hotel_info_phos{
  
-  width: 950px;
+  width: 1900px;
   height: 400px;
   margin-top: 0px;
+  margin-left:0px;
   padding-top: 50px;
   padding-left: 50px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
 }
 
 #hotel_info_pho1{
@@ -251,7 +249,7 @@
   border:solid 1px;
   width: 180px;
   height: 180px;
-  margin-top: -385px;
+  margin-top: -390px;
   margin-left: 550px;
 }
 #hotel_info_pho5{
@@ -265,7 +263,7 @@
   border:solid 1px;
   width: 180px;
   height: 180px;
-  margin-top: -385px;
+  margin-top: -390px;
   margin-left: 755px;
 }
 #hotel_info_pho7{
@@ -286,12 +284,14 @@
 
   width: 800px;
   height: 35px;
+
   padding-top: 25px;
   padding-left: 50px;
  
 }
 #hotel_info_engname1{
 	 margin-top: 50px;
+	   margin-left:300px;
 }
 #hotel_info_koname{
  /* text-shadow: 1px 1px 1px rgba(0,0,0,0.22); */
@@ -299,6 +299,7 @@
   height: 40px;
   padding-left: 0px;
    margin-top: 15px;
+      margin-left:300px;
 }
 
 #hotel_info_addr{
@@ -306,6 +307,7 @@
   width: 800px;
   height: 30px;
   padding-left: 50px;
+  margin-left:250px;
 }
 
 #hotel_info_tel{
@@ -313,12 +315,14 @@
   width: 800px;
   height: 30px;
   padding-left: 50px;
+    margin-left:250px;
 }
 #hotel_info_options{
    
   width: 800px;
   height: 30px;
   padding-left: 50px;
+   margin-left:250px;
 }
 #hotel_info_breakfast,#hotel_info_pool,
 #hotel_info_rooftop{
@@ -336,10 +340,11 @@
 /*----------------룸 별 정보 ---------------------------------------- */
 #hotel_room_info{
  border:solid 1px;
-  width: 980px;
-  height: 300px;
+  width: 1090px;
+  height: 320px;
   margin-top: 70px;
   padding-left: 20px;
+  margin-left: 400px; 
 
 }
 #hotel_room_type{
@@ -406,7 +411,19 @@ border: solid 1px;
     background-color:#111;
 }
 
+#map{
+	margin-left: 400px;
+	margin-top: 30px;
+	background-color: yellow;
+	
 
+}
+
+/*푸터*/
+#footer{
+	
+	margin-top:300px;
+}
 
 
 
