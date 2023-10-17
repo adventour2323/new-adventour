@@ -79,7 +79,7 @@ if (list != null && !list.isEmpty()) {
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1">
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1" required="required">
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
@@ -114,8 +114,8 @@ if (list != null && !list.isEmpty()) {
     <div class="rinav"> <!--장바구니 등 -->
 
       <button class="eur" type="button">고객센터</button>
-      <button class="cart" type="button">장바구니 담기</button>
-      <button class="pay" type="button">결제하기</button>
+  <!-- <button class="cart" type="button">장바구니 담기</button>
+      <button class="pay" type="button">결제하기</button>-->
       
     </div>
 
@@ -183,10 +183,10 @@ if (list != null) {
 
         <div class="ti_select">  
 
-          <div class="selectTi1">   
+ <!--         <div class="selectTi1">   
            <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
            <p class="bbb">선택</p>
-          </div> 
+          </div>  --> 
     <%
 if (session.getAttribute("id") != null) {
 %>

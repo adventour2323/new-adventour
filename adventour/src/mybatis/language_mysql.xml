@@ -99,8 +99,8 @@ AND h_room.h_roomnum NOT IN (
   WHERE h_reserve.h_indate BETWEEN '${h_indate}' AND '${h_outdate}'
   OR h_reserve.h_outdate BETWEEN '${h_indate}' AND '${h_outdate}'
 )
-AND h_room.h_room_bed = '${h_room_bed}'
-AND h_room.h_roompeo >= ${h_roompeo}
+AND h_room.h_room_bed ='${h_room_bed}'
+AND h_room.h_roompeo >= ${h_roompeo1}
 AND h_room.h_roompri BETWEEN ${sch_minpri} AND ${sch_maxpri}
 GROUP BY h_hotel.h_name_eng;
 	</select>

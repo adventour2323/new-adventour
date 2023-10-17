@@ -17,8 +17,10 @@ public class H_Select_SCsch_conn {
 
     SqlSessionFactory dbconnect = DB_conn.getSqlSession();
 
-    public List<H_getset> h_scsch(String country_ko, String city_ko, String h_indate, String h_outdate, String h_roompeo,
-            int sch_minpri, int sch_maxpri, String h_room_bed) {
+    public List<H_getset> h_scsch(String country_ko, String city_ko, String h_indate, String h_outdate, String h_room_bed, int h_roompeo1,
+            int sch_minpri, int sch_maxpri) {
+    	
+
 
         System.out.println("연결확인" + city_ko);
 
@@ -29,17 +31,17 @@ public class H_Select_SCsch_conn {
         schsearch_list2.setCity_ko(city_ko);
         schsearch_list2.setH_indate(h_indate);
         schsearch_list2.setH_outdate(h_outdate);
-        schsearch_list2.setH_roompeo(h_roompeo);
+        schsearch_list2.setH_roompeo1(h_roompeo1);
         schsearch_list2.setSch_minpri(sch_minpri);
         schsearch_list2.setSch_maxpri(sch_maxpri);
-        schsearch_list2.setH_outdateM(h_room_bed);
+        schsearch_list2.setH_room_bed(h_room_bed);
 
         System.out.println("연결 2");
         System.out.println(country_ko);
         System.out.println(city_ko);
         System.out.println(h_indate);
         System.out.println(h_outdate);
-        System.out.println(h_roompeo);
+        System.out.println(h_roompeo1);
         System.out.println(sch_minpri);
         System.out.println(sch_maxpri);
         System.out.println(h_room_bed);

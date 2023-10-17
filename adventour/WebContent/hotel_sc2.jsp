@@ -43,37 +43,46 @@ if (session.getAttribute("id") == null) {
  <div class="pagename">
     <h1 class="pagename1">HOTEL</h1>
   </div><!--htitle-->
- 
+  
+      <% 
+        List<H_getset> list_scsearch1 = (List<H_getset>) request.getAttribute("scsearch_list");
+        
+        if (list_scsearch1 != null && !list_scsearch1.isEmpty()) {
+        	 for (int i = 0; i < 1; i++) {
+                 H_getset h_sclist1 = list_scsearch1.get(0);
+                 
+              
+        %> 
 
-<form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post">
+<form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post" >
   <div class="schnav"> <!--검색 네비 = sch -->
 
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required">
+      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= h_sclist1.getCountry_ko() %>">
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+      <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= h_sclist1.getCity_ko()%>">
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required">
- 
+   <!-- <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required" value="<%= h_sclist1.getH_indate() %>">  -->  
+     <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required" >
     </div>
 
     <div class="sch1">
       <h5 class="sch_title" >☆ 체크아웃</h5>
-      <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"> 
-
+   <!--    <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"  value="<%= h_sclist1.getH_outdate() %>">   -->  
+ <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required" >
     </div>
 
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1">
+      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1" >
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
@@ -98,8 +107,11 @@ if (session.getAttribute("id") == null) {
     </div>
 
     </div><!--schnav-->
+    <% 
+        	 }
+    %>
 </form>
-  
+
   <div class="content">
 
     <div class="h_map"> <!--왼쪽 지도-->
@@ -108,17 +120,16 @@ if (session.getAttribute("id") == null) {
     <div class="rinav"> <!--장바구니 등 -->
 
       <button class="eur" type="button">고객센터</button>
-      <button class="cart" type="button">장바구니 담기</button>
-      <button class="pay" type="button">결제하기</button>
+<!--       <button class="cart" type="button">장바구니 담기</button>
+      <button class="pay" type="button">결제하기</button> --> 
       
     </div>
 
 
+     </div>
 
-
-    </div>
           <% 
-        List<H_getset> list_scsearch1 = (List<H_getset>) request.getAttribute("scsearch_list");
+    
         
         if (list_scsearch1 != null && !list_scsearch1.isEmpty()) {
             for (int i = 0; i < list_scsearch1.size(); i++) {
@@ -205,6 +216,7 @@ if (session.getAttribute("id") != null) {
             <h3>검색 조건을 다시 설정해 주세요.</h3>
         </div>
         <%
+        }
         }
         %>
     </div>

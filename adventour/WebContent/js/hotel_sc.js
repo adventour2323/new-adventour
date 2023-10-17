@@ -41,48 +41,7 @@ $(document).ready(function() {
 	  $('.datepicker').datepicker();
 	});
 	
-//왼쪽 검색창 도전...
-//	$(".sch_btn").click(function(e) {
-//		  e.preventDefault(); // 폼의 기본 동작 방지
-//
-//		  // 입력된 검색어 및 검색 조건 가져오기
-//		  var sc_country = $(".sch_country").val();
-//		  var sc_city = $(".sch_city").val();
-//		  var sc_indate = $("#sch_indate").val();
-//		  var sc_outdate = $("#sch_outdate").val();
-//		  var sc_adult = $(".sch_adult").val();
-//		  var sc_minpri = $(".sch_minpri").val();
-//		  var sc_maxpri = $(".sch_maxpri").val();
-//		  var sc_twin = $(".h_twin").val();
-//		  var sc_double = $(".h_double").val();
-//		  var sc_queen = $(".h_queen").val();
-//
-//		  // AJAX 요청 보내기
-//		  $.ajax({
-//		    type: "GET",
-//		    url: "hotel_sc.jsp",
-//		    data: {
-//		      c_sch_country: sc_country,
-//		      c_sch_city: sc_city,
-//		      c_sch_indate: sc_indate,
-//		      c_sch_outdate: sc_outdate,
-//		      c_sch_adult: sc_adult,
-//		      c_sch_minpri: sc_minpri,
-//		      c_sch_maxpri: sc_maxpri,
-//		      c_sch_twin: sc_twin,
-//		      c_sch_double: sc_double,
-//		      c_sch_queen: sc_queen
-//		    },
-//		    success: function(data) {
-//		      // 서버에서 받은 HTML 데이터를 결과 테이블의 tbody에 추가
-//		    	  $(".scdform").html(data);
-//		    },
-//		    error: function() {
-//		      alert("검색 중 오류가 발생했습니다.");
-//		    }
-//		  });
-//		});
-//	
+	
 // 숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".h_tiprice");
 
@@ -143,6 +102,87 @@ $(document).ready(function() {
 //	          event.preventDefault(); // 폼 제출을 중단합니다.
 //	      }
 //	  });
-
+	  
 	
+	  function setCookie(name, value, days) {
+	      var expires = "";
+	      if (days) {
+	          var date = new Date();
+	          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	          expires = "; expires=" + date.toUTCString();
+	      }
+	      document.cookie = name + "=" + value + expires + "; path=/";
+	  }
+
+	  function getCookie(name) {
+	      var nameEQ = name + "=";
+	      var cookies = document.cookie.split(';');
+	      for (var i = 0; i < cookies.length; i++) {
+	          var cookie = cookies[i];
+	          while (cookie.charAt(0) == ' ') {
+	              cookie = cookie.substring(1, cookie.length);
+	          }
+	          if (cookie.indexOf(nameEQ) == 0) {
+	              return cookie.substring(nameEQ.length, cookie.length);
+	          }
+	      }
+	      return null;
+	  }
+
+	  function saveFormValues() {
+	      var schCountry = document.querySelector(".sch_country").value;
+	      var schCity = document.querySelector(".sch_city").value;
+	      var schIndate = document.querySelector("#sch_indate").value;
+	      var schOutdate = document.querySelector("#sch_outdate").value;
+	      var schAdult = document.querySelector(".sch_adult").value;
+	      var schMinpri = document.querySelector(".sch_minpri").value;
+	      var schMaxpri = document.querySelector(".sch_maxpri").value;
+
+	      setCookie("schCountry", schCountry, 30); // 저장 기간은 일수로 지정할 수 있습니다.
+	      setCookie("schCity", schCity, 30);
+	      setCookie("schIndate", schIndate, 30);
+	      setCookie("schOutdate", schOutdate, 30);
+	      setCookie("schAdult", schAdult, 30);
+	      setCookie("schMinpri", schMinpri, 30);
+	      setCookie("schMaxpri", schMaxpri, 30);
+	  }
+
+	  // 페이지가 로드될 때 쿠키에서 값을 불러옵니다.
+	
+	      document.querySelector(".sch_country").value = getCookie("schCountry") || "";
+	      document.querySelector(".sch_city").value = getCookie("schCity") || "";
+	      document.querySelector("#sch_indate").value = getCookie("schIndate") || "";
+	      document.querySelector("#sch_outdate").value = getCookie("schOutdate") || "";
+	      document.querySelector(".sch_adult").value = getCookie("schAdult") || "";
+	      document.querySelector(".sch_minpri").value = getCookie("schMinpri") || "";
+	      document.querySelector(".sch_maxpri").value = getCookie("schMaxpri") || "";
+	  
+	      
+	      // "sch_btn" 버튼을 클릭했을 때 쿠키를 JSP 페이지로 전달
+	      $(".sch_btn").on("click", function() {
+	        var schCountry = getCookie("schCountry") || "";
+	        var schCity = getCookie("schCity") || "";
+	        var schIndate = getCookie("schIndate") || "";
+	        var schOutdate = getCookie("schOutdate") || "";
+	        var schAdult = getCookie("schAdult") || "";
+	        var schMinpri = getCookie("schMinpri") || "";
+	        var schMaxpri = getCookie("schMaxpri") || "";
+
+	        // 쿼리 매개변수를 포함한 URL을 만듭니다.
+	        var jspPageUrl = "hotel_sc2.jsp";
+	        var queryParams = "schCountry=" + schCountry +
+	                          "&schCity=" + schCity +
+	                          "&schIndate=" + schIndate +
+	                          "&schOutdate=" + schOutdate +
+	                          "&schAdult=" + schAdult +
+	                          "&schMinpri=" + schMinpri +
+	                          "&schMaxpri=" + schMaxpri;
+
+	        // JSP 페이지 URL에 쿼리 매개변수를 추가합니다.
+	        jspPageUrl += "?" + queryParams;
+
+	        // 쿠키 값을 포함한 URL로 리디렉션합니다.
+	        window.location.href = jspPageUrl;
+
+	      });
 });

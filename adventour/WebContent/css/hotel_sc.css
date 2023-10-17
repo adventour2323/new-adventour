@@ -290,7 +290,7 @@ body {
 
 /*티켓가격 정보란*/
 .h_priinfo {
-	width: 150px;
+	width: 200px;
 	height: 200px;
 	margin-left: 810px;
 	margin-top: -225px;
@@ -303,7 +303,11 @@ body {
 }
 
 .h_tiprice {
+	width: 140px;
+	height: 58px;
 	margin-top: 0px;
+	margin-left: 30px;
+
 }
 
 .selectTi {
