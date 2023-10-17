@@ -209,7 +209,7 @@ if (top_list != null) {
     
     </div><!--hotel_info_options-->
     
- <div id="map" style="width: 1100px; height: 500px;" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> 
+ <div id="map" style="width: 1105px; height: 500px;" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> 
  <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)">
   <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
   <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />

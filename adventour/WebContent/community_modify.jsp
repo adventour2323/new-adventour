@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    <%@ page import="java.util.*"%>
 <%@ page import="adventour.C_getset" %>
 <%@ page import="adventour.C_dbsave" %><!-- 변수 get set들이 있는 자바파일 -->
 
@@ -31,7 +32,7 @@ if (session.getAttribute("id") == null) {
 }
 %>
 
-<div class="c_cont_main">
+  <div class="c_cont_main">
     <h2>게시글 내용</h2>
     
     <% 
@@ -66,29 +67,28 @@ if (session.getAttribute("id") == null) {
     </div><!--c_info_div-->
 
     <div class="c_title_div" name="c_title_div">
-      제목 : <input type="text" class="c_title" name="c_title" value="<%= obj.getC_title() %>" readonly>
+      제목 : <input type="text" class="c_title" name="c_title" value="<%= obj.getC_title() %>" >
     </div><!--c_title_div-->
 
     <div class="c_city_div" name="c_city_div">
-      <div class="c_country" name="c_country">
-        나라 :  <% String country = obj.getCountry(); %>
-        <% if ("uk".equals(country)) { %>
-          영국
-        <% } else if ("ity".equals(country)) { %>
-          이탈리아
-        <% } else if ("fra".equals(country)) { %>
-          프랑스
-        <% } else if ("spa".equals(country)) { %>
-          스페인
-        <% } else { %>
-          다른 나라
-        <% } %>
-      </div>
+<% String country = obj.getCountry(); %>
+    <% if ("uk".equals(country)) { %>
+      영국
+    <% } else if ("ity".equals(country)) { %>
+      이탈리아
+    <% } else if ("fra".equals(country)) { %>
+      프랑스
+    <% } else if ("spa".equals(country)) { %>
+      스페인
+    <% } else { %>
+      다른 나라
+    <% } %>
+    </div>
   
       <div class="c_city" name="c_city">
-        <% String city = obj.getCity(); %>
+       <% String city = obj.getCity(); %>
    
-        <% if ("lon".equals(city)) { %>
+    <% if ("lon".equals(city)) { %>
           런던
         <% } else if ("liv".equals(city)) { %>
           리버풀
@@ -115,34 +115,60 @@ if (session.getAttribute("id") == null) {
         <% } else { %>
           다른 도시
         <% } %>
-      </div><!--c_city_div-->
-    </div>
+      <div class="c_country" name="c_country">
+        <option value="<%= obj.getCountry() %>"><%= country %></option>
+         <option value="uk">영국</option>
+         <option value="ity">이탈리아</option>
+         <option value="fra">프랑스</option>
+         <option value="spa">스페인</option>
+      </select>
+      <select  class="c_city" name="c_city">
+        <option value="<%= obj.getCity() %>"><%= city %></option>
+        <option value="lond">런던</option>
+        <option value="liv">리버풀</option>
+        <option value="eden">에든버러</option>
+        <option value="roma">로마</option>
+        <option value="vene">베네치아</option>
+        <option value="mila">밀라노</option>
+        <option value="paris">파리</option>
+        <option value="mars">마르세유</option>
+        <option value="mona">모나코</option>
+        <option value="mard">마드리드</option>
+        <option value="barc">바르셀로나</option>
+        <option value="sev">세비야</option>
+      </select>
+    </div><!--c_city_div-->
+      
 
     <div class="c_con_div" name="c_con_div">
       <textarea class="c_con" name="c_con" readonly><%= obj.getC_cont() %></textarea>
     </div><!--c_con_div-->
 
-    <div class="c_btns">
+<div class="c_btns">
       <a href="community_list2.jsp">
-        <input type="button" class="c_to_listbtn" name="c_to_listbtn" href="community_list2.jsp" value="목   록"/>
+      <input type="button" class="c_to_listbtn" name="c_to_listbtn" href="community_list2.jsp" value="목   록"/>
       </a>
-      <div class="c_btns2">   
+ <div class="c_btns2">   
         <%
         if (session.getAttribute("id") != null && session.getAttribute("id").equals(obj.getM_id())) {
-        %>
-        <a href="community_modify.jsp">
-          <input type="button" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
-        </a> 
-        <input type="button" class="c_to_deletebtn" name="c_to_deletebtnn" value="삭  제" />
-      </div> 
-      <%
-      } 
-      %>
-    </div>
+            
+%>
+     <a href="community_modify.jsp">
+      <input type="button" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
+     </a> 
+    
+    
+      <input type="button" class="c_to_deletebtn" name="c_to_deletebtnn" value="삭  제" />
+  </div> 
+<%
+} 
+%>
+</div>
+  </div><!--c_city_div-->
   </div><!--c_cont_main-->
-<footer>
+
+  <!-- footer.html import-->
   <div id="footer"></div>
-</footer>
 
 </body>
 

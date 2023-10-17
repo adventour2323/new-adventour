@@ -29,7 +29,7 @@ body {
 .c_cont_main{ /*작성 폼전체*/
   border:solid 1px rgb(20, 3, 78);
   width:  1050px;
-  height: 800px;
+  height: 900px;
   margin-left: 425px;
   margin-top: 60px;
   margin-bottom: 100px;
@@ -80,7 +80,6 @@ body {
   height: 20px;
   margin-left: 60px;
   margin-top: -15px;
-
 }
 .c_num_div{/*글번호*/
 
@@ -130,7 +129,7 @@ body {
  
   width:  900px;
   height: 400px;
-  margin-left: 90px;
+  margin-left: 75px;
   margin-top: 10px;
 }
 .c_con{/*글내용 작성*/
@@ -180,7 +179,7 @@ body {
  
   width:  70px;
   height: 20px;
-  margin-left: 480px;
+  margin-left: 420px;
   margin-top: 30px;
 }
 .c_to_modifybtn{
@@ -196,8 +195,6 @@ body {
 }
 
 #footer{
-	margin-top: 150px;
-	margin-left: -425px;
-	margin-bottom:-10px;
+	margin-top: 100px;
 }
 

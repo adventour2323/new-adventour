@@ -202,12 +202,12 @@
 
 #hotel_info_phos{
  
-  width: 1900px;
-  height: 400px;
+  width: 1780px;
+  height: 450px;
   margin-top: 0px;
   margin-left:0px;
   padding-top: 50px;
-  padding-left: 50px;
+  padding-left: 125px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
@@ -215,8 +215,8 @@
 
 #hotel_info_pho1{
   border:solid 1px;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
  
@@ -227,56 +227,76 @@
   transform: scale(1.6);
 }
 .h_info_title_pho1{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 #hotel_info_pho2{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: -325px;
-  margin-left: 350px;
+  width: 400px;
+  height: 400px;
+  margin-top: -400px;
+  margin-left: 420px;
   
+}
+.h_info_title_pho2{
+  width: 400px;
+  height: 400px;
 }
 #hotel_info_pho3{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: 25px;
-  margin-left: 350px;
+  width: 400px;
+  height: 200px;
+  margin-top: -400px;
+  margin-left: 840px;
+}
+.h_info_title_pho3{
+	 width: 400px;
+  height: 200px;
 }
 #hotel_info_pho4{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: -390px;
-  margin-left: 550px;
+  width: 190px;
+  height: 190px;
+  margin-top: 10px;
+  margin-left: 840px;
+}
+.h_info_title_pho4{
+	 width: 190px;
+  height: 190px;
 }
 #hotel_info_pho5{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: 25px;
-  margin-left: 550px;
+ 	 width: 190px;
+  height: 190px;
+  margin-top: -190px;
+  margin-left: 1050px;
+}
+.h_info_title_pho5{
+		 width: 190px;
+  height: 190px;
 }
 #hotel_info_pho6{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: -390px;
-  margin-left: 755px;
+  width: 400px;
+  height: 200px;
+  margin-top: -405px;
+  margin-left: 1260px;
+}
+.h_info_title_pho6{
+  width: 400px;
+  height: 200px;
 }
 #hotel_info_pho7{
   border:solid 1px;
-  width: 180px;
-  height: 180px;
-  margin-top: 25px;
-  margin-left: 755px;
+  width: 400px;
+  height: 190px;
+  margin-top: 10px;
+  margin-left: 1260px;
 }
-.h_info_title_pho2,.h_info_title_pho3,.h_info_title_pho4,
-.h_info_title_pho5,.h_info_title_pho6,.h_info_title_pho7{
-  width: 180px;
-  height: 180px;
+
+.h_info_title_pho7{
+  width: 400px;
+  height: 190px;
   
 }
 /*---------------사진 밑 정보---------------------------------*/
@@ -343,7 +363,7 @@
   width: 1090px;
   height: 320px;
   margin-top: 70px;
-  padding-left: 20px;
+  padding-left: 50px;
   margin-left: 400px; 
 
 }
@@ -369,7 +389,7 @@ border: solid 1px;
   width: 300px;
   height: 250px;
   margin-top: -230px;
-  margin-left: 275px; 
+  margin-left: 300px; 
 }
 #h_room_options1 h4{
  
@@ -414,7 +434,7 @@ border: solid 1px;
 #map{
 	margin-left: 400px;
 	margin-top: 30px;
-	background-color: yellow;
+	border: solid 1px;
 	
 
 }

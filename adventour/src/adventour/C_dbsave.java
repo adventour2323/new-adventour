@@ -124,5 +124,47 @@ public class C_dbsave {
         }
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     }
+    public void dbupdate(String c_num, String m_id, String country, String city, String c_title, String c_cont, String c_pho1, String c_pho2, String c_pho3, String c_pho4, String c_pho5) throws Exception {
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            
+            String command = "UPDATE community SET " +
+                            "country = '" + country + "', " +
+                            "city = '" + city + "', " +
+                            "c_title = '" + c_title + "', " +
+                            "c_cont = '" + c_cont + "', " +
+                            "c_pho1 = '" + c_pho1 + "', " +
+                            "c_pho2 = '" + c_pho2 + "', " +
+                            "c_pho3 = '" + c_pho3 + "', " +
+                            "c_pho4 = '" + c_pho4 + "', " +
+                            "c_pho5 = '" + c_pho5 + "' " +
+                            "WHERE c_num = " + c_num;
+            
+            int rowNum = stmt.executeUpdate(command);
+            if (rowNum < 1) {
+                throw new Exception("데이터를 DB에 업데이트할 수 없습니다.");
+            }
+        } finally {
+            closecon();
+        }
+    }
+    public void dbDelete(String c_num) throws Exception {
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            
+            String command = "DELETE FROM community WHERE c_num = " + c_num;
+            
+            int rowNum = stmt.executeUpdate(command);
+            if (rowNum < 1) {
+                throw new Exception("데이터를 DB에서 삭제할 수 없습니다.");
+            }
+        } finally {
+            closecon();
+        }
+    }
 
 }
