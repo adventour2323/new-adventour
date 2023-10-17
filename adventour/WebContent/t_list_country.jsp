@@ -20,9 +20,15 @@
 </head>
 
 <body>
-    <header>
-        <jsp:include page="header.html"></jsp:include>
-    </header>
+		<header>
+			<% if (session.getAttribute("id") == null) { %>
+    		<!-- header.html import -->
+    		<!-- <div id="header"></div> -->
+    		<jsp:include page="header.html"></jsp:include>
+			<% } else { %>
+    		<jsp:include page="header_login.jsp"></jsp:include>
+			<% } %>
+		</header>
 
     <div class="tour_contant">
         <jsp:useBean id="id" class="adventour.g_list_print">
