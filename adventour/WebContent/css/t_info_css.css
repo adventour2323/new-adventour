@@ -12,6 +12,10 @@ height: 1300px;
   min-height: 100vh;
   padding: 50px 0; /* 상단과 하단에 여백을 추가합니다. */
 }
+     .movet { /* tab 색 유지  */
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+    color: white!important; /* 글자색을 원하는 색상으로 설정 */
+}
 	.top_area{
 	display: flex;
 	width: 850px;

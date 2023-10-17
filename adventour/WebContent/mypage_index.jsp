@@ -9,10 +9,22 @@
     <title>my page/main page</title>
 <body>
 
-	<header>
-		<!-- header.html import-->
-    	<div id="header"></div>
-	</header>
+			<% if(session.getAttribute("id") == null) { %>
+    			<script>
+        			alert("로그인이 필요합니다.");
+        			window.location.href = "login_merge_form.jsp";
+    			</script>
+			<% } %>
+					
+
+		<header>
+			<% if (session.getAttribute("id") == null) { %>
+    		<!-- header.html import -->
+    		<jsp:include page="header.html"></jsp:include>
+			<% } else { %>
+    		<jsp:include page="header_login.jsp"></jsp:include>
+			<% } %>
+		</header>
 
     <!-- 메인 컨텐츠 전체 박스 -->
     <div class="alMainB">
