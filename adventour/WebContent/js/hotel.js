@@ -218,5 +218,25 @@ imageClasses.forEach(function(className) { //마우스오버
          event.preventDefault(); // 폼 제출 차단
      }
  });
+//숫자에 콤마 찍기
+	var elements = document.querySelectorAll(".pack_pri");
+
+	if (elements) {
+	  elements.forEach(function(element) {
+	    // 요소에서 텍스트 내용을 가져옵니다.
+	    var text = element.textContent;
+
+	    // 콤마를 추가할 숫자 형식의 문자열을 만듭니다.
+	    var formattedText = addCommasToNumber(text);
+
+	    // 포맷된 문자열로 요소의 내용을 대체합니다.
+	    element.textContent = formattedText;
+	  });
+	}
+
+	// 세 자리마다 콤마를 추가하는 함수를 정의합니다.
+	function addCommasToNumber(numberString) {
+	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
 
 });

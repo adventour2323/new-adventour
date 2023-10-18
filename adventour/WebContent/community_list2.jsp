@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="adventour.C_getset" %>
-
+ <%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 
@@ -119,7 +119,28 @@ if (session.getAttribute("id") == null) {
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_num() %></a></td>
           <td class="c_list_title1"><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_title() %></a></td>
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getM_id() %></a></td>
-          <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_date() %></a></td>
+         
+<!-- 나머지 코드 -->
+
+<%
+// obj.getC_date()에서 받은 원래 날짜 문자열
+String originalDateStr = obj.getC_date();
+
+// SimpleDateFormat을 사용하여 원하는 형식으로 날짜 포맷
+SimpleDateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+SimpleDateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+try {
+  Date originalDate = originalFormat.parse(originalDateStr);
+  String formattedDateStr = targetFormat.format(originalDate);
+%>
+<td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= formattedDateStr %></a></td>
+<%
+} catch (Exception e) {
+  e.printStackTrace();
+  // 오류 처리
+}
+%>
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= countryName %></a></td>
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= cityName %></a></td>
         </tr>

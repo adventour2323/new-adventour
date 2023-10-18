@@ -304,7 +304,7 @@
 
   width: 800px;
   height: 35px;
-
+ 
   padding-top: 25px;
   padding-left: 50px;
  
@@ -312,6 +312,7 @@
 #hotel_info_engname1{
 	 margin-top: 50px;
 	   margin-left:300px;
+	   font-size:30px;
 }
 #hotel_info_koname{
  /* text-shadow: 1px 1px 1px rgba(0,0,0,0.22); */
@@ -321,13 +322,22 @@
    margin-top: 15px;
       margin-left:300px;
 }
-
+#hotel_info_grade{
+  width: 800px;
+  height: 40px;
+  margin-left:300px;
+}
+.grade_star{
+	width: 30px;
+  height: 30px;
+}
 #hotel_info_addr{
  
   width: 800px;
   height: 30px;
   padding-left: 50px;
   margin-left:250px;
+  margin-top: 20px;
 }
 
 #hotel_info_tel{
@@ -336,6 +346,7 @@
   height: 30px;
   padding-left: 50px;
     margin-left:250px;
+    margin-top: 10px;
 }
 #hotel_info_options{
    
@@ -343,6 +354,7 @@
   height: 30px;
   padding-left: 50px;
    margin-left:250px;
+   margin-top: 10px;
 }
 #hotel_info_breakfast,#hotel_info_pool,
 #hotel_info_rooftop{
@@ -360,11 +372,11 @@
 /*----------------룸 별 정보 ---------------------------------------- */
 #hotel_room_info{
  border:solid 1px;
-  width: 1090px;
+  width: 900px;
   height: 320px;
   margin-top: 70px;
   padding-left: 50px;
-  margin-left: 400px; 
+  margin-left: 500px; 
 
 }
 #hotel_room_type{
@@ -432,19 +444,59 @@ border: solid 1px;
 }
 
 #map{
-	margin-left: 400px;
+	margin-left: 500px;
 	margin-top: 30px;
 	border: solid 1px;
 	
 
 }
 /*----------------------------------모달창 ---------------------------------------*/
-
-
-/*푸터*/
-#footer{
-	
-	margin-top:300px;
+.modal {
+  display: none; /* 모달창 숨겨 놓기 */
+  position: fixed;
+  z-index: 100; /* 모달창을 제일 앞에 두기 */
+  left: 50%; /* 화면 가로 중앙으로 이동 */
+  top: 50%; /* 화면 세로 중앙으로 이동 */
+  width: 800px; /* 고정된 너비 */
+  height: 800px; /* 고정된 높이 */
+  margin-left: -400px; /* 너비의 반만큼 왼쪽으로 이동하여 가운데 정렬 */
+  margin-top: -400px; /* 높이의 반만큼 위로 이동하여 가운데 정렬 */
+  overflow: auto; /* 스크롤 허용 auto */
+  cursor: pointer; /* 마우스 손가락 모양 */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* 모달창 이미지 */
+.modal_content {
+  position: absolute; /* 상대 위치에서 절대 위치로 변경 */
+  left: 50%; /* 가로 가운데 정렬 */
+  top: 50%; /* 세로 가운데 정렬 */
+  transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변형 */
+  width: 600px; /* 고정된 너비 */
+  height: 600px; /* 고정된 높이 */
+  border-radius: 10px;
+  animation-name: zoom;
+  animation-duration: 0.8s;
+}
 
+/* 닫기 버튼 꾸미기 */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 푸터 */
+#footer {
+  margin-top: 400px;
+}

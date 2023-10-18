@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     <%@ page import="java.util.*"%>
-
+<%@ page import="java.util.*, java.text.SimpleDateFormat"%>
     
 <!DOCTYPE html>
 <html>
@@ -97,7 +97,25 @@
       <td><%= obj.getC_num() %></td>
       <td class="c_list_title1"><%= obj.getC_title() %></td>
       <td><%= obj.getM_id() %></td>
-      <td><%= obj.getC_date() %></td>
+     <%
+// obj.getC_date()에서 받은 원래 날짜 문자열
+String originalDateStr = obj.getC_date();
+
+// SimpleDateFormat을 사용하여 원하는 형식으로 날짜 포맷
+SimpleDateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+SimpleDateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+try {
+  Date originalDate = originalFormat.parse(originalDateStr);
+  String formattedDateStr = targetFormat.format(originalDate);
+%>
+<td><%= formattedDateStr %></td>
+<%
+} catch (Exception e) {
+  e.printStackTrace();
+  // 오류 처리
+}
+%>
       <td><%= obj.getCountry() %></td>
       <td><%= obj.getCity() %></td>
     </tr>

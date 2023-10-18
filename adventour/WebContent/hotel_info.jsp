@@ -17,8 +17,7 @@
 
 
        <script defer src="js/map_index.js"></script> 
-        <script
-          defer
+        <script defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
         ></script>
         
@@ -136,22 +135,22 @@ if (top_list != null) {
         <img class="h_info_title_pho1" class="h_info_title_pho1" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
         </div>
         <div id="hotel_info_pho2">
-          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>"  onclick="window.open(this.src)">
+          <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
         </div>
         <div id="hotel_info_pho3">
-          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>"  onclick="window.open(this.src)">
+          <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>" >
         </div>
         <div id="hotel_info_pho4">
-          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>"  onclick="window.open(this.src)">
+          <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>"  >
         </div>
         <div id="hotel_info_pho5">
-          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>"  onclick="window.open(this.src)">
+          <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>"  >
         </div>
         <div id="hotel_info_pho6">
-          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>"  onclick="window.open(this.src)">
+          <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>"  >
         </div>
         <div id="hotel_info_pho7">
-          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" onclick="window.open(this.src)">
+          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" >
         </div>
       
     </div><!--hotel_info_phos-->
@@ -163,6 +162,17 @@ if (top_list != null) {
 
     <div id="hotel_info_koname">
       <h1 class="hotel_info_koname">(<%= aaa.getH_name_ko()%>)</h1>
+    </div>
+    
+    <div id="hotel_info_grade">
+       <%
+    int starCount = Integer.parseInt(aaa.getH_grade()); // 별 갯수 가져오기
+    for (int ii = 0; ii < starCount; ii++) {
+    %>
+    <img id="grade_star" src="image/hotel/h_image/star.png" alt="별 이미지">
+    <%
+    }
+    %>
     </div>
 
     <div id="hotel_info_addr">
@@ -176,46 +186,46 @@ if (top_list != null) {
     <div id="hotel_info_options">
 
       <div id="hotel_info_breakfast">
-             <h4 class="hotel_info_breakfast">   
+             <h3 class="hotel_info_breakfast">   
             조식 
             <% if (aaa.getH_breakfast().equals("y")) { %>
                 가능
             <% } else { %>
                 불가능
             <% } %>
-        </h4>
+        </h3>
     </div>
     <div id="hotel_info_pool">
-        <h4 class="hotel_info_pool">
+        <h3 class="hotel_info_pool">
             수영장 
             <% if (aaa.getH_pool().equals("y")) { %>
                 있음
             <% } else { %>
                 없음
             <% } %>
-        </h4>
+        </h3>
     </div>
     <div id="hotel_info_rooftop">
-        <h4 class="hotel_info_rooftop">
+        <h3 class="hotel_info_rooftop">
             루프탑 
             <% if (aaa.getH_rooftop().equals("y")) { %>
                 있음
             <% } else { %>
                 없음
             <% } %>
-        </h4>
+        </h3>
     </div>
       
     
     </div><!--hotel_info_options-->
     
- <div id="map" style="width: 1105px; height: 500px;" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> 
- <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)">
-  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
-  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
+ <div id="map" style="width: 950px; height: 400px;" > 
+ <!-- <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> -->
+
  
  </div>
- 
+ <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
+  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
     
 <%	
 for (int ii = 0; i < top_list.size(); i++) {
@@ -253,7 +263,10 @@ for (int ii = 0; i < top_list.size(); i++) {
 	out.println("null data");
 }
 %>
-
+<div class="modal">
+  <span class="close">&times;</span>
+  <img class="modal_content" id="img01">
+</div>
 </div><!--hotel_info-->
 
   </div><!--content-->

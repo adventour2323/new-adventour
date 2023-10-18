@@ -2,7 +2,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="adventour.C_getset" %>
 <%@ page import="adventour.C_dbsave" %><!-- 변수 get set들이 있는 자바파일 -->
-
+<%@ page import="java.util.*, java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -60,9 +60,28 @@ if (session.getAttribute("id") == null) {
         작성자 : <input type="text" class="c_writer" name="c_writer" value="<%= obj.getM_id() %>" readonly>
       </div><!--c_writer_div-->
 
-      <div class="c_date_div" name="c_date_div">
-        작성날짜 : <p class="c_date" name="c_date"><%= obj.getC_date() %></p>
-      </div><!--c_date_div-->
+    <div class="c_date_div" name="c_date_div">
+  작성날짜 : 
+  <%
+    // 원래 날짜 문자열을 가져옵니다.
+    String originalDateStr = obj.getC_date();
+    
+    // SimpleDateFormat을 사용하여 날짜 형식을 변환합니다.
+    SimpleDateFormat originalDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+    SimpleDateFormat targetDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    
+    try {
+      Date originalDate = originalDateFormat.parse(originalDateStr);
+      String formattedDateStr = targetDateFormat.format(originalDate);
+  %>
+  <%= formattedDateStr %>
+  <%
+    } catch (Exception e) {
+      e.printStackTrace();
+      // 오류 처리
+  }
+  %>
+</div><!--c_date_div-->
     </div><!--c_info_div-->
 
     <div class="c_title_div" name="c_title_div">
