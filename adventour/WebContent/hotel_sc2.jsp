@@ -115,7 +115,7 @@ if (session.getAttribute("id") == null) {
   <div class="content">
 
     <div class="h_map"> <!--왼쪽 지도-->
-      <div id="map" style="height: 300px;"> </div>
+      <div id="map" style="height: 290px;"> </div>
 
     <div class="rinav"> <!--장바구니 등 -->
 

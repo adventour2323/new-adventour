@@ -336,7 +336,7 @@
                
                <div class="qna_info">
                   <!--button펑션으로 폼의 정보를 ajax로 jsp페이지 연동.-->
-                  <form class="margin_t_lft" name="qna_info" method="post" onsubmit="return">
+                  <form class="margin_t_lft" name="qna_info" method="post" onsubmit="return" action="mpg_questions_save.jsp">
                      <select class="qna_selBox" name="q_num" required>
                         <option value="">유형을 선택해주세요.</option>
                         <option value="Tour">Tour</option>
@@ -350,7 +350,7 @@
 				<!--<input class="qna_cntt_box" type="text" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required /><br/><br/> -->
                      <textarea class="qna_cntt_box padding_left5" name="q_cntt" placeholder="문의 내용을 입력해주세요." title="cntt" required></textarea><br/><br/>
                      <input class="qna_img_box padding_left5" type="text" name="q_img" placeholder="이미지 첨부 파일" title="img" /><br/>
-                     <input class="qna_btn margin_lft60 col_style" type="button" name="sndBtn" title="보내기 버튼" value="보내기" />
+                     <input class="qna_btn margin_lft60 col_style" type="submit" name="sndBtn" title="보내기 버튼" value="보내기" />
                   </form>
                </div>
             </div><!--frst_lne_ctgry 탭에서 문의하기를 눌렀을 경우 박스 끝-->

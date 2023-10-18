@@ -47,7 +47,7 @@ p,h1,h2,h3,h4,h5,h6{
 
 .frst_lne_ctgry div:hover{
 	color: white;
-	background-color: rgb(255 189 189);
+
 }
 
 /*문의사항 페이지를 모두 감싸는 박스*/
@@ -389,8 +389,8 @@ p,h1,h2,h3,h4,h5,h6{
 	float: left;
 	font-size: 20px;
 	font-weight: bold;
-    border: 1px solid rgb(245 227 227);
-    background-color: rgb(233 215 223);
+    
+
 }
 /*고객에게 양해 구하는 텍스트 전체박스*/
 .qna_wrte_txt{
@@ -407,7 +407,7 @@ p,h1,h2,h3,h4,h5,h6{
 	float: left;
 	font-weight: bold;
 	padding-bottom: 10px;
-	border: 1px solid rgb(249, 187, 187, 0.6);
+	border: 1px solid ;
 /*	 border-width: 0px 0px 0px 0px; */
 }
 /* 폼 스타일 */
@@ -459,9 +459,9 @@ p,h1,h2,h3,h4,h5,h6{
 }
 /*배경에 클래스로 스타일을 준다.*/
 .col_style{
-	color: white;
-	border-color: rgb(249 187 187);
-	background-color: rgb(255 189 189);
+	color: #555;
+	
+	
 }
 .
 /*--------------------- 폼 박스---------------------- */

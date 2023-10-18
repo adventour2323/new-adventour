@@ -109,7 +109,7 @@ if (list != null && !list.isEmpty()) {
   <div class="content">
 
     <div class="h_map"> <!--왼쪽 지도-->
-      <div id="map" style="height: 300px;"> </div>
+      <div id="map" style="height: 290px;"> </div>
 
     <div class="rinav"> <!--장바구니 등 -->
 
@@ -164,7 +164,10 @@ if (list != null) {
 
           <div class="h_addr">
            <h4 class="h_tiaddr"><%= ukAll.getH_addr() %></h4> 
-          <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= ukAll.getH_lat()%>, <%= ukAll.getH_lon()%>)">
+           
+          <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" 
+          onclick="showMap(<%= ukAll.getH_lat()%>, <%= ukAll.getH_lon()%>)">
+          
           <input type="hidden" class="hh_lat" name="hh_lat" value="<%= ukAll.getH_lat()%>" />
            <input type="hidden" class="hh_lng" name="hh_lng" value="<%= ukAll.getH_lon()%>" />
           </a>

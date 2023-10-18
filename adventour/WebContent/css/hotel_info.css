@@ -224,7 +224,7 @@
 #hotel_info_pho1:hover,#hotel_info_pho2:hover,#hotel_info_pho3:hover,
 #hotel_info_pho4:hover,#hotel_info_pho5:hover,#hotel_info_pho6:hover,
 #hotel_info_pho7:hover {
-  transform: scale(1.6);
+  transform: scale(1.2);
 }
 .h_info_title_pho1{
   width: 400px;
@@ -234,7 +234,7 @@
   border:solid 1px;
   width: 400px;
   height: 400px;
-  margin-top: -400px;
+  margin-top: -402px;
   margin-left: 420px;
   
 }
@@ -246,7 +246,7 @@
   border:solid 1px;
   width: 400px;
   height: 200px;
-  margin-top: -400px;
+  margin-top: -402px;
   margin-left: 840px;
 }
 .h_info_title_pho3{
@@ -438,12 +438,13 @@ border: solid 1px;
 	
 
 }
+/*----------------------------------모달창 ---------------------------------------*/
+
 
 /*푸터*/
 #footer{
 	
 	margin-top:300px;
 }
-
 
 

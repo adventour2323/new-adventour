@@ -10,15 +10,12 @@
         <title>google map api</title>  
 
             <script defer src="js/map_index.js"></script>
-            <script
-              defer
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
-            ></script>
+            <script defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap">
+            </script>
         </head>
-
 <body>
-      <div id="map" style="height: 600px;"> </div>
-
-    </body>
+      <div id="map" > </div>
+</body>
 
 </html>
