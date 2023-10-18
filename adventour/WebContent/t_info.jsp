@@ -215,6 +215,33 @@
 						<div class="tour_info" id="tour_info">						
 							<%= g.getT_info() %>
 						</div>
+						<div class="guide_introduce_div" style="margin-top: 20px;">
+							<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
+							<div class="guide_introduce" >
+								<%
+									String g_id = g.getG_id();
+									ArrayList<g_getset> a2 = id.g2(g_id);
+								%>
+            					<% for (g_getset gg : a2) { %>
+            					<div class="table-container">
+            						<table class="guide-table">
+    									<tr>
+        									<td rowspan="3" class="image-cell">
+            									<img alt="가이드 사진" src="<%=gg.getImg()%>" >
+        									</td>
+        									<td class="label-cell">이름</td>
+        									<td class="data-cell"><a href="g_info.jsp?g_id=<%=gg.getG_id() %>"><%=gg.getName() %></a></td>
+    									</tr>
+    									<tr>
+        									<td class="label-cell">연락처</td>
+        									<td class="data-cell"><%=gg.getEmail() %></td>
+    									</tr>
+									</table>
+								</div>
+            					<%} %>
+							</div>
+							
+						</div>
 				</div>
 			</div>
 			

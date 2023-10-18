@@ -247,3 +247,40 @@ a.next:hover {
   width: 100%; /* 내용의 너비를 100%로 설정하여 고정 */
   height: 100%;
 }  
+
+/*  */
+
+.guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.image-cell img{
+	width: 150px;
+}
+
+.guide-table .image-cell {
+    width: 100px;
+    vertical-align: top;
+}
+
+.guide-table .label-cell {
+    width: 120px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.guide-table .data-cell {
+    padding-left: 10px;
+}
+
+.table-container {
+    text-align: center; /* 텍스트를 수평 가운데 정렬 */
+    /* display: flex;
+    justify-content: center; 가로 가운데 정렬
+    align-items: center; 세로 가운데 정렬
+    margin: 0 auto; 좌우 가운데 정렬 */
+    margin-left: 200px;
+}
+

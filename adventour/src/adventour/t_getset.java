@@ -33,11 +33,40 @@ public class t_getset {
 	String spot3_y;
 //	
 	
+	String g_img;
+	String g_email;
+//
+	
+	
 	/**
 	 * @return the spot1_x
 	 */
 	public String getSpot1_x() {
 		return spot1_x;
+	}
+	/**
+	 * @return the g_img
+	 */
+	public String getG_img() {
+		return g_img;
+	}
+	/**
+	 * @param g_img the g_img to set
+	 */
+	public void setG_img(String g_img) {
+		this.g_img = g_img;
+	}
+	/**
+	 * @return the g_email
+	 */
+	public String getG_email() {
+		return g_email;
+	}
+	/**
+	 * @param g_email the g_email to set
+	 */
+	public void setG_email(String g_email) {
+		this.g_email = g_email;
 	}
 	/**
 	 * @param spot1_x the spot1_x to set

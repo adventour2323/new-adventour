@@ -69,7 +69,7 @@ public class g_list_print {
 		while(rs.next()) {
 			g_getset table = new g_getset();
 			
-//			table.setName(rs.getString("g_lastname")+rs.getString("g_firstname"));
+
 			table.setName(rs.getString("g_name"));
 			table.setCountry(rs.getString("g_country"));
 			table.setCity(rs.getString("g_city"));
@@ -325,6 +325,8 @@ public class g_list_print {
 			table.setSpot2_y(rs.getString("spot2_y"));
 			table.setSpot3_x(rs.getString("spot3_x"));
 			table.setSpot3_y(rs.getString("spot3_y"));
+			
+			table.setG_id(rs.getString("g_id"));
 			arr.add(table);
 		}
 	} finally {
@@ -332,4 +334,56 @@ public class g_list_print {
 		}
 		return arr;
 		}
+	
+	//
+	public ArrayList<t_getset> t5(String t_id) throws Exception {
+
+		ArrayList<t_getset> arr = new ArrayList<t_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("select tour.t_id, tour.t_name, tour.country, tour.country_eng, tour.city, tour.depart_time, tour.meeting_spot, tour.meeting_x, tour.meeting_y, tour.t_price, tour.t_theme, tour.t_info, tour.t_spot1, tour.spot1_x, tour.spot1_y, tour.t_spot2, tour.spot2_x, tour.spot2_y, tour.t_spot3, tour.spot3_x, tour.spot3_y, tour.t_img1, tour.t_img2, tour.t_img3,  guide.g_name, guide.g_img, guide.g_email from tour inner join guide on tour.g_id = guide.g_id where tour.t_id = '"+t_id+"';");
+
+		while(rs.next()) {
+			t_getset table = new t_getset();
+			table.setT_id(rs.getString("tour.t_id"));
+			table.setT_name(rs.getString("tour.t_name"));
+			table.setCountry(rs.getString("tour.country"));
+			table.setCountry(rs.getString("tour.country_eng"));
+			table.setCity(rs.getString("tour.city"));
+			table.setD_time(rs.getString("tour.depart_time"));
+			table.setM_spot(rs.getString("tour.meeting_spot"));
+			table.setM_x(rs.getString("tour.meeting_x"));
+			table.setM_y(rs.getString("tour.meeting_y"));
+			table.setT_price(rs.getString("tour.t_price"));
+			table.setT_theme(rs.getString("tour.t_theme"));
+			table.setT_info(rs.getString("tour.t_info"));	
+			table.setT_spot1(rs.getString("tour.t_spot1"));
+			table.setT_spot2(rs.getString("tour.t_spot2"));
+			table.setT_spot3(rs.getString("tour.t_spot3"));
+			table.setT_img1(rs.getString("tour.t_img1"));
+			table.setT_img2(rs.getString("tour.t_img2"));
+			table.setT_img3(rs.getString("tour.t_img3"));
+			table.setSpot1_x(rs.getString("tour.spot1_x"));
+			table.setSpot1_y(rs.getString("tour.spot1_y"));
+			table.setSpot2_x(rs.getString("tour.spot2_x"));
+			table.setSpot2_y(rs.getString("tour.spot2_y"));
+			table.setSpot3_x(rs.getString("tour.spot3_x"));
+			table.setSpot3_y(rs.getString("tour.spot3_y"));
+			table.setG_name(rs.getString("guide.g_name"));
+			table.setG_email(rs.getString("guide.g_email"));
+			table.setG_img(rs.getString("guide.g_img"));
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+//
+	
+	
+	
 }
