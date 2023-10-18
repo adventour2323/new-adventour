@@ -212,6 +212,9 @@ a.next:hover {
   top: 0;
   z-index: 100;
   width: 840px;
+  /*  */
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .tab button {
@@ -237,7 +240,8 @@ a.next:hover {
   display: none;
   padding: 20px;
   width: 840px; /* 탭 내용의 너비를 100%로 설정하여 고정 */
-  height: 500px;
+  /* height: 500px; */
+  height: 100%;
 }
 
 /* 각 탭 내용의 스타일 수정 */
@@ -251,36 +255,29 @@ a.next:hover {
 /*  */
 
 .guide-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+    text-align: center;
 }
 
-.image-cell img{
-	width: 150px;
+.guide-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.guide-table .image-cell {
-    width: 100px;
-    vertical-align: top;
+.image-cell img {
+    width: 150px;
+    margin-right: 10px;
 }
 
-.guide-table .label-cell {
-    width: 120px;
-    text-align: right;
+.label-cell {
+    /* width: 120px;
+    text-align: right; */
     font-weight: bold;
+    background-color: #f2f2f2;
 }
 
-.guide-table .data-cell {
-    padding-left: 10px;
+.data-cell {
+    /* padding-left: 10px; */
 }
 
-.table-container {
-    text-align: center; /* 텍스트를 수평 가운데 정렬 */
-    /* display: flex;
-    justify-content: center; 가로 가운데 정렬
-    align-items: center; 세로 가운데 정렬
-    margin: 0 auto; 좌우 가운데 정렬 */
-    margin-left: 200px;
-}
 
