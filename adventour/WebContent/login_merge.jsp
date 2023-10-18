@@ -46,20 +46,22 @@ PreparedStatement pstmt = null;
 		session.setAttribute("pw",pw);
 		
 		/* response.sendRedirect("index.html"); */
-		/* response.sendRedirect("index_login_ing.jsp"); */
+		 response.sendRedirect("index_login_ing.jsp"); 
 		%>
-		<script>
-		location.href = document.referrer;
+ 		<script>
+		/* location.href = document.referrer; */
 		/* history.back(); */
+		String referrer = request.getHeader("referer");
 		
 		</script>
+		consol.log(referrer);  		
 		<%
 			}else {
 		%>
 		<script>
 		alert("로그인 실패");
-		/* location.href= "login_merge_form.jsp" */
-		history.back();
+		 location.href= "login_merge_form.jsp" 
+		
 		
 		</script>
 		<%

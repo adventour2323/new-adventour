@@ -16,7 +16,12 @@ Cookie idNullCookie = new Cookie("id", "");
 response.addCookie(idNullCookie);
 if(session!=null) session.removeAttribute("pw");
 
-response.sendRedirect("./index_login_ing.jsp");
+/* response.sendRedirect("./index_login_ing.jsp"); */
+
+String referrer = request.getHeader("referer");
+response.sendRedirect(referrer);
 %>
+
+
 </body>
 </html>

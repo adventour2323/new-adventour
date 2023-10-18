@@ -54,6 +54,7 @@
 			<% } else { %>
     		<jsp:include page="header_login.jsp"></jsp:include>
 			<% } %>
+			
 		</header>
 			
 
@@ -374,7 +375,7 @@
 
 <!--  -->
 
-
+<!-- 이미지 슬라이드  -->
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);

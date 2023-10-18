@@ -830,23 +830,10 @@
         </main>
         <!-- // main -->
 
-        <footer id="footer">
-            <div class="footerInner">
-                <div class="info">
-                    <div class="infoText">
-                        <span>footer</span>
-                    </div>
-                    <div class="infoSns">
-                        <div class="infoSnsItem">
-                            <a href="#"><img src="images/footer/icon/instagram.png" alt="인스타그램"></a>
-                            <a href="#"><img src="images/footer/icon/facebook.png" alt="페이스북"></a>
-                            <a href="#"><img src="images/footer/icon/naverblog.png" alt="네이버 블로그"></a>
-                            <a href="#"><img src="images/footer/icon/youtube.png" alt="유튜브"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+		<footer>
+			<!-- <div id="footer"></div> -->
+			<jsp:include page="footer.html"></jsp:include>
+		</footer>
         <!-- // footer -->
     <!-- </div> -->
     
