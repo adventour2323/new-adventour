@@ -171,6 +171,32 @@ select{
 .s_btn btn_color{
 	cursor: pointer;
 	}
+	
+	/*  */
+	.file-upload {
+    display: inline-block;
+}
+
+.file-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+	
+	/*  */
 
 /* ------------------버튼클래스 주기-------------------------  */
 /* 스몰 버튼 기본 클래스 */
