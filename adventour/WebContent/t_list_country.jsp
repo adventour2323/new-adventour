@@ -113,14 +113,27 @@
                         <%= g.getCountry() %>, <%= g.getCity() %>
                     </p>
                     </div>
-                    <div class="tour_price_div">
-                    <p class="tour-price">
-                        ₩ <%= g.getT_price() %>~
-                    </p>
-                    </div>
+					<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
+    					₩ <%= g.getT_price() %>~
+					</div>
                     
                 </div>
             </div>
+            
+<script>
+    function formatNumberWithCommas(number) {
+        // 가격에 컴마 추가
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var priceElement = document.getElementById('formattedPrice<%= g.getT_id() %>');
+        var priceText = priceElement.textContent;
+        var price = parseInt(priceText.replace(/[^\d]/g, '')); // 가격을 숫자로 파싱
+        priceElement.textContent = '₩ ' + formatNumberWithCommas(price) + ' 원~';
+    });
+</script>
+                       
             <% } %>
             </div>
         </jsp:useBean>
