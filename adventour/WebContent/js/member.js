@@ -30,7 +30,7 @@ window.onload = function () {
 		var result = document.getElementById("result");
 		if (pw.value == rPw.value) {
 			result.style.color ="green";
-			result.innerHTML = "입력한 비밀번호가 동일합니다.";
+			result.innerHTML = "입력한 비밀번호가 동일합니다."; 
 		} else {
 			result.style.color ="tomato";
 			result.innerHTML = "비밀번호를 다시 입력해주세요.";
