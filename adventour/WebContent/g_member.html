@@ -24,7 +24,9 @@
         <!--input, select 감싸는 클래스-->
         <div class="form_box">
 <!--        <form class="form_n" name="myForm" method="post" onsubmit="return false;">-->
-        <form class="form_n" name="myForm" action="./g_member.jsp" method="post">			
+        <!-- <form class="form_n" name="myForm" action="./g_member.jsp" method="post"> -->
+        <form class="form_n" name="myForm" action="./g_member.jsp" method="post" enctype="multipart/form-data"	>		
+        
 <!--         <form class="form_n" name="myForm" onsubmit="return false;"> -->
             <!-- '가입 정보 입력하기'  텍스트 박스-->
             <h3 class="margin_top margin_btm">가입 정보 입력하기</h3>
@@ -90,9 +92,9 @@
             
             <!-- 이미지 파일 불러오는 기능 필요함. -->
             	이미지<cc class="star_col_red">*</cc><br/>
-             <input class="m_size margin_rght" type="text" name="g_img" placeholder="Image" title="g_img" required> 
-             <input class="s_btn btn_color" type="button" name="g_img_btn" value="첨부파일"> 
-            <!-- <input type="file" name="g_img" id="g_img" class="g_img"> -->
+             <!-- <input class="m_size margin_rght" type="text" name="g_img" placeholder="Image" title="g_img" required> 
+             <input class="s_btn btn_color" type="button" name="g_img_btn" value="첨부파일">  -->
+            <input type="file" name="g_img" id="g_img" class="g_img">
             
              <br/><br/>
              
