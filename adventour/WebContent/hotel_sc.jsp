@@ -208,13 +208,19 @@ if (session.getAttribute("id") != null) {
  
     </div><!--scdform-->
 
-<%
-    }
-} else {
-    System.out.println("null data");
-}
-%>
-
+  <%
+            }
+        } else {
+        %>
+        <div class="no-results">
+            <h3>검색 결과가 없습니다.</h3>
+            <h3>검색 조건을 다시 설정해 주세요.</h3>
+        </div>
+        <%
+        }
+        
+        %>
+    </div>
 
   </div><!--content-->
 

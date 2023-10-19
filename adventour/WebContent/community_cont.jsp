@@ -30,7 +30,7 @@ if (session.getAttribute("id") == null) {
 <%
 }
 %>
-
+ 
 <div class="c_cont_main">
     <h2>게시글 내용</h2>
     
@@ -43,7 +43,7 @@ if (session.getAttribute("id") == null) {
         String c_num = request.getParameter("c_num"); // 예: 게시글 번호를 파라미터로 받음
         C_dbsave db = new C_dbsave();
         ArrayList<C_getset> resultList = db.c_contshow(c_num);
-
+ System.out.println(c_num);
         if (resultList.size() > 0) {
           obj = resultList.get(0); // 첫 번째 결과를 obj에 할당
         } else {
@@ -54,8 +54,9 @@ if (session.getAttribute("id") == null) {
         // 오류 처리
       }
     %>
-
+ <form name="c_cont_tomodify" action="community_modify.jsp?c_num=<%=obj.getC_num() %>" method="post">
     <div class="c_info_div">
+
       <div class="c_writer_div" name="c_writer_div">
         작성자 : <input type="text" class="c_writer" name="c_writer" value="<%= obj.getM_id() %>" readonly>
       </div><!--c_writer_div-->
@@ -142,16 +143,16 @@ if (session.getAttribute("id") == null) {
     </div><!--c_con_div-->
 
     <div class="c_btns">
-      <a href="community_list2.jsp">
+      <a href="community_list2.jsp?c_num=<%= obj.getC_num() %>">
         <input type="button" class="c_to_listbtn" name="c_to_listbtn" href="community_list2.jsp" value="목   록"/>
       </a>
       <div class="c_btns2">   
         <%
         if (session.getAttribute("id") != null && session.getAttribute("id").equals(obj.getM_id())) {
         %>
-        <a href="community_modify.jsp">
-          <input type="button" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
-        </a> 
+       
+          <input type="submit" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
+
         <input type="button" class="c_to_deletebtn" name="c_to_deletebtnn" value="삭  제" />
       </div> 
       <%
@@ -159,6 +160,7 @@ if (session.getAttribute("id") == null) {
       %>
     </div>
   </div><!--c_cont_main-->
+</form>
 <footer>
   <div id="footer"></div>
 </footer>

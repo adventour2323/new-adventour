@@ -33,7 +33,7 @@ $(document).ready(function() {
           $("#c_list_table tbody").html(data);
         },
         error: function() {
-          alert("검색 중 오류가 발생했습니다.");
+          alert("일치하는 검색어가 없습니다.");
         }
       });
     });

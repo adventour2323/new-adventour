@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="adventour.C_search" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="adventour.C_getset" %>
+<%@ page import="java.util.Date" %>
+ <%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +27,7 @@
         C_search c_sch1 = new C_search();
         ArrayList<adventour.C_getset> searchResults = c_sch1.c_search(c_sch); // 검색 수행
         
+       
         // 검색 결과를 표시할 HTML 코드를 생성
         %>
         <table>
@@ -81,7 +85,25 @@
                 <td><%= obj.getC_num() %></td>
                 <td class="c_list_title1"><%= obj.getC_title() %></td>
                 <td><%= obj.getM_id() %></td>
-                <td><%= obj.getC_date() %></td>
+                <%
+// obj.getC_date()에서 받은 원래 날짜 문자열
+String originalDateStr = obj.getC_date();
+
+// SimpleDateFormat을 사용하여 원하는 형식으로 날짜 포맷
+SimpleDateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+SimpleDateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+try {
+  Date originalDate = originalFormat.parse(originalDateStr);
+  String formattedDateStr = targetFormat.format(originalDate);
+%>
+<td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= formattedDateStr %></a></td>
+<%
+} catch (Exception e) {
+  e.printStackTrace();
+  // 오류 처리
+}
+%>
                 <td><%= countryName %></td>
                 <td><%= cityName %></td>
             </tr>

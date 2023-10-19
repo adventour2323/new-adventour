@@ -15,11 +15,11 @@
     <meta class="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-
-       <script defer src="js/map_index.js"></script> 
-        <script defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"
-        ></script>
+        <script 
+        defer
+        src="https://maps.googleapis.com/maps/api/js?
+        key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap">
+        </script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -132,7 +132,8 @@ if (top_list != null) {
       <div id="hotel_info_phos">
 
         <div id="hotel_info_pho1">
-        <img class="h_info_title_pho1" class="h_info_title_pho1" src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+        <img class="h_info_title_pho1" class="h_info_title_pho1" 
+        src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
         </div>
         <div id="hotel_info_pho2">
           <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
@@ -225,7 +226,7 @@ if (top_list != null) {
  
  </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
-  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
+ <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
     
 <%	
 for (int ii = 0; i < top_list.size(); i++) {

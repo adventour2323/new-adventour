@@ -7,16 +7,11 @@ $(document).ready(function() {
 		  var lat_info = $(".hh_lat").val();
 		  var lng_info = $(".hh_lng").val(); 
 		  
-		  // 값 콘솔에 출력
-		  console.log("Latitude:", lat_info);
-		  console.log("Longitude:", lng_info);
-
 		  const map = new google.maps.Map(document.getElementById("map"), {
 		    center: { lat: parseFloat(lat_info), lng: parseFloat(lng_info) }, 
 		    zoom: 15, 
 		  });
 		  
-		  // 마크 설정
 		  new google.maps.Marker({
 		    position: { lat: parseFloat(lat_info), lng: parseFloat(lng_info) },
 		    label: "선택위치",
@@ -24,7 +19,6 @@ $(document).ready(function() {
 		  });
 		};
 
-		// initMap 함수 호출
 		initMap();
 
  /* 하트누르면 색변환*/

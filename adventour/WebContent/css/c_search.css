@@ -53,27 +53,37 @@
 
 .c_list_sch{ /* 검색창 전체*/
     width:400px;
-    height:30px;
+    height:50px;
 	margin-left: 680px; 
-	margin-top:-10px;
+	margin-top: 50px;
+
 		
 }
 .c_sch{/* 검색에 입력창*/
     width:250px;
-    height:25px;
+    height:40px;
 	background-color:#F6F6F6;
+	border:solid 1px;
+	border-color:grey;
 }
 .c_schbtn{/* 검색 버튼*/
-	width:60px;
-    height:33px;
-    background-color:#F6F6F6;
+	width:70px;
+    height:45px;
+    background-color: rgb(117, 165, 236);
+    border:solid 1px;
+    border-color:grey;
+}
+.c_schbtn:hover{
+	background-color: rgb(46, 78, 151);
+	color:white;
+	font_weight:bold;
 }
   /*------------------게시판 전체 div----------------------------------*/
 .c_list_main{
 	width:1050px;
-	height:570px;
+	height:600px;
 	margin-left:425px;
-	margin-top:-20px;
+	margin-top:75px;
 }
 
   /*---------------------------왼쪽 여행지 선택 메뉴-----------------*/

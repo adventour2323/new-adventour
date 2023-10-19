@@ -119,8 +119,6 @@ if (session.getAttribute("id") == null) {
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_num() %></a></td>
           <td class="c_list_title1"><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_title() %></a></td>
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getM_id() %></a></td>
-         
-<!-- 나머지 코드 -->
 
 <%
 // obj.getC_date()에서 받은 원래 날짜 문자열

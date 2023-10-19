@@ -124,7 +124,7 @@ public class C_dbsave {
         }
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     }
-    public void dbupdate(String c_num, String m_id, String country, String city, String c_title, String c_cont, String c_pho1, String c_pho2, String c_pho3, String c_pho4, String c_pho5) throws Exception {
+    public boolean dbupdate(String c_num, String country, String city, String c_title, String c_cont, String c_pho1, String c_pho2, String c_pho3, String c_pho4, String c_pho5) throws Exception {
         try {
             connec();
             if (conn == null)
@@ -146,6 +146,9 @@ public class C_dbsave {
             if (rowNum < 1) {
                 throw new Exception("데이터를 DB에 업데이트할 수 없습니다.");
             }
+
+            // 성공적으로 업데이트되면 true 반환
+            return true;
         } finally {
             closecon();
         }

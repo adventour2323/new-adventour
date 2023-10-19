@@ -186,10 +186,10 @@ if (session.getAttribute("id") == null) {
 
         <div class="ti_select">  
 
-          <div class="selectTi1">   
+ <!--         <div class="selectTi1">   
            <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
            <p class="bbb">선택</p>
-          </div> 
+          </div>  --> 
     <%
 if (session.getAttribute("id") != null) {
 %>

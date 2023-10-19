@@ -79,110 +79,29 @@ $(document).ready(function() {
 
 		      }
 		    }
-//	  //현재의 이전 날짜를 선택하지 못하도록 설절
-//	  function getCurrentDate() {
-//	      var today = new Date();
-//	      var year = today.getFullYear();
-//	      var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
-//	      var day = today.getDate();
-//	      return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-//	  }
-//
-//	  // 검색시 날짜 비교 및 안내 메시지 표시
-//	  $('form[name="h_main_sch_form"]').on('submit', function(event) {
-//	      var currentDate = getCurrentDate();
-//	      var h_indate = $('#sch_indate').val() ;
-//	      var h_outdate = $('#sch_outdate').val() ;
-//
-//	      if (h_indate < currentDate || h_outdate < currentDate) {
-//	          alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
-//	          event.preventDefault(); // 폼 제출을 중단합니다.
-//	      } else if (h_indate > h_outdate) {
-//	          alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
-//	          event.preventDefault(); // 폼 제출을 중단합니다.
-//	      }
-//	  });
-	  
-	
-	  function setCookie(name, value, days) {
-	      var expires = "";
-	      if (days) {
-	          var date = new Date();
-	          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-	          expires = "; expires=" + date.toUTCString();
+	// 검색시 날짜 비교 및 안내 메시지 표시
+	  $('form[name="schnav_form"]').on('submit', function(event) {
+	      var today = new Date(); // 현재 날짜를 가져옵니다.
+	      var currentDate = getCurrentDate(today);
+	      var h_indate = $('#sch_indate').val();
+	      var h_outdate = $('#sch_outdate').val();
+
+	      if (h_indate < currentDate || h_outdate < currentDate) {
+	          alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
+	          event.preventDefault(); // 폼 제출을 중단합니다.
+	      } else if (h_indate > h_outdate) {
+	          alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
+	          event.preventDefault(); // 폼 제출을 중단합니다.
 	      }
-	      document.cookie = name + "=" + value + expires + "; path=/";
+	  });
+
+	  // 현재의 이전 날짜를 선택하지 못하도록 설정
+	  function getCurrentDate(today) {
+	      var year = today.getFullYear();
+	      var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
+	      var day = today.getDate();
+	      return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
 	  }
-
-	  function getCookie(name) {
-	      var nameEQ = name + "=";
-	      var cookies = document.cookie.split(';');
-	      for (var i = 0; i < cookies.length; i++) {
-	          var cookie = cookies[i];
-	          while (cookie.charAt(0) == ' ') {
-	              cookie = cookie.substring(1, cookie.length);
-	          }
-	          if (cookie.indexOf(nameEQ) == 0) {
-	              return cookie.substring(nameEQ.length, cookie.length);
-	          }
-	      }
-	      return null;
-	  }
-
-	  function saveFormValues() {
-	      var schCountry = document.querySelector(".sch_country").value;
-	      var schCity = document.querySelector(".sch_city").value;
-	      var schIndate = document.querySelector("#sch_indate").value;
-	      var schOutdate = document.querySelector("#sch_outdate").value;
-	      var schAdult = document.querySelector(".sch_adult").value;
-	      var schMinpri = document.querySelector(".sch_minpri").value;
-	      var schMaxpri = document.querySelector(".sch_maxpri").value;
-
-	      setCookie("schCountry", schCountry, 30); // 저장 기간은 일수로 지정할 수 있습니다.
-	      setCookie("schCity", schCity, 30);
-	      setCookie("schIndate", schIndate, 30);
-	      setCookie("schOutdate", schOutdate, 30);
-	      setCookie("schAdult", schAdult, 30);
-	      setCookie("schMinpri", schMinpri, 30);
-	      setCookie("schMaxpri", schMaxpri, 30);
-	  }
-
-	  // 페이지가 로드될 때 쿠키에서 값을 불러옵니다.
 	
-	      document.querySelector(".sch_country").value = getCookie("schCountry") || "";
-	      document.querySelector(".sch_city").value = getCookie("schCity") || "";
-	      document.querySelector("#sch_indate").value = getCookie("schIndate") || "";
-	      document.querySelector("#sch_outdate").value = getCookie("schOutdate") || "";
-	      document.querySelector(".sch_adult").value = getCookie("schAdult") || "";
-	      document.querySelector(".sch_minpri").value = getCookie("schMinpri") || "";
-	      document.querySelector(".sch_maxpri").value = getCookie("schMaxpri") || "";
-	  
-	      
-	      // "sch_btn" 버튼을 클릭했을 때 쿠키를 JSP 페이지로 전달
-	      $(".sch_btn").on("click", function() {
-	        var schCountry = getCookie("schCountry") || "";
-	        var schCity = getCookie("schCity") || "";
-	        var schIndate = getCookie("schIndate") || "";
-	        var schOutdate = getCookie("schOutdate") || "";
-	        var schAdult = getCookie("schAdult") || "";
-	        var schMinpri = getCookie("schMinpri") || "";
-	        var schMaxpri = getCookie("schMaxpri") || "";
-
-	        // 쿼리 매개변수를 포함한 URL을 만듭니다.
-	        var jspPageUrl = "hotel_sc2.jsp";
-	        var queryParams = "schCountry=" + schCountry +
-	                          "&schCity=" + schCity +
-	                          "&schIndate=" + schIndate +
-	                          "&schOutdate=" + schOutdate +
-	                          "&schAdult=" + schAdult +
-	                          "&schMinpri=" + schMinpri +
-	                          "&schMaxpri=" + schMaxpri;
-
-	        // JSP 페이지 URL에 쿼리 매개변수를 추가합니다.
-	        jspPageUrl += "?" + queryParams;
-
-	        // 쿠키 값을 포함한 URL로 리디렉션합니다.
-	        window.location.href = jspPageUrl;
-
-	      });
+	
 });
