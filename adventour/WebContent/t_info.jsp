@@ -93,33 +93,39 @@
 				<label><h5>옵션 선택</h5></label>
 					<hr>
 				<form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return validateForm();">
-					<div class="date_select" >
-						<label style="margin-right: 10px;"><h5>날짜</h5></label>
+					<div class="date_select" style="display: flex; align-items: center;">
+    					<label style="margin-right: 10px;"><h5 style="margin: 0;">날짜</h5></label>
+    					<div style="display: flex; align-items: center;">
+    					<%
+							// 오늘 날짜를 가져오고, yyyy-MM-dd 형식으로 포맷
+							Date today = new Date();
+							SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+							String formattedDate = sdf.format(today);
+						%>
+        					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
+    					</div>
+					</div>
 
-						<!-- <input type="date" id="start" name="trip-start"  min="2023-01-01" max="2024-12-31" required> -->
-					<%
-						// 오늘 날짜를 가져오고, yyyy-MM-dd 형식으로 포맷
-						Date today = new Date();
-						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-						String formattedDate = sdf.format(today);
-					%>
-						 <input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
-						
-					</div>
 				
-					<div class="t_price_info" >
-						<label style="margin-right: 10px;"><h5>가격</h5></label>
-						<label style="margin-right: 10px;"><%= g.getT_price() %> 원</label>
-						<input type="hidden" id="tour_price" name="tour_price" value="<%= g.getT_price() %>">
+					<div class="t_price_info" style="display: flex; align-items: center;">
+    				 	<label style="margin-right: 10px;"><h5 style="margin: 0;">가격</h5></label>
+    					<div style="display: flex; align-items: center;">
+        					<label style="margin-right: 10px;"><span id="formattedPrice"><%= g.getT_price() %> 원</span></label>
+        					<input type="hidden" id="tour_price" name="tour_price" value="<%= g.getT_price() %>">
+    					</div>
 					</div>
+
 				
-					<div class="people_num" >
-    					<label style="margin-right: 10px;"><h5>인원</h5></label>
-    					<input type='button' onclick='updateCount(-1)' value='-' style="border: none; cursor: pointer;">
-    					<div id='result'>1</div>
-    					<input type='button' onclick='updateCount(1)' value='+' style="border: none; cursor: pointer;">
+					<div class="people_num" style="display: flex; align-items: center;">
+    					<label style="margin-right: 10px;"><h5 style="margin: 0;">인원</h5></label>
+    						<div style="display: flex; align-items: center;">
+        						<input type="button" onclick="updateCount(-1)" value="-" style="border: none; cursor: pointer; padding: 5px 10px;">
+        						<div id="result" style="margin: 0 10px; font-size: 16px;">1</div>
+        						<input type="button" onclick="updateCount(1)" value="+" style="border: none; cursor: pointer; padding: 5px 10px;">
+    						</div>
     					<input type="hidden" name="total_people" value="1" id="totalPeopleInput">
 					</div>
+
 							<hr style="margin-top: 40px;">
 									
 					<div class="price_cal" >
@@ -615,7 +621,19 @@ function validateForm() {
 }
 </script>
 
+<script>
+    function formatNumberWithCommas(number) {
+        // 가격에 컴마 추가
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
 
+    // 페이지 로드 후 실행
+    document.addEventListener('DOMContentLoaded', function() {
+        var priceElement = document.getElementById('formattedPrice');
+        var price = parseInt('<%= g.getT_price() %>'); // 가격을 숫자로 파싱
+        priceElement.textContent = formatNumberWithCommas(price) + ' 원';
+    });
+</script>
 
 <%} %> <!-- for문 종료 -->
 <!--  -->
