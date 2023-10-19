@@ -63,32 +63,28 @@
             
             
             국가/도시<cc class="star_col_red">*</cc><br/>
-            <select class="m_size_c_city_slct" name="g_country" title="g_country" required>
-                <option>국가</option>
-                <option value="영국">영국</option>
-                <option value="프랑스">프랑스</option>
-                <option value="스페인">스페인</option>
-                <option value="이탈리아">이탈리아</option>                
-            </select> 
+        <select class="m_size_c_city_slct" name="g_country" title="g_country" required>
+            <option value="국가">국가</option>
+            <option value="영국">영국</option>
+            <option value="프랑스">프랑스</option>
+            <option value="스페인">스페인</option>
+            <option value="이탈리아">이탈리아</option>
+        </select>
+
+        <select class="m_size_c_city_slct margin_lft" name="g_city" title="g_country" required>
+            <option>도시</option>
+        </select>
             
-            <select class="m_size_c_city_slct margin_lft" name="g_city" title="g_country" required>
-                <option>도시</option>
-                <option value="런던">런던</option>
-                <option value="리버풀">리버풀</option>
-                <option value="에든버러">에든버러</option>
-                <option value="파리">파리</option>
-                <option value="마르세유">마르세유</option>
-                <option value="모나코">모나코</option>
-                <option value="마드리드">마드리드</option>
-                <option value="바르셀로나">바르셀로나</option>
-                <option value="세비야">세비야</option>
-                <option value="로마">로마</option>
-                <option value="베네치아">베네치아</option>
-                <option value="밀라노">밀라노</option>
-            </select> <br/>
+            <br/>
 
             	투어 테마<cc class="star_col_red">*</cc><br/>
-            <input class="l_size" type="text" name="g_theme" placeholder="투어 테마" title="theme" required><br/>
+            	<select class="m_size_theme" name="g_theme" required>
+            		<option value=" ">선택해 주세요</option>
+    				<option value="시내/랜드마크/야경">시내/랜드마크/야경</option>
+    				<option value="역사/문화/예술">역사/문화/예술</option>
+				</select>
+            
+            <br/>
             
             <!-- 이미지 파일 불러오는 기능 필요함. -->
             	이미지<cc class="star_col_red">*</cc><br/>
@@ -172,6 +168,57 @@
 		$('#day').append('<option value="' + i + '">' + i + '</option>');
 	}
 	</script>
+	
+	        <script>
+            // 국가 선택 상자의 변경 이벤트 리스너
+            const countrySelect = document.querySelector(".m_size_c_city_slct");
+            const citySelect = document.querySelector(".m_size_c_city_slct.margin_lft");
+
+            countrySelect.addEventListener("change", function() {
+                // 선택한 국가에 따라 도시 옵션을 동적으로 업데이트
+                const selectedCountry = countrySelect.value;
+                const cityOptions = citySelect.querySelectorAll("option");
+                cityOptions.forEach(option => option.remove());
+
+                if (selectedCountry === "영국") {
+                    // 영국에 대한 도시 옵션을 추가
+                    const cities = ["런던", "리버풀", "에든버러"];
+                    cities.forEach(city => {
+                        const option = document.createElement("option");
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                } else if (selectedCountry === "프랑스") {
+                    // 프랑스에 대한 도시 옵션을 추가
+                    const cities = ["파리", "마르세유", "모나코"];
+                    cities.forEach(city => {
+                        const option = document.createElement("option");
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                } else if (selectedCountry === "스페인") {
+                    // 스페인에 대한 도시 옵션을 추가
+                    const cities = ["마드리드", "바르셀로나", "세비야"];
+                    cities.forEach(city => {
+                        const option = document.createElement("option");
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                } else if (selectedCountry === "이탈리아") {
+                    // 이탈리아에 대한 도시 옵션을 추가
+                    const cities = ["로마", "베네치아", "밀라노"];
+                    cities.forEach(city => {
+                        const option = document.createElement("option");
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                }
+            });
+        </script>
 	
     </html>
     <!--페이지 자체의 스타일, 주소 값, 날짜 및 이메일, 전화번호에 셀렉사용, -->
