@@ -78,7 +78,7 @@ try {
 
     // SQL 쿼리를 작성하여 데이터베이스에 정보를 삽입합니다.
     String command = "INSERT INTO guide (g_id, g_pw, g_name, g_nickname, g_country, g_city, g_theme, g_img, g_email, g_pnum, g_birth_y, g_birth_m, g_birth_d, g_gender, g_agree1, g_agree2) VALUES " +
-        "('" + g_id + "', '" + g_pw + "', '" + g_name + "', '" + g_nickname + "', '" + g_country + "', '" + g_city + "', '" + g_theme + "', '" + g_img + "', '" + g_email + g_emaild +"', '" + g_pnum1 + g_pnum1_1 + g_pnum1_2 + "', '" + g_birth_y + "', '" + g_birth_m + "', '" + g_birth_d + "', '" + g_gender + "', '" + g_agree1 + "', '" + g_agree2 + "')";
+        "('" + g_id + "', '" + g_pw + "', '" + g_name + "', '" + g_nickname + "', '" + g_country + "', '" + g_city + "', '" + g_theme + "', '" +"./image/tour/"+ g_img + "', '" + g_email + g_emaild +"', '" + g_pnum1 + g_pnum1_1 + g_pnum1_2 + "', '" + g_birth_y + "', '" + g_birth_m + "', '" + g_birth_d + "', '" + g_gender + "', '" + g_agree1 + "', '" + g_agree2 + "')";
 
     int rowNum = stmt.executeUpdate(command);
 
