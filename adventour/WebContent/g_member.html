@@ -6,8 +6,8 @@
         <link rel="stylesheet" type="text/css" href="css/g_member.css">
         <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-        <script type="text/javascript" src="js/member.js"></script>
-        <title>회원가입</title>
+        <script type="text/javascript" src="js/guide_member.js"></script>
+        <title>가이드 가입</title>
     </head>
     
     
@@ -17,14 +17,14 @@
             <!-- 로고이미지 -->
             <div class="logo_img"><a href="index.html"><img src="image/share/main_logo_T_G.png" ></a></div>
             <!-- '회원가입'  텍스트 박스-->
-            <div class="memship_t"><h3>회원가입</h3></div>
+            <div class="memship_t"><h3>가이드 가입</h3></div>
         </div><br/>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 
         <!--input, select 감싸는 클래스-->
         <div class="form_box">
 <!--        <form class="form_n" name="myForm" method="post" onsubmit="return false;">-->
-        <form class="form_n" name="myForm" action="mem/g_member.jsp" method="post">			
+        <form class="form_n" name="myForm" action="./g_member.jsp" method="post">			
 <!--         <form class="form_n" name="myForm" onsubmit="return false;"> -->
             <!-- '가입 정보 입력하기'  텍스트 박스-->
             <h3 class="margin_top margin_btm">가입 정보 입력하기</h3>
@@ -32,15 +32,15 @@
             <!-- cc태그는 임의로 만든 태그, 텍스트에 토마토색 입히고 싶어서 임의로 만든 것 -->
             
             아이디<cc class="star_col_red">*</cc><br/>   
-            <input class="l_size margin_rght no_korean" type="text" name="m_id" id="m_id" title="아이디" minlength="8"
+            <input class="l_size margin_rght no_korean" type="text" name="g_id" id="g_id" title="아이디" minlength="5"
             maxlength="12" placeholder="아이디를 입력해주세요." required>
             <div class="id_check"></div><br/>
             
             비밀번호<cc class="star_col_red">*</cc><br/>  
-            <input class="l_size no_korean" type="password" name="m_pw" title="비밀번호" minlength="8" maxlength="15" placeholder="비밀번호(영문+숫자+특수문자 8자 이상)" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$" title="Password must contain 8 to 15 characters with at least one letter, one number, and one special character." required> <br/>
+            <input class="l_size no_korean" type="password" name="g_pw" title="비밀번호" minlength="8" maxlength="15" placeholder="비밀번호(영문+숫자+특수문자 8자 이상)" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$" title="Password must contain 8 to 15 characters with at least one letter, one number, and one special character." required> <br/>
             
             비밀번호 확인<cc class="star_col_red">*</cc><br/>  
-            <input class="l_size no_korean" type="password" name="m_re_pw" title="비밀번호확인" minlength="8" maxlength="15" placeholder="비밀번호 확인" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$" title="Password must contain 8 to 15 characters with at least one letter, one number, and one special character." required> <br/>
+            <input class="l_size no_korean" type="password" name="g_re_pw" title="비밀번호확인" minlength="8" maxlength="15" placeholder="비밀번호 확인" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,15}$" title="Password must contain 8 to 15 characters with at least one letter, one number, and one special character." required> <br/>
             <div id="result"></div><br/>
             
             <!--이름<cc class="star_col_red">*</cc><br/>  
@@ -90,13 +90,17 @@
             
             <!-- 이미지 파일 불러오는 기능 필요함. -->
             	이미지<cc class="star_col_red">*</cc><br/>
-            <input class="m_size margin_rght" type="text" name="g_img" placeholder="Image" title="g_img" required>
-            <div class="s_btn btn_color"><input type="button" name="g_img_btn" value="첨부파일"></div><br/><br/>
+             <input class="m_size margin_rght" type="text" name="g_img" placeholder="Image" title="g_img" required> 
+             <input class="s_btn btn_color" type="button" name="g_img_btn" value="첨부파일"> 
+            <!-- <input type="file" name="g_img" id="g_img" class="g_img"> -->
+            
+             <br/><br/>
+             
 
             
             email<cc class="star_col_red">*</cc> <br/>
-            <input class="m_size margin_rght no_korean" type="text" name="m_email" title="email" placeholder="입력해주세요." required>
-            <select class="m_size_email_slct" name="m_emaild" title="email">
+            <input class="m_size margin_rght no_korean" type="text" name="g_email" title="email" placeholder="입력해주세요." required>
+            <select class="m_size_email_slct" name="g_emaild" title="email">
                 <option value="">선택</option>
                 <option>@naver.com</option>
                 <option>@gmail.com</option>
@@ -107,35 +111,35 @@
             
             
             연락처1<cc class="star_col_red">*</cc><br/> 
-            <select class="s_size_slct" name="m_pnum1" title="연락처" required>
+            <select class="s_size_slct" name="g_pnum1" title="연락처" required>
                 <option value="">선택</option>
                 <option>010</option>
                 <option>02</option>
                 <option>031</option>
                 <option>063</option>
             </select>
-            -<input class="s_size margin_lft margin_rght pnum_check" type="tel" name="m_pnum1_1" title="연락처1" pattern="[0-9]{4}" minlength="4"
-            maxlength="4" required>-<input class="s_size margin_lft pnum_check" type="tel" name="m_pnum1_2" title="연락처1" pattern="[0-9]{4}" minlength="4"
+            -<input class="s_size margin_lft margin_rght pnum_check" type="tel" name="g_pnum1_1" title="연락처1" pattern="[0-9]{4}" minlength="4"
+            maxlength="4" required>-<input class="s_size margin_lft pnum_check" type="tel" name="g_pnum1_2" title="연락처1" pattern="[0-9]{4}" minlength="4"
             maxlength="4" required> <br/>
             
             
             
             생년월일<br/>          
-            <select class="s_size_slct" name="m_birth_y" id="year">
+            <select class="s_size_slct" name="g_birth_y" id="year">
                 <option value="">선택</option>
             </select>년
-            <select class="s_size_slct margin_lft" name="m_birth_m" id="month">
+            <select class="s_size_slct margin_lft" name="g_birth_m" id="month">
                 <option value="">선택</option>
             </select>월
-            <select class="s_size_slct margin_lft" name="m_birth_d" id="day">
+            <select class="s_size_slct margin_lft" name="g_birth_d" id="day">
                 <option value="">선택</option>
             </select>일
             <br/><br/>
 
             
             성별<br/>
-            <label><input class="gd" type="radio" name="m_gender" title="성별" value="F"> 여자 </label>
-            <label><input class="gd" type="radio" name="m_gender" title="성별" value="M"> 남자</label><br/><br/><br/>
+            <label><input class="gd" type="radio" name="g_gender" title="성별" value="F"> 여자 </label>
+            <label><input class="gd" type="radio" name="g_gender" title="성별" value="M"> 남자</label><br/><br/><br/>
 
 			<!--동의체크박스 -->
             <div class="all_ck_box">
@@ -152,6 +156,21 @@
         
 		</div>
 	</body>
+	
+	
+	<script type="text/javascript">
+	
+	for (var i = 2023; i > 1920; i--) {
+		$('#year').append('<option value="' + i + '">' + i + '</option>');
+	}
+	for (var i = 1; i < 13; i++) {
+		$('#month').append('<option value="' + i + '">' + i + '</option>');
+	}
+	for (var i = 1; i < 32; i++) {
+		$('#day').append('<option value="' + i + '">' + i + '</option>');
+	}
+	</script>
+	
     </html>
     <!--페이지 자체의 스타일, 주소 값, 날짜 및 이메일, 전화번호에 셀렉사용, -->
     
