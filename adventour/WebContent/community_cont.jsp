@@ -151,14 +151,17 @@ if (session.getAttribute("id") == null) {
         if (session.getAttribute("id") != null && session.getAttribute("id").equals(obj.getM_id())) {
         %>
        
-          <input type="submit" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
+         <input type="submit" class="c_to_modifybtn" name="c_to_modifybtn" value="수  정"/>
 
+      <a href="community_delete.jsp?c_num=<%=obj.getC_num() %>">
         <input type="button" class="c_to_deletebtn" name="c_to_deletebtnn" value="삭  제" />
+        </a>
       </div> 
       <%
       } 
       %>
     </div>
+  </div><!--c_cont_main-->
   </div><!--c_cont_main-->
 </form>
 <footer>

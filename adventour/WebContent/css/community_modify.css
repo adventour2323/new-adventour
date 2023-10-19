@@ -26,7 +26,7 @@ body {
 
 /*-------------------------------커뮤니티 입력----------------------------*/
 
-.c_cont_main{ /*작성 폼전체*/
+.c_modify_main{ /*작성 폼전체*/
   border:solid 1px rgb(20, 3, 78);
   width:  1050px;
   height: 900px;
@@ -35,7 +35,7 @@ body {
   margin-bottom: 100px;
 
 }
-.c_cont_main h2 { 
+.c_modify_main h2 { 
   width:  1020px;
   height: 50px;
   margin-top: 0px;
@@ -172,28 +172,29 @@ body {
 	
 	width:  200px;
     height: 50px;
-     margin-left: 700px;
+     margin-left: 830px;
   margin-top: -50px;
 }
-.c_to_listbtn{
- 
-  width:  70px;
+.c_modifybtn{
+ background-color:#555;
+ color:white;
+  width:  90px;
   height: 20px;
-  margin-left: 420px;
-  margin-top: 30px;
-}
-.c_to_modifybtn{
-	 width:  70px;
-  height: 20px;
-   margin-top: 30px;
-   margin-left: 50px;
-}
-.c_to_deletebtn{
-	 width:  70px;
-  height: 20px;
+  margin-left: 480px;
   margin-top: 30px;
 }
 
+.c_to_listbtn{
+	 background-color:#555;
+	 color:white;
+	 width:  90px;
+  height: 20px;
+  margin-top: 30px;
+  float: right;
+}
+.c_modifybtn:hover, .c_to_listbtn:hover{
+	 background-color:#111;
+}
 #footer{
 	margin-top: 100px;
 }

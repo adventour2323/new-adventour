@@ -102,6 +102,91 @@ $(document).ready(function() {
 	      var day = today.getDate();
 	      return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
 	  }
+
+	  
+///////////////////검색창 쿠키 값 	  
+//	  
+//	// 특정 이름, 값 및 만료일을 가진 쿠키를 설정하는 함수
+//	  function setCookie(name, value, days) {
+//	      var expires = "";
+//	      if (days) {
+//	          var date = new Date();
+//	          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+//	          expires = "; expires=" + date.toUTCString();
+//	      }
+//	      document.cookie = name + "=" + value + expires + "; path=/";
+//	  }
+//
+//	  // 이름에 해당하는 쿠키의 값을 가져오는 함수
+//	  function getCookie(name) {
+//	      var nameEQ = name + "=";
+//	      var cookies = document.cookie.split(';');
+//	      for (var i = 0; i < cookies.length; i++) {
+//	          var cookie = cookies[i];
+//	          while (cookie.charAt(0) == ' ') {
+//	              cookie = cookie.substring(1, cookie.length);
+//	          }
+//	          if (cookie.indexOf(nameEQ) == 0) {
+//	              return cookie.substring(nameEQ.length, cookie.length);
+//	          }
+//	      }
+//	      return null;
+//	  }
+//
+//	  // 쿠키로부터 검색 필드를 채우는 함수
+//	  function populateSearchFieldsFromCookies() {
+//	      var sch_country = getCookie("sch_country");
+//	      var sch_city = getCookie("sch_city");
+//	      var sch_indate = getCookie("sch_indate");
+//	      var sch_outdate = getCookie("sch_outdate");
+//	      var sch_adult = getCookie("sch_adult");
+//	      var sch_minpri = getCookie("sch_minpri");
+//	      var sch_maxpri = getCookie("sch_maxpri");
+//	      var h_type = getCookie("h_type");
+//
+//	      if (sch_country) {
+//	          document.getElementsByName("sch_country")[0].value = sch_country;
+//	      }
+//	      if (sch_city) {
+//	          document.getElementsByName("sch_city")[0].value = sch_city;
+//	      }
+//	      if (sch_indate) {
+//	          document.getElementById("sch_indate").value = sch_indate;
+//	      }
+//	      if (sch_outdate) {
+//	          document.getElementById("sch_outdate").value = sch_outdate;
+//	      }
+//	      if (sch_adult) {
+//	          document.getElementsByName("sch_adult")[0].value = sch_adult;
+//	      }
+//	      if (sch_minpri) {
+//	          document.getElementsByName("sch_minpri")[0].value = sch_minpri;
+//	      }
+//	      if (sch_maxpri) {
+//	          document.getElementsByName("sch_maxpri")[0].value = sch_maxpri;
+//	      }
+//	      if (h_type) {
+//	          document.querySelector('input[name="h_type"][value="' + h_type + '"]').checked = true;
+//	      }
+//	  }
+//
+//	  // 페이지가 로드될 때 쿠키로부터 검색 필드를 채우는 함수를 호출합니다.
+//	  window.onload = function() {
+//	      populateSearchFieldsFromCookies();
+//	  };
+//
+//	  // 폼 제출 이벤트 리스너를 추가하여 검색 값들을 쿠키에 저장합니다.
+//	  document.forms["schnav_form"].addEventListener("submit", function() {
+//	      setCookie("sch_country", document.getElementsByName("sch_country")[0].value, 365);
+//	      setCookie("sch_city", document.getElementsByName("sch_city")[0].value, 365);
+//	      setCookie("sch_indate", document.getElementById("sch_indate").value, 365);
+//	      setCookie("sch_outdate", document.getElementById("sch_outdate").value, 365);
+//	      setCookie("sch_adult", document.getElementsByName("sch_adult")[0].value, 365);
+//	      setCookie("sch_minpri", document.getElementsByName("sch_minpri")[0].value, 365);
+//	      setCookie("sch_maxpri", document.getElementsByName("sch_maxpri")[0].value, 365);
+//	      setCookie("h_type", document.querySelector('input[name="h_type"]:checked').value, 365);
+//	  });
+//	  
 	
 	
 });
