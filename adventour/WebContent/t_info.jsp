@@ -265,7 +265,7 @@
 		<hr>
 		
 		<div class="rating-div" style="margin-bottom: 30px;">
-		
+			<form name="rating_comment" action="tour_review.process.jsp">
 			    <div id="stars">
         			<span class="star" data-rating="1">☆</span>
         			<span class="star" data-rating="2">☆</span>
@@ -274,9 +274,6 @@
         			<span class="star" data-rating="5">☆</span>
     			</div>
     			
-		
-		
-			<form name="rating_comment" action="">
 				<input type="text" id="comment">
 				<input type="submit" value="등록하기">
 			</form>	 
