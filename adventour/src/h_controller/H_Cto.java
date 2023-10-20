@@ -23,11 +23,15 @@ public class H_Cto extends HttpServlet {
     	String uName ="";
     	uName = request.getParameter("uname");
     	
+    	String city_ko = "";
+    	city_ko = request.getParameter("city");
+    	
         h_conn_interface inter = H_MainDBselect.im_inter();
         h_conn_interface ukinter = H_MainukAll_DBselect.im_inter();
         h_conn_interface htop10inter = H_MainTop10_DBselect.im_inter();
         h_conn_interface htop10inter1 =  H_MainSch_DBselect.im_inter();
         h_conn_interface hscinter =  H_SCSch_DBselect.im_inter();
+        h_conn_interface hcityinter =  H_CityAll_DBselect.im_inter();
         
         
 
@@ -55,19 +59,31 @@ public class H_Cto extends HttpServlet {
         	}else if(uName.equals("hotelSCSearch")) { // 호텔 스케쥴에 왼쪽 검색창
         		
         		String hscsc = request.getParameter("uname");
-        		 System.out.println(hscsc); //파라미터 값이 잘 넘어오는지 확인 -ok
-        		 
-        	
+        		// System.out.println(hscsc); //파라미터 값이 잘 넘어오는지 확인 -ok
+        		      	
         	        String country_ko = request.getParameter("sch_country");
         	        String sch_adult = request.getParameter("sch_adult");
-        	        System.out.println("한글확인 1");
-        	        System.out.println(country_ko);
-        	        System.out.println(sch_adult);
-        	        System.out.println("한글확인 1 끝");
+//        	        System.out.println("한글확인 1");
+//        	        System.out.println(country_ko);
+//        	        System.out.println(sch_adult);
+//        	        System.out.println("한글확인 1 끝");
              
         	    String hscsearch = hscinter.showdata(request, response);  
         	    RequestDispatcher dispatcher3 = request.getRequestDispatcher("hotel_sc2.jsp");
         	    dispatcher3.forward(request, response);
+        	}else if (uName.equals("mainCity")) {
+        		
+        		String cityko = request.getParameter("city");
+        		 
+          
+     	        System.out.println("한글확인 1");
+     	        System.out.println(cityko);
+     	        System.out.println("한글확인 1 끝");
+          
+     	    String hcityinter1 = hcityinter.showdata(request, response);  
+     	    RequestDispatcher dispatcher4 = request.getRequestDispatcher("hotel_sc.jsp");
+     	    dispatcher4.forward(request, response);
+        		
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 

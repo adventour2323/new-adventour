@@ -86,19 +86,19 @@ if (session.getAttribute("id") != null) {
     </div><!--c_pho1_div-->
     
     <div class="c_pho_div" name="c_pho2_div">
-      이미지2 : <input type="text" class="c_pho" name="c_pho2" placeholder="이미지2을 첨부하세요.">
+      <label for = "fileName1">이미지2 : </label> <input type="file" name="fileName2" id = "fileName2"> 
     </div><!--c_pho1_div-->
    
     <div class="c_pho_div" name="c_pho3_div">
-      이미지3 : <input type="text" class="c_pho" name="c_pho3" placeholder="이미지3을 첨부하세요.">
+      <label for = "fileName1">이미지3 : </label> <input type="file" name="fileName3" id = "fileName3"> 
     </div><!--c_pho1_div-->
    
     <div class="c_pho_div" name="c_pho4_div">
-      이미지4 : <input type="text" class="c_pho" name="c_pho4" placeholder="이미지4을 첨부하세요.">
+     <label for = "fileName1">이미지4 : </label> <input type="file" name="fileName4" id = "fileName4"> 
     </div><!--c_pho1_div-->
    
     <div class="c_pho_div" name="c_pho5_div">
-      이미지5 : <input type="text" class="c_pho" name="c_pho5" placeholder="이미지5을 첨부하세요.">
+     <label for = "fileName1">이미지5 : </label> <input type="file" name="fileName5" id = "fileName5"> 
     </div><!--c_pho1_div-->
 
 

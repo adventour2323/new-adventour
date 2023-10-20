@@ -48,7 +48,10 @@ if (session.getAttribute("id") == null) {
 <form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post">
   <div class="schnav"> <!--검색 네비 = sch -->
   
-    <%List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
+    <%
+    String city_ko = "";
+	city_ko = request.getParameter("city");
+    List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
 H_getset sch_country = null;
 if (list != null && !list.isEmpty()) {
     sch_country = list.get(0);
@@ -61,7 +64,46 @@ if (list != null && !list.isEmpty()) {
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+      
+   
+     <%
+     String city_name = "";
+     if (city_ko != null) {
+         if ("london".equals(city_ko)) {
+             city_name = "런던";
+         } else if ("liverpool".equals(city_ko)) {
+             city_name = "리버풀";
+         } else if ("edinburgh".equals(city_ko)) {
+             city_name = "에든버러";
+         } else if ("rome".equals(city_ko)) {
+             city_name = "로마";
+         } else if ("veneice".equals(city_ko)) {
+             city_name = "베네치아";
+         } else if ("milano".equals(city_ko)) {
+             city_name = "밀라노";
+         } else if ("paris".equals(city_ko)) {
+             city_name = "파리";
+         } else if ("marseille".equals(city_ko)) {
+             city_name = "마르세유";
+         } else if ("monaco".equals(city_ko)) {
+             city_name = "모나코";
+         } else if ("madrid".equals(city_ko)) {
+             city_name = "마드리드";
+         } else if ("barcelona".equals(city_ko)) {
+             city_name = "바르셀로나";
+         } else if ("sevilla".equals(city_ko)) {
+             city_name = "세비야";
+         }
+   
+     %>
+ <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= city_name %>" >
+     <% }else{
+    	 %>    
+     <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+     <%
+     }
+     %>
+      
     </div>
 
     <div class="sch1">

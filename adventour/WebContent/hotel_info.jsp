@@ -15,11 +15,7 @@
     <meta class="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-        <script 
-        defer
-        src="https://maps.googleapis.com/maps/api/js?
-        key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap">
-        </script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -45,90 +41,19 @@ if (session.getAttribute("id") == null) {
 %>
 </header>
 
-<!--  검색창 부분 삭제  
-  <div class="pagename">
-    <h1 class="pagename1">HOTEL</h1>
-  </div>
 
-  <div class="schnav"> 
-
-   <div class="sch1">
-      <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" >
-    </div>
-    
-     <div class="sch1">
-      <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" >
-    </div>
-    
-
-    <div class="sch1">
-      <h5 class="sch_title" >☆ 체크인</h5>
-      <input type="text" id="sch_indate" class="datepicker" name="sch_indate"placeholder="YYYY-MM_DD">
-    </div>
-
-    <div class="sch1">
-      <h5 class="sch_title" >☆ 체크아웃</h5>
-      <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM_DD">
-    </div>
-
-    <div class="sch12">
-      <h5 class="sch_title" >☆ 인원</h5>
-      성인 : <input type="text" class="sch_adult" class="sch_adult" placeholder="성인"></br>
-
-    </div>
-
-    <div class="sch1">
-      <h5 class="sch_title" >☆ 가격</h5>
-      <input type="text" class="sch_minpri" name="sch_minpri" placeholder="최소가격">
-      ~  <input type="text" class="sch_maxpri" name="sch_maxpri" placeholder="최대가격">
-    </div>
-
-    <div class="sch123">
-      <h5 class="sch_title" >☆ 옵션</h5>
-      <input type="checkbox" class="h_twin"  name="h_twin" value="트윈">트윈</br>
-      <input type="checkbox" class="h_double"  name="h_double" value="슈퍼싱글">더블</br>
-      <input type="checkbox" class="h_queen"  name="h_queen" value="퀸">퀸</br>
-    </div>
-
-
-    <div class="sch13">
-      <button class="sch_btn" type="button" class="sch_btn">검색하기</button>
-    </div>
-
-    </div>
- --> 
   <div class="content">
 
-  <!-- 지도부분 삭제   
-  <div class="h_map">
-      <div id="map" style="height: 290px;"> </div>
-
-    <div class="rinav"> 
-
-      <button class="eur" type="button">고객센터</button>
-      <button class="cart" type="button">장바구니 담기</button>
-      <button class="pay" type="button">결제하기</button>
-      
-    </div>
-
-
-  
-    </div>
-   -->
 
     <div id="hotel_infos">
 <%  List<H_getset> top_list = (List<H_getset>) request.getAttribute("top_list"); 
 if (top_list != null) {
-	
 
-	
 	for (int i = 0; i <1; i++) {
 	    H_getset aaa = top_list.get(i); 
 
 %>
- 
+
       <div id="hotel_info_phos">
 
         <div id="hotel_info_pho1">
@@ -188,7 +113,8 @@ if (top_list != null) {
 
       <div id="hotel_info_breakfast">
              <h3 class="hotel_info_breakfast">   
-            조식 
+            조식</h3><br>
+            <h3>
             <% if (aaa.getH_breakfast().equals("y")) { %>
                 가능
             <% } else { %>
@@ -198,7 +124,8 @@ if (top_list != null) {
     </div>
     <div id="hotel_info_pool">
         <h3 class="hotel_info_pool">
-            수영장 
+            수영장 </h3><br>
+            <h3>
             <% if (aaa.getH_pool().equals("y")) { %>
                 있음
             <% } else { %>
@@ -208,7 +135,8 @@ if (top_list != null) {
     </div>
     <div id="hotel_info_rooftop">
         <h3 class="hotel_info_rooftop">
-            루프탑 
+            루프탑 </h3><br>
+            <h3>
             <% if (aaa.getH_rooftop().equals("y")) { %>
                 있음
             <% } else { %>
@@ -220,13 +148,26 @@ if (top_list != null) {
     
     </div><!--hotel_info_options-->
     
- <div id="map" style="width: 950px; height: 400px;" > 
- <!-- <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" onclick="showMap(<%= aaa.getH_lat()%>, <%= aaa.getH_lon()%>)"> -->
-
- 
- </div>
+ <div id="map" style="width: 950px; height: 400px;" > </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
+    
+    <div class="hotel_info_cont">
+    
+    <h1> 호텔  설명</h1>
+    <h2><%= aaa.getH_name_ko() %></h2>
+    <h5>빌리지 호텔 에든버러에서는 바쁜 일정 후 휴식시간을 보낼 수 있는 편안한 객실이 마련되어 있습니다.</h5>
+   <h5> 빌리지 호텔 에든버러 객실은 여행객과 비즈니스 출장객 모두에게 에든버러에서 편안하게 지낼 수 있는 공간입니다.</h5>
+    <h5> 호텔은 헤이마켓 기차역에서 약 4km 정도 거리에 있고, 에든버러공항에서는 약 12km 정도 거리에 있어 호텔까지 편리하게 이동할 수 있습니다.</h5>
+     <h5>주변에 칼턴 힐, 스카치 위스키 체험관, 에든버러 대학 등 유명 관광지들이 많이 있어 특별한 여행을 즐기실 수 있습니다.</h5>
+   <h5> 호텔 시설을 이용하여 하루 동안의 피로를 말끔히 푸실 수 있습니다. 호텔에서는 주차 공간을 제공합니다.</h5>
+
+    </div>
+ </div><!--hotel_info-->
+  
+ <div class="yes_reserv_room">
+ <h2> 현재 예약 가능한 객실 </h2>
+ </div>   
     
 <%	
 for (int ii = 0; i < top_list.size(); i++) {
@@ -257,20 +198,72 @@ for (int ii = 0; i < top_list.size(); i++) {
 
     </div>
       </div>
+     
 <%  
 }
+
 }
 }else{
 	out.println("null data");
 }
 %>
+
 <div class="modal">
   <span class="close">&times;</span>
   <img class="modal_content" id="img01">
 </div>
-</div><!--hotel_info-->
 
-  </div><!--content-->
+
+
+<div class="h_more_info">
+<h1>유용한 정보 </h1>
+ <table >
+        <tr>
+            <td id="td1" class="td1"><h2>침대 추가</h2></td>
+            <td id="td12" ><h3>2세 이하 무료</h3> <h4>각 객실유/소아 1명은 침대를 무료로 함께 사용할 수 있습니다.</h4></td>
+        </tr>
+        <tr>
+            <td id="td2" class="td1"><h2>반려동물 </h2></td>
+            <td id="td22" ><h3>반려동물 동반 불가</h3></td>
+        </tr>
+          <tr>
+            <td  id="td3" class="td1"><h2>조식 </h2></td>
+            <td id="td32" ><h3>조식 이용 가능</h3>
+            <h4>조식 종류 : 서양식 조식</h4>
+            <h4>조식 가격 : 한화 약 2만원</h4>
+            </td>
+        </tr>
+          <tr>
+            <td  id="td4" class="td1"><h2>호텔관련 주요정보  </h2></td>
+            <td id="td42" ><h4>
+현재 이 숙소는 코로나19(COVID-19)에 대응하기 위해 추가 안전 및 위생 조치를 실시하고 있습니다. 
+It is essential to pre-book a table in the restaurant and bar prior to arrival. 
+The property will contact guests after receiving booking confirmation with additional details related to their stay. Check-in and check-out is done at the self-service kiosks. 
+Please note that Village Hotels do not accept cash payments or cheques. 
+The credit or debit card used to make the booking must be available on check in at the hotel. 
+Entrance fee to the Health & Fitness Club is GBP 5.00 per room per night. A towel charge may apply. 
+Please note that children’s swim times apply. Please indicate the number of baby cots needed.
+All requests for cots must be confirmed by the property as not all rooms can accommodate cots. 
+Please note that over the festive period, there will be limited dining available at the hotel due to private functions.
+For more information, guests are advised to contact the hotel before arrival, contact details can be found on the booking confirmation.</h4>
+</td>
+        </tr>
+        <tr>
+            <td  id="td5" class="td1"><h2>가능한 결제 방법 </h2></td>
+            <td id="td52"><h3>호텔 요금은 다음의 방법으로 결제하실 수 있습니다:</h3>
+            <h4>AMEX, VISA, MASTER</h4>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+ 
+ </div><!--content 전체 부분-->
+
+ 
+
+
 
   <footer>
 <!-- footer.html import-->

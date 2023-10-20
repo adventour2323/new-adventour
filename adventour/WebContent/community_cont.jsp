@@ -141,6 +141,12 @@ if (session.getAttribute("id") == null) {
     <div class="c_con_div" name="c_con_div">
       <textarea class="c_con" name="c_con" readonly><%= obj.getC_cont() %></textarea>
     </div><!--c_con_div-->
+    
+    <div class="c_con_phos">
+    
+    
+    
+    </div>
 
     <div class="c_btns">
       <a href="community_list2.jsp?c_num=<%= obj.getC_num() %>">
@@ -164,8 +170,22 @@ if (session.getAttribute("id") == null) {
   </div><!--c_cont_main-->
   </div><!--c_cont_main-->
 </form>
+
 <footer>
-  <div id="footer"></div>
+<%
+if (session.getAttribute("id") == null) {
+%>
+    <!-- header.html import -->
+     <div id="footer"></div>
+<%
+} else {
+%>
+    <jsp:include page="footer_login.html"  flush="true"></jsp:include>
+<%
+}
+%>
+ 
+ 
 </footer>
 
 </body>

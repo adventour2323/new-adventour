@@ -24,6 +24,10 @@
     String c_pho4 = "";
     String c_pho5 = "";
     String origfilename1 = "";
+    String origfilename2 = "";
+    String origfilename3 = "";
+    String origfilename4 = "";
+    String origfilename5 = "";
     
     try { 
         // MultipartRequest를 사용하여 파일 업로드 처리
@@ -59,6 +63,22 @@
         String file1 = (String) files.nextElement();
         c_pho1 = multi.getFilesystemName(file1);
         origfilename1 = multi.getOriginalFileName(file1);
+        
+        String file2 = (String) files.nextElement();
+        c_pho2 = multi.getFilesystemName(file2);
+        origfilename2 = multi.getOriginalFileName(file2);
+        
+        String file3 = (String) files.nextElement();
+        c_pho3 = multi.getFilesystemName(file3);
+        origfilename3 = multi.getOriginalFileName(file3);
+        
+        String file4 = (String) files.nextElement();
+        c_pho4 = multi.getFilesystemName(file4);
+        origfilename4 = multi.getOriginalFileName(file4);
+        
+        String file5 = (String) files.nextElement();
+        c_pho5 = multi.getFilesystemName(file5);
+        origfilename5 = multi.getOriginalFileName(file5);
 
     } catch (Exception e) {
         e.printStackTrace();

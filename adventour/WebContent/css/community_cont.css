@@ -29,7 +29,7 @@ body {
 .c_cont_main{ /*작성 폼전체*/
   border:solid 1px rgb(20, 3, 78);
   width:  1050px;
-  height: 800px;
+  height: 1000px;
   margin-left: 425px;
   margin-top: 60px;
   margin-bottom: 100px;
@@ -137,6 +137,12 @@ body {
   width:  900px;
   height: 400px;
   resize: none;
+}
+.c_con_phos{
+	background-color:yellow;
+	width:  900px;
+  height: 200px;
+  margin-left:90px;
 }
 .c_pho_title{
   width:  600px;
