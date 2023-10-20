@@ -42,10 +42,33 @@ border: none;
         
       <div class="content"  > <!-- body 전체  -->
 
-		<div class="g_title">
-			<!-- <h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1> -->
-			<h1 style='text-align: center; margin-bottom: 30px;'><%= country %></h1>
-		</div>      
+<div class="t_country_div" style="text-align: center;">
+    <div style="display: inline-block;">
+        <%
+        if ("영국".equals(country)) {
+        %>
+            <img alt="영국" src="./image/tour/ukflag.png" height="30px">
+        <%
+        } else if ("프랑스".equals(country)) {
+        %>
+            <img alt="프랑스" src="./image/tour/frflag.png" height="30px">
+        <%
+        } else if ("스페인".equals(country)) {
+        %>
+            <img alt="스페인" src="./image/tour/esflag.png" height="30px">
+        <%
+        } else if ("이탈리아".equals(country)) {
+        %>
+            <img alt="이탈리아" src="./image/tour/itaflag.png" height="30px">
+        <%
+        }
+        %>
+    </div>
+    <h1 class="t_country" style="display: inline-block; ">
+        <%=country %>
+    </h1>
+</div>    
+		
 <div style="display: flex; text-align: center; margin-bottom: 10px; "> <!-- 표 묶음  -->
 
       	<div id="category" class="all_country" style="margin-left: auto;">

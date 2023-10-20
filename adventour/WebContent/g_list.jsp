@@ -35,30 +35,33 @@ border: none;
 			ArrayList<g_getset> a1 = id.g1();
 		%>
         
+	<div class="list_title_div">
+		<h1 class="list_title"> 가이드 리스트 <br> </h1>
+	</div>
+	
+	<div class="country_list" >
+		
+		<div id="country_all" class="country_content" style="margin-left: auto;">
+		<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
+		</div>
+		<div id="country_uk" class="country_content">
+			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
+		</div>
+		<div id="conutry_fr" class="country_content">
+			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+		</div>
+		<div id="country_es" class="country_content">
+			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+		</div>
+		<div id="country_ita" class="country_content" style="margin-right: auto;">
+			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+		</div>
+	
+	</div> <!-- 표 묶음  -->        
+        
       <div class="content"  > <!-- body 전체  -->
 
-		<div class="g_title">
-			<h1 style='text-align: center; margin-bottom: 30px;'>가이드 리스트</h1>
-		</div>      
-<div style="display: flex; text-align: center; margin-bottom: 10px; "> <!-- 표 묶음  -->
 
-      	<div id="category" class="all_country" style="margin-left: auto;">
-			<a href="g_list.jsp"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
-		</div>
-		<div id="category" class="category_uk">
-		 	<a href="g_list_country.jsp?g_country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
-		</div>
-		<div id="category" class="category_fr" >
-			<a href="g_list_country.jsp?g_country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
-		</div>
-		<div id="category" class="category_es" >
-			<a href="g_list_country.jsp?g_country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
-		</div>
-		<div id="category" class="category_ita"  style="margin-right: auto;">
-			<a href="g_list_country.jsp?g_country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
-		</div>
-      
-</div> <!-- 표 묶음  -->
       
       
         <div style="text-align: center; margin-right: auto; margin-left: auto;">
