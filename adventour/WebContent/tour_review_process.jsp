@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<%
+<%-- <%
 if(session.getAttribute("id") == null) {
 %>
 <script>
@@ -18,7 +18,7 @@ if(session.getAttribute("id") == null) {
 </script>
 <%
 }
-%>
+%> --%>
 
 <%
 String reviewStar = request.getParameter("reviewStar"); /* 별점 */
@@ -26,13 +26,18 @@ String review_content = request.getParameter("review_content"); /* 리뷰내용 
 String t_id = request.getParameter("t_id"); /* tour id */
 String m_id =  (String) session.getAttribute("id"); /* 회원 id */
 
-int comment_num = 1;
+/* int comment_num = 1; */
 
 
 
 if( /*입력 값이 있는지 없는지 확인*/
 		reviewStar == null || review_content == null  || t_id == null ||m_id == null )
-   throw new Exception("누락된 데이터가 있습니다.");
+	%>
+	<script>
+	    alert("누락된 데이터가 있습니다. 로그인이 필요합니다.");
+	    history.back();
+	</script>
+	<%
 Connection conn = null; 
 Statement stmt = null;
 try{
@@ -42,8 +47,7 @@ try{
    if(conn== null)
       throw new Exception("데이터베이스에 연결할 수 없습니다.");
    stmt = conn.createStatement();
-   String command = String.format("insert into tour_rating values('"
-                                  +comment_num+"', '"+review_content+"', '"+reviewStar+"','"+t_id+"', '"+m_id+"');" );
+   String command = String.format("insert into tour_rating(t_review, t_rating, t_id, m_id) values('"+review_content+"', '"+reviewStar+"','"+t_id+"', '"+m_id+"');" );
 				  
    
     int rowNum = stmt.executeUpdate(command);

@@ -92,7 +92,7 @@
 			<div class="option_div" >
 				<label><h5>옵션 선택</h5></label>
 					<hr>
-				<form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return validateForm();">
+				<form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return Form();">
 					<div class="date_select" style="display: flex; align-items: center;">
     					<label style="margin-right: 10px;"><h5 style="margin: 0;">날짜</h5></label>
     					<div style="display: flex; align-items: center;">
@@ -238,7 +238,7 @@
 
         								<div class="guide-row">
             								<div class="image-cell">
-                								<img alt="가이드 사진" src="<%=gg.getImg()%>" >
+                								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
             								</div>
             								<div style="display: block; ">
             									<div class="label-cell" style="margin-right: auto; margin-left: auto;">
@@ -256,7 +256,7 @@
             								</div>
         								</div>
 
-</div>
+									</div>
 
 								</div>
             					<%} %>
@@ -271,7 +271,7 @@
 		<hr>
 		
 		<div class="rating-div" style="margin-bottom: 30px;">
-			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post">
+			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" onsubmit="validateForm2()">
 				<fieldset>
 					<span class="text-bold">별점을 선택해주세요</span>
 					<input type="radio" name="reviewStar" value="5" id="rate1">
@@ -288,7 +288,7 @@
 				<div>
 					<textarea class="col-auto form-control" type="text" id="reviewContents" name="review_content"></textarea>
 					<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
-					<input type="submit" value="등록하기" class="review_write_btn">
+					<input type="button" value="등록하기" class="review_write_btn">
 				</div>
 			</form>	 
 			
@@ -642,6 +642,23 @@ function validateForm() {
         priceElement.textContent = formatNumberWithCommas(price) + ' 원';
     });
 </script>
+
+<script>
+function validateForm2() {
+	debugger
+
+var sessionID = "<%= session.getAttribute("id") %>";
+console.log(sessionID);
+if (id==null || id=='null'||id=="") {
+    alert("로그인이 필요합니다.");
+    return false; // 폼 전송을 막습니다.
+}
+
+// 날짜가 선택되었고 세션 ID가 존재하면 폼을 제출합니다.
+return true;
+}
+</script>
+
 
 <%} %> <!-- for문 종료 -->
 <!--  -->
