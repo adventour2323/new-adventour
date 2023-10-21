@@ -9,16 +9,17 @@
 </head>
 <body>
 
-<%-- <%
+<%
 if(session.getAttribute("id") == null) {
 %>
 <script>
   alert("로그인이 필요합니다.");
-  history.back();
+  /* history.back(); */
+  window.location.href = document.referrer;
 </script>
 <%
 }
-%> --%>
+%>
 
 <%
 String reviewStar = request.getParameter("reviewStar"); /* 별점 */
@@ -29,18 +30,14 @@ String m_id =  (String) session.getAttribute("id"); /* 회원 id */
 /* int comment_num = 1; */
 
 
+if (reviewStar == null || review_content == null || t_id == null || m_id == null) {
 
-if( /*입력 값이 있는지 없는지 확인*/
-		reviewStar == null || review_content == null  || t_id == null ||m_id == null )
-	%>
-	<script>
-	    alert("누락된 데이터가 있습니다. 로그인이 필요합니다.");
-	    history.back();
-	</script>
-	<%
-Connection conn = null; 
-Statement stmt = null;
-try{
+} else {
+    Connection conn = null;
+    Statement stmt = null;
+
+    try {
+
    Class.forName("com.mysql.jdbc.Driver"); /*데이테베이스에 연결*/
    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","qhdks12!@");
    /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8","root","0521"); */
@@ -50,25 +47,31 @@ try{
    String command = String.format("insert into tour_rating(t_review, t_rating, t_id, m_id) values('"+review_content+"', '"+reviewStar+"','"+t_id+"', '"+m_id+"');" );
 				  
    
-    int rowNum = stmt.executeUpdate(command);
-   
-   if(rowNum < 1)
-      throw new Exception("데이터를 DB에 입력할 수 없습니다.");
-   
+   int rowNum = stmt.executeUpdate(command);
+
+   if (rowNum < 1) {
+       out.println("데이터를 DB에 입력할 수 없습니다.");
+   }
+} catch (Exception e) {
+   e.printStackTrace(); // 예외 정보를 출력
 } finally {
    try {
-      stmt.close();
+       if (stmt != null) {
+           stmt.close();
+       }
    } catch (Exception ignored) {
-      
-   } try {
-      conn.close();
-   } catch (Exception ignored){
-      
-   } }
+   }
+   try {
+       if (conn != null) {
+           conn.close();
+       }
+   } catch (Exception ignored) {
+   }
+}
 
- 
-String referrer = request.getHeader("referer");/* 이전 페이지의 주소 가져와서 저장  */
+String referrer = request.getHeader("referer");
 response.sendRedirect(referrer);
+}
 /*response.sendRedirect("이동할 페이지");
 없어도 그만*/ 
 

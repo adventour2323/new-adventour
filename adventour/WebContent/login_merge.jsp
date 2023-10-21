@@ -46,15 +46,20 @@ PreparedStatement pstmt = null;
 		session.setAttribute("pw",pw);
 		
 		/* response.sendRedirect("index.html"); */
-		 response.sendRedirect("index_login_ing.jsp"); 
+		 /* response.sendRedirect("index_login_ing.jsp"); */ 
 		%>
  		<script>
 		/* location.href = document.referrer; */
-		/* history.back(); */
-		String referrer = request.getHeader("referer");
+		 history.back(); 
+		/* String referrer = request.getHeader("referer"); */
+		 /* window.location.href = document.referrer;  */
+		/* window.location.href = "header_login.jsp" */
+		/* window.location.reload(); */
+		
+		
 		
 		</script>
-		consol.log(referrer);  		
+		
 		<%
 			}else {
 		%>
@@ -102,17 +107,16 @@ PreparedStatement pstmt = null;
         response.addCookie(idCookie);
 		
 		session.setAttribute("pw",pw);
-		/* response.sendRedirect("index.html"); */
+		response.sendRedirect("index_login_ing.jsp"); 
 	%>	
-		<script>
-    history.back();
-</script>;
+
 <% 
 		}else {
 	%>
 	<script>
 	alert("로그인 실패");
-	location.href= "login_merge_form.jsp"
+	String referrer = request.getHeader("referer");
+	response.sendRedirect(referrer);
 	</script>
 	
 	<%

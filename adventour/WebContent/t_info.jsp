@@ -271,9 +271,9 @@
 		<hr>
 		
 		<div class="rating-div" style="margin-bottom: 30px;">
-			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" onsubmit="validateForm2()">
+			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" >
 				<fieldset>
-					<span class="text-bold">별점을 선택해주세요</span>
+					<span class="text-bold">별점을 남겨주세요</span>
 					<input type="radio" name="reviewStar" value="5" id="rate1">
 					<label for="rate1">★</label>
 					<input type="radio" name="reviewStar" value="4" id="rate2">
@@ -286,9 +286,9 @@
 					<label for="rate5">★</label>
 				</fieldset>
 				<div>
-					<textarea class="col-auto form-control" type="text" id="reviewContents" name="review_content"></textarea>
+					<textarea class="col-auto form-control" type="text" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!"></textarea>
 					<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
-					<input type="button" value="등록하기" class="review_write_btn">
+					<input type="submit" value="등록하기" class="review_write_btn">
 				</div>
 			</form>	 
 			
@@ -643,9 +643,9 @@ function validateForm() {
     });
 </script>
 
-<script>
+<%-- <script>
 function validateForm2() {
-	debugger
+	/* debugger */
 
 var sessionID = "<%= session.getAttribute("id") %>";
 console.log(sessionID);
@@ -657,7 +657,7 @@ if (id==null || id=='null'||id=="") {
 // 날짜가 선택되었고 세션 ID가 존재하면 폼을 제출합니다.
 return true;
 }
-</script>
+</script> --%>
 
 
 <%} %> <!-- for문 종료 -->

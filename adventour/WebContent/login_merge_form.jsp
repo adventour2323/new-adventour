@@ -86,7 +86,8 @@ String id = (String) session.getAttribute("id");
 if (id != null) {
 %>
     <script>
-    history.back();
+    /* history.back(); */
+    window.location.href = document.referrer;
     </script>
 <%
 }
