@@ -107,16 +107,18 @@ PreparedStatement pstmt = null;
         response.addCookie(idCookie);
 		
 		session.setAttribute("pw",pw);
-		response.sendRedirect("index_login_ing.jsp"); 
+		/* response.sendRedirect("index_login_ing.jsp");  */
 	%>	
+		<script>
+		history.back(); 
+		</script>
 
 <% 
 		}else {
 	%>
 	<script>
 	alert("로그인 실패");
-	String referrer = request.getHeader("referer");
-	response.sendRedirect(referrer);
+	 location.href= "login_merge_form.jsp" 
 	</script>
 	
 	<%
