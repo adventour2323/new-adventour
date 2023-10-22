@@ -390,7 +390,7 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("select *from tour_rating where t_id = '"+t_id+"';");
+		ResultSet rs = stmt.executeQuery("select *from tour_rating where t_id = '"+t_id+"' order by review_date desc;");
 
 		while(rs.next()) {
 			t_r_getset table = new t_r_getset();

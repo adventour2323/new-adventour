@@ -8,15 +8,19 @@
 
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.sql.Timestamp" %>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>상품 페이지</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+
 
 
 <link rel="stylesheet" type="text/css" href="./css/t_info_css.css">
@@ -273,50 +277,84 @@
 		
 		<div class="rating-div" style="margin-bottom: 30px;">
 			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" >
-				<fieldset>
-					<span class="text-bold">별점을 남겨주세요</span>
-					<input type="radio" name="reviewStar" value="5" id="rate1">
-					<label for="rate1">★</label>
-					<input type="radio" name="reviewStar" value="4" id="rate2">
-					<label for="rate2">★</label>
-					<input type="radio" name="reviewStar" value="3" id="rate3">
-					<label for="rate3">★</label>
-					<input type="radio" name="reviewStar" value="2" id="rate4">
-					<label for="rate4">★</label>
-					<input type="radio" name="reviewStar" value="1" id="rate5">
-					<label for="rate5">★</label>
-				</fieldset>
-				<div>
-					<textarea class="col-auto form-control" type="text" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!"></textarea>
-					<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
-					<input type="submit" value="등록하기" class="review_write_btn">
+
+				<div class="review-form-container">
+					<fieldset>
+						<span class="text-bold">별점을 남겨주세요</span>
+						<input type="radio" name="reviewStar" value="5" id="rate1">
+						<label for="rate1">★</label>
+						<input type="radio" name="reviewStar" value="4" id="rate2">
+						<label for="rate2">★</label>
+						<input type="radio" name="reviewStar" value="3" id="rate3">
+						<label for="rate3">★</label>
+						<input type="radio" name="reviewStar" value="2" id="rate4">
+						<label for="rate4">★</label>
+						<input type="radio" name="reviewStar" value="1" id="rate5">
+						<label for="rate5">★</label>
+					</fieldset>
+    				<div class="form-group">
+        				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!" rows="4"></textarea>
+    				</div>
+    				<div class="form-group">
+        				<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
+        				<input type="submit" value="등록하기" class="review-write-btn">
+    				</div>
 				</div>
 			</form>	 
 			
 			<div class="t_review_div">
-			<% ArrayList<t_r_getset> rv = id.t6(t_id); 
-				for (t_r_getset tr : rv ) {
-			%>
-				<table style="margin-top: 20px;">
-					<tr id="review_top">
-						<td>번호</td>
-						<td>작성자</td>
-						<td>내용</td>
-						<td>날짜</td>
-						<td>평점</td>
-					</tr>
+    			<table class="review-table">
+        			<tr id="review_top">
+            			<th>번호</th>
+            			<th>작성자</th>
+            			<th>내용</th>
+			            <th>날짜</th>
+            			<th>평점</th>
+        			</tr>
+				<%
+					ArrayList<t_r_getset> rv = id.t6(t_id); 
+					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
+					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
+
+					for (t_r_getset tr : rv) {
+						String reviewDateString = tr.getReview_date(); // String 형식의 날짜를 가져옴
+
+						// String을 Timestamp로 변환
+					    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+
+						Date reviewDate = new Date(reviewTimestamp.getTime());
+				%>
 					<tr>
-						<td>1</td>
-						<td><%= tr.getM_id() %></td>
-						<td><%=tr.getT_review() %></td>
-						<td><%=tr.getReview_date() %></td>
-						<td><%=tr.getT_rating() %></td>
-				
+    					<td><%= count %></td>
+    					<td><%= tr.getM_id() %></td>
+    					<td><%= tr.getT_review() %></td>
+    					<td><%= sdf1.format(reviewDate) %></td>
+    					<%-- <td><%= tr.getT_rating() %></td> --%>
+<td>
+  <div class="star-rating">
+    <%
+    int ratingStr = tr.getT_rating(); // 이미 문자열로 가져옴
+    try {
+        int rating = ratingStr; // 숫자로 변환
+        for (int i = 0; i < rating; i++) {
+    %>
+      <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i> <!-- 노란색 별 아이콘 사용 -->
+    <%
+        }
+    } catch (NumberFormatException e) {
+        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+    }
+    %>
+  </div>
+</td>
+
+
 					</tr>
-			
-				</table>
-				<% } %>
-		 	</div> <!-- t_review_div -->
+					<%  count--; // 번호를 감소시켜 역순으로 만듭니다. 
+					} %>
+
+				</table>		
+			</div> <!-- t_review_div -->
 		 	
 		</div> <!-- rating-div -->
 
@@ -649,21 +687,6 @@ function validateForm() {
     });
 </script>
 
-<%-- <script>
-function validateForm2() {
-	/* debugger */
-
-var sessionID = "<%= session.getAttribute("id") %>";
-console.log(sessionID);
-if (id==null || id=='null'||id=="") {
-    alert("로그인이 필요합니다.");
-    return false; // 폼 전송을 막습니다.
-}
-
-// 날짜가 선택되었고 세션 ID가 존재하면 폼을 제출합니다.
-return true;
-}
-</script> --%>
 
 
 <%} %> <!-- for문 종료 -->

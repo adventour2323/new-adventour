@@ -305,8 +305,9 @@ a.next:hover {
 #rating_comment label{
     font-size: 3em;
     color: transparent;
-    text-shadow: 0 0 0 #f0f0f0;
+    text-shadow: 0 0 0 #333;
 }
+
 #rating_comment label:hover{
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
@@ -326,3 +327,61 @@ a.next:hover {
     font-size: 16px;
     resize: none;
 }
+/*댓글창*/
+    .review-form-container {
+        width: 700px;
+        margin: 0 auto; /* 가운데 정렬 */
+        background: #f8f8f8;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+    }
+
+    .review-write-btn {
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    display: block; /* 블록 요소로 설정 */
+    margin: 0 auto; /* 좌우 중앙 정렬 */
+    }
+    
+
+/*댓글*/
+     	 .review-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .review-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .review-table th {
+			border: 1px solid #ddd;
+            padding: 8px;
+            background-color: #f2f2f2;
+            text-align: center; /* <th> 요소의 텍스트 가운데 정렬 */
+        }
+        .star-rating {
+		    font-size: 10px; /* 댓글의 별 크기를 조절합니다. */
+			display: inline-block;
+		}
+		
