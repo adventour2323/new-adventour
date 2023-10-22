@@ -4,6 +4,7 @@
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
+<%@ page import="adventour.t_r_getset"%>
 <%@ page import="java.util.*"%>
 
 <html>
@@ -30,6 +31,7 @@
 <jsp:useBean id="id" class="adventour.g_list_print">
             <%
                	List<t_getset> a1 = (List<t_getset>) request.getAttribute("list"); 
+               	
 			%>
 	
 	
@@ -86,8 +88,19 @@
                         	<%= g.getCountry() %>, <%= g.getCity() %>
                     	</p>
                     </div>
-					<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
-    					₩ <%= g.getT_price() %>~
+                    <div>
+						<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
+	    					₩ <%= g.getT_price() %>~
+						</div>
+						<div class="tour-rating-star" id="tour-rating-star">
+							<% 
+								String t_id = g.getT_id();
+								ArrayList<t_r_getset> rv = id.t6(t_id);  
+								for (t_r_getset tr : rv) {
+							%>
+							<%= tr.getT_rating() %>
+							<%}%>
+						</div>
 					</div>
                     
                 </div>
