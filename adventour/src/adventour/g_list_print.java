@@ -383,7 +383,34 @@ public class g_list_print {
 		}
 	
 //
+	public ArrayList<t_r_getset> t6(String t_id) throws Exception {
+
+		ArrayList<t_r_getset> arr = new ArrayList<t_r_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("select *from tour_rating where t_id = '"+t_id+"';");
+
+		while(rs.next()) {
+			t_r_getset table = new t_r_getset();
+			table.setT_review_id(rs.getString("t_review_id"));
+			table.setT_review(rs.getString("t_review"));
+			table.setT_rating(rs.getInt("t_rating"));
+			table.setT_id(rs.getString("t_id"));
+			table.setM_id(rs.getString("m_id"));
+			table.setReview_date(rs.getString("review_date"));
+			table.setReview_date_modify(rs.getString("review_date_modify"));
+			
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
 	
+	//
 	
 	
 }
