@@ -142,11 +142,24 @@ if (session.getAttribute("id") == null) {
       <textarea class="c_con" name="c_con" readonly><%= obj.getC_cont() %></textarea>
     </div><!--c_con_div-->
     
-    <div class="c_con_phos">
-    
-    
-    
+<div class="c_con_phos">
+    <div class="c_con_pho1">
+    <%= obj.getC_pho1() %>
+        <img class="c_con_pho1_img" src="c_uploadfiles/<%= obj.getC_pho1() %>">
     </div>
+    <div class="c_con_pho2">
+        <img class="c_con_pho2_img" src="c_uploadfiles/<%= obj.getC_pho2() %>">
+    </div>
+    <div class="c_con_pho3">
+        <img class="c_con_pho3_img" src="c_uploadfiles/<%= obj.getC_pho3() %>">
+    </div>
+    <div class="c_con_pho4">
+        <img class="c_con_pho4_img" src="c_uploadfiles/<%= obj.getC_pho4() %>">
+    </div>
+    <div class="c_con_pho5">
+        <img class="c_con_pho5_img" src="c_uploadfiles/<%= obj.getC_pho5() %>">
+    </div>
+</div>
 
     <div class="c_btns">
       <a href="community_list2.jsp?c_num=<%= obj.getC_num() %>">

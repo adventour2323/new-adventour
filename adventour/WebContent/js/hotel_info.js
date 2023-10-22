@@ -2,6 +2,15 @@ $(document).ready(function() {
 	//헤더 푸터 로드
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
+	
+/* db 출력 텍스트에 <br> 적용 */
+	  const hotelInfoElement = document.querySelector('.db_h_hotel_info');
+	  if (hotelInfoElement) {
+	    const originalText = hotelInfoElement.innerHTML;
+	    const modifiedText = originalText.replace(/\n/g, '<br>');
+	    hotelInfoElement.innerHTML = modifiedText;
+	  }
+
 
 	window.initMap = function () {
 		  var lat_info = $(".hh_lat").val();

@@ -6,7 +6,7 @@
 
 <%
     // 파일 업로드 경로 설정
-    String uploadPath = request.getRealPath("/c_upload"); 
+    String uploadPath = request.getRealPath("/c_uploadfiles"); 
     // 웹 애플리케이션 내에서 업로드 폴더를 얻어옵니다.
 
     // 업로드 파일 크기 제한 (약 10MB)
@@ -43,20 +43,14 @@
         city = multi.getParameter("c_city");
         c_title = multi.getParameter("c_title");
         c_cont = multi.getParameter("c_con");
-        c_pho2 = request.getParameter("c_pho2");
-        c_pho3 = request.getParameter("c_pho3");
-        c_pho4 = request.getParameter("c_pho4");
-        c_pho5 = request.getParameter("c_pho5");
+ 
         
         System.out.println(m_id);
         System.out.println(country);
         System.out.println(city);
         System.out.println(c_title);
         System.out.println(c_cont);
-        System.out.println(c_pho2);
-        System.out.println(c_pho3);
-        System.out.println(c_pho4);
-        System.out.println(c_pho5);
+
         
         // 업로드 파일 처리
         Enumeration files = multi.getFileNames();

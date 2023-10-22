@@ -26,7 +26,7 @@ if (session.getAttribute("id") != null) {
 
 	</header>
 
-<form name="c_form" action="c_fileupload.jsp"  enctype="multipart/form-data">
+<form name="c_form" action="c_fileupload.jsp"  method="post" enctype="multipart/form-data">
 
   <div class="c_div" name="c_div">
     <h2> < 여행여정  공유  글  작성 > </h2>

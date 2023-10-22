@@ -47,6 +47,136 @@ public class H_getset {
 	String h_twin;
 	String h_queen;
 	
+	String h_wifi;
+	String h_parking;
+	String h_aircon;
+	String h_gym;
+	String h_spa;
+	String h_meetingroom;
+	String h_cafe;
+	String h_bar;
+	String h_earlyin;
+	String h_earlyout;
+	String h_roomservice;
+	String h_24front;
+	
+	
+	public String getH_wifi() {
+		return h_wifi;
+	}
+	public void setH_wifi(String h_wifi) {
+		this.h_wifi = h_wifi;
+	}
+	public String getH_parking() {
+		return h_parking;
+	}
+	public void setH_parking(String h_parking) {
+		this.h_parking = h_parking;
+	}
+	public String getH_aircon() {
+		return h_aircon;
+	}
+	public void setH_aircon(String h_aircon) {
+		this.h_aircon = h_aircon;
+	}
+	public String getH_gym() {
+		return h_gym;
+	}
+	public void setH_gym(String h_gym) {
+		this.h_gym = h_gym;
+	}
+	public String getH_spa() {
+		return h_spa;
+	}
+	public void setH_spa(String h_spa) {
+		this.h_spa = h_spa;
+	}
+	public String getH_meetingroom() {
+		return h_meetingroom;
+	}
+	public void setH_meetingroom(String h_meetingroom) {
+		this.h_meetingroom = h_meetingroom;
+	}
+	public String getH_cafe() {
+		return h_cafe;
+	}
+	public void setH_cafe(String h_cafe) {
+		this.h_cafe = h_cafe;
+	}
+	public String getH_bar() {
+		return h_bar;
+	}
+	public void setH_bar(String h_bar) {
+		this.h_bar = h_bar;
+	}
+	public String getH_earlyin() {
+		return h_earlyin;
+	}
+	public void setH_earlyin(String h_earlyin) {
+		this.h_earlyin = h_earlyin;
+	}
+	public String getH_earlyout() {
+		return h_earlyout;
+	}
+	public void setH_earlyout(String h_earlyout) {
+		this.h_earlyout = h_earlyout;
+	}
+	public String getH_roomservice() {
+		return h_roomservice;
+	}
+	public void setH_roomservice(String h_roomservice) {
+		this.h_roomservice = h_roomservice;
+	}
+	public String getH_24front() {
+		return h_24front;
+	}
+	public void setH_24front(String h_24front) {
+		this.h_24front = h_24front;
+	}
+	public String getH_extrabed() {
+		return h_extrabed;
+	}
+	public void setH_extrabed(String h_extrabed) {
+		this.h_extrabed = h_extrabed;
+	}
+	public String getH_pet() {
+		return h_pet;
+	}
+	public void setH_pet(String h_pet) {
+		this.h_pet = h_pet;
+	}
+	public String getH_breakfast_type() {
+		return h_breakfast_type;
+	}
+	public void setH_breakfast_type(String h_breakfast_type) {
+		this.h_breakfast_type = h_breakfast_type;
+	}
+	public String getH_impotant_info() {
+		return h_impotant_info;
+	}
+	public void setH_impotant_info(String h_impotant_info) {
+		this.h_impotant_info = h_impotant_info;
+	}
+	public String getH_payable_type() {
+		return h_payable_type;
+	}
+	public void setH_payable_type(String h_payable_type) {
+		this.h_payable_type = h_payable_type;
+	}
+	public String getH_hotel_info() {
+		return h_hotel_info;
+	}
+	public void setH_hotel_info(String h_hotel_info) {
+		this.h_hotel_info = h_hotel_info;
+	}
+
+	String h_extrabed;
+	String h_pet;
+	String h_breakfast_type;
+	String h_impotant_info;
+	String h_payable_type;
+	String h_hotel_info;
+	
 	public String getH_double() {
 		return h_double;
 	}

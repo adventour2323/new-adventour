@@ -16,10 +16,10 @@
     String c_title = request.getParameter("c_title");
     String c_cont = request.getParameter("c_con");
     String c_pho1 = request.getParameter("fileName1");
-    String c_pho2 = request.getParameter("c_pho2");
-    String c_pho3 = request.getParameter("c_pho3");
-    String c_pho4 = request.getParameter("c_pho4");
-    String c_pho5 = request.getParameter("c_pho5");
+    String c_pho2 = request.getParameter("fileName2");
+    String c_pho3 = request.getParameter("fileName3");
+    String c_pho4 = request.getParameter("fileName4");
+    String c_pho5 = request.getParameter("fileName5");
     
     System.out.println(m_id);
     System.out.println(country);

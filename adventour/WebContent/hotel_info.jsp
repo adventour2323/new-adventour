@@ -144,6 +144,39 @@ if (top_list != null) {
             <% } %>
         </h3>
     </div>
+        <div id="hotel_info_pet">
+        <h3 class="hotel_info_pet">
+            반려동물 동반 </h3><br>
+            <h3>
+            <% if (aaa.getH_pet().equals("y")) { %>
+                가능
+            <% } else { %>
+                불가
+            <% } %>
+        </h3>
+    </div>
+      <div id="hotel_info_earlyin">
+        <h3 class="hotel_info_earlyin">
+            얼리 체크인 </h3><br>
+            <h3>
+            <% if (aaa.getH_earlyin().equals("y")) { %>
+                가능
+            <% } else { %>
+                불가
+            <% } %>
+        </h3>
+    </div>
+          <div id="hotel_info_earlyout">
+        <h3 class="hotel_info_earlyout">
+            얼리 체크인 </h3><br>
+            <h3>
+            <% if (aaa.getH_earlyout().equals("y")) { %>
+                가능
+            <% } else { %>
+                불가
+            <% } %>
+        </h3>
+    </div>
       
     
     </div><!--hotel_info_options-->
@@ -156,15 +189,12 @@ if (top_list != null) {
     
     <h1> 호텔  설명</h1>
     <h2><%= aaa.getH_name_ko() %></h2>
-    <h5>빌리지 호텔 에든버러에서는 바쁜 일정 후 휴식시간을 보낼 수 있는 편안한 객실이 마련되어 있습니다.</h5>
-   <h5> 빌리지 호텔 에든버러 객실은 여행객과 비즈니스 출장객 모두에게 에든버러에서 편안하게 지낼 수 있는 공간입니다.</h5>
-    <h5> 호텔은 헤이마켓 기차역에서 약 4km 정도 거리에 있고, 에든버러공항에서는 약 12km 정도 거리에 있어 호텔까지 편리하게 이동할 수 있습니다.</h5>
-     <h5>주변에 칼턴 힐, 스카치 위스키 체험관, 에든버러 대학 등 유명 관광지들이 많이 있어 특별한 여행을 즐기실 수 있습니다.</h5>
-   <h5> 호텔 시설을 이용하여 하루 동안의 피로를 말끔히 푸실 수 있습니다. 호텔에서는 주차 공간을 제공합니다.</h5>
+        <h4></h4>
+    <h4 class="db_h_hotel_info"><%= aaa.getH_hotel_info() %></h4>
 
     </div>
  </div><!--hotel_info-->
-  
+  </div>
  <div class="yes_reserv_room">
  <h2> 현재 예약 가능한 객실 </h2>
  </div>   
@@ -180,12 +210,12 @@ for (int ii = 0; i < top_list.size(); i++) {
           <img id="h_room_phoi" class="h_room_phoi" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
         </div>
         <div id="h_room_options1" >
-          <h4 class="h_room_peo"> 최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4>
-          <h4 class="h_room_bed"> 베드 타입 : <%=  bbb.getH_room_bed()%>, <%=  bbb.getH_room_bedc()%>개</h4>
-          <h4 class="h_room_breakfast"> 조식 <%=  bbb.getH_room_breakfast()%></h4>
-          <h4 class="h_room_canael"> 취소 가능 여부 : <%=  bbb.getH_room_cancel()%></h4>
-          <h4 class="h_room_window"> 창문 <%=  bbb.getH_room_window()%></h4>
-          <h4 class="h_room_smoke"> <%=  bbb.getH_room_smoke()%> </h4>
+        <div class="h_room_options11"><img class="h_room_peo_img" src="image/hotel/h_image/person.png"/><div class="h_room_peo"><h4 >최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4></div></div>  
+        <div class="h_room_options12">   <img class="h_room_bed_img" src="image/hotel/h_image/qeen_bed.png"> <div class="h_room_bed"><h4>베드 타입 : <%=  bbb.getH_room_bed()%>, <%=  bbb.getH_room_bedc()%>개</h4></div></div>
+        <div class="h_room_options13"><img class="h_room_breakfast_img" src="image/hotel/h_image/meal.png"><div class="h_room_breakfast"> <h4>조식 <%=  bbb.getH_room_breakfast()%></h4></div></div>
+        <div class="h_room_options14"> <img class="h_room_canael_img" src="image/hotel/h_image/pay_card.png"> <div class="h_room_canael"><h4> 취소 가능 여부 : <%=  bbb.getH_room_cancel()%></h4></div></div>
+        <div class="h_room_options15"><img class="h_room_window_img" src="image/hotel/h_image/window.png"> <div class="h_room_window">  <h4>창문 <%=  bbb.getH_room_window()%></h4></div></div>
+        <div class="h_room_options16"> <img class="h_room_smoke_img" src="image/hotel/h_image/no_smoking.png"><div class="h_room_smoke"><h4> <%=  bbb.getH_room_smoke()%> </h4></div></div>
 
         <div id="h_room_options2" >
           <h4 class="h_room_paynow"> 결제 : <%=  bbb.getH_room_paynow()%></h4>
@@ -196,13 +226,195 @@ for (int ii = 0; i < top_list.size(); i++) {
         </div><!--h_room_options2-->
 
 
-    </div>
+    </div><!-- h_room_options1 -->
       </div>
      
 <%  
 }
 
-}
+%>
+<div class="h_facilities">
+<h1>편의 시설 </h1>
+
+<div class="h_facilities_icon">
+  
+  <div class="h_wifi_icon">
+    <img  class="h_wifi_img" src="image/hotel/h_image/wifi.png">
+     <h3>와이파이</h3>
+  </div>
+  
+   <div class="h_parking_icon">
+    <img  class="h_parking_img" src="image/hotel/h_image/parking.png">
+     <h3>주차장</h3>
+  </div>
+
+   <div class="h_aircon_icon">
+    <img  class="h_aircon_img" src="image/hotel/h_image/aircon.png">
+     <h3>에어컨</h3>
+  </div>  
+
+   <div class="h_gym_icon">
+    <img  class="h_gym_img" src="image/hotel/h_image/gym.png">
+     <h3>헬스장</h3>
+  </div> 
+
+   <div class="h_spa_icon">
+    <img  class="h_spa_img" src="image/hotel/h_image/spa.png">
+     <h3>스 파</h3>
+  </div> 
+
+   <div class="h_cafe_icon">
+    <img  class="h_cafe_img" src="image/hotel/h_image/cafe.png">
+     <h3>카 페</h3>
+  </div> 
+
+</div>
+
+<div class="h_facilities_info">
+
+<div class="h_facilities_info_busi">
+<div class="h_facilities_info_title"> <h2>비즈니스 시설 </h2></div> 
+<div class="h_facilities_info_busi_icon1">
+<h4>
+    <% if (aaa.getH_meetingroom().equals("y")) { %>
+                비즈니스 미팅 룸
+            <% } else { %>
+                
+            <% } %>
+            </h4>
+</div>
+<div class="h_facilities_info_busi_icon2"></div>
+<div class="h_facilities_info_busi_icon3"></div>
+</div>
+
+<div class="h_facilities_info_food">
+<div class="h_facilities_info_title"> <h2>식음료 시설 </h2></div> 
+<div class="h_facilities_info_food_icon1">
+<h4>
+    <% if (aaa.getH_cafe().equals("y")) { %>
+                카페 
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_food_icon2">
+<h4>
+    <% if (aaa.getH_bar().equals("y")) { %>
+                바 
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_food_icon3"></div>
+</div>
+
+<div class="h_facilities_info_enter">
+<div class="h_facilities_info_title"> <h2>레져 및 엔터테인먼트 </h2></div> 
+<div class="h_facilities_info_enter_icon1">
+<h4>
+    <% if (aaa.getH_gym().equals("y")) { %>
+              헬스장
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_enter_icon2">
+<h4>
+    <% if (aaa.getH_spa().equals("y")) { %>
+                스파
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_enter_icon3"></div>
+</div>
+
+
+<div class="h_facilities_info_service">
+<div class="h_facilities_info_title"> <h2>서비스 </h2></div> 
+<div class="h_facilities_info_service_icon1">
+<h4>
+    <% if (aaa.getH_earlyin().equals("y")) { %>
+              얼리체크인
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_service_icon2">
+<h4>
+    <% if (aaa.getH_earlyout().equals("y")) { %>
+                얼리체크아웃
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_service_icon3">
+<h4>
+    <% if (aaa.getH_roomservice().equals("y")) { %>
+           룸 서비스     
+            <% } else { }%>    
+</h4>
+</div>
+<div class="h_facilities_info_service_icon4">
+<h4>
+    <% if (aaa.getH_24front().equals("y")) { %>
+           24시간 프론트 데스크    
+            <% } else { }%>    
+</h4>
+</div>
+
+</div>
+
+
+</div><!-- h_facilities_info -->
+</div><!-- h_facilities -->
+
+<div class="h_more_info">
+<h1>유용한 정보 </h1>
+ <table >
+        <tr>
+            <td id="td1" class="td1"><h2><img class="h_more_info_icon" src="image/hotel/h_image/bed.png"> 침대 추가</h2></td>
+            <td id="td12" ><h3><%=aaa.getH_extrabed() %></h4></td>
+        </tr>
+        <tr>
+            <td id="td2" class="td1"><h2><img class="h_more_info_icon" src="image/hotel/h_image/pet.png"> 반려동물 </h2></td>
+            <td id="td22" ><h3>반려동물 동반 
+           
+            <% if (aaa.getH_pet().equals("y")) { %>
+                가능
+            <% } else { %>
+                불가
+            <% } %>
+        </h3></td>
+        </tr>
+          <tr>
+            <td  id="td3" class="td1"><h2><img class="h_more_info_icon" src="image/hotel/h_image/breakfast.png"> 조식 </h2></td>
+            <td id="td32" ><h3>조식 이용 
+            <% if (aaa.getH_breakfast().equals("y")) { %>
+                가능
+            <% } else { %>
+                불가능
+            <% } %></h3>
+            <h4>조식 종류 : 
+            <%= aaa.getH_breakfast_type() %>
+</h4>
+            <h4>조식 가격 : 한화 약 2만원</h4>
+            </td>
+        </tr>
+          <tr>
+            <td  id="td4" class="td1"><h2><img class="h_more_info_icon" src="image/hotel/h_image/important_info.png"> 호텔관련 주요정보  </h2></td>
+            <td id="td42" ><h4><%= aaa.getH_impotant_info() %></h4>
+</td>
+        </tr>
+        <tr>
+            <td  id="td5" class="td1"><h2><img class="h_more_info_icon" src="image/hotel/h_image/payable.png"> 가능한 결제 방법 </h2></td>
+            <td id="td52"><h3>호텔 요금은 다음의 방법으로 결제하실 수 있습니다:</h3>
+            <h4><%= aaa.getH_payable_type() %></h4>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+ 
+<!-- </div>content 전체 부분-->
+
+<% 
+	}
 }else{
 	out.println("null data");
 }
@@ -212,57 +424,6 @@ for (int ii = 0; i < top_list.size(); i++) {
   <span class="close">&times;</span>
   <img class="modal_content" id="img01">
 </div>
-
-
-
-<div class="h_more_info">
-<h1>유용한 정보 </h1>
- <table >
-        <tr>
-            <td id="td1" class="td1"><h2>침대 추가</h2></td>
-            <td id="td12" ><h3>2세 이하 무료</h3> <h4>각 객실유/소아 1명은 침대를 무료로 함께 사용할 수 있습니다.</h4></td>
-        </tr>
-        <tr>
-            <td id="td2" class="td1"><h2>반려동물 </h2></td>
-            <td id="td22" ><h3>반려동물 동반 불가</h3></td>
-        </tr>
-          <tr>
-            <td  id="td3" class="td1"><h2>조식 </h2></td>
-            <td id="td32" ><h3>조식 이용 가능</h3>
-            <h4>조식 종류 : 서양식 조식</h4>
-            <h4>조식 가격 : 한화 약 2만원</h4>
-            </td>
-        </tr>
-          <tr>
-            <td  id="td4" class="td1"><h2>호텔관련 주요정보  </h2></td>
-            <td id="td42" ><h4>
-현재 이 숙소는 코로나19(COVID-19)에 대응하기 위해 추가 안전 및 위생 조치를 실시하고 있습니다. 
-It is essential to pre-book a table in the restaurant and bar prior to arrival. 
-The property will contact guests after receiving booking confirmation with additional details related to their stay. Check-in and check-out is done at the self-service kiosks. 
-Please note that Village Hotels do not accept cash payments or cheques. 
-The credit or debit card used to make the booking must be available on check in at the hotel. 
-Entrance fee to the Health & Fitness Club is GBP 5.00 per room per night. A towel charge may apply. 
-Please note that children’s swim times apply. Please indicate the number of baby cots needed.
-All requests for cots must be confirmed by the property as not all rooms can accommodate cots. 
-Please note that over the festive period, there will be limited dining available at the hotel due to private functions.
-For more information, guests are advised to contact the hotel before arrival, contact details can be found on the booking confirmation.</h4>
-</td>
-        </tr>
-        <tr>
-            <td  id="td5" class="td1"><h2>가능한 결제 방법 </h2></td>
-            <td id="td52"><h3>호텔 요금은 다음의 방법으로 결제하실 수 있습니다:</h3>
-            <h4>AMEX, VISA, MASTER</h4>
-            </td>
-        </tr>
-    </table>
-
-</div>
-
- 
- </div><!--content 전체 부분-->
-
- 
-
 
 
   <footer>

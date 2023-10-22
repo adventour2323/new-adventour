@@ -134,42 +134,47 @@ body {
   margin-top: 10px;
 }
 .c_con{/*글내용 작성*/
-  width:  900px;
+  width:  880px;
   height: 400px;
   resize: none;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .c_con_phos{
 	background-color:yellow;
-	width:  900px;
+	width:  1000px;
   height: 200px;
-  margin-left:90px;
+  margin-left:25px;
+  margin-top: 50px;
+  padding-top: 20px;
 }
-.c_pho_title{
-  width:  600px;
-  height: 20px;
-  margin-left: 100px;
-  margin-top: 30px;
-}
-.c_pho1_div{/*사진 첨부파일*/
 
-  width:  600px;
-  height: 30px;
-  margin-left: 100px;
-  margin-top: 10px;
-  font-size: 13px;
-}
-.c_pho_div{/*사진 첨부파일*/
+.c_con_pho1,.c_con_pho2,.c_con_pho3,.c_con_pho4,.c_con_pho5{
+	background-color:blue;
+  width:  180px;
+  height: 180px;
+  margin-left: 10px;
 
-  width:  600px;
-  height: 30px;
-  margin-left: 100px;
-  font-size: 13px;
 }
-.c_pho{/*사진 이름 작성란*/
-  width:  350px;
-  height: 20px;
-  margin-left: 5px;
-} 
+.c_con_pho2{
+	margin-left: 210px;
+	margin-top:-180px;
+}
+.c_con_pho3{
+	margin-left: 410px;
+	margin-top:-180px;
+}
+.c_con_pho4{
+	margin-left: 610px;
+	margin-top:-180px;
+}
+.c_con_pho5{
+	margin-left: 810px;
+	margin-top:-180px;
+}
+
+
+
 .c_btns{
 	
 	width:  900px;

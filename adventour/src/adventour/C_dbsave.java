@@ -94,6 +94,12 @@ public class C_dbsave {
                 obj.setCountry(rs.getString("country"));
                 obj.setCity(rs.getString("city"));
                 obj.setC_cont(rs.getString("c_cont"));
+                obj.setC_pho1(rs.getString("c_pho1"));
+                obj.setC_pho2(rs.getString("c_pho2"));
+                obj.setC_pho3(rs.getString("c_pho3"));
+                obj.setC_pho4(rs.getString("c_pho4"));
+                obj.setC_pho5(rs.getString("c_pho5"));
+               
            
                 arr.add(obj);
             }
