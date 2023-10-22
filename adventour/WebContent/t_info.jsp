@@ -3,6 +3,7 @@
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
+<%@ page import="adventour.t_r_getset"%>
 <%@ page import="java.util.*"%>
 
 <%@ page import="java.util.Date" %>
@@ -292,26 +293,31 @@
 				</div>
 			</form>	 
 			
-			<table style="margin-top: 20px;">
-				<tr id="review_top">
-					<td>번호</td>
-					<td>내용</td>
-					<td>작성자</td>
-					<td>날짜</td>
-					<td>평점</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
-					<td>5</td>
+			<div class="t_review_div">
+			<% ArrayList<t_r_getset> rv = id.t6(t_id); 
+				for (t_r_getset tr : rv ) {
+			%>
+				<table style="margin-top: 20px;">
+					<tr id="review_top">
+						<td>번호</td>
+						<td>작성자</td>
+						<td>내용</td>
+						<td>날짜</td>
+						<td>평점</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><%= tr.getM_id() %></td>
+						<td><%=tr.getT_review() %></td>
+						<td><%=tr.getReview_date() %></td>
+						<td><%=tr.getT_rating() %></td>
 				
-					
-				</tr>
+					</tr>
 			
-			</table>
-		 
+				</table>
+				<% } %>
+		 	</div> <!-- t_review_div -->
+		 	
 		</div> <!-- rating-div -->
 
 
