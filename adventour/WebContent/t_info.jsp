@@ -277,20 +277,23 @@
 		
 		<div class="rating-div" style="margin-bottom: 30px;">
 			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" >
-
+<!--  -->
 				<div class="review-form-container">
-					<fieldset class="">
-						<div>
-							<span class="text-bold">별점을 남겨주세요</span>
-    						<div class="tour-rating-star" id="tour-rating-star">
+					<fieldset style="display: flex;">
+						<div >
+							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
 	        					<% String t_id_avg = g.getT_id();
     	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
         							for (t_r_getset tr : rv1) {
         						%>
-        						평점     <span > <%= tr.getT_rating() %> </span>
+        						평점     <div > <%= tr.getT_rating() %> </div>
         						<% } %>
-    						</div>
-    					</div>						
+    						</div>						
+							<!-- <div>  <div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!~~~~~~~ ! </div> </div> -->
+							<div>  <div class="text-bold" style="margin-right: 50px;">별점을남겨주세요% 별점을남겨주세요# 별점을 남겨주세요@ 별점을 남겨주세요~ 별점을 남겨주세요!</div> </div>
+    			
+    					</div>	
+    					<div class="star-div" >				
 						<input type="radio" name="reviewStar" value="5" id="rate1">
 						<label for="rate1">★</label>
 						<input type="radio" name="reviewStar" value="4" id="rate2">
@@ -301,6 +304,7 @@
 						<label for="rate4">★</label>
 						<input type="radio" name="reviewStar" value="1" id="rate5">
 						<label for="rate5">★</label>
+						</div>
 					</fieldset>
     				<div class="form-group">
         				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!" rows="4"></textarea>
@@ -311,7 +315,7 @@
     				</div>
 				</div>
 			</form>	 
-			
+			<!--  -->
 			<div class="t_review_div">
     			<table class="review-table">
         			<tr id="review_top">

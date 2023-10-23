@@ -81,7 +81,8 @@ if(session.getAttribute("id") == null) {
 %>
 <script>
   alert("로그인이 필요합니다.");
-  window.location.href = "login_merge_form.jsp";
+  /* window.location.href = "login_merge_form.jsp"; */
+  history.back();
 </script>
 
 <%
