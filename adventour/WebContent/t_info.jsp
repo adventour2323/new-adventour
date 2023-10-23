@@ -41,7 +41,7 @@
             <% for (t_getset g : a1) { %>
 
 
-<%-- 			<%
+<%-- 		<%
                 String t_id = request.getParameter("t_id");
             %>
 			
@@ -279,8 +279,18 @@
 			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" >
 
 				<div class="review-form-container">
-					<fieldset>
-						<span class="text-bold">별점을 남겨주세요</span>
+					<fieldset class="">
+						<div>
+							<span class="text-bold">별점을 남겨주세요</span>
+    						<div class="tour-rating-star" id="tour-rating-star">
+	        					<% String t_id_avg = g.getT_id();
+    	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
+        							for (t_r_getset tr : rv1) {
+        						%>
+        						평점     <span > <%= tr.getT_rating() %> </span>
+        						<% } %>
+    						</div>
+    					</div>						
 						<input type="radio" name="reviewStar" value="5" id="rate1">
 						<label for="rate1">★</label>
 						<input type="radio" name="reviewStar" value="4" id="rate2">
