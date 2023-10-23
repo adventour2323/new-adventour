@@ -64,6 +64,32 @@ $(document).ready(function() {
   	  $('.datepicker').datepicker();
   	});
   	
+// 몇박 인지 계산해줌 
+  	
+    // 요소들을 가져옵니다.
+    const schIndate = document.getElementById("sch_indate");
+    const schOutdate = document.getElementById("sch_outdate");
+    const nightTime = document.querySelector(".night_time");
+
+    // 입력 값이 변경될 때 박수를 계산하기 위한 이벤트 리스너를 추가합니다.
+    schIndate.addEventListener("input", updateNightTime);
+    schOutdate.addEventListener("input", updateNightTime);
+
+    function updateNightTime() {
+      const checkinDate = new Date(schIndate.value);
+      const checkoutDate = new Date(schOutdate.value);
+
+      if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+        const timeDifference = checkoutDate - checkinDate;
+        const nightCount = timeDifference / (1000 * 3600 * 24); // 박 수 계산
+
+        if (nightCount >= 1) {
+          nightTime.value = `${nightCount}박`;
+        } else {
+          nightTime.value = "체크아웃 - 체크인";
+        }
+      }
+    }
  // 숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".h_room_price");
 
@@ -134,4 +160,7 @@ $(document).ready(function() {
 	function modalDisplay(text){
 	  modal.style.display = text;
 	}
+	
+
+	
 });

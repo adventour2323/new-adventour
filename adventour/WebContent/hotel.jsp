@@ -134,6 +134,7 @@ if (session.getAttribute("id") == null) {
 					<option vlaue="4">4</option>
 				</select>
 				
+			
 			   <input type="submit" class="b_maintbtn"  name="bsch_btn" value="검색하기">
 			    
 			</div>
@@ -142,6 +143,17 @@ if (session.getAttribute("id") == null) {
 		<!--b_piccont-->
 	</div>
 	<!--busmain-->
+	<script>
+	  // select 요소에서 선택한 값을 가져오기
+	  var h_mainde = document.querySelector(".h_mainde").value;
+	  var h_maincity = document.querySelector(".h_maincity").value;
+	  var h_indateY = document.querySelector(".h_indateY").value;
+  
+	  // 쿠키 설정
+	  document.cookie = "h_mainde=" + h_mainde;
+	  document.cookie = "h_maincity=" + h_maincity;
+	  document.cookie = "h_indateY=" + h_indateY;
+	</script>
 </form>
 
 	<div class="h_eventban">

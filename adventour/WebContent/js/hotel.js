@@ -239,4 +239,11 @@ imageClasses.forEach(function(className) { //마우스오버
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
+
+
+	
+
+	
+	
+
 });

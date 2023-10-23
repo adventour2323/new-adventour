@@ -199,12 +199,20 @@ body {
 	background-color: #111;
 }
 
+/*-------------------------------------검색 창 결과 보여주기------------------------*/
+.sch_result{
+	background-color:yellow;
+	width: 1000px;
+	height: 100px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
 /*-------------------------------------스케쥴 티켓 내용----------------------------*/
 .scdform1 {
 	border-style: dashed;
 	width: 1000px;
 	height: 250px;
-	margin-top: 120px;
+	margin-top: 40px;
 	margin-left: 50px;
 	/* color: rgb(20, 3, 78);*/
 }

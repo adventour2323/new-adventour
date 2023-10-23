@@ -91,6 +91,7 @@ if (top_list != null) {
     </div>
     
     <div id="hotel_info_grade">
+ 
        <%
     int starCount = Integer.parseInt(aaa.getH_grade()); // 별 갯수 가져오기
     for (int ii = 0; ii < starCount; ii++) {
@@ -99,6 +100,7 @@ if (top_list != null) {
     <%
     }
     %>
+ 
     </div>
 
     <div id="hotel_info_addr">
@@ -190,14 +192,33 @@ if (top_list != null) {
     <h1> 호텔  설명</h1>
     <h2><%= aaa.getH_name_ko() %></h2>
         <h4></h4>
+        <h4></h4>
     <h4 class="db_h_hotel_info"><%= aaa.getH_hotel_info() %></h4>
 
     </div>
  </div><!--hotel_info-->
   </div>
+  
  <div class="yes_reserv_room">
- <h2> 현재 예약 가능한 객실 </h2>
- </div>   
+ <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
+ <div class="h_info_search">
+ <input type="text" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
+ <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required">
+ <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required" >
+ <input type="text" class="night_time" name="night_time" placeholder="1박" required="required" >
+ <select class="sch_peo" name="sch_peo">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+ </select>
+ <input type="button" class="h_info_search_btn" value="검색하기">
+ 
+ </div><!-- h_info_search -->
+
+  </div>  
+ <h2 class="aass"> 현재 예약 가능한 객실 </h2>
+
     
 <%	
 for (int ii = 0; i < top_list.size(); i++) {
@@ -221,7 +242,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_paynow"> 결제 : <%=  bbb.getH_room_paynow()%></h4>
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
-          <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%> </h2>
+          <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
           <input id="roompay_btn" type="button" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 
