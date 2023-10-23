@@ -67,82 +67,76 @@ border: none;
       <div class="content"  > <!-- body 전체  -->
 
 
-      
-      
         <div style="text-align: center; margin-right: auto; margin-left: auto;">
-		
 
-   <div >
+   			<div>
 
-		<%
-			for (int i = 0; i < a1.size(); i++) {
-    		g_getset g = a1.get(i);
-		%>
-<div class="container" style="margin: 0 10px 30px; width: calc(50% - 20px); float: left;">
+				<%
+					for (int i = 0; i < a1.size(); i++) {
+    				g_getset g = a1.get(i);
+				%>
+				<div class="container" style="margin: 0 10px 30px; width: calc(50% - 20px); float: left;">
 	
-    <table width="95%" cellpadding="0" cellspacing="0" border="0" style="background: #fff; white-space: normal; ">
-        <tbody>
-            <tr>
-				<td width="115" class="image-container">
-    				<a href="g_info.jsp?g_id=<%=g.getG_id()%>">
-        			<img src="<%=g.getImg()%>" width="201px" height="201px" class="guide-image">
-        			<div class="overlay">
-            			<div class="overlay-content">
-                			자세히 보기
-            			</div>
-        			</div>
-    				</a>
-				</td>
+				    <table width="95%" cellpadding="0" cellspacing="0" border="0" style="background: #fff; white-space: normal; ">
+        				<tbody>
+            				<tr>
+								<td width="115" class="image-container">
+    								<a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+        								<img src="<%=g.getImg()%>" width="201px" height="201px" class="guide-image">
+        								<div class="overlay">
+            								<div class="overlay-content">
+	                							자세히 보기
+            								</div>		
+    			    					</div>
+    								</a>
+								</td>
 
+                				<td>
+                    				<div style="margin: 0px 10px; width: 100%;">
+                        				<table width="95%" cellpadding="0" cellspacing="0" border="0" class="guide_css" style="border-top: 1px solid #0066b3; padding-left: 10px; padding-right: 10px;">
+                            				<tbody>
+                                				<tr>
+                                    				<th width="100" style="background-color: #f2f2f2;">이름</th>
+                                    				<td ><div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><%=g.getName()%></a></div></td>
+                                				</tr>
 
-                <td>
-                    <div style="margin: 0px 10px; width: 100%;">
-                        <table width="95%" cellpadding="0" cellspacing="0" border="0" class="guide_css" style="border-top: 1px solid #0066b3; padding-left: 10px; padding-right: 10px;">
-                            <tbody>
-                                <tr>
-                                    <th width="100" style="background-color: #f2f2f2;">이름</th>
-                                    <td ><div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><%=g.getName()%></a></div></td>
-                                </tr>
+                                				<tr>
+                                    				<th style="background-color: #f2f2f2;">국가</th>
+                                    				<td><%=g.getCountry()%></td>
+                                				</tr>
+                                				<tr>
+                                    				<th style="background-color: #f2f2f2;">도시</th>
+                                    				<td><%=g.getCity()%></td>
+                                				</tr>
+                                				<tr>
+                                    				<th style="background-color: #f2f2f2;">테마</th>
+                                    				<td><%=g.getTheme()%></td>
+                                				</tr>
+                            				</tbody>
+                        				</table>
+                    				</div>
+                				</td>
+            			</tr>
+        			</tbody>
+    			</table>
+			</div>
+				<% if ((i + 1) % 2 == 0) { %>
+					<div style="clear: both;"></div>
+				<% } } %>
 
-                                <tr>
-                                    <th style="background-color: #f2f2f2;">국가</th>
-                                    <td><%=g.getCountry()%></td>
-                                </tr>
-                                <tr>
-                                    <th style="background-color: #f2f2f2;">도시</th>
-                                    <td><%=g.getCity()%></td>
-                                </tr>
-                                <tr>
-                                    <th style="background-color: #f2f2f2;">테마</th>
-                                    <td><%=g.getTheme()%></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<% if ((i + 1) % 2 == 0) { 
-%>
-<div style="clear: both;"></div>
-<% } } %>
+  		</div>
 
-  </div>
-
-  </div>
+	  </div>
   <!--  -->
  
-			</div>
+	</div> <!-- content -->
 
 		
 </jsp:useBean>
-		
-
 		</body>
 		
 		<footer>
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>
 	</html>
+	

@@ -88,20 +88,20 @@
                         	<%= g.getCountry() %>, <%= g.getCity() %>
                     	</p>
                     </div>
-                    <div>
-						<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
-	    					₩ <%= g.getT_price() %>~
-						</div>
-						<div class="tour-rating-star" id="tour-rating-star">
-							<% 
-								String t_id = g.getT_id();
-								ArrayList<t_r_getset> rv = id.t6(t_id);  
-								for (t_r_getset tr : rv) {
-							%>
-							<%= tr.getT_rating() %>
-							<%}%>
-						</div>
+                    <div class="t-price-rating-container">
+    					<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
+        					₩ <%= g.getT_price() %>~
+    					</div>
+    					<div class="tour-rating-star" id="tour-rating-star">
+        					<% String t_id = g.getT_id();
+        						ArrayList<t_r_getset> rv = id.t7(t_id);  
+        						for (t_r_getset tr : rv) {
+        					%>
+        					평점     <span style="color: rgba(250, 208, 0, 0.99);"> <%= tr.getT_rating() %> </span>
+        					<% } %>
+    					</div>
 					</div>
+
                     
                 </div>
             </div>

@@ -412,5 +412,31 @@ public class g_list_print {
 	
 	//
 	
+	public ArrayList<t_r_getset> t7(String t_id) throws Exception {
+
+		ArrayList<t_r_getset> arr = new ArrayList<t_r_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT avg(t_rating), t_id FROM tour_rating where t_id='"+t_id+"';");
+
+		while(rs.next()) {
+			t_r_getset table = new t_r_getset();
+			
+			table.setT_rating(rs.getInt("avg(t_rating)"));
+			table.setT_id(rs.getString("t_id"));
+			
+			
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+	//
+	
 	
 }

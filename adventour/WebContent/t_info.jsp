@@ -330,26 +330,23 @@
     					<td><%= tr.getT_review() %></td>
     					<td><%= sdf1.format(reviewDate) %></td>
     					<%-- <td><%= tr.getT_rating() %></td> --%>
-<td>
-  <div class="star-rating">
-    <%
-    int ratingStr = tr.getT_rating(); // 이미 문자열로 가져옴
-    try {
-        int rating = ratingStr; // 숫자로 변환
-        for (int i = 0; i < rating; i++) {
-    %>
-      <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i> <!-- 노란색 별 아이콘 사용 -->
-    <%
-        }
-    } catch (NumberFormatException e) {
-        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
-    }
-    %>
-  </div>
-</td>
-
-
-					</tr>
+						<td> 
+							<div class="star-rating">
+    						<%
+    							int ratingStr = tr.getT_rating(); // 이미 문자열로 가져옴
+    							try {
+        						int rating = ratingStr; // 숫자로 변환
+        						for (int i = 0; i < rating; i++) {
+    						%>
+      						<i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i> <!-- 노란색 별 아이콘 사용 -->
+    						<%	}
+    							} catch (NumberFormatException e) {
+        						// 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+    							}
+    						%>
+  							</div>
+						</td>
+	 				</tr>
 					<%  count--; // 번호를 감소시켜 역순으로 만듭니다. 
 					} %>
 

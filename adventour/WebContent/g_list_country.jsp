@@ -47,7 +47,7 @@ border: none;
         
       <div class="content"  > <!-- body 전체  -->
 
-<div class="t_country_div" style="text-align: center;">
+<div class="list_title_div" style="text-align: center;">
     <div style="display: inline-block;">
         <%
         if ("영국".equals(country)) {
@@ -69,7 +69,7 @@ border: none;
         }
         %>
     </div>
-    <h1 class="t_country" style="display: inline-block; ">
+    <h1 class="list_title" style="display: inline-block; ">
         <%=country %>
     </h1>
 </div>
@@ -85,13 +85,13 @@ border: none;
 			<a href="g_list_country.jsp?g_country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
 		</div>
 		<div id="conutry_fr" class="country_content">
-			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+			<a href="g_list_country.jsp?g_country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
 		</div>
 		<div id="country_es" class="country_content">
-			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+			<a href="g_list_country.jsp?g_country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+			<a href="g_list_country.jsp?g_country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
 		</div>
 	
 	</div><!-- 표 묶음  -->
@@ -107,6 +107,7 @@ border: none;
     		g_getset g = a1.get(i);
 		%>
 <div class="container" style="margin: 0 10px 30px; width: calc(50% - 20px); float: left;">
+
 	
     <table width="95%" cellpadding="0" cellspacing="0" border="0" style="background: #fff; white-space: normal; ">
         <tbody>

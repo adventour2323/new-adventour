@@ -16,7 +16,8 @@ public class C_dbsave {
 
     public void connec() throws Exception { // 데이터베이스 연결을 위한 매소드
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
+         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
+        /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "qhdks12!@"); */
         stmt = conn.createStatement();
     }
 
