@@ -291,9 +291,53 @@ a.next:hover {
 
 /* 별점 */
 
+/* 해당 부분을 중앙에 배치하도록 스타일 업데이트 */
+
+.text-bold {
+    margin-right: 50px;
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 20px; /* 원하는 상단 여백 설정 */
+}
+
+.tour-rating-star {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+    margin-top: 20px; /* 원하는 상단 여백 설정 */
+}
+
+.star-div {
+    display: flex;
+    flex-direction: row-reverse; /* 별점을 오른쪽에서 왼쪽으로 정렬 */
+}
+
+.star-div input[type="radio"] {
+    display: none;
+}
+
+.star-div label {
+    font-size: 3em;
+    color: transparent;
+    text-shadow: 0 0 0 #333;
+    cursor: pointer;
+}
+
+.star-div label:hover {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.star-div label:hover ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.star-div input[type="radio"]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+
 #rating_comment fieldset{
     display: inline-block;
-    direction: rtl;
+    /* direction: rtl; */
     border:0;
 }
 #rating_comment fieldset legend{

@@ -280,34 +280,32 @@
 <!--  -->
 				<div class="review-form-container">
 					<fieldset style="display: flex;">
-						<div >
+    					<div class="star-div" >				
+							<input type="radio" name="reviewStar" value="5" id="rate1">
+							<label for="rate1">★</label>
+							<input type="radio" name="reviewStar" value="4" id="rate2">
+							<label for="rate2">★</label>
+							<input type="radio" name="reviewStar" value="3" id="rate3">
+							<label for="rate3">★</label>
+							<input type="radio" name="reviewStar" value="2" id="rate4">
+							<label for="rate4">★</label>
+							<input type="radio" name="reviewStar" value="1" id="rate5">
+							<label for="rate5">★</label>
+						</div>
+							<!-- <div>  <div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!~~~~~~~ ! </div> </div> -->
+							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!@</div>
+							
 							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
 	        					<% String t_id_avg = g.getT_id();
     	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
         							for (t_r_getset tr : rv1) {
         						%>
-        						평점     <div > <%= tr.getT_rating() %> </div>
+        						<div >평점     <span><%= tr.getT_rating() %> </span> </div>
         						<% } %>
     						</div>						
-							<!-- <div>  <div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!~~~~~~~ ! </div> </div> -->
-							<div>  <div class="text-bold" style="margin-right: 50px;">별점을남겨주세요% 별점을남겨주세요# 별점을 남겨주세요@ 별점을 남겨주세요~ 별점을 남겨주세요!</div> </div>
-    			
-    					</div>	
-    					<div class="star-div" >				
-						<input type="radio" name="reviewStar" value="5" id="rate1">
-						<label for="rate1">★</label>
-						<input type="radio" name="reviewStar" value="4" id="rate2">
-						<label for="rate2">★</label>
-						<input type="radio" name="reviewStar" value="3" id="rate3">
-						<label for="rate3">★</label>
-						<input type="radio" name="reviewStar" value="2" id="rate4">
-						<label for="rate4">★</label>
-						<input type="radio" name="reviewStar" value="1" id="rate5">
-						<label for="rate5">★</label>
-						</div>
 					</fieldset>
     				<div class="form-group">
-        				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!" rows="4"></textarea>
+        				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
     				</div>
     				<div class="form-group">
         				<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
