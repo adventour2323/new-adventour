@@ -20,6 +20,7 @@
 <%
     } else {
         // 폼에서 전송된 데이터 가져오기
+        request.setCharacterEncoding("UTF-8"); 
         String rating = request.getParameter("reviewStar"); // 별점
         String review_content = request.getParameter("review_content"); // 리뷰 내용
         String t_id = request.getParameter("t_id"); // 투어 ID

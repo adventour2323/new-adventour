@@ -31,8 +31,19 @@ body {
 }
 
 /*----------------------------------------content---------------------------*/
+/* 별 */
+.star-rating .star-item {
+    color: rgba(250, 208, 0, 0.99);
+    font-size: 2em; /* 원하는 크기로 조정하세요. */
+}
+.t-price-rating-container {
+    display: flex;
+    justify-content: space-between; /* 요소들을 좌우로 분배 */
+    align-items: center; /* 요소들을 수직 가운데 정렬 */
+}
 
 
+/*  */
 .content{
     width: 1300px;
     /* height: 2150px; */

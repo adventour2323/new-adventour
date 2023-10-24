@@ -5,6 +5,7 @@
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
+<%@ page import="adventour.t_r_getset"%>
 <%@ page import="java.util.*"%>
 
 <html>
@@ -109,14 +110,25 @@
                     <hr>
                     
                     <div class="tour_location_div">
-                    <p class="tour-location">
-                        <%= g.getCountry() %>, <%= g.getCity() %>
-                    </p>
+                    	<p class="tour-location">
+                        	<%= g.getCountry() %>, <%= g.getCity() %>
+                    	</p>
                     </div>
-					<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
-    					₩ <%= g.getT_price() %>~
-					</div>
-                    
+                    <div class="t-price-rating-container">
+    					<div class="tour-price" id="formattedPrice<%= g.getT_id() %>">
+        					<strong> <%= g.getT_price() %> </strong>
+    					</div>
+						<div class="tour-rating-star" id="tour-rating-star">
+    						<% String t_id = g.getT_id();
+        						ArrayList<t_r_getset> rv = id.t7(t_id);  
+        						for (t_r_getset tr : rv) {
+    						%>
+    							<div class="star-rating">
+       								<strong>평점</strong><span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+    							</div>
+    						<% } %>
+						</div> <!-- tour-rating-star -->
+					</div> <!-- t-price-rating-container -->
                 </div>
             </div>
             
@@ -142,5 +154,31 @@
     <footer>
         <jsp:include page="footer.html"></jsp:include>
     </footer>
+    
+    <!-- 별점 -->
+    <script>
+const starElements = document.querySelectorAll(".star");
+
+starElements.forEach((star) => {
+    const rating = parseFloat(star.getAttribute("data-rating"));
+    const roundedRating = Math.round(rating); // 반올림한 숫자를 가져옵니다.
+
+    for (let i = 1; i <= 5; i++) {
+        const starItem = document.createElement("span");
+        starItem.className = "star-item";
+
+        if (i <= roundedRating) {
+            starItem.innerHTML = "★"; // 별 표시
+        } else {
+            starItem.innerHTML = "☆"; // 별 표시하지 않음
+        }
+
+        star.appendChild(starItem);
+    }
+});
+
+
+</script>
+
 </body>
 </html>

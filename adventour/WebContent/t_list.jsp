@@ -132,7 +132,7 @@
 <script>
 const starElements = document.querySelectorAll(".star");
 
-starElements.forEach((star) => {
+starElements.forEach(function(star) {
     const rating = parseFloat(star.getAttribute("data-rating"));
     const roundedRating = Math.round(rating); // 반올림한 숫자를 가져옵니다.
 
@@ -149,6 +149,7 @@ starElements.forEach((star) => {
         star.appendChild(starItem);
     }
 });
+
 
 
 </script>

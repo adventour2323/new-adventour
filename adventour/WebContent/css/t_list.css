@@ -179,7 +179,7 @@ body {
        
 .star-rating .star-item {
     color: rgba(250, 208, 0, 0.99);
-    font-size: 2em; /* 원하는 크기로 조정하세요. */
+    /* font-size: 2em;  */ /* 원하는 크기로 조정하세요. */
 }
 
        
