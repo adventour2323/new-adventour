@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <%@ page import="getset.H_getset" %>
 <%@ page import="java.util.*"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,26 +193,29 @@ if (top_list != null) {
     <h2><%= aaa.getH_name_ko() %></h2>
         <h4></h4>
         <h4></h4>
-    <h4 class="db_h_hotel_info"><%= aaa.getH_hotel_info() %></h4>
+    <h4 class="db_h_hotel_info" id="db_h_hotel_info">
+    <%= aaa.getH_hotel_info() %>
+    </h4>
 
     </div>
  </div><!--hotel_info-->
   </div>
-  
+  <% String inda;
+     String outda;
+     int days;
+     int peo;
+  %>
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
  <div class="h_info_search">
  <input type="text" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
- <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required">
- <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required" >
- <input type="text" class="night_time" name="night_time" placeholder="1박" required="required" >
- <select class="sch_peo" name="sch_peo">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
- </select>
- <input type="button" class="h_info_search_btn" value="검색하기">
+ <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required" value="<%= inda %>" >
+ <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required" value="<%= outda %>" >
+ <input type="text" class="night_time" name="night_time"  required="required" value="<%= days %>">
+ <input type="text" class="sch_peo" name="sch_peo" value="<%= peo %>">
+ 
+ <input type="button" class="h_info_search_btn" 
+ href="hotelinfosearch.hotel?uname=hinfosearch&hotel=<%= aaa.getH_name_ko() %>&checkin=<%= inda %>&checkout=<%= outda %>&person=<%= peo %>" value="검색하기">
  
  </div><!-- h_info_search -->
 

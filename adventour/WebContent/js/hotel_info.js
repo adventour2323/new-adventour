@@ -3,14 +3,14 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 	
-/* db 출력 텍스트에 <br> 적용 */
-	  const hotelInfoElement = document.querySelector('.db_h_hotel_info');
-	  if (hotelInfoElement) {
-	    const originalText = hotelInfoElement.innerHTML;
-	    const modifiedText = originalText.replace(/\n/g, '<br>');
-	    hotelInfoElement.innerHTML = modifiedText;
-	  }
-
+	document.addEventListener('DOMContentLoaded', function() {
+		  const hotelInfoElement = document.querySelector('.db_h_hotel_info');
+		  if (hotelInfoElement) {
+		    const originalText = hotelInfoElement.innerHTML;
+		    const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
+		    hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
+		  }
+		});
 
 	window.initMap = function () {
 		  var lat_info = $(".hh_lat").val();

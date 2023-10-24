@@ -6,7 +6,7 @@
 
 <%
     // 파일 업로드 경로 설정
-    String uploadPath = request.getRealPath("/c_uploadfiles"); 
+    String uploadPath = request.getRealPath("/c_upload"); 
     // 웹 애플리케이션 내에서 업로드 폴더를 얻어옵니다.
 
     // 업로드 파일 크기 제한 (약 10MB)
@@ -45,19 +45,22 @@
         c_cont = multi.getParameter("c_con");
  
         
-        System.out.println(m_id);
-        System.out.println(country);
-        System.out.println(city);
-        System.out.println(c_title);
-        System.out.println(c_cont);
-
+        System.out.println("아이디1"+ m_id);
+        System.out.println("나라1" + country);
+        System.out.println("도시1"+ city);
+        System.out.println("제목1"+ c_title);
+        System.out.println("내용1"+ c_cont);
+       
         
         // 업로드 파일 처리
         Enumeration files = multi.getFileNames();
+        
         String file1 = (String) files.nextElement();
         c_pho1 = multi.getFilesystemName(file1);
         origfilename1 = multi.getOriginalFileName(file1);
-        
+        System.out.println("사진11"+c_pho1);
+        System.out.println("사진오리지널1"+origfilename1);
+       
         String file2 = (String) files.nextElement();
         c_pho2 = multi.getFilesystemName(file2);
         origfilename2 = multi.getOriginalFileName(file2);
@@ -73,14 +76,33 @@
         String file5 = (String) files.nextElement();
         c_pho5 = multi.getFilesystemName(file5);
         origfilename5 = multi.getOriginalFileName(file5);
+       
+        // 파일 및 폼 데이터를 request attribute로 설정
+        request.setAttribute("c_writer", m_id);
+        request.setAttribute("c_country", country);
+        request.setAttribute("c_city", city);
+        request.setAttribute("c_title", c_title);
+        request.setAttribute("c_con", c_cont);
+        request.setAttribute("c_pho1", c_pho1);
+        request.setAttribute("c_pho2", c_pho2);
+        request.setAttribute("c_pho3", c_pho3);
+        request.setAttribute("c_pho4", c_pho4);
+        request.setAttribute("c_pho5", c_pho5);
+        request.setAttribute("origfilename1", origfilename1);
+        request.setAttribute("origfilename2", origfilename2);
+        request.setAttribute("origfilename3", origfilename3);
+        request.setAttribute("origfilename4", origfilename4);
+        request.setAttribute("origfilename5", origfilename5);
+      
+        // c_database.jsp로 포워딩
+        RequestDispatcher dispatcher = request.getRequestDispatcher("c_database.jsp");
+        dispatcher.forward(request, response);   
+
 
     } catch (Exception e) {
         e.printStackTrace();
     }
     
+  
 
-    
-    // c_database.jsp로 포워딩
-    RequestDispatcher dispatcher = request.getRequestDispatcher("c_database.jsp");
-    dispatcher.forward(request, response);
 %>

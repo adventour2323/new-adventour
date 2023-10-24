@@ -143,22 +143,44 @@ if (session.getAttribute("id") == null) {
     </div><!--c_con_div-->
     
 <div class="c_con_phos">
+ 
+ <%
+ if(obj.getC_pho1() != null){
+ %>
     <div class="c_con_pho1">
-    <%= obj.getC_pho1() %>
-        <img class="c_con_pho1_img" src="c_uploadfiles/<%= obj.getC_pho1() %>">
+        <img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
     </div>
+ <%} %>   
+ 
+  <%
+ if(obj.getC_pho2() != null){
+ %>
     <div class="c_con_pho2">
-        <img class="c_con_pho2_img" src="c_uploadfiles/<%= obj.getC_pho2() %>">
+        <img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
     </div>
+ <%} %>   
+   <%
+ if(obj.getC_pho3() != null){
+ %>   
     <div class="c_con_pho3">
-        <img class="c_con_pho3_img" src="c_uploadfiles/<%= obj.getC_pho3() %>">
+        <img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
     </div>
+ <%} %>    
+    <%
+ if(obj.getC_pho4() != null){
+ %>   
+     
     <div class="c_con_pho4">
-        <img class="c_con_pho4_img" src="c_uploadfiles/<%= obj.getC_pho4() %>">
+        <img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>">
     </div>
+  <%} %>
+     <%
+ if(obj.getC_pho5() != null){
+ %>   
     <div class="c_con_pho5">
-        <img class="c_con_pho5_img" src="c_uploadfiles/<%= obj.getC_pho5() %>">
+        <img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>">
     </div>
+ <%} %>    
 </div>
 
     <div class="c_btns">

@@ -21,24 +21,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
-       <script>
-        // 원하는 쿠키 이름을 지정합니다.
-        var cookieName = "h_mainde";
 
-        // 쿠키를 읽어옵니다.
-        var cookies = document.cookie.split(';');
-        var cookieValue = null;
-
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            if (cookie.indexOf(cookieName + '=') === 0) {
-                cookieValue = cookie.substring(cookieName.length + 1, cookie.length);
-                break;
-            }
-        }
-
-
-    </script>
    
   </head>
 
@@ -182,17 +165,9 @@ if (list != null && !list.isEmpty()) {
 
 
     </div>
-<div class="sch_result">
-<!-- JSP 코드 ... -->
-<% 
-String cookieValue = request.getParameter("cookieValue"); // JavaScript에서 읽어온 값
- %>
-
-
-<div class="sch_result">
-    <p>선택된 나라: <%= cookieValue %></p>
-</div>
-</div>
+ <!-- <div class="sch_result">
+쿠키되면 쓸것
+</div> -->
    
 <%
 
@@ -251,29 +226,21 @@ if (list != null) {
          <div class="h_prices">
           <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
           <a href="information.hotel?uname=<%= ukAll.getH_name_eng() %>">
-          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=<%= ukAll.getH_name_eng() %>">
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=<%= ukAll.getH_name_eng() %>"/>
           </a>
          </div>
 
-        <div class="ti_select">  
 
- <!--         <div class="selectTi1">   
-           <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
-           <p class="bbb">선택</p>
-          </div>  --> 
-    <%
+ <%
 if (session.getAttribute("id") != null) {
 %>
-    <div class="h_heart">
-         <h3 class="beheart"> ♥ </h3>
-       </div>
+ 
+         <input type="button" class="beheart" value="♥ 찜하기">
+
 <%
 } 
 %>
- 
-     
 
-        </div> <!--ti_select-->
 
       </div><!--h_priinfo-->
  

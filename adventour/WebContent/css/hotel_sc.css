@@ -305,8 +305,9 @@ body {
 }
 
 .h_prices {
+
 	width: 150px;
-	height: 40px;
+	height: 140px;
 	margin-top: 50px;
 }
 
@@ -318,12 +319,6 @@ body {
 
 }
 
-.selectTi {
-	width: 20px;
-	height: 20px;
-	margin-top: 110px;
-	margin-left: 70px;
-}
 
 .bbb {
 	margin-top: -24px;
@@ -332,9 +327,15 @@ body {
 }
 
 .beheart {
-	margin-top: -25px;
-	margin-left: 150px;
-	font-size: 28px;
+	width: 90px;
+	height: 30px;
+	background-color:red;
+	color:white;
+    border-color:red;
+	border-radius: 5px;
+	margin-top: 0px;
+	margin-left: 50px;
+	font-size: 15px;
 }
 
 .move_h {

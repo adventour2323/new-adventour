@@ -3,17 +3,7 @@ $(document).ready(function() {
     $("#header").load("header.html");
     $("#footer").load("footer.html");
 
-    // 하트를 클릭하면 색이 변경됩니다
-    let isRed = false;
-    $('.beheart').on('click', function() {
-        if (isRed) {
-            $(this).css('color', 'black');
-            isRed = false;
-        } else {
-            $(this).css('color', 'red');
-            isRed = true;
-        }
-    });
+
 
     // 왼쪽 검색창에 날짜 선택
     $.datepicker.setDefaults({
@@ -93,7 +83,6 @@ $(document).ready(function() {
         var day = today.getDate();
         return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
     }
-
-
+    
 
 });

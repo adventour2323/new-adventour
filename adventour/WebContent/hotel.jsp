@@ -23,6 +23,7 @@
 <body>
 
 	<header>
+	
 		<%
 if (session.getAttribute("id") == null) {
 %>
@@ -37,7 +38,7 @@ if (session.getAttribute("id") == null) {
 %>
 	</header>
 
-<form name="h_main_sch_form" action="mainsch.hotel?uname=hotelSearch" method="post">
+<form name="h_main_sch_form" action="mainsch.hotel?uname=hotelSearch" method="post" onsubmit="setCookies()">
 	<div class="busmain">
 		<img class="busmainpic" src="image/img/hotel01.jpg">
 		<div class="b_piccont">
@@ -52,7 +53,7 @@ if (session.getAttribute("id") == null) {
 
 			<div class="b_picsch">
 
-				<select class="h_mainde" name="h_mainde" placeholder="나라 선택">
+				<select id="h_mainde" class="h_mainde" name="h_mainde" placeholder="나라 선택">
 					<option value="">나라 선택</option>
 					<option value="all">어디든지</option>
 					<option value="uk">영국</option>
@@ -60,7 +61,7 @@ if (session.getAttribute("id") == null) {
 					<option value="france">프랑스</option>
 					<option value="spain">스페인</option>
 				</select> 
-				<select class="h_maincity" name="h_maincity" placeholder="도시 선택">
+				<select id="h_maincity" class="h_maincity" name="h_maincity" placeholder="도시 선택">
 					<option value="">도시 선택</option>
 					<option value="all">어디든지</option>
 					<option value="london">런던</option>
@@ -76,12 +77,12 @@ if (session.getAttribute("id") == null) {
 					<option value="barcelona">바르셀로나</option>
 					<option value="sevilla">세비야</option>
 				</select> 
-				<select class="h_indateY" name="h_indateY" placeholder="체크인">
+				<select id="h_indateY" class="h_indateY" name="h_indateY" placeholder="체크인">
 					<option vlaue="">년</option>
 					<option vlaue="2023">2023</option>
 					<option vlaue="2024">2024</option>
 				</select> 
-				<select class="h_indateM" name="h_indateM" placeholder="체크인">
+				<select id="h_indateM" class="h_indateM" name="h_indateM" placeholder="체크인">
 					<option vlaue="">월</option>
 					<option vlaue="1">1</option>
 					<option vlaue="2">2</option>
@@ -97,16 +98,16 @@ if (session.getAttribute("id") == null) {
 					<option vlaue="12">12</option>
 
 				</select> 
-				<select class="h_indateD" name="h_indateD" placeholder="체크인">
+				<select id="h_indateD" class="h_indateD" name="h_indateD" placeholder="체크인">
 					<option vlaue="">일</option>
 
 				</select> 
-				<select class="h_outdateY" name="h_outdateY" placeholder="체크아웃">
+				<select id="h_outdateY" class="h_outdateY" name="h_outdateY" placeholder="체크아웃">
 					<option vlaue="">년</option>
 					<option vlaue="2023">2023</option>
 					<option vlaue="2024">2024</option>
 				</select>
-				 <select class="h_outdateM" name="h_outdateM" placeholder="체크아웃">
+				 <select id="h_outdateM" class="h_outdateM" name="h_outdateM" placeholder="체크아웃">
 					<option vlaue="">월</option>
 					<option vlaue="1">1</option>
 					<option vlaue="2">2</option>
@@ -122,12 +123,12 @@ if (session.getAttribute("id") == null) {
 					<option vlaue="12">12</option>
 
 				</select> 
-				<select class="h_outdateD" name="h_outdateD" placeholder="체크아웃">
+				<select id="h_outdateD" class="h_outdateD" name="h_outdateD" placeholder="체크아웃">
 					<option vlaue="">일</option>
 
 				</select>
 				
-				 <select class="h_maintpeo" name="h_mainpeo" placeholder="총 인원수">
+				 <select id="h_mainpeo" class="h_maintpeo" name="h_mainpeo" placeholder="총 인원수">
 				    <option vlaue="1">1</option>
 					<option vlaue="2">2</option>
 					<option vlaue="3">3</option>
@@ -143,17 +144,7 @@ if (session.getAttribute("id") == null) {
 		<!--b_piccont-->
 	</div>
 	<!--busmain-->
-	<script>
-	  // select 요소에서 선택한 값을 가져오기
-	  var h_mainde = document.querySelector(".h_mainde").value;
-	  var h_maincity = document.querySelector(".h_maincity").value;
-	  var h_indateY = document.querySelector(".h_indateY").value;
-  
-	  // 쿠키 설정
-	  document.cookie = "h_mainde=" + h_mainde;
-	  document.cookie = "h_maincity=" + h_maincity;
-	  document.cookie = "h_indateY=" + h_indateY;
-	</script>
+
 </form>
 
 	<div class="h_eventban">

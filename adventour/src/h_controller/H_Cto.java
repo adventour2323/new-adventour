@@ -83,7 +83,19 @@ public class H_Cto extends HttpServlet {
      	    String hcityinter1 = hcityinter.showdata(request, response);  
      	    RequestDispatcher dispatcher4 = request.getRequestDispatcher("hotel_sc.jsp");
      	    dispatcher4.forward(request, response);
-        		
+    
+        	} else if (uName.equals("hinfosearch")) {
+      		
+      		String cityko = request.getParameter("city");
+      		 
+        
+   	        System.out.println("한글확인 1");
+   	        System.out.println(cityko);
+   	        System.out.println("한글확인 1 끝");
+        
+   	    String hcityinter1 = hcityinter.showdata(request, response);  
+   	    RequestDispatcher dispatcher4 = request.getRequestDispatcher("hotel_sc.jsp");
+   	    dispatcher4.forward(request, response);
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 

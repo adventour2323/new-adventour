@@ -9,23 +9,25 @@
 </head>
 <body>
     <%
-    request.setCharacterEncoding("UTF-8"); 
-    String m_id = request.getParameter("c_writer"); 
-    String country = request.getParameter("c_country");
-    String city = request.getParameter("c_city");
-    String c_title = request.getParameter("c_title");
-    String c_cont = request.getParameter("c_con");
-    String c_pho1 = request.getParameter("fileName1");
-    String c_pho2 = request.getParameter("fileName2");
-    String c_pho3 = request.getParameter("fileName3");
-    String c_pho4 = request.getParameter("fileName4");
-    String c_pho5 = request.getParameter("fileName5");
+ // request attribute에서 폼 데이터 및 파일명을 가져옵니다.
+    String m_id = (String) request.getAttribute("c_writer");
+    String country = (String) request.getAttribute("c_country");
+    String city = (String) request.getAttribute("c_city");
+    String c_title = (String) request.getAttribute("c_title");
+    String c_cont = (String) request.getAttribute("c_con");    
+    String c_pho1 = (String) request.getAttribute("origfilename1");
+    String c_pho2 = (String) request.getAttribute("origfilename2");
+    String c_pho3 = (String) request.getAttribute("origfilename3");
+    String c_pho4 = (String) request.getAttribute("origfilename4");
+    String c_pho5 = (String) request.getAttribute("origfilename5");
     
-    System.out.println(m_id);
-    System.out.println(country);
-    System.out.println(city);
-    System.out.println(c_cont);
-    System.out.println(c_pho1);
+    System.out.println("아이디"+ m_id);
+    System.out.println("나라" + country);
+    System.out.println("도시"+ city);
+    System.out.println("제목"+ c_title);
+    System.out.println("내용"+ c_cont);
+    System.out.println("사진"+c_pho1);
+
  
     
     if (m_id == null || m_id.isEmpty() || country == null || country.isEmpty() || city == null || city.isEmpty() || c_title == null || c_title.isEmpty() || c_cont == null || c_cont.isEmpty()) {
