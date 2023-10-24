@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import adventour.g_getset;
+import getset.H_getset;
 
 public class g_list_print {
 	Connection conn = null; 
@@ -305,6 +306,7 @@ public class g_list_print {
 			table.setT_id(rs.getString("t_id"));
 			table.setT_name(rs.getString("t_name"));
 			table.setCountry(rs.getString("country"));
+			table.setCountry_eng(rs.getString("country_eng"));
 			table.setCity(rs.getString("city"));
 			table.setD_time(rs.getString("depart_time"));
 			table.setM_spot(rs.getString("meeting_spot"));
@@ -438,5 +440,32 @@ public class g_list_print {
 	
 	//
 	
+	public ArrayList<H_getset> h1() throws Exception {
+
+		ArrayList<H_getset> arr = new ArrayList<H_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT country_ko, city_ko, h_name_ko, h_pho, h_grade FROM h_hotel;");
+
+		while(rs.next()) {
+			H_getset table = new H_getset();
+			
+			table.setCountry_ko(rs.getString("country_ko"));
+			table.setCity_ko(rs.getString("city_ko"));
+			table.setH_name_ko(rs.getString("h_name_ko"));
+			table.setH_pho(rs.getString("h_pho"));
+			table.setH_grade(rs.getString("h_grade"));
+			
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+	//
 	
 }

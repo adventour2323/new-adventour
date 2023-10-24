@@ -64,6 +64,7 @@ body {
         margin-right: auto;
         margin-left: auto;
         padding-top: 50px;
+        width: 1200px;
 }
 
 .t_country{
@@ -79,11 +80,14 @@ body {
 		margin-left: auto;
 		text-align: center;
 		margin-bottom: 20px;
+		width: 1200px;
 		}
 		
 		.country_content{
-		margin-right: 10px;
+		/* margin-right: 10px; */
 		cursor: pointer;
+		margin-right: auto;
+		margin-left: auto;
 		}		
 		
 

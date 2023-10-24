@@ -346,3 +346,24 @@ table {
   /* 마우스를 올리면 보이게 처리 */
   opacity: 1;
 }
+
+/* 호텔 추천 */
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            max-width: 1200px; /* 전체 슬라이더 너비 설정 */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s;
+        }
+
+        .slider-item {
+            flex: 0 0 275px; /* 각 슬라이드 너비 조절 */
+            margin-right: 10px; /* 슬라이드 간 간격 */
+        }
+        #prevSlide, #nextSlide {
+    display: block; /* 버튼을 블록 요소로 표시 */
+}
+        

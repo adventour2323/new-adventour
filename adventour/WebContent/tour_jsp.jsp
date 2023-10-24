@@ -5,12 +5,14 @@
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
 <%@ page import="getset.guide_gs"%>
+<%@ page import="getset.H_getset" %>
 <%@ page import="java.util.*"%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>ADVENTOUR - TOUR</title>
 <link rel="stylesheet" type="text/css" href="./css/tour_index.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/jquery-3.6.0.min.js"></script>
 <script src="./js/tour_incomplete.js"></script>
 <script src=https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js></script>
@@ -387,21 +389,48 @@
 			</div>
 
 			<div class="recommend_ticket" style="margin-bottom: 50px;">
-				<h3 style="text-align: center;">추천상품</h3>
-				<div class="recommend_img">
-				<img src="./image/tour/usim_.png"
-					style="width: 300px; margin-left: 50px;" alt="추천 티켓/입장권 1">
-				</div>
-				<div class="recommend_img"> 
-				<img
-					src="./image/tour/pass_museum_paris.jpg"
-					style="width: 300px; margin-left: 30px; margin-bottom: 10px" alt="추천 티켓/입장권 2">
-				</div>
-				<div class="recommend_img">
-				<img
-					src="./image/tour/colosseum_ticket.png"
-					style="width: 300px; margin-left: 30px; margin-bottom: 20px;" alt="추천 티켓/입장권 3">
-				</div>
+			<div style="display: flex;" >
+				<div style="margin-right: 10px;">
+    				<img alt="hotel title icon" src="./image/tour/hotel_title.png">
+    			</div>
+    			<div>
+    				<h1 style="text-align: center; margin-bottom: 15px;">추천 호텔</h1>
+    			</div>
+    		</div>
+    <div class="slider-container">
+        <div class="slider">
+            <%
+            ArrayList<H_getset> a3 = id.h1();
+            for (int i = 0; i < a3.size(); i++) {
+                H_getset h = a3.get(i);
+            %>
+            <div class="slider-item">
+                <div class="recommend_hotel">
+                    <div class="recommend_img">
+                        <img src="./image/hotel/h_image/<%= h.getH_pho() %>" style="width: 275px;" alt="추천 호텔 1">
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <div style="display: flex; height: 40px; margin-top: auto; margin-bottom: auto;">
+                            <div>
+                                <%=h.getCountry_ko() %>, <%= h.getCity_ko() %>
+                            </div>
+                            <div>
+								★ <%= h.getH_grade() %> 성급
+                            </div>
+                        </div>
+                        <div style="height: 40px; margin-top: auto; margin-bottom: auto;">
+                            <h3><%=h.getH_name_ko() %></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        
+    </div>
+    <button id="prevSlide">이전</button>
+<button id="nextSlide">다음</button>
+    
 			</div>
 
 	</jsp:useBean>
@@ -455,4 +484,45 @@
 		setTimeout(showSlidestext, 2000); // 2초마다 이미지가 체인지됩니다
 	}
 </script>
+  
+    <script>
+    $(document).ready(function () {
+        var slideCount = $('.slider-item').length;
+        var visibleSlides = 4; // 한 번에 보여줄 항목 수
+        var slideWidth = 250; // 각 슬라이드의 고정 너비
+        var slideMargin = 10; // 슬라이드 간 간격
+        var sliderWidth = (slideWidth + slideMargin) * slideCount; // 슬라이더 너비
+
+        $('.slider').css('width', sliderWidth + 'px');
+        $('.slider-item').css('width', slideWidth + 'px');
+
+        var currentSlide = 0;
+
+        function nextSlide() {
+            if (currentSlide < Math.ceil(slideCount / visibleSlides) - 1) {
+                currentSlide++;
+                var slidePosition = -currentSlide * (slideWidth + slideMargin) * visibleSlides;
+                $('.slider').css('transform', 'translateX(' + slidePosition + 'px)');
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                var slidePosition = -currentSlide * (slideWidth + slideMargin) * visibleSlides;
+                $('.slider').css('transform', 'translateX(' + slidePosition + 'px)');
+            }
+        }
+
+        $('#prevSlide').click(function () {
+            prevSlide();
+        });
+
+        $('#nextSlide').click(function () {
+            nextSlide();
+        });
+    });
+    
+
+    </script>
 </html>

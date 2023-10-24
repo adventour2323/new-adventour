@@ -65,8 +65,12 @@
 
 	<div class="content"   > <!-- 전체 content -->
 		
-		
+		<div style="margin-bottom: 15px;">
+			<a href="main.tour?tour=main">투어</a> > <a href="main.tour?tour=tourlist">투어 리스트</a> > <a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>" ><%=g.getCountry() %></a> > <%=g.getT_name() %>
+		</div>
+				
 		<div class="top_area" >
+
 			<div class="top_left" >
 			
 			<div class="t_img_div">
@@ -293,7 +297,7 @@
 							<label for="rate5">★</label>
 						</div>
 							<!-- <div>  <div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!~~~~~~~ ! </div> </div> -->
-							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!@</div>
+							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!</div>
 							
 							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
 	        					<% String t_id_avg = g.getT_id();
@@ -306,6 +310,7 @@
 					</fieldset>
     				<div class="form-group">
         				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
+        				<div id="charCount" style="float: right;">0 / 255</div>
     				</div>
     				<div class="form-group">
         				<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
@@ -314,56 +319,67 @@
 				</div>
 			</form>	 
 			<!--  -->
-			<div class="t_review_div">
-    			<table class="review-table">
-        			<tr id="review_top">
-            			<th>번호</th>
-            			<th>작성자</th>
-            			<th>내용</th>
-			            <th>날짜</th>
-            			<th>평점</th>
-        			</tr>
-				<%
+			
+    <div class="t_review_div">
+        <table class="review-table">
+            <tr id="review_top">
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>날짜</th>
+                <th>평점</th>
+            </tr>
+            <%
 					ArrayList<t_r_getset> rv = id.t6(t_id); 
 					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
-					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
+					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정      
+                               
+                int itemsPerPage = 10; // 한 페이지당 아이템 개수
+                int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
 
-					for (t_r_getset tr : rv) {
-						String reviewDateString = tr.getReview_date(); // String 형식의 날짜를 가져옴
+                int startIndex = (currentPage - 1) * itemsPerPage;
+                int endIndex = Math.min(startIndex + itemsPerPage, count);
 
-						// String을 Timestamp로 변환
-					    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+          
 
-						Date reviewDate = new Date(reviewTimestamp.getTime());
-				%>
-					<tr>
-    					<td><%= count %></td>
-    					<td><%= tr.getM_id() %></td>
-    					<td><%= tr.getT_review() %></td>
-    					<td><%= sdf1.format(reviewDate) %></td>
-    					<%-- <td><%= tr.getT_rating() %></td> --%>
-						<td> 
-							<div class="star-rating">
-    						<%
-    							int ratingStr = tr.getT_rating(); // 이미 문자열로 가져옴
-    							try {
-        						int rating = ratingStr; // 숫자로 변환
-        						for (int i = 0; i < rating; i++) {
-    						%>
-      						<i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i> <!-- 노란색 별 아이콘 사용 -->
-    						<%	}
-    							} catch (NumberFormatException e) {
-        						// 숫자로 파싱할 수 없는 경우에 대한 예외 처리
-    							}
-    						%>
-  							</div>
-						</td>
-	 				</tr>
-					<%  count--; // 번호를 감소시켜 역순으로 만듭니다. 
-					} %>
+                for (int i = startIndex; i < endIndex; i++) {
+                    t_r_getset tr = rv.get(i);
+                    String reviewDateString = tr.getReview_date();
+                    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+                    Date reviewDate = new Date(reviewTimestamp.getTime());
+            %>
+            <tr>
+                <td><%= count %></td>
+                <td><%= tr.getM_id() %></td>
+                <td><%= tr.getT_review() %></td>
+                <td><%= sdf1.format(reviewDate) %></td>
+                <td> 
+                    <div class="star-rating">
+                        <%
+                            int ratingStr = tr.getT_rating();
+                            try {
+                                int rating = ratingStr;
+                                for (int j = 0; j < rating; j++) {
+                        %>
+                            <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
+                        <%
+                            }
+                        } catch (NumberFormatException e) {
+                            // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+                        }
+                        %>
+                    </div>
+                </td>
+            </tr>
+            <%
+                count--;
+            }
+            %>
+        </table>		
+    </div><!-- t_review_div -->
 
-				</table>		
-			</div> <!-- t_review_div -->
+
+
 		 	
 		</div> <!-- rating-div -->
 
@@ -565,17 +581,7 @@ function count(type)  {
     
   });
 
-/*   function updateCount(change) {
-    currentCount += change;
-    // 최소 1명, 최대 10명으로 제한
-    currentCount = Math.min(Math.max(currentCount, 1), 10);
-    // 결과 업데이트
-    document.getElementById('result').innerText = currentCount;
-    // 가격 업데이트
-    const totalPrice = parseInt(tPrice.replace(/,/g, '')) * currentCount; // 컴마 제거 후 계산
-    const formattedTotalPrice = formatNumberWithCommas(totalPrice); // 컴마가 붙은 숫자
-    document.getElementById('totalPrice').innerText = formattedTotalPrice ;
-  } */
+
   function updateCount(change) {
 	  currentCount += change;
 	  // 최소 1명, 최대 10명으로 제한
@@ -694,6 +700,29 @@ function validateForm() {
         var price = parseInt('<%= g.getT_price() %>'); // 가격을 숫자로 파싱
         priceElement.textContent = formatNumberWithCommas(price) + ' 원';
     });
+</script>
+
+<script>
+  // 텍스트 박스와 글자 수 표시 요소를 가져옵니다.
+  const reviewContents = document.getElementById("reviewContents");
+  const charCount = document.getElementById("charCount");
+
+  // 텍스트 박스에 입력 내용이 변경될 때마다 글자 수를 업데이트합니다.
+  reviewContents.addEventListener("input", function () {
+    const text = reviewContents.value;
+    const textLength = text.length;
+    const maxLength = 255; // 최대 글자 수
+
+    // 글자 수 표시를 업데이트합니다.
+    charCount.textContent = textLength + " / " + maxLength;
+
+    // 최대 글자 수를 초과하면 입력을 제한합니다.
+    if (textLength > maxLength) {
+      // 입력을 최대 글자 수로 자릅니다.
+      reviewContents.value = text.slice(0, maxLength);
+      charCount.textContent = maxLength + " / " + maxLength;
+    }
+  });
 </script>
 
 

@@ -36,7 +36,7 @@
 	
 	
 	<div class="list_title_div">
-	<h1 class="list_title"> 투어 리스트 <br> </h1>
+		<h1 class="list_title"> 투어 리스트 <br> </h1>
 	</div>
 	
 	<div class="country_list" >
@@ -97,8 +97,11 @@
         						ArrayList<t_r_getset> rv = id.t7(t_id);  
         						for (t_r_getset tr : rv) {
     						%>
+    							<div style="text-align: center; margin-right: auto; margin-left: auto;">
+    							<strong>평점</strong>
     							<div class="star-rating">
-       								<strong>평점</strong><span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+       								<span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+    							</div>
     							</div>
     						<% } %>
 						</div> <!-- tour-rating-star -->
