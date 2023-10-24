@@ -26,12 +26,26 @@ public class H_Cto extends HttpServlet {
     	String city_ko = "";
     	city_ko = request.getParameter("city");
     	
+    	String h_name_eng="";
+    	h_name_eng =  request.getParameter("hotel");
+    	
+    	String h_indate = "";
+    	h_indate=  request.getParameter("checkin");
+    	
+    	String h_outdate = "";
+    	h_outdate=  request.getParameter("checkout");
+    	
+    	String h_peo = "";
+    	h_peo= request.getParameter("person");
+    
+    	
         h_conn_interface inter = H_MainDBselect.im_inter();
         h_conn_interface ukinter = H_MainukAll_DBselect.im_inter();
         h_conn_interface htop10inter = H_MainTop10_DBselect.im_inter();
         h_conn_interface htop10inter1 =  H_MainSch_DBselect.im_inter();
         h_conn_interface hscinter =  H_SCSch_DBselect.im_inter();
         h_conn_interface hcityinter =  H_CityAll_DBselect.im_inter();
+        h_conn_interface hinfosch =  H_InfoSch_DBselect.im_inter();
         
         
 
@@ -85,17 +99,24 @@ public class H_Cto extends HttpServlet {
      	    dispatcher4.forward(request, response);
     
         	} else if (uName.equals("hinfosearch")) {
-      		
-      		String cityko = request.getParameter("city");
-      		 
-        
+      		       	 
+        		h_name_eng =  request.getParameter("hotel");  
+        		h_peo= request.getParameter("person");
+            	h_indate=  request.getParameter("checkin");            	           
+            	h_outdate=  request.getParameter("checkout");          
+            	
+      		    
    	        System.out.println("한글확인 1");
-   	        System.out.println(cityko);
+   	        System.out.println(h_name_eng);
+   	        System.out.println(h_indate);
+   	        System.out.println(h_outdate);
+   	        System.out.println(h_peo);
    	        System.out.println("한글확인 1 끝");
         
-   	    String hcityinter1 = hcityinter.showdata(request, response);  
-   	    RequestDispatcher dispatcher4 = request.getRequestDispatcher("hotel_sc.jsp");
-   	    dispatcher4.forward(request, response);
+   	    String hinfosch1 = hinfosch.showdata(request, response);  
+   	    RequestDispatcher dispatcher5 = request.getRequestDispatcher("hotel_info.jsp");
+   	    dispatcher5.forward(request, response);
+   	    
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 

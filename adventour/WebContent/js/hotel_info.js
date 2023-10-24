@@ -160,7 +160,48 @@ $(document).ready(function() {
 	function modalDisplay(text){
 	  modal.style.display = text;
 	}
-	
 
+	//검색창
+	
+	// JavaScript를 사용하여 클릭 이벤트를 처리합니다.
+	document.querySelector("#searchLink").addEventListener("click", function() {
+	    var indateValue = document.getElementById("sch_indate").value;
+	    var outdateValue = document.getElementById("sch_outdate").value;
+	    var hotelName = document.getElementById("h_info_search_name").value;
+	    var peoValue = document.getElementById("sch_peo").value; // "person" 파라미터 값 추가
+
+	    var url = "hotelinfosearch.hotel?uname=hinfosearch&hotel=" + hotelName + "&checkin=" + indateValue + "&checkout=" + outdateValue + "&person=" + peoValue;
+	    window.location.href = url;
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 });
