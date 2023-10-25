@@ -267,6 +267,39 @@ table {
 
 
 /*  */
+.pagination{
+	margin-right: auto;
+	margin-left: auto;
+}
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline-block;
+    margin-right: 10px; /* 각 항목 간 간격 설정 */
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3498db; /* 배경 색상 설정 */
+    color: #fff; /* 글자 색상 설정 */
+    text-decoration: none;
+    border-radius: 5px; /* 둥근 모서리 설정 */
+}
+
+.pagination a:hover {
+    background-color: #1e87d2; /* 마우스 오버시 배경 색상 변경 */
+}
+
+.current-page {
+    display: inline-block;
+    margin: 0 10px; /* 현재 페이지 번호와 이전/다음 버튼 간 간격 설정 */
+}
 
 
 

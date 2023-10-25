@@ -59,11 +59,27 @@
 	
 	</div>
 
+    
     <div class="tour-container">
-        
- 
+    		<!--  -->
+                        <%
+                        int itemsPerPage = 6;
+                        int currentPage = 1;
+
+                        String pageParam = request.getParameter("page");
+                        if (pageParam != null) {
+                            currentPage = Integer.parseInt(pageParam);
+                        }
+
+                        int startIndex = (currentPage - 1) * itemsPerPage;
+                        int endIndex = Math.min(startIndex + itemsPerPage, a1.size());
+                    %>
+   	 		<!--  -->
                 <%
-                for (t_getset g : a1) {
+                for (int i = startIndex; i < endIndex; i++) {
+                	t_getset g = a1.get(i);
+                
+ 	               /* for (t_getset g : a1) { */
                 %>
             
             <div class="tour-item">
@@ -109,6 +125,10 @@
 			
                 </div> <!-- tour-info -->
             </div> <!-- tour-item -->
+
+<!--  -->
+
+            
             
 <script>
     function formatNumberWithCommas(number) {
@@ -125,6 +145,22 @@
 </script>
             <% } %>
         
+        <!-- 좌 우 버튼  -->
+<div class="pagination">
+    <ul>
+        <% int totalPages = (int) Math.ceil((double) a1.size() / itemsPerPage); // 전체 페이지 수
+           if (currentPage > 1) { %>
+            <li><a href="main.tour?tour=tourlist&page=<%=currentPage - 1 %>">이전</a></li>
+        <% } %>
+
+        <li class="current-page">현재 페이지: <%= currentPage %></li>
+
+        <% if (currentPage < totalPages) { %>
+            <li><a href="main.tour?tour=tourlist&page=<%=currentPage + 1 %>">다음</a></li>
+        <% } %>
+    </ul>
+</div>        
+        <!--  -->
     </div>
 </jsp:useBean>
     <footer>

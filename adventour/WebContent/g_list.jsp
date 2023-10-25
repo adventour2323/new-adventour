@@ -97,7 +97,7 @@ table, th, td {
                                             <img src="<%=g.getImg()%>" width="201px" height="201px" class="guide-image">
                                             <div class="overlay">
                                                 <div class="overlay-content">
-                                                    자세히 보기
+                                                  	  자세히 보기
                                                 </div>
                                             </div>
                                         </a>
