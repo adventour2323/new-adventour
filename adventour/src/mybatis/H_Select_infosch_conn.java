@@ -18,7 +18,7 @@ public class H_Select_infosch_conn {
 	SqlSessionFactory dbconnect = DB_conn.getSqlSession(); 
 	//데이터베이스를 연결하는 파일을 연결해서 받아온다 = 싱글톤 페턴으로 객체화
 	
-	public List<H_getset> h_infoschselect( String h_name_eng,String h_roompeo,String h_indate, String h_outdate) {
+	public List<H_getset> h_infoschselect( String h_name_eng, String h_roompeo,String h_indate, String h_outdate) {
 		
 		System.out.println(h_name_eng); //매개변수 넘어오는지 확인 uk
 		 

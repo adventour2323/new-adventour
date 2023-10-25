@@ -85,37 +85,40 @@ public class H_Cto extends HttpServlet {
         	    String hscsearch = hscinter.showdata(request, response);  
         	    RequestDispatcher dispatcher3 = request.getRequestDispatcher("hotel_sc2.jsp");
         	    dispatcher3.forward(request, response);
-        	}else if (uName.equals("mainCity")) {
-        		
+        	}else if (uName.equals("mainCity")) {       		
         		String cityko = request.getParameter("city");
-        		 
-          
-     	        System.out.println("한글확인 1");
-     	        System.out.println(cityko);
-     	        System.out.println("한글확인 1 끝");
+        		         
+//     	        System.out.println("한글확인 1");
+//     	        System.out.println(cityko);
+//     	        System.out.println("한글확인 1 끝");
           
      	    String hcityinter1 = hcityinter.showdata(request, response);  
      	    RequestDispatcher dispatcher4 = request.getRequestDispatcher("hotel_sc.jsp");
      	    dispatcher4.forward(request, response);
     
         	} else if (uName.equals("hinfosearch")) {
-      		       	 
-        		h_name_eng =  request.getParameter("hotel");  
-        		h_peo= request.getParameter("person");
-            	h_indate=  request.getParameter("checkin");            	           
-            	h_outdate=  request.getParameter("checkout");          
-            	
-      		    
-   	        System.out.println("한글확인 1");
-   	        System.out.println(h_name_eng);
-   	        System.out.println(h_indate);
-   	        System.out.println(h_outdate);
-   	        System.out.println(h_peo);
-   	        System.out.println("한글확인 1 끝");
-        
-   	    String hinfosch1 = hinfosch.showdata(request, response);  
-   	    RequestDispatcher dispatcher5 = request.getRequestDispatcher("hotel_info.jsp");
-   	    dispatcher5.forward(request, response);
+        	    h_name_eng = request.getParameter("hotel");
+        	    h_peo = request.getParameter("person");
+        	    h_indate = request.getParameter("checkin");
+        	    h_outdate = request.getParameter("checkout");
+
+        	    System.out.println("한글확인 1");
+        	    System.out.println(h_name_eng);
+        	    System.out.println(h_indate);
+        	    System.out.println(h_outdate);
+        	    System.out.println(h_peo);
+        	    System.out.println("한글확인 1 끝");
+
+        	    // 선택된 값들을 request 객체에 저장
+        	    request.setAttribute("h_name_eng", h_name_eng);
+        	    request.setAttribute("h_peo", h_peo);
+        	    request.setAttribute("h_indate", h_indate);
+        	    request.setAttribute("h_outdate", h_outdate);
+
+        	    String hinfosch1 = hinfosch.showdata(request, response);
+        	    RequestDispatcher dispatcher5 = request.getRequestDispatcher("hotel_info_SCH.jsp");
+        	    dispatcher5.forward(request, response);
+        	
    	    
         	}else if (uName.equals(uName)) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 

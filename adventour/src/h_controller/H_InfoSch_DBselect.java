@@ -25,11 +25,17 @@ public class H_InfoSch_DBselect implements h_conn_interface { //데이터베이�
     	
     	String contry_list = re.getParameter("uname"); 
          	System.out.println(contry_list); //uk
-    	   String h_name_eng = re.getParameter("h_name_eng");
-           String h_indate = re.getParameter("h_indate");
-           String h_outdate = re.getParameter("h_outdate");
-           String h_roompeo = re.getParameter("h_peo");
-          
+         	
+//    	   String h_name_eng = re.getParameter("h_name_eng");
+//           String h_indate = re.getParameter("h_indate");
+//           String h_outdate = re.getParameter("h_outdate");
+//           String h_roompeo = re.getParameter("h_peo");
+    		
+         	String h_name_eng =  re.getParameter("hotel");  
+         	String h_roompeo= re.getParameter("person");
+         	String h_indate=  re.getParameter("checkin");            	           
+         	String h_outdate=  re.getParameter("checkout");     
+//          
            System.out.println(h_name_eng);
            System.out.println( h_indate);
            System.out.println(h_outdate);
