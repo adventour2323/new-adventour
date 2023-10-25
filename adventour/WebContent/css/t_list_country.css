@@ -88,7 +88,12 @@ body {
 		cursor: pointer;
 		margin-right: auto;
 		margin-left: auto;
+		/*  */
+    width: 100px; 
+    height: 63px; 		
 		}		
+		
+		
 		
 
 	.tour-container {

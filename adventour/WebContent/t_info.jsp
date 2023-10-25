@@ -65,9 +65,15 @@
 
 	<div class="content"   > <!-- 전체 content -->
 		
-		<div style="margin-bottom: 15px;">
-			<a href="main.tour?tour=main">투어</a> > <a href="main.tour?tour=tourlist">투어 리스트</a> > <a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>" ><%=g.getCountry() %></a> > <%=g.getT_name() %>
-		</div>
+<div class="div-text">
+    <strong>	
+        <a href="main.tour?tour=main">투어</a> > 
+        <a href="main.tour?tour=tourlist">투어 리스트</a> > 
+        <a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
+        <a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
+    </strong>
+</div>
+
 				
 		<div class="top_area" >
 
@@ -112,6 +118,7 @@
 							String formattedDate = sdf.format(today);
 						%>
         					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
+        					
     					</div>
 					</div>
 
@@ -250,18 +257,37 @@
                 								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
             								</div>
             								<div style="display: block; ">
-            									<div class="label-cell" style="margin-right: auto; margin-left: auto;">
-            										<strong>이름</strong>
-        		    							</div>
-		            						<div class="data-cell" style="margin-right: auto; margin-left: auto;">
-	                							<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
-            								</div>
-											<div class="label-cell" style="margin-right: auto; margin-left: auto;">
-												<strong>연락처</strong>
-											</div>
-		            						<div class="data-cell" style="margin-right: auto; margin-left: auto;">
-            									<%=gg.getEmail()%>
-            								</div>
+											    <div style="display: block;">
+											        <div style="display: flex;">
+            											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+                											<strong>이름</strong>
+                            							</div>
+                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+                            								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
+                            							</div>
+                            						</div>
+                            						<div style="display: flex;">
+                            							<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+                            								<strong>연락처</strong>
+                            							</div>
+                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+                            								<%=gg.getEmail()%>
+                            							</div>
+                            						</div>
+                            						<div style="display: flex;">
+                            							<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+                            								<strong>다른 상품</strong>
+                            							</div>
+                            								<% ArrayList<t_getset> a3 = id.t2(g_id);
+                            								for (int i = 0; i < a3.size(); i++) {
+                                								t_getset tn = a3.get(i);
+                                							%>
+                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+                            								<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><%=tn.getT_name()%></a>
+                            							</div>
+                            								<%} %>
+        											</div>
+                            					</div>												
             								</div>
         								</div>
 
@@ -725,6 +751,29 @@ function validateForm() {
   });
 </script>
 
+<script>
+// 달력  특정 날짜만 선택 되게 하는 코드 
+    // 월요일, 수요일, 금요일에 해당하는 요일 값
+    const validDays = [1, 3, 5];
+
+    // date 요소 선택
+    const dateInput = document.getElementById('trip-start');
+
+    // 이벤트 리스너 추가
+    dateInput.addEventListener('change', function() {
+        // 입력된 날짜 값 가져오기
+        const selectedDate = new Date(dateInput.value);
+
+        // 선택한 날짜의 요일 가져오기 (0: 일요일, 1: 월요일, 2: 화요일, ...)
+        const dayOfWeek = selectedDate.getDay();
+
+        // 선택한 날짜가 월요일, 수요일, 금요일 중 하나가 아니라면 경고 메시지를 표시하고 입력 값을 초기화
+        if (!validDays.includes(dayOfWeek)) {
+            alert('월요일, 수요일, 금요일 중 하나를 선택해주세요.');
+            dateInput.value = ''; // 입력 값을 초기화
+        }
+    });
+</script>
 
 
 <%} %> <!-- for문 종료 -->

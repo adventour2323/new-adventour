@@ -71,19 +71,19 @@
 	<div class="country_list" >
 		
 		<div id="country_all" class="country_content" style="margin-left: auto;">
-			<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
+			<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2 class="c_name">전체</h2> </a>  
 		</div>
 		<div id="country_uk" class="country_content">
-			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
+			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2 class="c_name">영국</h2> </a>
 		</div>
 		<div id="conutry_fr" class="country_content">
-			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2 class="c_name">프랑스</h2> </a> 
 		</div>
 		<div id="country_es" class="country_content">
-			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2 class="c_name">스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
 		</div>
 	
 	</div>
@@ -145,6 +145,24 @@
         priceElement.textContent = '₩ ' + formatNumberWithCommas(price) + ' 원~';
     });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var country = '<%= country %>'; // JSP 변수를 JavaScript로 가져옵니다.
+
+    // 모든 country_content 요소를 선택
+    var countryElements = document.querySelectorAll('.country_content');
+
+    // 요소를 순환하면서 텍스트 내용을 확인하고 일치하는 경우 스타일을 변경합니다.
+    for (var i = 0; i < countryElements.length; i++) {
+        var h2 = countryElements[i].querySelector('h2'); // h2 요소를 찾습니다.
+        if (h2.innerText.trim() === country) { // 텍스트 내용 일치 여부 확인
+            countryElements[i].style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // 예시로 배경색을 변경
+        }
+    }
+});
+
+</script>
                        
             <% } %>
             </div>
@@ -179,6 +197,8 @@ starElements.forEach((star) => {
 
 
 </script>
+
+
 
 </body>
 </html>

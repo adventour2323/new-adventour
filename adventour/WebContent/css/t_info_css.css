@@ -12,6 +12,12 @@ height: 1300px;
   min-height: 100vh;
   padding: 50px 0; /* 상단과 하단에 여백을 추가합니다. */
 }
+
+.div-text {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
      .movet { /* tab 색 유지  */
     background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
     color: white!important; /* 글자색을 원하는 색상으로 설정 */
@@ -269,26 +275,26 @@ a.next:hover {
     margin-right: 10px;
 }
 
-.label-cell {
-    /* width: 120px;
-    text-align: right; */
+/* .label-cell {
+    width: 120px;
+    text-align: right;
     font-weight: bold;
     background-color: #f2f2f2;
     height: 37.5px;
         display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; 가로 중앙 정렬
+    align-items: center; 세로 중앙 정렬
     
 }
 
 .data-cell {
-    /* padding-left: 10px; */
+    padding-left: 10px;
     height: 37.5px;
         display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; 가로 중앙 정렬
+    align-items: center; 세로 중앙 정렬
 }
-
+ */
 /* 별점 */
 
 /* 해당 부분을 중앙에 배치하도록 스타일 업데이트 */
@@ -428,4 +434,11 @@ a.next:hover {
 		    font-size: 10px; /* 댓글의 별 크기를 조절합니다. */
 			display: inline-block;
 		}
+		
+		.t_review_div{
+		width: 1000px;
+		max-width: 1000px;
+		}
+/* 달력  */
+
 		
