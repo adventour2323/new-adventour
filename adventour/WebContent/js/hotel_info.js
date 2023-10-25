@@ -162,23 +162,49 @@ $(document).ready(function() {
 	}
 
 	//검색창
-	
-	// 검색창
-	document.querySelector("#searchLink").addEventListener("click", function() {
-	    var indateValue = document.getElementById("sch_indate").value;
-	    var outdateValue = document.getElementById("sch_outdate").value;
-	    var hotelName = document.getElementById("h_info_search_nameeng").value;
-	    var peoValue = document.getElementById("sch_peo").value;
+//	
+//	// 검색창
+//	document.querySelector("#searchLink").addEventListener("click", function() {
+//	    var indateValue = document.getElementById("sch_indate").value;
+//	    var outdateValue = document.getElementById("sch_outdate").value;
+//	    var hotelName = document.getElementById("h_info_search_nameeng").value;
+//	    var peoValue = document.getElementById("sch_peo").value;
+//
+//	    var url = "hotelinfosearch.hotel?uname=hinfosearch&hotel=" + hotelName + "&checkin=" + indateValue + "&checkout=" + outdateValue + "&person=" + peoValue;
+//	    window.location.href = url;
+//	  $("#info_info").load("hotel_info_SCH.jsp");
+//	});
+//	
+//	
+//
 
-	    var url = "hotelinfosearch.hotel?uname=hinfosearch&hotel=" + hotelName + "&checkin=" + indateValue + "&checkout=" + outdateValue + "&person=" + peoValue;
-	    window.location.href = url;
-	  $("#info_info").load("hotel_info_SCH.jsp");
-	});
-	
-	
+	// 검색창 버튼 클릭 시 AJAX 요청을 보냅니다.
+    $("#searchLink").click(function(e) {
+      e.preventDefault(); // 폼의 기본 동작 방지
 
+      // 입력된 검색어 가져오기
+      var name_eng = $(".h_info_search_nameeng").val();
+      var indate = $("#sch_indate").val();
+      var outdate = $("#sch_outdate").val();
+      var peo= $(".sch_peo").val();
 
-
+      // AJAX 요청 보내기
+      $.ajax({
+        type: "GET",
+        url: "h_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+        data: { h_name_eng: name_eng,
+        	    h_indate: indate,
+        	    h_outdate:  outdtae,
+        	    h_roompeo:peo}, // 검색어를 서버로 전송
+        success: function(data) {
+          // 서버에서 받은 HTML 데이터를 결과 테이블의 tbody에 추가
+          $("#info_SCH").html(data);
+        },
+        error: function() {
+          alert("일치하는 검색어가 없습니다.");
+        }
+      });
+    });
 	
 	
 	

@@ -87,5 +87,104 @@ public void setC_pho5(String c_pho5) {
 	this.c_pho5 = c_pho5;
 }
  
+String h_roomtype;
+String h_roompeo;
+String h_roomnum;
+String h_roompri;
+public String getH_roomtype() {
+	return h_roomtype;
+}
+public void setH_roomtype(String h_roomtype) {
+	this.h_roomtype = h_roomtype;
+}
+public String getH_roompeo() {
+	return h_roompeo;
+}
+public void setH_roompeo(String h_roompeo) {
+	this.h_roompeo = h_roompeo;
+}
+public String getH_roomnum() {
+	return h_roomnum;
+}
+public void setH_roomnum(String h_roomnum) {
+	this.h_roomnum = h_roomnum;
+}
+public String getH_roompri() {
+	return h_roompri;
+}
+public void setH_roompri(String h_roompri) {
+	this.h_roompri = h_roompri;
+}
+public String getH_room_bed() {
+	return h_room_bed;
+}
+public void setH_room_bed(String h_room_bed) {
+	this.h_room_bed = h_room_bed;
+}
+public String getH_room_bedc() {
+	return h_room_bedc;
+}
+public void setH_room_bedc(String h_room_bedc) {
+	this.h_room_bedc = h_room_bedc;
+}
+public String getH_room_breakfast() {
+	return h_room_breakfast;
+}
+public void setH_room_breakfast(String h_room_breakfast) {
+	this.h_room_breakfast = h_room_breakfast;
+}
+public String getH_room_cancle() {
+	return h_room_cancle;
+}
+public void setH_room_cancle(String h_room_cancle) {
+	this.h_room_cancle = h_room_cancle;
+}
+public String getH_room_window() {
+	return h_room_window;
+}
+public void setH_room_window(String h_room_window) {
+	this.h_room_window = h_room_window;
+}
+public String getH_room_somke() {
+	return h_room_somke;
+}
+public void setH_room_somke(String h_room_somke) {
+	this.h_room_somke = h_room_somke;
+}
+public String getH_room_paynow() {
+	return h_room_paynow;
+}
+public void setH_room_paynow(String h_room_paynow) {
+	this.h_room_paynow = h_room_paynow;
+}
+public String getH_room_intime() {
+	return h_room_intime;
+}
+public void setH_room_intime(String h_room_intime) {
+	this.h_room_intime = h_room_intime;
+}
+public String getH_room_outime() {
+	return h_room_outime;
+}
+public void setH_room_outime(String h_room_outime) {
+	this.h_room_outime = h_room_outime;
+}
+public String getH_roompho() {
+	return h_roompho;
+}
+public void setH_roompho(String h_roompho) {
+	this.h_roompho = h_roompho;
+}
+
+String h_room_bed;
+String h_room_bedc;
+String h_room_breakfast;
+String h_room_cancle;
+String h_room_window;
+String h_room_somke;
+String h_room_paynow;
+String h_room_intime;
+String h_room_outime;
+String h_roompho;
 
 }

@@ -27,8 +27,20 @@
 
 <body>
 
- 
+ <%
+    request.setCharacterEncoding("UTF-8"); 
+    String h_name_eng = request.getParameter("name_eng"); // 입력된 검색어 가져오기
+    String h_indate = request.getParameter("indate"); // 입력된 검색어 가져오기
+    String h_outdate = request.getParameter("outdate"); // 입력된 검색어 가져오기
+    String h_roompeo = request.getParameter("peo"); // 입력된 검색어 가져오기
 
+//    if (c_sch == null || c_sch.isEmpty()) {
+//        // 검색어가 비어 있으면 아무것도 반환하지 않음
+//    } else {
+        C_dbsave h_sch1 = new  C_dbsave();
+        ArrayList<adventour.C_getset> searchResults =  h_sch1. h_info_search(h_name_eng,  h_roompeo, h_indate,h_outdate ); // 검색 수행
+        
+%>
 <div  id="info_SCH">
 
 <%  List<H_getset> infoshc_list = (List<H_getset>) request.getAttribute("infoshc_list"); 

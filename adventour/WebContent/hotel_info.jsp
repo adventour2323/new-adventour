@@ -205,7 +205,7 @@ if (top_list != null) {
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
  <div class="h_info_search">
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
-  <input type="hidden" id="h_info_search_nameeng"  name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
+  <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
  <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required" >
  <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"  >
  <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
