@@ -176,28 +176,35 @@ public class C_dbsave {
             closecon();
         }
     }
-    public ArrayList<C_getset> h_info_search(String h_name_eng, String h_roompeo,String h_indate, String h_outdate ) throws Exception { 
-        ArrayList<C_getset> arr = new ArrayList<C_getset>(); //여려개의 객체를 받아서 가지고 오기위해서 
+    public ArrayList<C_getset> h_info_search(String h_name_eng, int h_roompeo, String h_indate, String h_outdate) throws Exception {
+        ArrayList<C_getset> arr = new ArrayList<C_getset>();
+
         try {
             connec();
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             ResultSet rs = stmt.executeQuery(
-            	
-            	   " ( SELECT h_room.* FROM h_room WHERE h_room.h_name_eng = " + h_name_eng +
-            	            "AND h_room.h_roompeo >= " + h_roompeo +
-            	            "AND h_room.h_roomnum NOT IN (SELECT h_reserve.h_roomnum FROM h_reserve WHERE (h_reserve.h_indate <=" + h_outdate +
-            	                    " AND h_reserve.h_outdate >="+ h_indate+
-            	            
-            	            ") ) AND h_room.h_roomtype = 'double' LIMIT 1) UNION "
-            	            + "( SELECT h_room.* FROM h_room WHERE h_room.h_name_eng =" + h_name_eng +
-            	           " AND h_room.h_roompeo >= " + h_roompeo +
-            	            "AND h_room.h_roomnum NOT IN ( SELECT h_reserve.h_roomnum FROM h_reserve WHERE (h_reserve.h_indate <=" +  h_outdate +
-            	           " AND h_reserve.h_outdate >= " + h_indate + ")"+
-            	            ") AND h_room.h_roomtype = 'suite' LIMIT 1);"); //데이터베이스 명령문사용
+            	    "(SELECT h_room.* FROM h_room " +
+            	    "WHERE h_room.h_name_eng = '" + h_name_eng + "' " +
+            	    "AND h_room.h_roompeo >= " + h_roompeo + " " +
+            	    "AND h_room.h_roomnum NOT IN " +
+            	    "(SELECT h_reserve.h_roomnum FROM h_reserve " +
+            	    "WHERE (h_reserve.h_indate <= '" + h_outdate + "' " +
+            	    "AND h_reserve.h_outdate >= '" + h_indate + "')) " +
+            	    "AND h_room.h_roomtype = 'double' LIMIT 1 )" +
+            	    "UNION " +
+            	    "(SELECT h_room.* FROM h_room " +
+            	    "WHERE h_room.h_name_eng = '" + h_name_eng + "' " +
+            	    "AND h_room.h_roompeo >= " + h_roompeo + " " +
+            	    "AND h_room.h_roomnum NOT IN " +
+            	    "(SELECT h_reserve.h_roomnum FROM h_reserve " +
+            	    "WHERE (h_reserve.h_indate <= '" + h_outdate + "' " +
+            	    "AND h_reserve.h_outdate >= '" + h_indate + "')) " +
+            	    "AND h_room.h_roomtype = 'suite' LIMIT 1);");
             
-            while (rs.next()) { //rs의 값이 없을 때 까지 - 값을 받아온다
-            	C_getset obj = new C_getset();
+             
+            while (rs.next()) {
+                C_getset obj = new C_getset();
                 obj.setH_roomtype(rs.getString("h_roomtype"));
                 obj.setH_roompeo(rs.getString("h_roompeo"));
                 obj.setH_roomnum(rs.getString("h_roomnum"));
@@ -205,7 +212,7 @@ public class C_dbsave {
                 obj.setH_room_bed(rs.getString("h_room_bed"));
                 obj.setH_room_bedc(rs.getString("h_room_bedc"));
                 obj.setH_room_breakfast(rs.getString("h_room_breakfast"));
-                obj.setH_room_cancle(rs.getString("h_room_cancle"));
+                obj.setH_room_canael(rs.getString("h_room_cancle"));
                 obj.setH_room_window(rs.getString("h_room_window"));
                 obj.setH_room_somke(rs.getString("h_room_somke"));
                 obj.setH_room_paynow(rs.getString("h_room_paynow"));
@@ -213,7 +220,7 @@ public class C_dbsave {
                 obj.setH_room_outime(rs.getString("h_room_outime"));
                 obj.setH_roompho(rs.getString("h_roompho"));
                
-           
+        
                 arr.add(obj);
             }
         } finally {

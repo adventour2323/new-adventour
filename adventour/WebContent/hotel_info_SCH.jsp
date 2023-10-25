@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ page import="getset.H_getset" %>
+<%@ page import="adventour.C_dbsave" %>
+<%@ page import="adventour.C_getset" %>
 <%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -32,21 +33,24 @@
     String h_name_eng = request.getParameter("name_eng"); // 입력된 검색어 가져오기
     String h_indate = request.getParameter("indate"); // 입력된 검색어 가져오기
     String h_outdate = request.getParameter("outdate"); // 입력된 검색어 가져오기
-    String h_roompeo = request.getParameter("peo"); // 입력된 검색어 가져오기
+    String h_roompeo1 = request.getParameter("peo"); // 입력된 검색어 가져오기
+    
+    int h_roompeo;
 
-//    if (c_sch == null || c_sch.isEmpty()) {
-//        // 검색어가 비어 있으면 아무것도 반환하지 않음
-//    } else {
-        C_dbsave h_sch1 = new  C_dbsave();
-        ArrayList<adventour.C_getset> searchResults =  h_sch1. h_info_search(h_name_eng,  h_roompeo, h_indate,h_outdate ); // 검색 수행
+    if (h_roompeo1 != null && !h_roompeo1.isEmpty()) {
+        h_roompeo = Integer.parseInt(h_roompeo1);
+    } else {
+    	 h_roompeo = 1;
+    }
+
+
+ C_dbsave h_sch1 = new  C_dbsave();
+ArrayList<adventour.C_getset> searchResults =  h_sch1. h_info_search(h_name_eng,  h_roompeo, h_indate,h_outdate ); // 검색 수행
         
-%>
-<div  id="info_SCH">
-
-<%  List<H_getset> infoshc_list = (List<H_getset>) request.getAttribute("infoshc_list"); 
-if ( infoshc_list != null) {
-  for (int s = 0; s < infoshc_list.size(); s++) {
-      H_getset bbb = infoshc_list .get(s); 
+  
+if ( searchResults != null) {
+  for (int s = 0; s < searchResults.size(); s++) {
+      C_getset bbb = searchResults.get(s); 
  %>
 
     <div id="hotel_room_info">
@@ -58,9 +62,9 @@ if ( infoshc_list != null) {
         <div class="h_room_options11"><img class="h_room_peo_img" src="image/hotel/h_image/person.png"/><div class="h_room_peo"><h4 >최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4></div></div>  
         <div class="h_room_options12">   <img class="h_room_bed_img" src="image/hotel/h_image/qeen_bed.png"> <div class="h_room_bed"><h4>베드 타입 : <%=  bbb.getH_room_bed()%>, <%=  bbb.getH_room_bedc()%>개</h4></div></div>
         <div class="h_room_options13"><img class="h_room_breakfast_img" src="image/hotel/h_image/meal.png"><div class="h_room_breakfast"> <h4>조식 <%=  bbb.getH_room_breakfast()%></h4></div></div>
-        <div class="h_room_options14"> <img class="h_room_canael_img" src="image/hotel/h_image/pay_card.png"> <div class="h_room_canael"><h4> 취소 가능 여부 : <%=  bbb.getH_room_cancel()%></h4></div></div>
+        <div class="h_room_options14"> <img class="h_room_canael_img" src="image/hotel/h_image/pay_card.png"> <div class="h_room_canael"><h4> 취소 가능 여부 : <%=  bbb.getH_room_canael()%></h4></div></div>
         <div class="h_room_options15"><img class="h_room_window_img" src="image/hotel/h_image/window.png"> <div class="h_room_window">  <h4>창문 <%=  bbb.getH_room_window()%></h4></div></div>
-        <div class="h_room_options16"> <img class="h_room_smoke_img" src="image/hotel/h_image/no_smoking.png"><div class="h_room_smoke"><h4> <%=  bbb.getH_room_smoke()%> </h4></div></div>
+        <div class="h_room_options16"> <img class="h_room_smoke_img" src="image/hotel/h_image/no_smoking.png"><div class="h_room_smoke"><h4> <%=  bbb.getH_room_somke() %> </h4></div></div>
 
         <div id="h_room_options2" >
           <h4 class="h_room_paynow"> 결제 : <%=  bbb.getH_room_paynow()%></h4>
@@ -78,7 +82,7 @@ if ( infoshc_list != null) {
 }
 }
 %>
-</div>  <!-- info_SCH -->
+
 
 
 

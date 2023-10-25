@@ -3,14 +3,19 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 	
-	document.addEventListener('DOMContentLoaded', function() {
-		  const hotelInfoElement = document.querySelector('.db_h_hotel_info');
-		  if (hotelInfoElement) {
-		    const originalText = hotelInfoElement.innerHTML;
-		    const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
-		    hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
-		  }
-		});
+	  document.addEventListener('DOMContentLoaded', function() {
+		    try {
+		      const hotelInfoElement = document.querySelector('.db_h_hotel_info');
+		      if (hotelInfoElement) {
+		        const originalText = hotelInfoElement.innerHTML;
+		        const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
+		        hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
+		      }
+		    } catch (error) {
+		      console.error('오류가 발생했습니다:', error);
+		    }
+		  });	
+
 
 	window.initMap = function () {
 		  var lat_info = $(".hh_lat").val();
@@ -29,6 +34,8 @@ $(document).ready(function() {
 		};
 
 		initMap();
+		
+
 
  /* 하트누르면 색변환*/
   $(document).ready(function() {
@@ -66,12 +73,12 @@ $(document).ready(function() {
   	
 // 몇박 인지 계산해줌 
   	
-    // 요소들을 가져옵니다.
+  
     const schIndate = document.getElementById("sch_indate");
     const schOutdate = document.getElementById("sch_outdate");
     const nightTime = document.querySelector(".night_time");
 
-    // 입력 값이 변경될 때 박수를 계산하기 위한 이벤트 리스너를 추가합니다.
+  
     schIndate.addEventListener("input", updateNightTime);
     schOutdate.addEventListener("input", updateNightTime);
 
@@ -95,18 +102,18 @@ $(document).ready(function() {
 
 	if (elements) {
 	  elements.forEach(function(element) {
-	    // 요소에서 텍스트 내용을 가져옵니다.
+
 	    var text = element.textContent;
 
-	    // 콤마를 추가할 숫자 형식의 문자열을 만듭니다.
+
 	    var formattedText = addCommasToNumber(text);
 
-	    // 포맷된 문자열로 요소의 내용을 대체합니다.
+
 	    element.textContent = formattedText;
 	  });
 	}
 
-	// 세 자리마다 콤마를 추가하는 함수를 정의합니다.
+	// 세 자리마다 콤마를 추가하는 함수
 	function addCommasToNumber(numberString) {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
@@ -179,7 +186,7 @@ $(document).ready(function() {
 //
 
 	// 검색창 버튼 클릭 시 AJAX 요청을 보냅니다.
-    $("#searchLink").click(function(e) {
+    $(".h_info_search_btn").click(function(e) {
       e.preventDefault(); // 폼의 기본 동작 방지
 
       // 입력된 검색어 가져오기
@@ -191,14 +198,14 @@ $(document).ready(function() {
       // AJAX 요청 보내기
       $.ajax({
         type: "GET",
-        url: "h_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
         data: { h_name_eng: name_eng,
         	    h_indate: indate,
-        	    h_outdate:  outdtae,
+        	    h_outdate: outdate,
         	    h_roompeo:peo}, // 검색어를 서버로 전송
         success: function(data) {
-          // 서버에서 받은 HTML 데이터를 결과 테이블의 tbody에 추가
-          $("#info_SCH").html(data);
+       
+          $("#hotel_room_info").html(data);
         },
         error: function() {
           alert("일치하는 검색어가 없습니다.");

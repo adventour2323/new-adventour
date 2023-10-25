@@ -90,6 +90,13 @@ public void setC_pho5(String c_pho5) {
 String h_roomtype;
 String h_roompeo;
 String h_roomnum;
+public String getH_roompeo() {
+	return h_roompeo;
+}
+public void setH_roompeo(String h_roompeo) {
+	this.h_roompeo = h_roompeo;
+}
+
 String h_roompri;
 public String getH_roomtype() {
 	return h_roomtype;
@@ -97,12 +104,7 @@ public String getH_roomtype() {
 public void setH_roomtype(String h_roomtype) {
 	this.h_roomtype = h_roomtype;
 }
-public String getH_roompeo() {
-	return h_roompeo;
-}
-public void setH_roompeo(String h_roompeo) {
-	this.h_roompeo = h_roompeo;
-}
+
 public String getH_roomnum() {
 	return h_roomnum;
 }
@@ -133,11 +135,12 @@ public String getH_room_breakfast() {
 public void setH_room_breakfast(String h_room_breakfast) {
 	this.h_room_breakfast = h_room_breakfast;
 }
-public String getH_room_cancle() {
-	return h_room_cancle;
+
+public String getH_room_canael() {
+	return h_room_canael;
 }
-public void setH_room_cancle(String h_room_cancle) {
-	this.h_room_cancle = h_room_cancle;
+public void setH_room_canael(String h_room_canael) {
+	this.h_room_canael = h_room_canael;
 }
 public String getH_room_window() {
 	return h_room_window;
@@ -179,7 +182,7 @@ public void setH_roompho(String h_roompho) {
 String h_room_bed;
 String h_room_bedc;
 String h_room_breakfast;
-String h_room_cancle;
+String h_room_canael;
 String h_room_window;
 String h_room_somke;
 String h_room_paynow;

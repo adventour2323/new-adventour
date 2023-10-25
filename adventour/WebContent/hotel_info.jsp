@@ -35,7 +35,7 @@ if (session.getAttribute("id") == null) {
 <%
 } else {
 %>
-    <jsp:include page="header_login.jsp"></jsp:include>
+    <jsp:include page="header_login.jsp"></jsp:include> 
 <%
 }
 %>
@@ -180,21 +180,32 @@ if (top_list != null) {
         </h3>
     </div>
       
+         <div class="h_info_tourad">
+
+
+</div>
     
     </div><!--hotel_info_options-->
-    
+   
+<div class="h_info_review">
+
+</div>
+ 
+ 
  <div id="map" style="width: 950px; height: 400px;" > </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
+ 
+
     
     <div class="hotel_info_cont">
     
     <h1> 호텔  설명</h1>
     <h2><%= aaa.getH_name_ko() %></h2>
-        <h4></h4>
-        <h4></h4>
+       <br/>
+       
     <h4 class="db_h_hotel_info" id="db_h_hotel_info">
-    <%= aaa.getH_hotel_info() %>
+      <%= aaa.getH_hotel_info() %>
     </h4>
 
     </div>
@@ -210,14 +221,14 @@ if (top_list != null) {
  <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"  >
  <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
  <input type="text" id="sch_peo" class="sch_peo" name="sch_peo" value="1">
- <a id="searchLink" href="#">
+
 <input type="button" class="h_info_search_btn"  value="검색하기">
-</a>
+
  </div><!-- h_info_search -->
 
   </div>  
  <h2 class="aass"> 현재 예약 가능한 객실 </h2>
- <div id="info_info"></div>
+
 
 <div id="info_SCH">
 <%	
@@ -436,6 +447,8 @@ for (int ii = 0; i < top_list.size(); i++) {
 
  
 <!-- </div>content 전체 부분-->
+
+
 
 <% 
 	}
