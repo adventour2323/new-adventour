@@ -23,11 +23,9 @@
 <body>
 		<header>
 			<% if (session.getAttribute("id") == null) { %>
-    		<!-- header.html import -->
-    		<!-- <div id="header"></div> -->
-    		<jsp:include page="header.html"></jsp:include>
+    			<jsp:include page="header.html"></jsp:include>
 			<% } else { %>
-    		<jsp:include page="header_login.jsp"></jsp:include>
+    			<jsp:include page="header_login.jsp"></jsp:include>
 			<% } %>
 		</header>
 
@@ -35,26 +33,25 @@
         <jsp:useBean id="id" class="adventour.g_list_print">
             <%
                 String countryEng = request.getParameter("country_eng");
-                String country = request.getParameter("country");
                 ArrayList<t_getset> a1 = id.t3(countryEng);
             %>
 			
 <div class="t_country_div" style="text-align: center;">
     <div style="display: inline-block;">
         <%
-        if ("영국".equals(country)) {
+        if ("uk".equals(countryEng)) {
         %>
             <img alt="영국" src="./image/tour/ukflag.png" height="30px">
         <%
-        } else if ("프랑스".equals(country)) {
+        } else if ("france".equals(countryEng)) {
         %>
             <img alt="프랑스" src="./image/tour/frflag.png" height="30px">
         <%
-        } else if ("스페인".equals(country)) {
+        } else if ("spain".equals(countryEng)) {
         %>
             <img alt="스페인" src="./image/tour/esflag.png" height="30px">
         <%
-        } else if ("이탈리아".equals(country)) {
+        } else if ("italia".equals(countryEng)) {
         %>
             <img alt="이탈리아" src="./image/tour/itaflag.png" height="30px">
         <%
@@ -62,7 +59,23 @@
         %>
     </div>
     <h1 class="t_country" style="display: inline-block; ">
-        <%=country %>
+		<%
+			String countryName = ""; 
+
+			if ("uk".equals(countryEng)) {
+				countryName = "영국";
+				out.println("영국");
+			} else if ("france".equals(countryEng)) {
+				countryName = "프랑스";
+				out.println("프랑스");
+			} else if ("spain".equals(countryEng)) {
+    			countryName = "스페인";
+    			out.println("스페인");
+    		} else if ("italia".equals(countryEng)) {
+    			countryName = "이탈리아";
+    			out.println("이탈리아");
+    		}
+    	%>
     </h1>
 </div>
 
@@ -74,16 +87,16 @@
 			<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2 class="c_name">전체</h2> </a>  
 		</div>
 		<div id="country_uk" class="country_content">
-			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2 class="c_name">영국</h2> </a>
+			<a href="t_list_country.jsp?country_eng=uk"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2 class="c_name">영국</h2> </a>
 		</div>
 		<div id="conutry_fr" class="country_content">
-			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2 class="c_name">프랑스</h2> </a> 
+			<a href="t_list_country.jsp?country_eng=france"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2 class="c_name">프랑스</h2> </a> 
 		</div>
 		<div id="country_es" class="country_content">
-			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2 class="c_name">스페인</h2> </a>
+			<a href="t_list_country.jsp?country_eng=spain"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2 class="c_name">스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
+			<a href="t_list_country.jsp?country_eng=italia"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
 		</div>
 	
 	</div>
@@ -148,7 +161,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var country = '<%= country %>'; // JSP 변수를 JavaScript로 가져옵니다.
+	var country = '<%= countryName %>';  // JSP 변수를 JavaScript로 가져옵니다.
 
     // 모든 country_content 요소를 선택
     var countryElements = document.querySelectorAll('.country_content');

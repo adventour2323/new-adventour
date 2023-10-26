@@ -205,28 +205,28 @@
         <div class="t_flag">
         
           <div class="ukimg" id="country_name">
-			<a href="t_list_country.jsp?country_eng=uk&country=영국">
+			<a href="t_list_country.jsp?country_eng=uk">
             	<img class="uk_flag" id="flag" src="image/img/uk.png">
             	<h2 class="ukname">영국</h2>
 			</a>            
           </div>
           
           <div class="fraimg" id="country_name">
-			<a href="t_list_country.jsp?country_eng=france&country=프랑스">
+			<a href="t_list_country.jsp?country_eng=france">
             	<img class="fr_flag" id="flag" src="image/img/fra.png">
             	<h2 class="franame">프랑스</h2>
 			</a>
           </div>
 
           <div class="spaimg" id="country_name">
-          	<a href="t_list_country.jsp?country_eng=spain&country=스페인">
+          	<a href="t_list_country.jsp?country_eng=spain">
             	<img class="es_flag" id="flag" src="image/img/spain.png">
             	<h2 class="spaname">스페인</h2>
             </a>
           </div>
           
           <div class="ityimg" id="country_name">
-          	<a href="t_list_country.jsp?country_eng=italia&country=이탈리아">
+          	<a href="t_list_country.jsp?country_eng=italia">
             	<img class="ita_flag" id="flag" src="image/img/ity.png">
             	<h2 class="ityname">이탈리아</h2>
             </a>

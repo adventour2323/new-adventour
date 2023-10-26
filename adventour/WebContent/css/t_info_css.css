@@ -311,7 +311,13 @@ a.next:hover {
     align-items: center; /* 가운데 정렬 */
     margin-top: 20px; /* 원하는 상단 여백 설정 */
 }
-
+/*  */
+.tour-rating-star span::before {
+  content: "★"; /* 별 모양 문자(★)를 content에 추가합니다 */
+  color: rgba(250, 208, 0, 0.99); /* 별 모양 문자의 색상을 노란색으로 설정합니다 */
+  margin-right: 5px; /* 별 모양 문자와 평점 값 사이의 간격을 조절합니다 */
+}
+/*  */
 .star-div {
     display: flex;
     flex-direction: row-reverse; /* 별점을 오른쪽에서 왼쪽으로 정렬 */
@@ -439,6 +445,19 @@ a.next:hover {
 		width: 1000px;
 		max-width: 1000px;
 		}
-/* 달력  */
+/*댓글 목록에 숫자, 이전, 다음 버튼  */
+.pagination-container {
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 10px; /* 원하는 위치로 조정 */
+}
+
+.pagination-container a {
+    margin: 0 5px; /* 페이지 번호 간격 조정 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.current-page {
+    font-weight: bold; /* 현재 페이지 강조 스타일 */
+}
 
 		

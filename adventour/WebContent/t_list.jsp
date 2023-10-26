@@ -45,16 +45,16 @@
 		<a href="main.tour?tour=tourlist"> <img alt="europeicon" src="./image/tour/euricon.png" height="30px;"><h2>전체</h2> </a>  
 		</div>
 		<div id="country_uk" class="country_content">
-			<a href="t_list_country.jsp?country_eng=uk&country=영국"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
+			<a href="t_list_country.jsp?country_eng=uk"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
 		</div>
 		<div id="conutry_fr" class="country_content">
-			<a href="t_list_country.jsp?country_eng=france&country=프랑스"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+			<a href="t_list_country.jsp?country_eng=france"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
 		</div>
 		<div id="country_es" class="country_content">
-			<a href="t_list_country.jsp?country_eng=spain&country=스페인"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+			<a href="t_list_country.jsp?country_eng=spain"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italia&country=이탈리아"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+			<a href="t_list_country.jsp?country_eng=italia"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
 		</div>
 	
 	</div>
@@ -62,25 +62,22 @@
     
     <div class="tour-container">
     		<!--  -->
-                        <%
-                        int itemsPerPage = 6;
-                        int currentPage = 1;
+		<%
+			int itemsPerPage = 6;
+			int currentPage = 1;
 
-                        String pageParam = request.getParameter("page");
-                        if (pageParam != null) {
-                            currentPage = Integer.parseInt(pageParam);
-                        }
-
-                        int startIndex = (currentPage - 1) * itemsPerPage;
-                        int endIndex = Math.min(startIndex + itemsPerPage, a1.size());
-                    %>
+			String pageParam = request.getParameter("page");
+			if (pageParam != null) {
+				currentPage = Integer.parseInt(pageParam);
+				}
+			int startIndex = (currentPage - 1) * itemsPerPage;
+			int endIndex = Math.min(startIndex + itemsPerPage, a1.size());
+		%>
    	 		<!--  -->
-                <%
-                for (int i = startIndex; i < endIndex; i++) {
-                	t_getset g = a1.get(i);
-                
- 	               /* for (t_getset g : a1) { */
-                %>
+		<%
+			for (int i = startIndex; i < endIndex; i++) {
+				t_getset g = a1.get(i);
+        %>
             
             <div class="tour-item">
                 <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
@@ -91,11 +88,11 @@
                 <div class="tour-info">
                 
                 	<div class="tour_title_div" >
-                    <h3 class="tour-title">
-                        <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
-                        	<%= g.getT_name() %>
-                        </a>
-                    </h3>
+	                    <h3 class="tour-title">
+    	                    <a href="t_info.jsp?t_id=<%=g.getT_id() %>">
+        	                	<%= g.getT_name() %>
+            	            </a>
+                	    </h3>
                     </div>
                     <hr>
                     
@@ -114,10 +111,10 @@
         						for (t_r_getset tr : rv) {
     						%>
     							<div style="text-align: center; margin-right: auto; margin-left: auto;">
-    							<strong>평점</strong>
-    							<div class="star-rating">
-       								<span class="star" data-rating="<%= tr.getT_rating() %>"></span>
-    							</div>
+    								<strong>평점</strong>
+    								<div class="star-rating">
+       									<span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+    								</div>
     							</div>
     						<% } %>
 						</div> <!-- tour-rating-star -->
@@ -146,22 +143,22 @@
             <% } %>
         
         <!-- 좌 우 버튼  -->
-<div class="pagination">
-    <ul>
-        <% int totalPages = (int) Math.ceil((double) a1.size() / itemsPerPage); // 전체 페이지 수
-           if (currentPage > 1) { %>
-            <li><a href="main.tour?tour=tourlist&page=<%=currentPage - 1 %>">이전</a></li>
-        <% } %>
+			<div class="pagination">
+    			<ul>
+        			<% int totalPages = (int) Math.ceil((double) a1.size() / itemsPerPage); // 전체 페이지 수
+        			if (currentPage > 1) { %>
+        			<li><a href="main.tour?tour=tourlist&page=<%=currentPage - 1 %>">이전</a></li>
+        			<% } %>
 
-        <li class="current-page">현재 페이지: <%= currentPage %></li>
+        			<li class="current-page">현재 페이지: <%= currentPage %></li>
 
-        <% if (currentPage < totalPages) { %>
-            <li><a href="main.tour?tour=tourlist&page=<%=currentPage + 1 %>">다음</a></li>
-        <% } %>
-    </ul>
-</div>        
+        			<% if (currentPage < totalPages) { %>
+        				<li><a href="main.tour?tour=tourlist&page=<%=currentPage + 1 %>">다음</a></li>
+        			<% } %>
+        		</ul>
+        	</div>        
         <!--  -->
-    </div>
+    </div> <!--tour-container  -->
 </jsp:useBean>
     <footer>
         <jsp:include page="footer.html"></jsp:include>

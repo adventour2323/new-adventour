@@ -322,7 +322,7 @@
 							<input type="radio" name="reviewStar" value="1" id="rate5">
 							<label for="rate5">★</label>
 						</div>
-							<!-- <div>  <div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!~~~~~~~ ! </div> </div> -->
+							
 							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!</div>
 							
 							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
@@ -330,7 +330,7 @@
     	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
         							for (t_r_getset tr : rv1) {
         						%>
-        						<div >평점     <span><%= tr.getT_rating() %> </span> </div>
+        						<div >평점     <span> <%= tr.getT_rating() %> </span> </div>
         						<% } %>
     						</div>						
 					</fieldset>
@@ -346,63 +346,83 @@
 			</form>	 
 			<!--  -->
 			
-    <div class="t_review_div">
-        <table class="review-table">
-            <tr id="review_top">
-                <th>번호</th>
-                <th>작성자</th>
-                <th>내용</th>
-                <th>날짜</th>
-                <th>평점</th>
-            </tr>
-            <%
-					ArrayList<t_r_getset> rv = id.t6(t_id); 
-					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
-					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정      
-                               
-                int itemsPerPage = 10; // 한 페이지당 아이템 개수
-                int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
+<div class="t_review_div">
+    <table class="review-table">
+        <tr id="review_top">
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>날짜</th>
+            <th>평점</th>
+        </tr>
+        <%
+            ArrayList<t_r_getset> rv = id.t6(t_id); 
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
+            int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
+                   
+            int itemsPerPage = 10; // 한 페이지당 아이템 개수
+            int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
 
-                int startIndex = (currentPage - 1) * itemsPerPage;
-                int endIndex = Math.min(startIndex + itemsPerPage, count);
+            int startIndex = (currentPage - 1) * itemsPerPage;
+            int endIndex = Math.min(startIndex + itemsPerPage, count);
 
-          
-
-                for (int i = startIndex; i < endIndex; i++) {
-                    t_r_getset tr = rv.get(i);
-                    String reviewDateString = tr.getReview_date();
-                    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
-                    Date reviewDate = new Date(reviewTimestamp.getTime());
-            %>
-            <tr>
-                <td><%= count %></td>
-                <td><%= tr.getM_id() %></td>
-                <td><%= tr.getT_review() %></td>
-                <td><%= sdf1.format(reviewDate) %></td>
-                <td> 
-                    <div class="star-rating">
-                        <%
-                            int ratingStr = tr.getT_rating();
-                            try {
-                                int rating = ratingStr;
-                                for (int j = 0; j < rating; j++) {
-                        %>
-                            <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
-                        <%
-                            }
-                        } catch (NumberFormatException e) {
-                            // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+            for (int i = startIndex; i < endIndex; i++) {
+                t_r_getset tr = rv.get(i);
+                String reviewDateString = tr.getReview_date();
+                Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+                Date reviewDate = new Date(reviewTimestamp.getTime());
+        %>
+        <tr>
+            <td><%= count - i %></td> <!-- 업데이트된 부분 -->
+            <td><%= tr.getM_id() %></td>
+            <td><%= tr.getT_review() %></td>
+            <td><%= sdf1.format(reviewDate) %></td>
+            <td> 
+                <div class="star-rating">
+                    <%
+                        int ratingStr = tr.getT_rating();
+                        try {
+                            int rating = ratingStr;
+                            for (int j = 0; j < rating; j++) {
+                    %>
+                        <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
+                    <%
                         }
-                        %>
-                    </div>
-                </td>
-            </tr>
-            <%
-                count--;
-            }
-            %>
-        </table>		
-    </div><!-- t_review_div -->
+                    } catch (NumberFormatException e) {
+                        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+                    }
+                    %>
+                </div>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    
+    <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 추가 -->
+<div class="pagination-container">
+    <%
+    int totalPages = (int) Math.ceil((double) count / itemsPerPage);
+    if (currentPage > 1) {
+    %>
+    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>">이전 페이지</a>
+    <%
+    }
+    for (int i = 1; i <= totalPages; i++) {
+    %>
+    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>><%= i %></a>
+    <%
+    }
+    if (currentPage < totalPages) {
+    %>
+    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>">다음 페이지</a>
+    <%
+    }
+    %>
+</div>
+
+</div><!-- t_review_div -->
+
+
 
 
 
@@ -743,8 +763,9 @@ function validateForm() {
     charCount.textContent = textLength + " / " + maxLength;
 
     // 최대 글자 수를 초과하면 입력을 제한합니다.
-    if (textLength > maxLength) {
+    
       // 입력을 최대 글자 수로 자릅니다.
+      if (textLength > maxLength) {
       reviewContents.value = text.slice(0, maxLength);
       charCount.textContent = maxLength + " / " + maxLength;
     }
