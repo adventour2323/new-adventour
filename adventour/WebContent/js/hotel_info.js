@@ -208,9 +208,16 @@ $(document).ready(function() {
         updateNightTime();
     });
 	
-	
+/*-------------------리뷰 글자수 세기------------------------*/	
 
-	
+    const textarea = document.getElementById('reviewContents');
+    const charCount = document.getElementById('charCount');
+
+    textarea.addEventListener('input', function() {
+      const text = this.value;
+      const length = text.length;
+      charCount.textContent = length + " / 255"; // 여기에서 최대 글자 수인 255로 설정
+    });	
 	
 	
 	

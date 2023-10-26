@@ -188,9 +188,75 @@ if (top_list != null) {
     </div><!--hotel_info_options-->
    
 <div class="h_info_review">
-후기 집합소
+  <h1>투숙객 후기</h1>
+    <div class="star_range">
+      
+      <div class="star_range_total">
+          <h1>4.5</h1><br>
+          <h2>****</h2>
+      
+      </div><!-- star_range_total -->
+      
+      <div class="star_range1">
+        <div class="clean_star_range">
+            <div class="clean_star_range_title"><h3>청 결</h3></div>
+           <div id="barGraph">
+			<input type="range" id="valueRange" min="0" max="5" value="4" readonly>
+			<div id="valueDisplay">4.0</div> 
+			</div>     
+        </div><!-- clean_star_range -->
+        
+        <div class="kind_star_range">
+         <div class="kind_star_range_title"><h3>친절함</h3></div>
+           <div id="barGraph">
+			<input type="range" id="valueRange" min="0" max="5" value="4" readonly>
+			<div id="valueDisplay">4.0</div> 
+			</div> 
+        </div><!-- kind_star_range -->  
+      </div><!-- star_range1 -->
+     
+      <div class="star_range2">
+       <div class="loca_star_range">
+       
+          <div class="loca_star_range_title"><h3>위 치</h3></div>
+           <div id="barGraph">
+			<input type="range" id="valueRange" min="0" max="5" value="4" readonly>
+			<div id="valueDisplay">4.0</div> 
+		  </div> 
+       
+       </div>
+       <div class="sleep_star_range">
+       
+        <div class="sleep_star_range_title"><h3>수면의 질</h3></div>
+           <div id="barGraph">
+			<input type="range" id="valueRange" min="0" max="5" value="4" readonly>
+			<div id="valueDisplay">4.0</div> 
+		  </div> 
+       
+       </div>     
+      </div><!-- star_range2 -->
+   
+   </div><!-- star_range -->
+   
+<div class="h_review1">
+<div class="h_review_peo">
+<h3>2명</h3>
+<h5>작성일 : 2023-11-01</h5>
+<h5>이용일 : 2023-10-25</h5>
 </div>
+
+<div class="h_review_info">
+	<div  class="h_review_info_star">
+    <div  class="h_review_info_star_num"><h4>5.0</h4></div>
+    <div  class="h_review_info_star_star"><h4>8 8 8 8 8</h4></div>
+	</div>
+
+
+</div>   
  
+ </div><!-- h_review1 -->
+</div><!-- h_info_review -->
+
  
  <div id="map" style="width: 950px; height: 400px;" > </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
@@ -405,45 +471,112 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 <!-- 후기 작성 -->
 <div class="star_div">
-<form name="rating_comment" id="rating_comment" action="" method="post" >
-<!--  -->
-<h2>이용 후기를 남겨주세요!</h2>
-	<div class="stars_rating_aera">			
-				<div  id="star_total"><h2 >총점</h2></div>
-					<fieldset class="fstar-div">						
-    				     	<div class="star-div" >				
-							<input type="radio" name="reviewStar" value="5" id="rate1">
-							<label for="rate1">★</label>
-							<input type="radio" name="reviewStar" value="4" id="rate2">
-							<label for="rate2">★</label>
-							<input type="radio" name="reviewStar" value="3" id="rate3">
-							<label for="rate3">★</label>
-							<input type="radio" name="reviewStar" value="2" id="rate4">
-							<label for="rate4">★</label>
-							<input type="radio" name="reviewStar" value="1" id="rate5">
-							<label for="rate5">★</label>
-						    </div>
-				   </fieldset>
-												
-							<div class="hotel-rating-star" id="hotel-rating-star" style="flex;">
-	        					
-        						<div >평점     <span>5</span> </div>
-        					
-    						</div>	
-    </div><!-- stars_rating_aera -->					
-    				<div class="form-group">
-        				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
-        				<div id="charCount" style="float: right;">0 / 255</div>
-    				</div>
-    				<div class="form-group">
-        				<input type="hidden" value="" name="t_id">
-        				<input type="submit" value="등록하기" class="review-write-btn">
-    				</div>
-			
-			</form>	 
-			<!--  -->
-
-</div>
+    <form name="rating_comment" id="rating_comment" action="" method="post">
+        <h2>이용 후기를 남겨주세요!</h2>
+        <div class="stars_rating_aera">
+            <div id="star_total">
+                <h2>총점</h2>
+            </div>
+            <fieldset class="fstar-div">
+                <div class="star-div">
+                    <input type="radio" name="reviewStar" value="5" id="rate1">
+                    <label for="rate1">★</label>
+                    <input type="radio" name="reviewStar" value="4" id="rate2">
+                    <label for="rate2">★</label>
+                    <input type="radio" name="reviewStar" value="3" id="rate3">
+                    <label for="rate3">★</label>
+                    <input type="radio" name="reviewStar" value="2" id="rate4">
+                    <label for="rate4">★</label>
+                    <input type="radio" name="reviewStar" value="1" id="rate5">
+                    <label for="rate5">★</label>
+                </div>
+            </fieldset>
+            <div class="hotel-rating-star" id="hotel-rating-star" style="flex;">
+                <div>평점 <span>5</span></div>
+            </div>
+        </div><!-- stars_rating_aera -->
+        <div class="star_others">
+            <div class="star_clean_div">
+                <div class="star_clean_title"><h3>청결도</h3></div>
+                <fieldset class="clean_star-div">
+                    <div class="star-div">
+                        <input type="radio" name="cleanStar" value="5" id="cleanRate1">
+                        <label for="cleanRate1">★</label>
+                        <input type="radio" name="cleanStar" value="4" id="cleanRate2">
+                        <label for="cleanRate2">★</label>
+                        <input type="radio" name="cleanStar" value="3" id="cleanRate3">
+                        <label for="cleanRate3">★</label>
+                        <input type="radio" name="cleanStar" value="2" id="cleanRate4">
+                        <label for="cleanRate4">★</label>
+                        <input type="radio" name="cleanStar" value="1" id="cleanRate5">
+                        <label for="cleanRate5">★</label>
+                    </div>
+                </fieldset>
+            </div><!-- star_clean_div -->
+            <div class="star_kind_div">
+                <div class="star_kind_title"><h3>친절도</h3></div>
+                <fieldset class="kind_star-div">
+                    <div class="star-div">
+                        <input type="radio" name="kindStar" value="5" id="kindRate1">
+                        <label for="kindRate1">★</label>
+                        <input type="radio" name="kindStar" value="4" id="kindRate2">
+                        <label for="kindRate2">★</label>
+                        <input type="radio" name="kindStar" value="3" id="kindRate3">
+                        <label for="kindRate3">★</label>
+                        <input type="radio" name="kindStar" value="2" id="kindRate4">
+                        <label for="kindRate4">★</label>
+                        <input type="radio" name="kindStar" value="1" id="kindRate5">
+                        <label for="kindRate5">★</label>
+                    </div>
+                </fieldset>
+            </div><!-- star_kind_div -->
+        </div><!-- star_others -->
+        <div class="star_others2">
+            <div class="star_loca_div">
+                <div class="star_loca_title"><h3>위치</h3></div>
+                <fieldset class="loca_star-div">
+                    <div class="star-div">
+                        <input type="radio" name="locaStar" value="5" id="locaRate1">
+                        <label for="locaRate1">★</label>
+                        <input type="radio" name="locaStar" value="4" id="locaRate2">
+                        <label for="locaRate2">★</label>
+                        <input type="radio" name="locaStar" value="3" id="locaRate3">
+                        <label for="locaRate3">★</label>
+                        <input type="radio" name="locaStar" value="2" id="locaRate4">
+                        <label for="locaRate4">★</label>
+                        <input type="radio" name="locaStar" value="1" id="locaRate5">
+                        <label for="locaRate5">★</label>
+                    </div>
+                </fieldset>
+            </div><!-- star_loca_div -->
+            <div class="star_sleep_div">
+                <div class="star_sleep_title"><h3>수면의질</h3></div>
+                <fieldset class="sleep_star-div">
+                    <div class="star-div">
+                        <input type="radio" name="sleepStar" value="5" id="sleepRate1">
+                        <label for="sleepRate1">★</label>
+                        <input type="radio" name="sleepStar" value="4" id="sleepRate2">
+                        <label for="sleepRate2">★</label>
+                        <input type="radio" name="sleepStar" value="3" id="sleepRate3">
+                        <label for="sleepRate3">★</label>
+                        <input type="radio" name="sleepStar" value="2" id="sleepRate4">
+                        <label for="sleepRate4">★</label>
+                        <input type="radio" name="sleepStar" value="1" id="sleepRate5">
+                        <label for="sleepRate5">★</label>
+                    </div>
+                </fieldset>
+            </div><!-- star_sleep_div -->
+        </div><!-- star_others2 -->
+        <div class="form-group">
+            <textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
+            <div id="charCount" style="float: right;">0 / 255</div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" value="" name="t_id">
+            <input type="submit" value="등록하기" class="review-write-btn">
+        </div>
+    </form>
+</div><!-- star_div -->					
 
 
 

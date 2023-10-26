@@ -100,14 +100,14 @@
  
   /*----------------------------------------content---------------------------*/
   .content {
-    width: 1800px;
+    width:1800px;
 
   }
 
 /*--------------------------------호텔 정보를 보여주는 div-----------------------*/
 #hotel_infos{/* */
   width: 1800px;
-  height: 2100px;
+  
 
 }
 
@@ -478,13 +478,180 @@ border: solid 1px;
 }
 /*-----------------리뷰-----------------------------*/
 .h_info_review{
-background-color:yellow;
+ background-color: rgba(224, 224, 224, 0.5);
  width: 1500px;
-  height: 300px;
+  height: 650px;
   margin-top: 50px;
   margin-left: 200px;
 	
 }
+.star_range{
+
+ width: 1500px;
+  height: 200px;
+  text-align: center;
+}
+.star_range_total{/*총점*/
+
+	width: 500px;
+  height: 200px;
+}
+.star_range_total h1{/*총점*/
+	padding-top:50px;
+}
+.star_range1{/*청결, 친절함*/
+	
+	width: 450px;
+  height: 200px;
+  margin-left:500px;
+  margin-top:-200px;
+}
+.star_range2{/*위치, 수면의 질*/
+
+	width: 500px;
+  height: 200px;
+    margin-left:950px;
+      margin-top:-200px;
+}
+.clean_star_range{ /*청결*/
+
+width: 500px;
+  height: 100px;
+}
+.clean_star_range_title{
+
+ width: 100px;
+  height: 100px;
+}
+.clean_star_range_title h3{
+padding-top: 40px;
+}
+#barGraph{
+
+	 width:300px; 
+    height: 100px; 
+    margin-left:100px;
+    margin-top:-60px;
+}
+#valueRange {
+
+    width: 300px; 
+    height: 20px;
+  }
+
+.kind_star_range{ /*친절함*/
+
+width: 500px;
+  height: 100px;
+}
+.kind_star_range_title{
+
+ width: 100px;
+  height: 100px;
+}
+.kind_star_range_title h3{
+padding-top: 40px;
+}
+
+
+.loca_star_range{ /*위치*/
+
+width: 500px;
+  height: 100px;
+}
+.loca_star_range_title{
+
+ width: 100px;
+  height: 100px;
+}
+.loca_star_range_title h3{
+padding-top: 40px;
+}
+
+.sleep_star_range{ /*수면의 질*/
+
+width: 500px;
+  height: 100px;
+}
+.sleep_star_range_title{
+
+ width: 100px;
+  height: 100px;
+}
+.sleep_star_range_title h3{
+padding-top: 40px;
+}
+
+/*리뷰내용 출력*/
+.h_review1 {
+  width: 1500px;
+  height: 300px;
+  border-left: none; /* 왼쪽에는 border 없음 */
+  border-right: none; /* 오른쪽에는 border 없음 */
+  border-top: 1px solid; /* 위에 border 추가 */
+  border-bottom: 1px solid; /* 아래에 border 추가 */
+}
+.h_review_peo{
+
+	 width: 300px;
+  height: 300px;
+}
+.h_review_peo h3{
+
+padding-top: 50px;
+padding-left: 50px;
+}
+.h_review_peo h5{
+margin-top:10px;
+padding-left: 50px;
+}
+.h_review_info{
+	background-color:pink;
+	 width: 1200px;
+  height: 300px;
+  margin-left: 300px;
+  margin-top: -300px;
+}
+.h_review_info_star{
+
+	 width: 1200px;
+  height: 50px;
+  border-bottom: 1px solid; 
+}
+.h_review_info_star_num{
+	background-color:yellow;
+		 width: 50px;
+     height: 50px;
+      margin-left: 300px;
+
+}
+.h_review_info_star_star{
+		background-color:yellow;
+		 width: 150px;
+     height: 50px;
+      margin-left: 350px;
+      margin-top: -50px;
+}
+.h_review_info_star_num h4, .h_review_info_star_star h4{
+padding-top: 15px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -908,51 +1075,52 @@ padding-top: 30px;
 /* 별점 */
 
 .star_div{ 
-	background-color: yellow;
+
 	  width: 1500px;
-	  height: 400px;
+	  height: 600px;
 	  margin-left: 200px;
 }
 .stars_rating_aera{	
-	background-color: blue;
-	  width: 400px;
+
+	  width: 500px;
 	  height: 200px;
 	    margin-top:40px;
 
+
 }
 #star_total{
-	background-color: yellow;
+
 	width: 50px;
 	  height: 50px;
-	    margin-left: 50px;
+	    margin-left: 130px;
 	     margin-top:40px;
 	     padding-top: 20px;
 }
 
 .fstar-div{
-	background-color: yellow;
- 	width: 130px;
+	
+ 	width: 260px;
 	  height: 50px;
-	  margin-left: 100px;
-	  margin-top:-70px;
+	  margin-left: 150px;
+	  margin-top:-40px;
 	  
 }
 
 
 .hotel-rating-star {
-	background-color: yellow;
+
 	width: 200px;
 	height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center; /* 가운데 정렬 */
     margin-top: 20px; /* 원하는 상단 여백 설정 */
-    margin-left: 50px;
+    margin-left: 200px;
     font-size:32px;
 }
 
 .star-div {
-    display: flex;
+
     flex-direction: row-reverse; /* 별점을 오른쪽에서 왼쪽으로 정렬 */
 }
 
@@ -978,6 +1146,156 @@ padding-top: 30px;
 .star-div input[type="radio"]:checked ~ label {
     text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
 }
+
+
+.star_others{
+
+	width: 500px;
+	height:200px;
+	margin-left: 500px;
+	margin-top: -200px;	
+}
+.star_clean_div{
+
+	width: 400px;
+	height:100px;
+	margin-left: 50px;
+}
+.star_clean_title{
+
+	width: 70px;
+	height:100px;
+	margin-left: 0px;
+}
+.star_clean_title h3{
+
+	padding-top: 40px;
+}
+
+.clean_star-div{
+	width: 280px;
+	height:60px;
+	margin-left: 0px;
+	margin-top:-80px;
+}
+
+.star_kind_div{
+
+	width: 400px;
+	height:100px;
+	margin-left: 50px;
+}
+.star_kind_title{
+
+	width: 70px;
+	height:100px;
+	margin-left: 0px;
+}
+.star_kind_title h3{
+
+	padding-top: 40px;
+}
+
+.kind_star-div{
+	width: 280px;
+	height:60px;
+	margin-left:0px;
+	margin-top:-80px;
+}
+/*----------------------------------------------------------------------------*/
+.star_others2{
+
+	width: 500px;
+	height:200px;
+	margin-left: 1000px;
+	margin-top: -200px;	
+}
+.star_loca_div{
+
+	width: 400px;
+	height:100px;
+	margin-left: 50px;
+}
+.star_loca_title{
+
+	width: 70px;
+	height:100px;
+	margin-left: 0px;
+}
+.star_loca_title h3{
+
+	padding-top: 40px;
+}
+
+.loca_star-div{
+	width: 280px;
+	height:60px;
+	margin-left: 0px;
+	margin-top:-80px;
+}
+
+.star_sleep_div{
+
+	width: 400px;
+	height:100px;
+	margin-left: 50px;
+}
+.star_sleep_title{
+
+	width: 70px;
+	height:100px;
+	margin-left: 0px;
+}
+.star_sleep_title h3{
+
+	padding-top: 40px;
+}
+
+.sleep_star-div{
+	width: 280px;
+	height:60px;
+	margin-left: 0px;
+	margin-top:-80px;
+}
+/*----------------------------------------리뷰입력창-----------------------------------------------*/
+
+#reviewContents {
+	width:900px;
+	height:200px;
+	margin-left: 300px;
+	margin-top:40px;
+	border: solid 1.5px #D3D3D3;
+	resize: none; /* 크기 조절 비활성화 */
+}
+#charCount{
+	margin-top:0px;
+	margin-right: 300px;
+}
+.form-group{
+	
+	width:1500px;
+	height:150px;
+}
+.review-write-btn{
+	width:100px;
+	height:40px;
+	margin-left: 700px;
+	margin-top:110px;
+	
+}
+#rating_comment fieldset{
+    display: inline-block;
+    /* direction: rtl; */
+    border: 0;
+}
+
+
+
+
+
+
+
+
 
 
 
