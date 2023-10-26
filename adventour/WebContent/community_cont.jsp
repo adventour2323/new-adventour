@@ -64,10 +64,10 @@ if (session.getAttribute("id") == null) {
     <div class="c_date_div" name="c_date_div">
   작성날짜 : 
   <%
-    // 원래 날짜 문자열을 가져옵니다.
+    // 원래 날짜 문자열
     String originalDateStr = obj.getC_date();
     
-    // SimpleDateFormat을 사용하여 날짜 형식을 변환합니다.
+    // SimpleDateFormat을 사용하여 날짜 형식을 변환
     SimpleDateFormat originalDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
     SimpleDateFormat targetDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     
@@ -143,45 +143,57 @@ if (session.getAttribute("id") == null) {
     </div><!--c_con_div-->
     
 <div class="c_con_phos">
- 
- <%
- if(obj.getC_pho1() != null){
- %>
     <div class="c_con_pho1">
-        <img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
-    </div>
- <%} %>   
- 
-  <%
- if(obj.getC_pho2() != null){
- %>
-    <div class="c_con_pho2">
-        <img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
-    </div>
- <%} %>   
-   <%
- if(obj.getC_pho3() != null){
- %>   
-    <div class="c_con_pho3">
-        <img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
-    </div>
- <%} %>    
     <%
- if(obj.getC_pho4() != null){
- %>   
-     
+    if (obj.getC_pho1() != null) {
+    %>
+        <img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
+    <%
+    }
+    %>
+    </div>
+
+    <div class="c_con_pho2">
+    <%
+    if (obj.getC_pho2().equals(null)) {
+    %>
+        
+    <%
+    }else{%>
+    <img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
+ <% }  %>
+    </div>
+
+    <div class="c_con_pho3">
+    <%
+    if (obj.getC_pho3() != null) {
+    %>
+        <img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
+    <%
+    }
+    %>
+    </div>
+
     <div class="c_con_pho4">
+    <%
+    if (obj.getC_pho4() != null) {
+    %>
         <img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>">
+    <%
+    }
+    %>
     </div>
-  <%} %>
-     <%
- if(obj.getC_pho5() != null){
- %>   
+
     <div class="c_con_pho5">
+    <%
+    if (obj.getC_pho5() != null) {
+    %>
         <img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>">
+    <%
+    }
+    %>
     </div>
- <%} %>    
-</div>
+</div><!-- c_con_phos -->
 
     <div class="c_btns">
       <a href="community_list2.jsp?c_num=<%= obj.getC_num() %>">

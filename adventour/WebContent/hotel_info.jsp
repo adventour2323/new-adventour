@@ -180,15 +180,15 @@ if (top_list != null) {
         </h3>
     </div>
       
-         <div class="h_info_tourad">
-
+<div class="h_info_tourad">
+<input type="hidden" class="h_info_touradC" value="<%= aaa.getCountry_eng() %>">
 
 </div>
     
     </div><!--hotel_info_options-->
    
 <div class="h_info_review">
-
+후기 집합소
 </div>
  
  
@@ -210,17 +210,24 @@ if (top_list != null) {
 
     </div>
  </div><!--hotel_info-->
-  </div>
+  </div><!-- content -->
 
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
  <div class="h_info_search">
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
   <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
- <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="YYYY-MM-DD" required="required" >
- <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="YYYY-MM-DD" required="required"  >
+ <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required" >
+ <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required"  >
  <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
- <input type="text" id="sch_peo" class="sch_peo" name="sch_peo" value="1">
+ <select  id="sch_peo" class="sch_peo" name="sch_peo">
+  <option value="">인원 수</option>
+ <option value="1">1명</option>
+  <option value="2">2명</option>
+   <option value="3">3명</option>
+    <option value="4">4명</option>
+ </select>
+ <!--  <input type="text" id="sch_peo" class="sch_peo" name="sch_peo"  placeholder="1박" >-->
 
 <input type="button" class="h_info_search_btn"  value="검색하기">
 
@@ -259,7 +266,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 
     </div><!-- h_room_options1 -->
-      </div>
+      </div><!-- hotel_room_info -->
      
 <%  
 }
@@ -393,10 +400,55 @@ for (int ii = 0; i < top_list.size(); i++) {
 </div>
 
 </div>
-
-
 </div><!-- h_facilities_info -->
 </div><!-- h_facilities -->
+
+<!-- 후기 작성 -->
+<div class="star_div">
+<form name="rating_comment" id="rating_comment" action="" method="post" >
+<!--  -->
+<h2>이용 후기를 남겨주세요!</h2>
+	<div class="stars_rating_aera">			
+				<div  id="star_total"><h2 >총점</h2></div>
+					<fieldset class="fstar-div">						
+    				     	<div class="star-div" >				
+							<input type="radio" name="reviewStar" value="5" id="rate1">
+							<label for="rate1">★</label>
+							<input type="radio" name="reviewStar" value="4" id="rate2">
+							<label for="rate2">★</label>
+							<input type="radio" name="reviewStar" value="3" id="rate3">
+							<label for="rate3">★</label>
+							<input type="radio" name="reviewStar" value="2" id="rate4">
+							<label for="rate4">★</label>
+							<input type="radio" name="reviewStar" value="1" id="rate5">
+							<label for="rate5">★</label>
+						    </div>
+				   </fieldset>
+												
+							<div class="hotel-rating-star" id="hotel-rating-star" style="flex;">
+	        					
+        						<div >평점     <span>5</span> </div>
+        					
+    						</div>	
+    </div><!-- stars_rating_aera -->					
+    				<div class="form-group">
+        				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
+        				<div id="charCount" style="float: right;">0 / 255</div>
+    				</div>
+    				<div class="form-group">
+        				<input type="hidden" value="" name="t_id">
+        				<input type="submit" value="등록하기" class="review-write-btn">
+    				</div>
+			
+			</form>	 
+			<!--  -->
+
+</div>
+
+
+
+
+
 
 <div class="h_more_info">
 <h1>유용한 정보 </h1>
@@ -445,8 +497,8 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 </div>
 
- 
-<!-- </div>content 전체 부분-->
+
+<div></div>
 
 
 
@@ -471,5 +523,37 @@ for (int ii = 0; i < top_list.size(); i++) {
   
 
 </body>
+<script >
 
+var country_eng = $(".h_info_touradC").val();
+//   alert(country_eng);
+   // AJAX 요청 보내기
+//   alert(country_eng);
+   $.ajax({
+       type: "GET",
+       url: "hotel_info_Tourad.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+       data: { country_eng: country_eng }, // 검색어를 서버로 전송
+       success: function(data) {
+           // 서버에서 받은 데이터를 .h_info_tourad의 내부 HTML로 설정
+           $(".h_info_tourad").html(data);
+       },
+       error: function() {
+           alert("일치하는 검색어가 없습니다.");
+       }
+   });
+   
+	var elements1 = document.querySelectorAll(".tour_price");
+	if (elements1) {
+	  elements1.forEach(function(element) {
+	    var text = element.textContent;
+	    var formattedText = addCommasToNumber(text);
+	    element.textContent = formattedText;
+	  });
+	}
+	function addCommasToNumber(numberString) {
+		  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+		
+
+</script>
 </html>

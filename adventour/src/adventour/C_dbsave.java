@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import getset.H_getset;
-
+import adventour.t_getset;
 
 public class C_dbsave {
 	Connection conn = null; //매소드 분리를 위해 전역변수로 
@@ -178,7 +178,7 @@ public class C_dbsave {
     }
     public ArrayList<C_getset> h_info_search(String h_name_eng, int h_roompeo, String h_indate, String h_outdate) throws Exception {
         ArrayList<C_getset> arr = new ArrayList<C_getset>();
-
+        System.out.println("h_roomtype: " +h_name_eng);
         try {
             connec();
             if (conn == null)
@@ -212,15 +212,46 @@ public class C_dbsave {
                 obj.setH_room_bed(rs.getString("h_room_bed"));
                 obj.setH_room_bedc(rs.getString("h_room_bedc"));
                 obj.setH_room_breakfast(rs.getString("h_room_breakfast"));
-                obj.setH_room_canael(rs.getString("h_room_cancle"));
+                obj.setH_room_canael(rs.getString("h_room_cancel"));
                 obj.setH_room_window(rs.getString("h_room_window"));
-                obj.setH_room_somke(rs.getString("h_room_somke"));
+                obj.setH_room_somke(rs.getString("h_room_smoke"));
                 obj.setH_room_paynow(rs.getString("h_room_paynow"));
                 obj.setH_room_intime(rs.getString("h_room_intime"));
                 obj.setH_room_outime(rs.getString("h_room_outime"));
                 obj.setH_roompho(rs.getString("h_roompho"));
                
+                System.out.println("h_roomtype: " + obj.getH_roomtype());
+                System.out.println("h_roompeo: " + obj.getH_roompeo());
+                System.out.println("h_roomnum: " + obj.getH_roomnum());
+                System.out.println("h_roompri: " + obj.getH_roompri());
         
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
+    } 
+    
+    public ArrayList<t_getset> h_info_tourad(String country_eng) throws Exception {
+        ArrayList<t_getset> arr = new ArrayList<t_getset>();
+      
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            ResultSet rs = stmt.executeQuery(
+            	    "SELECT * from tour where country_eng ='"+ country_eng+"' ORDER BY RAND() LIMIT 1;");
+            	    	
+             
+            while (rs.next()) {
+                t_getset obj = new t_getset();
+                obj.setT_name(rs.getString("t_name"));
+                obj.setT_price(rs.getString("t_price"));
+                obj.setT_img1(rs.getString("t_img1"));
+                obj.setT_id(rs.getString("t_id"));
+
+      
                 arr.add(obj);
             }
         } finally {

@@ -301,7 +301,9 @@
   margin-top: -120px;
 }
 /*-------------------------날짜로 다시 검색----------------------------*/
+.info_SCH{
 
+}
 
 /*---------------예약 가능 룸 정보 제목----------------------------------*/
 
@@ -344,7 +346,7 @@ font-weight: bold;
   height: 30px;
 }
 
-.night_time,.sch_peo{
+.night_time{
 	font-weight: bold;
 	text-align:center;
  width: 100px;
@@ -354,7 +356,7 @@ font-weight: bold;
 	font-weight: bold;
 	text-align:center;
  width: 100px;
-  height: 30px;
+  height: 36px;
 }
 .h_info_search_btn{
 	margin-left: 20px;
@@ -507,10 +509,10 @@ padding-top: 15px;
 }
 /*-----------------------편의시설-----------------------------*/
 .h_facilities{
-
+back
 	width: 1300px;
 	height: 800px;
-	margin-left:350px;
+	margin-left:300px;
 	margin-top:50px;
 }
 .h_facilities_icon{
@@ -618,6 +620,7 @@ padding-top: 15px;
 	margin-top:30px;
 	width: 1300px;
 	height:500px;
+
 }
 .h_facilities_info_busi{
 	 border-bottom: 1px solid ;
@@ -764,13 +767,16 @@ padding-top: 30px;
 
 /*-----------------유용한 정보------------------------------*/
 .h_more_info{
-	margin-left:350px;
-	margin-top:50px
+
+	width: 1350px;
+	margin-left:250px;
+	margin-top:50px;
 }
 .h_more_info table{
 	 background-color: rgba(224, 224, 224, 0.5);
 	 border-collapse: collapse; 
 	margin-top:20px;
+	margin-left:50px;
 	width:1300px;
 	  line-height:2.0; /* 텍스트 간격 조절 */
 	  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -857,20 +863,121 @@ padding-top: 30px;
 
 /*-----------------------옆에 광고----------------------*/
 
-.h_info_tourad{
-	width: 400px;
-	height: 300px;
-	background-color: yellow;
-	margin-left: 1100px;
-	margin-top: -350px;
+.h_info_tourad {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: yellow;
+  margin-left: 1100px;
+  margin-top: -350px;
+}
+
+.h_info_tourad img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h_info_tourad h3{
+  position: absolute;
+  bottom: 250px;
+  left: 0;
+  width: 90%;
+  text-align: left;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 추가 */
+
+}
+
+.h_info_tourad h2 {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 90%;
+  text-align: right;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+
+
 }
 
 
+/* 별점 */
+
+.star_div{ 
+	background-color: yellow;
+	  width: 1500px;
+	  height: 400px;
+	  margin-left: 200px;
+}
+.stars_rating_aera{	
+	background-color: blue;
+	  width: 400px;
+	  height: 200px;
+	    margin-top:40px;
+
+}
+#star_total{
+	background-color: yellow;
+	width: 50px;
+	  height: 50px;
+	    margin-left: 50px;
+	     margin-top:40px;
+	     padding-top: 20px;
+}
+
+.fstar-div{
+	background-color: yellow;
+ 	width: 130px;
+	  height: 50px;
+	  margin-left: 100px;
+	  margin-top:-70px;
+	  
+}
 
 
+.hotel-rating-star {
+	background-color: yellow;
+	width: 200px;
+	height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+    margin-top: 20px; /* 원하는 상단 여백 설정 */
+    margin-left: 50px;
+    font-size:32px;
+}
 
+.star-div {
+    display: flex;
+    flex-direction: row-reverse; /* 별점을 오른쪽에서 왼쪽으로 정렬 */
+}
 
+.star-div input[type="radio"] {
+    display: none;
+}
 
+.star-div label {
+    font-size:50px;
+    color: transparent;
+    text-shadow: 0 0 0 #333;
+    cursor: pointer;
+}
+
+.star-div label:hover {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.star-div label:hover ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
+
+.star-div input[type="radio"]:checked ~ label {
+    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+}
 
 
 

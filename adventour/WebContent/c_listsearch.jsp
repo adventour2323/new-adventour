@@ -28,7 +28,7 @@
         ArrayList<adventour.C_getset> searchResults = c_sch1.c_search(c_sch); // 검색 수행
         
        
-        // 검색 결과를 표시할 HTML 코드를 생성
+        // 검색 결과를 표시
         %>
         <table>
             <tr>

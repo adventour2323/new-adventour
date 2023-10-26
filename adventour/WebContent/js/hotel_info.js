@@ -3,20 +3,23 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 	
-	  document.addEventListener('DOMContentLoaded', function() {
-		    try {
-		      const hotelInfoElement = document.querySelector('.db_h_hotel_info');
-		      if (hotelInfoElement) {
-		        const originalText = hotelInfoElement.innerHTML;
-		        const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
-		        hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
-		      }
-		    } catch (error) {
-		      console.error('오류가 발생했습니다:', error);
-		    }
-		  });	
+//	  document.addEventListener('DOMContentLoaded', function() {
+//		    try {
+//		      const hotelInfoElement = document.querySelector('.db_h_hotel_info');
+//		      if (hotelInfoElement) {
+//		        const originalText = hotelInfoElement.innerHTML;
+//		        const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
+//		        hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
+//		      }
+//		    } catch (error) {
+//		      console.error('오류가 발생했습니다:', error);
+//		    }
+//		  });	
+	  
+//투어 	  
 
-
+		  
+		  //위치지도
 	window.initMap = function () {
 		  var lat_info = $(".hh_lat").val();
 		  var lng_info = $(".hh_lng").val(); 
@@ -37,21 +40,6 @@ $(document).ready(function() {
 		
 
 
- /* 하트누르면 색변환*/
-  $(document).ready(function() {
-    let isRed = false;
-  
-  $('.beheart').on('click', function() {
-    if (isRed) {
-      $(this).css('color', 'black');
-      isRed = false;
-    } else {
-      $(this).css('color', 'red');
-      isRed = true;
-    }
-     });
-  });
-  
   
   /*왼쪽 검색창 날짜 픽 */
     $.datepicker.setDefaults({
@@ -71,32 +59,7 @@ $(document).ready(function() {
   	  $('.datepicker').datepicker();
   	});
   	
-// 몇박 인지 계산해줌 
-  	
-  
-    const schIndate = document.getElementById("sch_indate");
-    const schOutdate = document.getElementById("sch_outdate");
-    const nightTime = document.querySelector(".night_time");
 
-  
-    schIndate.addEventListener("input", updateNightTime);
-    schOutdate.addEventListener("input", updateNightTime);
-
-    function updateNightTime() {
-      const checkinDate = new Date(schIndate.value);
-      const checkoutDate = new Date(schOutdate.value);
-
-      if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
-        const timeDifference = checkoutDate - checkinDate;
-        const nightCount = timeDifference / (1000 * 3600 * 24); // 박 수 계산
-
-        if (nightCount >= 1) {
-          nightTime.value = `${nightCount}박`;
-        } else {
-          nightTime.value = "체크아웃 - 체크인";
-        }
-      }
-    }
  // 숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".h_room_price");
 
@@ -112,12 +75,15 @@ $(document).ready(function() {
 	    element.textContent = formattedText;
 	  });
 	}
+	
+
 
 	// 세 자리마다 콤마를 추가하는 함수
 	function addCommasToNumber(numberString) {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
-
+	
+/// 모달창
 	const modal = document.querySelector(".modal");
 	const img1 = document.querySelector(".h_info_title_pho1");
 	const img2 = document.querySelector(".h_info_title_pho2");
@@ -185,9 +151,9 @@ $(document).ready(function() {
 //	
 //
 
-	// 검색창 버튼 클릭 시 AJAX 요청을 보냅니다.
+	// 검색창 버튼 
     $(".h_info_search_btn").click(function(e) {
-      e.preventDefault(); // 폼의 기본 동작 방지
+ 
 
       // 입력된 검색어 가져오기
       var name_eng = $(".h_info_search_nameeng").val();
@@ -199,13 +165,13 @@ $(document).ready(function() {
       $.ajax({
         type: "GET",
         url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
-        data: { h_name_eng: name_eng,
+        data: { h_name_eng:name_eng,
         	    h_indate: indate,
         	    h_outdate: outdate,
         	    h_roompeo:peo}, // 검색어를 서버로 전송
         success: function(data) {
        
-          $("#hotel_room_info").html(data);
+          $("#info_SCH").html(data);
         },
         error: function() {
           alert("일치하는 검색어가 없습니다.");
@@ -213,16 +179,37 @@ $(document).ready(function() {
       });
     });
 	
+//날짜계산	
+    
+
+    $("#sch_indate, #sch_outdate").on("change", function() {
+        const schIndate = document.getElementById("sch_indate");
+        const schOutdate = document.getElementById("sch_outdate");
+        const nightTime = document.querySelector(".night_time");
+        
+        function updateNightTime() {
+          const checkinDate = new Date(schIndate.value);
+          const checkoutDate = new Date(schOutdate.value);
+          
+          if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+            const timeDifference = checkoutDate - checkinDate;
+            const nightCount = timeDifference / (1000 * 3600 * 24); 
+
+            if (nightCount >= 1) {
+              nightTime.value = `${nightCount}박`;
+            } else {
+              nightTime.value = "체크아웃 - 체크인";
+            }
+          } else {
+            nightTime.value = ""; 
+          }
+        }
+        
+        updateNightTime();
+    });
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
