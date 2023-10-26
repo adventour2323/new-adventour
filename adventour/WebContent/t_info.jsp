@@ -62,42 +62,44 @@
 			
 		</header>
 			
-
-	<div class="content"   > <!-- 전체 content -->
+		<div class="h_ad" style="width: 200px; border-style: solid; background-color: aqua;">
+			<img alt="hotel_ad_Banner" src="./image/tour/ad6.png" style="width: 200px;">
+		</div>	
 		
-<div class="div-text">
-    <strong>	
-        <a href="main.tour?tour=main">투어</a> > 
-        <a href="main.tour?tour=tourlist">투어 리스트</a> > 
-        <a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
-        <a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
-    </strong>
-</div>
-
+	<div class="content"> <!-- 전체 content -->
+		
+		<div class="div-text">
+			<strong>	
+				<a href="main.tour?tour=main">투어</a> > 
+				<a href="main.tour?tour=tourlist">투어 리스트</a> > 
+				<a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
+				<a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
+			</strong>
+		</div>
 				
 		<div class="top_area" >
 
 			<div class="top_left" >
 			
-			<div class="t_img_div">
-			    <div class="slideshow-container">
-			        <div class="mySlides fade">
-			            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
-        			</div>
-        			<div class="mySlides fade">
-            			<img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
-        			</div>
-        			<div class="mySlides fade">
-	            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
-    			    </div>
-        			<a class="prev" onclick="plusSlides(-1)" >
-            			<img src="./image/tour/leftbtn.png" alt="이전">
-        			</a>
-        			<a class="next" onclick="plusSlides(1)" >
-            			<img src="./image/tour/rightbtn.png" alt="다음">
-        			</a>
-    			</div>
-			</div> <!-- t_img_div -->
+				<div class="t_img_div">
+			    	<div class="slideshow-container">
+			        	<div class="mySlides fade">
+				            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
+    	    			</div>
+        				<div class="mySlides fade">
+            				<img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
+        				</div>
+        				<div class="mySlides fade">
+		            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
+    				    </div>
+        				<a class="prev" onclick="plusSlides(-1)" >
+            				<img src="./image/tour/leftbtn.png" alt="이전">
+        				</a>
+        				<a class="next" onclick="plusSlides(1)" >
+	            			<img src="./image/tour/rightbtn.png" alt="다음">
+    	    			</a>
+    				</div>
+				</div> <!-- t_img_div -->
 				
 				<div class="t_name">
 					<h1 class="t_name_text"><%=g.getT_name() %>!</h1>
@@ -228,7 +230,7 @@
 							 
 
 						</div>
-					</div>
+				</div>
 			</div>
 
 			<div id="tour_info_div" class="tabcontent">
@@ -299,8 +301,6 @@
 							
 						</div>			
 			<!--  -->
-			
-		
 		</div> <!-- bottom_area -->
 		
 		<hr>
@@ -323,14 +323,18 @@
 							<label for="rate5">★</label>
 						</div>
 							
-							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!</div>
+							<div class="text-bold" style="margin-right: 50px;">
+								별점을 남겨주세요!
+							</div>
 							
 							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
 	        					<% String t_id_avg = g.getT_id();
     	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
         							for (t_r_getset tr : rv1) {
         						%>
-        						<div >평점     <span> <%= tr.getT_rating() %> </span> </div>
+        						<div >평점     
+        							<span> <%= tr.getT_rating() %> </span> 
+        						</div>
         						<% } %>
     						</div>						
 					</fieldset>
@@ -346,91 +350,84 @@
 			</form>	 
 			<!--  -->
 			
-<div class="t_review_div">
-    <table class="review-table">
-        <tr id="review_top">
-            <th>번호</th>
-            <th>작성자</th>
-            <th>내용</th>
-            <th>날짜</th>
-            <th>평점</th>
-        </tr>
-        <%
-            ArrayList<t_r_getset> rv = id.t6(t_id); 
-            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
-            int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
+			<div class="t_review_div">
+				<table class="review-table">
+					<tr id="review_top">
+						<th>번호</th>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>날짜</th>
+						<th>평점</th>
+					</tr>
+				<%
+					ArrayList<t_r_getset> rv = id.t6(t_id); 
+					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
+					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
                    
-            int itemsPerPage = 10; // 한 페이지당 아이템 개수
-            int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
+					int itemsPerPage = 10; // 한 페이지당 아이템 개수
+					int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
 
-            int startIndex = (currentPage - 1) * itemsPerPage;
-            int endIndex = Math.min(startIndex + itemsPerPage, count);
+					int startIndex = (currentPage - 1) * itemsPerPage;
+					int endIndex = Math.min(startIndex + itemsPerPage, count);
 
-            for (int i = startIndex; i < endIndex; i++) {
-                t_r_getset tr = rv.get(i);
-                String reviewDateString = tr.getReview_date();
-                Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
-                Date reviewDate = new Date(reviewTimestamp.getTime());
-        %>
-        <tr>
-            <td><%= count - i %></td> <!-- 업데이트된 부분 -->
-            <td><%= tr.getM_id() %></td>
-            <td><%= tr.getT_review() %></td>
-            <td><%= sdf1.format(reviewDate) %></td>
-            <td> 
-                <div class="star-rating">
-                    <%
-                        int ratingStr = tr.getT_rating();
-                        try {
-                            int rating = ratingStr;
-                            for (int j = 0; j < rating; j++) {
-                    %>
-                        <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
-                    <%
-                        }
-                    } catch (NumberFormatException e) {
-                        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
-                    }
-                    %>
-                </div>
-            </td>
-        </tr>
-        <% } %>
-    </table>
+					for (int i = startIndex; i < endIndex; i++) {
+						t_r_getset tr = rv.get(i);
+						String reviewDateString = tr.getReview_date();
+						Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+						Date reviewDate = new Date(reviewTimestamp.getTime());
+				%>
+					<tr>
+						<td style="text-align: center;"><%= count - i %></td> <!-- 업데이트된 부분 -->
+						<td style="text-align: center;"><%= tr.getM_id() %></td>
+						<td><%= tr.getT_review() %></td>
+						<td style="text-align: center;"><%= sdf1.format(reviewDate) %></td>
+						<td style="text-align: center;"> 
+							<div class="star-rating">
+								<%
+									int ratingStr = tr.getT_rating();
+										try {
+											int rating = ratingStr;
+											for (int j = 0; j < rating; j++) {
+								%>
+										<i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
+									<%
+									} } 
+										catch (NumberFormatException e) {
+                        			// 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+										}
+									%>
+							</div>
+						</td>
+					</tr>
+					<% } %>
+    			</table>
     
-    <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 추가 -->
-<div class="pagination-container">
-    <%
-    int totalPages = (int) Math.ceil((double) count / itemsPerPage);
-    if (currentPage > 1) {
-    %>
-    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>">이전 페이지</a>
-    <%
-    }
-    for (int i = 1; i <= totalPages; i++) {
-    %>
-    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>><%= i %></a>
-    <%
-    }
-    if (currentPage < totalPages) {
-    %>
-    <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>">다음 페이지</a>
-    <%
-    }
-    %>
-</div>
-
-</div><!-- t_review_div -->
+    <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 -->
+				<div class="pagination-container">
+					<%
+						int totalPages = (int) Math.ceil((double) count / itemsPerPage);
+						if (currentPage > 1) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>" onclick="scrollToReviewTable()">이전 페이지</a>
+					<% 
+						} for (int i = 1; i <= totalPages; i++) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>>
+							<%= i %>
+						</a>
+	    			<% } if (currentPage < totalPages) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>" onclick="scrollToReviewTable()">다음 페이지</a>
+					<% } %>
+				</div>
 
 
-
-
-
-		 	
+			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
 
 
 	</div> <!-- 전체 content -->
+
 	
 </body>
 		<footer>

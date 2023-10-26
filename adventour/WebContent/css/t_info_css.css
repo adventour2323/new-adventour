@@ -3,7 +3,7 @@
 body{
 height: 1300px;
 }
-
+/*  */
 .content {
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ height: 1300px;
   min-height: 100vh;
   padding: 50px 0; /* 상단과 하단에 여백을 추가합니다. */
 }
-
+/*  */
 .div-text {
     text-align: left;
     margin-bottom: 15px;
@@ -458,6 +458,14 @@ a.next:hover {
 
 .current-page {
     font-weight: bold; /* 현재 페이지 강조 스타일 */
+}
+
+/*  */
+.h_ad {
+    position: absolute;
+    left: 270px; /* 이동하고자 하는 위치의 왼쪽 값에 따라 조정 */
+    margin-top: 300px;
+    margin-right: 20px;
 }
 
 		
