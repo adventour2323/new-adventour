@@ -5,6 +5,9 @@
 <%@ page import="adventour.t_getset"%>
 <%@ page import="adventour.t_r_getset"%>
 <%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.sql.Timestamp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
