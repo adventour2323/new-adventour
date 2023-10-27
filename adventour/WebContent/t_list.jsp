@@ -63,6 +63,7 @@
     <div class="tour-container">
     		<!--  -->
 		<%
+		// 페이징
 			int itemsPerPage = 6;
 			int currentPage = 1;
 
@@ -185,8 +186,6 @@ starElements.forEach(function(star) {
         star.appendChild(starItem);
     }
 });
-
-
 
 </script>
 

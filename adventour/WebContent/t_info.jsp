@@ -63,7 +63,7 @@
 		</header>
 			
 		<div class="h_ad" style="width: 200px; border-style: solid; background-color: aqua;">
-			<img alt="hotel_ad_Banner" src="./image/tour/ad6.png" style="width: 200px;">
+			<img alt="hotel_ad_Banner" src="./image/tour/ad5.png" style="width: 200px;">
 		</div>	
 		
 	<div class="content"> <!-- 전체 content -->
@@ -362,6 +362,7 @@
 				<%
 					ArrayList<t_r_getset> rv = id.t6(t_id); 
 					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
+					
 					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
                    
 					int itemsPerPage = 10; // 한 페이지당 아이템 개수
@@ -596,6 +597,7 @@ function count(type)  {
 	  let number = resultElement.innerText;
 	  
 	  // 더하기/빼기
+	  
 	  if(type === 'plus') {
 	    number = parseInt(number) + 1;
 	  }else if(type === 'minus')  {

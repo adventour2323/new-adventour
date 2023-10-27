@@ -392,7 +392,12 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("select *from tour_rating where t_id = '"+t_id+"' order by review_date desc;");
+		ResultSet rs = stmt.executeQuery
+						("select "
+						+ "*"
+						+ "from tour_rating "
+						+ "where t_id = '"+t_id+""
+								+ "' order by review_date desc;");
 
 		while(rs.next()) {
 			t_r_getset table = new t_r_getset();
@@ -421,7 +426,8 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("SELECT avg(t_rating), t_id FROM tour_rating where t_id='"+t_id+"';");
+		ResultSet rs = stmt.executeQuery
+				("SELECT avg(t_rating), t_id FROM tour_rating where t_id='"+t_id+"';");
 
 		while(rs.next()) {
 			t_r_getset table = new t_r_getset();
@@ -440,6 +446,62 @@ public class g_list_print {
 	
 	//
 	
+	
+	public ArrayList<t_rating_getset> t8() throws Exception {
+
+		ArrayList<t_rating_getset> arr = new ArrayList<t_rating_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery
+				("SELECT  " + 
+				"    t.t_id, " + 
+				"    t.t_name, " + 
+				"    t.t_price, " + 
+				"    t.country, " + 
+				"    t.city, " + 
+				"    t.t_img1, " + 
+				"    tr.review_count, " + 
+				"    tr.avg_rating " + 
+				"FROM " + 
+				"    tour t " + 
+				"        LEFT OUTER JOIN " + 
+				"    (SELECT  " + 
+				"        t_id, " + 
+				"            COUNT(t_id) AS review_count, " + 
+				"            AVG(t_rating) AS avg_rating " + 
+				"    FROM " + 
+				"        tour_rating " + 
+				"    WHERE " + 
+				"        review_date BETWEEN NOW() - INTERVAL 1 WEEK AND NOW() " + 
+				"    GROUP BY t_id) tr ON t.t_id = tr.t_id " + 
+				"ORDER BY tr.review_count DESC " + 
+				"LIMIT 3");
+
+		while(rs.next()) {
+			t_rating_getset table = new t_rating_getset();
+			table.setT_id(rs.getString("t_id"));
+			table.setT_name(rs.getString("t_name"));
+			table.setT_price(rs.getString("t_price"));
+			table.setCountry(rs.getString("country"));
+			table.setCity(rs.getString("city"));
+			table.setT_img1(rs.getString("t_img1"));
+			table.setReview_count(rs.getInt("review_count"));
+			table.setAvg_rating(rs.getInt("avg_rating"));
+			
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+//
+
+	
+//	호텔 ↓↓
 	public ArrayList<H_getset> h1() throws Exception {
 
 		ArrayList<H_getset> arr = new ArrayList<H_getset>();

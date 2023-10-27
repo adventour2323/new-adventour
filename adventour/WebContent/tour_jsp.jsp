@@ -4,6 +4,7 @@
 <%@ page import="adventour.g_list_print"%>
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
+<%@ page import="adventour.t_rating_getset"%>
 <%@ page import="getset.guide_gs"%>
 <%@ page import="getset.H_getset" %>
 <%@ page import="java.util.*"%>
@@ -292,101 +293,90 @@
 
 				</div>
 			</div>
-				
-				<div class="popular_tour">
-					<h1 style="text-align: center;">인기 투어</h1>
-				</div>
-				
-			<div class="recommend_city" >
 			
-				<%
-					for (int i = 0; i < a2.size(); i++) {
-							t_getset t = a2.get(i);
-							if (t.getT_id().equals("l_ston_tour") == true) {
-				%>
-				<div class="recommend_city1" >
-					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>"
-							style="width: 237px; height: 154px; cursor: pointer;"
-							alt="추천도시 1">
-					</div>
-					<div  style="text-overflow: ellipsis;">
-						<h3 class="rocommend_1_title">
-						<%=t.getT_name()%>
-						</h3>
-					</div>
-					<div class="recommend_price" >
-					 	₩ <%=t.getT_price()%>
-					</div>
+			
+			<div class="popular_tour_div">
+				<div class="popular_tour">
+					<img alt="hot" src="./image/tour/hot.png" style="margin-left: auto;" >
+					<h1>이번 주에 가장 사랑받은 여행이에요</h1>
+					<img alt="hot" src="./image/tour/hot.png" style="margin-right: auto;">
 				</div>
-				<% } } %>
 
-				<%
-					for (int i = 0; i < a2.size(); i++) {
-							t_getset t = a2.get(i);
-							if (t.getT_id().equals("m_g_tour1") == true) {
-				%>
-				<div class="recommend_city2">
-					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>"
-							style="width: 237px; height: 154px; cursor: pointer;" alt="추천도시 2">
-					</div>
-					<div  style="text-overflow: ellipsis;">
-					<h3 class="rocommend_1_title">
-						<%=t.getT_name()%>
-					</h3>
-					</div>
-					<div class="recommend_price">
-						₩ <%=t.getT_price()%>
-					</div>
-				</div>
-				<% }} %>
+				<div class="recommend_city">
+					<%
+						ArrayList<t_rating_getset> r = id.t8();
+						for (int i = 0; i < r.size(); i++) {
+						t_rating_getset rating = r.get(i);
+					%>
+					<div class="recommend_city1">
+						<!-- tour-img -->
+						<a href="t_info.jsp?t_id=<%=rating.getT_id()%>">
+							<div class="r_c_1_img">
+								<img src="<%=rating.getT_img1()%>" style="width: 100%; " alt="추천도시 1">
+								<% if (i == 0) { %>
+								<img src="./image/tour/1st.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+								<% } else if (i == 1) { %>
+								<img src="./image/tour/2nd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 72px; height: 72px;">
+								<% } else if (i == 2) { %>
+								<img src="./image/tour/3rd.png" alt="메달" style="position: absolute; bottom: 5px; right: 5px; width: 48px; height: 48px;">
+								<% } %>
+	    					</div>
+						</a>
+						<div class="tour-info">
+		 					<div class="tour_location_div">
+		 						<label class="tour_location">
+		 						
+		 							<%= rating.getCountry() %>, <%= rating.getCity() %>
+		 						
+		 						</label>
+		 					</div>
 
-				<%
-					for (int i = 0; i < a2.size(); i++) {
-							t_getset t = a2.get(i);
-							if (t.getT_id().equals("p_l_tour") == true) {
-				%>
-				<div class="recommend_city3">
-					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>"
-							style="width: 237px; height: 154px; cursor: pointer;"
-							alt="추천도시 3">
-					</div>
-					<div  style="text-overflow: ellipsis;">
-					<h3 class="rocommend_1_title">
-						<%=t.getT_name()%>
-					</h3>
-					</div>
-					<div class="recommend_price">
-						₩ <%=t.getT_price()%>
-					</div>
-				</div>
-				<% }} %>
-
-				<%
-					for (int i = 0; i < a2.size(); i++) {
-							t_getset t = a2.get(i);
-							if (t.getT_id().equals("r_v_tour") == true) {
-				%>
-				<div class="recommend_city4"  style="text-overflow: ellipsis;">
-					<div class="r_c_1_img">
-						<img src="<%=t.getT_img1()%>" 
-						style="width: 237px; height: 154px; cursor: pointer;" 
-						alt="추천도시 4">
-					</div>
-					<div >
-					<h3 class="rocommend_1_title">
-						<%=t.getT_name()%>
-					</h3>
-					</div>
-					<div class="recommend_price">
-					 	₩ <%=t.getT_price()%>
-					</div>
-				</div>
-				<% }} %>
-
-			</div>
+		 					<div class="tour_title_div" >
+		 						<h2 class="rocommend_1_title">
+		 							<a href="t_info.jsp?t_id=<%=rating.getT_id() %>">
+                    					<%=rating.getT_name()%>
+                					</a>
+		 						</h2>
+		 					</div>
+		 				
+		
+							<div class="recommend_price" id="formattedPrice<%=rating.getT_price()%>"> <!-- 가격 -->
+								<strong> <%=rating.getT_price()%></strong>
+							</div>
+						
+						<script>
+							function formatNumberWithCommas(number) {
+								// 가격에 컴마 추가
+							return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+							}
+							document.addEventListener('DOMContentLoaded', function() {
+								var priceElement = document.getElementById('formattedPrice<%=rating.getT_price()%>');
+								var priceText = priceElement.textContent;
+								var price = parseInt(priceText.replace(/[^\d]/g, '')); // 가격을 숫자로 파싱
+								priceElement.textContent = '₩ ' + formatNumberWithCommas(price) + ' 원';
+							});
+						</script>     
+				
+			
+							<div class="appraisal" id="appraisal">			
+								<div class="rating_num" style="">
+									<strong>평점</strong>
+									<div class="star-rating">
+    									<div class="star-rating" style="color: rgba(250, 208, 0, 0.99);">
+       										<span class="star" data-rating="<%=rating.getAvg_rating() %>"></span>
+    									</div>										
+									</div>
+								</div>
+								<div class="review_num">
+									<strong>리뷰 수 </strong> <%=rating.getReview_count() %>							
+								</div>
+					
+							</div> 
+						</div> <!-- tour-info -->
+					</div> <!-- recommend_city1 -->
+        				<% } %>
+    			</div> <!-- recommend_city -->
+			</div> <!-- popular_tour_div -->
 
 			<div class="recommend_ticket" style="margin-bottom: 50px;">
 			<div style="display: flex;" >
@@ -429,7 +419,7 @@
         
     </div>
     <button id="prevSlide">이전</button>
-<button id="nextSlide">다음</button>
+	<button id="nextSlide">다음</button>
     
 			</div>
 
@@ -525,4 +515,27 @@
     
 
     </script>
+    <!-- 별점 -->
+    <script>
+const starElements = document.querySelectorAll(".star");
+
+starElements.forEach(function(star) {
+    const rating = parseFloat(star.getAttribute("data-rating"));
+    const roundedRating = Math.round(rating); // 반올림한 숫자를 가져옵니다.
+
+    for (let i = 1; i <= 5; i++) {
+        const starItem = document.createElement("span");
+        starItem.className = "star-item";
+
+        if (i <= roundedRating) {
+            starItem.innerHTML = "★"; // 별 표시
+        } else {
+            starItem.innerHTML = "☆"; // 별 표시하지 않음
+        }
+
+        star.appendChild(starItem);
+    }
+});
+
+</script>
 </html>
