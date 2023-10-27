@@ -60,10 +60,20 @@ if ( searchResults != null) {
  %>
 <div id="info_SCH">
        <div id="hotel_room_info">
-      <h2 id="hotel_room_type" class="hotel_room_type"><%=  bbb.getH_roomtype()%> room</h2>
-        <div id="h_room_pho" >
-          <img id="h_room_phoi" class="h_room_phoi" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
+      <h2 id="hotel_room_type" class="hotel_room_type"><%= bbb.getH_roomtype()%> room</h2>
+       <button id="prevButton"> < </button>
+         <div id="imageSlider" class="image-slider">
+          <img id="h_room_phoi" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho1() %>">
+          <img id="h_room_phoi1" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho1() %>">
+          <img id="h_room_phoi2" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho2() %>">
+          <img id="h_room_phoi3" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho3() %>">
+          <img id="h_room_phoi4" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho4() %>">
+          <img id="h_room_phoi5" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho5() %>">
+          <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
+      <button id="nextButton"> > </button>
+
+
         <div id="h_room_options1" >
         <div class="h_room_options11"><img class="h_room_peo_img" src="image/hotel/h_image/person.png"/><div class="h_room_peo"><h4 >최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4></div></div>  
         <div class="h_room_options12">   <img class="h_room_bed_img" src="image/hotel/h_image/qeen_bed.png"> <div class="h_room_bed"><h4>베드 타입 : <%=  bbb.getH_room_bed()%>, <%=  bbb.getH_room_bedc()%>개</h4></div></div>
@@ -90,8 +100,14 @@ if ( searchResults != null) {
 %>
 </div>
 
-
-
 </body>
+<script>
+ 
 
+
+	// 세 자리마다 콤마를 추가하는 함수
+	function addCommasToNumber(numberString) {
+	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	</script>
 </html>

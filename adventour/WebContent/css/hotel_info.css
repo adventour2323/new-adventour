@@ -312,7 +312,7 @@
 	width: 1200px;
   height: 150px;
    margin-left: 350px;
-    margin-top: 0px;
+    margin-top: 30px;
       padding-top: 20px;
 }
 .yes_reserv_room_title{
@@ -386,13 +386,13 @@ font-weight: bold;
   padding-top: 15px;
   text-align: center;
 }
-#h_room_pho{
+#imageSlider{
 border: solid 1px;
   width: 220px;
   height: 220px;
   margin-top: 20px;  
 }
-#h_room_phoi{
+#h_room_phoi,.slide{
   width: 220px;
   height: 220px;
 }

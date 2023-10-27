@@ -219,6 +219,13 @@ public class C_dbsave {
                 obj.setH_room_intime(rs.getString("h_room_intime"));
                 obj.setH_room_outime(rs.getString("h_room_outime"));
                 obj.setH_roompho(rs.getString("h_roompho"));
+                obj.setH_roompho1(rs.getString("h_roompho1"));
+                obj.setH_roompho2(rs.getString("h_roompho2"));
+                obj.setH_roompho3(rs.getString("h_roompho3"));
+                obj.setH_roompho4(rs.getString("h_roompho4"));
+                obj.setH_roompho5(rs.getString("h_roompho5"));
+                obj.setH_roompho6(rs.getString("h_roompho6"));
+                
                
                 System.out.println("h_roomtype: " + obj.getH_roomtype());
                 System.out.println("h_roompeo: " + obj.getH_roompeo());
@@ -242,21 +249,40 @@ public class C_dbsave {
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             ResultSet rs = stmt.executeQuery(
             	    "SELECT * from tour where country_eng ='"+ country_eng+"' ORDER BY RAND() LIMIT 1;");
-            	    	
-             
+            
             while (rs.next()) {
                 t_getset obj = new t_getset();
                 obj.setT_name(rs.getString("t_name"));
                 obj.setT_price(rs.getString("t_price"));
                 obj.setT_img1(rs.getString("t_img1"));
                 obj.setT_id(rs.getString("t_id"));
-
-      
+  
                 arr.add(obj);
             }
         } finally {
             closecon();
         }
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
+    } 
+    
+    public void h_likesave(String m_id, String h_name_eng) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
+  
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            String command = String.format(
+                    "INSERT INTO h_like (m_id,h_name_eng )"
+            +"VALUES('"+m_id+"', '"+h_name_eng +"');" ); 
+              //데이터베이스 명령문 사용      
+                    
+            int rowNum = stmt.executeUpdate(command);
+            if (rowNum < 1) {
+                throw new Exception("데이터를 DB에 입력할 수 없습니다.");
+            }
+        } finally {
+            closecon();
+        }
+       
     } 
 }

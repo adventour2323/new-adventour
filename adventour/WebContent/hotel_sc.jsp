@@ -234,9 +234,9 @@ if (list != null) {
  <%
 if (session.getAttribute("id") != null) {
 %>
- 
-         <input type="button" class="beheart" value="♥ 찜하기">
-
+<a href="h_like.jsp?m_id=<%= session.getAttribute("id") %>&h_name_eng=<%= ukAll.getH_name_eng() %>">
+  <input type="button" class="beheart" value="♥ 찜하기">
+</a> 
 <%
 } 
 %>

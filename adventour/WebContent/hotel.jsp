@@ -38,7 +38,7 @@ if (session.getAttribute("id") == null) {
 %>
 	</header>
 
-<form name="h_main_sch_form" action="mainsch.hotel?uname=hotelSearch" method="post" onsubmit="setCookies()">
+<form name="h_main_sch_form" action="mainsch.hotel?uname=hotelSearch" method="post" >
 	<div class="busmain">
 		<img class="busmainpic" src="image/img/hotel01.jpg">
 		<div class="b_piccont">
