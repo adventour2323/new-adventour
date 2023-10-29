@@ -3,20 +3,7 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 	
-//	  document.addEventListener('DOMContentLoaded', function() {
-//		    try {
-//		      const hotelInfoElement = document.querySelector('.db_h_hotel_info');
-//		      if (hotelInfoElement) {
-//		        const originalText = hotelInfoElement.innerHTML;
-//		        const modifiedText = originalText.replace(/\n/g, '<br>'); // \n을 <br>로 대체
-//		        hotelInfoElement.innerHTML = modifiedText; // 처리된 내용을 다시 HTML에 삽입
-//		      }
-//		    } catch (error) {
-//		      console.error('오류가 발생했습니다:', error);
-//		    }
-//		  });	
-	  
-//투어 	  
+  
 
 		  
 		  //위치지도
@@ -41,23 +28,7 @@ $(document).ready(function() {
 
 
   
-  /*왼쪽 검색창 날짜 픽 */
-    $.datepicker.setDefaults({
-  	  dateFormat: 'yy-mm-dd',
-  	  prevText: '이전 달',
-  	  nextText: '다음 달',
-  	  monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-  	  monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-  	  dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-  	  dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-  	  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-  	  showMonthAfterYear: true,
-  	  yearSuffix: '년'
-  	});
 
-  	$(function () {
-  	  $('.datepicker').datepicker();
-  	});
   	
 
  // 숫자에 콤마 찍기
@@ -133,55 +104,24 @@ $(document).ready(function() {
 	function modalDisplay(text){
 	  modal.style.display = text;
 	}
+	  /*왼쪽 검색창 날짜 픽 */
+    $.datepicker.setDefaults({
+  	  dateFormat: 'yy-mm-dd',
+  	  prevText: '이전 달',
+  	  nextText: '다음 달',
+  	  monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+  	  monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+  	  dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+  	  dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+  	  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+  	  showMonthAfterYear: true,
+  	  yearSuffix: '년'
+  	});
 
-	//검색창
-//	
-//	// 검색창
-//	document.querySelector("#searchLink").addEventListener("click", function() {
-//	    var indateValue = document.getElementById("sch_indate").value;
-//	    var outdateValue = document.getElementById("sch_outdate").value;
-//	    var hotelName = document.getElementById("h_info_search_nameeng").value;
-//	    var peoValue = document.getElementById("sch_peo").value;
-//
-//	    var url = "hotelinfosearch.hotel?uname=hinfosearch&hotel=" + hotelName + "&checkin=" + indateValue + "&checkout=" + outdateValue + "&person=" + peoValue;
-//	    window.location.href = url;
-//	  $("#info_info").load("hotel_info_SCH.jsp");
-//	});
-//	
-//	
-//
-
-	// 검색창 버튼 
-    $(".h_info_search_btn").click(function(e) {
- 
-
-      // 입력된 검색어 가져오기
-      var name_eng = $(".h_info_search_nameeng").val();
-      var indate = $("#sch_indate").val();
-      var outdate = $("#sch_outdate").val();
-      var peo= $(".sch_peo").val();
-
-      // AJAX 요청 보내기
-      $.ajax({
-        type: "GET",
-        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
-        data: { h_name_eng:name_eng,
-        	    h_indate: indate,
-        	    h_outdate: outdate,
-        	    h_roompeo:peo}, // 검색어를 서버로 전송
-        success: function(data) {
-       
-          $("#info_SCH").html(data);
-        },
-        error: function() {
-          alert("일치하는 검색어가 없습니다.");
-        }
-      });
-    });
-	
-//날짜계산	
-    
-
+  	$(function () {
+  	  $('.datepicker').datepicker();
+  	});
+	//날짜계산	
     $("#sch_indate, #sch_outdate").on("change", function() {
         const schIndate = document.getElementById("sch_indate");
         const schOutdate = document.getElementById("sch_outdate");
@@ -207,6 +147,35 @@ $(document).ready(function() {
         
         updateNightTime();
     });
+
+	// 검색창 버튼 
+    $(".h_info_search_btn").click(function(e) {
+
+      // 입력된 검색어 가져오기
+      var name_eng = $(".h_info_search_nameeng").val();
+      var indate = $("#sch_indate").val();
+      var outdate = $("#sch_outdate").val();
+      var peo= $(".sch_peo").val();
+
+      // AJAX 요청 보내기
+      $.ajax({
+        type: "GET",
+        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+        data: { h_name_eng:name_eng,
+        	    h_indate: indate,
+        	    h_outdate: outdate,
+        	    h_roompeo:peo}, // 검색어를 서버로 전송
+        success: function(data) {
+       
+          $("#info_SCH").html(data);
+        },
+        error: function() {
+          alert("일치하는 검색어가 없습니다.");
+        }
+      });
+    });
+	
+
 	
 /*-------------------리뷰 글자수 세기------------------------*/	
 

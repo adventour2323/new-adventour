@@ -24,7 +24,7 @@ public class H_Select_mainsch_conn {
 		System.out.println(city_eng); //매개변수 넘어오는지 확인 uk
 		 
 	    SqlSession ret_dbconn = dbconnect.openSession();
-	  //리턴타입 확인 후 객체화- openSession = 데이터베이스 명령문을 그대로 집어넣는게 아닌 클래스를 이용하기위해
+
 	   
 	    H_getset sch_list2 = new H_getset(); //매개변수 전달위해서
 	    sch_list2.setCountry_eng(country_eng);

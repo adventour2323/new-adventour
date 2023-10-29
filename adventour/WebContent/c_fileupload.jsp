@@ -43,7 +43,6 @@
         city = multi.getParameter("c_city");
         c_title = multi.getParameter("c_title");
         c_cont = multi.getParameter("c_con");
- 
         
         System.out.println("아이디1"+ m_id);
         System.out.println("나라1" + country);

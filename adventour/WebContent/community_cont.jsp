@@ -145,54 +145,64 @@ if (session.getAttribute("id") == null) {
 <div class="c_con_phos">
     <div class="c_con_pho1">
     <%
-    if (obj.getC_pho1() != null) {
+    if (obj.getC_pho1().equals("no_p")) {
     %>
-        <img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
+       
     <%
-    }
+    }else{%>
+    	<img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
+  <%   }
     %>
     </div>
 
     <div class="c_con_pho2">
     <%
-    if (obj.getC_pho2().equals(null)) {
+    if (obj.getC_pho2().equals("no_p")) {
     %>
-        
+       
     <%
     }else{%>
-    <img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
- <% }  %>
-    </div>
-
-    <div class="c_con_pho3">
-    <%
-    if (obj.getC_pho3() != null) {
-    %>
-        <img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
-    <%
-    }
+    	<img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
+  <%   }
     %>
     </div>
-
-    <div class="c_con_pho4">
+    
+      <div class="c_con_pho3">
     <%
-    if (obj.getC_pho4() != null) {
+    if (obj.getC_pho3().equals("no_p")) {
     %>
-        <img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>">
+       
     <%
-    }
-    %>
-    </div>
-
-    <div class="c_con_pho5">
-    <%
-    if (obj.getC_pho5() != null) {
-    %>
-        <img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>">
-    <%
-    }
+    }else{%>
+    	<img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
+  <%   }
     %>
     </div>
+    
+         <div class="c_con_pho4">
+    <%
+    if (obj.getC_pho4().equals("no_p")) {
+    %>
+       
+    <%
+    }else{%>
+    	<img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>">
+  <%   }
+    %>
+    </div>
+    
+             <div class="c_con_pho5">
+    <%
+    if (obj.getC_pho5().equals("no_p")) {
+    %>
+       
+    <%
+    }else{%>
+    	<img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>">
+  <%   }
+    %>
+    </div>
+    
 </div><!-- c_con_phos -->
 
     <div class="c_btns">

@@ -1,6 +1,9 @@
 package adventour;
 
 public class C_getset {
+	
+
+	
  String  m_id;    
  String c_date;
  String c_num ;  
@@ -13,6 +16,8 @@ public class C_getset {
  String c_pho3 ;
  String c_pho4 ; 
  String c_pho5;
+ 
+ 
 public String getM_id() {
 	return m_id;
 }
@@ -194,6 +199,8 @@ String h_roompho1;
 String h_roompho2;
 String h_roompho3;
 String h_roompho4;
+String h_roompho5;
+String h_roompho6;
 public String getH_roompho1() {
 	return h_roompho1;
 }
@@ -231,6 +238,5 @@ public void setH_roompho6(String h_roompho6) {
 	this.h_roompho6 = h_roompho6;
 }
 
-String h_roompho5;
-String h_roompho6;
+
 }

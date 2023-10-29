@@ -103,8 +103,6 @@ if ( searchResults != null) {
 </body>
 <script>
  
-
-
 	// 세 자리마다 콤마를 추가하는 함수
 	function addCommasToNumber(numberString) {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");

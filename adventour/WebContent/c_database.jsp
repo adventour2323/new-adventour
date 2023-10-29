@@ -27,6 +27,22 @@
     System.out.println("제목"+ c_title);
     System.out.println("내용"+ c_cont);
     System.out.println("사진"+c_pho1);
+    
+    if(c_pho1 == null){
+    	c_pho1 = "no_p";
+    }
+    if(c_pho2 == null){
+    	c_pho2 = "no_p";
+    }
+    if(c_pho3 == null){
+    	c_pho3 = "no_p";
+    }
+    if(c_pho4 == null){
+    	c_pho4 = "no_p";
+    }
+    if(c_pho5 == null){
+    	c_pho5 = "no_p";
+    }
 
  
     

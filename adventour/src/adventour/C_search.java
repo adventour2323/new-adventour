@@ -36,12 +36,16 @@ public class C_search {
             if (conn == null) {
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             }
-            String query = "SELECT * FROM community WHERE c_title LIKE ? OR m_id LIKE ? OR country LIKE ? OR city LIKE ? ORDER BY c_date DESC;";
+            String query = 
+            "SELECT * FROM community WHERE c_title LIKE ? OR m_id LIKE ? "
+            + "OR country LIKE ? OR city LIKE ? ORDER BY c_date DESC;";
             pstmt = conn.prepareStatement(query);
             pstmt.setString(1, "%" + c_sch + "%");
             pstmt.setString(2, "%" + c_sch + "%");
             pstmt.setString(3, "%" + c_sch + "%");
             pstmt.setString(4, "%" + c_sch + "%");
+          
+           
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 C_getset obj = new C_getset();
