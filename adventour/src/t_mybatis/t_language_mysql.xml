@@ -5,13 +5,14 @@
 <mapper namespace="db_mapper">
 
 	<select id="guide_list" resultType="getset.guide_gs">
-		select *from guide; 
-		
+		select *from guide;
+
 	</select>
-	
+
 	<select id="tour_list" resultType="adventour.t_getset">
 		select *from tour; 
-		
-	</select>	
+
+
+	</select>
 
 </mapper>
