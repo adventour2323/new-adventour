@@ -26,6 +26,7 @@
   </head>
 
 
+
 <body>
 
  <%
@@ -61,9 +62,10 @@ if ( searchResults != null) {
 <div id="info_SCH">
        <div id="hotel_room_info">
       <h2 id="hotel_room_type" class="hotel_room_type"><%= bbb.getH_roomtype()%> room</h2>
-       <button id="prevButton"> < </button>
+      <div id="img_div">
+     <div class="prevButton"><button id="prevButton">&lt;</button></div>  
          <div id="imageSlider" class="image-slider">
-          <img id="h_room_phoi" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho1() %>">
+          <img id="h_room_phoi" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
           <img id="h_room_phoi1" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho1() %>">
           <img id="h_room_phoi2" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho2() %>">
           <img id="h_room_phoi3" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho3() %>">
@@ -71,7 +73,9 @@ if ( searchResults != null) {
           <img id="h_room_phoi5" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho5() %>">
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
-      <button id="nextButton"> > </button>
+   <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
+   <p id="slideNumber">1 / 7</p>
+      </div><!-- img_div -->
 
 
         <div id="h_room_options1" >
@@ -107,5 +111,49 @@ if ( searchResults != null) {
 	function addCommasToNumber(numberString) {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
+	$(document).ready(function() {
+	    const slides = $('.slide'); // 슬라이드 이미지 요소들
+	    const prevButton = $('#prevButton'); // 이전 버튼
+	    const nextButton = $('#nextButton'); // 다음 버튼
+	    const slideNumber = $('#slideNumber'); // 순번을 표시할 요소
+	    let currentIndex = 0; // 현재 슬라이드의 인덱스
+
+	    // 초기에 첫 번째 슬라이드 이미지와 순번 표시
+	    slides.eq(currentIndex).show();
+	    slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+
+	    // 다음 슬라이드로 이동
+	    nextButton.click(function() {
+	        // 현재 슬라이드 숨기기
+	        slides.eq(currentIndex).hide();
+
+	        // 다음 슬라이드로 이동 (순환 처리)
+	        currentIndex = (currentIndex + 1) % slides.length;
+
+	        // 다음 슬라이드 표시
+	        slides.eq(currentIndex).show();
+
+	        // 순번 업데이트
+	        slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+	    });
+
+	    // 이전 슬라이드로 이동
+	    prevButton.click(function() {
+	        // 현재 슬라이드 숨기기
+	        slides.eq(currentIndex).hide();
+
+	        // 이전 슬라이드로 이동 (순환 처리)
+	        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+
+	        // 이전 슬라이드 표시
+	        slides.eq(currentIndex).show();
+
+	        // 순번 업데이트
+	        slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+	    });
+	});
+	
+
+
 	</script>
 </html>

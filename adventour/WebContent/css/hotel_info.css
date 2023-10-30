@@ -301,11 +301,9 @@
   margin-top: -120px;
 }
 /*-------------------------날짜로 다시 검색----------------------------*/
-.info_SCH{
 
-}
 
-/*---------------예약 가능 룸 정보 제목----------------------------------*/
+/*--------------------------예약 가능 룸 정보 제목------------------------*/
 
 .yes_reserv_room{
 	background-color: rgba(224, 224, 224, 0.5);
@@ -376,22 +374,24 @@ font-weight: bold;
   width: 900px;
   height: 320px;
   margin-bottom: 70px;
-  padding-left: 50px;
+  padding-left: 20px;
   margin-left: 500px; 
 
 }
 #hotel_room_type{
-  width: 220px;
+  width: 270px;
   height: 30px;
   padding-top: 15px;
   text-align: center;
+s
 }
+/*룽정보 이미지 슬라이드
 #imageSlider{
 border: solid 1px;
   width: 220px;
-  height: 220px;
+  height: 220px;s
   margin-top: 20px;  
-}
+}*/
 #h_room_phoi,.slide{
   width: 220px;
   height: 220px;
@@ -636,21 +636,6 @@ padding-left: 50px;
 padding-top: 15px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1070,13 +1055,74 @@ padding-top: 30px;
 
 
 }
+/*-----이미지슬라이드-------*/
+#img_div{
+	width: 270px;
+  height: 240px;
+    margin-top: 20px;  
+ margin-left: px;
+}
 
+/* 이미지 슬라이더 컨테이너 */
+#imageSlider {
+  position: relative;
+  overflow: hidden;
+  border: solid 1px;
+  width: 220px;
+  height: 220px;
+  margin-left: 25px;  
+}
+#slideNumber{
+  width: 270px;
+  height: 20px;
+  text-align:center;
+  background-color: red;
+}
+/* 이미지 슬라이더 내부 요소 */
+.image-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+   margin-left: 25px; 
+   margin-top:-220px; 
+ 
+   
+}
 
+.slide {
+ width: 220px;
+  height: 220px;
+  object-fit: cover;
+ 
+}
 
+/* 이전 및 다음 버튼 */
+.prevButton{
+  width: 25px;
+  height: 220px;
 
+}
+#prevButton{
+	  width: 25px;
+     height: 25px;
+		 margin-top:100px; 
+		 border:none;
+		 background-color: white;
+}
+.nextButton  {
+  width: 25px;
+  height: 220px;
+   margin-left:245px;
+  margin-top:-222px; 
 
-
-
+}
+#nextButton  {
+ 	  width: 25px;
+     height: 25px;
+		 margin-top:100px; 
+		 border:none;
+		 background-color: white;
+}
 
 /* 푸터 */
 #footer {
