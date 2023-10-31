@@ -33,6 +33,9 @@ public class H_Select_Top10_conn {
 	  //statement 안에 데이터베이스 명령문 작성해야함 selectList= 파일을 만들어서 연결 할 것(select문에 mapper의 해당문장 id를 받아와야함다 /
 	    for (H_getset item : top_list) {//값이 잘 넘어오는지 확인 - ok
             System.out.println(item.getH_name_eng());
+            System.out.println(item.getH_room_cancle());
+            System.out.println(item.getH_room_smoke());
+            
 	    }
 	    ret_dbconn.close();//open을 했으면 닫아줘야함
 	    return top_list;

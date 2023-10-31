@@ -10,7 +10,6 @@
 <meta charset="utf-8">
  <title>호텔 상세</title>
   <link rel="stylesheet" type="text/css" href="css/hotel_info.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/hotel_info.js"></script>
 
     <meta class="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -74,7 +73,7 @@ if ( searchResults != null) {
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
    <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
-   <p id="slideNumber">1 / 7</p>
+   <p id="slideNumber"></p>
       </div><!-- img_div -->
 
 
@@ -149,7 +148,9 @@ if ( searchResults != null) {
 	        slides.eq(currentIndex).show();
 
 	        // 순번 업데이트
-	        slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+	       alert("currentIndex after prevButton click: " + currentIndex);
+	  
+	        slideNumber.text(`${currentIndex + 1} /7`);
 	    });
 	});
 	

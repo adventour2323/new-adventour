@@ -627,4 +627,74 @@ public class H_getset {
 	public void setH_roompri(int h_roompri) {
 		this.h_roompri = h_roompri;
 	}
+	
+	String h_roompho1;
+	String h_roompho2;
+	String h_roompho3;
+	public String getH_roompho1() {
+		return h_roompho1;
+	}
+	public void setH_roompho1(String h_roompho1) {
+		this.h_roompho1 = h_roompho1;
+	}
+	public String getH_roompho2() {
+		return h_roompho2;
+	}
+	public void setH_roompho2(String h_roompho2) {
+		this.h_roompho2 = h_roompho2;
+	}
+	public String getH_roompho3() {
+		return h_roompho3;
+	}
+	public void setH_roompho3(String h_roompho3) {
+		this.h_roompho3 = h_roompho3;
+	}
+	public String getH_roompho4() {
+		return h_roompho4;
+	}
+	public void setH_roompho4(String h_roompho4) {
+		this.h_roompho4 = h_roompho4;
+	}
+	public String getH_roompho5() {
+		return h_roompho5;
+	}
+	public void setH_roompho5(String h_roompho5) {
+		this.h_roompho5 = h_roompho5;
+	}
+	public String getH_roompho6() {
+		return h_roompho6;
+	}
+	public void setH_roompho6(String h_roompho6) {
+		this.h_roompho6 = h_roompho6;
+	}
+
+	String h_roompho4;
+	String h_roompho5;
+	String h_roompho6;
+    public String getH_room_canael() {
+		return h_room_canael;
+	}
+	public void setH_room_canael(String h_room_canael) {
+		this.h_room_canael = h_room_canael;
+	}
+	public String getH_room_somke() {
+		return h_room_somke;
+	}
+	public void setH_room_somke(String h_room_somke) {
+		this.h_room_somke = h_room_somke;
+	}
+
+	String h_room_canael;
+    String h_room_somke;
+    String h_room_cancle;
+
+
+	public String getH_room_cancle() {
+		return h_room_cancle;
+	}
+	public void setH_room_cancle(String h_room_cancle) {
+		this.h_room_cancle = h_room_cancle;
+	}
+   
+    
 }

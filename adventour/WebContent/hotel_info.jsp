@@ -277,12 +277,13 @@ if (top_list != null) {
     </div>
  </div><!--hotel_info-->
   </div><!-- content -->
-
+<form action="hotel_pay.jsp" >
+ 
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
  <div class="h_info_search">
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
-  <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
+ <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
  <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required" >
  <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required"  >
  <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
@@ -309,11 +310,23 @@ for (int ii = 0; i < top_list.size(); i++) {
     H_getset bbb = top_list.get(i); 
  %>
 
-    <div id="hotel_room_info">
-      <h2 id="hotel_room_type" class="hotel_room_type"><%=  bbb.getH_roomtype()%> room</h2>
-        <div id="h_room_pho" >
-          <img id="h_room_phoi" class="h_room_phoi" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
+           <div id="hotel_room_info">
+      <h2 id="hotel_room_type" class="hotel_room_type"><%= bbb.getH_roomtype()%> room</h2>
+      <div id="img_div">
+     <div class="prevButton"><button id="prevButton">&lt;</button></div>  
+         <div id="imageSlider" class="image-slider">
+          <img id="h_room_phoi" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho() %>">
+          <img id="h_room_phoi1" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho1() %>">
+          <img id="h_room_phoi2" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho2() %>">
+          <img id="h_room_phoi3" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho3() %>">
+          <img id="h_room_phoi4" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho4() %>">
+          <img id="h_room_phoi5" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho5() %>">
+          <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
+   <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
+   <p id="slideNumber"></p>
+      </div><!-- img_div -->
+      
         <div id="h_room_options1" >
         <div class="h_room_options11"><img class="h_room_peo_img" src="image/hotel/h_image/person.png"/><div class="h_room_peo"><h4 >최대 가능인원 : <%=  bbb.getH_roompeo()%>명</h4></div></div>  
         <div class="h_room_options12">   <img class="h_room_bed_img" src="image/hotel/h_image/qeen_bed.png"> <div class="h_room_bed"><h4>베드 타입 : <%=  bbb.getH_room_bed()%>, <%=  bbb.getH_room_bedc()%>개</h4></div></div>
@@ -327,7 +340,8 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
-          <input id="roompay_btn" type="button" class="roompay_btn" value="결제하기"/>
+   
+          <input id="roompay_btn" type="submit" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 
 
@@ -339,7 +353,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 %>
 </div>  <!-- info_SCH -->
-
+</form>  
 
 <div class="h_facilities">
 <h1>편의 시설 </h1>

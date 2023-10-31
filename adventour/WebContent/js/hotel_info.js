@@ -105,28 +105,8 @@ $(document).ready(function() {
 	  modal.style.display = text;
 	}
 	  /*왼쪽 검색창 날짜 픽 */
-	  // 마우스 클릭 이벤트를 감지하여 datepicker를 열기
-	  $('.datepicker').on('click', function() {
-	    $(this).datepicker('show');
-	  });
+
 	
-	  $.datepicker.setDefaults({
-	    dateFormat: 'yy-mm-dd',
-	    prevText: '이전 달',
-	    nextText: '다음 달',
-	    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-	    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-	    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-	    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-	    showMonthAfterYear: true,
-	    yearSuffix: '년'
-	  });
-
-	  $(function () {
-	    $('.datepicker').datepicker();
-	  });
-
 
 	//날짜계산	
     $("#sch_indate, #sch_outdate").on("change", function() {
@@ -163,9 +143,12 @@ $(document).ready(function() {
       var indate = $("#sch_indate").val();
       var outdate = $("#sch_outdate").val();
       var peo= $(".sch_peo").val();
-
-      // AJAX 요청 보내기
-      $.ajax({
+     
+      if (!name_eng || !indate || !outdate || !peo) {
+    	    alert("검색 정보를 입력 후 검색해주세요.");
+    	} else{
+      
+       $.ajax({
         type: "GET",
         url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
         data: { h_name_eng:name_eng,
@@ -180,7 +163,9 @@ $(document).ready(function() {
           alert("일치하는 검색어가 없습니다.");
         }
       });
-    });
+     };     
+   });
+
 	
 /*----------------룸정보 이미슬라이더------------------------*/
     $(document).ready(function() {

@@ -400,8 +400,9 @@ border: solid 1px;
 #h_room_options1{
   width: 300px;
   height: 250px;
-  margin-top: -230px;
+  margin-top: -250px;
   margin-left: 300px; 
+
 }
 #h_room_options1 h4{
  
@@ -1076,7 +1077,7 @@ padding-top: 30px;
   width: 270px;
   height: 20px;
   text-align:center;
-  background-color: red;
+
 }
 /* 이미지 슬라이더 내부 요소 */
 .image-slider {
@@ -1086,7 +1087,6 @@ padding-top: 30px;
    margin-left: 25px; 
    margin-top:-220px; 
  
-   
 }
 
 .slide {

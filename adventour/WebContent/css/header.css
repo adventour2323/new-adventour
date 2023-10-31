@@ -13,11 +13,7 @@
 	text-decoration: none;
 }
 
-body{
-	width: 1903px;
-	margin: 0px;
-	overflow-x: hidden;
-}
+
 /*header1 버튼에 먹이는 스타일.*/
 .menu button, .schtop button{
 	border: none;

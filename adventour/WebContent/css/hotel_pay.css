@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+@color-change{
+	background-color: yellow;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
+    
+}
+header{
+	  width: 1903px;
+    height: 400px;
+	
+}
+  body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 1903px;
+    height: 600px;
+  
+  } 
+  .moveh {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+
+  }
+/*전제 내용 내역*/
+#content_all{
+    width: 1903px;
+    height: 600px;
+}
+
+/*내용 왼쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
+
+#content_left{
+    width: 403px;
+    height: 600px;
+    float: left;
+}
+/*결제 정보내역 */
+  #content{
+    width: 1100px;
+    height: 600px;
+    float: left;
+
+}
+ 
+ #content_div{
+     background-color: rgba(224, 224, 224, 0.5);
+ width: 1000px;
+    height: 500px;
+    border:solid 1px;
+    margin-left: 50px;
+     margin-top: 50px;
+ } 
+  
+/*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
+
+#content_right{
+    width: 400px;
+    height: 600px;
+
+    float: right;
+
+}
+  
+
