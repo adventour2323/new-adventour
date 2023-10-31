@@ -8,16 +8,16 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/cos.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jackson-annotations-2.9.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jackson-core-2.9.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jackson-databind-2.9.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jai_codec.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jai_core.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/jstl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/mybatis-3.5.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/mysql-connector-java-5.1.49.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023UOWYS/Downloads/new-adventour-master (5)/new-adventour-master/adventour/WebContent/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/cos.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jackson-annotations-2.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jackson-core-2.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jackson-databind-2.9.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jai_core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/mybatis-3.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/mysql-connector-java-5.1.49.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator.User -2023JMMNN/Downloads/lib/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
