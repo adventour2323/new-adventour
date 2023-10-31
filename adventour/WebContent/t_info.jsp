@@ -155,9 +155,16 @@
 					</div>
 				</form>
 				
-				<div>
-					<button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button>
-				</div>
+				<form id="wishlist_form" action="t_wishlist.jsp" method="post">
+					<div class="wishlist_div">
+						<input type="hidden" value="<%= g.getT_id() %>" name="t_id">
+						<input type="hidden" value="<%= g.getT_name() %>" name="t_name">
+						<input type="hidden" value="<%= g.getT_price() %>" name="t_price">
+						
+						<!-- <button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button> -->
+						<input type="submit" class = "wishlist_btn" value="❤️ 찜하기">
+					</div>
+				</form>
 			</div> <!-- option_div -->
 		
 		
