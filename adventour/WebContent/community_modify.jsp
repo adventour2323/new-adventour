@@ -29,7 +29,7 @@ if (session.getAttribute("id") == null) {
 }
 %>
 
-<div class="c_modify_main">
+<div class="c_modify_main"> 
     <h2>게시글 수정</h2>
 
     <%
