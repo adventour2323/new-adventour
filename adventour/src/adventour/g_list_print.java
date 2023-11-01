@@ -58,7 +58,7 @@ public class g_list_print {
 				}
 				return arr;
 	}
-	
+	 
 	public ArrayList<g_getset> g2(String g_id) throws Exception {
 
 		ArrayList<g_getset> arr2 = new ArrayList<g_getset>();

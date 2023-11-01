@@ -1,5 +1,5 @@
 package adventour;
-
+ 
 public class g_getset {
 	String name;
 	String country;

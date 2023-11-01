@@ -28,7 +28,7 @@ public class t_r_getset {
 	}
 	public void setT_rating(int t_rating) {
 		this.t_rating = t_rating;
-	}
+	} 
 	public String getT_id() {
 		return t_id;
 	}

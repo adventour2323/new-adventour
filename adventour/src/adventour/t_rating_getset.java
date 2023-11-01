@@ -11,7 +11,7 @@ public class t_rating_getset {
     int review_count;
     int avg_rating;
     
-	/**
+	/** 
 	 * @return the t_id
 	 */
 	public String getT_id() {

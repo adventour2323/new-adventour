@@ -22,7 +22,7 @@ public class t_getset {
 	String t_img2;
 	String t_img3;
 	String t_logo;
-//	
+//	 
 	String g_name;
 	String country_eng;
 	String spot1_x;

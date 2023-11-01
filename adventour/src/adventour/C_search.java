@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-
+ 
 public class C_search {
     Connection conn = null; // 메소드 분리를 위해 전역 변수로
     PreparedStatement pstmt = null;
