@@ -18,41 +18,42 @@
     font-family: 'Pretendard-Regular';
     
 }
-header{
-	  width: 1903px;
-    height: 400px;
-	
-}
+
   body {
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 0px;
     width: 1903px;
-    height: 600px;
+
   
   } 
   .moveh {
     background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
-
+ color: white!important; /* 글자색을 원하는 색상으로 설정 */
   }
 /*전제 내용 내역*/
 #content_all{
     width: 1903px;
-    height: 600px;
+    height: 1800px;
 }
 
 /*내용 왼쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 
 #content_left{
     width: 403px;
-    height: 600px;
+    height: 1800px;
     float: left;
+}
+/*호텔 예약 정보 - 제목*/
+#h_reserv_title{
+margin-top: 50px;
+	
 }
 /*결제 정보내역 */
   #content{
     width: 1100px;
-    height: 600px;
+     height: 1800px;
     float: left;
 
 }
@@ -60,20 +61,115 @@ header{
  #content_div{
      background-color: rgba(224, 224, 224, 0.5);
  width: 1000px;
-    height: 500px;
+     height: 1700px;
     border:solid 1px;
     margin-left: 50px;
      margin-top: 50px;
  } 
+ 
+ /*왼쪽 호텔 정보 및 룸 정보*/
+#content_div_left{/*왼쪽 전체*/
+	 background-color: yellow;
+	width: 450px;
+    height: 1600px;
+        margin-left: 30px;
+     margin-top: 30px;
+     padding-top: 10px;	
+} 
+#content_hotel_div{
+	background-color:pink;
+	width: 450px;
+    height: 200px;
+}
+#content_hotel_pho{
+	background-color: green;
+	width: 180px;
+    height: 180px;
+     margin-left: 10px;
+}
+#content_hotel_name{
+
+		width: 250px;
+    height: 160px;
+    padding-top:20px;
+    margin-left: 200px;
+   margin-top:-180px;
+}
+ #content_hotel_name h5{
+ margin-top: 10px;
+ } 
+ /*체크인 날짜 및 투숙정보*/
+ #content_date_div{
+ 	background-color:white;
+	width: 450px;
+    height: 260px;
+ }
+#content_date_info th {
+	text-align: left;
+    font-size:15px;
+	width: 210px;
+    height: 30px;
+    margin-left: 10px;
+}
+#content_date_info td {
+	text-align: left;
+	font-weight:bold;
+    font-size:18px;
+	width: 210px;
+    height: 20px;
+    padding-bottom: 30px;
+}
+ 
+ /*룸정보시작*/
+ #content_room_div{
+	background-color:pink;
+	width: 450px;
+    height: 200px;
+    margin-top: 20px;
+    
+}
+#content_room_pho{
+	background-color: green;
+	width: 180px;
+    height: 180px;
+     margin-left: 10px;
+}
+#content_room_name{
+
+		width: 250px;
+    height: 180px;
+    padding-top:20px;
+    margin-left: 200px;
+   margin-top:-180px;
+}
+#content_room_name h3{
+
+   margin-top:-10px;
+}
+#content_room_info{
+	font-size: 15px;
+	margin-top:10px;
+}
+#content_room_info th{
+	text-align:left;
+	width: 120px;
+    height: 30px;
+}
+/*결제 금액설정*/
+
+
+  
   
 /*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 
 #content_right{
     width: 400px;
-    height: 600px;
-
+    height: 700px;
     float: right;
 
 }
-  
+
+footer {
+     margin-top: 100px;
+}  
 
