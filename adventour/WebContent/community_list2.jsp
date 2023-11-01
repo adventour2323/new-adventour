@@ -21,16 +21,16 @@
 
    <header>
 <%
-if (session.getAttribute("id") == null) {
+	if (session.getAttribute("id") == null) {
 %>
     <!-- header.html import -->
     <div id="header"></div>
 <%
-} else {
+	} else {
 %>
     <jsp:include page="header_login.jsp"  flush="true"></jsp:include>
 <%
-}
+	}
 %>
 </header>
 
@@ -67,53 +67,53 @@ if (session.getAttribute("id") == null) {
 
         <jsp:useBean id="prac" class="adventour.C_dbsave" /><!-- 데이터베이스 연결하고 처리하는 자바 파일 -->
         <%
-          int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
-          int thispage = 1; // 현재 페이지 번호
-          if (request.getParameter("page") != null) {
-            thispage = Integer.parseInt(request.getParameter("page"));
-          }
-          int startIndex = (thispage - 1) * itemsPerPage;
-          int endIndex = startIndex + itemsPerPage;
-          ArrayList<adventour.C_getset> communityList = prac.c_listshow();
-          for (int i = startIndex; i < Math.min(endIndex, communityList.size()); i++) {
-            adventour.C_getset obj = communityList.get(i);
-            String countryName = obj.getCountry();
-            if ("uk".equals(countryName)) {
-              countryName = "영국";
-            } else if ("ity".equals(countryName)) {
-              countryName = "이탈리아";
-            } else if ("fra".equals(countryName)) {
-              countryName = "프랑스";
-            } else if ("spa".equals(countryName)) {
-              countryName = "스페인";
-            }
+        	int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
+                          int thispage = 1; // 현재 페이지 번호
+                          if (request.getParameter("page") != null) {
+                            thispage = Integer.parseInt(request.getParameter("page"));
+                          }
+                          int startIndex = (thispage - 1) * itemsPerPage;
+                          int endIndex = startIndex + itemsPerPage;
+                          ArrayList<adventour.C_getset> communityList = prac.c_listshow();
+                          for (int i = startIndex; i < Math.min(endIndex, communityList.size()); i++) {
+                            adventour.C_getset obj = communityList.get(i);
+                            String countryName = obj.getCountry();
+                            if ("uk".equals(countryName)) {
+                              countryName = "영국";
+                            } else if ("ity".equals(countryName)) {
+                              countryName = "이탈리아";
+                            } else if ("fra".equals(countryName)) {
+                              countryName = "프랑스";
+                            } else if ("spa".equals(countryName)) {
+                              countryName = "스페인";
+                            }
 
-            String cityName = obj.getCity();
-            if ("lond".equals(cityName)) {
-              cityName = "런던";
-            } else if ("liv".equals(cityName)) {
-              cityName = "리버풀";
-            } else if ("eden".equals(cityName)) {
-              cityName = "에든버러";
-            } else if ("roma".equals(cityName)) {
-              cityName = "로마";
-            } else if ("vene".equals(cityName)) {
-              cityName = "베네치아";
-            } else if ("mila".equals(cityName)) {
-              cityName = "밀라노";
-            } else if ("paris".equals(cityName)) {
-              cityName = "파리";
-            } else if ("mars".equals(cityName)) {
-              cityName = "마르세유";
-            } else if ("mona".equals(cityName)) {
-              cityName = "모나코";
-            } else if ("mard".equals(cityName)) {
-              cityName = "마드리드";
-            } else if ("barc".equals(cityName)) {
-              cityName = "바르셀로나";
-            } else if ("sev".equals(cityName)) {
-              cityName = "세비야";
-            }
+                            String cityName = obj.getCity();
+                            if ("lond".equals(cityName)) {
+                              cityName = "런던";
+                            } else if ("liv".equals(cityName)) {
+                              cityName = "리버풀";
+                            } else if ("eden".equals(cityName)) {
+                              cityName = "에든버러";
+                            } else if ("roma".equals(cityName)) {
+                              cityName = "로마";
+                            } else if ("vene".equals(cityName)) {
+                              cityName = "베네치아";
+                            } else if ("mila".equals(cityName)) {
+                              cityName = "밀라노";
+                            } else if ("paris".equals(cityName)) {
+                              cityName = "파리";
+                            } else if ("mars".equals(cityName)) {
+                              cityName = "마르세유";
+                            } else if ("mona".equals(cityName)) {
+                              cityName = "모나코";
+                            } else if ("mard".equals(cityName)) {
+                              cityName = "마드리드";
+                            } else if ("barc".equals(cityName)) {
+                              cityName = "바르셀로나";
+                            } else if ("sev".equals(cityName)) {
+                              cityName = "세비야";
+                            }
         %>
         <tr>
           <td><a href='community_cont.jsp?c_num=<%= obj.getC_num() %>'><%= obj.getC_num() %></a></td>

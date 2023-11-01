@@ -29,34 +29,34 @@
 <body>
 
  <%
-    request.setCharacterEncoding("UTF-8"); 
-    String h_name_eng = request.getParameter("h_name_eng"); // 입력된 검색어 가져오기
-    String h_indate = request.getParameter("h_indate"); // 입력된 검색어 가져오기
-    String h_outdate = request.getParameter("h_outdate"); // 입력된 검색어 가져오기
-    String h_roompeo1 = request.getParameter("h_roompeo"); // 입력된 검색어 가져오기
-   
-    System.out.println(h_name_eng);
-    System.out.println(h_indate);
-    System.out.println(h_outdate);
-    System.out.println( h_roompeo1);
-    
+ 	request.setCharacterEncoding("UTF-8"); 
+      String h_name_eng = request.getParameter("h_name_eng"); // 입력된 검색어 가져오기
+      String h_indate = request.getParameter("h_indate"); // 입력된 검색어 가져오기
+      String h_outdate = request.getParameter("h_outdate"); // 입력된 검색어 가져오기
+      String h_roompeo1 = request.getParameter("h_roompeo"); // 입력된 검색어 가져오기
+     
+      System.out.println(h_name_eng);
+      System.out.println(h_indate);
+      System.out.println(h_outdate);
+      System.out.println( h_roompeo1);
+      
 
-    int h_roompeo;
+      int h_roompeo;
 
-    if (h_roompeo1 != null && !h_roompeo1.isEmpty()) {
-        h_roompeo = Integer.parseInt(h_roompeo1);
-    } else {
-    	 h_roompeo = 1;
-    }
-    System.out.println( h_roompeo);
+      if (h_roompeo1 != null && !h_roompeo1.isEmpty()) {
+          h_roompeo = Integer.parseInt(h_roompeo1);
+      } else {
+      	 h_roompeo = 1;
+      }
+      System.out.println( h_roompeo);
 
- C_dbsave h_sch1 = new  C_dbsave();
- ArrayList<adventour.C_getset> searchResults =  h_sch1. h_info_search(h_name_eng,  h_roompeo, h_indate,h_outdate ); // 검색 수행
-   
-if ( searchResults != null) {
-  for (int s = 0; s < searchResults.size(); s++) {
-      C_getset bbb = searchResults.get(s); 
-      System.out.println(bbb.getH_roomtype());
+   C_dbsave h_sch1 = new  C_dbsave();
+   ArrayList<adventour.C_getset> searchResults =  h_sch1. h_info_search(h_name_eng,  h_roompeo, h_indate,h_outdate ); // 검색 수행
+     
+  if ( searchResults != null) {
+    for (int s = 0; s < searchResults.size(); s++) {
+        C_getset bbb = searchResults.get(s); 
+        System.out.println(bbb.getH_roomtype());
  %>
 <div id="info_SCH">
        <div id="hotel_room_info">

@@ -27,12 +27,18 @@ border: none;
 <body>
 
     <header>
-        <% if (session.getAttribute("id") == null) { %>
+        <%
+        	if (session.getAttribute("id") == null) {
+        %>
         <!-- header.html import -->
         <jsp:include page="header.html"></jsp:include>
-        <% } else { %>
+        <%
+        	} else {
+        %>
         <jsp:include page="header_login.jsp"></jsp:include>
-        <% } %>
+        <%
+        	}
+        %>
     </header>
 	
 	<jsp:useBean id="id" class="adventour.g_list_print">
@@ -172,21 +178,21 @@ border: none;
  
 	</div> <!-- content -->
 
-		<script>
-document.addEventListener('DOMContentLoaded', function() {
-	var country = '<%= countryName %>'; // JSP 변수를 JavaScript로 가져옵니다.
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var country = '<%= countryName %>'; // JSP 변수를 JavaScript로 가져옵니다.
 
-    // 모든 country_content 요소를 선택
-    var countryElements = document.querySelectorAll('.country_content');
+    	// 모든 country_content 요소를 선택
+	    var countryElements = document.querySelectorAll('.country_content');
 
-    // 요소를 순환하면서 텍스트 내용을 확인하고 일치하는 경우 스타일을 변경합니다.
-    for (var i = 0; i < countryElements.length; i++) {
-        var h2 = countryElements[i].querySelector('h2'); // h2 요소를 찾습니다.
-        if (h2.innerText.trim() === country) { // 텍스트 내용 일치 여부 확인
-            countryElements[i].style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // 예시로 배경색을 변경
-        }
-    }
-});
+	    // 요소를 순환하면서 텍스트 내용을 확인하고 일치하는 경우 스타일을 변경합니다.
+    	for (var i = 0; i < countryElements.length; i++) {
+        	var h2 = countryElements[i].querySelector('h2'); // h2 요소를 찾습니다.
+	        if (h2.innerText.trim() === country) { // 텍스트 내용 일치 여부 확인
+    	        countryElements[i].style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // 예시로 배경색을 변경
+        	}
+    	}
+	});
 
 </script>
 		
@@ -197,5 +203,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>
 		
-	</html>
-	
+	</html>	

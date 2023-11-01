@@ -28,23 +28,22 @@
 <body>
 
  <%
-    request.setCharacterEncoding("UTF-8"); 
-    String country_eng = request.getParameter("country_eng"); // 입력된 검색어 가져오기
-    
-    if(country_eng.equals("italy")){
-    	country_eng = "italia";
-    }
-   
-    System.out.println("불러온 나라"+country_eng);
+ 	request.setCharacterEncoding("UTF-8"); 
+      String country_eng = request.getParameter("country_eng"); // 입력된 검색어 가져오기
+      
+      if(country_eng.equals("italy")){
+      	country_eng = "italia";
+      }
+     
+      System.out.println("불러온 나라"+country_eng);
 
 
- C_dbsave h_sch1 = new  C_dbsave();
- ArrayList<adventour.t_getset> searchResults = h_sch1. h_info_tourad(country_eng ); // 검색 수행
-   
-if ( searchResults != null) {
-  for (int s = 0; s < searchResults.size(); s++) {
-      t_getset bbb = searchResults.get(s); 
-   
+   C_dbsave h_sch1 = new  C_dbsave();
+   ArrayList<adventour.t_getset> searchResults = h_sch1. h_info_tourad(country_eng ); // 검색 수행
+     
+  if ( searchResults != null) {
+    for (int s = 0; s < searchResults.size(); s++) {
+        t_getset bbb = searchResults.get(s);
  %>
 <a href="t_info.jsp?t_id=<%=bbb.getT_id() %>">
 <img class="tour_ad_load" style="width: 400px; height: 300px;" src="<%= bbb.getT_img1() %>">

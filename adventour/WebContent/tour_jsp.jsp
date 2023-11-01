@@ -22,17 +22,23 @@
  
 	<%-- <jsp:useBean id="id" class="adventour.g_list_print"> --%>
 		<header>
-			<% if (session.getAttribute("id") == null) { %>
+			<%
+				if (session.getAttribute("id") == null) {
+			%>
     		<!-- header.html import -->
     		<div id="header"></div>
-			<% } else { %>
+			<%
+				} else {
+			%>
     		<jsp:include page="header_login.jsp"></jsp:include>
-			<% } %>
+			<%
+				}
+			%>
 		</header>
 
 		<%
-		List<guide_gs> a1 = (List<guide_gs>) request.getAttribute("list");
-		
+			List<guide_gs> a1 = (List<guide_gs>) request.getAttribute("list");
+				
 			/* ArrayList<g_getset> a1 = id.g1(); */
 			/* ArrayList<t_getset> a2 = id.t1(); */
 		%>
@@ -63,8 +69,8 @@
 						<!--  -->
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("영국") == true) {
+																guide_gs g = a1.get(i);
+																	if (g.getG_country().equals("영국") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -74,7 +80,7 @@
 										<th style="cursor: pointer;">
 										<a href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
+													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a>
@@ -88,15 +94,17 @@
 								</tbody>
 							</table>
 						</div>
-						<% }} %>
+						<%
+							}}
+						%>
 						<!--  -->
 					</section>
 
 					<section id="guide_fr">
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("프랑스") == true) {
+																guide_gs g = a1.get(i);
+																	if (g.getG_country().equals("프랑스") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -107,7 +115,7 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<%-- <% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %> --%>
-													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
+													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -121,14 +129,16 @@
 							</table>
 
 						</div>
-						<% }} %>
+						<%
+							}}
+						%>
 					</section>
 
 					<section id="guide_es">
 						<%
 							for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("스페인") == true) {
+																guide_gs g = a1.get(i);
+																	if (g.getG_country().equals("스페인") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -138,7 +148,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
+													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -153,13 +163,16 @@
 
 						</div>
 
-						<% }} %>
+						<%
+							}}
+						%>
 					</section>
 
 					<section id="guide_ita">
-						<% for (int i = 0; i < a1.size(); i++) {
-								guide_gs g = a1.get(i);
-									if (g.getG_country().equals("이탈리아") == true) {
+						<%
+							for (int i = 0; i < a1.size(); i++) {
+																guide_gs g = a1.get(i);
+																	if (g.getG_country().equals("이탈리아") == true) {
 						%>
 						<div class="container" style="margin-right: 50px; float: left;">
 
@@ -169,7 +182,7 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<img alt="img" src=" <%=g.getG_img() %>" width="200px" height="200px">
+													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
 													<figcaption>자세히보기</figcaption>
 												</figure>
 										</a></th>
@@ -184,7 +197,9 @@
 
 						</div>
 
-						<% }} %>
+						<%
+							}}
+						%>
 					</section>
 
 				</div>
