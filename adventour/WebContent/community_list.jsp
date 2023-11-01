@@ -82,16 +82,16 @@
     
     <jsp:useBean id="prac" class="adventour.C_dbsave" />
     <%
-      int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
-      int thispage = 1; // 현재 페이지 번호
-      if (request.getParameter("page") != null) {
-    	  thispage = Integer.parseInt(request.getParameter("page"));
-      }
-      int startIndex = (thispage - 1) * itemsPerPage;
-      int endIndex = startIndex + itemsPerPage;
-      ArrayList<adventour.C_getset> communityList = prac.c_listshow();
-      for (int i = startIndex; i < Math.min(endIndex, communityList.size()); i++) {
-        adventour.C_getset obj = communityList.get(i);
+    	int itemsPerPage = 12; // 한 페이지에 보여줄 항목 수
+              int thispage = 1; // 현재 페이지 번호
+              if (request.getParameter("page") != null) {
+            	  thispage = Integer.parseInt(request.getParameter("page"));
+              }
+              int startIndex = (thispage - 1) * itemsPerPage;
+              int endIndex = startIndex + itemsPerPage;
+              ArrayList<adventour.C_getset> communityList = prac.c_listshow();
+              for (int i = startIndex; i < Math.min(endIndex, communityList.size()); i++) {
+                adventour.C_getset obj = communityList.get(i);
     %>
     <tr>
       <td><%= obj.getC_num() %></td>

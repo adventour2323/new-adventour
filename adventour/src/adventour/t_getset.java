@@ -32,7 +32,7 @@ public class t_getset {
 	String spot3_x;
 	String spot3_y;
 //	
-	
+	 
 	String g_img;
 	String g_email;
 //

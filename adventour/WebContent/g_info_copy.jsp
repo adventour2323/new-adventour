@@ -26,12 +26,18 @@
 <body>
 
 		<header>
-			<% if (session.getAttribute("id") == null) { %>
+			<%
+				if (session.getAttribute("id") == null) {
+			%>
     		<!-- header.html import -->
     		<div id="header"></div>
-			<% } else { %>
+			<%
+				} else {
+			%>
     		<jsp:include page="header_login.jsp"></jsp:include>
-			<% } %>
+			<%
+				}
+			%>
 		</header>
 
 <!--  -->

@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import getset.H_getset;
 import adventour.t_getset;
+import getset.H_getset;
  
 public class C_dbsave {
 	Connection conn = null; //매소드 분리를 위해 전역변수로 

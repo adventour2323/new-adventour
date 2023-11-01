@@ -7,9 +7,9 @@ package test;
 	import java.sql.Statement;
 	import java.util.ArrayList;
 
-	import getset.H_getset;
 import adventour.C_getset;
 import adventour.t_getset;
+import getset.H_getset;
 	 
 	public class test {
 		Connection conn = null; //매소드 분리를 위해 전역변수로 

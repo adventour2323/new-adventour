@@ -62,9 +62,9 @@
 			
 		</header>
 			
-		<div class="h_ad" style="width: 200px; border-style: solid; background-color: aqua;">
-			<img alt="hotel_ad_Banner" src="./image/tour/ad5.png" style="width: 200px;">
-		</div>	
+	<div class="h_ad" style="width: 200px; border-style: solid; background-color: aqua;">
+		<img alt="hotel_ad_Banner" src="./image/tour/ad5.png" style="width: 200px;">
+	</div>	
 		
 	<div class="content"> <!-- 전체 content -->
 		
