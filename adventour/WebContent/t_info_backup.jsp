@@ -4,6 +4,7 @@
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
 <%@ page import="adventour.t_r_getset"%>
+
 <%@ page import="java.util.*"%>
 
 <%@ page import="java.util.Date" %>
@@ -61,43 +62,42 @@
 			<% } %>
 			
 		</header>
-			
-
-	<div class="content"   > <!-- 전체 content -->
+	
 		
-<div class="div-text">
-    <strong>	
-        <a href="main.tour?tour=main">투어</a> > 
-        <a href="main.tour?tour=tourlist">투어 리스트</a> > 
-        <a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
-        <a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
-    </strong>
-</div>
-
+	<div class="content"> <!-- 전체 content -->
+		
+		<div class="div-text">
+			<strong>	
+				<a href="main.tour?tour=main">투어</a> > 
+				<a href="main.tour?tour=tourlist">투어 리스트</a> > 
+				<a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
+				<a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
+			</strong>
+		</div>
 				
 		<div class="top_area" >
 
 			<div class="top_left" >
 			
-			<div class="t_img_div">
-			    <div class="slideshow-container">
-			        <div class="mySlides fade">
-			            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
-        			</div>
-        			<div class="mySlides fade">
-            			<img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
-        			</div>
-        			<div class="mySlides fade">
-	            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
-    			    </div>
-        			<a class="prev" onclick="plusSlides(-1)" >
-            			<img src="./image/tour/leftbtn.png" alt="이전">
-        			</a>
-        			<a class="next" onclick="plusSlides(1)" >
-            			<img src="./image/tour/rightbtn.png" alt="다음">
-        			</a>
-    			</div>
-			</div> <!-- t_img_div -->
+				<div class="t_img_div">
+			    	<div class="slideshow-container">
+			        	<div class="mySlides fade">
+				            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
+    	    			</div>
+        				<div class="mySlides fade">
+            				<img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
+        				</div>
+        				<div class="mySlides fade">
+		            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
+    				    </div>
+        				<a class="prev" onclick="plusSlides(-1)" >
+            				<img src="./image/tour/leftbtn.png" alt="이전">
+        				</a>
+        				<a class="next" onclick="plusSlides(1)" >
+	            			<img src="./image/tour/rightbtn.png" alt="다음">
+    	    			</a>
+    				</div>
+				</div> <!-- t_img_div -->
 				
 				<div class="t_name">
 					<h1 class="t_name_text"><%=g.getT_name() %>!</h1>
@@ -111,18 +111,16 @@
 					<div class="date_select" style="display: flex; align-items: center;">
     					<label style="margin-right: 10px;"><h5 style="margin: 0;">날짜</h5></label>
     					<div style="display: flex; align-items: center;">
-    					<%
-							// 오늘 날짜를 가져오고, yyyy-MM-dd 형식으로 포맷
-							Date today = new Date();
-							SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-							String formattedDate = sdf.format(today);
-						%>
-        					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>
-        					
+	    					<%
+								// 오늘 날짜를 가져오고, yyyy-MM-dd 형식으로 포맷
+								Date today = new Date();
+								SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+								String formattedDate = sdf.format(today);
+							%>
+        					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>	
     					</div>
 					</div>
-
-				
+									
 					<div class="t_price_info" style="display: flex; align-items: center;">
     				 	<label style="margin-right: 10px;"><h5 style="margin: 0;">가격</h5></label>
     					<div style="display: flex; align-items: center;">
@@ -134,11 +132,11 @@
 				
 					<div class="people_num" style="display: flex; align-items: center;">
     					<label style="margin-right: 10px;"><h5 style="margin: 0;">인원</h5></label>
-    						<div style="display: flex; align-items: center;">
-        						<input type="button" onclick="updateCount(-1)" value="-" style="border: none; cursor: pointer; padding: 5px 10px;">
-        						<div id="result" style="margin: 0 10px; font-size: 16px;">1</div>
-        						<input type="button" onclick="updateCount(1)" value="+" style="border: none; cursor: pointer; padding: 5px 10px;">
-    						</div>
+    					<div style="display: flex; align-items: center;">
+        					<input type="button" onclick="updateCount(-1)" value="-" style="border: none; cursor: pointer; padding: 5px 10px;">
+        					<div id="result" style="margin: 0 10px; font-size: 16px;">1</div>
+        					<input type="button" onclick="updateCount(1)" value="+" style="border: none; cursor: pointer; padding: 5px 10px;">
+    					</div>
     					<input type="hidden" name="total_people" value="1" id="totalPeopleInput">
 					</div>
 
@@ -147,18 +145,24 @@
 					<div class="price_cal" >
     					<label style="margin-right: 10px;"><h5>합계</h5></label>
     					<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
-    					
     					 <input type="hidden" id="total_price" name="total_price" value="<%= g.getT_price() %>">
 					</div>
 				
 					<div class="buttons">
-    					
     					<input type="submit" value="구매하기" class="buy_btn">
 					</div>
 				</form>
-				<div>
-					<button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button>
-				</div>
+				
+				<form id="wishlist_form" action="t_wishlist.jsp" method="post">
+					<div class="wishlist_div">
+						<input type="hidden" value="<%= g.getT_id() %>" name="t_id">
+						<input type="hidden" value="<%= g.getT_name() %>" name="t_name">
+						<input type="hidden" value="<%= g.getT_price() %>" name="t_price">
+						
+						<!-- <button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button> -->
+						<input type="submit" class = "wishlist_btn" value="❤️ 찜하기">
+					</div>
+				</form>
 			</div> <!-- option_div -->
 		
 		
@@ -183,23 +187,25 @@
 	
 				<div class="meeting_div" >
 					<div class="map_div" id="map_div" >
-					<!--지도 -->
+						<!--지도 -->
 					</div>
 					<div class="meeting-info" >
-					
 						<div class="meeting_spot" style="">
 							<label><img alt="" src="./image/tour/spot.png"> <strong>집합 장소</strong> </label>
 							<div style="margin-left: 20px;"><%=g.getM_spot() %></div>
 						</div>
 					
 						<div class="meeting_time" >
-							<label><img alt="" src="./image/tour/time.png"><strong>집합 시간</strong> </label>
+							<label>
+								<img alt="time" src="./image/tour/time.png">
+								<strong>집합 시간</strong>
+							</label>
 							<div style="margin-left: 20px;"><%=g.getD_time() %></div>
 						</div>
 					</div> <!-- meeting-info -->
-				</div>
+				</div> <!-- meeting_div class -->
 
-			</div>
+			</div> <!-- tabcontent -->
 
 			<div id="tour_spot" class="tabcontent">
 				<div class="tour_spot_div" >
@@ -208,12 +214,14 @@
 							<%-- <%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %> --%>
 							<div class="spot1_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
 								<div class="spot1_map" id="spot1_map" style="width: 260px; height: 230px; margin-bottom: 15px;">
+									<!-- 지도 -->
 								</div>
 								<%=g.getT_spot1() %>
 							</div> 
 							<% if(g.getT_spot2() != null) { %>	
 								<div class="spot2_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
 									<div class="spot2_map" id="spot2_map"  style="width: 260px; height: 230px; margin-bottom: 15px;">
+										<!-- 지도 -->									
 									</div>
 									<%=g.getT_spot2() %>
 								</div>
@@ -221,15 +229,15 @@
 								<%if(g.getT_spot3() != null) { %>
 									<div class="spot3_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
 										<div class="spot3_map" id="spot3_map" style="width: 260px; height: 230px; margin-bottom: 15px; ">
+											<!-- 지도 -->
 										</div>
 										<%=g.getT_spot3() %>
 									</div>
 							<% } } %>
-							 
 
-						</div>
-					</div>
-			</div>
+						</div> <!-- tour_spot -->
+				</div> <!-- tour_spot_div -->
+			</div> <!-- tour_spot id -->
 
 			<div id="tour_info_div" class="tabcontent">
 				<div class="tour_info_div" >
@@ -241,66 +249,63 @@
 				</div>
 			</div>
 			
-						<div class="guide_introduce_div" style="margin-top: 20px;">
-							<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
-							<div class="guide_introduce" >
-								<%
-									String g_id = g.getG_id();
-									ArrayList<g_getset> a2 = id.g2(g_id);
-								%>
-            					<% for (g_getset gg : a2) { %>
-            					<div class="table-container" >
-									<div class="guide-table">
-
-        								<div class="guide-row">
-            								<div class="image-cell">
-                								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
-            								</div>
-            								<div style="display: block; ">
-											    <div style="display: block;">
-											        <div style="display: flex;">
-            											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
-                											<strong>이름</strong>
-                            							</div>
-                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
-                            								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
-                            							</div>
-                            						</div>
-                            						<div style="display: flex;">
-                            							<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
-                            								<strong>연락처</strong>
-                            							</div>
-                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
-                            								<%=gg.getEmail()%>
-                            							</div>
-                            						</div>
-                            						<div style="display: flex;">
-                            							<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
-                            								<strong>다른 상품</strong>
-                            							</div>
-                            								<% ArrayList<t_getset> a3 = id.t2(g_id);
-                            								for (int i = 0; i < a3.size(); i++) {
-                                								t_getset tn = a3.get(i);
-                                							%>
-                            							<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
-                            								<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><%=tn.getT_name()%></a>
-                            							</div>
-                            								<%} %>
-        											</div>
-                            					</div>												
-            								</div>
-        								</div>
-
-									</div>
-
+			<div class="guide_introduce_div" style="margin-top: 20px;">
+				<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
+				<div class="guide_introduce" >
+					<%
+						String g_id = g.getG_id();
+						ArrayList<g_getset> a2 = id.g2(g_id);
+					%>
+            		<% for (g_getset gg : a2) { %>
+            		<div class="table-container" >
+						<div class="guide-table">
+        					<div class="guide-row">
+            					<div class="image-cell">
+                					<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
+            					</div>
+            					<div style="display: block; ">
+									<div style="display: block;">
+										<div style="display: flex;">
+											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+												<strong>이름</strong>
+											</div>
+											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+												<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
+											</div>
+										</div>
+										<div style="display: flex;">
+											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+												<strong>연락처</strong>
+											</div>
+											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+												<%=gg.getEmail()%>
+											</div>
+										</div>
+										<div style="display: flex;">
+											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+												<strong>다른 상품</strong>
+											</div>
+											<% ArrayList<t_getset> a3 = id.t2(g_id);
+												for (int i = 0; i < a3.size(); i++) {
+													t_getset tn = a3.get(i);
+											%>
+											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><%=tn.getT_name()%></a>
+											</div>
+											<%} %>
+										</div>
+									</div>												
 								</div>
-            					<%} %>
-							</div>
+							</div> <!-- guide-row -->
+
+						</div> <!-- guide-table -->
+
+					</div> <!-- table-container -->
+					<%} %>
+				</div> <!-- guide_introduce -->
 							
-						</div>			
+			</div>	<!-- guide_introduce_div -->		 
 			<!--  -->
-			
-		
 		</div> <!-- bottom_area -->
 		
 		<hr>
@@ -323,16 +328,20 @@
 							<label for="rate5">★</label>
 						</div>
 							
-							<div class="text-bold" style="margin-right: 50px;">별점을 남겨주세요!</div>
+						<div class="text-bold" style="margin-right: 50px;">
+							별점을 남겨주세요!
+						</div>
 							
-							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
-	        					<% String t_id_avg = g.getT_id();
-    	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
-        							for (t_r_getset tr : rv1) {
-        						%>
-        						<div >평점     <span> <%= tr.getT_rating() %> </span> </div>
-        						<% } %>
-    						</div>						
+						<div class="tour-rating-star" id="tour-rating-star" style="flex;">
+	        				<% String t_id_avg = g.getT_id();
+    	    					ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
+        						for (t_r_getset tr : rv1) {
+        					%>
+        					<div >평점     
+        						<span> <%= tr.getT_rating() %> </span> 
+        					</div>
+        					<% } %>
+    					</div>						
 					</fieldset>
     				<div class="form-group">
         				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
@@ -342,86 +351,120 @@
         				<input type="hidden" value="<%=g.getT_id()%>" name="t_id">
         				<input type="submit" value="등록하기" class="review-write-btn">
     				</div>
-				</div>
+				</div> <!-- review-form-container -->
 			</form>	 
 			<!--  -->
 			
-    <div class="t_review_div">
-        <table class="review-table">
-            <tr id="review_top">
-                <th>번호</th>
-                <th>작성자</th>
-                <th>내용</th>
-                <th>날짜</th>
-                <th>평점</th>
-            </tr>
-            <%
+			<div class="t_review_div">
+				<table class="review-table">
+					<tr id="review_top">
+						<th>번호</th>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>날짜</th>
+						<th>평점</th>
+					</tr>
+				<%
 					ArrayList<t_r_getset> rv = id.t6(t_id); 
 					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
-					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정      
-                               
-                int itemsPerPage = 10; // 한 페이지당 아이템 개수
-                int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
+					
+					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
+                   
+					int itemsPerPage = 10; // 한 페이지당 아이템 개수
+					int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
 
-                int startIndex = (currentPage - 1) * itemsPerPage;
-                int endIndex = Math.min(startIndex + itemsPerPage, count);
+					int startIndex = (currentPage - 1) * itemsPerPage;
+					int endIndex = Math.min(startIndex + itemsPerPage, count);
 
-          
+					for (int i = startIndex; i < endIndex; i++) {
+						t_r_getset tr = rv.get(i);
+						String reviewDateString = tr.getReview_date();
+						Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+						Date reviewDate = new Date(reviewTimestamp.getTime());
+				%>
+					<tr>
+						<td style="text-align: center;"><%= count - i %></td> <!-- 업데이트된 부분 -->
+						<td style="text-align: center;"><%= tr.getM_id() %></td>
+						<td><%= tr.getT_review() %></td>
+						<td style="text-align: center;"><%= sdf1.format(reviewDate) %></td>
+						<td style="text-align: center;"> 
+							<div class="star-rating">
+								<%
+									int ratingStr = tr.getT_rating();
+										try {
+											int rating = ratingStr;
+											for (int j = 0; j < rating; j++) {
+								%>
+												<i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
+										<%
+											} } 
+												catch (NumberFormatException e) {
+                        						// 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+													}
+										%>
+							</div> <!-- star-rating -->
+						</td>
+					</tr>
+					<% } %>
+    			</table> <!-- review-table -->
+    
+    <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 -->
+				<div class="pagination-container">
+					<%
+						int totalPages = (int) Math.ceil((double) count / itemsPerPage);
+						if (currentPage > 1) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>" onclick="scrollToReviewTable()">이전 페이지</a>
+					<% 
+						} for (int i = 1; i <= totalPages; i++) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>>
+							<%= i %>
+						</a>
+	    			<% } if (currentPage < totalPages) {
+					%>
+						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>" onclick="scrollToReviewTable()">다음 페이지</a>
+					<% } %>
+				</div>
 
-                for (int i = startIndex; i < endIndex; i++) {
-                    t_r_getset tr = rv.get(i);
-                    String reviewDateString = tr.getReview_date();
-                    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
-                    Date reviewDate = new Date(reviewTimestamp.getTime());
-            %>
-            <tr>
-                <td><%= count %></td>
-                <td><%= tr.getM_id() %></td>
-                <td><%= tr.getT_review() %></td>
-                <td><%= sdf1.format(reviewDate) %></td>
-                <td> 
-                    <div class="star-rating">
-                        <%
-                            int ratingStr = tr.getT_rating();
-                            try {
-                                int rating = ratingStr;
-                                for (int j = 0; j < rating; j++) {
-                        %>
-                            <i class="fas fa-star" style="color: rgba(250, 208, 0, 0.99);"></i>
-                        <%
-                            }
-                        } catch (NumberFormatException e) {
-                            // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
-                        }
-                        %>
-                    </div>
-                </td>
-            </tr>
-            <%
-                count--;
-            }
-            %>
-        </table>		
-    </div><!-- t_review_div -->
-
-
-
-		 	
+			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
+		<div>
+			<h3>호텔을 찾고 계시나요?</h3>
+			
+			<div style="display: flex; margin-top: 20px;">
+
+				<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px; ">
+					<div class="hotel_img">
+						
+					</div>
+					<div class="hotel_info_div">
+						
+					</div>
+				</div>
+				<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px;">
+					호텔2
+				</div>	
+				<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px;">
+					호텔3
+				</div>	
+				<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px;">
+					호텔4
+				</div>	 	
+			</div>
+			<%-- <%} %> --%>
+		</div>
 
 
 	</div> <!-- 전체 content -->
+
 	
 </body>
 		<footer>
-			<!-- <div id="footer"></div> -->
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>
 		
-		
 		<!-- google map -->
-
-
 <script>
     function initMap() {
         var mapOptions = {
@@ -441,12 +484,10 @@
             title: '집합 장소'
         });
     }
-</script>
 
-<script>
     initMap(); // initMap 함수 호출
 </script>
-<!--  -->
+
 <script>
   // Google 지도를 생성하고 spot1_map에 표시하는 코드
   function initSpot1Map() {
@@ -519,9 +560,6 @@
   initSpot3Map(); // initSpot3Map 함수 호출
 </script>
 
-
-<!--  -->
-
 <!-- 이미지 슬라이드  -->
 <script>
     var slideIndex = 1;
@@ -579,6 +617,7 @@ function count(type)  {
 	  let number = resultElement.innerText;
 	  
 	  // 더하기/빼기
+	  
 	  if(type === 'plus') {
 	    number = parseInt(number) + 1;
 	  }else if(type === 'minus')  {
@@ -627,8 +666,6 @@ function count(type)  {
 	  // "total_price" 입력 필드 업데이트
 	  document.getElementById('total_price').value = totalPrice;
 	}
-
-
   
 </script>
 
