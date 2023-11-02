@@ -423,10 +423,10 @@
 		</div> <!-- rating-div -->
 <!-- 호텔광고 -->
 		
-		<div style="border-style: solid;">
-			<div style="display: flex; align-items: center;">
-			    <img alt="sleep" src="./image/tour/sleep.png" width="64px;">
-    			<h2 style="margin: 0;">호텔을 찾고 계시나요?!?</h2>
+		<div style="">
+			<div style="display: flex; align-items: center; ">
+			    <img alt="sleep" src="./image/tour/sleep.png" width="64px;" style="margin-left: auto;">
+    			<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
 			</div>
 
 			<div style="display: flex; margin-top: 20px;">
