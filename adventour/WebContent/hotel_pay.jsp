@@ -168,7 +168,61 @@ if (session.getAttribute("id") != null) {
 	
 	<div id="content_div_right">
 	 <h2> 투숙객 및 예약 정보 입력</h2>
-	 <div id="content_person_info"></div>
+	 <h4>투숙객 세부 정보 입력 방법 <h4>
+	 <h5 id="write_way">
+1.객실별로 대표 투숙객의 세부 정보를 입력해 주세요. <br>
+2.여권에 표기된 성명 그대로 입력하세요. <br>
+3.만 18세 미만 미성년자는 성인과 함께 숙박해야 합니다.</h5>
+	 <div id="content_person_info">
+	 <h3>객실 주 투숙객</h3>
+	 <div id="user_info_table">
+	 <h5 id="user_firstname_title">이름</h5>
+	 <input type="text" id="user_firstname" name="user_firstname" placeholder="이름(영문)">	 
+	 <h5 id="user_lastname_title">성</h5>
+	 <input type="text" id="user_lastname" name="user_lastname" placeholder="성(영문)">	 
+		 </div><!-- user_info_table  -->
+	 </div><!--content_person_info  -->
+	 
+	 <div id="user_info_tel">
+	  <h3>예약자 연락처</h3>
+	  <h5 id="user_mail_title">이메일</h5>
+	 <input type="text" id="user_mail" name="user_mail" placeholder="이메일">
+	 <h6 id="mail_information">이 메일 주소로 예약 확인을 보내드립니다. 올바른 주소인지 확인해 주십시오.</h6>	
+	 
+	 <h5 id="user_tel_title">전화번호</h5>
+	 <select id="country_tel">
+	     <option value="kr">대한민국 (+82)</option>
+        <option value="us">미국 (+1)</option>
+        <option value="ca">캐나다 (+1)</option>
+        <option value="uk">영국 (+44)</option>
+        <option value="jp">일본 (+81)</option>
+        <option value="cn">중국 (+86)</option>
+        <option value="in">인도 (+91)</option>
+    </select>
+	 <input type="text" id="user_tel" name="user_tel" placeholder="전화번호">
+	 
+	 </div><!-- use_info_tel -->
+	 
+	 <div id="user_payment">
+	   <h3>결제 세부 정보</h3>
+	   <h5 id="card_title">카드유형</h5>
+	 <select id="card_select">
+	     <option value="visa">VISA </option>
+        <option value="master">MASTER</option>
+        <option value="jcb">JCB</option>
+        <option value="discover">DISCOVER</option>
+        <option value="unionpay">UNION PAY</option>
+    </select>
+    
+     <h3 id="toss_pay_title" >결제방식</h3>
+     <input type="submit" id="toss_pay" name="toss_pay" value="toss">
+	   
+	 </div>
+	 
+	 
+	 
+	 
+	 
 	
 	</div><!-- content_div_right -->
 	

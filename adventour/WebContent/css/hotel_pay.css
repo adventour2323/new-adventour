@@ -61,7 +61,7 @@ margin-top: 50px;
  #content_div{
      background-color: rgba(224, 224, 224, 0.5);
  width: 1000px;
-     height: 1700px;
+     height: 1600px;
     border:solid 1px;
     margin-left: 50px;
      margin-top: 50px;
@@ -69,7 +69,7 @@ margin-top: 50px;
  
  /*왼쪽 호텔 정보 및 룸 정보*/
 #content_div_left{/*왼쪽 전체*/
-   background-color:orange;
+
 	width: 450px;
     height: 1600px;
         margin-left: 30px;
@@ -230,7 +230,6 @@ margin-left: 20px;
 }
 /*내용 오른쪽 투숙객 정보 작성*/
 #content_div_right{
-	 background-color: yellow;
 	width: 450px;
     height: 1600px;
         margin-left: 520px;
@@ -241,11 +240,120 @@ margin-left: 20px;
 	width: 430px;
     height: 50px;
         margin-left: 20px;
- background-color: green;
 }
+#content_div_right h4{
+	width: 430px;
+    height: 15px;
+        margin-left: 20px;
 
+}
+#write_way{
+	width: 430px;
+    height: 60px;
+        margin-left: 20px;
 
+}
+#content_div_right h3{
+	width: 430px;
+    height: 30px;
+        margin-left: 20px;
+}
+#user_info_table{
+		width: 430px;
+    height: 150px;
+        margin-left: 20px;
+}
+#user_firstname_title{
+		width: 430px;
+    height: 20px;
+}
+#user_firstname{
+	padding-left:15px;
+		width: 405px;
+    height: 40px;
+}
+#user_lastname_title{
+	margin-top:20px;
+		width: 430px;
+    height: 20px;
+}
+#user_lastname{
+	padding-left:15px;
+		width: 405px;
+    height: 40px;
+}
   
+  #user_info_tel{
+  margin-top:30px;
+  	width: 450px;
+    height: 250px;
+  }
+  #user_mail_title{
+	margin-top:20px;
+		width: 430px;
+    height: 20px;
+ margin-left: 20px;
+}
+#user_mail{
+	margin-left: 20px;
+	padding-left:15px;
+		width: 405px;
+    height: 40px;
+}
+ #mail_information{
+ margin-left: 20px;
+ 		width: 430px;
+    height: 15px;
+ } 
+   #user_tel_title{
+	margin-top:20px;
+		width: 430px;
+    height: 20px;
+ margin-left: 20px;
+} 
+  
+#country_tel{
+	margin-left: 20px;
+		width: 120px;
+    height: 45px;
+}
+#user_tel{
+		margin-left: 0px;
+		width: 295px;
+    height: 40px;
+}  
+#user_payment{
+  margin-top:30px;
+  	width: 450px;
+    height: 250px;
+	
+}
+#card_title{
+	margin-top:20px;
+		width: 430px;
+    height: 20px;
+ margin-left: 20px;
+} 
+  
+#card_select{
+	margin-left: 20px;
+		width:430px;
+    height: 45px;
+}
+#toss_pay_title{
+		margin-top:50px;
+		width: 430px;
+    height: 20px;
+ margin-left: 20px;
+}
+  #toss_pay{
+  background-color:blue;
+  margin-left:75px;
+    margin-top:20px;
+  color:white;
+  	width:300px;
+    height: 45px;
+  }
 /*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 
 #content_right{
