@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import adventour.g_getset;
 import getset.H_getset;
 
+
 public class g_list_print {
 	Connection conn = null; 
 	Statement stmt = null;
@@ -26,8 +27,10 @@ public class g_list_print {
 		try {
 			stmt.close();
 			conn.close();
-		} catch(Exception e) {	
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
+		
 	}
 	
 	public ArrayList<g_getset> g1() throws Exception {
@@ -530,4 +533,122 @@ public class g_list_print {
 	
 	//
 	
+	public ArrayList<H_getset> h2(String h_country) throws Exception {
+		
+		
+		ArrayList<H_getset> arr = new ArrayList<H_getset>();
+		
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT " + 
+				"    h_hotel.h_pho, " + 
+				"    h_hotel.h_name_ko, " + 
+				"    h_hotel.h_name_eng, " + 
+				"    h_hotel.h_grade, " + 
+				"    h_hotel.country_ko, " + 
+				"    h_hotel.city_ko, " + 
+				"    MIN(h_room.h_roompri) as min_price " + 
+				"FROM " + 
+				"    h_hotel " + 
+				"INNER JOIN " + 
+				"    h_room " + 
+				"ON " + 
+				"    h_hotel.h_name_eng = h_room.h_name_eng " + 
+				"Where " + 
+				"	country_ko = '"+h_country+"'" +
+				"GROUP BY " + 
+				"    h_hotel.h_pho, " + 
+				"    h_hotel.h_name_ko, " + 
+				"    h_hotel.h_name_eng, " + 
+				"    h_hotel.h_grade, " + 
+				"    h_hotel.country_ko, " + 
+				"    h_hotel.city_ko; ");
+		
+		
+		
+		while (rs.next()) {
+		    H_getset table = new H_getset();
+		    table.setH_pho(rs.getString("h_pho"));
+		    table.setH_name_ko(rs.getString("h_name_ko"));
+		    table.setH_grade(rs.getString("h_grade"));
+		    table.setCountry_ko(rs.getString("country_ko"));
+		    table.setCity_ko(rs.getString("city_ko"));
+		    table.setH_roompri(rs.getInt("min_price"));
+
+		    arr.add(table);
+		    
+		    // 디버깅 출력을 추가
+		    System.out.println("h_pho: " + table.getH_pho());
+		    System.out.println("h_name_ko: " + table.getH_name_ko());
+		    System.out.println("h_grade: " + table.getH_grade());
+		    System.out.println("country_ko: " + table.getCountry_ko());
+		    System.out.println("city_ko: " + table.getCity_ko());
+		    System.out.println("h_roompri: " + table.getH_roompri());
+		    System.out.println("test test test test");
+		    System.out.println(h_country + "java3");
+		    
+		}
+
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+		
+	//
+	public ArrayList<H_getset> h3(String h_country) throws Exception {
+		
+		
+		ArrayList<H_getset> arr = new ArrayList<H_getset>();
+		
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT " + 
+				"    h_hotel.h_pho, " + 
+				"    h_hotel.h_name_ko, " + 
+				"    h_hotel.h_name_eng, " + 
+				"    h_hotel.h_grade, " + 
+				"    h_hotel.country_ko, " +
+				"    h_hotel.country_eng, " +
+				"    h_hotel.city_ko, " + 
+				"    MIN(h_room.h_roompri) as min_price " + 
+				"FROM " + 
+				"    h_hotel " + 
+				"INNER JOIN " + 
+				"    h_room " + 
+				"ON " + 
+				"    h_hotel.h_name_eng = h_room.h_name_eng " + 
+				"Where " + 
+				"	country_eng = '"+h_country+"'" +
+				"GROUP BY " + 
+				"    h_hotel.h_pho, " + 
+				"    h_hotel.h_name_ko, " + 
+				"    h_hotel.h_name_eng, " + 
+				"    h_hotel.h_grade, " + 
+				"    h_hotel.country_ko, " + 
+				"    h_hotel.city_ko; ");
+		
+		
+		
+		while (rs.next()) {
+		    H_getset table = new H_getset();
+		    table.setH_pho(rs.getString("h_pho"));
+		    table.setH_name_ko(rs.getString("h_name_ko"));
+		    table.setH_grade(rs.getString("h_grade"));
+		    table.setCountry_ko(rs.getString("country_ko"));
+		    table.setCity_ko(rs.getString("city_ko"));
+		    table.setH_roompri(rs.getInt("min_price"));
+		    arr.add(table);
+		    
+		}
+
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+	//
 }

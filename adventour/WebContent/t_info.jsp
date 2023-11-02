@@ -4,6 +4,7 @@
 <%@ page import="adventour.g_getset"%>
 <%@ page import="adventour.t_getset"%>
 <%@ page import="adventour.t_r_getset"%>
+<%@ page import="getset.H_getset" %>
 <%@ page import="java.util.*"%>
 
 <%@ page import="java.util.Date" %>
@@ -41,14 +42,6 @@
             <% for (t_getset g : a1) { %>
 
 
-<%-- 		<%
-                String t_id = request.getParameter("t_id");
-            %>
-			
-			<%
-                List<t_getset> a1 = (List<t_getset>) request.getAttribute("list");
-                for (t_getset g : a1) {
-            %> --%>
             
 <body>
 
@@ -61,10 +54,7 @@
 			<% } %>
 			
 		</header>
-			
-	<div class="h_ad" style="width: 200px; border-style: solid; background-color: aqua;">
-		<img alt="hotel_ad_Banner" src="./image/tour/ad5.png" style="width: 200px;">
-	</div>	
+	
 		
 	<div class="content"> <!-- 전체 content -->
 		
@@ -431,7 +421,43 @@
 
 			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
+<!-- 호텔광고 -->
+		
+		<div style="border-style: solid;">
+			<div style="display: flex; align-items: center;">
+			    <img alt="sleep" src="./image/tour/sleep.png" width="64px;">
+    			<h2 style="margin: 0;">호텔을 찾고 계시나요?!?</h2>
+			</div>
 
+			<div style="display: flex; margin-top: 20px;">
+            <%
+                String h_country = g.getCountry_eng();
+                ArrayList<H_getset> hc = id.h3(h_country);
+                // 호텔 목록 무작위
+                Collections.shuffle(hc);
+                // 호텔 4개 선택
+                List<H_getset> randomHotels = hc.subList(0, 4);
+            %>
+				<div class="hotel-list" style="display: flex;">
+        	        <%
+	                    for (H_getset hotel : randomHotels) {
+    	            %>
+ 					<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px; ">
+						<div class="hotel_img">
+							<img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="280px" height="180px">
+						</div>
+						<div class="hotel_info_div" style="height: 100px;">
+							<%=hotel.getCountry_ko() %>, <%=hotel.getCity_ko() %><br>
+							<%= hotel.getH_name_ko() %>     <%=hotel.getH_grade() %>급<br>
+							가격: <%=hotel.getH_roompri() %>~<br>
+						 
+						</div>
+					</div>		
+					<% } %> 
+				</div>
+			 
+			</div>
+		</div>
 
 	</div> <!-- 전체 content -->
 
