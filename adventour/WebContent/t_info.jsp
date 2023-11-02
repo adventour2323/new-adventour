@@ -425,7 +425,7 @@
 		
 		<div style="">
 			<div style="display: flex; align-items: center; ">
-			    <img alt="sleep" src="./image/tour/sleep.png" width="64px;" style="margin-left: auto;">
+			    <img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
     			<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
 			</div>
 
