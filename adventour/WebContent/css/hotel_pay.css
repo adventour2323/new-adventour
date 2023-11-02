@@ -69,7 +69,7 @@ margin-top: 50px;
  
  /*왼쪽 호텔 정보 및 룸 정보*/
 #content_div_left{/*왼쪽 전체*/
-	 background-color: yellow;
+   background-color:orange;
 	width: 450px;
     height: 1600px;
         margin-left: 30px;
@@ -77,12 +77,10 @@ margin-top: 50px;
      padding-top: 10px;	
 } 
 #content_hotel_div{
-	background-color:pink;
 	width: 450px;
     height: 200px;
 }
 #content_hotel_pho{
-	background-color: green;
 	width: 180px;
     height: 180px;
      margin-left: 10px;
@@ -100,7 +98,6 @@ margin-top: 50px;
  } 
  /*체크인 날짜 및 투숙정보*/
  #content_date_div{
- 	background-color:white;
 	width: 450px;
     height: 260px;
  }
@@ -122,14 +119,12 @@ margin-top: 50px;
  
  /*룸정보시작*/
  #content_room_div{
-	background-color:pink;
 	width: 450px;
     height: 200px;
     margin-top: 20px;
     
 }
 #content_room_pho{
-	background-color: green;
 	width: 180px;
     height: 180px;
      margin-left: 10px;
@@ -156,9 +151,98 @@ margin-top: 50px;
     height: 30px;
 }
 /*결제 금액설정*/
+#content_room_price_div{
+	margin-top: 20px;
 
+		width: 450px;
+    height: 450px;
+}
+#content_room_price_table {
+border-collapse:collapse
+}
+#content_room_price_table td{
 
-  
+	width: 225px;
+    height: 80px;
+	
+}
+
+.td_1{
+text-align: left;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.td_2{
+text-align: right;	
+    font-size: 18px;
+     padding-right: 20px;
+    
+} 
+.td_total{
+	text-align: left;
+	font-weight: bold; 
+    font-size: 25px;
+        padding-left: 10px;
+        border-top: solid 2px;
+        border-color:grey;
+}
+.td_totalpri{
+text-align: right;	
+	font-weight: bold; 
+    font-size: 25px;
+         padding-right: 10px;
+                 border-top: solid 2px;
+        border-color:grey;
+}
+/*무로 취소 안내*/
+#content_reserv_info{	
+
+	width: 450px;
+    height: 300px;
+}
+#content_reserv_info1{
+
+	width: 450px;
+    height: 150px;
+}
+#content_reserv_info1 h2{
+		width: 450px;
+    height: 35px;
+margin-left: 20px;
+}
+#content_reserv_info11{
+
+	width: 450px;
+    height: 100px;
+}
+#content_reserv_info2{
+
+	width: 450px;
+    height: 150px;
+}
+  #content_reserv_info2 h2{
+margin-left: 20px;
+}
+#content_reserv_info21{
+		
+	width: 450px;
+    height: 100px;
+}
+/*내용 오른쪽 투숙객 정보 작성*/
+#content_div_right{
+	 background-color: yellow;
+	width: 450px;
+    height: 1600px;
+        margin-left: 520px;
+     margin-top: -1610px;
+     padding-top: 10px;	
+}
+#content_div_right h2{
+	width: 430px;
+    height: 50px;
+        margin-left: 20px;
+ background-color: green;
+}
   
 /*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 

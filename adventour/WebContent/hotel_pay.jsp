@@ -127,35 +127,50 @@ if (session.getAttribute("id") != null) {
       <div id="content_room_price_div">
         <table id="content_room_price_table">
  		   <tr>
-            <td>1박</td>
-            <td>&#8361; 321,213</td>
+            <td class="td_1">1박</td>
+            <td class="td_2">&#8361; 321,213</td>
            </tr>        
  		   <tr>
-            <td>세금 및 수수료</td>
-            <td>&#8361; 13,131</td>
+            <td class="td_1">세금 및 수수료</td>
+            <td class="td_2">&#8361; 13,131</td>
            </tr>            
  		   <tr>
-            <td>부가세</td>
-            <td>&#8361; 1,313</td>
+            <td class="td_1">부가세</td>
+            <td class="td_2">&#8361; 1,313</td>
            </tr>        
  		   <tr>
-            <td>할인</td>
-            <td>- &#8361; 1,313</td>
-           </tr>         
+            <td class="td_1">할인</td>
+            <td class="td_2">- &#8361; 1,313</td>
+           </tr>
+           <tr>
+            <td class="td_total">총 가격</td>
+            <td class="td_totalpri">&#8361; 354,435</td>
+           </tr>            
         </table>
-
-
-
       </div><!-- content_room_price_div -->
 	   
+	   <div id="content_reserv_info">
+	     <div id="content_reserv_info1">
+	     <h2>무료취소 </h2>
+	     <div id="content_reserv_info11"></div>
+	     </div><!--content_reserv_info1  -->
 	   
+	   <div id="content_reserv_info2">
+	    <h2>즉시확정 </h2>
+	    <div id="content_reserv_info21"></div>
+	   </div><!--content_reserv_info2  -->
+	   
+	   </div><!--content_reserv_info  -->
 	   
 	   
 	   
 	    </div><!-- content_div_left -->
 	
+	<div id="content_div_right">
+	 <h2> 투숙객 및 예약 정보 입력</h2>
+	 <div id="content_person_info"></div>
 	
-	
+	</div><!-- content_div_right -->
 	
 	
 	
