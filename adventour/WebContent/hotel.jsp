@@ -17,7 +17,39 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 </head>
+<script>
+$(document).ready(function() {
+$(".b_maintbtn").on("click", function(){
 
+    var h_mainde = document.getElementById("h_mainde").value;
+    var h_maincity = document.getElementById("h_maincity").value;
+    var h_indateY = document.getElementById("h_indateY").value;
+    var h_indateM = document.getElementById("h_indateM").value;
+    var h_indateD = document.getElementById("h_indateD").value;
+    var h_outdateY = document.getElementById("h_outdateY").value;
+    var h_outdateM = document.getElementById("h_outdateM").value;
+    var h_outdateD = document.getElementById("h_outdateD").value;
+    var h_mainpeo = document.getElementById("h_mainpeo").value;
+
+    // 쿠키 만료 날짜를 설정합니다. (예: 30일 후)
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
+
+    // 각 데이터를 쿠키에 저장합니다.
+    document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_indateM=" + h_indateM + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_indateD=" + h_indateD + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_outdateY=" + h_outdateY + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_outdateM=" + h_outdateM + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_outdateD=" + h_outdateD + "; expires=" + expirationDate.toUTCString();
+    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
+
+    alert(h_outdateD);
+});
+});
+</script>
 
 
 <body>

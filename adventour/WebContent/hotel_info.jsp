@@ -23,6 +23,29 @@
    
    
   </head>
+  <script>
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// 쿠키에서 값을 가져옵니다.
+var h_mainde = getCookie("h_mainde");
+var h_maincity = getCookie("h_maincity");
+var h_indateY = getCookie("h_indateY");
+var h_indateM = getCookie("h_indateM");
+var h_indateD = getCookie("h_indateD");
+var h_outdateY = getCookie("h_outdateY");
+var h_outdateM = getCookie("h_outdateM");
+var h_outdateD = getCookie("h_outdateD");
+var h_mainpeo = getCookie("h_mainpeo");
+
+alert("h_outdateY: " + h_outdateY); // 확인 ok
+
+
+
+</script>
 
 <body>
 
@@ -40,6 +63,60 @@ if (session.getAttribute("id") == null) {
 }
 %>
 </header>
+     <div class="sch_result">
+<%
+Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
+
+String h_indateY = null;
+String h_indateM = null;
+String h_indateD = null;
+String h_outdateY = null;
+String h_outdateM = null;
+String h_outdateD = null;
+
+for (Cookie cookie : cookies) {
+    String name = cookie.getName();
+    String value = cookie.getValue();
+    
+    if (!name.equals("JSESSIONID")) {
+        if (name.equals("h_mainde")) {
+%>
+               <p class="h_mainde"><%= value %></p>
+<%
+        } else if (name.equals("h_maincity")) {
+%>
+                 <p class="h_maincity"><%= value %></p> 
+<%
+        } else if (name.equals("h_indateY")) {
+            h_indateY = value;
+        } else if (name.equals("h_indateM")) {
+            h_indateM = value;
+        } else if (name.equals("h_indateD")) {
+            h_indateD = value;
+        }else if (name.equals("h_outdateY")) {
+        	h_outdateY = value;
+        } else if (name.equals("h_outdateM")) {
+        	h_outdateM = value;
+        } else if (name.equals("h_outdateD")) {
+        	h_outdateD = value;
+        }
+    }
+}
+if (h_indateY != null && h_indateM != null && h_indateD != null) {
+%>
+   <p class="h_indate">체크인 날짜: <%= h_indateY + "-" + h_indateM + "-" + h_indateD %></p>
+
+<%
+}
+ 
+if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
+%>
+   <p class="h_indate">체크아웃 날짜: <%= h_outdateY + "-" + h_outdateM + "-" + h_outdateD %></p>
+
+<%
+}
+%>
+ </div><!-- sch_result -->
 
 
   <div class="content">

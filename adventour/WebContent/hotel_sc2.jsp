@@ -23,6 +23,44 @@
    
   </head>
 
+<script>
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// 쿠키에서 값을 가져옵니다.
+var h_mainde = getCookie("sch_country");
+var h_maincity = getCookie("sch_city");
+var h_indate = getCookie("sch_city");
+var h_outdate = getCookie("sch_indate");
+var h_mainpeo = getCookie("sch_adult");
+
+alert("h_outdateY: " + h_outdateY); // 확인 ok
+
+//폼이 서바미트될 때
+document.querySelector("form[name='schnav_form']").addEventListener("submit", function (e) {
+    e.preventDefault(); // 폼의 기본 동작을 중단
+
+    // 수정할 날짜 값을 가져옴
+     var newCountry = document.querySelector("#sch_country").value;
+    var newCity = document.querySelector("#sch_city").value;
+    var newCheckinDate = document.querySelector("#sch_indate").value;
+    var newCheckoutDate = document.querySelector("#sch_outdate").value;
+
+    // 해당 쿠키를 새로운 값으로 업데이트
+    document.cookie = "newCountry=" + newCheckinDate;
+    document.cookie = "newCity=" + newCheckoutDate;
+    document.cookie = "h_indate=" + newCheckinDate;
+    document.cookie = "h_outdate=" + newCheckoutDate;
+
+    // 다른 필요한 작업을 수행하거나 폼을 서버로 제출
+    this.submit();
+});
+
+</script>
+
 <body>
 
   <header>
@@ -59,12 +97,12 @@ if (session.getAttribute("id") == null) {
 
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= h_sclist1.getCountry_ko() %>">
+      <input type="text" id="sch_country" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= h_sclist1.getCountry_ko() %>">
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= h_sclist1.getCity_ko()%>">
+      <input type="text" id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= h_sclist1.getCity_ko()%>">
     </div>
 
     <div class="sch1">
@@ -82,7 +120,7 @@ if (session.getAttribute("id") == null) {
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1" >
+      인원 수 : <input type="text"  id="sch_adult" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1" >
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 
@@ -127,6 +165,31 @@ if (session.getAttribute("id") == null) {
 
 
      </div>
+         <div class="sch_result">
+<%
+Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
+
+
+
+for (Cookie cookie : cookies) {
+    String name = cookie.getName();
+    String value = cookie.getValue();
+    
+    if (!name.equals("JSESSIONID")) {
+        if (name.equals("h_mainde")) {
+%>
+               <p class="h_mainde"><%= value %></p>
+<%
+        } else if (name.equals("h_maincity")) {
+%>
+                 <p class="h_maincity"><%= value %></p> 
+<%
+        }else if (name.equals("h_indate")) {
+        	%>
+            <p class="h_indate"><%= value %></p> 
+
+
+ </div><!-- sch_result -->
 
           <% 
     

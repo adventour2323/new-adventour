@@ -216,7 +216,7 @@ if (session.getAttribute("id") != null) {
     
      <h3 id="toss_pay_title" >결제방식</h3>
      <input type="submit" id="toss_pay" name="toss_pay" value="toss">
-	   
+	  <!-- 토스 페이 API 가져오기 --> 
 	 </div>
 	 
 	 

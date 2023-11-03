@@ -14,7 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-
    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -27,6 +26,48 @@
 
 
 <body>
+
+<script>
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// 쿠키에서 값을 가져옵니다.
+var h_mainde = getCookie("h_mainde");
+var h_maincity = getCookie("h_maincity");
+var h_indateY = getCookie("h_indateY");
+var h_indateM = getCookie("h_indateM");
+var h_indateD = getCookie("h_indateD");
+var h_outdateY = getCookie("h_outdateY");
+var h_outdateM = getCookie("h_outdateM");
+var h_outdateD = getCookie("h_outdateD");
+var h_mainpeo = getCookie("h_mainpeo");
+
+alert("h_outdateY: " + h_outdateY); // 확인 ok
+
+//폼이 서바미트될 때
+document.querySelector("form[name='schnav_form']").addEventListener("submit", function (e) {
+    e.preventDefault(); // 폼의 기본 동작을 중단
+
+    // 수정할 날짜 값을 가져옴
+     var newCountry = document.querySelector("#sch_country").value;
+    var newCity = document.querySelector("#sch_outdate").value;
+    var newCheckinDate = document.querySelector("#sch_indate").value;
+    var newCheckoutDate = document.querySelector("#sch_outdate").value;
+
+    // 해당 쿠키를 새로운 값으로 업데이트
+    document.cookie = "newCountry=" + newCheckinDate;
+    document.cookie = "newCity=" + newCheckoutDate;
+    document.cookie = "h_indateY=" + newCheckinDate;
+    document.cookie = "h_outdateY=" + newCheckoutDate;
+
+    // 다른 필요한 작업을 수행하거나 폼을 서버로 제출
+    this.submit();
+});
+
+</script>
 
   <header>
 <%
@@ -51,61 +92,18 @@ if (session.getAttribute("id") == null) {
 <form name="schnav_form" action="scsearch.hotel?uname=hotelSCSearch"  method="post">
   <div class="schnav"> <!--검색 네비 = sch -->
   
-    <%
-    String city_ko = "";
-	city_ko = request.getParameter("city");
-    List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
-H_getset sch_country = null;
-if (list != null && !list.isEmpty()) {
-    sch_country = list.get(0);
-}
-%>
+
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= sch_country.getCountry_ko() %>">
+      <input type="text" id="sch_country"  class="sch_country" name="sch_country" placeholder="나라" required="required" >
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
       
    
-     <%
-     String city_name = "";
-     if (city_ko != null) {
-         if ("london".equals(city_ko)) {
-             city_name = "런던";
-         } else if ("liverpool".equals(city_ko)) {
-             city_name = "리버풀";
-         } else if ("edinburgh".equals(city_ko)) {
-             city_name = "에든버러";
-         } else if ("rome".equals(city_ko)) {
-             city_name = "로마";
-         } else if ("veneice".equals(city_ko)) {
-             city_name = "베네치아";
-         } else if ("milano".equals(city_ko)) {
-             city_name = "밀라노";
-         } else if ("paris".equals(city_ko)) {
-             city_name = "파리";
-         } else if ("marseille".equals(city_ko)) {
-             city_name = "마르세유";
-         } else if ("monaco".equals(city_ko)) {
-             city_name = "모나코";
-         } else if ("madrid".equals(city_ko)) {
-             city_name = "마드리드";
-         } else if ("barcelona".equals(city_ko)) {
-             city_name = "바르셀로나";
-         } else if ("sevilla".equals(city_ko)) {
-             city_name = "세비야";
-         }
-   
-     %>
- <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= city_name %>" >
-     <% }else{
-    	 %>    
-     <input type="text" class="sch_city" name="sch_city" placeholder="도시" required="required" >
-     <%
-     }
-     %>
+     <input type="text" id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+
       
     </div>
 
@@ -166,9 +164,70 @@ if (list != null && !list.isEmpty()) {
 
 
     </div>
- <!-- <div class="sch_result">
-쿠키되면 쓸것
-</div> -->
+     <div class="sch_result">
+<%
+Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
+
+String h_indateY = null;
+String h_indateM = null;
+String h_indateD = null;
+String h_outdateY = null;
+String h_outdateM = null;
+String h_outdateD = null;
+
+for (Cookie cookie : cookies) {
+    String name = cookie.getName();
+    String value = cookie.getValue();
+    
+    if (!name.equals("JSESSIONID")) {
+        if (name.equals("h_mainde")) {
+%>
+               <p class="h_mainde"><%= value %></p>
+<%
+        } else if (name.equals("h_maincity")) {
+%>
+                 <p class="h_maincity"><%= value %></p> 
+<%
+        } else if (name.equals("h_indateY")) {
+            h_indateY = value;
+        } else if (name.equals("h_indateM")) {
+            h_indateM = value;
+        } else if (name.equals("h_indateD")) {
+            h_indateD = value;
+        }else if (name.equals("h_outdateY")) {
+        	h_outdateY = value;
+        } else if (name.equals("h_outdateM")) {
+        	h_outdateM = value;
+        } else if (name.equals("h_outdateD")) {
+        	h_outdateD = value;
+        }
+    }
+}
+if (h_indateY != null && h_indateM != null && h_indateD != null) {
+%>
+   <p class="h_indate">체크인 날짜: <%= h_indateY + "-" + h_indateM + "-" + h_indateD %></p>
+
+<%
+}
+ 
+if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
+%>
+   <p class="h_indate">체크아웃 날짜: <%= h_outdateY + "-" + h_outdateM + "-" + h_outdateD %></p>
+
+<%
+}
+%>
+ </div><!-- sch_result -->
+ 
+     <%
+    String city_ko = "";
+	city_ko = request.getParameter("city");
+    List<H_getset> list = (List<H_getset>) request.getAttribute("ukAll_list");
+H_getset sch_country = null;
+if (list != null && !list.isEmpty()) {
+    sch_country = list.get(0);
+}
+%>
    
 <%
 
