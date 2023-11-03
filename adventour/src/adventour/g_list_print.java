@@ -636,6 +636,7 @@ public class g_list_print {
 		    H_getset table = new H_getset();
 		    table.setH_pho(rs.getString("h_pho"));
 		    table.setH_name_ko(rs.getString("h_name_ko"));
+		    table.setH_name_eng(rs.getString("h_name_eng"));
 		    table.setH_grade(rs.getString("h_grade"));
 		    table.setCountry_ko(rs.getString("country_ko"));
 		    table.setCity_ko(rs.getString("city_ko"));

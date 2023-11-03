@@ -678,10 +678,10 @@
                     </div>
                 </div>
                 <!-- 배너 -->
-                <div class="con-box discount-package recommend">
+                <div class="con-box discount-package recommend" style="height: 320px;">
                    
                     <div class="inner">
-                        <a href="" >
+                        <a href="t_list_country.jsp?country_eng=uk" >
                         <img src="./image/main_index/contents/london-tour-banner6.png" >
 
                         </a>

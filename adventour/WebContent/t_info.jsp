@@ -28,8 +28,6 @@
 
 <style>
 
-
-    
 </style>
 
 
@@ -421,42 +419,62 @@
 
 			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
+<!-- 호텔광고 -->
+		
+		<div style="">
+    <div style="display: flex; align-items: center;">
+        <img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
+        <h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
+    </div>
 
-		<!-- 호텔광고 -->		
-		<div style="display: flex; align-items: center;">
-    		<img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
-    		<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
-		</div>
+<div class="hotel-container" style="display: flex; margin-top: 20px;">
+    <%
+        String h_country = g.getCountry_eng();
+        ArrayList<H_getset> hc = id.h3(h_country);
+        // 호텔 목록 무작위
+        Collections.shuffle(hc);
+        // 호텔 4개 선택
+        List<H_getset> randomHotels = hc.subList(0, 4);
+    %>
+    <div class="hotel-list" style="display: flex;">
+        <%
+            for (H_getset hotel : randomHotels) {
+        %>
+        <div class="hotel-card">
+            <div class="hotel-img">
+                <img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px">
+            </div>
+            <div class="hotel-info">
+                <label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
+                <div class="star-rating">
+                    <%
+                        String ratingStr = hotel.getH_grade();
+                        try {
+                            int rating = Integer.parseInt(ratingStr);
+                            for (int j = 0; j < rating; j++) {
+                    %>
+                            <i class="fas fa-star" style="color: #FFBB00;"></i>
+                            <%
+                            }
+                        } catch (NumberFormatException e) {
+                            // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+                        }
+                    %>
+                </div> <!-- star-rating -->
+                <br>
+               <label><a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><span class="hotel-name"><%= hotel.getH_name_ko() %></span></a></label> <br>
+                <label>가격: ₩ <span class="h_price"><%= hotel.getH_roompri() %></span> ~</label>
+            </div>
+        </div>
+        <%
+            }
+        %>
+    </div>
+</div>
 
-		<div class="hotel-list-container" style="display: flex; justify-content: space-between; margin: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    		<%
-        		String h_country = g.getCountry_eng();
-    			ArrayList<H_getset> hc = id.h3(h_country);
-    			// 호텔 목록 무작위
-        		Collections.shuffle(hc);
-        		// 호텔 4개 선택
-        		List<H_getset> randomHotels = hc.subList(0, 4);
-        	%>
-	    	<div class="hotel-list" style="display: flex;">
-    	    	<%
-        	    	for (H_getset hotel : randomHotels) {
-        		%>
-	        	<div class="hotel-card" style="width: 280px; border: 1px solid #ccc; border-radius: 5px; margin: 5px; padding: 10px; background-color: #f9f9f9; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    	        	<div class="hotel-img">
-        	        	<img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px">
-            		</div>
-            		<div class="hotel-info" style="margin-top: 10px; font-size: 14px;">
-	                	<label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
-	    	            <%= hotel.getH_name_ko() %> <%= hotel.getH_grade() %>급<br>
-						가격: <%= hotel.getH_roompri() %>~
-        	    	</div>
-        		</div>
-        		<%
-            		}
-        		%>
-    		</div>
-		</div>
 
+
+</div>
 
 	</div> <!-- 전체 content -->
 
@@ -813,6 +831,20 @@ function validateForm() {
             dateInput.value = ''; // 입력 값을 초기화
         }
     });
+</script>
+
+<script>
+// 호텔 가격 컴마
+    function formatNumberWithCommas() {
+        var priceElements = document.querySelectorAll('.h_price');
+        priceElements.forEach(function(element) {
+            var price = element.textContent;
+            element.textContent = price.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+        });
+    }
+
+    // 페이지 로드 후 실행
+    document.addEventListener('DOMContentLoaded', formatNumberWithCommas);
 </script>
 
 
