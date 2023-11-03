@@ -32,7 +32,7 @@
       String country_eng = request.getParameter("country_eng"); // 입력된 검색어 가져오기
       
       if(country_eng.equals("italy")){
-      	country_eng = "italia";
+      	country_eng = "italy";
       }
      
       System.out.println("불러온 나라"+country_eng);

@@ -63,7 +63,7 @@ border: none;
         %>
             <img alt="스페인" src="./image/tour/esflag.png" height="30px">
         <%
-        } else if ("italia".equals(country_eng)) {
+        } else if ("italy".equals(country_eng)) {
         %>
             <img alt="이탈리아" src="./image/tour/itaflag.png" height="30px">
         <%
@@ -83,7 +83,7 @@ border: none;
 			} else if ("spain".equals(country_eng)) {
     			countryName = "스페인";
     			out.println("스페인");
-    		} else if ("italia".equals(country_eng)) {
+    		} else if ("italy".equals(country_eng)) {
     			countryName = "이탈리아";
     			out.println("이탈리아");
     		}
@@ -106,7 +106,7 @@ border: none;
 			<a href="g_list_country.jsp?g_country_eng=spain"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2 class="c_name">스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="g_list_country.jsp?g_country_eng=italia"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
+			<a href="g_list_country.jsp?g_country_eng=italy"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
 		</div>
 	
 	</div> <!-- 표 묶음  -->        
@@ -141,25 +141,26 @@ border: none;
                 				<td>
                     				<div style="margin: 0px 10px; width: 100%;">
                         				<table width="95%" cellpadding="0" cellspacing="0" border="0" class="guide_css" style="border-top: 1px solid #0066b3; padding-left: 10px; padding-right: 10px;">
-                            				<tbody>
-                                				<tr>
-                                    				<th width="100" style="background-color: #f2f2f2;">이름</th>
-                                    				<td ><div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><%=g.getName()%></a></div></td>
-                                				</tr>
-
-                                				<tr>
-                                    				<th style="background-color: #f2f2f2;">국가</th>
-                                    				<td><%=g.getCountry()%></td>
-                                				</tr>
-                                				<tr>
-                                    				<th style="background-color: #f2f2f2;">도시</th>
-                                    				<td><%=g.getCity()%></td>
-                                				</tr>
-                                				<tr>
-                                    				<th style="background-color: #f2f2f2;">테마</th>
-                                    				<td><%=g.getTheme()%></td>
-                                				</tr>
-                            				</tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="100" style="background-color: #f2f2f2;"><label>이름</label></th>
+                                                        <td>
+                                                            <div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><label><%=g.getName()%></label></a></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="background-color: #f2f2f2;"><label>국가</label></th>
+                                                        <td><label><%=g.getCountry()%></label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="background-color: #f2f2f2;"><label>도시</label></th>
+                                                        <td><label><%=g.getCity()%></label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="background-color: #f2f2f2;"><label>테마</label></th>
+                                                        <td><label><%=g.getTheme()%></label></td>
+                                                    </tr>
+                                                </tbody>
                         				</table>
                     				</div>
                 				</td>

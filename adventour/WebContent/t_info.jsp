@@ -421,43 +421,42 @@
 
 			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
-<!-- 호텔광고 -->
-		
-		<div style="">
-			<div style="display: flex; align-items: center; ">
-			    <img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
-    			<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
-			</div>
 
-			<div style="display: flex; margin-top: 20px;">
-            <%
-                String h_country = g.getCountry_eng();
-                ArrayList<H_getset> hc = id.h3(h_country);
-                // 호텔 목록 무작위
-                Collections.shuffle(hc);
-                // 호텔 4개 선택
-                List<H_getset> randomHotels = hc.subList(0, 4);
-            %>
-				<div class="hotel-list" style="display: flex;">
-        	        <%
-	                    for (H_getset hotel : randomHotels) {
-    	            %>
- 					<div style="width: 280px; height: 280px; border-style: solid; background-color: yellow; margin-right: 5px; margin-left: 5px; ">
-						<div class="hotel_img">
-							<img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="280px" height="180px">
-						</div>
-						<div class="hotel_info_div" style="height: 100px;">
-							<%=hotel.getCountry_ko() %>, <%=hotel.getCity_ko() %><br>
-							<%= hotel.getH_name_ko() %>     <%=hotel.getH_grade() %>급<br>
-							가격: <%=hotel.getH_roompri() %>~<br>
-						 
-						</div>
-					</div>		
-					<% } %> 
-				</div>
-			 
-			</div>
+		<!-- 호텔광고 -->		
+		<div style="display: flex; align-items: center;">
+    		<img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
+    		<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
 		</div>
+
+		<div class="hotel-list-container" style="display: flex; justify-content: space-between; margin: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    		<%
+        		String h_country = g.getCountry_eng();
+    			ArrayList<H_getset> hc = id.h3(h_country);
+    			// 호텔 목록 무작위
+        		Collections.shuffle(hc);
+        		// 호텔 4개 선택
+        		List<H_getset> randomHotels = hc.subList(0, 4);
+        	%>
+	    	<div class="hotel-list" style="display: flex;">
+    	    	<%
+        	    	for (H_getset hotel : randomHotels) {
+        		%>
+	        	<div class="hotel-card" style="width: 280px; border: 1px solid #ccc; border-radius: 5px; margin: 5px; padding: 10px; background-color: #f9f9f9; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    	        	<div class="hotel-img">
+        	        	<img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px">
+            		</div>
+            		<div class="hotel-info" style="margin-top: 10px; font-size: 14px;">
+	                	<label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
+	    	            <%= hotel.getH_name_ko() %> <%= hotel.getH_grade() %>급<br>
+						가격: <%= hotel.getH_roompri() %>~
+        	    	</div>
+        		</div>
+        		<%
+            		}
+        		%>
+    		</div>
+		</div>
+
 
 	</div> <!-- 전체 content -->
 

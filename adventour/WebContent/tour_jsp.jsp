@@ -242,7 +242,7 @@
           </div>
           
           <div class="ityimg" id="country_name">
-          	<a href="t_list_country.jsp?country_eng=italia">
+          	<a href="t_list_country.jsp?country_eng=italy">
             	<img class="ita_flag" id="flag" src="image/img/ity.png">
             	<h2 class="ityname">이탈리아</h2>
             </a>

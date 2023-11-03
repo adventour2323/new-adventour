@@ -57,7 +57,7 @@
         %>
             <img alt="스페인" src="./image/tour/esflag.png" height="30px">
         <%
-        } else if ("italia".equals(countryEng)) {
+        } else if ("italy".equals(countryEng)) {
         %>
             <img alt="이탈리아" src="./image/tour/itaflag.png" height="30px">
         <%
@@ -77,7 +77,7 @@
 			} else if ("spain".equals(countryEng)) {
     			countryName = "스페인";
     			out.println("스페인");
-    		} else if ("italia".equals(countryEng)) {
+    		} else if ("italy".equals(countryEng)) {
     			countryName = "이탈리아";
     			out.println("이탈리아");
     		}
@@ -102,7 +102,7 @@
 			<a href="t_list_country.jsp?country_eng=spain"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2 class="c_name">스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italia"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
+			<a href="t_list_country.jsp?country_eng=italy"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2 class="c_name">이탈리아</h2> </a>
 		</div>
 	
 	</div>
