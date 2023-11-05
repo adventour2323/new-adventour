@@ -147,6 +147,7 @@ if (session.getAttribute("id") == null) {
     </div><!--schnav-->
     <% 
         	 }
+        }
     %>
 </form>
 
@@ -165,32 +166,7 @@ if (session.getAttribute("id") == null) {
 
 
      </div>
-         <div class="sch_result">
-<%
-Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
-
-
-
-for (Cookie cookie : cookies) {
-    String name = cookie.getName();
-    String value = cookie.getValue();
-    
-    if (!name.equals("JSESSIONID")) {
-        if (name.equals("h_mainde")) {
-%>
-               <p class="h_mainde"><%= value %></p>
-<%
-        } else if (name.equals("h_maincity")) {
-%>
-                 <p class="h_maincity"><%= value %></p> 
-<%
-        }else if (name.equals("h_indate")) {
-        	%>
-            <p class="h_indate"><%= value %></p> 
-
-
- </div><!-- sch_result -->
-
+ 
           <% 
     
         
@@ -249,10 +225,6 @@ for (Cookie cookie : cookies) {
 
         <div class="ti_select">  
 
- <!--         <div class="selectTi1">   
-           <input type="checkbox" class="selectTi" name="selectTi" value="1"> 
-           <p class="bbb">선택</p>
-          </div>  --> 
     <%
 if (session.getAttribute("id") != null) {
 %>
@@ -279,8 +251,8 @@ if (session.getAttribute("id") != null) {
             <h3>검색 조건을 다시 설정해 주세요.</h3>
         </div>
         <%
-        }
-        }
+        
+    }
         %>
     </div>
 

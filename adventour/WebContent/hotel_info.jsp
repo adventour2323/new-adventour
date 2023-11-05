@@ -63,60 +63,6 @@ if (session.getAttribute("id") == null) {
 }
 %>
 </header>
-     <div class="sch_result">
-<%
-Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
-
-String h_indateY = null;
-String h_indateM = null;
-String h_indateD = null;
-String h_outdateY = null;
-String h_outdateM = null;
-String h_outdateD = null;
-
-for (Cookie cookie : cookies) {
-    String name = cookie.getName();
-    String value = cookie.getValue();
-    
-    if (!name.equals("JSESSIONID")) {
-        if (name.equals("h_mainde")) {
-%>
-               <p class="h_mainde"><%= value %></p>
-<%
-        } else if (name.equals("h_maincity")) {
-%>
-                 <p class="h_maincity"><%= value %></p> 
-<%
-        } else if (name.equals("h_indateY")) {
-            h_indateY = value;
-        } else if (name.equals("h_indateM")) {
-            h_indateM = value;
-        } else if (name.equals("h_indateD")) {
-            h_indateD = value;
-        }else if (name.equals("h_outdateY")) {
-        	h_outdateY = value;
-        } else if (name.equals("h_outdateM")) {
-        	h_outdateM = value;
-        } else if (name.equals("h_outdateD")) {
-        	h_outdateD = value;
-        }
-    }
-}
-if (h_indateY != null && h_indateM != null && h_indateD != null) {
-%>
-   <p class="h_indate">체크인 날짜: <%= h_indateY + "-" + h_indateM + "-" + h_indateD %></p>
-
-<%
-}
- 
-if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
-%>
-   <p class="h_indate">체크아웃 날짜: <%= h_outdateY + "-" + h_outdateM + "-" + h_outdateD %></p>
-
-<%
-}
-%>
- </div><!-- sch_result -->
 
 
   <div class="content">
@@ -358,19 +304,122 @@ if (top_list != null) {
  
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
+ 
  <div class="h_info_search">
+<%
+Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
+
+String h_indateY = null;
+String h_indateM = null;
+String h_indateD = null;
+String h_outdateY = null;
+String h_outdateM = null;
+String h_outdateD = null;
+String h_mainpeo = null;
+
+for (Cookie cookie : cookies) {
+    String name = cookie.getName();
+    String value = cookie.getValue();
+    
+    if (!name.equals("JSESSIONID")) {
+        if (name.equals("h_mainde")) {
+%>
+             
+<%
+        } else if (name.equals("h_maincity")) {
+%>
+                
+<%
+        } else if (name.equals("h_indateY")) {
+            h_indateY = value;
+        } else if (name.equals("h_indateM")) {
+            h_indateM = value;
+        } else if (name.equals("h_indateD")) {
+            h_indateD = value;
+        }else if (name.equals("h_outdateY")) {
+        	h_outdateY = value;
+        } else if (name.equals("h_outdateM")) {
+        	h_outdateM = value;
+        } else if (name.equals("h_outdateD")) {
+        	h_outdateD = value;
+        }else if  (name.equals("h_mainpeo")) {
+        	h_mainpeo = value;
+        }
+    }
+}
+%>
+ 
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
  <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
- <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required" >
- <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required"  >
+<% 
+ if (h_indateY != null && h_indateM != null && h_indateD != null) {
+%>
+ <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required" 
+ value="<%= h_indateY + "-" + h_indateM + "-" + h_indateD %>">
+
+<%
+}else{%>
+     <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required">	
+<% 
+}
+ 
+if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
+%>
+ <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required" 
+  value="<%= h_outdateY + "-" + h_outdateM + "-" + h_outdateD %>" >
+ 
+
+<%
+}else{ %>
+	 <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required"  >
+<% 
+}
+%>
+
  <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
- <select  id="sch_peo" class="sch_peo" name="sch_peo">
-  <option value="">인원 수</option>
- <option value="1">1명</option>
-  <option value="2">2명</option>
-   <option value="3">3명</option>
-    <option value="4">4명</option>
- </select>
+<select id="sch_peo" class="sch_peo" name="sch_peo">
+    <option value="">인원 수</option>
+    <option value="1" 
+    <%
+        if (h_mainpeo != null && h_mainpeo.equals("1")) { 
+        	
+     %>
+            selected
+   <%           
+        }
+    %>
+    >1명</option>
+    <option value="2"
+      <%
+        if (h_mainpeo != null && h_mainpeo.equals("2")) { 
+        	
+     %>
+            selected
+   <%           
+        }
+    %>
+    >2명</option>
+    <option value="3"
+    		 <%
+    	        if (h_mainpeo != null && h_mainpeo.equals("3")) { 
+    	        	
+    	     %>
+    	            selected
+    	   <%           
+    	        }
+    	    %>
+    >3명</option>
+    <option value="4"
+    		 <%
+    	        if (h_mainpeo != null && h_mainpeo.equals("4")) { 
+    	        	
+    	     %>
+    	            selected
+    	   <%           
+    	        }
+    	    %>
+    >4명</option>
+</select>
  <!--  <input type="text" id="sch_peo" class="sch_peo" name="sch_peo"  placeholder="1박" >-->
 
 <input type="button" class="h_info_search_btn"  value="검색하기">
@@ -559,13 +608,6 @@ for (int ii = 0; i < top_list.size(); i++) {
 </div>
 </div><!-- h_facilities_info -->
 </div><!-- h_facilities -->
-
-				
-
-
-
-
-
 
 <div class="h_more_info">
 <h1>유용한 정보 </h1>

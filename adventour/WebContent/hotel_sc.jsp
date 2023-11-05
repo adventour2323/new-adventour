@@ -174,6 +174,7 @@ String h_indateD = null;
 String h_outdateY = null;
 String h_outdateM = null;
 String h_outdateD = null;
+String h_mainpeo = null;
 
 for (Cookie cookie : cookies) {
     String name = cookie.getName();
@@ -200,6 +201,8 @@ for (Cookie cookie : cookies) {
         	h_outdateM = value;
         } else if (name.equals("h_outdateD")) {
         	h_outdateD = value;
+        }else if(name.equals("h_mainpeo")){
+        	h_mainpeo = value;
         }
     }
 }
@@ -216,7 +219,15 @@ if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
 
 <%
 }
+
+if(h_mainpeo != null){
 %>
+ <p class="h_mainpeo">인원수: <%= h_mainpeo %></p>
+
+<%
+}
+%>
+
  </div><!-- sch_result -->
  
      <%
