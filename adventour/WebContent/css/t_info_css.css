@@ -485,9 +485,16 @@ a.next:hover {
     .hotel-img img {
         width: 100%;
         height: 180px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+
     }
+    
+.hotel-img {
+    overflow: hidden; /* 내용을 넘어가는 부분 숨기기 */
+}
+
+.hotel-img img:hover {
+    transform: scale(1.35);
+}
 
     /* 호텔 정보 스타일 */
     .hotel-info {

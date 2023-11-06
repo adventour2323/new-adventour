@@ -118,6 +118,7 @@
         					<input type="hidden" id="tour_price" name="tour_price" value="<%= g.getT_price() %>">
     					</div>
 					</div>
+					
 
 				
 					<div class="people_num" style="display: flex; align-items: center;">
@@ -244,7 +245,7 @@
 				<div class="guide_introduce" >
 					<%
 						String g_id = g.getG_id();
-						ArrayList<g_getset> a2 = id.g2(g_id);
+					ArrayList<g_getset> a2 = id.g2(g_id);
 					%>
             		<% for (g_getset gg : a2) { %>
             		<div class="table-container" >
@@ -419,62 +420,65 @@
 
 			</div><!-- t_review_div -->
 		</div> <!-- rating-div -->
+
 <!-- 호텔광고 -->
-		
-		<div style="">
-    <div style="display: flex; align-items: center;">
-        <img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
-        <h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
-    </div>
+		<div class = "hotel_ad_div">
+   	 		<div style="display: flex; align-items: center;">
+   	 			<img alt="sleep" src="./image/tour/bed1.png" width="64px;" style="margin-left: auto;">
+   	 			<h2 style="margin: 0; margin-right: auto;">호텔을 찾고 계시나요?!?</h2>
+   	 		</div>
 
-<div class="hotel-container" style="display: flex; margin-top: 20px;">
-    <%
-        String h_country = g.getCountry_eng();
-        ArrayList<H_getset> hc = id.h3(h_country);
-        // 호텔 목록 무작위
-        Collections.shuffle(hc);
-        // 호텔 4개 선택
-        List<H_getset> randomHotels = hc.subList(0, 4);
-    %>
-    <div class="hotel-list" style="display: flex;">
-        <%
-            for (H_getset hotel : randomHotels) {
-        %>
-        <div class="hotel-card">
-            <div class="hotel-img">
-                <img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px">
-            </div>
-            <div class="hotel-info">
-                <label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
-                <div class="star-rating">
-                    <%
-                        String ratingStr = hotel.getH_grade();
-                        try {
-                            int rating = Integer.parseInt(ratingStr);
-                            for (int j = 0; j < rating; j++) {
-                    %>
-                            <i class="fas fa-star" style="color: #FFBB00;"></i>
-                            <%
-                            }
-                        } catch (NumberFormatException e) {
-                            // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
-                        }
-                    %>
-                </div> <!-- star-rating -->
-                <br>
-               <label><a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><span class="hotel-name"><%= hotel.getH_name_ko() %></span></a></label> <br>
-                <label>가격: ₩ <span class="h_price"><%= hotel.getH_roompri() %></span> ~</label>
-            </div>
-        </div>
-        <%
-            }
-        %>
-    </div>
-</div>
+	   	 	<div class="hotel-container" style="display: flex; margin-top: 20px;">
+    			<%
+	   		 		String h_country = g.getCountry_eng();
+   		 			ArrayList<H_getset> hc = id.h3(h_country);
+   	 				// 호텔 목록 무작위
+	   	 			Collections.shuffle(hc);
+		   	 		// 호텔 4개 선택
+   			 		List<H_getset> randomHotels = hc.subList(0, 4);
+   	 			%>
+	   	 		<div class="hotel-list" style="display: flex;">
+    	    	<%
+        	    	for (H_getset hotel : randomHotels) {
+        		%>
+        			<div class="hotel-card">
+            			<div class="hotel-img">
+            				<a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px"></a>
+	            		</div>
+    	        		<div class="hotel-info">
+        	    			<label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
+            				<div class="star-rating">
+            				<%
+                				String ratingStr = hotel.getH_grade();
+                				try {
+                            		int rating = Integer.parseInt(ratingStr);
+                            		for (int j = 0; j < rating; j++) {
+                    		%>
+                            	<i class="fas fa-star" style="color: #FFBB00;"></i>
+                            	<%
+	                            }} catch (NumberFormatException e) {
+    	                        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리
+        	                	}
+            	        		%>
+            				</div> <!-- star-rating -->
+                		<br>
+							<%!
+    							String addCommasForHotel(int number) {
+	        					return String.format("%,d", number);
+    							}
+							%>
+            				<label><a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><span class="hotel-name"><%= hotel.getH_name_ko() %></span></a></label> <br>
+                			<label>가격: ₩ <span class="h_price"><%= addCommasForHotel(hotel.getH_roompri()) %></span> ~</label>
+	
+			            </div> <!-- hotel-info -->
+        			</div> <!--hotel-card  -->
+        		<%
+        	   		}
+        		%>
+	    		</div> <!-- hotel-list  -->
+			</div> <!-- hotel-container -->
 
-
-
-</div>
+		</div> <!-- hotel_ad_div -->
 
 	</div> <!-- 전체 content -->
 
@@ -833,19 +837,7 @@ function validateForm() {
     });
 </script>
 
-<script>
-// 호텔 가격 컴마
-    function formatNumberWithCommas() {
-        var priceElements = document.querySelectorAll('.h_price');
-        priceElements.forEach(function(element) {
-            var price = element.textContent;
-            element.textContent = price.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-        });
-    }
 
-    // 페이지 로드 후 실행
-    document.addEventListener('DOMContentLoaded', formatNumberWithCommas);
-</script>
 
 
 <%} %> <!-- for문 종료 -->

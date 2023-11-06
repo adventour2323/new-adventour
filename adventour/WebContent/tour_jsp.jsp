@@ -319,7 +319,7 @@
 
 				<div class="recommend_city">
 					<%
-						ArrayList<t_rating_getset> r = id.t8();
+					ArrayList<t_rating_getset> r = id.t8();
 						for (int i = 0; i < r.size(); i++) {
 						t_rating_getset rating = r.get(i);
 					%>
@@ -405,14 +405,14 @@
     <div class="slider-container">
         <div class="slider">
             <%
-            ArrayList<H_getset> a3 = id.h1();
+            ArrayList<H_getset> a3 = id.h1(); 
             for (int i = 0; i < a3.size(); i++) {
                 H_getset h = a3.get(i);
             %>
             <div class="slider-item">
                 <div class="recommend_hotel">
                     <div class="recommend_img">
-                        <img src="./image/hotel/h_image/<%= h.getH_pho() %>" style="width: 275px;" alt="추천 호텔 1">
+                        <a href ="information.hotel?uname=hotelinfom&hotelname=<%=h.getH_name_eng()%>"><img src="./image/hotel/h_image/<%= h.getH_pho() %>" style="width: 275px;" alt="추천 호텔 1"></a>
                     </div>
                     <div style="text-align: center; margin-top: 15px;">
                         <div style="display: flex; height: 40px; margin-top: auto; margin-bottom: auto;">
@@ -424,7 +424,7 @@
                             </div>
                         </div>
                         <div style="height: 40px; margin-top: auto; margin-bottom: auto;">
-                            <h3><%=h.getH_name_ko() %></h3>
+                            <h3><a href ="information.hotel?uname=hotelinfom&hotelname=<%=h.getH_name_eng()%>"><%=h.getH_name_ko() %></a></h3>
                         </div>
                     </div>
                 </div>
