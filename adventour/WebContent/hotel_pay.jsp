@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ page import="getset.H_getset" %>
+<%@ page import="java.util.*"%>
 
 <!DOCTYPE html>
 <html>
@@ -39,11 +41,30 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
+<form name="reserv_to_pay" href="paying.hotel?uname=paying" method="post">
+<%  
+String checkin = request.getParameter("checkin");
+String checkout = request.getParameter("checkout");
+String night = request.getParameter("night");
+String peo = request.getParameter("peo");
+int nightAsInt = Integer.parseInt(night);
 
+System.out.println(checkin);
+System.out.println(checkout);
+System.out.println(night);
+System.out.println(nightAsInt);
+System.out.println(peo);
+
+List<H_getset> infoshc_list = (List<H_getset>) request.getAttribute("infoshc_list"); 
+if ( infoshc_list != null) {
+
+	for (int i = 0; i <1; i++) {
+	    H_getset reserv =  infoshc_list.get(i); 
+%>
 
 <div id="content_all">
 	<div id="content_left"></div>	
-ㄴ
+
     <!--  결제 정보 불러오기  -->
 	<div id="content">
 		<h1 id="h_reserv_title">호텔 예약 정보 </h1>
@@ -54,16 +75,17 @@ if (session.getAttribute("id") != null) {
 	 
 	   <div id="content_hotel_div">
 	     <div id="content_hotel_pho">
-	     <img id="content_hotel_image"/>
+	     <img id="content_hotel_image"  src="image/hotel/h_image/<%= reserv.getH_pho()%>"/>
 	     </div>
 	     <div id="content_hotel_name">
-	     <h3>호테이름 영어영어</h3>
-	     <h4>호텔이름 한글 한글</h4>
-	     <h5>성급 별로</h5>
-	     <h5>주소오오오오오오오오어오오오옹어오오어어어어어엉</h5>
+	     <h2><%=reserv.getH_name_eng() %></h2>
+	     <h4><%=reserv.getH_name_ko() %></h4>
+	     <h5><%=reserv.getH_grade() %>성급</h5>
+	     <h5><%=reserv.getH_addr() %></h5>
+	      <h5>TEL : <%=reserv.getH_tel()%></h5>
 	     </div>
 	   </div><!-- content_hotel_div -->
-	   
+	    
 	   <div id="content_date_div">
 	   <table id="content_date_info">
 	     <tr>
@@ -71,16 +93,16 @@ if (session.getAttribute("id") != null) {
             <th>체크아웃</th>
  		   </tr>
            <tr>
-            <td>아아아ㅏㅏ</td>
-            <td>아아아ㅏㅏ</td>
+            <td><%= checkin %></td>
+            <td><%= checkout %></td>
            </tr>	   
 	   	   <tr>
             <th>투숙객 </th>
             <th>투숙기간</th>
  		   </tr>
  		   <tr>
-            <td>2명</td>
-            <td>2박</td>
+            <td><%= peo %>명</td>
+            <td><%= night %>박</td>
            </tr>
            <tr>
             <th>객실 </th>
@@ -99,26 +121,26 @@ if (session.getAttribute("id") != null) {
 	   
 	    <div id="content_room_div">
 	     <div id="content_room_pho">
-	     <img id="content_room_image"/>
+	     <img id="content_room_image" src="image/hotel/h_image/<%= reserv.getH_roompho()%>"/>
 	     </div>
 	     <div id="content_room_name">
-	     <h3>룸 타입</h3>
+	     <h3>룸 타입 : <%= reserv.getH_roomtype() %></h3>
 	     <table id="content_room_info" >
 	      <tr>
-            <th> 침대 : 슈퍼싱글 x 2</th>
-            <th> 창문 : 없음 </th>
+            <th> 침대 : <%= reserv.getH_room_bed() %> x <%= reserv.getH_room_bedc() %></th>
+            <th> 창문 : <%= reserv.getH_room_window() %> </th>
  		   </tr>
 	      <tr>
-            <th> 조식 : 제공안함</th>
-            <th> 투숙객 : 최대 4명 </th>
+            <th> 조식 : <%= reserv.getH_room_breakfast() %></th>
+            <th> 투숙객 : 최대<%= reserv.getH_roompeo() %>명 </th>
  		   </tr>
 	      <tr>
-            <th> 금연 </th>
-            <th> 결제방식 : 즉시결제 </th>
+            <th> <%= reserv.getH_room_smoke() %> </th>
+            <th> 결제방식 : <%= reserv.getH_room_paynow() %> </th>
  		   </tr> 	
  	      <tr>
-            <th> 체크인 : 15:00 </th>
-            <th> 체크아웃 : 12:00 </th>
+            <th> 체크인 : <%= reserv.getH_room_intime() %> </th>
+            <th> 체크아웃 : <%= reserv.getH_room_outime() %> </th>
  		   </tr> 		   	    		   
          </table>
 	     </div>
@@ -128,23 +150,43 @@ if (session.getAttribute("id") != null) {
         <table id="content_room_price_table">
  		   <tr>
             <td class="td_1">1박</td>
-            <td class="td_2">&#8361; 321,213</td>
+            <td class="td_2">&#8361; <%= reserv.getH_roompri() %></td>
+           </tr>        
+ 		   <tr>
+ <%
+ int roomPrice = reserv.getH_roompri();
+ int night_pri = (int) (nightAsInt * roomPrice);
+ %>
+ 		   	<tr>
+            <td class="td_1"><%= night %>박</td>
+            <td class="td_2">&#8361; <%= night_pri %></td>
            </tr>        
  		   <tr>
             <td class="td_1">세금 및 수수료</td>
-            <td class="td_2">&#8361; 13,131</td>
+   <% 
+   int tax = (int) (night_pri * 0.05); // 5% 세금 계산
+%>
+            <td class="td_2">&#8361; <%= tax %></td>
            </tr>            
  		   <tr>
+   <% 
+   int tax2 = (int) (night_pri * 0.1); // 10% 부가세 계산
+%>
             <td class="td_1">부가세</td>
-            <td class="td_2">&#8361; 1,313</td>
-           </tr>        
+            <td class="td_2">&#8361; <%= tax2 %>
  		   <tr>
+    <%
+   int sale = (int) (night_pri * -0.12); 
+%>		   
             <td class="td_1">할인</td>
-            <td class="td_2">- &#8361; 1,313</td>
+            <td class="td_2"> &#8361; <%=sale %></td>
            </tr>
            <tr>
+<%
+int total_price = (int) ( night_pri + tax + tax2 + sale);
+%>           
             <td class="td_total">총 가격</td>
-            <td class="td_totalpri">&#8361; 354,435</td>
+            <td class="td_totalpri">&#8361; <%= total_price %></td>
            </tr>            
         </table>
       </div><!-- content_room_price_div -->
@@ -220,26 +262,16 @@ if (session.getAttribute("id") != null) {
 	 </div>
 	 
 	 
-	 
+<%
+	}
+}
+%>	 
 	 
 	 
 	
 	</div><!-- content_div_right -->
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	</div><!--content_div -->
 	</div><!--content -->
 
@@ -248,6 +280,7 @@ if (session.getAttribute("id") != null) {
 
 
 </div><!-- content_all -->
+</form>
 </body>
 <footer>
 		<%

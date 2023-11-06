@@ -41,7 +41,7 @@
 /*내용 왼쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 
 #content_left{
-    width: 403px;
+    width: 303px;
     height: 1800px;
     float: left;
 }
@@ -60,8 +60,8 @@ margin-top: 50px;
  
  #content_div{
      background-color: rgba(224, 224, 224, 0.5);
- width: 1000px;
-     height: 1600px;
+ width: 1200px;
+     height: 1650px;
     border:solid 1px;
     margin-left: 50px;
      margin-top: 50px;
@@ -70,19 +70,20 @@ margin-top: 50px;
  /*왼쪽 호텔 정보 및 룸 정보*/
 #content_div_left{/*왼쪽 전체*/
 
-	width: 450px;
-    height: 1600px;
+	width: 550px;
+    height: 1550px;
         margin-left: 30px;
      margin-top: 30px;
      padding-top: 10px;	
 } 
 #content_hotel_div{
-	width: 450px;
-    height: 200px;
+
+	width: 550px;
+    height: 270px;
 }
 #content_hotel_pho{
-	width: 180px;
-    height: 180px;
+	width: 200px;
+    height: 200px;
      margin-left: 10px;
 }
 #content_hotel_name{
@@ -90,14 +91,22 @@ margin-top: 50px;
 		width: 250px;
     height: 160px;
     padding-top:20px;
-    margin-left: 200px;
+    margin-left: 250px;
    margin-top:-180px;
 }
  #content_hotel_name h5{
  margin-top: 10px;
  } 
+ 
+ #content_hotel_image{
+ width: 200px;
+ height: 200px;
+ }
+
  /*체크인 날짜 및 투숙정보*/
  #content_date_div{
+
+ 	margin-left:30px;
 	width: 450px;
     height: 260px;
  }
@@ -119,22 +128,27 @@ margin-top: 50px;
  
  /*룸정보시작*/
  #content_room_div{
-	width: 450px;
-    height: 200px;
+
+	width: 550px;
+    height: 220px;
     margin-top: 20px;
     
 }
 #content_room_pho{
-	width: 180px;
-    height: 180px;
+	width: 200x;
+    height: 200px;
      margin-left: 10px;
+}
+#content_room_image{
+		width: 200px;
+    height: 200px;
 }
 #content_room_name{
 
 		width: 250px;
     height: 180px;
     padding-top:20px;
-    margin-left: 200px;
+    margin-left: 250px;
    margin-top:-180px;
 }
 #content_room_name h3{
@@ -147,15 +161,17 @@ margin-top: 50px;
 }
 #content_room_info th{
 	text-align:left;
-	width: 120px;
+	width: 150px;
     height: 30px;
 }
 /*결제 금액설정*/
 #content_room_price_div{
+	
+	font-weight:bold;
 	margin-top: 20px;
-
 		width: 450px;
-    height: 450px;
+    height: 500px;
+       margin-left: 40px;
 }
 #content_room_price_table {
 border-collapse:collapse
@@ -196,44 +212,40 @@ text-align: right;
 }
 /*무로 취소 안내*/
 #content_reserv_info{	
-
-	width: 450px;
-    height: 300px;
+   
+	width: 500px;
+    height: 220px;
+    margin-top: 40px;
 }
 #content_reserv_info1{
 
-	width: 450px;
-    height: 150px;
+	width: 500px;
+    height: 100px;
 }
-#content_reserv_info1 h2{
-		width: 450px;
-    height: 35px;
-margin-left: 20px;
-}
+
 #content_reserv_info11{
 
-	width: 450px;
-    height: 100px;
+	width: 500px;
+    height: 80px;
 }
 #content_reserv_info2{
-
-	width: 450px;
-    height: 150px;
-}
-  #content_reserv_info2 h2{
-margin-left: 20px;
-}
-#content_reserv_info21{
-		
-	width: 450px;
+		margin-top:20px;
+	width: 500px;
     height: 100px;
+}
+  
+#content_reserv_info21{
+	
+	width: 500px;
+    height: 80px;
 }
 /*내용 오른쪽 투숙객 정보 작성*/
 #content_div_right{
+
 	width: 450px;
-    height: 1600px;
-        margin-left: 520px;
-     margin-top: -1610px;
+    height: 1550px;
+        margin-left: 650px;
+     margin-top: -1560px;
      padding-top: 10px;	
 }
 #content_div_right h2{
@@ -249,7 +261,7 @@ margin-left: 20px;
 }
 #write_way{
 	width: 430px;
-    height: 60px;
+    height: 100px;
         margin-left: 20px;
 
 }
@@ -258,14 +270,20 @@ margin-left: 20px;
     height: 30px;
         margin-left: 20px;
 }
+#content_person_info h3{
+	width: 430px;
+    height: 60px;
+	
+}
 #user_info_table{
 		width: 430px;
     height: 150px;
         margin-left: 20px;
 }
 #user_firstname_title{
-		width: 430px;
-    height: 20px;
+	width: 430px;
+    height: 40px;
+ 
 }
 #user_firstname{
 	padding-left:15px;
@@ -273,7 +291,7 @@ margin-left: 20px;
     height: 40px;
 }
 #user_lastname_title{
-	margin-top:20px;
+	margin-top:30px;
 		width: 430px;
     height: 20px;
 }
@@ -284,12 +302,16 @@ margin-left: 20px;
 }
   
   #user_info_tel{
-  margin-top:30px;
+  margin-top:80px;
   	width: 450px;
     height: 250px;
   }
+    #user_info_tel h3{
+	width: 430px;
+    height: 60px;
+  }
   #user_mail_title{
-	margin-top:20px;
+
 		width: 430px;
     height: 20px;
  margin-left: 20px;
@@ -304,9 +326,10 @@ margin-left: 20px;
  margin-left: 20px;
  		width: 430px;
     height: 15px;
+    margin-top: 10px;
  } 
    #user_tel_title{
-	margin-top:20px;
+	margin-top:30px;
 		width: 430px;
     height: 20px;
  margin-left: 20px;

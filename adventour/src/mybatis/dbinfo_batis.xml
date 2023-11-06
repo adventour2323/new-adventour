@@ -18,8 +18,11 @@
 		</environment>
 	</environments>
 	
+	
+	
 	<mappers>
 		<mapper resource="mybatis/language_mysql.xml"></mapper>
 	</mappers>
 
 </configuration>
+
