@@ -23,20 +23,12 @@ public class H_Cto extends HttpServlet {
     	String uName ="";
     	uName = request.getParameter("uname");
     	
-    	String city_ko = "";
-    	city_ko = request.getParameter("city");
-    	
-    	String h_name_eng="";
-    	h_name_eng =  request.getParameter("hotel");
-    	
-    	String h_indate = "";
-    	h_indate=  request.getParameter("checkin");
-    	
-    	String h_outdate = "";
-    	h_outdate=  request.getParameter("checkout");
-    	
-    	String h_peo = "";
-    	h_peo= request.getParameter("person");
+    	String city_ko = ""; 	
+    	String h_name_eng=""; 	
+    	String h_indate = "";    	
+    	String h_outdate = "";    	
+    	String h_peo = "";     	
+    	String night_time ="";
     
     	
         h_conn_interface inter = H_MainDBselect.im_inter();
@@ -46,10 +38,11 @@ public class H_Cto extends HttpServlet {
         h_conn_interface hscinter =  H_SCSch_DBselect.im_inter();
         h_conn_interface hcityinter =  H_CityAll_DBselect.im_inter();
         h_conn_interface hinfosch =  H_InfoSch_DBselect.im_inter();
+       h_conn_interface htoreserv =  H_Toreserv_DBselect.im_inter(); 
         
         
 
-       System.out.println(uName); //파라미터 값이 잘 넘어오는지 확인 -ok
+       System.out.println("cto확인1"+uName); //파라미터 값이 잘 넘어오는지 확인 -ok
 
         try {         
         	if (uName.equals("hmain")) { //호텔 메인에  top10이 보이게 하는
@@ -102,12 +95,6 @@ public class H_Cto extends HttpServlet {
         	    h_indate = request.getParameter("checkin");
         	    h_outdate = request.getParameter("checkout");
 
-        	    System.out.println("한글확인 1");
-        	    System.out.println(h_name_eng);
-        	    System.out.println(h_indate);
-        	    System.out.println(h_outdate);
-        	    System.out.println(h_peo);
-        	    System.out.println("한글확인 1 끝");
 
         	    // 선택된 값들을 request 객체에 저장
         	    request.setAttribute("h_name_eng", h_name_eng);
@@ -120,19 +107,42 @@ public class H_Cto extends HttpServlet {
         	    dispatcher5.forward(request, response);
         	
    	    
-        	}else if (uName.equals(uName)) {
+        	}else if (uName.equals("toreserv")) {
+        		
+        	    h_name_eng = request.getParameter("h_info_search_nameeng");
+        	    h_indate = request.getParameter("sch_indate");
+        	    h_outdate = request.getParameter("sch_outdate");
+        	    night_time = request.getParameter("night_time");
+        	    h_peo = request.getParameter("sch_peo");
+        	    String h_roomnum =  request.getParameter("h_room_num");
+  
+        	    System.out.println("확인 1");
+        	    System.out.println("h_name_eng: " + h_name_eng);
+        	    System.out.println("h_indate: " + h_indate);
+        	    System.out.println("h_outdate: " + h_outdate);
+        	    System.out.println("night_time: " + night_time);
+        	    System.out.println("h_peo: " + h_peo);
+        	    System.out.println("h_room_num: " +h_roomnum);
+        	    System.out.println("확인 1 끝");
+
+
+        	    String htoreserv1 = htoreserv.showdata(request, response);
+        	    RequestDispatcher dispatcher6 = request.getRequestDispatcher(
+        	    		"hotel_pay.jsp?checkin="+h_indate+"&checkout="+h_outdate+"&night="+night_time+"&peo="+h_peo);
+        	    dispatcher6.forward(request, response);
+        	}else if (uName.equals("hotelinfom")) {
         	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
 
-        	    String top10_info = request.getParameter("uname"); // 매개변수 전달 위해 작성
-      	       // System.out.println(top10_info); // 파라미터 값이 잘 넘어오는지 확인  -ok
+        	    String top10_info = request.getParameter("hotelname");
+        	   
+      	       System.out.println("새로설정"+top10_info); // 파라미터 값이 잘 넘어오는지 확인  -ok
  
         	    String htop10 = htop10inter.showdata(request, response);  
         	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info.jsp");
         	    dispatcher1.forward(request, response);
         	}
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }  
-} 
+        	} catch (Exception e) {
+                e.printStackTrace();
+            }
+        }  
+    } 

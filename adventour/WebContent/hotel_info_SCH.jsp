@@ -28,6 +28,7 @@
 
 <body>
 
+<form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"   method="post" >
  <%
  	request.setCharacterEncoding("UTF-8"); 
       String h_name_eng = request.getParameter("h_name_eng"); // 입력된 검색어 가져오기
@@ -58,6 +59,14 @@
         C_getset bbb = searchResults.get(s); 
         System.out.println(bbb.getH_roomtype());
  %>
+ <input type="hidden" name="h_info_search_nameeng" value="<%=h_name_eng%>">
+ <input type="hidden" name="sch_indate" value="<%=h_indate%>">
+ <input type="hidden" name="sch_outdate" value="<%=h_outdate%>">
+ <input type="hidden" name="night_time" value="<%=h_name_eng%>">
+ <input type="hidden" name="sch_peo" value="<%=h_roompeo1 %>">
+ <input type="hidden" name="h_room_num"  value="<%= bbb.getH_roomnum() %>">
+ 
+ 
 <div id="info_SCH">
        <div id="hotel_room_info">
       <h2 id="hotel_room_type" class="hotel_room_type"><%= bbb.getH_roomtype()%> room</h2>
@@ -90,7 +99,7 @@
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
-          <input id="roompay_btn" type="button" class="roompay_btn" value="결제하기"/>
+          <input id="roompay_btn" type="submit" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 
 
@@ -102,6 +111,7 @@
 }
 %>
 </div>
+</form>
 
 </body>
 <script>

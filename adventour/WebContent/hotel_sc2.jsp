@@ -160,10 +160,9 @@ if (session.getAttribute("id") == null) {
 
       <button class="eur" type="button">고객센터</button>
 <!--       <button class="cart" type="button">장바구니 담기</button>
-      <button class="pay" type="button">결제하기</button> --> 
+      <button class="pay" type="button">결제하기</button> -->
       
     </div>
-
 
      </div>
  
@@ -218,8 +217,8 @@ if (session.getAttribute("id") == null) {
 
          <div class="h_prices">
           <h2 class="h_tiprice"><%= h_sclist.getMin_h_roompri() %> ~ </h2>
-          <a href="information.hotel?uname=<%= h_sclist.getH_name_eng() %>">
-          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=<%= h_sclist.getH_name_eng() %>">
+          <a href="information.hotel?uname=hotelinfom&hotelname=<%= h_sclist.getH_name_eng()%>">
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom&hotelname=<%= h_sclist.getH_name_eng() %>">
           </a>
          </div>
 

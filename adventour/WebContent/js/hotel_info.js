@@ -106,7 +106,32 @@ $(document).ready(function() {
 	}
 	  /*왼쪽 검색창 날짜 픽 */
 
-	
+	//날짜계산	
+	$(document).ready(function() { 
+        const schIndate = document.getElementById("sch_indate");
+        const schOutdate = document.getElementById("sch_outdate");
+        const nightTime = document.querySelector(".night_time");
+        
+        function updateNightTime() {
+          const checkinDate = new Date(schIndate.value);
+          const checkoutDate = new Date(schOutdate.value);
+          
+          if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+            const timeDifference = checkoutDate - checkinDate;
+            const nightCount = timeDifference / (1000 * 3600 * 24); 
+
+            if (nightCount >= 1) {
+              nightTime.value = `${nightCount}박`;
+            } else {
+              nightTime.value = "체크아웃 - 체크인";
+            }
+          } else {
+            nightTime.value = ""; 
+          }
+        }
+        
+        updateNightTime();
+    });
 
 	//날짜계산	
     $("#sch_indate, #sch_outdate").on("change", function() {

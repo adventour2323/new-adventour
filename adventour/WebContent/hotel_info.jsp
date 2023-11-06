@@ -74,7 +74,6 @@ if (top_list != null) {
 
 	for (int i = 0; i <1; i++) {
 	    H_getset aaa = top_list.get(i); 
-
 %>
 
       <div id="hotel_info_phos">
@@ -300,7 +299,8 @@ if (top_list != null) {
     </div>
  </div><!--hotel_info-->
   </div><!-- content -->
-<form action="hotel_pay.jsp" >
+<form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"  method="post">
+
  
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
@@ -438,6 +438,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 
            <div id="hotel_room_info">
       <h2 id="hotel_room_type" class="hotel_room_type"><%= bbb.getH_roomtype()%> room</h2>
+      <input type="hidden" name="h_room_num"  value="<%= bbb.getH_roomnum() %>">
       <div id="img_div">
      <div class="prevButton"><button id="prevButton">&lt;</button></div>  
          <div id="imageSlider" class="image-slider">
@@ -466,7 +467,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
-   
+    
           <input id="roompay_btn" type="submit" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 

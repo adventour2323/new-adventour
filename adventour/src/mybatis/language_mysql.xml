@@ -155,5 +155,14 @@
     ]]>
 </select>
 
+<select id="toreserv_select" resultType="getset.H_getset" parameterType="getset.H_getset">
+SELECT h_room.*, h_hotel.*
+		FROM h_room
+		INNER JOIN h_hotel
+		ON h_room.h_name_eng = h_hotel.h_name_eng
+		WHERE h_room.h_name_eng= #{h_name_eng}
+        AND h_room.h_roomnum=#{h_roomnum};    
+</select>
+
 
 </mapper>

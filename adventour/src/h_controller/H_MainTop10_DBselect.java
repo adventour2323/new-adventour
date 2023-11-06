@@ -22,8 +22,8 @@ public class H_MainTop10_DBselect implements h_conn_interface { //데이터베�
     	
     	H_Select_Top10_conn sin_interface = H_Select_Top10_conn.instance();
     	
-    	String top10_info = re.getParameter("uname"); 
-   	    System.out.println(top10_info); //ok
+    	String top10_info = re.getParameter("hotelname"); 
+   	    System.out.println("1번확인"+top10_info); //ok
     	 
     	
         List <H_getset> top_list = sin_interface.h_top1010(top10_info);  //select 결과 가져오기 위해 작성

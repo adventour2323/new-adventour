@@ -46,6 +46,7 @@ var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
 
 alert("h_outdateY: " + h_outdateY); // 확인 ok
+alert("h_mainpeo: " + h_mainpeo); // 확인 ok
 
 //폼이 서바미트될 때
 document.querySelector("form[name='schnav_form']").addEventListener("submit", function (e) {
@@ -296,8 +297,8 @@ if (list != null) {
 
          <div class="h_prices">
           <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
-          <a href="information.hotel?uname=<%= ukAll.getH_name_eng() %>">
-          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=<%= ukAll.getH_name_eng() %>"/>
+          <a href="information.hotel?uname=hotelinfom&hotelname=<%= ukAll.getH_name_eng() %>">
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom&hotelname=<%= ukAll.getH_name_eng() %>"/>
           </a>
          </div>
 

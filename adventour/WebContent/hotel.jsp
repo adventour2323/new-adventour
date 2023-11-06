@@ -31,11 +31,11 @@ $(".b_maintbtn").on("click", function(){
     var h_outdateD = document.getElementById("h_outdateD").value;
     var h_mainpeo = document.getElementById("h_mainpeo").value;
 
-    // 쿠키 만료 날짜를 설정합니다. (예: 30일 후)
-    var expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 30);
+    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
+  var expirationDate = new Date();
+expirationDate.setDate(expirationDate.getDate() + 1);
 
-    // 각 데이터를 쿠키에 저장합니다.
+    // 각 데이터를 쿠키에 저장
     document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
     document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
     document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
@@ -213,7 +213,7 @@ if (session.getAttribute("id") == null) {
                        
                 %>
 							<div class="swiper-slide">
-								<a name="<%= aaa.getH_name_eng() %>" href="information.hotel?uname=<%= aaa.getH_name_eng() %>">
+								<a name="<%= aaa.getH_name_eng() %>" href="information.hotel?uname=hotelinfom&hotelname=<%= aaa.getH_name_eng() %>">
 									<img class="top<%= i + 1 %>"
 									src="image/hotel/h_image/<%= aaa.getH_pho() %>" alt="" />
 									<p class="top_contry"><%= aaa.getCountry_ko() %>
