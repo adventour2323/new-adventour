@@ -110,7 +110,7 @@ $(document).ready(function() {
 	$(document).ready(function() { 
         const schIndate = document.getElementById("sch_indate");
         const schOutdate = document.getElementById("sch_outdate");
-        const nightTime = document.querySelector(".night_time");
+        const nightTime = document.querySelector("#night_time");
         
         function updateNightTime() {
           const checkinDate = new Date(schIndate.value);
@@ -142,6 +142,7 @@ $(document).ready(function() {
       var indate = $("#sch_indate").val();
       var outdate = $("#sch_outdate").val();
       var peo= $(".sch_peo").val();
+      var night= $(".night_time").val();
      
       if (!name_eng || !indate || !outdate || !peo) {
     	    alert("검색 정보를 입력 후 검색해주세요.");
@@ -153,7 +154,9 @@ $(document).ready(function() {
         data: { h_name_eng:name_eng,
         	    h_indate: indate,
         	    h_outdate: outdate,
-        	    h_roompeo:peo}, // 검색어를 서버로 전송
+        	    h_roompeo:peo,
+        	    night_time:night
+        	    }, // 검색어를 서버로 전송
         success: function(data) {
        
           $("#info_SCH").html(data);

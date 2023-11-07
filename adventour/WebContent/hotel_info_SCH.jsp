@@ -34,11 +34,13 @@
       String h_name_eng = request.getParameter("h_name_eng"); // 입력된 검색어 가져오기
       String h_indate = request.getParameter("h_indate"); // 입력된 검색어 가져오기
       String h_outdate = request.getParameter("h_outdate"); // 입력된 검색어 가져오기
+      String night_time = request.getParameter("night_time"); // 입력된 검색어 가져오기
       String h_roompeo1 = request.getParameter("h_roompeo"); // 입력된 검색어 가져오기
      
       System.out.println(h_name_eng);
       System.out.println(h_indate);
-      System.out.println(h_outdate);
+      System.out.println( night_time);
+      System.out.println(h_outdate);   
       System.out.println( h_roompeo1);
       
 
@@ -62,7 +64,7 @@
  <input type="hidden" name="h_info_search_nameeng" value="<%=h_name_eng%>">
  <input type="hidden" name="sch_indate" value="<%=h_indate%>">
  <input type="hidden" name="sch_outdate" value="<%=h_outdate%>">
- <input type="hidden" name="night_time" value="<%=h_name_eng%>">
+ <input type="text" name="night_time" value="<%=night_time%>"> <!-- 랙문으로 받아오는 값 X 수정 필요 -->
  <input type="hidden" name="sch_peo" value="<%=h_roompeo1 %>">
  <input type="hidden" name="h_room_num"  value="<%= bbb.getH_roomnum() %>">
  
@@ -163,6 +165,32 @@
 	        slideNumber.text(`${currentIndex + 1} /7`);
 	    });
 	});
+	//날짜계산	
+	$(document).ready(function() { 
+        const schIndate = document.getElementById("sch_indate");
+        const schOutdate = document.getElementById("sch_outdate");
+        const nightTime = document.querySelector("#night_time");
+        
+        function updateNightTime() {
+          const checkinDate = new Date(schIndate.value);
+          const checkoutDate = new Date(schOutdate.value);
+          
+          if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+            const timeDifference = checkoutDate - checkinDate;
+            const nightCount = Math.floor(timeDifference / (1000 * 3600 * 24)); // 소수점 이하를 제거하여 정수로 변환
+
+            if (nightCount >= 1) {
+              nightTime.value = `${nightCount}`;
+            } else {
+              nightTime.value = "체크아웃 - 체크인";
+            }
+          } else {
+            nightTime.value = ""; 
+          }
+        }
+        
+        updateNightTime();
+    });
 	
 
 

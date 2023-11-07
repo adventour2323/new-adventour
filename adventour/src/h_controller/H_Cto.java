@@ -43,6 +43,7 @@ public class H_Cto extends HttpServlet {
         
 
        System.out.println("cto확인1"+uName); //파라미터 값이 잘 넘어오는지 확인 -ok
+   
 
         try {         
         	if (uName.equals("hmain")) { //호텔 메인에  top10이 보이게 하는
@@ -142,6 +143,7 @@ public class H_Cto extends HttpServlet {
         	    dispatcher1.forward(request, response);
         	}
         	} catch (Exception e) {
+        		
                 e.printStackTrace();
             }
         }  

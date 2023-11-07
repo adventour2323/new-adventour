@@ -376,7 +376,7 @@ if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
 }
 %>
 
- <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" value="2">
+ <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
 <select id="sch_peo" class="sch_peo" name="sch_peo">
     <option value="">인원 수</option>
     <option value="1" 
@@ -713,36 +713,7 @@ var country_eng = $(".h_info_touradC").val();
 	function addCommasToNumber(numberString) {
 		  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		}
-	
-
-
-	    // 입력된 검색어 가져오기
-	    var name_eng = $(".h_info_search_nameeng").val();
-	    var indate = $("#sch_indate").val();
-	    var outdate = $("#sch_outdate").val();
-	    var peo= $(".sch_peo").val();
-	   
-	    if (!name_eng || !indate || !outdate || !peo) {
-	  	    alert("검색 정보를 입력 후 검색해주세요.");
-	  	} else{
-	    
-	     $.ajax({
-	      type: "GET",
-	      url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
-	      data: { h_name_eng:name_eng,
-	      	    h_indate: indate,
-	      	    h_outdate: outdate,
-	      	    h_roompeo:peo}, // 검색어를 서버로 전송
-	      success: function(data) {
-	     
-	        $("#info_SCH").html(data);
-	      },
-	      error: function() {
-	        alert("일치하는 검색어가 없습니다.");
-	      }
-	    });
-	   };     
-	
+		
 
 </script>
 </html>
