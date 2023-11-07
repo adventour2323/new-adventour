@@ -279,14 +279,18 @@
 											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
 												<strong>다른 상품</strong>
 											</div>
-											<% ArrayList<t_getset> a3 = id.t2(g_id);
-												for (int i = 0; i < a3.size(); i++) {
-													t_getset tn = a3.get(i);
-											%>
-											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
-												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><%=tn.getT_name()%></a>
-											</div>
-											<%} %>
+<% ArrayList<t_getset> a3 = id.t2(g_id);
+for (int i = 0; i < a3.size(); i++) {
+    t_getset tn = a3.get(i);
+%>
+<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+    <a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><div class="t_name2"><%=tn.getT_name()%></div></a>
+    <% if (i < a3.size() - 1) { %>
+        <span>, </span>
+    <% } %>
+</div>
+<% } %>
+
 										</div>
 									</div>												
 								</div>

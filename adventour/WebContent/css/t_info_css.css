@@ -509,4 +509,11 @@ a.next:hover {
         font-weight: bold;
     }
 
-		
+		.t_name2{
+		width: 190px;
+		position: relative;
+		overflow: hidden;
+		white-space: nowrap;
+		max-width: 100%;
+		text-overflow: ellipsis;				
+		}
