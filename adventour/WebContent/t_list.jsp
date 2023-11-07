@@ -54,13 +54,13 @@
 			<a href="t_list_country.jsp?country_eng=uk"> <img alt="ukflag" src="./image/tour/ukflag.png" height="30px;"> <h2>영국</h2> </a>
 		</div>
 		<div id="conutry_fr" class="country_content">
-			<a href="t_list_country.jsp?country_eng=france"> <img alt="ukflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
+			<a href="t_list_country.jsp?country_eng=france"> <img alt="frflag" src="./image/tour/frflag.png" height="30px;"> <h2>프랑스</h2> </a> 
 		</div>
 		<div id="country_es" class="country_content">
-			<a href="t_list_country.jsp?country_eng=spain"> <img alt="ukflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
+			<a href="t_list_country.jsp?country_eng=spain"> <img alt="esflag" src="./image/tour/esflag.png" height="30px;">  <h2>스페인</h2> </a>
 		</div>
 		<div id="country_ita" class="country_content" style="margin-right: auto;">
-			<a href="t_list_country.jsp?country_eng=italy"> <img alt="ukflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
+			<a href="t_list_country.jsp?country_eng=italy"> <img alt="itaflag" src="./image/tour/itaflag.png" height="30px;">  <h2>이탈리아</h2> </a>
 		</div>
 	
 	</div>

@@ -47,8 +47,12 @@
 		<div class="content">
 
 			<div id="guide_of_the_month">
-				<div class="gom_ment">
-					<h1 class="gom_comment" style="text-align: center; margin-bottom: 20px;">인기 가이드</h1>
+				<div class="gom_ment" style="margin-bottom: 20px;">
+					<div class="gom_title">
+						<img alt="guide icon1" src="./image/tour/guide_icon1.png" style="margin-left: auto;">
+						<h1 class="gom_comment" style="margin: auto 10px; ">인기 가이드</h1>
+						<img alt="guide icon2" src="./image/tour/guide_icon2.png" style="margin-right: auto;">
+					</div>
 				</div>
 
 
@@ -402,41 +406,127 @@
     				<h1 style="text-align: center; margin-bottom: 15px;">추천 호텔</h1>
     			</div>
     		</div>
-    <div class="slider-container">
-        <div class="slider">
+    <div class="hotel-container">
+        <div class="hotel-div">
             <%
-            ArrayList<H_getset> a3 = id.h1(); 
-            for (int i = 0; i < a3.size(); i++) {
-                H_getset h = a3.get(i);
-            %>
-            <div class="slider-item">
-                <div class="recommend_hotel">
-                    <div class="recommend_img">
-                        <a href ="information.hotel?uname=hotelinfom&hotelname=<%=h.getH_name_eng()%>"><img src="./image/hotel/h_image/<%= h.getH_pho() %>" style="width: 275px;" alt="추천 호텔 1"></a>
-                    </div>
-                    <div style="text-align: center; margin-top: 15px;">
-                        <div style="display: flex; height: 40px; margin-top: auto; margin-bottom: auto;">
-                            <div>
-                                <%=h.getCountry_ko() %>, <%= h.getCity_ko() %>
-                            </div>
-                            <div>
-								★ <%= h.getH_grade() %> 성급
-                            </div>
-                        </div>
-                        <div style="height: 40px; margin-top: auto; margin-bottom: auto;">
-                            <h3><a href ="information.hotel?uname=hotelinfom&hotelname=<%=h.getH_name_eng()%>"><%=h.getH_name_ko() %></a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <% } %>
-        </div>
+				ArrayList<H_getset> a3 = id.h1();
+				ArrayList<H_getset> ukHotels = new ArrayList<>();
+				ArrayList<H_getset> franceHotels = new ArrayList<>();
+				ArrayList<H_getset> spainHotels = new ArrayList<>();
+				ArrayList<H_getset> italyHotels = new ArrayList<>();
+
+				for (H_getset h : a3) {
+					if ("uk".equals(h.getCountry_eng())) {
+						ukHotels.add(h);
+						} else if ("france".equals(h.getCountry_eng())) {
+							franceHotels.add(h);
+							} else if ("spain".equals(h.getCountry_eng())) {
+								spainHotels.add(h);
+								} else if ("italy".equals(h.getCountry_eng())) {
+									italyHotels.add(h);
+									}
+					}
+				// 무작위로 각 국가에서 하나 선택
+				Random random = new Random();
+
+				H_getset selectedUkHotel = ukHotels.get(random.nextInt(ukHotels.size()));
+				H_getset selectedFranceHotel = franceHotels.get(random.nextInt(franceHotels.size()));
+				H_getset selectedSpainHotel = spainHotels.get(random.nextInt(spainHotels.size()));
+				H_getset selectedItalyHotel = italyHotels.get(random.nextInt(italyHotels.size()));
+				%>
+				
+				<!-- 영국 호텔  -->
+				<div class="recommend_hotel" id="recommend_hotel_uk">
+					<div style="display: flex;"><img alt="ukflag" src="./image/tour/ukflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">영국</h3></div>
+    				<div class="recommend_img">
+        				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedUkHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedUkHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
+    				</div>
+    				<div style="text-align: center; margin-top: 15px;">
+        				<div class="hotel_info" >
+            				<div>
+                				<%= selectedUkHotel.getCountry_ko() %>, <%= selectedUkHotel.getCity_ko() %>
+            				</div>
+            				<div>
+                				★ <%= selectedUkHotel.getH_grade() %> 성급
+            				</div>
+        				</div>
+        				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
+            				<h3 class="hotel_name"><a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedUkHotel.getH_name_eng() %>"><%= selectedUkHotel.getH_name_ko() %></a></h3>
+        				</div>
+    				</div>
+				</div>
+
+				<!-- 프랑스 호텔  -->
+				<div class="recommend_hotel" id="recommend_hotel_france">
+					<div style="display: flex;"><img alt="frflag" src="./image/tour/frflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">프랑스</h3></div>
+    				<div class="recommend_img">
+        				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedFranceHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedFranceHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
+    				</div>
+    				<div style="text-align: center; margin-top: 15px;">
+        				<div class="hotel_info" >
+            				<div>
+                				<%= selectedFranceHotel.getCountry_ko() %>, <%= selectedFranceHotel.getCity_ko() %>
+            				</div>
+            				<div>
+                				★ <%= selectedFranceHotel.getH_grade() %> 성급
+            				</div>
+        				</div>
+        				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
+				            <h3 class="hotel_name"><a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedFranceHotel.getH_name_eng() %>"><%= selectedFranceHotel.getH_name_ko() %></a></h3>
+        				</div>				
+    				</div>
+				</div>
+
+				<!-- 스페인 호텔  -->
+				<div class="recommend_hotel" id="recommend_hotel_spain">
+					<div style="display: flex;"><img alt="esflag" src="./image/tour/esflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">스페인</h3></div>
+    				<div class="recommend_img">
+        				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedSpainHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedSpainHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
+    				</div>
+    				<div style="text-align: center; margin-top: 15px;">
+        				<div class="hotel_info" >
+            				<div>
+                				<%= selectedSpainHotel.getCountry_ko() %>, <%= selectedSpainHotel.getCity_ko() %>
+				            </div>
+            				<div>
+                				★ <%= selectedSpainHotel.getH_grade() %> 성급
+            				</div>
+        				</div>
+        				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
+            				<h3 class="hotel_name"><a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedSpainHotel.getH_name_eng() %>"><%= selectedSpainHotel.getH_name_ko() %></a></h3>
+        				</div>
+    				</div>
+				</div>
+				
+				<!-- 이탈리아 호텔  -->
+				<div class="recommend_hotel" id="recommend_hotel_italy">
+					<div style="display: flex;"><img alt="itaflag" src="./image/tour/itaflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">이탈리아</h3></div>
+				    <div class="recommend_img">
+        				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedItalyHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedItalyHotel.getH_pho() %>" alt="추천 호텔 1"></a>
+    				</div>
+    				<div style="text-align: center; margin-top: 15px;">
+        				<div class="hotel_info" >
+            				<div>
+                				<%= selectedItalyHotel.getCountry_ko() %>, <%= selectedItalyHotel.getCity_ko() %>
+            				</div>
+            				<div>
+                				★ <%= selectedItalyHotel.getH_grade() %> 성급
+            				</div>
+        				</div>
+        				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
+            				<h3 class="hotel_name"><a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedItalyHotel.getH_name_eng() %>"><%= selectedItalyHotel.getH_name_ko() %></a></h3>
+        				</div>
+    				</div>
+				</div>
+				
+        </div> <!--hotel-div  -->
         
-    </div>
-    <button id="prevSlide">이전</button>
-	<button id="nextSlide">다음</button>
+    </div> <!--hotel-container  -->
+
     
-			</div>
+			</div> <!-- recommend_ticket -->
+
+
 
 	</jsp:useBean>
 		</div>  <!--content-->
@@ -490,46 +580,7 @@
 	}
 </script>
   
-    <script>
-    $(document).ready(function () {
-        var slideCount = $('.slider-item').length;
-        var visibleSlides = 4; // 한 번에 보여줄 항목 수
-        var slideWidth = 250; // 각 슬라이드의 고정 너비
-        var slideMargin = 10; // 슬라이드 간 간격
-        var sliderWidth = (slideWidth + slideMargin) * slideCount; // 슬라이더 너비
 
-        $('.slider').css('width', sliderWidth + 'px');
-        $('.slider-item').css('width', slideWidth + 'px');
-
-        var currentSlide = 0;
-
-        function nextSlide() {
-            if (currentSlide < Math.ceil(slideCount / visibleSlides) - 1) {
-                currentSlide++;
-                var slidePosition = -currentSlide * (slideWidth + slideMargin) * visibleSlides;
-                $('.slider').css('transform', 'translateX(' + slidePosition + 'px)');
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                var slidePosition = -currentSlide * (slideWidth + slideMargin) * visibleSlides;
-                $('.slider').css('transform', 'translateX(' + slidePosition + 'px)');
-            }
-        }
-
-        $('#prevSlide').click(function () {
-            prevSlide();
-        });
-
-        $('#nextSlide').click(function () {
-            nextSlide();
-        });
-    });
-    
-
-    </script>
     <!-- 별점 -->
     <script>
 const starElements = document.querySelectorAll(".star");

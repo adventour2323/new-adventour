@@ -512,11 +512,12 @@ public class g_list_print {
 		try{
 			con();
 		
-		ResultSet rs = stmt.executeQuery("SELECT country_ko, city_ko, h_name_eng, h_name_ko, h_pho, h_grade FROM h_hotel;");
+		ResultSet rs = stmt.executeQuery("SELECT country_eng ,country_ko, city_ko, h_name_eng, h_name_ko, h_pho, h_grade FROM h_hotel;");
 
 		while(rs.next()) {
 			H_getset table = new H_getset();
 			
+			table.setCountry_eng(rs.getString("country_eng"));
 			table.setCountry_ko(rs.getString("country_ko"));
 			table.setCity_ko(rs.getString("city_ko"));
 			table.setH_name_ko(rs.getString("h_name_ko"));
