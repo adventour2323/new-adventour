@@ -50,6 +50,7 @@ public class H_Select_SCsch_conn {
         List<H_getset> scsearch_list = ret_dbconn.selectList("select_sc", schsearch_list2);
 
             for (H_getset item2 : scsearch_list) {
+            	System.out.println("넘어온 정보 확인");
                 System.out.println(item2.getCountry_eng());
                 System.out.println(item2.getCity_eng());
             }

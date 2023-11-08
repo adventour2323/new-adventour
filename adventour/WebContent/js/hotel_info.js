@@ -134,39 +134,45 @@ $(document).ready(function() {
     });
 	
 
-	// 검색창 버튼 
-    $(".h_info_search_btn").click(function(e) {
+	// 검색창 버튼
+	$(".h_info_search_btn").click(function(e) {
 
-      // 입력된 검색어 가져오기
-      var name_eng = $(".h_info_search_nameeng").val();
-      var indate = $("#sch_indate").val();
-      var outdate = $("#sch_outdate").val();
-      var peo= $(".sch_peo").val();
-      var night= $(".night_time").val();
-     
-      if (!name_eng || !indate || !outdate || !peo) {
-    	    alert("검색 정보를 입력 후 검색해주세요.");
-    	} else{
-      
-       $.ajax({
-        type: "GET",
-        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
-        data: { h_name_eng:name_eng,
-        	    h_indate: indate,
-        	    h_outdate: outdate,
-        	    h_roompeo:peo,
-        	    night_time:night
-        	    }, // 검색어를 서버로 전송
-        success: function(data) {
-       
-          $("#info_SCH").html(data);
-        },
-        error: function() {
-          alert("일치하는 검색어가 없습니다.");
-        }
-      });
-     };     
-   });
+	  // 입력된 검색어 가져오기
+	  var name_eng = $(".h_info_search_nameeng").val();
+	  var indate = $("#sch_indate").val();
+	  var outdate = $("#sch_outdate").val();
+	  var peo = $(".sch_peo").val();
+
+	  // 날짜를 Date 객체로 변환
+	  var checkInDate = new Date(indate);
+	  var checkOutDate = new Date(outdate);
+
+	  // 두 날짜 사이의 밤 수 계산
+	  var timeDifference = checkOutDate - checkInDate;
+	  var night_time = timeDifference / (1000 * 60 * 60 * 24); // 1일은 24시간 x 60분 x 60초 x 1000밀리초
+
+	  if (!name_eng || !indate || !outdate || !peo) {
+	    alert("검색 정보를 입력 후 검색해주세요.");
+	  } else {
+	    $.ajax({
+	      type: "GET",
+	      url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+	      data: {
+	        h_name_eng: name_eng,
+	        h_indate: indate,
+	        h_outdate: outdate,
+	        h_roompeo: peo,
+	        night_time: night_time // 밤 수를 서버로 전송
+	      },
+	      success: function(data) {
+	        $("#info_SCH").html(data);
+	      },
+	      error: function() {
+	        alert("일치하는 검색어가 없습니다.");
+	      }
+	    });
+	  };
+	});
 
 	
 /*----------------룸정보 이미슬라이더------------------------*/

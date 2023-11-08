@@ -15,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
   <script defer src="js/map_index.js"></script> 
-   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,41 +23,30 @@
    
   </head>
 
-<script>
-function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-}
+  <script>
+  $(document).ready(function() {
+  function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+  }
 
-// 쿠키에서 값을 가져옵니다.
-var h_mainde = getCookie("sch_country");
-var h_maincity = getCookie("sch_city");
-var h_indate = getCookie("sch_city");
-var h_outdate = getCookie("sch_indate");
-var h_mainpeo = getCookie("sch_adult");
 
-alert("h_outdateY: " + h_outdateY); // 확인 ok
+  var h_mainde = getCookie("newCountry");
+  var h_maincity = getCookie("newCity");
+  var h_indate = getCookie("newCheckinDate");
+  var h_outdate = getCookie("newCheckoutDate");
+  var night_time = getCookie("newNightTime");
 
-//폼이 서바미트될 때
-document.querySelector("form[name='schnav_form']").addEventListener("submit", function (e) {
-    e.preventDefault(); // 폼의 기본 동작을 중단
 
-    // 수정할 날짜 값을 가져옴
-     var newCountry = document.querySelector("#sch_country").value;
-    var newCity = document.querySelector("#sch_city").value;
-    var newCheckinDate = document.querySelector("#sch_indate").value;
-    var newCheckoutDate = document.querySelector("#sch_outdate").value;
 
-    // 해당 쿠키를 새로운 값으로 업데이트
-    document.cookie = "newCountry=" + newCheckinDate;
-    document.cookie = "newCity=" + newCheckoutDate;
-    document.cookie = "h_indate=" + newCheckinDate;
-    document.cookie = "h_outdate=" + newCheckoutDate;
+alert("새로운 나라: " + newCountry);
+alert("새로운 도시: " + newCity);
+alert("새로운 체크인 날짜: " + newCheckinDate);
+alert("새로운 체크아웃 날짜: " +newCheckoutDate);
+alert("새로운 박 수: " + newNightTime);
 
-    // 다른 필요한 작업을 수행하거나 폼을 서버로 제출
-    this.submit();
-});
+  });
 
 </script>
 

@@ -15,7 +15,7 @@
     <meta class="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -64,7 +64,7 @@
  <input type="hidden" name="h_info_search_nameeng" value="<%=h_name_eng%>">
  <input type="hidden" name="sch_indate" value="<%=h_indate%>">
  <input type="hidden" name="sch_outdate" value="<%=h_outdate%>">
- <input type="text" name="night_time" value="<%=night_time%>"> <!-- 랙문으로 받아오는 값 X 수정 필요 -->
+ <input type="hidden" name="night_time" value="<%=night_time%>"> <!-- 랙문으로 받아오는 값 X 수정 필요 -->
  <input type="hidden" name="sch_peo" value="<%=h_roompeo1 %>">
  <input type="hidden" name="h_room_num"  value="<%= bbb.getH_roomnum() %>">
  
@@ -165,32 +165,32 @@
 	        slideNumber.text(`${currentIndex + 1} /7`);
 	    });
 	});
-	//날짜계산	
+	// 날짜계산    
 	$(document).ready(function() { 
-        const schIndate = document.getElementById("sch_indate");
-        const schOutdate = document.getElementById("sch_outdate");
-        const nightTime = document.querySelector("#night_time");
-        
-        function updateNightTime() {
-          const checkinDate = new Date(schIndate.value);
-          const checkoutDate = new Date(schOutdate.value);
-          
-          if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
-            const timeDifference = checkoutDate - checkinDate;
-            const nightCount = Math.floor(timeDifference / (1000 * 3600 * 24)); // 소수점 이하를 제거하여 정수로 변환
+	    const schIndate = document.getElementById("sch_indate");
+	    const schOutdate = document.getElementById("sch_outdate");
+	    const nightTime = document.querySelector("#night_time");
+	    
+	    function updateNightTime() {
+	        const checkinDate = new Date(schIndate.value);
+	        const checkoutDate = new Date(schOutdate.value);
+	        
+	        if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+	            const timeDifference = checkoutDate - checkinDate;
+	            const nightCount = Math.floor(timeDifference / (1000 * 3600 * 24)); 
 
-            if (nightCount >= 1) {
-              nightTime.value = `${nightCount}`;
-            } else {
-              nightTime.value = "체크아웃 - 체크인";
-            }
-          } else {
-            nightTime.value = ""; 
-          }
-        }
-        
-        updateNightTime();
-    });
+	            if (nightCount >= 1) {
+	                nightTime.value = nightCount.toString(); // 정수로 변환하여 문자열로 표시
+	            } else {
+	                nightTime.value = "체크아웃 - 체크인";
+	            }
+	        } else {
+	            nightTime.value = ""; 
+	        }
+	    }
+	    
+	    updateNightTime();
+	});
 	
 
 

@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/hotel.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/hotel.js"></script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script
@@ -19,36 +20,37 @@
 </head>
 <script>
 $(document).ready(function() {
-$(".b_maintbtn").on("click", function(){
+	$(".b_maintbtn").on("click", function(){
 
-    var h_mainde = document.getElementById("h_mainde").value;
-    var h_maincity = document.getElementById("h_maincity").value;
-    var h_indateY = document.getElementById("h_indateY").value;
-    var h_indateM = document.getElementById("h_indateM").value;
-    var h_indateD = document.getElementById("h_indateD").value;
-    var h_outdateY = document.getElementById("h_outdateY").value;
-    var h_outdateM = document.getElementById("h_outdateM").value;
-    var h_outdateD = document.getElementById("h_outdateD").value;
-    var h_mainpeo = document.getElementById("h_mainpeo").value;
+	    var h_mainde = document.getElementById("h_mainde").value;
+	    var h_maincity = document.getElementById("h_maincity").value;
+	    var h_indateY = document.getElementById("h_indateY").value;
+	    var h_indateM = document.getElementById("h_indateM").value;
+	    var h_indateD = document.getElementById("h_indateD").value;
+	    var h_outdateY = document.getElementById("h_outdateY").value;
+	    var h_outdateM = document.getElementById("h_outdateM").value;
+	    var h_outdateD = document.getElementById("h_outdateD").value;
+	    var h_mainpeo = document.getElementById("h_mainpeo").value;
 
-    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
-  var expirationDate = new Date();
-expirationDate.setDate(expirationDate.getDate() + 1);
+	    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
+	  var expirationDate = new Date();
+	expirationDate.setDate(expirationDate.getDate() + 1);
 
-    // 각 데이터를 쿠키에 저장
-    document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_indateM=" + h_indateM + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_indateD=" + h_indateD + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_outdateY=" + h_outdateY + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_outdateM=" + h_outdateM + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_outdateD=" + h_outdateD + "; expires=" + expirationDate.toUTCString();
-    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
+	    // 각 데이터를 쿠키에 저장
+	    document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateM=" + h_indateM + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateD=" + h_indateD + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateY=" + h_outdateY + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateM=" + h_outdateM + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateD=" + h_outdateD + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
 
-    alert(h_outdateD);
-});
-});
+	    alert("메인검색"+h_outdateD);
+	});
+	});
+
 </script>
 
 
@@ -87,7 +89,6 @@ if (session.getAttribute("id") == null) {
 
 				<select id="h_mainde" class="h_mainde" name="h_mainde" placeholder="나라 선택">
 					<option value="">나라 선택</option>
-					<option value="all">어디든지</option>
 					<option value="uk">영국</option>
 					<option value="italy">이탈리아</option>
 					<option value="france">프랑스</option>
@@ -324,6 +325,34 @@ if (session.getAttribute("id") == null) {
 
 
 </body>
+<script>
+//날짜계산	
+$(document).ready(function() { 
+    const schIndate = document.getElementById("sch_indate");
+    const schOutdate = document.getElementById("sch_outdate");
+    const nightTime = document.querySelector("#night_time");
+    
+    function updateNightTime() {
+      const checkinDate = new Date(schIndate.value);
+      const checkoutDate = new Date(schOutdate.value);
+      
+      if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
+        const timeDifference = checkoutDate - checkinDate;
+        const nightCount = Math.floor(timeDifference / (1000 * 3600 * 24)); 
+
+        if (nightCount >= 1) {
+          nightTime.value = '${nightCount}';
+        } else {
+          nightTime.value = "체크아웃 - 체크인";
+        }
+      } else {
+        nightTime.value = ""; 
+      }
+    }
+    
+    updateNightTime();
+});
+</script>
 
 </html>
 

@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -28,13 +28,15 @@
 <body>
 
 <script>
+
+//쿠키에서 값을 가져오는 함수
 function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
+ var value = "; " + document.cookie;
+ var parts = value.split("; " + name + "=");
+ if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-// 쿠키에서 값을 가져옵니다.
+//쿠키에서 값을 가져옵니다.
 var h_mainde = getCookie("h_mainde");
 var h_maincity = getCookie("h_maincity");
 var h_indateY = getCookie("h_indateY");
@@ -44,31 +46,41 @@ var h_outdateY = getCookie("h_outdateY");
 var h_outdateM = getCookie("h_outdateM");
 var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
+var night_time = getCookie("night_time");
 
-alert("h_outdateY: " + h_outdateY); // 확인 ok
-alert("h_mainpeo: " + h_mainpeo); // 확인 ok
+alert("메인검색 날2" + h_outdateD);
 
-//폼이 서바미트될 때
-document.querySelector("form[name='schnav_form']").addEventListener("submit", function (e) {
-    e.preventDefault(); // 폼의 기본 동작을 중단
 
-    // 수정할 날짜 값을 가져옴
-     var newCountry = document.querySelector("#sch_country").value;
-    var newCity = document.querySelector("#sch_outdate").value;
-    var newCheckinDate = document.querySelector("#sch_indate").value;
-    var newCheckoutDate = document.querySelector("#sch_outdate").value;
+document.querySelector(".sch_btn").addEventListener("click", function () {
+	  // 기존 쿠키 값 삭제
+	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_indateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_indateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_indateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_outdateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_outdateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_outdateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
-    // 해당 쿠키를 새로운 값으로 업데이트
-    document.cookie = "newCountry=" + newCheckinDate;
-    document.cookie = "newCity=" + newCheckoutDate;
-    document.cookie = "h_indateY=" + newCheckinDate;
-    document.cookie = "h_outdateY=" + newCheckoutDate;
+	  // 입력된 값들을 가져와서 변수에 저장
+	  var newCountry = document.querySelector("#sch_country").value;
+	  var newCity = document.querySelector("#sch_city").value;
+	  var newCheckinDate = document.querySelector("#sch_indate").value;
+	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
+	  var newNightTime = document.querySelector("#night_time").value;
 
-    // 다른 필요한 작업을 수행하거나 폼을 서버로 제출
-    this.submit();
-});
+	  // 새로운 값을 쿠키에 설정
+	  document.cookie = "h_mainde=" + newCountry;
+	  document.cookie = "h_maincity=" + newCity;
+	  document.cookie = "h_indate=" + newCheckinDate;
+	  document.cookie = "h_outdate=" + newCheckoutDate;
+	  document.cookie = "night_time=" + newNightTime;
 
+	  // 나머지 처리 또는 폼 제출을 여기에 추가
+	});
 </script>
+
 
   <header>
 <%
@@ -96,14 +108,33 @@ if (session.getAttribute("id") == null) {
 
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" id="sch_country"  class="sch_country" name="sch_country" placeholder="나라" required="required" >
+      <select id="sch_country"  class="sch_country" name="sch_country" placeholder="나라" required="required" >
+					<option value="uk">영국</option>
+					<option value="italy">이탈리아</option>
+					<option value="france">프랑스</option>
+					<option value="spain">스페인</option>
+      </select>
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
       
    
-     <input type="text" id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+     <select id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" >
+					<option value="all">어디든지</option>
+					<option value="london">런던</option>
+					<option value="liverpool">리버풀</option>
+					<option value="edinburgh">에든버러</option>
+					<option value="rome">로마</option>
+					<option value="venice">베네치아</option>
+					<option value="milano">밀라노</option>
+					<option value="paris">파리</option>
+					<option value="marseille">마르세유</option>
+					<option value="monaco">모나코</option>
+					<option value="madrid">마드리드</option>
+					<option value="barcelona">바르셀로나</option>
+					<option value="sevilla">세비야</option>
+				</select> 
 
       
     </div>
@@ -140,7 +171,7 @@ if (session.getAttribute("id") == null) {
       <input type="radio" class="h_queen"  name="h_type" value="퀸">퀸</br>
     </div>
 
-
+ <input type="hidden" id="night_time">
     <div class="sch13">
 <!--    <a href=scsearch.hotel?uname=hotelSCSearch> --> 
       <button class="sch_btn" type="submit" name="sch_btn">검색하기</button>
@@ -176,6 +207,8 @@ String h_outdateY = null;
 String h_outdateM = null;
 String h_outdateD = null;
 String h_mainpeo = null;
+String night_time = null;
+
 
 for (Cookie cookie : cookies) {
     String name = cookie.getName();
@@ -204,12 +237,15 @@ for (Cookie cookie : cookies) {
         	h_outdateD = value;
         }else if(name.equals("h_mainpeo")){
         	h_mainpeo = value;
+        }else if(name.equals("night_time")){
+        	night_time = value;
         }
     }
 }
 if (h_indateY != null && h_indateM != null && h_indateD != null) {
 %>
    <p class="h_indate">체크인 날짜: <%= h_indateY + "-" + h_indateM + "-" + h_indateD %></p>
+  
 
 <%
 }
@@ -224,6 +260,7 @@ if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
 if(h_mainpeo != null){
 %>
  <p class="h_mainpeo">인원수: <%= h_mainpeo %></p>
+ <p id="night_time" class="night_time">박수: <%= night_time %></p>
 
 <%
 }

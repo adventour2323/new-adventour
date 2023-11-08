@@ -15,7 +15,7 @@
     <meta class="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+<<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -40,9 +40,10 @@ var h_outdateY = getCookie("h_outdateY");
 var h_outdateM = getCookie("h_outdateM");
 var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
+var night_time = getCookie("night_time");
 
 alert("h_outdateY: " + h_outdateY); // 확인 ok
-
+alert("night_time: " +night_time); // 확인 ok
 
 
 </script>
@@ -316,6 +317,7 @@ String h_outdateY = null;
 String h_outdateM = null;
 String h_outdateD = null;
 String h_mainpeo = null;
+String night_time = null;
 
 for (Cookie cookie : cookies) {
     String name = cookie.getName();
@@ -344,7 +346,10 @@ for (Cookie cookie : cookies) {
         	h_outdateD = value;
         }else if  (name.equals("h_mainpeo")) {
         	h_mainpeo = value;
-        }
+        }else if  (name.equals("night_time")) {
+        	night_time = value;
+    }
+
     }
 }
 %>
@@ -374,9 +379,19 @@ if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
 	 <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required"  >
 <% 
 }
-%>
 
- <input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" value="2">
+if (night_time != null) {
+%>
+<input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" value="<%= night_time %>">
+ 
+
+<%
+}else{ %>
+	<input type="text" id="night_time" class="night_time" name="night_time"  required="required"  placeholder="1박" >
+<% 
+}
+%>
+ 
 <select id="sch_peo" class="sch_peo" name="sch_peo">
     <option value="">인원 수</option>
     <option value="1" 
@@ -663,7 +678,8 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 
 <% 
-	}
+}
+
 }else{
 	out.println("null data");
 }
@@ -715,34 +731,41 @@ var country_eng = $(".h_info_touradC").val();
 		}
 	
 
+	// 검색창 버튼 
 
-	    // 입력된 검색어 가져오기
-	    var name_eng = $(".h_info_search_nameeng").val();
-	    var indate = $("#sch_indate").val();
-	    var outdate = $("#sch_outdate").val();
-	    var peo= $(".sch_peo").val();
-	   
-	    if (!name_eng || !indate || !outdate || !peo) {
-	  	    alert("검색 정보를 입력 후 검색해주세요.");
-	  	} else{
-	    
-	     $.ajax({
-	      type: "GET",
-	      url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
-	      data: { h_name_eng:name_eng,
-	      	    h_indate: indate,
-	      	    h_outdate: outdate,
-	      	    h_roompeo:peo}, // 검색어를 서버로 전송
-	      success: function(data) {
-	     
-	        $("#info_SCH").html(data);
-	      },
-	      error: function() {
-	        alert("일치하는 검색어가 없습니다.");
-	      }
-	    });
-	   };     
-	
+
+      // 입력된 검색어 가져오기
+      var name_eng = $(".h_info_search_nameeng").val();
+      var indate = $("#sch_indate").val();
+      var outdate = $("#sch_outdate").val();
+      var peo= $(".sch_peo").val();
+      var night= $(".night_time").val();
+      
+
+      if (!name_eng || !indate || !outdate || !peo) {
+    	    alert("검색 정보를 입력 후 검색해주세요.");
+    	} else{
+      
+       $.ajax({
+        type: "GET",
+        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+        data: { h_name_eng:name_eng,
+        	    h_indate: indate,
+        	    h_outdate: outdate,
+        	    h_roompeo:peo,
+        	    night_time:night
+        	    }, // 검색어를 서버로 전송
+        success: function(data) {
+       
+          $("#info_SCH").html(data);
+        },
+        error: function() {
+          alert("일치하는 검색어가 없습니다.");
+        }
+      });
+     };     
+
+
 
 </script>
 </html>

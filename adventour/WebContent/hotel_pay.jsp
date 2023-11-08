@@ -26,6 +26,9 @@ $(document).ready(function() {
 
     
 });
+
+
+
 </script>
 <header>
 		<%
@@ -150,7 +153,7 @@ if ( infoshc_list != null) {
         <table id="content_room_price_table">
  		   <tr>
             <td class="td_1">1박</td>
-            <td class="td_2">&#8361; <%= reserv.getH_roompri() %></td>
+            <td class="td_2"> <h4 class="td_2_price">&#8361; <%= reserv.getH_roompri() %></td>
            </tr>        
  		   <tr>
  <%
@@ -159,34 +162,34 @@ if ( infoshc_list != null) {
  %>
  		   	<tr>
             <td class="td_1"><%= night %>박</td>
-            <td class="td_2">&#8361; <%= night_pri %></td>
+            <td class="td_2"> <h4 class="td_2_price">&#8361; <%= night_pri %></h4></td>
            </tr>        
  		   <tr>
             <td class="td_1">세금 및 수수료</td>
    <% 
    int tax = (int) (night_pri * 0.05); // 5% 세금 계산
 %>
-            <td class="td_2">&#8361; <%= tax %></td>
+            <td class="td_2"> <h4 class="td_2_price"> &#8361; <%= tax %></h4></td>
            </tr>            
  		   <tr>
    <% 
    int tax2 = (int) (night_pri * 0.1); // 10% 부가세 계산
 %>
             <td class="td_1">부가세</td>
-            <td class="td_2">&#8361; <%= tax2 %>
+            <td class="td_2"><h4 class="td_2_price">&#8361; <%= tax2 %></h4></td>
  		   <tr>
     <%
    int sale = (int) (night_pri * -0.12); 
 %>		   
             <td class="td_1">할인</td>
-            <td class="td_2"> &#8361; <%=sale %></td>
+            <td class="td_2"> <h4 class="td_2_price">&#8361;<%=sale %></h4></td>
            </tr>
            <tr>
 <%
 int total_price = (int) ( night_pri + tax + tax2 + sale);
 %>           
             <td class="td_total">총 가격</td>
-            <td class="td_totalpri">&#8361; <%= total_price %></td>
+            <td class="td_totalpri"> <h3 class="td_2_price">&#8361; <%= total_price %></h3></td>
            </tr>            
         </table>
       </div><!-- content_room_price_div -->
@@ -296,4 +299,41 @@ if (session.getAttribute("id") == null) {
 }
 %>
 </footer>
+<script >
+var elements = document.querySelectorAll(".td_2");
+
+if (elements) {
+  elements.forEach(function(element) {
+
+    var text = element.textContent;
+
+
+    var formattedText = addCommasToNumber(text);
+
+
+    element.textContent = formattedText;
+  });
+}
+
+var elements = document.querySelectorAll(".td_2_price");
+
+if (elements) {
+  elements.forEach(function(element) {
+
+    var text = element.textContent;
+
+
+    var formattedText = addCommasToNumber(text);
+
+
+    element.textContent = formattedText;
+  });
+}
+
+// 세 자리마다 콤마를 추가하는 함수
+function addCommasToNumber(numberString) {
+  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
+
 </html>
