@@ -378,7 +378,7 @@
 				
 			
 							<div class="appraisal" id="appraisal">			
-								<div class="rating_num" style="">
+								<div class="rating_num">
 									<strong>평점</strong>
 									<div class="star-rating">
     									<div class="star-rating" style="color: rgba(250, 208, 0, 0.99);">

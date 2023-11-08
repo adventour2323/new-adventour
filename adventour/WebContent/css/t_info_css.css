@@ -275,26 +275,35 @@ a.next:hover {
     margin-right: 10px;
 }
 
-/* .label-cell {
-    width: 120px;
-    text-align: right;
-    font-weight: bold;
-    background-color: #f2f2f2;
-    height: 37.5px;
-        display: flex;
-    justify-content: center; 가로 중앙 정렬
-    align-items: center; 세로 중앙 정렬
-    
+.guide_info_div{
+	display: block;
+}
+.guide_name_div{
+	display: flex;
+}
+.label-cell{
+	width: 120px; 
+	height: 37.5px; 
+	font-weight: bold;
+	background-color: #f2f2f2; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center;	
+}
+.data-cell{
+	width: 200px; 
+	height: 37.5px; 
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+.guide_item{
+	display: flex;
 }
 
-.data-cell {
-    padding-left: 10px;
-    height: 37.5px;
-        display: flex;
-    justify-content: center; 가로 중앙 정렬
-    align-items: center; 세로 중앙 정렬
-}
- */
+
+
+/*/
 /* 별점 */
 
 /* 해당 부분을 중앙에 배치하도록 스타일 업데이트 */

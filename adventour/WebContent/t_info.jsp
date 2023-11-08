@@ -19,7 +19,7 @@
 <title>상품 페이지</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1E47ve8m8-JtUPPTvXczFPM7MkBkoQCQ&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg=initMap"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
 
 
@@ -258,41 +258,39 @@
                 					<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
             					</div>
             					<div style="display: block; ">
-									<div style="display: block;">
-										<div style="display: flex;">
-											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+									<div class="guide_info_div">
+										<div class="guide_name_div" >
+											<div class="label-cell">
 												<strong>이름</strong>
 											</div>
-											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+											<div class="data-cell">
 												<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
 											</div>
 										</div>
-										<div style="display: flex;">
-											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+										<div class="guide_contact" style="display: flex;">
+											<div class="label-cell">
 												<strong>연락처</strong>
 											</div>
-											<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
+											<div class="data-cell">
 												<%=gg.getEmail()%>
 											</div>
 										</div>
-										<div style="display: flex;">
-											<div class="label-cell" style="width: 120px; height: 37.5px; font-weight: bold; background-color: #f2f2f2; display: flex; justify-content: center; align-items: center;">
+										<div class="guide_item">
+											<div class="label-cell">
 												<strong>다른 상품</strong>
 											</div>
-<% ArrayList<t_getset> a3 = id.t2(g_id);
-for (int i = 0; i < a3.size(); i++) {
-    t_getset tn = a3.get(i);
-%>
-<div class="data-cell" style="width: 200px; height: 37.5px; display: flex; justify-content: center; align-items: center;">
-    <a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><div class="t_name2"><%=tn.getT_name()%></div></a>
-    <% if (i < a3.size() - 1) { %>
-        <span>, </span>
-    <% } %>
-</div>
-<% } %>
-
-										</div>
-									</div>												
+											<% ArrayList<t_getset> a3 = id.t2(g_id);
+												for (int i = 0; i < a3.size(); i++) {
+												t_getset tn = a3.get(i);
+											%>
+											<div class="data-cell">
+												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><div class="t_name2"><%=tn.getT_name()%></div></a>
+    											<% if (i < a3.size() - 1) { %> <span>, </span>
+												<% } %>
+											</div>
+											<% } %>
+										</div>	<!-- guide_item -->
+									</div>		<!-- guide_info_div -->										
 								</div>
 							</div> <!-- guide-row -->
 
