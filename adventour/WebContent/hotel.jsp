@@ -18,40 +18,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 </head>
-<script>
-$(document).ready(function() {
-	$(".b_maintbtn").on("click", function(){
 
-	    var h_mainde = document.getElementById("h_mainde").value;
-	    var h_maincity = document.getElementById("h_maincity").value;
-	    var h_indateY = document.getElementById("h_indateY").value;
-	    var h_indateM = document.getElementById("h_indateM").value;
-	    var h_indateD = document.getElementById("h_indateD").value;
-	    var h_outdateY = document.getElementById("h_outdateY").value;
-	    var h_outdateM = document.getElementById("h_outdateM").value;
-	    var h_outdateD = document.getElementById("h_outdateD").value;
-	    var h_mainpeo = document.getElementById("h_mainpeo").value;
-
-	    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
-	  var expirationDate = new Date();
-	expirationDate.setDate(expirationDate.getDate() + 1);
-
-	    // 각 데이터를 쿠키에 저장
-	    document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_indateM=" + h_indateM + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_indateD=" + h_indateD + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_outdateY=" + h_outdateY + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_outdateM=" + h_outdateM + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_outdateD=" + h_outdateD + "; expires=" + expirationDate.toUTCString();
-	    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
-
-	    alert("메인검색"+h_outdateD);
-	});
-	});
-
-</script>
 
 
 <body>
@@ -167,8 +134,9 @@ if (session.getAttribute("id") == null) {
 					<option vlaue="3">3</option>
 					<option vlaue="4">4</option>
 				</select>
+
 				
-			
+			<input type="hidden" id="night_time" class="night_time" name="night_time">
 			   <input type="submit" class="b_maintbtn"  name="bsch_btn" value="검색하기">
 			    
 			</div>
@@ -325,34 +293,60 @@ if (session.getAttribute("id") == null) {
 
 
 </body>
+
 <script>
-//날짜계산	
-$(document).ready(function() { 
-    const schIndate = document.getElementById("sch_indate");
-    const schOutdate = document.getElementById("sch_outdate");
-    const nightTime = document.querySelector("#night_time");
-    
-    function updateNightTime() {
-      const checkinDate = new Date(schIndate.value);
-      const checkoutDate = new Date(schOutdate.value);
-      
-      if (!isNaN(checkinDate) && !isNaN(checkoutDate)) {
-        const timeDifference = checkoutDate - checkinDate;
-        const nightCount = Math.floor(timeDifference / (1000 * 3600 * 24)); 
 
-        if (nightCount >= 1) {
-          nightTime.value = '${nightCount}';
-        } else {
-          nightTime.value = "체크아웃 - 체크인";
-        }
-      } else {
-        nightTime.value = ""; 
-      }
-    }
-    
-    updateNightTime();
-});
+	$(".b_maintbtn").on("click", function(){
+
+
+	    var h_mainde = document.getElementById("h_mainde").value;
+	    var h_maincity = document.getElementById("h_maincity").value;
+	    var h_indateY = document.getElementById("h_indateY").value;
+	    var h_indateM = document.getElementById("h_indateM").value;
+	    var h_indateD = document.getElementById("h_indateD").value;
+	    var h_outdateY = document.getElementById("h_outdateY").value;
+	    var h_outdateM = document.getElementById("h_outdateM").value;
+	    var h_outdateD = document.getElementById("h_outdateD").value;
+	    var h_mainpeo = document.getElementById("h_mainpeo").value;
+	   
+	    alert("1번" + h_outdateD);
+	    
+	    var h_indate11 = h_indateY+"-"+h_indateM+"-"+h_indateD;
+	    var h_outdate11 = h_outdateY+"-"+h_outdateM+"-"+h_outdateD;
+
+	  
+
+	    alert("2번" +  h_indate11);
+
+	    // 날짜를 Date 객체로 변환
+	    var checkInDate11 = new Date(h_indate11);
+	    var checkOutDate11 = new Date(h_outdate11);
+
+	    // 두 날짜 사이의 밤 수 계산
+	    var timeDifference11 = checkOutDate11 - checkInDate11;
+	    var night_time = timeDifference11 / (1000 * 60 * 60 * 24);
+
+	   
+
+	    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
+	  var expirationDate = new Date();
+	expirationDate.setDate(expirationDate.getDate() + 1);
+
+	    // 각 데이터를 쿠키에 저장
+	    document.cookie = "h_mainde=" + h_mainde + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_maincity=" + h_maincity + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateY=" + h_indateY + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateM=" + h_indateM + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_indateD=" + h_indateD + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateY=" + h_outdateY + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateM=" + h_outdateM + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_outdateD=" + h_outdateD + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
+	    document.cookie = "night_time=" + night_time + "; expires=" + expirationDate.toUTCString();
+
+	    alert("3번 메인검색"+h_outdateD);
+	    alert("4번 night_time"+night_time);
+	});
+
 </script>
-
 </html>
-

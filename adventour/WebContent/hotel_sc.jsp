@@ -48,8 +48,7 @@ var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
 var night_time = getCookie("night_time");
 
-alert("메인검색 날2" + h_outdateD);
-
+alert(" 5번 호텔 스케쥴 박수 "+night_time);
 
 document.querySelector(".sch_btn").addEventListener("click", function () {
 	  // 기존 쿠키 값 삭제
@@ -62,6 +61,7 @@ document.querySelector(".sch_btn").addEventListener("click", function () {
 	  document.cookie = "h_outdateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "h_outdateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
 
 	  // 입력된 값들을 가져와서 변수에 저장
 	  var newCountry = document.querySelector("#sch_country").value;
@@ -76,6 +76,8 @@ document.querySelector(".sch_btn").addEventListener("click", function () {
 	  document.cookie = "h_indate=" + newCheckinDate;
 	  document.cookie = "h_outdate=" + newCheckoutDate;
 	  document.cookie = "night_time=" + newNightTime;
+	  
+	    alert(" 6번 호텔 스케쥴 박수 "+night_time);
 
 	  // 나머지 처리 또는 폼 제출을 여기에 추가
 	});
@@ -171,7 +173,7 @@ if (session.getAttribute("id") == null) {
       <input type="radio" class="h_queen"  name="h_type" value="퀸">퀸</br>
     </div>
 
- <input type="hidden" id="night_time">
+ <input type="hidden" id="night_time" name="night_time" class="night_time">
     <div class="sch13">
 <!--    <a href=scsearch.hotel?uname=hotelSCSearch> --> 
       <button class="sch_btn" type="submit" name="sch_btn">검색하기</button>

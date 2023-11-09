@@ -23,12 +23,40 @@
    
    
   </head>
+<script >
+$(document).ready(function() {
+	$("#roompay_btn").on('click', function(e) { 
+ 	    e.preventDefault(); // 기본 submit 동작을 막음
 
+ 	    var id_sess = '<%=(String)session.getAttribute("id")%>';
+ 	    
+ 	    // alert("id_sess." + id_sess);확인 ok
+
+ 	    if (id_sess === null || id_sess === "null") {
+ 	    	 alert("로그인이 필요한 항목입니다.", "회원 가입 또는 로그인을 해주세요", "error");
+ 	    } else {
+ 	        // 로그인 정보가 있는 경우에만 submit을 수행
+ 	        $("form[name='info_to_reserv']").submit();
+ 	    }
+ 	});
+});	
+
+ 	
+</script>
 
 
 <body>
 
-<form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"   method="post" >
+
+<%
+session.getAttribute("id");
+%>
+
+
+<form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"  method="post">
+
+
+
  <%
  	request.setCharacterEncoding("UTF-8"); 
       String h_name_eng = request.getParameter("h_name_eng"); // 입력된 검색어 가져오기
@@ -101,7 +129,7 @@
           <h4 class="h_room_intime"> 체크인 : <%=  bbb.getH_room_intime()%> </h4>
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
-          <input id="roompay_btn" type="submit" class="roompay_btn" value="결제하기"/>
+          <input id="roompay_btn" type="button" class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 
 
@@ -192,7 +220,5 @@
 	    updateNightTime();
 	});
 	
-
-
 	</script>
 </html>

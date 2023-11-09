@@ -38,13 +38,17 @@
   var h_outdate = getCookie("newCheckoutDate");
   var night_time = getCookie("newNightTime");
 
+  var maindeValue = getCookie("h_mainde");
+  var maincityValue = getCookie("h_maincity");
+  var indateValue = getCookie("h_indate");
+  var outdateValue = getCookie("h_outdate");
+  var nightTimeValue = getCookie("night_time");
 
-
-alert("새로운 나라: " + newCountry);
-alert("새로운 도시: " + newCity);
-alert("새로운 체크인 날짜: " + newCheckinDate);
-alert("새로운 체크아웃 날짜: " +newCheckoutDate);
-alert("새로운 박 수: " + newNightTime);
+alert("새로운 나라: " +  h_mainde);
+alert("새로운 도시: " +h_maincity);
+alert("새로운 체크인 날짜: " +h_indate );
+alert("새로운 체크아웃 날짜: " +h_outdate);
+alert("새로운 박 수: " + night_time);
 
   });
 

@@ -204,20 +204,21 @@ imageClasses.forEach(function(className) { //마우스오버
  }
 
  // 검색시 날짜 비교 및 안내 메시지 표시
- $('form[name="h_main_sch_form"]').on('submit', function(event) {
-     var currentDate = getCurrentDate();
-     var mh_indate = new Date($('.h_indateY').val(), $('.h_indateM').val() - 1, $('.h_indateD').val()); 
-     var mh_outdate = new Date($('.h_outdateY').val(), $('.h_outdateM').val() - 1, $('.h_outdateD').val()); 
 
-     if (mh_indate < currentDate || mh_outdate < currentDate) {
-         alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
-         event.preventDefault(); // 폼 제출 차단
-     }  
-     if (mh_indate > mh_outdate) {
-         alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
-         event.preventDefault(); // 폼 제출 차단
-     }
+ $('form[name="h_main_sch_form"]').on('submit', function(event) {
+	    var currentDate = getCurrentDate();
+	    var mh_indate = new Date($('.h_indateY').val(), $('.h_indateM').val() - 1, $('.h_indateD').val()); 
+	    var mh_outdate = new Date($('.h_outdateY').val(), $('.h_outdateM').val() - 1, $('.h_outdateD').val()); 
+
+	    if (mh_indate < currentDate || mh_outdate < currentDate) {
+	        alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
+	        event.preventDefault(); // 폼 제출 차단
+	    } else if (mh_indate > mh_outdate) {
+	        alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
+	        event.preventDefault(); // 폼 제출 차단
+	    }  
  });
+
 //숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".pack_pri");
 
@@ -238,7 +239,6 @@ imageClasses.forEach(function(className) { //마우스오버
 	function addCommasToNumber(numberString) {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
-
 
 	
 

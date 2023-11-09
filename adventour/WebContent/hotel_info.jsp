@@ -23,6 +23,7 @@
    
    
   </head>
+  
   <script>
 function getCookie(name) {
     var value = "; " + document.cookie;
@@ -44,6 +45,23 @@ var night_time = getCookie("night_time");
 
 alert("h_outdateY: " + h_outdateY); // 확인 ok
 alert("night_time: " +night_time); // 확인 ok
+
+$(document).ready(function() {
+	$("#roompay_btn").on('click', function(e) { 
+ 	    e.preventDefault(); // 기본 submit 동작을 막음
+
+ 	    var id_sess = '<%=(String)session.getAttribute("id")%>';
+ 	    
+ 	  // alert("id_sess." + id_sess); 아이디값 가져오는지 확인ok
+
+ 	    if (id_sess === null || id_sess === "null") {
+ 	    	 alert("로그인이 필요한 항목입니다.", "회원 가입 또는 로그인을 해주세요", "error");
+ 	    } else {
+ 	        // 로그인 정보가 있는 경우에만 submit을 수행
+ 	        $("form[name='info_to_reserv']").submit();
+ 	    }
+ 	});
+});	
 
 
 </script>
@@ -299,10 +317,18 @@ if (top_list != null) {
 
     </div>
  </div><!--hotel_info-->
-  </div><!-- content -->
+ 
+ </div><!-- content -->
+ 
+ <!--  예약 검색 창 -->
+ 
+ 
+
+
+
 <form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"  method="post">
 
- 
+
  <div class="yes_reserv_room">
  <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
  
@@ -483,7 +509,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
     
-          <input id="roompay_btn" type="submit" class="roompay_btn" value="결제하기"/>
+          <input type="button" id="roompay_btn"  class="roompay_btn" value="결제하기"/>
         </div><!--h_room_options2-->
 
 
@@ -760,10 +786,14 @@ var country_eng = $(".h_info_touradC").val();
           $("#info_SCH").html(data);
         },
         error: function() {
-          alert("일치하는 검색어가 없습니다.");
+          alert("일치하는 검색 내용이 없습니다.");
         }
       });
      };     
+ 	// 이전 페이지로 리디렉션하는 JavaScript 코드
+ 	function redirectToPreviousPage() {
+ 	    window.history.go(-1);
+ 	}
 
 
 

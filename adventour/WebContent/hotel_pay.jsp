@@ -44,7 +44,7 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
-<form name="reserv_to_pay" href="paying.hotel?uname=paying" method="post">
+<form name="reserv_to_pay" href="hotel_pay_toss.jsp" method="post">
 <%  
 String checkin = request.getParameter("checkin");
 String checkout = request.getParameter("checkout");
