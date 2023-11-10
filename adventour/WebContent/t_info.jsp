@@ -339,7 +339,36 @@
 			<!--  -->
 			
 			<div class="t_review_div">
-				<table class="review-table">
+    <% 
+        ArrayList<t_r_getset> rv = id.t6(t_id); 
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
+
+        int count = rv.size();
+        int itemsPerPage = 10;
+        int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
+
+        int startIndex = (currentPage - 1) * itemsPerPage;
+        int endIndex = Math.min(startIndex + itemsPerPage, count);
+
+        // totalPages 계산
+        int totalPages = (int) Math.ceil((double) count / itemsPerPage);
+    %>
+
+    <% if (count == 0) { %>
+                <table class="review-table">
+					<tr id="">
+						<th>번호</th>
+						<th>작성자</th>
+						<th>내용</th>
+						<th>날짜</th>
+						<th>평점</th>
+					</tr>
+                     <tr>
+                        <td style="text-align: center;" colspan="5">등록된 후기가 없습니다.</td>
+                    </tr>
+                </table>
+    <% } else { %>
+            <table class="review-table">
 					<tr id="review_top">
 						<th>번호</th>
 						<th>작성자</th>
@@ -347,25 +376,16 @@
 						<th>날짜</th>
 						<th>평점</th>
 					</tr>
-				<%
-					ArrayList<t_r_getset> rv = id.t6(t_id); 
-					SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); // 원하는 포맷 설정
-					
-					int count = rv.size(); // 댓글의 총 개수를 사용해서 초기 번호를 설정
-                   
-					int itemsPerPage = 10; // 한 페이지당 아이템 개수
-					int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // 페이지 번호를 받음
-
-					int startIndex = (currentPage - 1) * itemsPerPage;
-					int endIndex = Math.min(startIndex + itemsPerPage, count);
-
-					for (int i = startIndex; i < endIndex; i++) {
-						t_r_getset tr = rv.get(i);
-						String reviewDateString = tr.getReview_date();
-						Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
-						Date reviewDate = new Date(reviewTimestamp.getTime());
-				%>
-					<tr>
+       
+            <% 
+                for (int i = startIndex; i < endIndex; i++) {
+                    t_r_getset tr = rv.get(i);
+                    String reviewDateString = tr.getReview_date();
+                    Timestamp reviewTimestamp = Timestamp.valueOf(reviewDateString);
+                    Date reviewDate = new Date(reviewTimestamp.getTime());
+            %>
+                <!-- 기존의 테이블 행 등 -->
+                <tr>
 						<td style="text-align: center;"><%= count - i %></td> <!-- 업데이트된 부분 -->
 						<td style="text-align: center;"><%= tr.getM_id() %></td>
 						<td><%= tr.getT_review() %></td>
@@ -388,29 +408,35 @@
 							</div> <!-- star-rating -->
 						</td>
 					</tr>
-					<% } %>
-    			</table> <!-- review-table -->
-    
-    <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 -->
-				<div class="pagination-container">
-					<%
-						int totalPages = (int) Math.ceil((double) count / itemsPerPage);
-						if (currentPage > 1) {
-					%>
-						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>" onclick="scrollToReviewTable()">이전 페이지</a>
-					<% 
-						} for (int i = 1; i <= totalPages; i++) {
-					%>
-						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>>
-							<%= i %>
-						</a>
-	    			<% } if (currentPage < totalPages) {
-					%>
-						<a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>" onclick="scrollToReviewTable()">다음 페이지</a>
-					<% } %>
-				</div>
+            <% } %>
+        </table> <!-- review-table -->
 
-			</div><!-- t_review_div -->
+        <!-- 이전 페이지와 다음 페이지로 이동하는 버튼 -->
+        <div class="pagination-container">
+            <% 
+                // 이전 페이지 버튼
+                if (currentPage > 1) { 
+            %>
+                <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage - 1 %>" onclick="scrollToReviewTable()">이전 페이지</a>
+            <% } 
+
+                // 페이지 번호 버튼
+                for (int i = 1; i <= totalPages; i++) { 
+            %>
+                <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= i %>" <%if (i == currentPage) {%>class="current-page"<%} %>>
+                    <%= i %>
+                </a>
+            <% } 
+
+                // 다음 페이지 버튼
+                if (currentPage < totalPages) { 
+            %>
+                <a href="t_info.jsp?t_id=<%= t_id %>&page=<%= currentPage + 1 %>" onclick="scrollToReviewTable()">다음 페이지</a>
+            <% } %>
+        </div>
+    <% } %>
+</div><!-- t_review_div -->
+
 		</div> <!-- rating-div -->
 
 <!-- 호텔광고 -->
