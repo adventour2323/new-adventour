@@ -435,7 +435,7 @@
         		%>
         			<div class="hotel-card">
             			<div class="hotel-img">
-            				<a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px"></a>
+            				<a href="information.hotel?uname=hotelinfom&hotelname=<%=hotel.getH_name_eng()%>"><img alt="hotel" src="./image/hotel/h_image/<%= hotel.getH_pho() %>" width="100%" height="180px"></a>
 	            		</div>
     	        		<div class="hotel-info">
         	    			<label><%= hotel.getCountry_ko() %>, <%= hotel.getCity_ko() %></label><br>
@@ -459,7 +459,7 @@
 	        					return String.format("%,d", number);
     							}
 							%>
-            				<label><a href="information.hotel?uname=<%=hotel.getH_name_eng()%>"><span class="hotel-name"><%= hotel.getH_name_ko() %></span></a></label> <br>
+            				<label><a href="information.hotel?uname=hotelinfom&hotelname=<%=hotel.getH_name_eng()%>"><span class="hotel-name"><%= hotel.getH_name_ko() %></span></a></label> <br>
                 			<label>가격: ₩ <span class="h_price"><%= addCommasForHotel(hotel.getH_roompri()) %></span> ~</label>
 	
 			            </div> <!-- hotel-info -->
