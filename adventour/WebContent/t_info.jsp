@@ -30,7 +30,6 @@
 
 </style>
 
-
 <jsp:useBean id="id" class="adventour.g_list_print">
 			<%
                 String t_id = request.getParameter("t_id");
@@ -38,9 +37,6 @@
                 ArrayList<t_getset> a1 = id.t4(t_id);
             %>
             <% for (t_getset g : a1) { %>
-
-
-            
 <body>
 
 		<header>
@@ -52,7 +48,6 @@
 			<% } %>
 			
 		</header>
-	
 		
 	<div class="content"> <!-- 전체 content -->
 		
@@ -118,8 +113,6 @@
         					<input type="hidden" id="tour_price" name="tour_price" value="<%= g.getT_price() %>">
     					</div>
 					</div>
-					
-
 				
 					<div class="people_num" style="display: flex; align-items: center;">
     					<label style="margin-right: 10px;"><h5 style="margin: 0;">인원</h5></label>
@@ -130,9 +123,7 @@
     					</div>
     					<input type="hidden" name="total_people" value="1" id="totalPeopleInput">
 					</div>
-
-							<hr style="margin-top: 40px;">
-									
+							<hr style="margin-top: 40px;">		
 					<div class="price_cal" >
     					<label style="margin-right: 10px;"><h5>합계</h5></label>
     					<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
@@ -156,10 +147,7 @@
 				</form>
 			</div> <!-- option_div -->
 		
-		
 		</div> <!-- top_area -->
-		
-		
 		
 		<div class="bottom_area" >
 			<hr>
@@ -239,7 +227,6 @@
 						<div class="tour_info" id="tour_info">						
 							<%= g.getT_info() %>
 						</div>
-
 				</div>
 			</div>
 			
@@ -614,7 +601,6 @@
     }
 </script>
 
-
 <script>
     // 이미지 슬라이딩 관련 JavaScript 코드 (이전과 다음 슬라이드 이동)
     var slideIndex = 1;
@@ -637,7 +623,6 @@
 </script>
 
 <script>
-
 function count(type)  {
 	  // 결과를 표시할 element
 	  const resultElement = document.getElementById('result');
@@ -646,7 +631,6 @@ function count(type)  {
 	  let number = resultElement.innerText;
 	  
 	  // 더하기/빼기
-	  
 	  if(type === 'plus') {
 	    number = parseInt(number) + 1;
 	  }else if(type === 'minus')  {
@@ -656,7 +640,6 @@ function count(type)  {
 	  // 결과 출력
 	  resultElement.innerText = number;
 	}
-
 </script>
 
 <script>
@@ -671,10 +654,8 @@ function count(type)  {
 
   document.addEventListener('DOMContentLoaded', function() {
     // 페이지가 로드될 때 초기 가격과 합계 가격에 대한 포맷 적용
-    document.getElementById('totalPrice').innerText = tPrice;
-    
+    document.getElementById('totalPrice').innerText = tPrice;    
   });
-
 
   function updateCount(change) {
 	  currentCount += change;
@@ -698,7 +679,6 @@ function count(type)  {
   
 </script>
 
-
 <script> /* db 출력 텍스트에 <br> 적용 */
   document.addEventListener('DOMContentLoaded', function() {
     const tourInfoElement = document.querySelector('.tour_info'); // tour_info 클래스를 가진 요소를 선택합니다.
@@ -710,7 +690,6 @@ function count(type)  {
     }
   });
 </script>
-
 
 <script>
 function openTab(evt, tabName) {
@@ -754,7 +733,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 </script>
-
 
 <script>
 function validateForm() {
@@ -843,11 +821,8 @@ function validateForm() {
 </script>
 
 
-
-
 <%} %> <!-- for문 종료 -->
 <!--  -->
-
 </jsp:useBean>
 <!--  -->
 
