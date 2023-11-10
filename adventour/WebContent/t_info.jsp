@@ -271,9 +271,14 @@
 												t_getset tn = a3.get(i);
 											%>
 											<div class="data-cell">
-												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>"><div class="t_name2"><%=tn.getT_name()%></div></a>
-    											<% if (i < a3.size() - 1) { %> <span>, </span>
-												<% } %>
+												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>">
+													<div class="t_name2">
+														<%=tn.getT_name()%>
+													</div>
+												</a>
+    												<% if (i < a3.size() - 1) { %> 
+    													<span>, </span>
+													<% } %>
 											</div>
 											<% } %>
 										</div>	<!-- guide_item -->
