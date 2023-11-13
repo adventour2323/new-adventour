@@ -298,7 +298,6 @@ if (session.getAttribute("id") == null) {
 
 	$(".b_maintbtn").on("click", function(){
 
-
 	    var h_mainde = document.getElementById("h_mainde").value;
 	    var h_maincity = document.getElementById("h_maincity").value;
 	    var h_indateY = document.getElementById("h_indateY").value;
@@ -324,7 +323,7 @@ if (session.getAttribute("id") == null) {
 
 	    // 두 날짜 사이의 밤 수 계산
 	    var timeDifference11 = checkOutDate11 - checkInDate11;
-	    var night_time = timeDifference11 / (1000 * 60 * 60 * 24);
+	    var night_time = Math.floor(timeDifference11 / (1000 * 60 * 60 * 24));
 
 	   
 

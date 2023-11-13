@@ -26,10 +26,48 @@ $(document).ready(function() {
 		initMap();
 		
 
-
-  
-
-  	
+//	    // 왼쪽 검색창에 날짜 선택
+//	    $.datepicker.setDefaults({
+//	        dateFormat: 'yy-mm-dd',
+//	        prevText: '이전 달',
+//	        nextText: '다음 달',
+//	        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+//	        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+//	        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+//	        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+//	        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+//	        showMonthAfterYear: true,
+//	        yearSuffix: '년'
+//	    });
+//
+//	    $(function () {
+//	        $('.datepicker').datepicker();
+//	    });
+//  
+//	    // 검색시 날짜 비교 및 안내 메시지 표시
+//	    $('form[name="info_to_reserv"]').on('submit', function(event) {
+//	        var today = new Date(); // 현재 날짜를 가져옵니다.
+//	        var currentDate = getCurrentDate(today);
+//	        var h_indate = $('#sch_indate').val();
+//	        var h_outdate = $('#sch_outdate').val();
+//
+//	        if (h_indate < currentDate || h_outdate < currentDate) {
+//	            alert("과거 날짜는 선택할 수 없습니다. 날짜를 다시 확인하세요.");
+//	            event.preventDefault(); // 폼 제출을 중단합니다.
+//	        } else if (h_indate > h_outdate) {
+//	            alert("체크아웃 날짜는 체크인 날짜 이후여야 합니다. 날짜를 다시 확인하세요.");
+//	            event.preventDefault(); // 폼 제출을 중단합니다.
+//	        }
+//	    });
+//
+//	    // 현재의 이전 날짜를 선택하지 못하도록 설정
+//	    function getCurrentDate(today) {
+//	        var year = today.getFullYear();
+//	        var month = today.getMonth() + 1; // 월은 0부터 시작하므로 1을 더합니다.
+//	        var day = today.getDate();
+//	        return year + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+//	    }
+//  	
 
  // 숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".h_room_price");

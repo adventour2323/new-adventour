@@ -22,6 +22,7 @@
 
   String orderId = request.getParameter("orderId");
   String paymentKey = request.getParameter("paymentKey");
+  String customerName = request.getParameter("customerName");
   String amount = request.getParameter("amount");
   
   // 개발자센터에 로그인해서 내 결제위젯 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
@@ -32,7 +33,7 @@
   byte[] encodedBytes = encoder.encode(secretKey.getBytes("UTF-8"));
   String authorizations = "Basic "+ new String(encodedBytes, 0, encodedBytes.length);
 
-  paymentKey = URLEncoder.encode(paymentKey, StandardCharsets.UTF_8);
+
   
   URL url = new URL("https://api.tosspayments.com/v1/payments/confirm");
   
@@ -44,6 +45,7 @@
   JSONObject obj = new JSONObject();
   obj.put("paymentKey", paymentKey);
   obj.put("orderId", orderId);
+  obj.put("customerName", customerName);
   obj.put("amount", amount);
   
   OutputStream outputStream = connection.getOutputStream();
@@ -68,12 +70,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
+<!--  데이터베이스 저장하는 코드 추가하면댕듯 -->
 <section>
     <%
     if (isSuccess) { %>
         <h1>결제 성공</h1>
         <p>결과 데이터 : <%= jsonObject.toJSONString() %></p>
         <p>orderName : <%= jsonObject.get("orderName") %></p>
+        <p>customerName : <%= jsonObject.get("customerName")  %></p>
         <p>method : <%= jsonObject.get("method") %></p>
         <p>
             <% if(jsonObject.get("method").equals("카드")) { out.println(((JSONObject)jsonObject.get("card")).get("number"));} %>

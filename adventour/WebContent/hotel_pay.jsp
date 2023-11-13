@@ -44,7 +44,7 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
-<form name="reserv_to_pay" href="hotel_pay_toss.jsp" method="post">
+<form name="reserv_to_pay" action="hotel_pay_toss.jsp" method="post">
 <%  
 String checkin = request.getParameter("checkin");
 String checkout = request.getParameter("checkout");
@@ -82,10 +82,15 @@ if ( infoshc_list != null) {
 	     </div>
 	     <div id="content_hotel_name">
 	     <h2><%=reserv.getH_name_eng() %></h2>
-	     <h4><%=reserv.getH_name_ko() %></h4>
+	     <h4 ><%=reserv.getH_name_ko() %></h4>
 	     <h5><%=reserv.getH_grade() %>성급</h5>
-	     <h5><%=reserv.getH_addr() %></h5>
-	      <h5>TEL : <%=reserv.getH_tel()%></h5>
+	     <h5 ><%=reserv.getH_addr() %></h5>
+	      <h5 >TEL : <%=reserv.getH_tel()%></h5>
+	      
+	     <input type="hidden" name="h_name_eng" value="<%=reserv.getH_name_eng() %>">
+	    <input type="hidden" name="h_name_ko" value="<%=reserv.getH_name_ko() %>">
+
+	     	      
 	     </div>
 	   </div><!-- content_hotel_div -->
 	    
@@ -97,15 +102,20 @@ if ( infoshc_list != null) {
  		   </tr>
            <tr>
             <td><%= checkin %></td>
-            <td><%= checkout %></td>
+            <td ><%= checkout %></td>
+            
+        <input type="hidden" name="h_indate" value="<%= checkin %>">
+	    <input type="hidden" name="h_outdate" value="<%= checkout %>">
            </tr>	   
 	   	   <tr>
             <th>투숙객 </th>
             <th>투숙기간</th>
  		   </tr>
  		   <tr>
-            <td><%= peo %>명</td>
-            <td><%= night %>박</td>
+            <td ><%= peo %>명</td>
+            <td ><%= night %>박</td>
+        <input type="hidden" name="h_roompeo" value="<%= peo %>">
+	    <input type="hidden" name="h_night_time" value="<%= night %>">
            </tr>
            <tr>
             <th>객실 </th>
@@ -127,7 +137,8 @@ if ( infoshc_list != null) {
 	     <img id="content_room_image" src="image/hotel/h_image/<%= reserv.getH_roompho()%>"/>
 	     </div>
 	     <div id="content_room_name">
-	     <h3>룸 타입 : <%= reserv.getH_roomtype() %></h3>
+	     <h3 name="h_roomtype">룸 타입 : <%= reserv.getH_roomtype() %></h3>
+	     <input type="hidden" name="h_roomnum" value="<%= reserv.getH_roomnum() %>">
 	     <table id="content_room_info" >
 	      <tr>
             <th> 침대 : <%= reserv.getH_room_bed() %> x <%= reserv.getH_room_bedc() %></th>
@@ -161,7 +172,7 @@ if ( infoshc_list != null) {
  int night_pri = (int) (nightAsInt * roomPrice);
  %>
  		   	<tr>
-            <td class="td_1"><%= night %>박</td>
+            <td name="h_night_time"  class="td_1"><%= night %>박</td>
             <td class="td_2"> <h4 class="td_2_price">&#8361; <%= night_pri %></h4></td>
            </tr>        
  		   <tr>
@@ -190,6 +201,7 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
 %>           
             <td class="td_total">총 가격</td>
             <td class="td_totalpri"> <h3 class="td_2_price">&#8361; <%= total_price %></h3></td>
+            <input type="hidden" name="total_price" value="<%= total_price %>">
            </tr>            
         </table>
       </div><!-- content_room_price_div -->
@@ -269,21 +281,19 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
 	}
 }
 %>	 
-	 
-	 
-	
+	 	
 	</div><!-- content_div_right -->
 	
 		
 	</div><!--content_div -->
 	</div><!--content -->
-
+</form>
 
 	<div id="content_right"></div>
 
 
 </div><!-- content_all -->
-</form>
+
 </body>
 <footer>
 		<%
