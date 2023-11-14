@@ -17,9 +17,9 @@ public class g_list_print {
 	public void con() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		 conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root", "qhdks12!@");
+//		 conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root", "qhdks12!@");
 		
-//		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");
 		stmt = conn.createStatement();
 	}
 	 

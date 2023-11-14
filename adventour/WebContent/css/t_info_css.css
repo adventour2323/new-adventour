@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+*{
+margin: 0;
+padding: 0;
+}
+
+
 body{
 height: 1300px;
 }
@@ -22,19 +28,20 @@ height: 1300px;
     background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
     color: white!important; /* 글자색을 원하는 색상으로 설정 */
 }
-	.top_area{
-	display: flex;
-	/* width: 850px; */
+.top_area {
+    display: flex;
+    justify-content: space-between; /* 좌우 정렬 및 사이 간격 유지 */
+    align-items: flex-start; /* 위쪽 정렬 */
+    margin-bottom: 20px;
+    width: 80%; /* 너비 조절 */
+    margin: 20px auto; /* 중앙 정렬을 위한 margin 추가 */
+}
+
 	
-	margin-bottom: 20px;
-	
-	/* height: 500px; */
-	
-	}
-	
-	.top_left{
-	margin-right: 30px;
-	}
+.top_left {
+    margin-right: 10px;
+    margin-bottom: 10px; /* 여기에 20px 대신 10px을 적용해보세요 */
+}
 
 /*	.t_name {
   white-space: normal;  긴 텍스트에서 줄바꿈 활성화 
@@ -47,69 +54,40 @@ height: 1300px;
 }
 
 .t_name_text{
-
   	overflow-wrap: break-word;
-	
 }
 
+  .t_img_div {
+    /* 이미지 제일 왼쪽으로 놓기 */
+    order: 1;
+  }
 
-.t_img_div .mySlides img {
-    width: 500px;
-    height: 300px; /* 원하는 가로폭으로 설정하세요. */
+
+.t_img_div img {
+    /* width: 250px;
+    height: 150px; */ 
+    width: 331px;
+    height: 201px;
     object-fit: cover;
 }
 
-	
- .slideshow-container {
-        position: relative;
-        max-width: 500px; /* 슬라이드 컨테이너의 최대 너비 조정 */
-        margin: auto;
-        overflow: hidden;
-    }
+  .sel_img_div {
+    /* 중간에 배치 */
+    order: 2;
+  }	
+ 
 
-    .slideshow-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* 이미지를 컨테이너에 맞게 조절 */
-        
-    }  
 
-.prev{
-	position: absolute; 
-	left: 10px; 
-	top: 50%; 
-	transform: translateY(-50%);
-/**/
-/*     border: 1px solid rgba(0, 0, 0, 0.5); 테두리 스타일 및 불투명도 색상 지정
-    background-color: rgba(255, 255, 255, 0.5); 배경색 불투명도 지정 */
-    
-    	
-}
-.next{
-	position: absolute; 
-	right: 10px;
-	top: 50%; 
-	transform: translateY(-50%);
-}
-
-    /* 이전 버튼에 마우스 커서 스타일 적용 */
-a.prev:hover {
-    cursor: pointer;
-}
-
-/* 다음 버튼에 마우스 커서 스타일 적용 */
-a.next:hover {
-    cursor: pointer;
-}
-
-  .option_div {
-    background-color: #f4f4f4; /* 배경색 지정 */
-    border: 1px solid #ddd; /* 테두리 스타일 지정 */
-    padding: 20px; /* 내부 여백 설정 */
-    text-align: left; /* 텍스트 정렬 지정 */
-    
-    border: 1px solid #ddd; padding: 20px; background-color: #f4f4f4;
-    
+.option_div {
+    background-color: #f4f4f4;
+    /* border: 1px solid #ddd; */
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #f4f4f4;
+    order: 3;
+    height: 364px
 }
 
 .date_select{
@@ -155,6 +133,7 @@ a.next:hover {
 	
 	width: 147px;
 }
+
 
 /*bottom  */
 .bottom_area{

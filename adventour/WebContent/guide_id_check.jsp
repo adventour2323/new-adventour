@@ -18,8 +18,8 @@ System.out.println(g_id);
 try {
 Class.forName("com.mysql.jdbc.Driver");
 /*  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","dkssud2!!"); */ 
- conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@");
- /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");  */
+ /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","qhdks12!@"); */
+ conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour","root","0521");  
 String sql = "select count(*) as cnt  from guide where g_id=?";
 
 pstmt = conn.prepareStatement(sql); 

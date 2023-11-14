@@ -63,27 +63,56 @@
 		<div class="top_area" >
 
 			<div class="top_left" >
-			
-				<div class="t_img_div">
-			    	<div class="slideshow-container">
-			        	<div class="mySlides fade">
-				            <img alt="img1" src="<%= g.getT_img1() %>" class="slideshow-img">
-    	    			</div>
-        				<div class="mySlides fade">
-            				<img alt="img2" src="<%= g.getT_img2() %>" class="slideshow-img">
-        				</div>
-        				<div class="mySlides fade">
-		            		<img alt="img3" src="<%= g.getT_img3() %>" class="slideshow-img">
-    				    </div>
-        				<a class="prev" onclick="plusSlides(-1)" >
-            				<img src="./image/tour/leftbtn.png" alt="이전">
-        				</a>
-        				<a class="next" onclick="plusSlides(1)" >
-	            			<img src="./image/tour/rightbtn.png" alt="다음">
-    	    			</a>
-    				</div>
-				</div> <!-- t_img_div -->
-				
+			<div class="t_img_div" style="display: flex;">	
+				<div class="t_img_div" style="margin-right: 30px;">
+					<div class="img_top" style="display: flex;">
+						<div class="img1_div" style="margin-right: 10px;"><img alt="img1" src="<%= g.getT_img1() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+						<div class="img2_div"><img alt="img2" src="<%= g.getT_img2() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+					</div>
+					<div class="img_bottom" style="display: flex;">
+						<div class="img3_div" style="margin-right: 10px;"><img alt="img3" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+						<div class="img4_div" style="width: 200px;"><img alt="img4" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+					</div>
+				</div>
+	<div class="sel_img_div" >
+		<div class="sel_img">
+  			<!-- 확대된 이미지가 여기에 표시됩니다 -->
+  			<!-- <img id="expandedImg" style="width:500px; height: 300px;"> -->
+  			<img id="expandedImg" style="width: 676px; height: 406px;">
+		</div>
+		
+<script>
+	displayImage('<%= g.getT_img1() %>');
+    // 이미지 클릭 시 확대된 이미지를 표시하는 함수
+    function displayImage(imgSrc) {
+        var expandedImg = document.getElementById("expandedImg");
+        expandedImg.src = imgSrc;
+    }
+
+    // 이미지 클릭 시 해당 이미지를 표시
+    document.querySelector('.img1_div img').addEventListener('click', function () {
+        var imgSrc = this.src;
+        displayImage(imgSrc);
+    });
+
+    document.querySelector('.img2_div img').addEventListener('click', function () {
+        var imgSrc = this.src;
+        displayImage(imgSrc);
+    });
+
+    document.querySelector('.img3_div img').addEventListener('click', function () {
+        var imgSrc = this.src;
+        displayImage(imgSrc);
+    });
+
+    document.querySelector('.img4_div img').addEventListener('click', function () {
+        var imgSrc = this.src;
+        displayImage(imgSrc);
+    });
+</script>		
+	</div>
+		</div> <!-- t_img_div -->	
+		
 				<div class="t_name">
 					<h1 class="t_name_text"><%=g.getT_name() %>!</h1>
 				</div>
