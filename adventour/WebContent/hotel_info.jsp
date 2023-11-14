@@ -311,9 +311,15 @@ if (top_list != null) {
     <h2><%= aaa.getH_name_ko() %></h2>
        <br/>
        
-    <h4 class="db_h_hotel_info" id="db_h_hotel_info">
-       <%= aaa.getH_hotel_info().replace("\n", "<br>") %>
-    </h4>
+    <pre class="db_h_hotel_info" id="db_h_hotel_info">
+       <%= aaa.getH_hotel_info() %>
+      
+      <!--     Atolon Park Hotel의 위치는 시티투어를 하기 편리한 관광명소에 있습니다. <br>
+      Atolon Park Hotel 예약은 Bernolsheim 여행을 더욱 편안하게 만들어 드립니다.<br>
+          스트라스부르역 및 엔츠하임국제공항로부터 21km, 36km 정도 떨어져 있습니다.<br>
+          바쁜 일정 후에는 호텔에서 휴식을 취하거나, 주변 명소들을 둘러보실 수 있습니다.<br> 
+          호텔의 주차 공간을 이용할 수 있습니다.-->
+    </pre>
 
     </div>
  </div><!--hotel_info-->

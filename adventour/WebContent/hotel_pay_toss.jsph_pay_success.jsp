@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.Base64"%>
@@ -24,6 +23,8 @@
   String paymentKey = request.getParameter("paymentKey");
   String customerName = request.getParameter("customerName");
   String amount = request.getParameter("amount");
+  
+  System.out.println( customerName);
   
   // 개발자센터에 로그인해서 내 결제위젯 시크릿 키를 입력하세요. 시크릿 키는 외부에 공개되면 안돼요.
   // @docs https://docs.tosspayments.com/reference/using-api/api-keys
@@ -70,11 +71,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
+
+
 <!--  데이터베이스 저장하는 코드 추가하면댕듯 -->
 <section>
     <%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    session.getAttribute("id");
+    
+    
     if (isSuccess) { %>
+    
+    
         <h1>결제 성공</h1>
+        <input type="text" value="<%= session.getAttribute("id") %>" >
         <p>결과 데이터 : <%= jsonObject.toJSONString() %></p>
         <p>orderName : <%= jsonObject.get("orderName") %></p>
         <p>customerName : <%= jsonObject.get("customerName")  %></p>
@@ -94,7 +105,3 @@
         <%
     }
     %>
-
-</section>
-</body>
-</html>

@@ -123,7 +123,6 @@ if (session.getAttribute("id") == null) {
       
    
      <select id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" >
-					<option value="all">어디든지</option>
 					<option value="london">런던</option>
 					<option value="liverpool">리버풀</option>
 					<option value="edinburgh">에든버러</option>

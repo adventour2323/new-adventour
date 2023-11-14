@@ -11,12 +11,13 @@
   </head>
   <body>
  
- 
+
   <%
   request.setCharacterEncoding("UTF-8");
   response.setCharacterEncoding("UTF-8");
   session.getAttribute("id");
   String user_firstname = request.getParameter("user_firstname");
+  String user_lastname = request.getParameter("user_lastname");
   String h_name_eng = request.getParameter("h_name_eng");
   String h_name_ko = request.getParameter("h_name_ko");
   String h_indate = request.getParameter("h_indate");
@@ -25,8 +26,11 @@
   String total_price = request.getParameter("total_price");
   String h_roompeo = request.getParameter(" h_roompeo");
   String h_roomnum = request.getParameter("h_roomnum");
+  String h_tinum = h_indate + "H" +h_roomnum;
   
   %>
+
+  
   <input type="text" value="<%= session.getAttribute("id") %>" >
   <h4><%= h_name_eng  %></h4>
   <h4><%= h_name_ko %></h4>
@@ -34,10 +38,18 @@
   <h4> 체크아웃 : <%= h_outdate  %></h4>
   <h4><%= h_night_time  %>박</h4>
   <h4 class="total_price"><%= total_price  %>원</h4>
+  <h4><%=h_tinum %></h4>
+    <h4><%=user_firstname %></h4>
+
   
-    <div id="payment-method"></div>
+      <div id="payment-method"> </div>
     <button id="payment-request-button">결제하기</button>
-    <script>
+   
+
+
+
+
+<script>
 
       /*
       * TODO: 개발자센터에 로그인해서 내 결제위젯 클라이언트 키를 입력하세요
@@ -54,10 +66,11 @@
        var orderName = '<%= h_name_ko %>';
        var customerName = '<%=user_firstname%>';
        var h_indate = '<%= h_indate  %>';
-       var h_indate = '<%= h_outdate  %>';
+       var h_indate = '<%= h_outdate  %>'; 
        var h_night_time = <%= h_night_time  %>;
        var total_price = <%= total_price  %>;
-
+  
+        alert(customerName);
        
        
       paymentWidget.renderPaymentMethods("#payment-method", 
@@ -101,9 +114,9 @@
           orderId: generateRandomString(),
           orderName: orderName,
           customerName:customerName,
-
+          customerEmail: 'customer123@gmail.com',
           successUrl: currentURL + "h_pay_success.jsp",
-          failUrl: currentURL + "h_pay_fail.jsp",
+          failUrl:  currentURL + "h_pay_fail.jsp",
         });
       });
 
@@ -111,5 +124,6 @@
         return window.btoa(Math.random()).slice(0, 20);
       }
     </script>
+ 
   </body>
 </html>
