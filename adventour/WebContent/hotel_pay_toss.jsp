@@ -5,6 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="stylesheet" type="text/css" href="css/h_pay_toss.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>결제위젯 샘플</title>
     <script src="https://js.tosspayments.com/v1/payment-widget"></script>
@@ -19,8 +20,8 @@ function getCookie(name) {
 }
 
 // 쿠키에서 값을 가져옵니다.
-var  h_roomnum = getCookie("h_roomnum");
-var  h_m_id = getCookie("h_m_id");
+var h_roomnum = getCookie("h_roomnum");
+var h_m_id = getCookie("h_m_id");
 var h_room_user = getCookie("h_room_user");
 var h_total_price = getCookie("h_total_price");
 var h_indate = getCookie("h_indate");
@@ -29,7 +30,7 @@ var h_user_name = getCookie("h_user_name");
 var h_user_pnum = getCookie("h_user_pnum");
 var h_user_mail = getCookie("h_user_mail");
 
-alert( h_m_id);
+
 
 </script>
   <body>
@@ -49,28 +50,24 @@ alert( h_m_id);
   String total_price = request.getParameter("total_price");
   String h_roompeo = request.getParameter(" h_roompeo");
   String h_roomnum = request.getParameter("h_roomnum");
+  String user_mail = request.getParameter("user_mail");
+  String user_tel = request.getParameter("user_tel");
   String h_tinum = h_indate + "H" +h_roomnum;
   
   %>
-
-  
-  <input type="text" value="<%= session.getAttribute("id") %>" >
-  <h4><%= h_name_eng  %></h4>
-  <h4><%= h_name_ko %></h4>
-  <h4> 체크인  : <%= h_indate  %></h4>
-  <h4> 체크아웃 : <%= h_outdate  %></h4>
-  <h4><%= h_night_time  %>박</h4>
-  <h4 class="total_price"><%= total_price  %>원</h4>
-  <h4><%=h_tinum %></h4>
-    <h4><%=user_firstname %></h4>
-
-  
+<div id="re_paying_info" style="margin-left: 50px;margin-top: 150px; ">
+  <h1>결제 예정 정보</h1>
+ <!--  <input type="text" value="<%= session.getAttribute("id") %>" > --> 
+  <h3 style="font-weight:bold;"><%= h_name_eng  %></h3>
+  <h3 style="font-weight:bold;"><%= h_name_ko %></h3>
+  <h3 style="font-weight:bold;"> 체크인  : <%= h_indate  %></h3>
+  <h3 style="font-weight:bold;"> 체크아웃 : <%= h_outdate  %></h3>
+  <h3 style="font-weight:bold;"><%= h_night_time  %>박</h3>
+  <h2 class="total_price" style="font-weight:bold;">결제 예정 금액 : <%= total_price  %>원</h2>
+  </div>
       <div id="payment-method"> </div>
-    <button id="payment-request-button">결제하기</button>
+    <button id="payment-request-button" style="width: 200px; height:50px; background-color: blue; color:white;font-weight:bold; margin-left: 30px; border-radius: 5px;" >결제하기</button>
    
-
-
-
 
 <script>
 
@@ -87,13 +84,16 @@ alert( h_m_id);
        */
        var totalPrice = <%= total_price %>;
        var orderName = '<%= h_name_ko %>';
-       var customerName = '<%=user_firstname%>';
+       var customerName = '<%=user_firstname%>' +''+'<%=user_lastname %>';
        var h_indate = '<%= h_indate  %>';
        var h_indate = '<%= h_outdate  %>'; 
        var h_night_time = <%= h_night_time  %>;
        var total_price = <%= total_price  %>;
+       var user_mail = '<%= user_mail %>';
+       var user_mail = '<%= user_mail %>';
+       var customerMobilePhone  = '<%= user_tel %>';
   
-        alert(customerName);
+       // alert(customerName);
        
        
       paymentWidget.renderPaymentMethods("#payment-method", 
@@ -137,7 +137,8 @@ alert( h_m_id);
           orderId: generateRandomString(),
           orderName: orderName,
           customerName:customerName,
-          customerEmail: 'customer123@gmail.com',
+          ccustomerMobilePhone :customerMobilePhone ,
+          customerEmail: user_mail,
           successUrl: currentURL + "h_pay_success.jsp",
           failUrl:  currentURL + "h_pay_fail.jsp",
         });

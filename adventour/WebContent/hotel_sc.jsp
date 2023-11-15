@@ -13,17 +13,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
-
+<script defer src="js/map_index.js"></script> 
   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
-  <script defer src="js/map_index.js"></script> 
-   
   </head>
-
 
 <body>
 
@@ -50,7 +47,7 @@ var night_time = getCookie("night_time");
 
 //alert(" 5번 호텔 스케쥴 박수 "+night_time);
 
-document.querySelector(".sch_btn").addEventListener("click", function () {
+$(document).on("click", ".sch_btn", function () {
 	  // 기존 쿠키 값 삭제
 	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
@@ -68,16 +65,24 @@ document.querySelector(".sch_btn").addEventListener("click", function () {
 	  var newCity = document.querySelector("#sch_city").value;
 	  var newCheckinDate = document.querySelector("#sch_indate").value;
 	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
-	  var newNightTime = document.querySelector("#night_time").value;
 
-	  // 새로운 값을 쿠키에 설정
-	  document.cookie = "h_mainde=" + newCountry;
-	  document.cookie = "h_maincity=" + newCity;
-	  document.cookie = "h_indate=" + newCheckinDate;
-	  document.cookie = "h_outdate=" + newCheckoutDate;
-	  document.cookie = "night_time=" + newNightTime;
-	  
-	//    alert(" 6번 호텔 스케쥴 박수 "+night_time);
+
+	    // 날짜를 Date 객체로 변환
+	    var checkInDate = new Date(newCheckinDate);
+	    var checkOutDate = new Date(newCheckoutDate);
+
+	    // 두 날짜 사이의 밤 수 계산
+	    var timeDifference = checkOutDate - checkInDate;
+	    var newNightTime = Math.floor(timeDifference11 / (1000 * 60 * 60 * 24));
+
+document.cookie = "newCountry=" + newCountry;
+document.cookie = "newCity=" + newCity;
+document.cookie = "newCheckinDate=" + newCheckinDate;
+document.cookie = "newCheckoutDate=" + newCheckoutDate;
+document.cookie = "newNightTime=" + newNightTime;
+
+// 값이 변경된 후에 alert 창 실행
+alert(" 6번 호텔 스케쥴 박수 " + newNightTime);
 
 	  // 나머지 처리 또는 폼 제출을 여기에 추가
 	});
@@ -175,7 +180,7 @@ if (session.getAttribute("id") == null) {
  <input type="hidden" id="night_time" name="night_time" class="night_time">
     <div class="sch13">
 <!--    <a href=scsearch.hotel?uname=hotelSCSearch> --> 
-      <button class="sch_btn" type="submit" name="sch_btn">검색하기</button>
+      <input class="sch_btn" type="submit" name="sch_btn" value="검색하기">
 <!--      </a> --> 
     </div>
 
@@ -197,6 +202,9 @@ if (session.getAttribute("id") == null) {
 
 
     </div>
+    
+    
+<!--  쿠키값 확인용   
      <div class="sch_result">
 <%
 Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
@@ -267,8 +275,15 @@ if(h_mainpeo != null){
 }
 %>
 
- </div><!-- sch_result -->
- 
+ </div>
+   --> 
+<!-- 쿠키 값 확인 끝 -->   
+   
+   
+   
+   
+   
+   
      <%
     String city_ko = "";
 	city_ko = request.getParameter("city");

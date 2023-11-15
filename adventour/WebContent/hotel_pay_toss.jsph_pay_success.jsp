@@ -90,7 +90,8 @@ var h_user_name = getCookie("h_user_name");
 var h_user_pnum = getCookie("h_user_pnum");
 var h_user_mail = getCookie("h_user_mail");
 
-alert("3번"+ h_m_id);
+
+//alert("3번"+ h_m_id);
 
 </script>
 
@@ -127,11 +128,11 @@ alert("3번"+ h_m_id);
 	      h_m_id = value;
 	      }else if (name.equals("h_roomnum")){
 	    	  h_roomnum = value;
-	      }else if (name.equals(" h_room_user")){
+	      }else if (name.equals("h_room_user")){
 	    	  h_room_user = value;
-	      }else if (name.equals(" h_total_price")){
+	      }else if (name.equals("h_total_price")){
 	    	  h_total_price = value;
-	      }else if (name.equals(" h_indate")){
+	      }else if (name.equals("h_indate")){
 	    	  h_indate = value;
 	      }else if (name.equals("h_outdate")){
 	    	  h_outdate = value;
@@ -143,41 +144,7 @@ alert("3번"+ h_m_id);
 	    	  h_user_mail = value;
 	      }
      }
-	      %>
-        <h1>결제 성공</h1>
-        <input type="text" value="<%= session.getAttribute("id") %>" >
-        <p >결과 데이터 : <%= jsonObject.toJSONString() %></p>
-        <p>orderName : <%= jsonObject.get("orderName") %></p>
-        <p id="h_m_id">customerName : <%= h_m_id  %>  </p>
-         <p> <%= h_roomnum  %> </p>
-         
-    <p> <%= h_room_user%>  </p> 
-    <p> <%= h_total_price%>  </p>
-    <p> <%=h_indate %>  </p>
-    <p> <%= h_outdate%>  </p>
-    <p> <%= h_user_name%>  </p>
-    <p> <%= h_user_pnum%>  </p>
-    <p> <%= h_user_mail%>  </p>
-         
-         
-           <p>method : <%= jsonObject.get("method") %></p>
-        <p>
-            <% if(jsonObject.get("method").equals("카드")) { out.println(((JSONObject)jsonObject.get("card")).get("number"));} %>
-            <% if(jsonObject.get("method").equals("가상계좌")) { out.println(((JSONObject)jsonObject.get("virtualAccount")).get("accountNumber"));} %>
-            <% if(jsonObject.get("method").equals("계좌이체")) { out.println(((JSONObject)jsonObject.get("transfer")).get("bank"));} %>
-            <% if(jsonObject.get("method").equals("휴대폰")) { out.println(((JSONObject)jsonObject.get("mobilePhone")).get("customerMobilePhone"));} %>
-        
-        </p>
-       
-  <% 
-         } else { %>
-        <h1>결제 실패</h1>
-        <p><%= jsonObject.get("message") %></p>
-        <span>에러코드: <%= jsonObject.get("code") %></span>
-        <%
-    }
-    %>
-<%
+    
     // JDBC 연결 정보
     String jdbcUrl = "jdbc:mysql://localhost:3306/adventour";
     String dbUser = "root";
@@ -205,6 +172,12 @@ alert("3번"+ h_m_id);
         String month = String.format("%02d", cal.get(Calendar.MONTH) + 1); // 두 자리 월
         String day = String.format("%02d", cal.get(Calendar.DAY_OF_MONTH)); // 두 자리 일
         String tinum = year + month + day + "H";
+        
+        
+   System.out.println("aaaaa"+h_total_price) ;    
+   System.out.println("aaaaa"+h_indate) ;  
+   System.out.println("aaaaa"+h_outdate) ; 
+   
 
         // 매개변수 설정
         pstmt.setString(1,year + month + day + "H" + h_roomnum);// "YYMMDD" + "H" + h_roomnum
@@ -220,6 +193,7 @@ alert("3번"+ h_m_id);
 
         // 쿼리 실행
         pstmt.executeUpdate();
+        
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
@@ -227,4 +201,17 @@ alert("3번"+ h_m_id);
         if (pstmt != null) pstmt.close();
         if (conn != null) conn.close();
     }
+ %>   
+<script> 
+// 결제 성공시 데이터 베이스 저장 후 파이페이지로 이동
+    window.location.href = 'mypage_index.jsp';
+</script>
+ <%    
+    } else { %>
+   <h1>결제 실패</h1>
+   <p><%= jsonObject.get("message") %></p>
+   <span>에러코드: <%= jsonObject.get("code") %></span>
+   <%
+}  
+    
 %>

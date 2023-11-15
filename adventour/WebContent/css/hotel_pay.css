@@ -212,7 +212,7 @@ text-align: right;
 }
 /*무로 취소 안내*/
 #content_reserv_info{	
-   
+    margin-left:50px;
 	width: 500px;
     height: 220px;
     margin-top: 40px;
@@ -224,12 +224,16 @@ text-align: right;
 }
 
 #content_reserv_info11{
-
+ margin-top:20px;
 	width: 500px;
     height: 80px;
 }
+.content_reserv_info111{
+	
+	 margin-top:15px;
+}
 #content_reserv_info2{
-		margin-top:20px;
+	margin-top:40px;
 	width: 500px;
     height: 100px;
 }

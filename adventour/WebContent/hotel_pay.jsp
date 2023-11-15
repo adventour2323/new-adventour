@@ -210,13 +210,20 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
 	   
 	   <div id="content_reserv_info">
 	     <div id="content_reserv_info1">
-	     <h2>무료취소 </h2>
-	     <div id="content_reserv_info11"></div>
+	     <h2> ! 취소 & 예약 확정 안내</h2>
+	     <div id="content_reserv_info11">
+	     <h3>환불 <%=reserv.getH_room_cancel() %></h3>
+	    <h4 class="content_reserv_info111"> 호텔 예약을 취소하거나 숙박하지 않을 경우,<br>
+	     원래 결제한 금액이 일절 환불되지 않습니다.</h4>
+	     </div>
 	     </div><!--content_reserv_info1  -->
 	   
 	   <div id="content_reserv_info2">
-	    <h2>즉시확정 </h2>
-	    <div id="content_reserv_info21"></div>
+	    <h3> 예약 즉시확정 </h3>
+	   
+	    <div id="content_reserv_info21">
+	    <h4 class="content_reserv_info111"> 예약은 즉시 확정됩니다. 곧바로 예약 확인 이메일을 받으실 수 있습니다.</h4>
+	    </div>
 	   </div><!--content_reserv_info2  -->
 	   
 	   </div><!--content_reserv_info  -->
@@ -263,7 +270,7 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
 	 </div><!-- use_info_tel -->
 	 
 	 <div id="user_payment">
-	   <h3>결제 세부 정보</h3>
+	  <!--  <h3>결제 세부 정보</h3>
 	   <h5 id="card_title">카드유형</h5>
 	 <select id="card_select">
 	     <option value="visa">VISA </option>
@@ -271,7 +278,8 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
         <option value="jcb">JCB</option>
         <option value="discover">DISCOVER</option>
         <option value="unionpay">UNION PAY</option>
-    </select>
+    </select> 
+    -->
     
      <h3 id="toss_pay_title" >결제방식</h3>
      <input type="submit" id="toss_pay" name="toss_pay" value="toss">
@@ -363,14 +371,14 @@ $("#toss_pay").on("click", function(){
     var h_user_pnum = document.getElementById("user_tel").value;
     var h_user_mail = document.getElementById("user_mail").value;
 
-    alert("1번" +  h_total_price);
+   // alert("1번" +  h_total_price);
 
     // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
   var expirationDate = new Date();
 expirationDate.setDate(expirationDate.getDate() + 1);
 
     // 각 데이터를 쿠키에 저장
-   document.cookie = " h_roomnum=" +  h_roomnum + "; expires=" + expirationDate.toUTCString();
+document.cookie = " h_roomnum=" +  h_roomnum + "; expires=" + expirationDate.toUTCString();
 document.cookie = "h_m_id=" + h_m_id + "; expires=" + expirationDate.toUTCString();
 document.cookie = "h_room_user=" + h_room_user + "; expires=" + expirationDate.toUTCString();
 document.cookie = "h_total_price=" + h_total_price + "; expires=" + expirationDate.toUTCString();
@@ -380,8 +388,6 @@ document.cookie = "h_user_name=" + h_user_name + "; expires=" + expirationDate.t
 document.cookie = "h_user_pnum=" + h_user_pnum + "; expires=" + expirationDate.toUTCString();
 document.cookie = "h_user_mail=" + h_user_mail + "; expires=" + expirationDate.toUTCString();
 
-    alert( "2번" + h_m_id);
-    
 });
 
 

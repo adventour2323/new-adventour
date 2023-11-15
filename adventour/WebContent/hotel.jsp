@@ -83,15 +83,15 @@ if (session.getAttribute("id") == null) {
 				</select> 
 				<select id="h_indateM" class="h_indateM" name="h_indateM" placeholder="체크인">
 					<option vlaue="">월</option>
-					<option vlaue="1">1</option>
-					<option vlaue="2">2</option>
-					<option vlaue="3">3</option>
-					<option vlaue="4">4</option>
-					<option vlaue="5">5</option>
-					<option vlaue="6">6</option>
-					<option vlaue="7">7</option>
-					<option vlaue="8">8</option>
-					<option vlaue="9">9</option>
+					<option vlaue="01">1</option>
+					<option vlaue="02">2</option>
+					<option vlaue="03">3</option>
+					<option vlaue="04">4</option>
+					<option vlaue="05">5</option>
+					<option vlaue="06">6</option>
+					<option vlaue="07">7</option>
+					<option vlaue="08">8</option>
+					<option vlaue="09">9</option>
 					<option vlaue="10">10</option>
 					<option vlaue="11">11</option>
 					<option vlaue="12">12</option>
@@ -108,15 +108,15 @@ if (session.getAttribute("id") == null) {
 				</select>
 				 <select id="h_outdateM" class="h_outdateM" name="h_outdateM" placeholder="체크아웃">
 					<option vlaue="">월</option>
-					<option vlaue="1">1</option>
-					<option vlaue="2">2</option>
-					<option vlaue="3">3</option>
-					<option vlaue="4">4</option>
-					<option vlaue="4">5</option>
-					<option vlaue="4">6</option>
-					<option vlaue="4">7</option>
-					<option vlaue="8">8</option>
-					<option vlaue="9">9</option>
+					<option vlaue="01">1</option>
+					<option vlaue="02">2</option>
+					<option vlaue="03">3</option>
+					<option vlaue="04">4</option>
+					<option vlaue="05">5</option>
+					<option vlaue="06">6</option>
+					<option vlaue="06">7</option>
+					<option vlaue="08">8</option>
+					<option vlaue="09">9</option>
 					<option vlaue="10">10</option>
 					<option vlaue="11">11</option>
 					<option vlaue="12">12</option>

@@ -3,7 +3,49 @@ $(document).ready(function() {
     $("#header").load("header.html");
     $("#footer").load("footer.html");
 
-
+	//셀렉박스 나라별 옵션 설정
+	$('.sch_country').on('change', function() {
+        var country = $(this).val();
+        var citySelect = $('.sch_city');
+        
+        // 모든 옵션을 보이게 설정
+        citySelect.find('option').show();
+        
+        // 선택 가능한 도시 옵션만 보이도록 설정
+        if (country === 'uk') {
+            citySelect.find('option').not('[value="london"], [value="liverpool"], [value="edinburgh"]').hide();
+        } else if (country === 'italy') {
+            citySelect.find('option').not('[value="rome"], [value="venice"], [value="milano"]').hide();
+        } else if (country === 'france') {
+            citySelect.find('option').not('[value="paris"], [value="marseille"], [value="monaco"]').hide();
+        } else if (country === 'spain') {
+            citySelect.find('option').not('[value="madrid"], [value="barcelona"], [value="sevilla"]').hide();
+        } else if (country === 'all') {
+            citySelect.find('option').not('[value="all"]').hide();
+        }
+    });
+	
+	$('.sch_country').on('change', function() {
+        var city = $(this).val();
+        var countrySelect = $('.h_mainde');
+        
+        // 모든 옵션을 보이게 설정
+        countrySelect.find('option').show();
+        
+        // 선택 가능한 도시 옵션만 보이도록 설정
+        if (city === 'london' || city === 'liverpool' ||city === 'edinburgh') {
+        	countrySelect.find('option').not('[value="uk"]').hide();
+        } else if (country === 'rome' || country === 'venice'|| country === 'milano') {
+        	countrySelect.find('option').not('[value="italy"]').hide();
+        } else if (city === 'paris'||city === 'marseille'||city === 'monaco') {
+        	countrySelect.find('option').not('[value="france"]').hide();
+        } else if (city === 'madrid'||city === 'barcelona'||city === 'sevilla') {
+        	countrySelect.find('option').not('[value="spain"]').hide();
+        } else if (city === 'all') {
+        	countrySelect.find('option').not('[value="all"]').hide();
+        }
+    });
+	
 
     // 왼쪽 검색창에 날짜 선택
     $.datepicker.setDefaults({

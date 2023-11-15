@@ -31,20 +31,23 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-// 쿠키에서 값을 가져옵니다.
-var h_mainde = getCookie("h_mainde");
-var h_maincity = getCookie("h_maincity");
-var h_indateY = getCookie("h_indateY");
-var h_indateM = getCookie("h_indateM");
-var h_indateD = getCookie("h_indateD");
-var h_outdateY = getCookie("h_outdateY");
-var h_outdateM = getCookie("h_outdateM");
-var h_outdateD = getCookie("h_outdateD");
-var h_mainpeo = getCookie("h_mainpeo");
-var night_time = getCookie("night_time");
+var h_mainde = getCookie("newCountry");
+var h_maincity = getCookie("newCity");
+var h_indate = getCookie("newCheckinDate");
+var h_outdate = getCookie("newCheckoutDate");
+var night_time = getCookie("newNightTime");
 
-//alert("h_outdateY: " + h_outdateY); // 확인 ok
-//alert("night_time: " +night_time); // 확인 ok
+var maindeValue = getCookie("h_mainde");
+var maincityValue = getCookie("h_maincity");
+var indateValue = getCookie("h_indate");
+var outdateValue = getCookie("h_outdate");
+var nightTimeValue = getCookie("night_time");
+
+alert("새로운 나라: " +  h_mainde);
+alert("새로운 도시: " +h_maincity);
+alert("새로운 체크인 날짜: " +h_indate );
+alert("새로운 체크아웃 날짜: " +h_outdate);
+alert("새로운 박 수: " + night_time);
 
 $(document).ready(function() {
 	$("#roompay_btn").on('click', function(e) { 
@@ -341,57 +344,38 @@ if (top_list != null) {
 <%
 Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
 
-String h_indateY = null;
-String h_indateM = null;
-String h_indateD = null;
-String h_outdateY = null;
-String h_outdateM = null;
-String h_outdateD = null;
-String h_mainpeo = null;
+String h_mainde = null;
+String h_maincity =null;
+String h_indate = null;
+String h_outdate = null;
 String night_time = null;
 
 for (Cookie cookie : cookies) {
     String name = cookie.getName();
     String value = cookie.getValue();
     
-    if (!name.equals("JSESSIONID")) {
-        if (name.equals("h_mainde")) {
-%>
-             
-<%
+  if (name.equals("h_mainde")) {
+	  h_mainde= value;
         } else if (name.equals("h_maincity")) {
-%>
-                
-<%
-        } else if (name.equals("h_indateY")) {
-            h_indateY = value;
-        } else if (name.equals("h_indateM")) {
-            h_indateM = value;
-        } else if (name.equals("h_indateD")) {
-            h_indateD = value;
-        }else if (name.equals("h_outdateY")) {
-        	h_outdateY = value;
-        } else if (name.equals("h_outdateM")) {
-        	h_outdateM = value;
-        } else if (name.equals("h_outdateD")) {
-        	h_outdateD = value;
-        }else if  (name.equals("h_mainpeo")) {
-        	h_mainpeo = value;
-        }else if  (name.equals("night_time")) {
+        	h_maincity = value;
+        } else if (name.equals("h_indate")) {
+        	h_indate = value;
+        }else if (name.equals("h_outdate")) {
+        	h_outdate = value;
+        } else if (name.equals("night_time")) {
         	night_time = value;
+        } 
     }
 
-    }
-}
 %>
  
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
  <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
 <% 
- if (h_indateY != null && h_indateM != null && h_indateD != null) {
+ if (h_indate != null) {
 %>
  <input type="text" id="sch_indate" class="datepicker" name="sch_indate" placeholder="체크인 YYYY-MM-DD" required="required" 
- value="<%= h_indateY + "-" + h_indateM + "-" + h_indateD %>">
+ value="<%= h_indate%>">
 
 <%
 }else{%>
@@ -399,10 +383,10 @@ for (Cookie cookie : cookies) {
 <% 
 }
  
-if (h_outdateY != null && h_outdateM != null && h_outdateD != null) {
+if (h_outdate != null) {
 %>
  <input type="text" id="sch_outdate" class="datepicker" name="sch_outdate" placeholder="체크아웃 YYYY-MM-DD" required="required" 
-  value="<%= h_outdateY + "-" + h_outdateM + "-" + h_outdateD %>" >
+  value="<%= h_outdate %>" >
  
 
 <%
@@ -705,7 +689,6 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 
 <div></div>
-
 
 
 <% 

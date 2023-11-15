@@ -142,6 +142,17 @@ public class H_Cto extends HttpServlet {
         	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info.jsp");
         	    dispatcher1.forward(request, response);
         	}
+        	else if (uName.equals("hotelinfom2")) {
+        	    // 호텔 메인에 조회해서 나온 top10 중 하나를 누르면 해당 호텔 상세페이지로 
+
+        	    String top10_info = request.getParameter("hotelname");
+        	   
+      	       System.out.println("새로설정"+top10_info); // 파라미터 값이 잘 넘어오는지 확인  -ok
+ 
+        	    String htop10 = htop10inter.showdata(request, response);  
+        	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info3.jsp");
+        	    dispatcher1.forward(request, response);
+        	}
         	} catch (Exception e) {
         		
                 e.printStackTrace();

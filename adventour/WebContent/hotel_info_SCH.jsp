@@ -139,6 +139,17 @@ session.getAttribute("id");
 <%  
 }
 }
+  if ( searchResults == null) { 
+%>
+
+
+<div id="info_SCH">
+	<h3> 예약 가능한 객실이 없습니다. </h3>
+    </div>
+
+
+<% 
+}
 %>
 </div>
 </form>
@@ -188,9 +199,9 @@ session.getAttribute("id");
 	        slides.eq(currentIndex).show();
 
 	        // 순번 업데이트
-	       alert("currentIndex after prevButton click: " + currentIndex);
+	       //alert("currentIndex after prevButton click: " + currentIndex);
 	  
-	        slideNumber.text(`${currentIndex + 1} /7`);
+	        //slideNumber.text(`${currentIndex + 1} /7`);
 	    });
 	});
 	// 날짜계산    

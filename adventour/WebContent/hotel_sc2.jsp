@@ -38,17 +38,35 @@
   var h_outdate = getCookie("newCheckoutDate");
   var night_time = getCookie("newNightTime");
 
-  var maindeValue = getCookie("h_mainde");
-  var maincityValue = getCookie("h_maincity");
-  var indateValue = getCookie("h_indate");
-  var outdateValue = getCookie("h_outdate");
-  var nightTimeValue = getCookie("night_time");
 
-alert("새로운 나라: " +  h_mainde);
-alert("새로운 도시: " +h_maincity);
-alert("새로운 체크인 날짜: " +h_indate );
-alert("새로운 체크아웃 날짜: " +h_outdate);
-alert("새로운 박 수: " + night_time);
+  $(document).on("click", ".sch_btn", function () {
+	  // 기존 쿠키 값 삭제
+	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_indate=; expires=Thu, 01 Jan 1970 00:00:00 UTC";	 
+	  document.cookie = "h_outdate=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+
+	  // 입력된 값들을 가져와서 변수에 저장
+	  var newCountry = document.querySelector("#sch_country").value;
+	  var newCity = document.querySelector("#sch_city").value;
+	  var newCheckinDate = document.querySelector("#sch_indate").value;
+	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
+	  var newNightTime = document.querySelector("#night_time").value;
+
+	  // 새로운 값을 쿠키에 설정
+document.cookie = "newCountry=" + newCountry;
+document.cookie = "newCity=" + newCity;
+document.cookie = "newCheckinDate=" + newCheckinDate;
+document.cookie = "newCheckoutDate=" + newCheckoutDate;
+document.cookie = "newNightTime=" + newNightTime;
+
+// 값이 변경된 후에 alert 창 실행
+alert(" 6번 호텔 스케쥴 박수 " + newCountry);
+
+	  // 나머지 처리 또는 폼 제출을 여기에 추가
+	});
 
   });
 
@@ -90,12 +108,30 @@ if (session.getAttribute("id") == null) {
 
     <div class="sch1">
       <h5 class="sch_title">☆ 나라</h5>
-      <input type="text" id="sch_country" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= h_sclist1.getCountry_ko() %>">
+      <select type="text" id="sch_country" class="sch_country" name="sch_country" placeholder="나라" required="required" value="<%= h_sclist1.getCountry_ko() %>">
+				<option value="uk">영국</option>
+					<option value="italy">이탈리아</option>
+					<option value="france">프랑스</option>
+					<option value="spain">스페인</option>
+      </select>
     </div>
     
     <div class="sch1">
       <h5 class="sch_title">☆ 도시</h5>
-      <input type="text" id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= h_sclist1.getCity_ko()%>">
+      <select type="text" id="sch_city" class="sch_city" name="sch_city" placeholder="도시" required="required" value="<%= h_sclist1.getCity_ko()%>">
+    					<option value="london">런던</option>
+					<option value="liverpool">리버풀</option>
+					<option value="edinburgh">에든버러</option>
+					<option value="rome">로마</option>
+					<option value="venice">베네치아</option>
+					<option value="milano">밀라노</option>
+					<option value="paris">파리</option>
+					<option value="marseille">마르세유</option>
+					<option value="monaco">모나코</option>
+					<option value="madrid">마드리드</option>
+					<option value="barcelona">바르셀로나</option>
+					<option value="sevilla">세비야</option>
+				</select> 
     </div>
 
     <div class="sch1">
@@ -211,18 +247,18 @@ if (session.getAttribute("id") == null) {
          <div class="h_prices">
           <h2 class="h_tiprice"><%= h_sclist.getMin_h_roompri() %> ~ </h2>
           <a href="information.hotel?uname=hotelinfom&hotelname=<%= h_sclist.getH_name_eng()%>">
-          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom&hotelname=<%= h_sclist.getH_name_eng() %>">
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom2&hotelname=<%= h_sclist.getH_name_eng() %>">
           </a>
          </div>
 
         <div class="ti_select">  
 
-    <%
+ <%
 if (session.getAttribute("id") != null) {
 %>
-    <div class="h_heart">
-         <h3 class="beheart"> ♥ </h3>
-       </div>
+<a href="h_like.jsp?m_id=<%= session.getAttribute("id") %>&h_name_eng=<%= h_sclist.getH_name_eng() %>">
+  <input type="button" class="beheart" value="♥ 찜하기">
+</a> 
 <%
 } 
 %>
