@@ -63,23 +63,23 @@
 		<div class="top_area" >
 
 			<div class="top_left" >
-			<div class="t_img_div" style="display: flex;">	
-				<div class="t_img_div" style="margin-right: 30px;">
-					<div class="img_top" style="display: flex;">
-						<div class="img1_div" style="margin-right: 10px;"><img alt="img1" src="<%= g.getT_img1() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
-						<div class="img2_div"><img alt="img2" src="<%= g.getT_img2() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+				<div class="t_img_div" style="display: flex;">	
+					<div class="t_img_div" style="margin-right: 30px;">
+						<div class="img_top" style="display: flex;">
+							<div class="img1_div" style="margin-right: 10px;"><img alt="img1" src="<%= g.getT_img1() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+							<div class="img2_div"><img alt="img2" src="<%= g.getT_img2() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+						</div>
+						<div class="img_bottom" style="display: flex;">
+							<div class="img3_div" style="margin-right: 10px;"><img alt="img3" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+							<div class="img4_div" style="width: 200px;"><img alt="img4" src="<%= g.getT_img4() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+						</div>
 					</div>
-					<div class="img_bottom" style="display: flex;">
-						<div class="img3_div" style="margin-right: 10px;"><img alt="img3" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
-						<div class="img4_div" style="width: 200px;"><img alt="img4" src="<%= g.getT_img4() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
-					</div>
-				</div>
-	<div class="sel_img_div" >
-		<div class="sel_img">
-  			<!-- 확대된 이미지가 여기에 표시됩니다 -->
-  			<!-- <img id="expandedImg" style="width:500px; height: 300px;"> -->
-  			<img id="expandedImg" style="width: 676px; height: 406px;">
-		</div>
+					<div class="sel_img_div" >
+						<div class="sel_img">
+							<!-- 확대된 이미지가 여기에 표시됩니다 -->
+							<!-- <img id="expandedImg" style="width:500px; height: 300px;"> -->
+							<img id="expandedImg" style="width: 676px; height: 406px;">
+						</div>
 		
 <script>
 	displayImage('<%= g.getT_img1() %>');
@@ -110,24 +110,25 @@
         displayImage(imgSrc);
     });
 </script>		
-	</div>
-		</div> <!-- t_img_div -->	
-		
-				<div class="t_name">
-					<h1 class="t_name_text"><%=g.getT_name() %></h1>
-				</div>
-				<!--  -->
-						<div class="tour-rating-star" id="tour-rating-star" style="flex;">
-	        				<% String t_id_avg = g.getT_id();
-    	    					ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
-        						for (t_r_getset tr : rv1) {
-        					%>
-        					<div >평점     
-        						<span> <%= tr.getT_rating() %> </span> 
-        					</div>
-        					<% } %>
-    					</div>	
-    					<!--  -->
+					</div>
+				</div> <!-- t_img_div -->	
+				<div class="name_star" style="display: flex; justify-content: center;">
+					<div class="t_name">
+						<h1 class="t_name_text"><%=g.getT_name() %></h1>
+					</div>
+					<!--  -->
+							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
+	        					<% String t_id_avg = g.getT_id();
+    	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
+        							for (t_r_getset tr : rv1) {
+	        					%>
+    	    					<div >평점     
+        							<span> <%= tr.getT_rating() %> </span> 
+        						</div>
+        						<% } %>
+    						</div>	
+	    					<!--  -->
+    			</div>	
 			</div> <!-- top_left -->
 			
 			<div class="option_div" >
@@ -346,13 +347,13 @@
 				</div> <!-- tour_info_div -->
 			</div> <!-- tour_info_div  -->
 			
- 
+ <hr>
 			<!--  -->
 		</div> <!-- bottom_area -->
 		
-		<hr>
 		
-		<div class="rating-div" style="margin-bottom: 30px;">
+		
+		<div class="rating-div" style="margin-bottom: 30px; margin-top: 30px;">
 			<form name="rating_comment" id="rating_comment" action="./tour_review_process.jsp" method="post" >
 <!--  -->
 				<div class="review-form-container">

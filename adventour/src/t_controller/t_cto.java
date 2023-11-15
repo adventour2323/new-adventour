@@ -1,12 +1,15 @@
 package t_controller;
 
 import java.io.IOException;
-
+import java.util.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import t_mybatis.h_t_sel_con;
+import getset.tourlist_gs;
 
 
 public class t_cto extends HttpServlet {
@@ -18,6 +21,7 @@ public class t_cto extends HttpServlet {
 		t_con_interface inter = null;
 		String tour  = rq.getParameter("tour");
 		String t_id = rq.getParameter("");
+		String home = rq.getParameter("home");
 				
 		try {
 			
@@ -36,7 +40,14 @@ public class t_cto extends HttpServlet {
 				inter = t_t_db_sel.t_select();
 				String ti = inter.t_interf(rq, rs);
 				RequestDispatcher dispatcher = rq.getRequestDispatcher("");
+			} else if(tour.equals("home")) {
+			    t_con_interface hinter = (t_con_interface) h_t_sel_con.instance(); // 변경된 부분
+			    String aa = hinter.t_interf(rq, rs);
+			    RequestDispatcher dispatcher = rq.getRequestDispatcher("index_login_ing.jsp");
+			    dispatcher.forward(rq, rs);
 			}
+
+
 			
 		}  catch (Exception e) {
 			e.printStackTrace();

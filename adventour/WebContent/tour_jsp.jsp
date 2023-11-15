@@ -408,32 +408,37 @@
     		</div>
     <div class="hotel-container">
         <div class="hotel-div">
-            <%
-				ArrayList<H_getset> a3 = id.h1();
-				ArrayList<H_getset> ukHotels = new ArrayList<>();
-				ArrayList<H_getset> franceHotels = new ArrayList<>();
-				ArrayList<H_getset> spainHotels = new ArrayList<>();
-				ArrayList<H_getset> italyHotels = new ArrayList<>();
+       <%
+        ArrayList<H_getset> a3 = id.h1();
+        ArrayList<H_getset> allHotels = new ArrayList<>();
 
-				for (H_getset h : a3) {
-					if ("uk".equals(h.getCountry_eng())) {
-						ukHotels.add(h);
-						} else if ("france".equals(h.getCountry_eng())) {
-							franceHotels.add(h);
-							} else if ("spain".equals(h.getCountry_eng())) {
-								spainHotels.add(h);
-								} else if ("italy".equals(h.getCountry_eng())) {
-									italyHotels.add(h);
-									}
-					}
-				// 무작위로 각 국가에서 하나 선택
-				Random random = new Random();
+        
+        allHotels.addAll(a3);
 
-				H_getset selectedUkHotel = ukHotels.get(random.nextInt(ukHotels.size()));
-				H_getset selectedFranceHotel = franceHotels.get(random.nextInt(franceHotels.size()));
-				H_getset selectedSpainHotel = spainHotels.get(random.nextInt(spainHotels.size()));
-				H_getset selectedItalyHotel = italyHotels.get(random.nextInt(italyHotels.size()));
-				%>
+        
+        Collections.shuffle(allHotels);
+
+        H_getset selectedUkHotel = null;
+        H_getset selectedFranceHotel = null;
+        H_getset selectedSpainHotel = null;
+        H_getset selectedItalyHotel = null;
+
+        for (H_getset h : allHotels) {
+            if (selectedUkHotel == null && "uk".equals(h.getCountry_eng())) {
+                selectedUkHotel = h;
+            } else if (selectedFranceHotel == null && "france".equals(h.getCountry_eng())) {
+                selectedFranceHotel = h;
+            } else if (selectedSpainHotel == null && "spain".equals(h.getCountry_eng())) {
+                selectedSpainHotel = h;
+            } else if (selectedItalyHotel == null && "italy".equals(h.getCountry_eng())) {
+                selectedItalyHotel = h;
+            }
+
+            if (selectedUkHotel != null && selectedFranceHotel != null && selectedSpainHotel != null && selectedItalyHotel != null) {
+                break;
+            }
+        }
+    %>
 				
 				<!-- 영국 호텔  -->
 				<div class="recommend_hotel" id="recommend_hotel_uk">

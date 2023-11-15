@@ -11,8 +11,10 @@
 
 	<select id="tour_list" resultType="adventour.t_getset">
 		select *from tour; 
-
-
+	</select>
+	
+	<select id="homepage" resultType="adventour.t_getset">
+		select *from tour;
 	</select>
 
 </mapper>

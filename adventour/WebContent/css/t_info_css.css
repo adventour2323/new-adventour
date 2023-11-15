@@ -48,13 +48,24 @@ height: 1300px;
   word-wrap: break-word;  긴 단어에서 줄바꿈 활성화 
 }*/
 
+  .name_star {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+  }
+
 .t_name {
 	width: 1000px; /* 원하는 너비로 설정하세요. */
 	margin-top: 25px;
+	text-align: center; /* 가운데 정렬 */
+/* 	align-items: center; 가운데 정렬
+	margin-right: auto;
+	margin-left:  auto; */
 }
 
 .t_name_text{
   	overflow-wrap: break-word;
+  	/* align-items: center; 가운데 정렬 */
 }
 
   .t_img_div {
@@ -301,8 +312,8 @@ height: 1300px;
 .tour-rating-star {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 가운데 정렬 */
-    margin-top: 20px; /* 원하는 상단 여백 설정 */
+    align-items: center; /* 가운데 정렬 */ 
+    /* margin-top: 20px; 원하는 상단 여백 설정 */
 }
 /*  */
 .tour-rating-star span::before {
@@ -368,7 +379,8 @@ height: 1300px;
 }
 #reviewContents {
     width: 100%;
-    height: 150px;
+    /* height: 150px; */
+    height: 75px;
     padding: 10px;
     box-sizing: border-box;
     border: solid 1.5px #D3D3D3;
@@ -384,6 +396,7 @@ height: 1300px;
         border: 1px solid #ccc;
         padding: 10px;
         border-radius: 5px;
+        height: 180px;
     }
 
     .form-group {

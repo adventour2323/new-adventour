@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*"%>    
+<%@ page import="adventour.g_list_print"%>
+<%@ page import="adventour.g_getset"%>
+<%@ page import="adventour.t_getset"%>
+<%@ page import="adventour.t_rating_getset"%>
+<%@ page import="getset.tourlist_gs"%>
+<%@ page import="getset.H_getset" %>
 <!DOCTYPE html>
 <html>
     
@@ -25,6 +32,12 @@
     		<jsp:include page="header_login.jsp"></jsp:include>
 			<% } %>
 		</header>
+
+		<%
+			List<tourlist_gs> a1 = (List<tourlist_gs>) request.getAttribute("list");
+				
+		%>
+
 
         <section id="visual" class="main-visual">
             <div class="inner">

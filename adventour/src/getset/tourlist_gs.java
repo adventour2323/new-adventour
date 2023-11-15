@@ -22,10 +22,18 @@ public class tourlist_gs {
 	String t_img1;
 	String t_img2;
 	String t_img3;
+	String t_img4;
 	String t_logo;
 //	
 	String g_name;
 	
+	
+	public String getT_img4() {
+		return t_img4;
+	}
+	public void setT_img4(String t_img4) {
+		this.t_img4 = t_img4;
+	}
 	/**
 	 * @return the t_id
 	 */
