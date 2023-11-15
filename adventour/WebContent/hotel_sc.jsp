@@ -48,7 +48,7 @@ var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
 var night_time = getCookie("night_time");
 
-alert(" 5번 호텔 스케쥴 박수 "+night_time);
+//alert(" 5번 호텔 스케쥴 박수 "+night_time);
 
 document.querySelector(".sch_btn").addEventListener("click", function () {
 	  // 기존 쿠키 값 삭제
@@ -77,7 +77,7 @@ document.querySelector(".sch_btn").addEventListener("click", function () {
 	  document.cookie = "h_outdate=" + newCheckoutDate;
 	  document.cookie = "night_time=" + newNightTime;
 	  
-	    alert(" 6번 호텔 스케쥴 박수 "+night_time);
+	//    alert(" 6번 호텔 스케쥴 박수 "+night_time);
 
 	  // 나머지 처리 또는 폼 제출을 여기에 추가
 	});

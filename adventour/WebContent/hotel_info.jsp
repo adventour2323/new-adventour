@@ -43,8 +43,8 @@ var h_outdateD = getCookie("h_outdateD");
 var h_mainpeo = getCookie("h_mainpeo");
 var night_time = getCookie("night_time");
 
-alert("h_outdateY: " + h_outdateY); // 확인 ok
-alert("night_time: " +night_time); // 확인 ok
+//alert("h_outdateY: " + h_outdateY); // 확인 ok
+//alert("night_time: " +night_time); // 확인 ok
 
 $(document).ready(function() {
 	$("#roompay_btn").on('click', function(e) { 

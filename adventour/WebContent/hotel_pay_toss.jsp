@@ -9,6 +9,29 @@
     <title>결제위젯 샘플</title>
     <script src="https://js.tosspayments.com/v1/payment-widget"></script>
   </head>
+  
+  <script>
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// 쿠키에서 값을 가져옵니다.
+var  h_roomnum = getCookie("h_roomnum");
+var  h_m_id = getCookie("h_m_id");
+var h_room_user = getCookie("h_room_user");
+var h_total_price = getCookie("h_total_price");
+var h_indate = getCookie("h_indate");
+var h_outdate = getCookie("h_outdate");
+var h_user_name = getCookie("h_user_name");
+var h_user_pnum = getCookie("h_user_pnum");
+var h_user_mail = getCookie("h_user_mail");
+
+alert( h_m_id);
+
+</script>
   <body>
  
 

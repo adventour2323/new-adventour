@@ -29,6 +29,8 @@ $(document).ready(function() {
 
 
 
+
+
 </script>
 <header>
 		<%
@@ -81,7 +83,7 @@ if ( infoshc_list != null) {
 	     <img id="content_hotel_image"  src="image/hotel/h_image/<%= reserv.getH_pho()%>"/>
 	     </div>
 	     <div id="content_hotel_name">
-	     <h2><%=reserv.getH_name_eng() %></h2>
+	     <h2 id="h_name_eng"><%=reserv.getH_name_eng() %></h2>
 	     <h4 ><%=reserv.getH_name_ko() %></h4>
 	     <h5><%=reserv.getH_grade() %>성급</h5>
 	     <h5 ><%=reserv.getH_addr() %></h5>
@@ -89,7 +91,7 @@ if ( infoshc_list != null) {
 	      
 	     <input type="hidden" name="h_name_eng" value="<%=reserv.getH_name_eng() %>">
 	    <input type="hidden" name="h_name_ko" value="<%=reserv.getH_name_ko() %>">
-
+        <input type="hidden" id="h_m_id_input" name="h_m_id" value="<%= session.getAttribute("id") %>">
 	     	      
 	     </div>
 	   </div><!-- content_hotel_div -->
@@ -104,8 +106,8 @@ if ( infoshc_list != null) {
             <td><%= checkin %></td>
             <td ><%= checkout %></td>
             
-        <input type="hidden" name="h_indate" value="<%= checkin %>">
-	    <input type="hidden" name="h_outdate" value="<%= checkout %>">
+        <input type="hidden" id="h_indate" name="h_indate" value="<%= checkin %>">
+	    <input type="hidden" id="h_outdate" name="h_outdate" value="<%= checkout %>">
            </tr>	   
 	   	   <tr>
             <th>투숙객 </th>
@@ -114,7 +116,7 @@ if ( infoshc_list != null) {
  		   <tr>
             <td ><%= peo %>명</td>
             <td ><%= night %>박</td>
-        <input type="hidden" name="h_roompeo" value="<%= peo %>">
+        <input type="hidden" id ="h_room_user" name="h_roompeo" value="<%= peo %>">
 	    <input type="hidden" name="h_night_time" value="<%= night %>">
            </tr>
            <tr>
@@ -138,7 +140,7 @@ if ( infoshc_list != null) {
 	     </div>
 	     <div id="content_room_name">
 	     <h3 name="h_roomtype">룸 타입 : <%= reserv.getH_roomtype() %></h3>
-	     <input type="hidden" name="h_roomnum" value="<%= reserv.getH_roomnum() %>">
+	     <input type="hidden" id="h_roomnum" name="h_roomnum" value="<%= reserv.getH_roomnum() %>">
 	     <table id="content_room_info" >
 	      <tr>
             <th> 침대 : <%= reserv.getH_room_bed() %> x <%= reserv.getH_room_bedc() %></th>
@@ -201,7 +203,7 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
 %>           
             <td class="td_total">총 가격</td>
             <td class="td_totalpri"> <h3 class="td_2_price">&#8361; <%= total_price %></h3></td>
-            <input type="hidden" name="total_price" value="<%= total_price %>">
+            <input type="hidden" id="h_total_price" name="total_price" value="<%= total_price %>">
            </tr>            
         </table>
       </div><!-- content_room_price_div -->
@@ -344,6 +346,46 @@ if (elements) {
 function addCommasToNumber(numberString) {
   return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+
+$("#toss_pay").on("click", function(){
+
+    
+    var h_roomnum = document.getElementById("h_roomnum").value; //
+    var h_m_id = document.getElementById("h_m_id_input").value; //
+    var user_firstname =  document.getElementById("user_firstname").value; //
+    var user_lastname =  document.getElementById("user_lastname").value; //
+    var h_room_user = document.getElementById("h_room_user").value; //
+    var h_total_price = document.getElementById("h_total_price").value; //
+    var h_indate = document.getElementById("h_indate").value; //
+    var h_outdate = document.getElementById("h_outdate").value;//
+    var h_user_name = user_firstname + user_lastname;
+    var h_user_pnum = document.getElementById("user_tel").value;
+    var h_user_mail = document.getElementById("user_mail").value;
+
+    alert("1번" +  h_total_price);
+
+    // 쿠키 만료 날짜를 설정 -  현재 세션이 종료되면
+  var expirationDate = new Date();
+expirationDate.setDate(expirationDate.getDate() + 1);
+
+    // 각 데이터를 쿠키에 저장
+   document.cookie = " h_roomnum=" +  h_roomnum + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_m_id=" + h_m_id + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_room_user=" + h_room_user + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_total_price=" + h_total_price + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_indate=" + h_indate + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_outdate=" + h_outdate + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_user_name=" + h_user_name + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_user_pnum=" + h_user_pnum + "; expires=" + expirationDate.toUTCString();
+document.cookie = "h_user_mail=" + h_user_mail + "; expires=" + expirationDate.toUTCString();
+
+    alert( "2번" + h_m_id);
+    
+});
+
+
+
 </script>
 
 </html>

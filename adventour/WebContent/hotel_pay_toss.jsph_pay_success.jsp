@@ -13,7 +13,8 @@
 <%@ page import="java.io.Reader" %>
 <%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ page import="java.net.URLEncoder" %>
-
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.Calendar" %>
 
 <%
  // 결제 승인 API 호출하기 
@@ -70,26 +71,96 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
+<script>
+
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// 쿠키에서 값을 가져옵니다.
+var  h_roomnum = getCookie("h_roomnum");
+var  h_m_id = getCookie("h_m_id");
+var h_room_user = getCookie("h_room_user");
+var h_total_price = getCookie("h_total_price");
+var h_indate = getCookie("h_indate");
+var h_outdate = getCookie("h_outdate");
+var h_user_name = getCookie("h_user_name");
+var h_user_pnum = getCookie("h_user_pnum");
+var h_user_mail = getCookie("h_user_mail");
+
+alert("3번"+ h_m_id);
+
+</script>
+
 <body>
-
-
-<!--  데이터베이스 저장하는 코드 추가하면댕듯 -->
+ 
 <section>
     <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
     session.getAttribute("id");
     
+    String h_roomnum = "";   
+    String h_m_id = "";     
+    String h_room_user = ""; 
+    String h_total_price ="";
+    String h_indate = ""; 
+    String h_outdate ="";
+    String h_user_name =""; 
+    String h_user_pnum = ""; 
+    String h_user_mail = ""; 
     
-    if (isSuccess) { %>
+    if (isSuccess) {
+  
+    Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
+
+  
+
     
-    
+     for (Cookie cookie : cookies) {
+     String name = cookie.getName();
+     String value = cookie.getValue();
+     
+         if (name.equals("h_m_id")){
+	      h_m_id = value;
+	      }else if (name.equals("h_roomnum")){
+	    	  h_roomnum = value;
+	      }else if (name.equals(" h_room_user")){
+	    	  h_room_user = value;
+	      }else if (name.equals(" h_total_price")){
+	    	  h_total_price = value;
+	      }else if (name.equals(" h_indate")){
+	    	  h_indate = value;
+	      }else if (name.equals("h_outdate")){
+	    	  h_outdate = value;
+	      }else if (name.equals("h_user_name")){
+	    	  h_user_name = value;
+	      }else if (name.equals("h_user_pnum")){
+	    	  h_user_pnum = value;
+	      }else if (name.equals("h_user_mail")){
+	    	  h_user_mail = value;
+	      }
+     }
+	      %>
         <h1>결제 성공</h1>
         <input type="text" value="<%= session.getAttribute("id") %>" >
-        <p>결과 데이터 : <%= jsonObject.toJSONString() %></p>
+        <p >결과 데이터 : <%= jsonObject.toJSONString() %></p>
         <p>orderName : <%= jsonObject.get("orderName") %></p>
-        <p>customerName : <%= jsonObject.get("customerName")  %></p>
-        <p>method : <%= jsonObject.get("method") %></p>
+        <p id="h_m_id">customerName : <%= h_m_id  %>  </p>
+         <p> <%= h_roomnum  %> </p>
+         
+    <p> <%= h_room_user%>  </p> 
+    <p> <%= h_total_price%>  </p>
+    <p> <%=h_indate %>  </p>
+    <p> <%= h_outdate%>  </p>
+    <p> <%= h_user_name%>  </p>
+    <p> <%= h_user_pnum%>  </p>
+    <p> <%= h_user_mail%>  </p>
+         
+         
+           <p>method : <%= jsonObject.get("method") %></p>
         <p>
             <% if(jsonObject.get("method").equals("카드")) { out.println(((JSONObject)jsonObject.get("card")).get("number"));} %>
             <% if(jsonObject.get("method").equals("가상계좌")) { out.println(((JSONObject)jsonObject.get("virtualAccount")).get("accountNumber"));} %>
@@ -98,10 +169,62 @@
         
         </p>
        
-    <%} else { %>
+  <% 
+         } else { %>
         <h1>결제 실패</h1>
         <p><%= jsonObject.get("message") %></p>
         <span>에러코드: <%= jsonObject.get("code") %></span>
         <%
     }
     %>
+<%
+    // JDBC 연결 정보
+    String jdbcUrl = "jdbc:mysql://localhost:3306/adventour";
+    String dbUser = "root";
+    String dbPassword = "0521";
+
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+
+    try {
+        // JDBC 드라이버 로드
+        Class.forName("com.mysql.jdbc.Driver");
+
+        // 데이터베이스 연결
+        conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPassword);
+
+        // SQL 쿼리 준비
+        String sql = "INSERT INTO h_reserve"+
+                     "(h_tinum, h_roomnum, h_m_id, h_room_user, h_total_price, h_indate, h_outdate, h_user_name, h_user_pnum, h_user_mail)"+ 
+                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        pstmt = conn.prepareStatement(sql);
+
+        // h_tinum 생성: "YYMMDD" + "H"
+        Calendar cal = Calendar.getInstance();
+        String year = Integer.toString(cal.get(Calendar.YEAR) % 100); // 두 자리 연도
+        String month = String.format("%02d", cal.get(Calendar.MONTH) + 1); // 두 자리 월
+        String day = String.format("%02d", cal.get(Calendar.DAY_OF_MONTH)); // 두 자리 일
+        String tinum = year + month + day + "H";
+
+        // 매개변수 설정
+        pstmt.setString(1,year + month + day + "H" + h_roomnum);// "YYMMDD" + "H" + h_roomnum
+        pstmt.setString(2, h_roomnum); 
+        pstmt.setString(3, h_m_id);
+        pstmt.setString(4, h_room_user);
+        pstmt.setString(5, h_total_price);
+        pstmt.setString(6, h_indate);
+        pstmt.setString(7, h_outdate);
+        pstmt.setString(8, h_user_name);
+        pstmt.setString(9, h_user_pnum);
+        pstmt.setString(10, h_user_mail);
+
+        // 쿼리 실행
+        pstmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        // 연결 해제
+        if (pstmt != null) pstmt.close();
+        if (conn != null) conn.close();
+    }
+%>

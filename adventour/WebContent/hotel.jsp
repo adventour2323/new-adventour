@@ -307,14 +307,14 @@ if (session.getAttribute("id") == null) {
 	    var h_outdateD = document.getElementById("h_outdateD").value;
 	    var h_mainpeo = document.getElementById("h_mainpeo").value;
 	   
-	    alert("1번" + h_outdateD);
+	 //   alert("1번" + h_outdateD);
 	    
 	    var h_indate11 = h_indateY+"-"+h_indateM+"-"+h_indateD;
 	    var h_outdate11 = h_outdateY+"-"+h_outdateM+"-"+h_outdateD;
 
 	  
 
-	    alert("2번" +  h_indate11);
+	//    alert("2번" +  h_indate11);
 
 	    // 날짜를 Date 객체로 변환
 	    var checkInDate11 = new Date(h_indate11);
@@ -342,8 +342,8 @@ if (session.getAttribute("id") == null) {
 	    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
 	    document.cookie = "night_time=" + night_time + "; expires=" + expirationDate.toUTCString();
 
-	    alert("3번 메인검색"+h_outdateD);
-	    alert("4번 night_time"+night_time);
+	  //  alert("3번 메인검색"+h_outdateD);
+	  //  alert("4번 night_time"+night_time);
 	});
 
 </script>
