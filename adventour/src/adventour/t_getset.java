@@ -21,6 +21,7 @@ public class t_getset {
 	String t_img1;
 	String t_img2;
 	String t_img3;
+	String t_img4;
 	String t_logo;
 //	 
 	String g_name;
@@ -43,6 +44,12 @@ public class t_getset {
 	 */
 	public String getSpot1_x() {
 		return spot1_x;
+	}
+	public String getT_img4() {
+		return t_img4;
+	}
+	public void setT_img4(String t_img4) {
+		this.t_img4 = t_img4;
 	}
 	/**
 	 * @return the g_img

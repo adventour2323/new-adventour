@@ -324,6 +324,7 @@ public class g_list_print {
 			table.setT_img1(rs.getString("t_img1"));
 			table.setT_img2(rs.getString("t_img2"));
 			table.setT_img3(rs.getString("t_img3"));
+			table.setT_img4(rs.getString("t_img4"));
 			table.setSpot1_x(rs.getString("spot1_x"));
 			table.setSpot1_y(rs.getString("spot1_y"));
 			table.setSpot2_x(rs.getString("spot2_x"));

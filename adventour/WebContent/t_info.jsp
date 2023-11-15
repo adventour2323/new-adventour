@@ -71,7 +71,7 @@
 					</div>
 					<div class="img_bottom" style="display: flex;">
 						<div class="img3_div" style="margin-right: 10px;"><img alt="img3" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
-						<div class="img4_div" style="width: 200px;"><img alt="img4" src="<%= g.getT_img3() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
+						<div class="img4_div" style="width: 200px;"><img alt="img4" src="<%= g.getT_img4() %>" width="200px" onclick="openModal();" style="cursor: pointer;"> </div>
 					</div>
 				</div>
 	<div class="sel_img_div" >
@@ -116,6 +116,18 @@
 				<div class="t_name">
 					<h1 class="t_name_text"><%=g.getT_name() %></h1>
 				</div>
+				<!--  -->
+						<div class="tour-rating-star" id="tour-rating-star" style="flex;">
+	        				<% String t_id_avg = g.getT_id();
+    	    					ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
+        						for (t_r_getset tr : rv1) {
+        					%>
+        					<div >평점     
+        						<span> <%= tr.getT_rating() %> </span> 
+        					</div>
+        					<% } %>
+    					</div>	
+    					<!--  -->
 			</div> <!-- top_left -->
 			
 			<div class="option_div" >
@@ -259,7 +271,7 @@
 						<!--  -->
 						
 					<div class="guide_introduce_div" style="margin-top: 20px;">
-						<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
+						<h3 style="text-align: center; margin-bottom: 10px;"><label>담당 가이드</label></h3>
 						<div class="guide_introduce" >
 							<%
 								String g_id = g.getG_id();
@@ -276,7 +288,7 @@
             								<div class="guide_info_div">
             									<div class="guide_name_div" >
             										<div class="label-cell">
-														<strong>이름</strong>
+														<label><strong>이름</strong></label>
 													</div>
 													<div class="data-cell">
 														<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
@@ -284,7 +296,7 @@
 												</div>
 												<div class="guide_contact" style="display: flex;">
 													<div class="label-cell">
-														<strong>연락처</strong>
+														<label><strong>연락처</strong></label>
 													</div>
 													<div class="data-cell">
 														<%=gg.getEmail()%>
@@ -292,7 +304,7 @@
 												</div>
 												<div class="guide_item">
 													<div class="label-cell">
-														<strong>다른 상품</strong>
+														<label><strong>다른 상품</strong></label>
 													</div>
 													<%
 														ArrayList<t_getset> a3 = id.t2(g_id);
@@ -362,16 +374,7 @@
 							별점을 남겨주세요!
 						</div>
 							
-						<div class="tour-rating-star" id="tour-rating-star" style="flex;">
-	        				<% String t_id_avg = g.getT_id();
-    	    					ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
-        						for (t_r_getset tr : rv1) {
-        					%>
-        					<div >평점     
-        						<span> <%= tr.getT_rating() %> </span> 
-        					</div>
-        					<% } %>
-    					</div>						
+					
 					</fieldset>
     				<div class="form-group">
         				<textarea class="form-control" id="reviewContents" name="review_content" placeholder="리뷰를 남겨주세요!!" rows="4"></textarea>
