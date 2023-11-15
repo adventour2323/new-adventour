@@ -49,7 +49,7 @@ height: 1300px;
 }*/
 
 .t_name {
-	width: 500px; /* 원하는 너비로 설정하세요. */
+	width: 1000px; /* 원하는 너비로 설정하세요. */
 	margin-top: 25px;
 }
 
@@ -237,7 +237,9 @@ height: 1300px;
   height: 100%;
 }  
 
-/*  */
+/* 담당 가이드 */
+
+
 
 .guide-table {
     text-align: center;
@@ -247,6 +249,7 @@ height: 1300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 800px;
 }
 
 .image-cell img {
@@ -254,15 +257,17 @@ height: 1300px;
     margin-right: 10px;
 }
 
-.guide_info_div{
-	display: block;
-}
+  .guide_info_div {
+    height: 150px; 
+    display: block;
+  }
+  
 .guide_name_div{
 	display: flex;
 }
 .label-cell{
 	width: 120px; 
-	height: 37.5px; 
+	height: 50px; 
 	font-weight: bold;
 	background-color: #f2f2f2; 
 	display: flex; 
@@ -271,7 +276,7 @@ height: 1300px;
 }
 .data-cell{
 	width: 200px; 
-	height: 37.5px; 
+	height: 50px; 
 	display: flex; 
 	justify-content: center; 
 	align-items: center;

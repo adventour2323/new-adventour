@@ -114,7 +114,7 @@
 		</div> <!-- t_img_div -->	
 		
 				<div class="t_name">
-					<h1 class="t_name_text"><%=g.getT_name() %>!</h1>
+					<h1 class="t_name_text"><%=g.getT_name() %></h1>
 				</div>
 			</div> <!-- top_left -->
 			
@@ -180,15 +180,15 @@
 		
 		<div class="bottom_area" >
 			<hr>
-				<div style=" display: flex; margin-bottom: 30px;" >
+				<div style=" display: flex; margin-bottom: 30px; margin-top: 20px;" >
 					<img alt="info_icon" src="./image/tour/t_info_icon.png" style="margin-left: auto; margin-right: 10px;" width="32px;"><h2 style="margin: auto auto auto 0;">여행 정보</h2>
 				</div>
 			<!--  -->	
 			
 			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'tour_info_div')">투어 소개</button>
   				<button class="tablinks" onclick="openTab(event, 'meeting_div')">집합 장소</button>
   				<button class="tablinks" onclick="openTab(event, 'tour_spot')">투어 코스</button>
-  				<button class="tablinks" onclick="openTab(event, 'tour_info_div')">투어 소개</button>
 			</div>
 
 			<div id="meeting_div" class="tabcontent">
@@ -253,75 +253,88 @@
 						<img alt="icon" src="./image/tour/travel_guide_icon.png" style="margin-left: auto; margin-right: 10px;" width="50px;">
 						<h3 style="margin: auto auto auto 0;">투어 소개</h3>
 					</div>
-						<div class="tour_info" id="tour_info">						
-							<%= g.getT_info() %>
-						</div>
-				</div>
-			</div>
-			
-			<div class="guide_introduce_div" style="margin-top: 20px;">
-				<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
-				<div class="guide_introduce" >
-					<%
-						String g_id = g.getG_id();
-					ArrayList<g_getset> a2 = id.g2(g_id);
-					%>
-            		<% for (g_getset gg : a2) { %>
-            		<div class="table-container" >
-						<div class="guide-table">
-        					<div class="guide-row">
-            					<div class="image-cell">
-                					<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
-            					</div>
-            					<div style="display: block; ">
-									<div class="guide_info_div">
-										<div class="guide_name_div" >
-											<div class="label-cell">
-												<strong>이름</strong>
-											</div>
-											<div class="data-cell">
-												<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
-											</div>
-										</div>
-										<div class="guide_contact" style="display: flex;">
-											<div class="label-cell">
-												<strong>연락처</strong>
-											</div>
-											<div class="data-cell">
-												<%=gg.getEmail()%>
-											</div>
-										</div>
-										<div class="guide_item">
-											<div class="label-cell">
-												<strong>다른 상품</strong>
-											</div>
-											<% ArrayList<t_getset> a3 = id.t2(g_id);
-												for (int i = 0; i < a3.size(); i++) {
-												t_getset tn = a3.get(i);
-											%>
-											<div class="data-cell">
-												<a href="t_info.jsp?t_id=<%=tn.getT_id()%>">
-													<div class="t_name2">
-														<%=tn.getT_name()%>
+					<div class="tour_info" id="tour_info">						
+						<%= g.getT_info() %>
+					</div>
+						<!--  -->
+						
+					<div class="guide_introduce_div" style="margin-top: 20px;">
+						<h3 style="text-align: center; margin-bottom: 10px;">담당 가이드</h3>
+						<div class="guide_introduce" >
+							<%
+								String g_id = g.getG_id();
+								ArrayList<g_getset> a2 = id.g2(g_id);
+							%>
+            				<% for (g_getset gg : a2) { %>
+            				<div class="table-container" >
+								<div class="guide-table">
+        							<div class="guide-row">
+            							<div class="image-cell">
+            								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
+            							</div>
+            							<div style="display: block; ">
+            								<div class="guide_info_div">
+            									<div class="guide_name_div" >
+            										<div class="label-cell">
+														<strong>이름</strong>
 													</div>
-												</a>
-    												<% if (i < a3.size() - 1) { %> 
-    													<span>, </span>
+													<div class="data-cell">
+														<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
+													</div>
+												</div>
+												<div class="guide_contact" style="display: flex;">
+													<div class="label-cell">
+														<strong>연락처</strong>
+													</div>
+													<div class="data-cell">
+														<%=gg.getEmail()%>
+													</div>
+												</div>
+												<div class="guide_item">
+													<div class="label-cell">
+														<strong>다른 상품</strong>
+													</div>
+													<%
+														ArrayList<t_getset> a3 = id.t2(g_id);
+														boolean hasOtherProducts = false;
+														for (int i = 0; i < a3.size(); i++) {
+															t_getset tn = a3.get(i);
+															if (!tn.getT_name().equals(g.getT_name())) {
+																if (hasOtherProducts) {
+													%>
+																<span>, </span>
+																<% } %>
+													<div class="data-cell">
+														<div class="t_name2">
+															<a href="t_info.jsp?t_id=<%=tn.getT_id()%>">
+																<%=tn.getT_name()%>
+															</a>
+														</div>
+													</div>
+													<%
+														hasOtherProducts = true;
+													} }
+														if (!hasOtherProducts) {
+													%>
+													<div class="data-cell">
+														추천 투어가 없습니다.
+													</div>
 													<% } %>
-											</div>
-											<% } %>
-										</div>	<!-- guide_item -->
-									</div>		<!-- guide_info_div -->										
-								</div>
-							</div> <!-- guide-row -->
-
-						</div> <!-- guide-table -->
-
-					</div> <!-- table-container -->
-					<%} %>
-				</div> <!-- guide_introduce -->
-							
-			</div>	<!-- guide_introduce_div -->		 
+												</div> <!-- guide_item -->
+											</div>		<!-- guide_info_div -->										
+										</div>
+									</div> <!-- guide-row -->
+								</div> <!-- guide-table -->
+							</div> <!-- table-container -->
+							<%} %>
+						</div> <!-- guide_introduce -->
+					</div>	<!-- guide_introduce_div -->		
+						
+						<!--  -->
+				</div> <!-- tour_info_div -->
+			</div> <!-- tour_info_div  -->
+			
+ 
 			<!--  -->
 		</div> <!-- bottom_area -->
 		
@@ -773,7 +786,7 @@ function openTab(evt, tabName) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // 페이지 로드 시 첫 번째 탭 활성화
-    openTab(event, 'meeting_div'); 
+    openTab(event, 'tour_info_div'); 
 });
 
 function openTab(evt, tabName) {
