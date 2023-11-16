@@ -14,8 +14,9 @@
    <meta charset="UTF-8">
     
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="./css/main_reset.css">
-    <link rel="stylesheet" href="./css/main_index.css">
+    <!-- <link rel="stylesheet" href="./css/main_reset.css"> -->
+    <!-- <link rel="stylesheet" href="./css/main_index.css"> -->
+    <link rel="stylesheet" href="./css/main_index_2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script src="./js/main_index.js"></script>
     <script src="./js/main_index_2.js"></script>    
@@ -37,237 +38,66 @@
 
 		<%
 			List<tourlist_gs> a1 = (List<tourlist_gs>) request.getAttribute("list");
-				
 		%>
 
 
         <section id="visual" class="main-visual">
             <div class="inner">
-                <div class="visualSearchBox" style="margin-top: 100px;">
+                <div class="visualSearchBox" >
                     <strong>
                         <em>어떤 곳으로 떠날까요?</em>
                     </strong>
-                    <div class="visual-res">
-                        <ul class="visual-sel-tab">
-                            <li class="on">투어</li>
-                            <li>버스</li>
-                            <li>호텔</li>
-                        </ul>
-                        <!-- 검색 탭 -->
-                        <ul class="visual-res-tab">
-                            
-                            <!-- 투어탭 -->
+                    <div class="tab_list">
+    <input id="tab1" type="radio" name="tabs" checked>
+    <label class="tab_menu" for="tab1">투어</label>
+    <input id="tab2" type="radio" name="tabs">
+    <label class="tab_menu" for="tab2">호텔</label>
+    <input id="tab3" type="radio" name="tabs">
+    <label class="tab_menu" for="tab3">버스</label>
 
-                            <li class="res-tab-pack on">
+    <div class="content" id="res-tab-tour">
+        <div class="container">
+            <!--  -->
+<div class="t_flag">
+        <div id="flag_1" class="flag_row">
+          <div id="ukimg" class="country_name" style="margin-right: 25px; text-align: center;">
+			<a href="t_list_country.jsp?country_eng=uk">
+            	<img class="uk_flag" id="flag" src="image/img/uk.png">
+            	<h3>영국</h3>
+			</a>            
+          </div>
+          
+          <div id="fraimg" class="country_name"style="margin-left: 25px; text-align: center;">
+			<a href="t_list_country.jsp?country_eng=france">
+            	<img class="fr_flag" id="flag" src="image/img/fra.png">
+            	<h3>프랑스</h3>
+			</a>
+          </div>
+		</div >
+		<div id="flag_2" class="flag_row">
+          <div id="spaimg" class="country_name" style="margin-right: 25px; text-align: center;">
+          	<a href="t_list_country.jsp?country_eng=spain">
+            	<img class="es_flag" id="flag" src="image/img/spain.png">
+            	<h3>스페인</h3>
+            </a>
+          </div>
+          
+          <div id="itaimg" class="country_name" style="margin-left: 25px; text-align: center;">
+          	<a href="t_list_country.jsp?country_eng=italy">
+            	<img class="ita_flag" id="flag" src="image/img/ity.png">
+            	<h3>이탈리아</h3>
+            </a>
+          </div>
+		</div>
+        </div>
+            
+            <!--  -->
+        </div>
+    </div>
 
-                                <div>
-                                    <input type="text" name="" id="" class="whereToGo" placeholder="어디로 떠나세요?">
-                                    <div class="where-to-travel">
-                                        
-                                            <div class="where-to-uk">
-                                            <ul>
-                                                <li>영국</li>
-                                                <li>런던</li>
-                                                <li>리버풀</li>
-                                                <li>에딘버러</li> 
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-france">
-                                            <ul>
-                                                <li>프랑스</li>
-                                                <li>파리</li>
-                                                <li>마르세유</li>
-                                                <li>모나코</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-spain">
-                                            <ul>
-                                                <li>스페인</li>
-                                                <li>마드리드</li>
-                                                <li>바르셀로나</li>
-                                                <li>세비야</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-italy">
-                                            <ul>
-                                                <li>이탈리아</li>
-                                                <li>로마</li>
-                                                <li>베네치아</li>
-                                                <li>밀라노</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="depart-start">
-                                        
-
-                                        <button class="start-travel-date">
-                                            <i class="xi-calendar"></i><span>여행시작일 선택</span>
-                                        </button>
-                                        <div class="startTravelCalendar">
-                                            <table class="Calendar">
-                                                <thead>
-                                                    <tr>
-                                                        <td style="cursor:pointer;">&#60;
-                                                        </td>
-                                                        <td colspan="5">
-                                                            <span id="calYear"></span>년
-                                                            <span id="calMonth"></span>월
-                                                        </td>
-                                                        <td style="cursor:pointer;">&#62;
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>일</td>
-                                                        <td>월</td>
-                                                        <td>화</td>
-                                                        <td>수</td>
-                                                        <td>목</td>
-                                                        <td>금</td>
-                                                        <td>토</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                   
-                                    <a href="tour_login.jsp"><button class="res-tab-submit">투어 검색</button></a>
-                                </div>
-                            </li>
-
-                            <!-- 버스 탭 -->
-                            <!-- <li class="res-tab-air"> -->
-                                <li class="res-tab-bus">
-                                <div>
-                                    <input type="text" name="" id="" class="howToGo" placeholder="출발 도시를 선택해주세요">
-
-                                    <div class="how-to-go">
-                                        
-                                        <!--  -->
-                                        <div class="where-to-uk">
-                                            <ul>
-                                                <li>영국</li>
-                                                <li>런던</li>
-                                                <li>리버풀</li>
-                                                <li>에딘버러</li> 
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-france">
-                                            <ul>
-                                                <li>프랑스</li>
-                                                <li>파리</li>
-                                                <li>마르세유</li>
-                                                <li>모나코</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-spain">
-                                            <ul>
-                                                <li>스페인</li>
-                                                <li>마드리드</li>
-                                                <li>바르셀로나</li>
-                                                <li>세비야</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-italy">
-                                            <ul>
-                                                <li>이탈리아</li>
-                                                <li>로마</li>
-                                                <li>베네치아</li>
-                                                <li>밀라노</li>
-                                            </ul>
-                                        </div>
-                                        <!--  -->
-                                        
-                                    </div>
-                                    <!-- 도착 도시 -->
-                                    <div>
-                                        <!-- 수정 필요 -->
-                                        <input type="text" name="" id="" class="howToGo" placeholder="도착 도시를 선택해주세요" style="margin-top: 10px;">
-                                        
-                                        <div class="how-to-go">
-                                            
-                                            <div class="where-to-uk">
-                                                <ul>
-                                                    <li>영국</li>
-                                                    <li>런던</li>
-                                                    <li>리버풀</li>
-                                                    <li>에딘버러</li> 
-                                                </ul>
-                                            </div>
-                                            <div class="where-to-france">
-                                                <ul>
-                                                    <li>프랑스</li>
-                                                    <li>파리</li>
-                                                    <li>마르세유</li>
-                                                    <li>모나코</li>
-                                                </ul>
-                                            </div>
-                                            <div class="where-to-spain">
-                                                <ul>
-                                                    <li>스페인</li>
-                                                    <li>마드리드</li>
-                                                    <li>바르셀로나</li>
-                                                    <li>세비야</li>
-                                                </ul>
-                                            </div>
-                                            <div class="where-to-italy">
-                                                <ul>
-                                                    <li>이탈리아</li>
-                                                    <li>로마</li>
-                                                    <li>베네치아</li>
-                                                    <li>밀라노</li>
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                        </div>
-
-
-                                    <!--  -->
-                                    <div class="depart-start">
-                                         
-                                        <button class="start-travel-date">
-                                            <i class="xi-calendar"></i><span>여행시작일 선택</span>
-                                        </button>
-                                        <div class="startTravelCalendarAir">
-                                            <table class="Calendar_Air">
-                                                <thead>
-                                                    <tr>
-                                                        <td style="cursor:pointer;">&#60;
-                                                        </td>
-                                                        <td colspan="5">
-                                                            <span id="calYear_Air"></span>년
-                                                            <span id="calMonth_Air"></span>월
-                                                        </td>
-                                                        <td style="cursor:pointer;">&#62;
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>일</td>
-                                                        <td>월</td>
-                                                        <td>화</td>
-                                                        <td>수</td>
-                                                        <td>목</td>
-                                                        <td>금</td>
-                                                        <td>토</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                     
-                                    <a href="bus.html"><button class="res-tab-submit">버스 검색</button></a>
-                                </div>
-                            </li>
-
-                            <!-- 호텔 -->
-                            <li class="res-tab-hotel">
-                                <div>
-                                    <input type="text" name="" id="hotelsearch" class="whereToHotel" placeholder="어디로 떠나세요?">
+    <div class="content" id="res-tab-hotel">
+        <div class="container">
+            <input type="text" name="" id="" class="whereToGo" placeholder="어디로 떠나세요?">
                                     <div class="where-to-hotel">
 
                                          
@@ -391,10 +221,15 @@
                                         </ul>
                                     </div>
                                     <a href="hotel_login.jsp"><button class="res-tab-submit">숙소 검색</button></a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+        </div>
+    </div>
+
+    <div class="content" id="res-tab-bus">
+        <div class="container">
+            bus bus
+        </div>
+    </div>
+</div>
                 </div>
 
                 <div class="visualBanner">
@@ -831,7 +666,7 @@
                                                 <strong>88,500원~</strong>
                                             </p>
                                         </div>
-                                    </a> 
+                                    </a>
                                 </div>
                             </li>
                         </ul>
