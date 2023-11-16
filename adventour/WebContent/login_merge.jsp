@@ -31,21 +31,27 @@
             pstmt.setString(2, pw);
             rs = pstmt.executeQuery();
 
-            if (rs.next() && rs.getInt("cnt") == 1) {
+            if (rs.next() && rs.getInt("cnt") == 1)
+            {
                 userType = "guide"; // 가이드 사용자
-            } else {
+            } 
+            
+            else 
+            {
                 sql = "SELECT COUNT(*) AS cnt FROM member WHERE m_id = ? AND m_pw = ?";
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, id);
                 pstmt.setString(2, pw);
                 rs = pstmt.executeQuery();
 
-                if (rs.next() && rs.getInt("cnt") == 1) {
+                if (rs.next() && rs.getInt("cnt") == 1) 
+                {
                     userType = "member"; // 회원 사용자
                 }
             }
 
-            if (!userType.isEmpty()) {
+            if (!userType.isEmpty()) 
+            {
                 session.setAttribute("id", id);
                 session.setAttribute("pw", pw);
     %>
@@ -53,16 +59,20 @@
                     history.back();
                 </script>
     <%
-            } else {
+            } 
+            else if (userType.isEmpty()) 
+            {
     %>
                 <script>
                     alert("로그인 실패");
-                    location.href = "login_merge_form.jsp";
+                    //location.href = "login_merge_form.jsp";
+                     history.back();
                 </script>
     <%
             }
 
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             e.printStackTrace();
         }
     %>

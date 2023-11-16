@@ -301,8 +301,7 @@ if (top_list != null) {
  <div id="map" style="width: 950px; height: 400px;" > </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
- 
-
+    
     
     <div class="hotel_info_cont">
     
@@ -327,10 +326,6 @@ if (top_list != null) {
  
  <!--  예약 검색 창 -->
  
- 
-
-
-
 <form name="info_to_reserv" action="toreservation.hotel?uname=toreserv"  method="post">
 
 
@@ -360,8 +355,7 @@ for (Cookie cookie : cookies) {
              
 <%
         } else if (name.equals("h_maincity")) {
-%>
-                
+%>              
 <%
         } else if (name.equals("h_indateY")) {
             h_indateY = value;
@@ -380,11 +374,9 @@ for (Cookie cookie : cookies) {
         }else if  (name.equals("night_time")) {
         	night_time = value;
     }
-
     }
 }
-%>
- 
+%> 
  <input type="text" id="h_info_search_name" class="h_info_search_name" name="h_info_search_name" placeholder="호텔 이름" required="required" value="<%= aaa.getH_name_ko() %>" >
  <input type="hidden" id="h_info_search_nameeng"  class="h_info_search_nameeng"   name="h_info_search_nameeng" value="<%= aaa.getH_name_eng() %>" >
 <% 

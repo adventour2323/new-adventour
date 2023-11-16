@@ -42,10 +42,8 @@ var h_indateD = getCookie("h_indateD");
 var h_outdateY = getCookie("h_outdateY");
 var h_outdateM = getCookie("h_outdateM");
 var h_outdateD = getCookie("h_outdateD");
-var h_mainpeo = getCookie("h_mainpeo");
-var night_time = getCookie("night_time");
 
-//alert(" 5번 호텔 스케쥴 박수 "+night_time);
+alert(" 5번 호텔 스케쥴 박수 "+night_time);
 
 $(document).on("click", ".sch_btn", function () {
 	  // 기존 쿠키 값 삭제
@@ -57,6 +55,7 @@ $(document).on("click", ".sch_btn", function () {
 	  document.cookie = "h_outdateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "h_outdateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "h_outdateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_mainpeo=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
 
 
@@ -65,7 +64,7 @@ $(document).on("click", ".sch_btn", function () {
 	  var newCity = document.querySelector("#sch_city").value;
 	  var newCheckinDate = document.querySelector("#sch_indate").value;
 	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
-
+	  var newh_mainpeo = document.querySelector("#sch_adult").value;
 
 	    // 날짜를 Date 객체로 변환
 	    var checkInDate = new Date(newCheckinDate);
@@ -79,10 +78,11 @@ document.cookie = "newCountry=" + newCountry;
 document.cookie = "newCity=" + newCity;
 document.cookie = "newCheckinDate=" + newCheckinDate;
 document.cookie = "newCheckoutDate=" + newCheckoutDate;
+document.cookie = "newh_mainpeo=" + newh_mainpeo;
 document.cookie = "newNightTime=" + newNightTime;
 
 // 값이 변경된 후에 alert 창 실행
-alert(" 6번 호텔 스케쥴 박수 " + newNightTime);
+alert(" 7번 호텔 스케쥴 박수 " + newNightTime);
 
 	  // 나머지 처리 또는 폼 제출을 여기에 추가
 	});
@@ -160,7 +160,7 @@ if (session.getAttribute("id") == null) {
    
     <div class="sch12">
       <h5 class="sch_title" >☆ 인원</h5>
-      인원 수 : <input type="text" class="sch_adult" name="sch_adult" placeholder="인원 수" value="1" required="required">
+      인원 수 : <input type="text" class="sch_adult" id="sch_adult" name="sch_adult" placeholder="인원 수" value="1" required="required">
  <!-- 유아 : <input type="text" class="sch_kid" name="sch_kid" placeholder="유/소아"></br>   -->
     </div>
 

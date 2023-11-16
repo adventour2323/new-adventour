@@ -25,31 +25,30 @@
   </head>
   
   <script>
-function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-}
+  
+  $(document).ready(function() {
+	    function getCookie(name) {
+	      var value = "; " + document.cookie;
+	      var parts = value.split("; " + name + "=");
+	      if (parts.length === 2) return parts.pop().split(";").shift();
+	    }
 
-var h_mainde = getCookie("newCountry");
-var h_maincity = getCookie("newCity");
-var h_indate = getCookie("newCheckinDate");
-var h_outdate = getCookie("newCheckoutDate");
-var night_time = getCookie("newNightTime");
+        var h_mainde = getCookie("newCountry");
+        var h_maincity = getCookie("newCity");
+        var h_indate = getCookie("newCheckinDate");
+        var h_outdate = getCookie("newCheckoutDate");
+        var h_mainpeo = getCookie("newh_mainpeo");
+        var night_time = getCookie("newNightTime");
 
-var maindeValue = getCookie("h_mainde");
-var maincityValue = getCookie("h_maincity");
-var indateValue = getCookie("h_indate");
-var outdateValue = getCookie("h_outdate");
-var nightTimeValue = getCookie("night_time");
+        // 가져온 쿠키 값들을 사용하여 alert 창에 출력
+        alert("새로운 나라: " +  h_mainde);
+        alert("새로운 도시: " + h_maincity);
+        alert("새로운 체크인 날짜: " + h_indate);
+        alert("새로운 체크아웃 날짜: " + h_outdate);
+        alert("새로운 인원 수: " + h_mainpeo);
+        alert("새로운 박 수: " + night_time);
+	
 
-alert("새로운 나라: " +  h_mainde);
-alert("새로운 도시: " +h_maincity);
-alert("새로운 체크인 날짜: " +h_indate );
-alert("새로운 체크아웃 날짜: " +h_outdate);
-alert("새로운 박 수: " + night_time);
-
-$(document).ready(function() {
 	$("#roompay_btn").on('click', function(e) { 
  	    e.preventDefault(); // 기본 submit 동작을 막음
 
@@ -348,6 +347,7 @@ String h_mainde = null;
 String h_maincity =null;
 String h_indate = null;
 String h_outdate = null;
+String h_mainpeo = null;
 String night_time = null;
 
 for (Cookie cookie : cookies) {
@@ -362,6 +362,8 @@ for (Cookie cookie : cookies) {
         	h_indate = value;
         }else if (name.equals("h_outdate")) {
         	h_outdate = value;
+        } else if (name.equals("h_mainpeo")) {
+        	h_mainpeo = value;
         } else if (name.equals("night_time")) {
         	night_time = value;
         } 
