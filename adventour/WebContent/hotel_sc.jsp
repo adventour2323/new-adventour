@@ -42,50 +42,13 @@ var h_indateD = getCookie("h_indateD");
 var h_outdateY = getCookie("h_outdateY");
 var h_outdateM = getCookie("h_outdateM");
 var h_outdateD = getCookie("h_outdateD");
+var night_time = getCookie("night_time");
 
-alert(" 5번 호텔 스케쥴 박수 "+night_time);
-
-$(document).on("click", ".sch_btn", function () {
-	  // 기존 쿠키 값 삭제
-	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_indateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_indateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_indateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_outdateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_outdateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_outdateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_mainpeo=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+alert(" 5번 호텔 스케쥴 박수 "+night_time); //ok
 
 
-	  // 입력된 값들을 가져와서 변수에 저장
-	  var newCountry = document.querySelector("#sch_country").value;
-	  var newCity = document.querySelector("#sch_city").value;
-	  var newCheckinDate = document.querySelector("#sch_indate").value;
-	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
-	  var newh_mainpeo = document.querySelector("#sch_adult").value;
-
-	    // 날짜를 Date 객체로 변환
-	    var checkInDate = new Date(newCheckinDate);
-	    var checkOutDate = new Date(newCheckoutDate);
-
-	    // 두 날짜 사이의 밤 수 계산
-	    var timeDifference = checkOutDate - checkInDate;
-	    var newNightTime = Math.floor(timeDifference11 / (1000 * 60 * 60 * 24));
-
-document.cookie = "newCountry=" + newCountry;
-document.cookie = "newCity=" + newCity;
-document.cookie = "newCheckinDate=" + newCheckinDate;
-document.cookie = "newCheckoutDate=" + newCheckoutDate;
-document.cookie = "newh_mainpeo=" + newh_mainpeo;
-document.cookie = "newNightTime=" + newNightTime;
-
-// 값이 변경된 후에 alert 창 실행
-alert(" 7번 호텔 스케쥴 박수 " + newNightTime);
-
-	  // 나머지 처리 또는 폼 제출을 여기에 추가
-	});
+	
+});
 </script>
 
 
@@ -392,8 +355,51 @@ if (session.getAttribute("id") != null) {
 	<div id="footer"></div>
   </footer>
 
-  
-
 </body>
+<script>
+$(document).ready(function() {
+    $(".sch_btn").on("click", function() {
+        // 기존 쿠키 값 삭제
+        document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_indateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_indateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_indateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_outdateY=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_outdateM=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_outdateD=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "h_mainpeo=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+        // 입력된 값들을 가져와서 변수에 저장
+        var newCountry = document.querySelector("#sch_country").value;
+        var newCity = document.querySelector("#sch_city").value;
+        var newCheckinDate = document.querySelector("#sch_indate").value;
+        var newCheckoutDate = document.querySelector("#sch_outdate").value;
+        var newh_mainpeo = document.querySelector("#sch_adult").value;
+
+        // 날짜를 Date 객체로 변환
+        var checkInDate = new Date(newCheckinDate);
+        var checkOutDate = new Date(newCheckoutDate);
+
+        // 두 날짜 사이의 밤 수 계산
+        var timeDifference = checkOutDate - checkInDate;
+        var newNightTime = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+        alert(" 8번 호텔 스케쥴 박수 " + newNightTime);
+
+        document.cookie = "newCountry=" + encodeURIComponent(newCountry) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "newCity=" + encodeURIComponent(newCity) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "newCheckinDate=" + encodeURIComponent(newCheckinDate) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "newCheckoutDate=" + encodeURIComponent(newCheckoutDate) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "newh_mainpeo=" + encodeURIComponent(newh_mainpeo) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie = "newNightTime=" + encodeURIComponent(newNightTime) + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+
+        alert(" 7번 호텔 스케쥴 박수 " + newNightTime);
+
+        // 나머지 처리 또는 폼 제출을 여기에 추가
+    });
+});
+</script>
 
 </html>

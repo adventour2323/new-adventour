@@ -26,7 +26,7 @@ $(document).ready(function() {
 		initMap();
 		
 
-//	    // 왼쪽 검색창에 날짜 선택
+////	    // 왼쪽 검색창에 날짜 선택
 //	    $.datepicker.setDefaults({
 //	        dateFormat: 'yy-mm-dd',
 //	        prevText: '이전 달',

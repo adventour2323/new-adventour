@@ -17,7 +17,7 @@
 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI6rnQo4xB7Q2qJQfzN86WvL8JGPz_esg&callback=initMap"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    
@@ -39,7 +39,15 @@
         var h_outdate = getCookie("newCheckoutDate");
         var h_mainpeo = getCookie("newh_mainpeo");
         var night_time = getCookie("newNightTime");
+      
+        document.cookie = "h_mainde=" + h_mainde;
+        document.cookie = "h_maincity=" + h_maincity;
+        document.cookie = "h_indate=" + h_indate;
+        document.cookie = "h_outdate=" + h_outdate;
+        document.cookie = "h_mainpeo=" + h_mainpeo;
+        document.cookie = "night_time=" + night_time;
 
+        
         // 가져온 쿠키 값들을 사용하여 alert 창에 출력
         alert("새로운 나라: " +  h_mainde);
         alert("새로운 도시: " + h_maincity);
@@ -341,33 +349,38 @@ if (top_list != null) {
  
  <div class="h_info_search">
 <%
+
+String h_mainde = "";
+String h_maincity ="";
+String h_indate = "";
+String h_outdate ="";
+String h_mainpeo = "";
+String night_time = "";
+
 Cookie[] cookies = request.getCookies(); // 쿠키 목록 받아오기
 
-String h_mainde = null;
-String h_maincity =null;
-String h_indate = null;
-String h_outdate = null;
-String h_mainpeo = null;
-String night_time = null;
-
-for (Cookie cookie : cookies) {
-    String name = cookie.getName();
-    String value = cookie.getValue();
-    
-  if (name.equals("h_mainde")) {
-	  h_mainde= value;
+if (cookies != null) { // 쿠키가 존재하는지 확인
+    for (Cookie cookie : cookies) {
+        String name = cookie.getName();
+        String value = cookie.getValue();
+        
+        if (name.equals("h_mainde")) {
+            h_mainde = value != null ? value : ""; // 값이 null이 아니면 변수에 할당
         } else if (name.equals("h_maincity")) {
-        	h_maincity = value;
+            h_maincity = value != null ? value : "";
         } else if (name.equals("h_indate")) {
-        	h_indate = value;
-        }else if (name.equals("h_outdate")) {
-        	h_outdate = value;
+            h_indate = value != null ? value : "";
+        } else if (name.equals("h_outdate")) {
+            h_outdate = value != null ? value : "";
         } else if (name.equals("h_mainpeo")) {
-        	h_mainpeo = value;
+            h_mainpeo = value != null ? value : "";
         } else if (name.equals("night_time")) {
-        	night_time = value;
+            night_time = value != null ? value : "";
         } 
     }
+}
+
+System.out.println("쿠키 확인용h_indate: " + h_indate); // 변수에 할당된 값 확인
 
 %>
  

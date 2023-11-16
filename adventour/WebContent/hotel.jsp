@@ -342,8 +342,8 @@ if (session.getAttribute("id") == null) {
 	    document.cookie = "h_mainpeo=" + h_mainpeo + "; expires=" + expirationDate.toUTCString();
 	    document.cookie = "night_time=" + night_time + "; expires=" + expirationDate.toUTCString();
 
-	  //  alert("3번 메인검색"+h_outdateD);
-	  //  alert("4번 night_time"+night_time);
+	  //  alert("3번 메인검색"+h_outdateD); //ok
+	  //  alert("4번 night_time"+night_time); //ok
 	});
 
 </script>

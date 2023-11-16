@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+@color-change{
+	background-color: yellow;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
+    
+}
+
+  body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 1903px;
+
+  
+  } 
+  .movem {
+    background-color: rgb(20, 3, 78); /* 배경색을 원하는 색상으로 설정 */
+ color: white!important; /* 글자색을 원하는 색상으로 설정 */
+  }
+/*전제 내용 내역*/
+#content_all{
+    width: 1903px;
+    height: 1800px;
+}
+
+/*내용 왼쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
+
+#content_left{
+    width: 400px;
+    height: 1800px;
+    float: left;
+}
+/* 본문내용 작성 */
+  #content{
+    background-color: rgba(224, 224, 224, 0.5);
+    margin-top:150px;
+    width: 1100px;
+     height: 1600px;
+    float: left;
+    font-weight: bold;
+}
+
+#content_title{
+margin-top:50px;
+margin-left:30px;
+width: 1100px;
+height: 50px;
+}
+#content_main{
+	/* background-color:green; */
+	  width: 1000px;
+     height: 1500px;
+     margin-left: 50px;	
+}
+#content_hotel{
+	/* background-color:yellow; */
+	  width: 1000px;
+     height: 400px;
+     margin-top: 50px;	
+   
+}
+
+#content_hotel_title{
+	width: 1000px;
+     height: 30px;
+} 
+#content_hotel_info{
+	/* background-color:blue; */
+	width: 1000px;
+    height: 270px;
+    margin-top:30px;
+    padding-top: 30px;
+	  border:solid 1px;
+}
+#content_hotel_img{
+   background-color:pink; 
+	width: 240px;
+    height: 240px;
+    margin-left: 30px;	
+}
+#content_hotel_info1{
+		/* background-color:pink; */
+		width: 670px;
+    height: 240px;
+        margin-left: 300px;	
+           margin-top: -240px;	
+
+}
+#h_reserv_num{
+	/* background-color:green; */
+			width: 450px;
+    height: 25px;
+	
+}
+#user_name{
+	/* background-color:yellow; */
+    width: 450px;
+    height: 25px;	
+}
+#hotel_info_ul{
+	/* background-color:green; */
+    width: 450px;
+    height: 170px;
+    margin-top: 15px;
+}
+#hotel_name_eng{
+	font-size: 26px;
+	font-weight: bold;
+}
+#hotel_name_ko{
+	font-size: 18px;
+
+}
+#city{
+	padding-left: 5px;
+}
+#hotel_name_indate{
+	font-size: 16px;
+	margin-top: 10px;
+}
+#hotel_name_outdate{
+	font-size: 16px;
+}
+
+#total_price{
+	font-size: 18px;
+	margin-top: 30px;
+}
+
+#content_hotel_review{
+   /*background-color:orange;*/
+    width: 190px;
+    height: 240px;
+	margin-left: 470px;
+	margin-top: -235px;	
+	
+}
+
+#review_btn{
+	text-align:center;
+	border-radius: 5px;
+	margin-top:200px;
+	width: 180px;
+    height: 30px;
+    background-color: #555;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+}
+#review_btn:hover{
+	background-color: #111;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
+
+#content_right{
+    width: 400px;
+    height: 700px;
+    float: right;
+}
+
+footer {
+     margin-top: 100px;
+}  
+
