@@ -644,7 +644,7 @@
     
     <!-- <script src="./js/main_index.js"></script> -->
  
-
+ 
 </body>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -661,7 +661,7 @@
                 updateCityOptions(selectedCountry);
             });
 
-            // 초기에도 도시 목록 업데이트
+            // 초기에도 도시 목록 업데이트 
             updateCityOptions(countrySelect.val());
 
             // 도시 옵션 업데이트 함수
