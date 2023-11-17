@@ -23,60 +23,7 @@
    
   </head>
 
-  <script>
-  $(document).ready(function() {
-  function getCookie(name) {
-      var value = "; " + document.cookie;
-      var parts = value.split("; " + name + "=");
-      if (parts.length === 2) return parts.pop().split(";").shift();
-  }
 
-
-  var h_mainde = getCookie("newCountry");
-  var h_maincity = getCookie("newCity");
-  var h_indate = getCookie("newCheckinDate");
-  var h_outdate = getCookie("newCheckoutDate");
-  var h_mainpeo = getCookie("newh_mainpeo");
-  var night_time = getCookie("newNightTime");
-  
-  alert(" 6번 인원 수 " + h_mainpeo);
-
-
-  $(document).on("click", ".sch_btn", function () {
-	  // 기존 쿠키 값 삭제
-	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-	  document.cookie = "h_indate=; expires=Thu, 01 Jan 1970 00:00:00 UTC";	 
-	  document.cookie = "h_outdate=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
-	  document.cookie = "h_mainpeo=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
-	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-
-
-	  // 입력된 값들을 가져와서 변수에 저장
-	  var newCountry = document.querySelector("#sch_country").value;
-	  var newCity = document.querySelector("#sch_city").value;
-	  var newCheckinDate = document.querySelector("#sch_indate").value;
-	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
-	  var newh_mainpeo = document.querySelector("#sch_adult").value;
-	  var newNightTime = document.querySelector("#night_time").value;
-
-	  // 새로운 값을 쿠키에 설정
-document.cookie = "newCountry=" + newCountry;
-document.cookie = "newCity=" + newCity;
-document.cookie = "newCheckinDate=" + newCheckinDate;
-document.cookie = "newCheckoutDate=" + newCheckoutDate;
-document.cookie = "newh_mainpeo=" + newh_mainpeo;
-document.cookie = "newNightTime=" + newNightTime;
-
-// 값이 변경된 후에 alert 창 실행
-alert(" 6번 호텔 스케쥴 박수 " + newCountry);
-
-	  // 나머지 처리 또는 폼 제출을 여기에 추가
-	});
-
-  });
-
-</script>
 
 <body>
 
@@ -300,5 +247,59 @@ if (session.getAttribute("id") != null) {
   
 
 </body>
+  <script>
+  $(document).ready(function() {
+ 
+	  function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+  }
 
+
+  var h_mainde = getCookie("newCountry");
+  var h_maincity = getCookie("newCity");
+  var h_indate = getCookie("newCheckinDate");
+  var h_outdate = getCookie("newCheckoutDate");
+  var h_mainpeo = getCookie("newh_mainpeo");
+  var night_time = getCookie("newNightTime");
+  
+  alert(" 6번 인원 수 " + h_mainpeo); //이거부터 못 받아옴
+
+
+  $(document).on("click", ".sch_btn", function () {
+	  // 기존 쿠키 값 삭제
+	  document.cookie = "h_mainde=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_maincity=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	  document.cookie = "h_indate=; expires=Thu, 01 Jan 1970 00:00:00 UTC";	 
+	  document.cookie = "h_outdate=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+	  document.cookie = "h_mainpeo=; expires=Thu, 01 Jan 1970 00:00:00 UTC"; 
+	  document.cookie = "night_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+
+
+	  // 입력된 값들을 가져와서 변수에 저장
+	  var newCountry = document.querySelector("#sch_country").value;
+	  var newCity = document.querySelector("#sch_city").value;
+	  var newCheckinDate = document.querySelector("#sch_indate").value;
+	  var newCheckoutDate = document.querySelector("#sch_outdate").value;
+	  var newh_mainpeo = document.querySelector("#sch_adult").value;
+	  var newNightTime = document.querySelector("#night_time").value;
+
+	  // 새로운 값을 쿠키에 설정
+document.cookie = "newCountry=" + newCountry;
+document.cookie = "newCity=" + newCity;
+document.cookie = "newCheckinDate=" + newCheckinDate;
+document.cookie = "newCheckoutDate=" + newCheckoutDate;
+document.cookie = "newh_mainpeo=" + newh_mainpeo;
+document.cookie = "newNightTime=" + newNightTime;
+
+// 값이 변경된 후에 alert 창 실행
+alert(" 6번 호텔 스케쥴 박수 " + newCountry);
+
+	  // 나머지 처리 또는 폼 제출을 여기에 추가
+	});
+
+  });
+
+</script>
 </html>
