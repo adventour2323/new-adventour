@@ -18,7 +18,7 @@ body{
 
 /* 국기 */
 .t_country{
-	margin-top: 100px;
+	margin-top: 50px;
 }
 .t_flag{
 	margin-top: 50px;
@@ -27,7 +27,7 @@ body{
 
 }
     
-    #flag {
+    .flag {
     width: 150px;
     height: 150px;    
     border-radius: 50%;
@@ -35,8 +35,8 @@ body{
     
     .country_name{
     
-    /* margin-left: auto;
-	margin-right: auto; */
+    margin-left: auto;
+	margin-right: auto;
 	cursor: pointer;
 	text-align: center;
     
@@ -58,7 +58,10 @@ body{
             /* min-width: 320px;
             max-width: 800px; */ 
             width: 1000px;
-            padding: 50px;
+            padding-top: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 20px;
             margin: 0 auto;
             background: #ffffff;
             
@@ -318,7 +321,7 @@ body {
 .recommend_ticket{
   /* border: solid; */
   width: 1100px;
-  margin-top: 100px;
+  margin-top: 10px;
   /* text-align: center; */
 }
 

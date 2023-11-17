@@ -35,7 +35,8 @@
             /* border-bottom: 1px solid #ffffff; */
             border-bottom: 3px solid #000;
                 margin-right: 0; /* 여백 제거 */
-                background-color: #b5d3ff;
+                /* background-color: #b5d3ff; */
+                font-weight: bold;
         }
 
         .content {
@@ -117,6 +118,52 @@ section {
     box-sizing: border-box;
     /* border: 1px solid #000; */
 }
+
+/* 호텔탭  */
+ul{
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+  .where-to-hotel {
+    display: none;
+  }
+
+  .where-to-hotel.show {
+    display: block;
+  }
+
+  .hotel-choose {
+    width: 240px;
+    /* border-style: solid; */
+    cursor: pointer;
+  }
+
+  .countInfo {
+    cursor: pointer;
+  }
+
+  .hotel-choose-box {
+    display: none;
+  }
+
+  .hotel-choose-box.show {
+    display: block;
+  }
+
+  .count-change button {
+    cursor: pointer;
+  }
+
+  #peopleCount {
+    cursor: pointer;
+  }
+
+
+/*  */
+
+
 
 /* 공통 */
 

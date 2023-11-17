@@ -15,7 +15,7 @@
     
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <link rel="stylesheet" href="./css/main_reset.css"> -->
-    <!-- <link rel="stylesheet" href="./css/main_index.css"> -->
+    <!-- <link rel="stylesheet" href="./css/main_index.css">  -->
     <link rel="stylesheet" href="./css/main_index_2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script src="./js/main_index.js"></script>
@@ -97,130 +97,85 @@
 
     <div class="content" id="res-tab-hotel">
         <div class="container">
-            <input type="text" name="" id="" class="whereToGo" placeholder="어디로 떠나세요?">
-                                    <div class="where-to-hotel">
+    <select id="countrySelect" class="whereToHotel" placeholder="국가 선택">
+      <option value="" disabled selected>국가 선택</option>
+      <option value="영국">영국</option>
+      <option value="프랑스">프랑스</option>
+      <option value="스페인">스페인</option>
+      <option value="이탈리아">이탈리아</option>
+    </select>
 
-                                         
-                                        <div class="where-to-uk">
-                                            <ul>
-                                                <li>영국</li>
-                                                <li>런던</li>
-                                                <li>리버풀</li>
-                                                <li>에딘버러</li> 
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-france">
-                                            <ul>
-                                                <li>프랑스</li>
-                                                <li>파리</li>
-                                                <li>마르세유</li>
-                                                <li>모나코</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-spain">
-                                            <ul>
-                                                <li>스페인</li>
-                                                <li>마드리드</li>
-                                                <li>바르셀로나</li>
-                                                <li>세비야</li>
-                                            </ul>
-                                        </div>
-                                        <div class="where-to-italy">
-                                            <ul>
-                                                <li>이탈리아</li>
-                                                <li>로마</li>
-                                                <li>베네치아</li>
-                                                <li>밀라노</li>
-                                            </ul>
-                                        </div>
+    <select id="citySelect" class="whereToHotel" placeholder="도시 선택">
+      <option value="" disabled selected>도시 선택</option>
+    </select>
 
-                                    </div>
-                                    <!-- 호텔 숙박 검색 탭 여기까지 // -->
-                                    
-                                    <div class="depart-start">
-                                        <button class="start-travel-date">
-                                            <i class="xi-calendar"></i><span>여행시작일 선택</span>
-                                        </button>
-                                        <div class="startTravelCalendarStart">
-                                            <table class="Calendar_Start">
-                                                <thead>
-                                                    <tr>
-                                                        <td style="cursor:pointer;">&#60;
-                                                        </td>
-                                                        <td colspan="5">
-                                                            <span id="calYear_Start"></span>년
-                                                            <span id="calMonth_Start"></span>월
-                                                        </td>
-                                                        <td style="cursor:pointer;">&#62;
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>일</td>
-                                                        <td>월</td>
-                                                        <td>화</td>
-                                                        <td>수</td>
-                                                        <td>목</td>
-                                                        <td>금</td>
-                                                        <td>토</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <button class="end-travel-date">
-                                            <i class="xi-calendar"></i><span>여행종료일 선택</span>
-                                        </button>
-                                        <div class="startTravelCalendarEnd">
-                                            <table class="Calendar_End">
-                                                <thead>
-                                                    <tr>
-                                                        <td style="cursor:pointer;">&#60;
-                                                        </td>
-                                                        <td colspan="5">
-                                                            <span id="calYear_End"></span>년
-                                                            <span id="calMonth_End"></span>월
-                                                        </td>
-                                                        <td style="cursor:pointer;">&#62;
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>일</td>
-                                                        <td>월</td>
-                                                        <td>화</td>
-                                                        <td>수</td>
-                                                        <td>목</td>
-                                                        <td>금</td>
-                                                        <td>토</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <button class="hotel-choose">
-                                        <i class="xi-user-o"></i><span>객실 1 / 성인 2명 / 아동 0명</span>
-                                    </button>
-                                    <div class="hotel-choose-box">
-                                        <ul class="hotel-choose-list">
-                                            <li><i class="xi-close"></i></li>
-                                            <li class="roomCount">
-                                                <div>객실 <i class="xi-hotel"></i></div>
-                                                <div><em> - </em><span>1</span><em> + </em></div>
-                                            </li>
-                                            <li class="adultCount">
-                                                <div>성인 <i class="xi-user"></i></div>
-                                                <div><em> - </em><span>2</span><em> + </em></div>
-                                            </li>
-                                            <li class="childCount">
-                                                <div>객실 <i class="xi-hotel"></i></div>
-                                                <div><em> - </em><span>0</span><em> + </em></div>
-                                            </li>
-                                            <li><b class="hotel-option-submit">설정</b></li>
-                                        </ul>
-                                    </div>
-                                    <a href="hotel_login.jsp"><button class="res-tab-submit">숙소 검색</button></a>
+    <div class="where-to-hotel">
+      <div class="where-to-uk">
+        <ul>
+          <li>런던</li>
+          <li>리버풀</li>
+          <li>에딘버러</li>
+        </ul>
+      </div>
+      <div class="where-to-france">
+        <ul>
+          <li>파리</li>
+          <li>마르세유</li>
+          <li>모나코</li>
+        </ul>
+      </div>
+      <div class="where-to-spain">
+        <ul>
+          <li>마드리드</li>
+          <li>바르셀로나</li>
+          <li>세비야</li>
+        </ul>
+      </div>
+      <div class="where-to-italy">
+        <ul>
+          <li>로마</li>
+          <li>베네치아</li>
+          <li>밀라노</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 호텔 숙박 검색 탭 여기까지 // -->
+    <div class="depart-start">
+      <input type="text" id="datepicker" class="start-travel-date" placeholder="여행 시작일">
+      <input type="text" id="datepicker2" class="end-travel-date" placeholder="여행 종료일">
+    </div>
+  <script>
+    $(document).ready(function () {
+      $(".start-travel-date").datepicker();
+      $(".end-travel-date").datepicker();
+    });
+  </script>
+    <div class="hotel-choose">
+      <label> <span id="peopleCount"></span></label>
+    </div>
+    <div class="hotel-choose-box">
+      <ul>
+        <li class="adultCount">
+          <label>성인</label>
+          <div class="count-change">
+            <button class="decrement" data-type="adult">-</button>
+            <span id="adultNumber" class="countResult">1</span>
+            <button class="increment" data-type="adult">+</button>
+          </div>
+        </li>
+        <li class="childCount">
+          <label>아동</label>
+          <div class="count-change">
+            <button class="decrement" data-type="child">-</button>
+            <span id="childNumber" class="countResult">0</span>
+            <button class="increment" data-type="child">+</button>
+          </div>
+        </li>
+      </ul>
+      <button class="complete">완료</button>
+    </div>
+    <a href="hotel_login.jsp"><button class="res-tab-submit">숙소 검색</button></a>
         </div>
     </div>
 
@@ -691,5 +646,99 @@
 
 
 </body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".start-travel-date, .end-travel-date").datepicker();
+
+            var countrySelect = $("#countrySelect");
+            var citySelect = $("#citySelect");
+
+            // 국가 선택 상자 변경 이벤트 처리
+            countrySelect.on("change", function () {
+                var selectedCountry = countrySelect.val();
+                updateCityOptions(selectedCountry);
+            });
+
+            // 초기에도 도시 목록 업데이트
+            updateCityOptions(countrySelect.val());
+
+            // 도시 옵션 업데이트 함수
+            function updateCityOptions(country) {
+                citySelect.html('<option value="" disabled selected>도시 선택</option>');
+
+                var cities = getCitiesByCountry(country);
+                cities.forEach(function (city) {
+                    var option = $("<option>").val(city).text(city);
+                    citySelect.append(option);
+                });
+            }
+
+            // 국가에 따른 도시 목록 반환 함수
+            function getCitiesByCountry(country) {
+                switch (country) {
+                    case "영국":
+                        return ["런던", "리버풀", "에딘버러"];
+                    case "프랑스":
+                        return ["파리", "마르세유", "모나코"];
+                    case "스페인":
+                        return ["마드리드", "바르셀로나", "세비야"];
+                    case "이탈리아":
+                        return ["로마", "베네치아", "밀라노"];
+                    default:
+                        return [];
+                }
+            }
+        });
+
+        $(document).ready(function () {
+            // 페이지 로드 시 초기값 설정
+            updateCounts();
+
+            $(".hotel-choose").click(function () {
+                $(".hotel-choose-box").toggleClass("show");
+            });
+
+            $(".count-change button").click(function () {
+                const type = $(this).data("type");
+                const $countElement = $("#" + type + "Number");
+
+                let countValue = parseInt($countElement.text());
+
+                if ($(this).hasClass("increment")) {
+                    if (type === "adult" && countValue >= 4) {
+                        return; // 최대값을 초과하지 않도록 방지
+                    } else if (type === "child" && countValue >= 4) {
+                        return; // 최대값을 초과하지 않도록 방지
+                    }
+                    countValue++;
+                } else if ($(this).hasClass("decrement")) {
+                    if (type === "adult" && countValue <= 1) {
+                        return; // 최소값 이하로는 감소하지 않도록 방지
+                    } else if (type === "child" && countValue <= 0) {
+                        return; // 최소값 이하로는 감소하지 않도록 방지
+                    }
+                    countValue--;
+                }
+
+                $countElement.text(countValue);
+                updateCounts();
+            });
+
+            $(".complete").click(function () {
+                $(".hotel-choose-box").removeClass("show");
+                updateCounts();
+            });
+
+            function updateCounts() {
+                const adultCount = parseInt($("#adultNumber").text());
+                const childCount = parseInt($("#childNumber").text());
+
+                $("#peopleCount").text(`성인 ${adultCount}명 / 아동 ${childCount}명`);
+            }
+        });
+    </script>
+
 
 </html>

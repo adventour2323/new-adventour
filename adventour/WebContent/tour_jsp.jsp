@@ -224,31 +224,31 @@
 	
         <div class="t_flag">
         
-          <div class="ukimg" id="country_name">
+          <div id="ukimg" class="country_name">
 			<a href="t_list_country.jsp?country_eng=uk">
-            	<img class="uk_flag" id="flag" src="image/img/uk.png">
-            	<h2 class="ukname">영국</h2>
+            	<img id="uk_flag" class="flag" src="image/img/uk.png">
+            	<h2 >영국</h2>
 			</a>            
           </div>
           
-          <div class="fraimg" id="country_name">
+          <div id="fraimg" class="country_name">
 			<a href="t_list_country.jsp?country_eng=france">
-            	<img class="fr_flag" id="flag" src="image/img/fra.png">
-            	<h2 class="franame">프랑스</h2>
+            	<img id="fr_flag" class="flag" src="image/img/fra.png">
+            	<h2 >프랑스</h2>
 			</a>
           </div>
 
-          <div class="spaimg" id="country_name">
+          <div id="spaimg" class="country_name">
           	<a href="t_list_country.jsp?country_eng=spain">
-            	<img class="es_flag" id="flag" src="image/img/spain.png">
-            	<h2 class="spaname">스페인</h2>
+            	<img id="es_flag" class="flag" src="image/img/spain.png">
+            	<h2 >스페인</h2>
             </a>
           </div>
           
-          <div class="ityimg" id="country_name">
+          <div id="ityimg" class="country_name">
           	<a href="t_list_country.jsp?country_eng=italy">
-            	<img class="ita_flag" id="flag" src="image/img/ity.png">
-            	<h2 class="ityname">이탈리아</h2>
+            	<img id="ita_flag" class="flag" src="image/img/ity.png">
+            	<h2 >이탈리아</h2>
             </a>
           </div>
 
@@ -260,7 +260,7 @@
 			
 			<div class="tour_banner" style="margin-top: 30px;">
 				<div class="Slidesbackground"
-					style="margin-top: 200px; margin-bottom: 50px; text-align: center;">
+					style="margin-top: 50px; margin-bottom: 50px; text-align: center;">
 
 					<div name="test">
 						<!-- 배너 사진 -->

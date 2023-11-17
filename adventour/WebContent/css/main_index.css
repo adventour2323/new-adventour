@@ -21,6 +21,51 @@ section {
 
 /* 공통 */
 
+/* 호텔탭  */
+ul{
+  list-style: none;
+}
+li{
+  list-style: none;
+}
+  .where-to-hotel {
+    display: none;
+  }
+
+  .where-to-hotel.show {
+    display: block;
+  }
+
+  .hotel-choose {
+    width: 240px;
+    /* border-style: solid; */
+    cursor: pointer;
+  }
+
+  .countInfo {
+    cursor: pointer;
+  }
+
+  .hotel-choose-box {
+    display: none;
+  }
+
+  .hotel-choose-box.show {
+    display: block;
+  }
+
+  .count-change button {
+    cursor: pointer;
+  }
+
+  #peopleCount {
+    cursor: pointer;
+  }
+
+
+/*  */
+
+
 /* 메인 CSS */
 .main-visual {
     background: skyblue;
@@ -121,7 +166,7 @@ section {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 .main-visual .visualSearchBox strong {

@@ -112,23 +112,7 @@
 </script>		
 					</div>
 				</div> <!-- t_img_div -->	
-				<div class="name_star" style="display: flex; justify-content: center;">
-					<div class="t_name">
-						<h1 class="t_name_text"><%=g.getT_name() %></h1>
-					</div>
-					<!--  -->
-							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
-	        					<% String t_id_avg = g.getT_id();
-    	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
-        							for (t_r_getset tr : rv1) {
-	        					%>
-    	    					<div >평점     
-        							<span> <%= tr.getT_rating() %> </span> 
-        						</div>
-        						<% } %>
-    						</div>	
-	    					<!--  -->
-    			</div>	
+
 			</div> <!-- top_left -->
 			
 			<div class="option_div" >
@@ -190,8 +174,29 @@
 			</div> <!-- option_div -->
 		
 		</div> <!-- top_area -->
+		<div class="middle_area">
+			<div class="name_star" style="display: flex; justify-content: center;">
+					<div class="t_name">
+						<h1 class="t_name_text"><%=g.getT_name() %></h1>
+					</div>
+					<!--  -->
+							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
+	        					<% String t_id_avg = g.getT_id();
+    	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
+        							for (t_r_getset tr : rv1) {
+	        					%>
+    	    					<div >평점     
+        							<span> <%= tr.getT_rating() %> </span> 
+        						</div>
+        						<% } %>
+    						</div>	
+	    					<!--  -->
+    			</div>	
+		</div>
 		
 		<div class="bottom_area" >
+						
+    			
 			<hr>
 				<div style=" display: flex; margin-bottom: 30px; margin-top: 20px;" >
 					<img alt="info_icon" src="./image/tour/t_info_icon.png" style="margin-left: auto; margin-right: 10px;" width="32px;"><h2 style="margin: auto auto auto 0;">여행 정보</h2>
