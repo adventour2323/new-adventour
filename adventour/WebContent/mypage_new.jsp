@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>호텔 결제</title>
+<title>마이페이지</title>
   <link rel="stylesheet" type="text/css" href="css/mypage_new.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/mypage_new.js"></script>
@@ -52,7 +52,22 @@ if (session.getAttribute("id") != null) {
 
 
 <div id="content_all">
-	<div id="content_left"></div>	
+
+   
+   <!-- 왼쪽 메뉴바-->
+	<div id="content_left">
+	<div id="content_list">
+	<h2 id="content_list_title">마이페이지</h2>
+	<ul id="m_menu_ul">
+	<li>예약내역</li>
+	<li>찜</li>
+	<li>1 : 1 문의</li>
+	<li>자주 찾는 질문</li>
+	<li>나의 리뷰</li>
+	<li>나의 게시글</li>	
+	</ul>
+	</div>  <!-- content_list -->
+	</div>	<!-- content_left -->
 	
 	
 
