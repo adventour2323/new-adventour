@@ -695,6 +695,41 @@ public class H_getset {
 	public void setH_room_cancle(String h_room_cancle) {
 		this.h_room_cancle = h_room_cancle;
 	}
+	
+
+	String h_m_id;
+    String h_user_name;
+    String h_user_pnum;
+    String h_user_mail;
+
+
+	public String getH_m_id() {
+		return h_m_id;
+	}
+	public void setH_m_id(String h_m_id) {
+		this.h_m_id = h_m_id;
+	}
+	public String getH_user_name() {
+		return h_user_name;
+	}
+	public void setH_user_name(String h_user_name) {
+		this.h_user_name = h_user_name;
+	}
+	public String getH_user_pnum() {
+		return h_user_pnum;
+	}
+	public void setH_user_pnum(String h_user_pnum) {
+		this.h_user_pnum = h_user_pnum;
+	}
+	public String getH_user_mail() {
+		return h_user_mail;
+	}
+	public void setH_user_mail(String h_user_mail) {
+		this.h_user_mail = h_user_mail;
+	}
+    
+    
+	
    
     
 }

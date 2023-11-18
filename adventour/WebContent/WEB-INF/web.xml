@@ -16,6 +16,20 @@
 </servlet-mapping>
 
 
+
+<servlet>
+<servlet-name>m_cto</servlet-name>
+<servlet-class>h_controller.H_Cto</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>m_cto</servlet-name>
+<url-pattern>*.mypage</url-pattern>
+</servlet-mapping>
+
+
+
+
 <servlet>
 <servlet-name>t_cto</servlet-name>
 <servlet-class>t_controller.t_cto</servlet-class>

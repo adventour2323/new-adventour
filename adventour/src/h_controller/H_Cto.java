@@ -30,6 +30,7 @@ public class H_Cto extends HttpServlet {
     	String h_peo = "";     	
     	String night_time ="";
     
+    
     	
         h_conn_interface inter = H_MainDBselect.im_inter();
         h_conn_interface ukinter = H_MainukAll_DBselect.im_inter();
@@ -39,7 +40,8 @@ public class H_Cto extends HttpServlet {
         h_conn_interface hcityinter =  H_CityAll_DBselect.im_inter();
         h_conn_interface hinfosch =  H_InfoSch_DBselect.im_inter();
        h_conn_interface htoreserv =  H_Toreserv_DBselect.im_inter(); 
-        
+       
+       h_conn_interface tomypage =  M_H_re_list_DBselect.im_inter();
         
 
        System.out.println("cto확인1"+uName); //파라미터 값이 잘 넘어오는지 확인 -ok
@@ -151,6 +153,16 @@ public class H_Cto extends HttpServlet {
  
         	    String htop10 = htop10inter.showdata(request, response);  
         	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("hotel_info3.jsp");
+        	    dispatcher1.forward(request, response);
+        	}
+        	else if (uName.equals("mypage")) {
+
+        		String idid = request.getParameter("customer");
+        	   
+      	       System.out.println("새로설정"+idid); // 파라미터 값이 잘 넘어오는지 확인  -ok
+ 
+        	    String tomymypage = tomypage.showdata(request, response);  
+        	    RequestDispatcher dispatcher1 = request.getRequestDispatcher("mypage_new.jsp");
         	    dispatcher1.forward(request, response);
         	}
         	} catch (Exception e) {

@@ -41,36 +41,45 @@
 /*내용 왼쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 /* 마이페이지 왼쪽 메뉴 리스트*/
 #content_left{
-    width: 400px;
+    width: 550px;
     height: 1800px;
     float: left;
 }
 #content_list{
-	background-color:yellow;
+	/*background-color:yellow;*/
 	width: 200px;
-    height:700px;
+    height:900px;
     float:right;
     margin-top: 150px;
 }
 #content_list_title{
+
 	width: 200px;
-    height:40px;
+    height:60px;
     border-bottom: solid 1px;
+    text-align: center;
+    margin-top: 20px;
 }
 #m_menu_ul{
-    background-color:pink;
+  /*  background-color:pink; */
 	width: 200px;
     height:600px;
-    margin-top: 20px;
+    margin-top:0px;
+    font-weight: bold;
 }
 #m_menu_ul li{
     border-bottom: solid 1px;
-	width: 200px;
-    height:40px;
-    margin-top: 20px;
+	width: 180px;
+    height:50px;
+    margin-top: 25px;
+    padding-left: 20px;
+    
 }
-
-
+#li1:hover,#li2:hover,#li3:hover,
+#li4:hover,#li5:hover,#li6:hover{
+    border-bottom: solid 1px rgb(117, 165, 236) ;
+    color : rgb(117, 165, 236);   
+}
 
 
 
@@ -78,7 +87,7 @@
   #content{
     background-color: rgba(224, 224, 224, 0.5);
     margin-top:150px;
-    width: 1100px;
+    width: 1000px;
      height: 1600px;
     float: left;
     font-weight: bold;
@@ -87,44 +96,50 @@
 #content_title{
 margin-top:50px;
 margin-left:30px;
-width: 1100px;
+width: 1000px;
 height: 50px;
 }
 #content_main{
 	/* background-color:green; */
-	  width: 1000px;
+	  width: 900px;
      height: 1500px;
      margin-left: 50px;	
 }
 #content_hotel{
 	/* background-color:yellow; */
-	  width: 1000px;
+	  width: 900px;
      height: 400px;
      margin-top: 50px;	
    
 }
 
 #content_hotel_title{
-	width: 1000px;
+	width: 900px;
      height: 30px;
 } 
 #content_hotel_info{
 	/* background-color:blue; */
-	width: 1000px;
+	width: 900px;
     height: 270px;
     margin-top:30px;
     padding-top: 30px;
 	  border:solid 1px;
 }
 #content_hotel_img{
-   background-color:pink; 
+ 
 	width: 240px;
     height: 240px;
     margin-left: 30px;	
 }
+#hotel_img{
+
+	width: 240px;
+    height: 240px;
+    
+}
 #content_hotel_info1{
 		/* background-color:pink; */
-		width: 670px;
+		width: 570px;
     height: 240px;
         margin-left: 300px;	
            margin-top: -240px;	
@@ -132,18 +147,18 @@ height: 50px;
 }
 #h_reserv_num{
 	/* background-color:green; */
-			width: 450px;
+			width: 350px;
     height: 25px;
 	
 }
 #user_name{
 	/* background-color:yellow; */
-    width: 450px;
+    width: 350px;
     height: 25px;	
 }
 #hotel_info_ul{
 	/* background-color:green; */
-    width: 450px;
+    width: 350px;
     height: 170px;
     margin-top: 15px;
 }
@@ -175,7 +190,7 @@ height: 50px;
    /*background-color:orange;*/
     width: 190px;
     height: 240px;
-	margin-left: 470px;
+	margin-left: 370px;
 	margin-top: -235px;	
 	
 }
@@ -194,18 +209,76 @@ height: 50px;
 #review_btn:hover{
 	background-color: #111;
 }
+/*찜 목록*/
+#like_tap_div{
+	/*background-color:yellow;*/
+	margin-top:30px;
+	border-bottom:solid 1px;
+	width: 900px;
+	height: 50px;
+	font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#like_tour{
+	/*background-color:pink;*/
+	width: 200px;
+	height: 39px;
+	padding-top: 10px;
+	text-align: center;
+	border-right:solid 1px;
+	
+}
+#like_hotel{
+	/*background-color:green;*/
+	width: 200px;
+	height: 39px;
+	padding-top: 10px;
+	text-align: center;
+	margin-left: 200px;
+	margin-top: -49px;
+	border-right:solid 1px;
+}
+#like-title{		
+    background-color: rgb(117, 165, 236, 0.6);
+    margin-top:40px;
+	width: 900px;
+	height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+#like_ul{
+	margin-top: 30px;
+}
+#like_ul li{
+    margin-top: 30px;
+	border-bottom: 1px solid;
+	width: 850px;
+	height: 90px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+}
+#li_eng{	
+	width: 650px;
+	font-size: 20px;
+	font-weight: bold;
+}
+#li_ko{
+	width: 650px;
+	font-size: 18px;
+	font-weight: bold;
+}
+#li_city{
+	width: 650px;
+	font-size: 15px;
+}
+#h_like_del_btn{
+	width: 120px;
+	height: 30px;
+	margin-left: 680px;
+	margin-top: -500px;
+}
 
 
 
@@ -225,7 +298,7 @@ height: 50px;
 /*내용 오른쪽여백 나중에 추가 해야 할 수도 있어서 미리 공간 줌*/
 
 #content_right{
-    width: 400px;
+    width: 350px;
     height: 700px;
     float: right;
 }

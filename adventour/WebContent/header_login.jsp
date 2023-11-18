@@ -36,7 +36,13 @@
         <li class="menu3"><a class="moveh" href="main.hotel?uname=hmain">호텔</a></li>
     <!--     <li class="menu4"><a class="moves" href="shop_login.jsp">쇼핑</a></li>--> 
         <li class="menu5 "><a class="movec" href = "community_list2.jsp">게시판</a></li>
-        <li class="menu6 "><a class="movem" href = "mypage_index.jsp">마이페이지</a></li>
+
+          <% if (session.getAttribute("id") == null) { %> 
+   <li class="menu6 "><a class="movem" href = "login_merge_form.jsp">마이페이지</a></li>
+<% } else { %>
+    <li class="menu6 "><a class="movem" href = "Mypage.mypage?uname=mypage&&customer=<%= session.getAttribute("id") %>">마이페이지</a></li>
+<% } %>
+        
       </ul>
     </div><!--menu--> 
   </div><!--header-->

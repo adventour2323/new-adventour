@@ -164,5 +164,15 @@ SELECT h_room.*, h_hotel.*
         AND h_room.h_roomnum=#{h_roomnum};    
 </select>
 
+<select id="tomypageh_select" resultType="getset.H_getset" parameterType="getset.H_getset">
+SELECT h_hotel.*,h_reserve.*,h_room.*
+FROM h_reserve
+INNER JOIN h_room ON h_reserve.h_roomnum = h_room.h_roomnum
+INNER JOIN h_hotel ON h_room.h_name_eng = h_hotel.h_name_eng
+WHERE h_reserve.h_m_id = #{h_m_id}
+ORDER BY ABS(DATEDIFF(NOW(), h_reserve.h_indate))
+LIMIT 1;   
+</select>
+
 
 </mapper>
