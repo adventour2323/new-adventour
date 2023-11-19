@@ -255,7 +255,7 @@ height: 50px;
     margin-top: 30px;
 	border-bottom: 1px solid;
 	width: 850px;
-	height: 90px;
+	height: 70px;
 	padding-left: 50px;
 	padding-bottom: 20px;
 }
@@ -278,8 +278,13 @@ height: 50px;
 	height: 30px;
 	margin-left: 680px;
 	margin-top: -500px;
+	background-color: #555;
+	color:white;
+	border-radius: 5px;
 }
-
+#h_like_del_btn:hover{
+	background-color: #111;
+}
 
 
 

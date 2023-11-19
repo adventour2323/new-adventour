@@ -272,7 +272,7 @@ public class C_dbsave {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             String command = String.format(
-                    "INSERT INTO h_like (m_id,h_name_eng )"
+                    "INSERT INTO h_like (like_m_id,like_h_name_eng )"
             +"VALUES('"+m_id+"', '"+h_name_eng +"');" ); 
               //데이터베이스 명령문 사용      
                     

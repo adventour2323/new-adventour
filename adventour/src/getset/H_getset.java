@@ -729,6 +729,24 @@ public class H_getset {
 	}
     
     
+	String like_h_name_eng;
+	String like_m_id;
+
+
+	public String getLike_h_name_eng() {
+		return like_h_name_eng;
+	}
+	public void setLike_h_name_eng(String like_h_name_eng) {
+		this.like_h_name_eng = like_h_name_eng;
+	}
+	public String getLike_m_id() {
+		return like_m_id;
+	}
+	public void setLike_m_id(String like_m_id) {
+		this.like_m_id = like_m_id;
+	}
+	
+	
 	
    
     

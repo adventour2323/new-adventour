@@ -48,7 +48,7 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
-
+<input type="hidden" id="sess_id" value="<%= session.getAttribute("id") %>">
 
 <div id="content_all">
 
@@ -122,20 +122,19 @@ if (session.getAttribute("id") != null) {
 	
 	<div id="like_div">
        <p id="like-title">상품 명</p>
+      
+      
        <ul id="like_ul">
+      
        <li>
        <p id="li_eng">호텔이름영어</p>
        <p id="li_ko">호텔이름 한글</p>
        <p id="li_city">영국,런던</p>  
        <input type="button" id="h_like_del_btn" class="h_like_del_btn" name="h_like_del_btn"value="삭제하기">    
        </li>
-     <li>
-       <p id="li_eng">호텔이름영어</p>
-       <p id="li_ko">호텔이름 한글</p>
-       <p id="li_city">영국,런던</p>  
-       <input type="button" id="h_like_del_btn" class="h_like_del_btn" name="h_like_del_btn"value="삭제하기">    
-       </li>
-       </ul>
+       
+
+       </ul><!-- like_ul -->
        
        
   
