@@ -280,26 +280,23 @@ public class C_dbsave {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             ResultSet rs = stmt.executeQuery(
-            		
-            		
-            		"SELECT like_m_id, like_h_name_eng "+
-            		"FROM h_like"+
-            		"WHERE like_m_id = '"+ m_id+"' AND like_h_name_eng = '"+h_name_eng+"';");
-            		
+                "SELECT like_m_id, like_h_name_eng " +
+                "FROM h_like " +
+                "WHERE like_m_id = '" + m_id + "' AND like_h_name_eng = '" + h_name_eng + "';"
+            );
             
             while (rs.next()) {
                 H_getset obj = new H_getset();
-                obj.setH_name_eng(rs.getString("like_m_id"));
-                obj.setM_id(rs.getString("ike_h_name_eng"));
+                obj.setH_name_eng(rs.getString("like_h_name_eng"));
+                obj.setM_id(rs.getString("like_m_id"));
 
-  
                 arr.add(obj);
             }
         } finally {
             closecon();
         }
-        return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
-    } 
+        return arr;
+    }
 
 
        

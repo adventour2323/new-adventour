@@ -87,7 +87,7 @@
 /* 본문내용 작성 */
   #content{
     /* background-color: rgba(224, 224, 224, 0.5); */
-    margin-top:150px;
+ margin-top:120px;
     width: 1000px;
      height: 1600px;
     float: left;
@@ -96,8 +96,8 @@
 
 /*찜 목록*/
 #like_div1{
-	
-	margin-top:30px;
+
+	margin-top:70px;
 	border-bottom:solid 1px;
 	width: 900px;
 	min-height: 300px;
@@ -190,12 +190,12 @@
 /*예약목록 확인*/
 #reserv_div{
 
-	margin-top:50px;
+margin-top:0px;
 width: 900px;
 height: 780px;
 }
 #content_title{
-margin-top:50px;
+
 margin-left:30px;
 width: 1000px;
 height: 50px;
@@ -208,7 +208,7 @@ height: 50px;
 }
 #content_hotel{
 	/* background-color:yellow; */
-	  width: 900px;content_tour
+	  width: 900px;
      height: 400px;
      margin-top: 50px;	
    
@@ -225,6 +225,7 @@ height: 50px;
     margin-top:30px;
     padding-top: 30px;
 	  border:solid 1px;
+background-color: rgba(224, 224, 224, 0.5);
 }
 #content_hotel_img{
  
@@ -332,6 +333,7 @@ height: 50px;
     margin-top:30px;
     padding-top: 30px;
 	 border:1px solid;
+	      background-color: rgba(224, 224, 224, 0.5);
 }
 #content_tour_img{
  background-color:blue;
@@ -387,9 +389,6 @@ height: 50px;
 	font-size: 18px;
 	margin-top: 30px;
 }
-
-
-
 
 
 
