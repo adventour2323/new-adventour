@@ -21,9 +21,9 @@
         PreparedStatement pstmt = null;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
   //          conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour", "root", "qhdks12!@");
-             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour", "root", "0521");
+             conn = DriverManager.getConnection("jdbc:mysql://15.164.100.232:3306/adventour", "adventour2323", "0521");
 
             String sql = "SELECT COUNT(*) AS cnt FROM guide WHERE g_id = ? AND g_pw = ?";
             pstmt = conn.prepareStatement(sql);

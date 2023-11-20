@@ -40,10 +40,10 @@
 
             try {
                 // 데이터베이스 연결
-                Class.forName("com.mysql.jdbc.Driver");
-                String url = "jdbc:mysql://localhost:3306/adventour?useUnicode=true&characterEncoding=UTF-8";
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                String url = "jdbc:mysql://15.164.100.232:3306/adventour?useUnicode=true&characterEncoding=UTF-8";
                 /* conn = DriverManager.getConnection(url, "root", "qhdks12!@"); */
-                conn = DriverManager.getConnection(url, "root", "0521");
+                conn = DriverManager.getConnection(url, "adventour2323", "0521");
 
                 if (conn == null) {
                     throw new Exception("데이터베이스에 연결할 수 없습니다.");

@@ -12,8 +12,8 @@ if (m_id == null || m_id.trim().isEmpty()) {
     response.getWriter().write("아이디를 입력하세요");
 } else {
     try {
-        Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf8", "root", "0521");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        conn = DriverManager.getConnection("jdbc:mysql://15.164.100.232:3306/adventour?characterEncoding=utf8", "adventour2323", "0521");
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM member WHERE m_id = '"+m_id+"';");
         if (rs.next() ) {

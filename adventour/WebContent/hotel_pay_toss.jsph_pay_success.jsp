@@ -146,8 +146,8 @@ var h_user_mail = getCookie("h_user_mail");
      }
     
     // JDBC 연결 정보
-    String jdbcUrl = "jdbc:mysql://localhost:3306/adventour";
-    String dbUser = "root";
+    String jdbcUrl = "jdbc:mysql://15.164.100.232:3306/adventour";
+    String dbUser = "adventour2323";
     String dbPassword = "0521";
 
     Connection conn = null;
@@ -155,7 +155,7 @@ var h_user_mail = getCookie("h_user_mail");
 
     try {
         // JDBC 드라이버 로드
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         // 데이터베이스 연결
         conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPassword);

@@ -15,8 +15,8 @@ public class Mypage_db {
     Statement stmt = null;
 
     public void connec() throws Exception { // 데이터베이스 연결을 위한 매소드
-        Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "0521");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+         conn = DriverManager.getConnection("jdbc:mysql://15.164.100.232:3306/adventour?characterEncoding=utf-8", "adventour2323", "0521");
         stmt = conn.createStatement();
     }
 
