@@ -201,10 +201,14 @@ var h_user_mail = getCookie("h_user_mail");
         if (pstmt != null) pstmt.close();
         if (conn != null) conn.close();
     }
- %>   
+ %> 
+ <input type="hidden" id="sess_id" value="<%= session.getAttribute("id") %>">  
 <script> 
 // 결제 성공시 데이터 베이스 저장 후 파이페이지로 이동
-    window.location.href = 'mypage_index.jsp';
+ var m_id = $("#sess_id").val();
+ alert(m_id);
+ var url = 'Mypage.mypage?uname=mypage'
+ window.location.href = url;
 </script>
  <%    
     } else { %>

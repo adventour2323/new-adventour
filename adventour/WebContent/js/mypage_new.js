@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     var m_id = $("#sess_id").val();
     
-    alert("확인용 123"+m_id);
+   // alert("확인용 123"+m_id);
     
     $('#like_hotel').on('click', function() {    
     $.ajax({

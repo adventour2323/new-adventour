@@ -15,8 +15,8 @@ public class C_dbsave {
     Statement stmt = null;
 
     public void connec() throws Exception { // 데이터베이스 연결을 위한 매소드
-        Class.forName("com.mysql.cj.jdbc.Driver");
-         conn = DriverManager.getConnection("jdbc:mysql://15.164.100.232:3306/adventour?characterEncoding=utf-8", "adventour2323", "0521");
+       Class.forName("com.mysql.cj.jdbc.Driver");
+       conn = DriverManager.getConnection("jdbc:mysql://15.164.100.232:3306/adventour?characterEncoding=utf-8", "adventour2323", "0521");
         /* conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/adventour?characterEncoding=utf-8", "root", "qhdks12!@"); */
         stmt = conn.createStatement();
     }
@@ -33,7 +33,7 @@ public class C_dbsave {
             e.printStackTrace();
         }
     }
- 
+
     public void dbsave(String m_id, String country, String city, String c_title, 
     		String c_cont, String c_pho1,String c_pho2,String c_pho3,String c_pho4,String c_pho5) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
   
@@ -280,7 +280,12 @@ public class C_dbsave {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             ResultSet rs = stmt.executeQuery(
-            		 "select like_m_id,like_h_name_eng where like_m_id = '"+ m_id+"', like_h_name_eng ='"+ m_id+"';");
+            		
+            		
+            		"SELECT like_m_id, like_h_name_eng "+
+            		"FROM h_like"+
+            		"WHERE like_m_id = '"+ m_id+"' AND like_h_name_eng = '"+h_name_eng+"';");
+            		
             
             while (rs.next()) {
                 H_getset obj = new H_getset();

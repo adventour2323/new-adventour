@@ -68,6 +68,7 @@
     font-weight: bold;
 }
 #m_menu_ul li{
+
     border-bottom: solid 1px;
 	width: 180px;
     height:50px;
@@ -106,7 +107,6 @@
 }
 
 #like_tap_div{
-
 	margin-top:30px;
 	border-bottom:solid 1px;
 	width: 900px;
@@ -152,10 +152,11 @@
 	transition: min-height 0.3s, max-height 0.3s;
 }
 #like_ul li{
-    margin-top: 30px;
+
+    margin-top: 10px;
 	border-bottom: 1px solid;
 	width: 850px;
-	height: 5px;
+	height: 70px;
 	padding-left: 50px;
 	padding-bottom: 20px;
 }
@@ -188,12 +189,10 @@
 
 /*예약목록 확인*/
 #reserv_div{
-/*	background-color:pink;*/
 
 	margin-top:50px;
-
 width: 900px;
-height: 600px;
+height: 780px;
 }
 #content_title{
 margin-top:50px;
@@ -209,7 +208,7 @@ height: 50px;
 }
 #content_hotel{
 	/* background-color:yellow; */
-	  width: 900px;
+	  width: 900px;content_tour
      height: 400px;
      margin-top: 50px;	
    
@@ -312,8 +311,82 @@ height: 50px;
 	background-color: #111;
 }
 
+/*투어예약 내역*/
 
 
+#content_tour{
+ 
+	  width: 900px;
+     height: 350px;
+     margin-top: 50px;	
+   
+}
+#content_tour_title{
+	width: 900px;
+     height: 30px;
+} 
+#content_tour_info{
+/*background-color:blue;*/
+	width: 900px;
+    height: 240px;
+    margin-top:30px;
+    padding-top: 30px;
+	 border:1px solid;
+}
+#content_tour_img{
+ background-color:blue;
+	width: 200px;
+    height: 200px;
+    margin-left: 30px;	
+}
+#tour_img{
+
+	width: 200px;
+    height: 200px;
+    
+}
+#content_tour_info1{
+		/* background-color:pink; */
+	width: 570px;
+    height: 240px;
+    margin-left: 300px;	
+    margin-top: -200px;	
+
+}
+#t_reserv_num{
+	/* background-color:green; */
+			width: 350px;
+    height: 25px;
+	
+}
+#t_user_name{
+	/* background-color:yellow; */
+    width: 350px;
+    height: 25px;	
+}
+#tour_info_ul{
+	/* background-color:green; */
+    width: 350px;
+    height: 170px;
+    margin-top: 15px;
+}
+#t_name{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#t_r_date{
+	font-size: 16px;
+	margin-top: 10px;
+}
+#t_r_time{
+	font-size: 16px;
+}
+
+#t_total_price{
+	font-size: 18px;
+	margin-top: 30px;
+}
 
 
 

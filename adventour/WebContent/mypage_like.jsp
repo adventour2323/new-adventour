@@ -26,7 +26,7 @@
 
       
       
-       <ul id="like_ul">
+
       
        <%      
    if ( m_like_db1 != null) {
@@ -61,7 +61,7 @@
      
 	
 
-  </ul><!-- like_ul -->   
+
     
 </body>
 </html>
