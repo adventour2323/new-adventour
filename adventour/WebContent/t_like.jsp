@@ -12,16 +12,16 @@
 
     <%
  // request attribute에서 폼 데이터 및 파일명을 가져옵니다.
-    String m_id = (String) request.getParameter("m_id");
     String t_id = (String) request.getParameter("t_id");
+    String m_id = (String) request.getParameter("m_id");
 
     
-    System.out.println("회원 아이디"+ m_id);
     System.out.println("투어 아이디" + t_id);
+    System.out.println("회원 아이디"+ m_id);
  
    
-        g_list_print h_dbsave = new g_list_print();
-        h_dbsave.t_likesave(m_id, t_id);
+        g_list_print t_dbsave = new g_list_print();
+        t_dbsave.t_likesave(t_id, m_id);
         %>
         <script>
             alert("찜에 성공 하였습니다.");

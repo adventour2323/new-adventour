@@ -663,7 +663,7 @@ public class g_list_print {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             String command = String.format(
-                    "INSERT INTO t_like (t_id, m_id)"
+                    "INSERT INTO t_like (t_like_t_id, t_like_m_id)"
             +"VALUES('"+t_id+"', '"+m_id +"');" ); 
               //데이터베이스 명령문 사용      
                     
