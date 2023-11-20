@@ -48,6 +48,14 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
+
+		<%
+if (session.getAttribute("id") == null) {
+
+	response.sendRedirect("./index_login_ing.jsp");
+		
+}
+%>
 <input type="hidden" id="sess_id" value="<%= session.getAttribute("id") %>">
 
 <div id="content_all">
@@ -74,7 +82,36 @@ if (session.getAttribute("id") != null) {
 	<div id="content">
    
      <div id="content_main">
-        <div id="content_title"><h1> <예약 내역 확인> </h1></div>
+     
+<div id="like_div1">
+    <div id="like_title"><h2>찜 목록</h2></div>
+	<div id="like_tap_div">
+	<div id="like_tour"><h3>투어</h3></div>
+	<div id="like_hotel"><h3>호텔</h3></div>
+	
+	<div id="like_div">
+       <p id="like-title">상품 명</p>
+      
+      
+       <ul id="like_ul">
+      
+
+       
+
+       </ul><!-- like_ul -->
+       
+       
+  
+     
+	
+	</div><!--like_div -->
+	
+	</div><!-- like_tap_div -->
+</div> <!-- like_div1 -->
+	
+	
+<div id="reserv_div">       
+        <div id="content_title"><h2> <예약 내역 확인> </h2></div>
         <% 
         try{
            List<H_getset> h_m_list = (List<H_getset>) request.getAttribute("h_m_list");
@@ -115,44 +152,19 @@ if (session.getAttribute("id") != null) {
         
 %>
 	
-	<div id="like_title"><h1>찜 목록</h1></div>
-	<div id="like_tap_div">
-	<div id="like_tour"><h3>투어</h3></div>
-	<div id="like_hotel"><h3>호텔</h3></div>
-	
-	<div id="like_div">
-       <p id="like-title">상품 명</p>
-      
-      
-       <ul id="like_ul">
-      
-       <li>
-       <p id="li_eng">호텔이름영어</p>
-       <p id="li_ko">호텔이름 한글</p>
-       <p id="li_city">영국,런던</p>  
-       <input type="button" id="h_like_del_btn" class="h_like_del_btn" name="h_like_del_btn"value="삭제하기">    
-       </li>
-       
 
-       </ul><!-- like_ul -->
-       
-       
-  
+	
+	
+	
+	
+	
+	
+</div> <!--  reserv_div--> 	     
      
-	
-	</div><!--like_div -->
-	
-	</div><!-- like_tap_div -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+     
+     
+     
+ 
 	</div><!--content_main -->
 	</div><!--content -->
 

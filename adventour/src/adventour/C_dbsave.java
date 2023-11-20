@@ -202,6 +202,13 @@ public class C_dbsave {
             	    "AND h_reserve.h_outdate >= '" + h_indate + "')) " +
             	    "AND h_room.h_roomtype = 'suite' LIMIT 1);");
             
+            
+            
+            
+            
+            
+            
+            
              
             while (rs.next()) {
                 C_getset obj = new C_getset();
@@ -265,6 +272,32 @@ public class C_dbsave {
         return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
     } 
     
+    public ArrayList<H_getset> h_like_select(String m_id, String h_name_eng) throws Exception {
+        ArrayList<H_getset> arr = new ArrayList<H_getset>();
+      
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            ResultSet rs = stmt.executeQuery(
+            		 "select like_m_id,like_h_name_eng where like_m_id = '"+ m_id+"', like_h_name_eng ='"+ m_id+"';");
+            
+            while (rs.next()) {
+                H_getset obj = new H_getset();
+                obj.setH_name_eng(rs.getString("like_m_id"));
+                obj.setM_id(rs.getString("ike_h_name_eng"));
+
+  
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr; //여러개의 객체를 담아서 정보를 보내기 위해서 필요
+    } 
+
+
+       
     public void h_likesave(String m_id, String h_name_eng) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
   
         try {

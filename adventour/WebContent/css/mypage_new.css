@@ -85,7 +85,7 @@
 
 /* 본문내용 작성 */
   #content{
-    background-color: rgba(224, 224, 224, 0.5);
+    /* background-color: rgba(224, 224, 224, 0.5); */
     margin-top:150px;
     width: 1000px;
      height: 1600px;
@@ -93,6 +93,108 @@
     font-weight: bold;
 }
 
+/*찜 목록*/
+#like_div1{
+	
+	margin-top:30px;
+	border-bottom:solid 1px;
+	width: 900px;
+	min-height: 300px;
+	max-height: 900px;
+	font-weight: bold;
+
+}
+
+#like_tap_div{
+
+	margin-top:30px;
+	border-bottom:solid 1px;
+	width: 900px;
+	height: 50px;
+	font-weight: bold;
+}
+
+#like_tour{
+	/*background-color:pink;*/
+	width: 200px;
+	height: 39px;
+	padding-top: 10px;
+	text-align: center;
+	border-right:solid 1px;
+	
+}
+#like_hotel{
+	/*background-color:green;*/
+	width: 200px;
+	height: 39px;
+	padding-top: 10px;
+	text-align: center;
+	margin-left: 200px;
+	margin-top: -49px;
+	border-right:solid 1px;
+}
+#like-title{		
+    background-color: rgb(117, 165, 236, 0.6);
+    margin-top:40px;
+	width: 900px;
+	height: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+#like_ul{
+
+	width: 900px;
+	min-height: 100px;
+	max-height: 600px;
+	margin-top: 30px;
+	transition: min-height 0.3s, max-height 0.3s;
+}
+#like_ul li{
+    margin-top: 30px;
+	border-bottom: 1px solid;
+	width: 850px;
+	height: 5px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+}
+#li_eng{	
+	width: 650px;
+	font-size: 20px;
+	font-weight: bold;
+}
+#li_ko{
+	width: 650px;
+	font-size: 18px;
+	font-weight: bold;
+}
+#li_city{
+	width: 650px;
+	font-size: 15px;
+}
+#h_like_del_btn{
+	width: 120px;
+	height: 30px;
+	margin-left: 680px;
+	margin-top: -500px;
+	background-color: #555;
+	color:white;
+	border-radius: 5px;
+}
+#h_like_del_btn:hover{
+	background-color: #111;
+}
+
+/*예약목록 확인*/
+#reserv_div{
+/*	background-color:pink;*/
+
+	margin-top:50px;
+
+width: 900px;
+height: 600px;
+}
 #content_title{
 margin-top:50px;
 margin-left:30px;
@@ -139,7 +241,7 @@ height: 50px;
 }
 #content_hotel_info1{
 		/* background-color:pink; */
-		width: 570px;
+	width: 570px;
     height: 240px;
         margin-left: 300px;	
            margin-top: -240px;	
@@ -209,85 +311,6 @@ height: 50px;
 #review_btn:hover{
 	background-color: #111;
 }
-/*찜 목록*/
-#like_tap_div{
-	/*background-color:yellow;*/
-	margin-top:30px;
-	border-bottom:solid 1px;
-	width: 900px;
-	height: 50px;
-	font-weight: bold;
-}
-
-#like_tour{
-	/*background-color:pink;*/
-	width: 200px;
-	height: 39px;
-	padding-top: 10px;
-	text-align: center;
-	border-right:solid 1px;
-	
-}
-#like_hotel{
-	/*background-color:green;*/
-	width: 200px;
-	height: 39px;
-	padding-top: 10px;
-	text-align: center;
-	margin-left: 200px;
-	margin-top: -49px;
-	border-right:solid 1px;
-}
-#like-title{		
-    background-color: rgb(117, 165, 236, 0.6);
-    margin-top:40px;
-	width: 900px;
-	height: 30px;
-    font-size: 20px;
-    text-align: center;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-}
-#like_ul{
-	margin-top: 30px;
-}
-#like_ul li{
-    margin-top: 30px;
-	border-bottom: 1px solid;
-	width: 850px;
-	height: 70px;
-	padding-left: 50px;
-	padding-bottom: 20px;
-}
-#li_eng{	
-	width: 650px;
-	font-size: 20px;
-	font-weight: bold;
-}
-#li_ko{
-	width: 650px;
-	font-size: 18px;
-	font-weight: bold;
-}
-#li_city{
-	width: 650px;
-	font-size: 15px;
-}
-#h_like_del_btn{
-	width: 120px;
-	height: 30px;
-	margin-left: 680px;
-	margin-top: -500px;
-	background-color: #555;
-	color:white;
-	border-radius: 5px;
-}
-#h_like_del_btn:hover{
-	background-color: #111;
-}
-
-
-
 
 
 
