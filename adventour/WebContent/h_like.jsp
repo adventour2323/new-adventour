@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="adventour.C_dbsave" %>
+<%@ page import="getset.H_getset" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
@@ -16,9 +17,16 @@
     
     System.out.println("아이디"+ m_id);
     System.out.println("이름" + h_name_eng);
+    
+    
+    C_dbsave h_dbsave = new C_dbsave();
+    ArrayList<H_getset> h_like_selectList = h_dbsave.h_like_select(m_id, h_name_eng);
+    
+    
+   if(m_id == m_id)
  
    
-        C_dbsave h_dbsave = new C_dbsave();
+       
         h_dbsave.h_likesave(m_id, h_name_eng);
         %>
         <script>

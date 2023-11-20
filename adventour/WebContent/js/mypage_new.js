@@ -52,9 +52,10 @@ $(document).ready(function() {
         selectedElement = $(this);
     });
 
-    var m_id = $(".sess_id").val();
+    var m_id = $("#sess_id").val();
     
     alert("확인용 123"+m_id);
+    
     $('#like_hotel').on('click', function() {    
     $.ajax({
 	      type: "GET",

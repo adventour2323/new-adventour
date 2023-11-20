@@ -41,14 +41,18 @@ public class Mypage_db {
             if (conn == null)
                 throw new Exception("데이터베이스에 연결할 수 없습니다");
             ResultSet rs = stmt.executeQuery("SELECT h_hotel.* " + 
-            		"FROM adventour.h_like" + 
-            		"JOIN adventour.h_hotel ON h_like.like_h_name_eng = h_hotel.h_name_eng" + 
-            		"WHERE h_like.like_m_id = '"+m_id+"';"); //데이터베이스 명령문사용
+            	    "FROM adventour.h_like " + // 첫 번째 주의할 점: 테이블명과 JOIN 구문 사이에 공백이 필요합니다.
+            	    "JOIN adventour.h_hotel ON h_like.like_h_name_eng = h_hotel.h_name_eng " + // 두 번째 주의할 점: JOIN과 WHERE 구문 사이에 공백이 필요합니다.
+            	    "WHERE h_like.like_m_id = '" + m_id + "';"); // 세 번째 주의할 점: WHERE 키워드 앞에 공백이 필요합니다.
+
             while (rs.next()) { //rs의 값이 없을 때 까지 - 값을 받아온다
             	H_getset obj = new H_getset();
                 obj.setH_name_eng(rs.getString("h_name_eng"));
+                obj.setH_name_ko(rs.getString("h_name_ko"));
                 obj.setCountry_ko(rs.getString("country_ko"));
                 obj.setCity_ko(rs.getString("city_ko"));
+                
+                System.out.println("자바파일");
                arr.add(obj);
             }
         } finally {
