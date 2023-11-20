@@ -33,7 +33,7 @@ public class C_dbsave {
             e.printStackTrace();
         }
     }
-
+ 
     public void dbsave(String m_id, String country, String city, String c_title, 
     		String c_cont, String c_pho1,String c_pho2,String c_pho3,String c_pho4,String c_pho5) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
   
