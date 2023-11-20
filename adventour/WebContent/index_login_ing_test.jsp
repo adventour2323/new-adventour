@@ -640,105 +640,108 @@
 			<jsp:include page="footer.html"></jsp:include>
 		</footer>
         <!-- // footer -->
-    <!-- </div> -->
-    
-    <!-- <script src="./js/main_index.js"></script> -->
+
  
  
 </body>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        $(document).ready(function () {
-            $(".start-travel-date, .end-travel-date").datepicker();
+  $(document).ready(function () {
+    var countrySelect = document.getElementById("countrySelect");
+    var citySelect = document.getElementById("citySelect");
 
-            var countrySelect = $("#countrySelect");
-            var citySelect = $("#citySelect");
+    // 국가 선택 상자 변경 이벤트 처리
+    countrySelect.addEventListener("change", function () {
+      var selectedCountry = countrySelect.value;
+      updateCityOptions(selectedCountry);
+    });
 
-            // 국가 선택 상자 변경 이벤트 처리
-            countrySelect.on("change", function () {
-                var selectedCountry = countrySelect.val();
-                updateCityOptions(selectedCountry);
-            });
+    // 초기에도 도시 목록 업데이트
+    updateCityOptions(countrySelect.value);
 
-            // 초기에도 도시 목록 업데이트 
-            updateCityOptions(countrySelect.val());
+    // 도시 옵션 업데이트 함수
+    function updateCityOptions(country) {
+      var citySelect = document.getElementById("citySelect");
+      citySelect.innerHTML = '<option value="" disabled selected>도시 선택</option>';
 
-            // 도시 옵션 업데이트 함수
-            function updateCityOptions(country) {
-                citySelect.html('<option value="" disabled selected>도시 선택</option>');
+      var cities = getCitiesByCountry(country);
+      cities.forEach(function (city) {
+        var option = document.createElement("option");
+        option.value = city;
+        option.text = city;
+        citySelect.add(option);
+      });
+    }
 
-                var cities = getCitiesByCountry(country);
-                cities.forEach(function (city) {
-                    var option = $("<option>").val(city).text(city);
-                    citySelect.append(option);
-                });
-            }
+    // 국가에 따른 도시 목록 반환 함수
+    function getCitiesByCountry(country) {
+      switch (country) {
+        case "영국":
+          return ["런던", "리버풀", "에딘버러"];
+        case "프랑스":
+          return ["파리", "마르세유", "모나코"];
+        case "스페인":
+          return ["마드리드", "바르셀로나", "세비야"];
+        case "이탈리아":
+          return ["로마", "베네치아", "밀라노"];
+        default:
+          return [];
+      }
+    }
 
-            // 국가에 따른 도시 목록 반환 함수
-            function getCitiesByCountry(country) {
-                switch (country) {
-                    case "영국":
-                        return ["런던", "리버풀", "에딘버러"];
-                    case "프랑스":
-                        return ["파리", "마르세유", "모나코"];
-                    case "스페인":
-                        return ["마드리드", "바르셀로나", "세비야"];
-                    case "이탈리아":
-                        return ["로마", "베네치아", "밀라노"];
-                    default:
-                        return [];
-                }
-            }
-        });
+    // Datepicker 초기화
+    $(".start-travel-date, .end-travel-date").datepicker();
 
-        $(document).ready(function () {
-            // 페이지 로드 시 초기값 설정
-            updateCounts();
+    // 페이지 로드 시 초기값 설정
+    updateCounts();
 
-            $(".hotel-choose").click(function () {
-                $(".hotel-choose-box").toggleClass("show");
-            });
+    $(".hotel-choose").click(function () {
+      $(".hotel-choose-box").toggleClass("show");
+    });
 
-            $(".count-change button").click(function () {
-                const type = $(this).data("type");
-                const $countElement = $("#" + type + "Number");
+    $(".count-change button").click(function () {
+      const type = $(this).data("type");
+      const $countElement = $("#" + type + "Number");
 
-                let countValue = parseInt($countElement.text());
+      let countValue = parseInt($countElement.text());
 
-                if ($(this).hasClass("increment")) {
-                    if (type === "adult" && countValue >= 4) {
-                        return; // 최대값을 초과하지 않도록 방지
-                    } else if (type === "child" && countValue >= 4) {
-                        return; // 최대값을 초과하지 않도록 방지
-                    }
-                    countValue++;
-                } else if ($(this).hasClass("decrement")) {
-                    if (type === "adult" && countValue <= 1) {
-                        return; // 최소값 이하로는 감소하지 않도록 방지
-                    } else if (type === "child" && countValue <= 0) {
-                        return; // 최소값 이하로는 감소하지 않도록 방지
-                    }
-                    countValue--;
-                }
+      if ($(this).hasClass("increment")) {
+        if (type === "adult" && countValue >= 4) {
+          return; // 최대값을 초과하지 않도록 방지
+        } else if (type === "child" && countValue >= 4) {
+          return; // 최대값을 초과하지 않도록 방지
+        }
+        countValue++;
+      } else if ($(this).hasClass("decrement")) {
+        if (type === "adult" && countValue <= 1) {
+          return; // 최소값 이하로는 감소하지 않도록 방지
+        } else if (type === "child" && countValue <= 0) {
+          return; // 최소값 이하로는 감소하지 않도록 방지
+        }
+        countValue--;
+      }
 
-                $countElement.text(countValue);
-                updateCounts();
-            });
+      $countElement.text(countValue);
+      updateCounts(); // updateCounts 함수 호출 추가
+    });
 
-            $(".complete").click(function () {
-                $(".hotel-choose-box").removeClass("show");
-                updateCounts();
-            });
+    $(".complete").click(function () {
+      $(".hotel-choose-box").removeClass("show");
+      updateCounts();
+    });
 
-            function updateCounts() {
-                const adultCount = parseInt($("#adultNumber").text());
-                const childCount = parseInt($("#childNumber").text());
+    function updateCounts() {
+      const adultCount = parseInt($("#adultNumber").text());
+      const childCount = parseInt($("#childNumber").text());
 
-                $("#peopleCount").text(`성인 ${adultCount}명 / 아동 ${childCount}명`);
-            }
-        });
-    </script>
+      console.log(adultCount, childCount); // 변수 값 로그에 출력
+
+      $("#peopleCount").text(`성인 ${adultCount}명 / 아동 ${childCount}명`);
+    }
+  });
+</script>
+
 
 
 </html>

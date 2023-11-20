@@ -655,4 +655,25 @@ public class g_list_print {
 		}
 	
 	//
+	
+    public void t_likesave(String t_id, String m_id) throws Exception { // 입력받은 정보를 저장 insert하는 매소드
+    	  
+        try {
+            con();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            String command = String.format(
+                    "INSERT INTO t_like (t_id, m_id)"
+            +"VALUES('"+t_id+"', '"+m_id +"');" ); 
+              //데이터베이스 명령문 사용      
+                    
+            int rowNum = stmt.executeUpdate(command);
+            if (rowNum < 1) {
+                throw new Exception("데이터를 DB에 입력할 수 없습니다.");
+            }
+        } finally {
+            discon();
+        }
+       
+    } 
 }

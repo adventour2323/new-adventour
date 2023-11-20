@@ -128,7 +128,7 @@
 								SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 								String formattedDate = sdf.format(today);
 							%>
-        					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required>	
+        					<input type="date" id="trip-start" name="trip-start" value="<%= formattedDate %>" min="<%= formattedDate %>" required style="width: 105px;">	
     					</div>
 					</div>
 									
@@ -161,16 +161,18 @@
 					</div>
 				</form>
 				
-				<form id="wishlist_form" action="t_wishlist.jsp" method="post">
+				<%-- <form id="wishlist_form" action="t_wishlist.jsp" method="post">
 					<div class="wishlist_div">
 						<input type="hidden" value="<%= g.getT_id() %>" name="t_id">
 						<input type="hidden" value="<%= g.getT_name() %>" name="t_name">
-						<input type="hidden" value="<%= g.getT_price() %>" name="t_price">
+						<input type="hidden" value="<%= g.getT_price() %>" name="t_price"> --%>
 						
 						<!-- <button class="wishlist_btn" onclick="location.href='t_wishlist.jsp'">❤️ 찜하기</button> -->
-						<input type="submit" class = "wishlist_btn" value="❤️ 찜하기">
-					</div>
-				</form>
+						<a href="t_like.jsp?m_id=<%= session.getAttribute("id") %>&t_id=<%= g.getT_id()%>">
+							<input type="submit" class = "wishlist_btn" value="❤️ 찜하기">
+						</a>
+					<!-- </div> -->
+				<!-- </form> -->
 			</div> <!-- option_div -->
 		
 		</div> <!-- top_area -->
