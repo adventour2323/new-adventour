@@ -4,6 +4,8 @@ $(document).ready(function() {
 	$("#footer").load("footer.html");
 
 
+ 	
+
 	  // 초기에 선택된 요소를 저장할 변수
     var selectedElement = null;
 
@@ -55,6 +57,22 @@ $(document).ready(function() {
     var m_id = $("#sess_id").val();
     
    // alert("확인용 123"+m_id);
+    
+    $('#like_tour').on('click', function() {    
+        $.ajax({
+    	      type: "GET",
+    	      url: "mypage_tour_like.jsp",
+    	      data: {
+    	    	  m_id :m_id
+    	      },
+    	      success: function(data) {
+    	        $("#like_ul").html(data);
+    	      },
+    	      error: function() {
+    	        alert("ajax오류 확인 필요.");
+    	      }
+    	    });
+    });	       
     
     $('#like_hotel').on('click', function() {    
     $.ajax({

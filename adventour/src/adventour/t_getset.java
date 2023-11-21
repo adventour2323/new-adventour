@@ -37,8 +37,16 @@ public class t_getset {
 	String g_img;
 	String g_email;
 //
+	String m_id;
 	
 	
+   /*member id*/	
+	public String getM_id() {
+		return m_id;
+	}
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
 	/**
 	 * @return the spot1_x
 	 */

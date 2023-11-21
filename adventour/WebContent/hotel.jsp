@@ -166,7 +166,7 @@ if (session.getAttribute("id") == null) {
 
 		<div class="h_retop10">
 
-			<h2 class="h_retitle">추천 인기호텔 TOP10</h2>
+			<p class="h_retitle">추천 인기호텔 TOP10</p>
 
 			<section class="awards">
 				<!-- 이미지 스와이퍼 -->
@@ -216,7 +216,7 @@ if (session.getAttribute("id") == null) {
 
 		<div class="h_recity">
 
-			<h2 class="h_retitle">나라별 검색하기</h2>
+			<h2 class="h_retitle3">나라별 검색하기</h2>
 
 			<div class="h_recityimgs">
 
@@ -254,7 +254,7 @@ if (session.getAttribute("id") == null) {
 	<!--content-->
 
 	<div class="h_packages">
-		<h2>투어와 함께하는 숙소를 추천해드려요.</h2>
+		<p class="h_retitle2">투어와 함께하는 숙소를 추천해드려요.</>
 
 		<div class="h_package">
 

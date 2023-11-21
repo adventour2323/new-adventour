@@ -71,10 +71,10 @@
 
     border-bottom: solid 1px;
 	width: 180px;
-    height:50px;
+    height:60px;
     margin-top: 25px;
     padding-left: 20px;
-    
+     padding-bottom: 10px;
 }
 #li1:hover,#li2:hover,#li3:hover,
 #li4:hover,#li5:hover,#li6:hover{
@@ -178,7 +178,7 @@
 	width: 120px;
 	height: 30px;
 	margin-left: 680px;
-	margin-top: -500px;
+
 	background-color: #555;
 	color:white;
 	border-radius: 5px;

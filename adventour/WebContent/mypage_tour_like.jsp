@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page import="adventour.Mypage_db" %>
-<%@ page import="getset.H_getset" %>
+<%@ page import="adventour.C_dbsave" %>
+<%@ page import="adventour.t_getset" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
@@ -49,8 +49,8 @@ $(document).ready(function() {
         String m_id = request.getParameter("m_id");
         System.out.println("m_id: " + m_id); // ok
 
-        Mypage_db m_like_db = new Mypage_db();
-        ArrayList<getset.H_getset> m_like_db1 = m_like_db.m_h_like(m_id);
+        C_dbsave m_like_db = new  C_dbsave();
+        ArrayList<adventour.t_getset> m_like_db1 = m_like_db.t_like_select(m_id);
 
         // Pagination parameters
         int itemsPerPage = 5;
@@ -59,22 +59,20 @@ $(document).ready(function() {
         int endIdx = Math.min(startIdx + itemsPerPage, m_like_db1.size());
 
         // Sublist for the current page
-        ArrayList<getset.H_getset> currentPageList = new ArrayList<>(m_like_db1.subList(startIdx, endIdx));
+        ArrayList<adventour.t_getset> currentPageList = new ArrayList<>(m_like_db1.subList(startIdx, endIdx));
     %>
 
     <ul>
         <%
             if (!currentPageList.isEmpty()) {
             	 for (int i = 0; i < currentPageList.size(); i++) {
-                     H_getset bbb = currentPageList.get(i);
+                     t_getset bbb = currentPageList.get(i);
         %>
-        <a name="<%=bbb.getH_name_eng() %>" href="information.hotel?uname=hotelinfom&hotelname=<%= bbb.getH_name_eng() %>">
+        <a name="<%=bbb.getT_id() %>" href="t_info.jsp?t_id=<%= bbb.getT_id() %>">
                     <li class="lili_<%=i%>">
-                        <p id="li_eng"><%= bbb.getH_name_eng()%></p>
-                        <p id="li_ko"><%= bbb.getH_name_ko()%> (<%= bbb.getCountry_ko() %>, <%= bbb.getCity_ko()%>)</p>
-                        <p><input type="button" id="h_like_del_btn" class="h_like_del_btn" name="h_like_del_btn" value="삭제하기"> </p>
-                    
-               
+                        <p id="li_eng"><%= bbb.getT_name()%></p>
+                        <p id="li_city"><%= bbb.getCountry() %>, <%= bbb.getCity()%></p>  
+                        <input type="button" id="h_like_del_btn" class="h_like_del_btn" name="h_like_del_btn" value="삭제하기">    
                     </li>
           </a>
         <%

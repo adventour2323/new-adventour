@@ -92,56 +92,57 @@ $(document).ready(function() {
 	  return numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 	
-/// 모달창
-	const modal = document.querySelector(".modal");
-	const img1 = document.querySelector(".h_info_title_pho1");
-	const img2 = document.querySelector(".h_info_title_pho2");
-	const img3 = document.querySelector(".h_info_title_pho3");
-	const img4 = document.querySelector(".h_info_title_pho4");
-	const img5 = document.querySelector(".h_info_title_pho5");
-	const img6 = document.querySelector(".h_info_title_pho6");
-	const img7 = document.querySelector(".h_info_title_pho7");
-	const modal_img = document.querySelector(".modal_content");
-	const span = document.querySelector(".close");
 
-	img1.addEventListener('click', ()=>{
-	  modalDisplay("block");
-	  modal_img.src = img1.src;
-	});
-	img2.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img2.src;
-		});
-	img3.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img3.src;
-		});
-	img4.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img4.src;
-		});
-	img5.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img5.src;
-		});
-	img6.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img6.src;
-		});
-	img7.addEventListener('click', ()=>{
-		  modalDisplay("block");
-		  modal_img.src = img7.src;
-		});
+    // 이미지 요소 선택
+    const imgElements = [
+        document.querySelector(".h_info_title_pho1"),
+        document.querySelector(".h_info_title_pho2"),
+        document.querySelector(".h_info_title_pho3"),
+        document.querySelector(".h_info_title_pho4"),
+        document.querySelector(".h_info_title_pho5"),
+        document.querySelector(".h_info_title_pho6"),
+        document.querySelector(".h_info_title_pho7")
+    ];
+
+    const modal = document.querySelector(".modal");
+    const modal_img = document.querySelector(".modal_content");
+    const span = document.querySelector(".close");
+    let currentImageIndex = 0; // 현재 이미지 인덱스
+
+    // 이미지 클릭 이벤트 핸들러
+    imgElements.forEach((imgElement, index) => {
+        imgElement.addEventListener('click', () => {
+            modal.style.display = "block";
+            modal_img.src = imgElement.src;
+            currentImageIndex = index; // 현재 이미지 인덱스 설정
+        });
+    });
+
+    // 이전 이미지 버튼 클릭 시
+    $('#prevImage').click(() => {
+        currentImageIndex = (currentImageIndex - 1 + imgElements.length) % imgElements.length;
+        modal_img.src = imgElements[currentImageIndex].src;
+    });
+
+    // 다음 이미지 버튼 클릭 시
+    $('#nextImage').click(() => {
+        currentImageIndex = (currentImageIndex + 1) % imgElements.length;
+        modal_img.src = imgElements[currentImageIndex].src;
+    });
+
+    // 모달 닫기 버튼 클릭 시
+    $('.close').on('click', function() {
+        modal.style.display = "none";
+    });
+
+    // 모달 외부 클릭 시 모달 닫기
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+		
 	
-	span.addEventListener('click', ()=>{
-	  modalDisplay("none");
-	});
-	modal.addEventListener('click', ()=>{
-	  modalDisplay("none");
-	});
-	function modalDisplay(text){
-	  modal.style.display = text;
-	}
 	  /*왼쪽 검색창 날짜 픽 */
 
 	//날짜계산	
@@ -260,15 +261,7 @@ $(document).ready(function() {
     });	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

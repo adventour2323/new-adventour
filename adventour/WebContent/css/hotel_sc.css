@@ -68,7 +68,7 @@ body {
 /*오른쪽 버튼네비*/
 .h_map {
 	position: fixed;
-	top: 180px;
+	top: 210px;
 	right: 100px;
 	width: 290px;
 	height: 290px;
@@ -212,7 +212,7 @@ body {
 	border-style: dashed;
 	width: 1000px;
 	height: 250px;
-	margin-top: 40px;
+	margin-top: 65px;
 	margin-left: 50px;
 	/* color: rgb(20, 3, 78);*/
 }

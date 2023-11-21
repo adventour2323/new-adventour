@@ -64,6 +64,90 @@ $(document).ready(function() {
 });	
 
 
+$(document).ready(function() {
+$('.hotel_info_pho1_text').hide(); // 실행시에는 글씨가 보이지 않음
+$('.hotel_info_pho2_text').hide(); // 실행시에는 글씨가 보이지 않음
+$('.hotel_info_pho3_text').hide(); // 실행시에는 글씨가 보이지 않음
+$('.hotel_info_pho4_text').hide(); // 실행시에는 글씨가 보이지 않음
+$('.hotel_info_pho5_text').hide(); // 실행시에는 글씨가 보이지 않음
+$('.hotel_info_pho6_text').hide(); // 실행시에는 글씨가 보이지 않음
+
+
+$('.h_info_title_pho1').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_info_title_pho1').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+  $('.hotel_info_pho1_text').show(); //글씨가 보이고
+});
+
+$('.h_info_title_pho1').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.hotel_info_pho1_text').hide(); // 글씨는 안보이고
+  $('.h_info_title_pho1').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+
+
+$('.h_info_title_pho2').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_info_title_pho2').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+  $('.hotel_info_pho2_text').show(); //글씨가 보이고
+});
+
+$('.h_info_title_pho2').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.hotel_info_pho2_text').hide(); // 글씨는 안보이고
+  $('.h_info_title_pho2').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+
+
+
+$('.h_info_title_pho3').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_info_title_pho3').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+  $('.hotel_info_pho3_text').show(); //글씨가 보이고
+});
+
+$('.h_info_title_pho3').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.hotel_info_pho3_text').hide(); // 글씨는 안보이고
+  $('.h_info_title_pho3').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+
+
+$('.h_info_title_pho4').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+  $('.h_info_title_pho4').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+  $('.hotel_info_pho4_text').show(); //글씨가 보이고
+});
+
+$('.h_info_title_pho4').on('mouseleave', function() { //이미지위에 마우스가 없으면
+  $('.hotel_info_pho4_text').hide(); // 글씨는 안보이고
+  $('.h_info_title_pho4').css('filter','brightness(1)'); // 밝기는 돌아온다
+});
+
+$('.h_info_title_pho5').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+	  $('.h_info_title_pho5').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+	  $('.hotel_info_pho5_text').show(); //글씨가 보이고
+	});
+
+	$('.h_info_title_pho5').on('mouseleave', function() { //이미지위에 마우스가 없으면
+	  $('.hotel_info_pho5_text').hide(); // 글씨는 안보이고
+	  $('.h_info_title_pho5').css('filter','brightness(1)'); // 밝기는 돌아온다
+	});
+
+	$('.h_info_title_pho6').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
+		  $('.h_info_title_pho6').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
+		  $('.hotel_info_pho6_text').show(); //글씨가 보이고
+		});
+
+		$('.h_info_title_pho6').on('mouseleave', function() { //이미지위에 마우스가 없으면
+		  $('.hotel_info_pho6_text').hide(); // 글씨는 안보이고
+		  $('.h_info_title_pho6').css('filter','brightness(1)'); // 밝기는 돌아온다
+		});
+
+	
+	
+});
+
+
+
+
+
 </script>
 
 <body>
@@ -100,26 +184,29 @@ if (top_list != null) {
         <div id="hotel_info_pho1">
         <img class="h_info_title_pho1" class="h_info_title_pho1" 
         src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
+        <h2 class="hotel_info_pho1_text"> 크게 보기 </h2>
         </div>
         <div id="hotel_info_pho2">
           <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
+           <h2 class="hotel_info_pho2_text"> 크게 보기 </h2>
         </div>
         <div id="hotel_info_pho3">
           <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>" >
+           <h2 class="hotel_info_pho3_text"> 크게 보기 </h2>
         </div>
         <div id="hotel_info_pho4">
           <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>"  >
+           <h2 class="hotel_info_pho4_text"> 크게 보기 </h2>
         </div>
         <div id="hotel_info_pho5">
           <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>"  >
+           <h2 class="hotel_info_pho5_text"> 크게 보기 </h2>
         </div>
         <div id="hotel_info_pho6">
           <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>"  >
+           <h2 class="hotel_info_pho6_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho7">
-          <img class="h_info_title_pho7" class="h_info_title_pho7" src="image/hotel/h_image/<%= aaa.getH_pho6() %>" >
-        </div>
-      
+
     </div><!--hotel_info_phos-->
 
 
@@ -233,9 +320,16 @@ if (top_list != null) {
     <div class="star_range">
       
       <div class="star_range_total">
-          <h1>4.5</h1><br>
-          <h2>****</h2>
-      
+          <h1>4.0</h1><br>
+        <%
+    double starCount2 = 4.0; // 별 갯수 가져오기
+    for (double ii = 0; ii < starCount2; ii++) {
+    %>
+    <img id="re_star" src="image/hotel/h_image/star.png" alt="별 이미지">
+    <%
+    }
+    %>
+      <p> 185개의 리뷰 </p>
       </div><!-- star_range_total -->
       
       <div class="star_range1">
@@ -284,21 +378,48 @@ if (top_list != null) {
 <h3>2명</h3>
 <h5>작성일 : 2023-11-01</h5>
 <h5>이용일 : 2023-10-25</h5>
+
+<div  class="h_review_info_star_num"><h3>5.0</h3></div>
+    <div  class="h_review_info_star_star"><h4>
+            <%
+    double starCount1 = 5.0; // 별 갯수 가져오기
+    for (double ii = 0; ii < starCount1; ii++) {
+    %>
+    <img id="user_re_star" src="image/hotel/h_image/star.png" alt="별 이미지">
+    <%
+    }
+    %></h4></div>
+
+
 </div>
 
 <div class="h_review_info">
 	<div  class="h_review_info_star">
-    <div  class="h_review_info_star_num"><h4>5.0</h4></div>
-    <div  class="h_review_info_star_star"><h4>8 8 8 8 8</h4></div>
+	<div class="h_review_info_title">"친절한 직원들과 편안한 시설"</div>
+    
 	</div>
-
+	<div class="h_review_info_contents_div" >
+     <pre class="h_review_info_contents">
+     
+     
+      친구와의 여행으로 해당 호텔을 방문하였습니다. 늦은 시간에 도착했지만 직원들은 우리를 친절하게 맞아주었습니다.<br>
+    잠귀가 밝아서 낯선 곳에서는 잠을 잘 자지 못하는데 이 호텔을 생각보다 조용하고 침구류도 께끗했습니다.<br>
+  
+     </pre>
+     
+     </div>
+     
+     
+     <div class="h_review_info_img">
+     <img class="h_review_info_pho" src="image/hotel/h_re1.PNG">
+     </div>
 </div>   
  
  </div><!-- h_review1 -->
 </div><!-- h_info_review -->
 
  
- <div id="map" style="width: 950px; height: 400px;" > </div>
+ <div id="map" style="width: 1200px; height: 500px;" > </div>
  <input type="hidden" class="hh_lat" name="hh_lat" value="<%= aaa.getH_lat()%>" />
  <input type="hidden" class="hh_lng" name="hh_lng" value="<%= aaa.getH_lon()%>" />
     
@@ -489,7 +610,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
    <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
-   <p id="slideNumber"></p>
+  <p id="slideNumber"> 1/7</p>
       </div><!-- img_div -->
       
         <div id="h_room_options1" >

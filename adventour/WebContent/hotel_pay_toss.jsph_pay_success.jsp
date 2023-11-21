@@ -103,6 +103,9 @@ var h_user_mail = getCookie("h_user_mail");
     response.setCharacterEncoding("UTF-8");
     session.getAttribute("id");
     
+     
+     System.out.println("aaaaaa"+session.getAttribute("id"));
+    
     String h_roomnum = "";   
     String h_m_id = "";     
     String h_room_user = ""; 
@@ -203,13 +206,7 @@ var h_user_mail = getCookie("h_user_mail");
     }
  %> 
  <input type="hidden" id="sess_id" value="<%= session.getAttribute("id") %>">  
-<script> 
-// 결제 성공시 데이터 베이스 저장 후 파이페이지로 이동
- var m_id = $("#sess_id").val();
- alert(m_id);
- var url = 'Mypage.mypage?uname=mypage'
- window.location.href = url;
-</script>
+
  <%    
     } else { %>
    <h1>결제 실패</h1>
@@ -219,3 +216,13 @@ var h_user_mail = getCookie("h_user_mail");
 }  
     
 %>
+<script> 
+// 결제 성공시 데이터 베이스 저장 후 파이페이지로 이동
+ var m_id = $("#sess_id").val();
+ 
+ alert("m_id 확인용");
+ alert("m_id"+m_id);
+
+ var url = 'Mypage.mypage?uname=mypage&&customer='+'m_id'
+ window.location.href = url;
+</script>

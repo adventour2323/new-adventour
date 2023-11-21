@@ -112,7 +112,7 @@ session.getAttribute("id");
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
    <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
-   <p id="slideNumber"></p>
+   <p id="slideNumber">1/7</p>
       </div><!-- img_div -->
 
 

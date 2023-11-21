@@ -320,4 +320,31 @@ public class C_dbsave {
         }
        
     } 
+    public ArrayList<t_getset> t_like_select(String m_id) throws Exception {
+        ArrayList<t_getset> arr = new ArrayList<t_getset>();
+      
+        try {
+            connec();
+            if (conn == null)
+                throw new Exception("데이터베이스에 연결할 수 없습니다");
+            ResultSet rs = stmt.executeQuery(
+            	    "SELECT tour.t_name, tour.Country, tour.City, tour.t_id " +
+            	    "FROM t_like " +
+            	    "JOIN tour ON t_like.t_like_t_id = tour.t_id " +
+            	    "WHERE t_like.t_like_m_id = '" + m_id + "'"
+            	);
+            
+            while (rs.next()) {
+                t_getset obj = new t_getset();
+                obj.setT_id(rs.getString("t_id"));
+                obj.setT_name(rs.getString("t_name"));
+                obj.setCountry(rs.getString("Country"));
+                obj.setCity(rs.getString("City"));
+                arr.add(obj);
+            }
+        } finally {
+            closecon();
+        }
+        return arr;
+    }
 }

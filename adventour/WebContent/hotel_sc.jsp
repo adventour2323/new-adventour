@@ -157,8 +157,8 @@ if (session.getAttribute("id") == null) {
 
     <div class="rinav"> <!--장바구니 등 -->
 
-      <button class="eur" type="button">고객센터</button>
-  <!-- <button class="cart" type="button">장바구니 담기</button>
+    <!--    <button class="eur" type="button">고객센터</button>
+ <button class="cart" type="button">장바구니 담기</button>
       <button class="pay" type="button">결제하기</button>-->
       
     </div>

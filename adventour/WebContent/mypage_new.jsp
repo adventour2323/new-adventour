@@ -30,8 +30,26 @@ $(document).ready(function() {
 	$("#footer").load("footer.html");
 	
 	
+	 //투어 찜하기 바로연결  
+	var m_id = $("#sess_id").val();
+    
+    // alert("확인용 123"+m_id);
+      
+     $.ajax({
+ 	      type: "GET",
+ 	      url: "mypage_tour_like.jsp",
+ 	      data: {
+ 	    	  m_id :m_id
+ 	      },
+ 	      success: function(data) {
+ 	        $("#like_ul").html(data);
+ 	      },
+ 	      error: function() {
+ 	        alert("ajax오류 확인 필요.");
+ 	      }
+ 	    });
 	
-	
+     
     $('lili_1').on('mouseenter click', function() {
         $(this).css('background-color', '#D9E5FF');
     });
