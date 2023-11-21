@@ -29,6 +29,17 @@ $(document).ready(function() {
 	$("#header").load("header.html");
 	$("#footer").load("footer.html");
 	
+	
+	
+	
+    $('lili_1').on('mouseenter click', function() {
+        $(this).css('background-color', '#D9E5FF');
+    });
+
+	$('lili_1').on('mouseleave', function() {
+		  $(this).css('background-color', '');
+		});
+	
   
 });
 

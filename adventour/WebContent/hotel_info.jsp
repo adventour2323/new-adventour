@@ -765,9 +765,7 @@ var country_eng = $(".h_info_touradC").val();
       var night= $(".night_time").val();
       
 
-      if (!name_eng || !indate || !outdate || !peo) {
-    	    alert("검색 정보를 입력 후 검색해주세요.");
-    	} else{
+   
       
        $.ajax({
         type: "GET",
@@ -781,12 +779,10 @@ var country_eng = $(".h_info_touradC").val();
         success: function(data) {
        
           $("#info_SCH").html(data);
-        },
-        error: function() {
-          alert("일치하는 검색 내용이 없습니다.");
         }
+
       });
-     };     
+        
  	// 이전 페이지로 리디렉션하는 JavaScript 코드
  	function redirectToPreviousPage() {
  	    window.history.go(-1);
