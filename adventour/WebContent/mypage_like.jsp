@@ -9,21 +9,28 @@
     <title></title>
 
     <style>
-    .pagination {
+.pagination {
   width: 900px;
-  height: 10px;
- 
+  height: 40px;
+
   margin-bottom: 30px;
 
   text-align: center;
-}
-.pages_num{
-margin-top: 15px;
+  padding-top:20px;
 }
 
-
-
-
+.pages_num_div1{
+border:solid 1px;
+  width: 20px;
+  height: 20px;
+  margin-left: 450px;
+}
+.pages_num_div2{
+border:solid 1px;
+  width: 20px;
+  height: 20px;
+  margin-left: 450px;
+}
     </style>
     
 </head>
@@ -95,7 +102,7 @@ $(document).ready(function() {
             for (int i = 1; i <= totalPages; i++) {
 
             if (i == currentPage) { %>
-              <span class="pages_num"><%= i %></span>
+             <div class="pages_num_div<%= i %>">  <%= i %></div>
             <% } else { %>
               <a href="?page=<%= i %>"><%= i %></a>
             <% }

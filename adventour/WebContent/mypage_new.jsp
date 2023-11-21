@@ -161,16 +161,16 @@ if (session.getAttribute("id") == null) {
 	<div id="content_tour_title"><h2> 투어 예약 내역 </h2></div>
 	<div id="content_tour_info">
 	<div id="content_tour_img">
-   <!--  <img id="tour_img" src="">  --> 
+    <img id="tour_img" src="./image/tour/marseille_tour.jpg"> 
      </div><!-- content_tour_img --> 
      <div id="content_tour_info1">
-      <h3  id="t_reserv_num" name="t_reserv_num">예약 번호 :  투어예약번호</h3>
-         <h4  id="t_user_name" name="t_user_name">예약자명 : qwer (총 인원 : 3명 )</h4> 
+      <h3  id="t_reserv_num" name="t_reserv_num">예약 번호 :231212Tma_city_tour</h3>
+         <h4  id="t_user_name" name="t_user_name">예약자명 : suzy bea (총 인원 : 3명 )</h4> 
          <ul id="tour_info_ul">
-         <li class="li" id="t_name" name="t_name">투어명 : 투어리르으으으응</li>        
+         <li class="li" id="t_name" name="t_name">투어명 : 프랑스에서 가장 오래된 역사의 도시!! 그리고 에메랄드빛 지중해, 힐링의 도시 마르세유!!</li>        
          <li class="li" id="t_r_date" name="t_r_date">투어날짜 : 2023-12-12</li>
          <li class="li" id="t_r_time" name="t_r_time">투어 시작시간 : 10:00</li>
-         <li class="li" id="t_total_price" name="t_total_price"><p id="t_total_price1" >결제 금액 : 100,000원</p></li>        
+         <li class="li" id="t_total_price" name="t_total_price"><p id="t_total_price1" >결제 금액 : 165,000원</p></li>        
          </ul><!--hotel_info_ul-->     
      </div><!-- content_tour_info1 -->   
 	
