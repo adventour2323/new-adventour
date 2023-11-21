@@ -189,17 +189,20 @@ li{
     width: 130px;
     height: 40px;
     line-height: 40px;
-    /* border: 1px solid #000; */
     border-bottom: 1px solid #000;
     margin-bottom: 15px;
     box-sizing: border-box;
     cursor: pointer;
 }
+/* .main-visual .visualSearchBox .visual-res .visual-sel-tab li.on {
+    border-bottom: 3px solid #000;
+} */
+
 
 .main-visual .visualSearchBox .visual-res .visual-sel-tab li.on {
+    font-weight: bold;
     border-bottom: 3px solid #000;
 }
-
 .main-visual .visualSearchBox .visual-res .visual-res-tab {}
 
 .main-visual .visualSearchBox .visual-res .visual-res-tab>li {

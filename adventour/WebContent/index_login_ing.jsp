@@ -49,9 +49,9 @@
     </strong>
     <div class="visual-res">
         <ul class="visual-sel-tab">
-            <li class="on" onclick="showTab('tour')">투어</li>
-            <li onclick="showTab('bus')">버스</li>
-            <li onclick="showTab('hotel')">호텔</li>
+            <li class="on" onclick="showTab('tour')" data-tab="tour">투어</li>
+            <li onclick="showTab('bus')" data-tab="bus">버스</li>
+            <li onclick="showTab('hotel')" data-tab="hotel">호텔</li>
         </ul>
         <!-- 검색 탭 -->
         <ul class="visual-res-tab">
@@ -391,24 +391,28 @@
     </div>
 </div>
 
+
 <script>
-    function showTab(tabName) {
-        // Hide all tabs
-        document.querySelectorAll('.visual-res-tab li').forEach(function (tab) {
-            tab.style.display = 'none';
-        });
+function showTab(tabName) {
+    // Hide all tabs
+    document.querySelectorAll('.visual-res-tab li').forEach(function (tab) {
+        tab.style.display = 'none';
+    });
 
-        // Show the selected tab
-        document.getElementById(tabName + 'Tab').style.display = 'block';
+    // Show the selected tab
+    document.getElementById(tabName + 'Tab').style.display = 'block';
 
-        // Remove 'on' class from all tab buttons
-        document.querySelectorAll('.visual-sel-tab li').forEach(function (tabButton) {
-            tabButton.classList.remove('on');
-        });
+    // Remove 'on' class from all tab buttons
+    document.querySelectorAll('.visual-sel-tab li').forEach(function (tabButton) {
+        tabButton.classList.remove('on');
+    });
 
-        // Add 'on' class to the selected tab button
-        document.querySelector('.visual-sel-tab li[data-tab="' + tabName + '"]').classList.add('on');
+    // Add 'on' class to the selected tab button
+    var selectedTabButton = document.querySelector('.visual-sel-tab li[data-tab="' + tabName + '"]');
+    if (selectedTabButton) {
+        selectedTabButton.classList.add('on');
     }
+}
 </script>
 
 
