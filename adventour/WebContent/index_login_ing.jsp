@@ -419,51 +419,42 @@ function showTab(tabName) {
                 <div class="visualBanner">
                     <ul class="mainVisualBanner">
                         <li>
-                            <a href="hotel.html">
+                            <a href="main.hotel?uname=hmain">
                                 <!-- <img src="images/main/visual/hotel_event_banner1.png" alt="마이파사드 애월점"> -->
                                 <img src="./image/main_index/banner/hotel_event_banner1.png" alt="호텔 행사">
                             </a>
                         </li>
                         <li>
-                            <a href="hotel.html">
-                                <img src="./image/main_index/banner/hotel_event_banner1.png" alt="호텔 행사">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tour.html">
+                            <a href="main.tour?tour=main">
                                 <img src="./image/main_index/banner/september_event.jpg" alt="9월 행사">
                             </a>
                         </li>
                         <li>
-                            <a href="tour.html">
+                            <a href="main.tour?tour=main">
                                 <img src="./image/main_index/banner/september_event_banner2.png" alt="추석">
                             </a>
                         </li>
                         <li>
-                            <a href="tour.html">
+                            <a href="t_list_country.jsp?country_eng=spain">
                                 <img src="./image/main_index/banner/spain_right_banner.png" alt="스페인">
                             </a>
                         </li>
                         <li>
-                            <a href="tour.html">
+                            <a href="main.tour?tour=main">
                                 <img src="./image/main_index/banner/tour_right_banner.png" alt="홍보">
                             </a>
                         </li>
                         <li>
-                            <a href="index.html">
+                            <a href="main.tour?tour=main">
                                 <img src="./image/main_index/banner/promo_right_banner.png" alt="행사">
                             </a>
                         </li>
                         <li>
-                            <a href="tour.html">
+                            <a href="t_info.jsp?t_id=f_p_tour">
                                 <img src="./image/main_index/banner/paris_tour_banner_1.png" alt="파리">
                             </a>
                         </li>
-                        <li>
-                            <a href="tour.html">
-                                <img src="./image/main_index/banner/paris_tour_banner_1.png" alt="파리">
-                            </a>
-                        </li>
+
                     </ul>
                     <div class="visualNavBox">
                         <p class="visualNav">
@@ -475,7 +466,58 @@ function showTab(tabName) {
                             <button><i class="xi-pause"></i></button>
                         </p>
                     </div>
-                </div>
+                   <script>
+						document.addEventListener("DOMContentLoaded", function() {
+							var slideIndex = 0;
+							var slides = document.querySelectorAll('.main-visual .visualBanner .mainVisualBanner li');
+							var totalSlides = slides.length;
+							var slideInterval = 2000; // 3초 간격
+
+							function showSlides() {
+								slides[slideIndex].style.display = 'none';
+								slideIndex = (slideIndex + 1) % totalSlides;
+								slides[slideIndex].style.display = 'flex';
+
+								// 페이지 수 업데이트
+								var currentPage = slideIndex + 1;
+								document.querySelector('.currentPage').textContent = currentPage + ' / ' + totalSlides;
+							}
+
+							var slideTimer = setInterval(showSlides, slideInterval);
+
+							// 이전 버튼 동작
+						document.querySelector('.visualPrev').addEventListener('click', function() {
+							clearInterval(slideTimer);
+							slides[slideIndex].style.display = 'none';
+							slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+							slides[slideIndex].style.display = 'flex';
+
+							// 페이지 수 업데이트
+							var currentPage = slideIndex + 1;
+							document.querySelector('.currentPage').textContent = currentPage + ' / ' + totalSlides;
+							slideTimer = setInterval(showSlides, slideInterval);
+						});
+
+						// 다음 버튼 동작
+  						document.querySelector('.visualNext').addEventListener('click', function() {
+  							clearInterval(slideTimer);
+  							slides[slideIndex].style.display = 'none';
+  							slideIndex = (slideIndex + 1) % totalSlides;
+  							slides[slideIndex].style.display = 'flex';
+
+  							// 페이지 수 업데이트
+							var currentPage = slideIndex + 1;
+							document.querySelector('.currentPage').textContent = currentPage + ' / ' + totalSlides;
+							slideTimer = setInterval(showSlides, slideInterval);
+						});
+
+						// 일시 정지 버튼 동작
+						document.querySelector('.xi-pause').addEventListener('click', function() {
+							clearInterval(slideTimer);
+						});
+					});
+				</script>
+                </div>                
             </div>
         </section>
         <!-- // visual -->

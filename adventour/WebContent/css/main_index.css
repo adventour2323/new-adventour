@@ -80,7 +80,7 @@ li{
 	
 	
 }
-
+/*  */
 .main-visual .visualBanner {
     position: absolute;
     right: 0;
@@ -91,14 +91,16 @@ li{
     overflow: hidden;
 }
 
-.main-visual .visualBanner .mainVisualBanner {
-    display: flex;
-    position: absolute;
-    left: -600px;
-    transition: 0.2s;
-}
+    .main-visual .visualBanner .mainVisualBanner {
+        display: flex;
+        width: 600%; /* 각 슬라이드의 너비를 전체의 600%로 설정 */
+        transition: transform 0.5s ease-in-out;
+    }
 
-.main-visual .visualBanner .mainVisualBanner li {}
+    .main-visual .visualBanner .mainVisualBanner li {
+        list-style: none;
+        width: 100%;
+    }
 
 .main-visual .visualBanner a img {
     width: 600px;
@@ -158,6 +160,7 @@ li{
     box-sizing: border-box;
     cursor: pointer;
 }
+/*  */
 
 .main-visual .visualSearchBox {
     width: 390px;
@@ -591,6 +594,7 @@ li{
     background: #000;
 }
 
+/*  */
 .main .discount-package {}
 
 .main .discount-package.package1 {
