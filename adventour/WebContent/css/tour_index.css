@@ -318,12 +318,7 @@ body {
   text-align: center;
 }
 /*  */
-.recommend_ticket{
-  /* border: solid; */
-  width: 1100px;
-  margin-top: 10px;
-  /* text-align: center; */
-}
+
 
 /*  */
 .recommend_city1{
@@ -430,6 +425,14 @@ table {
 }
 
 /* 호텔 추천 */
+
+.recommend_ticket{
+  /* border: solid; */
+  width: 1100px;
+  margin-top: 10px;
+  /* text-align: center; */
+}
+
         .hotel-container {
             display: flex;
             overflow: hidden;

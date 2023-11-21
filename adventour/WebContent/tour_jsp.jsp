@@ -264,7 +264,6 @@
 
 					<div name="test">
 						<!-- 배너 사진 -->
-					
 						<% 
 						/*  */
 						ArrayList<t_getset> a2 = id.t1();
@@ -273,22 +272,17 @@
 									t_getset t = a2.get(i);
 									if (t.getT_id().equals("p_e_tour") == true) {
 						%>
-					
 						<div class="slidetext fade">
 							<a href="t_info.jsp?t_id=p_e_tour">
 								<img alt="1" src="<%=t.getT_logo()%>">
 							</a>
 						</div>
 						<% } } %>
-				
-
-
 						<%
 							for (int i = 0; i < a2.size(); i++) {
 									t_getset t = a2.get(i);
 									if (t.getT_id().equals("r_v_tour") == true) {
 						%>
-
 						<div class="slidetext fade">
 							<a href="t_info.jsp?t_id=r_v_tour">
 								<img alt="2" src="<%=t.getT_logo()%>">
@@ -449,10 +443,10 @@
     				<div style="text-align: center; margin-top: 15px;">
         				<div class="hotel_info" >
             				<div>
-                				<%= selectedUkHotel.getCountry_ko() %>, <%= selectedUkHotel.getCity_ko() %>
+                				<label><%= selectedUkHotel.getCountry_ko() %>, <%= selectedUkHotel.getCity_ko() %></label>
             				</div>
             				<div>
-                				★ <%= selectedUkHotel.getH_grade() %> 성급
+                				<label>★ <%= selectedUkHotel.getH_grade() %> 성급</label>
             				</div>
         				</div>
         				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
@@ -543,7 +537,7 @@
 	
 </body>
 
-<script>
+<!-- <script>
 	var slideIndex = 0;
 	showSlides();
 
@@ -562,7 +556,7 @@
 
 		setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
 	}
-</script>
+</script> -->
 
 <script>
 	var slideIndextext = 0;
