@@ -235,7 +235,6 @@ li{
     border: 2px solid #1288AC;
 }
 
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel,
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel {
     position: absolute;
     display: flex;
@@ -248,13 +247,29 @@ li{
     overflow: hidden;
     pointer-events: none;
 }
+.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 390px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    height: 0px;
+    overflow: hidden;
+    pointer-events: none;
+}
 
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel.on,
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel.on {
-    /* height: 351px; */
+.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel.on {
     height: 200px;
     pointer-events: auto;
 }
+
+.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel.on {
+    height: 200px;
+    pointer-events: auto;
+}
+
 
 
 
@@ -293,12 +308,22 @@ li{
 
 /*  */
 
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul,
+.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul {
+    text-align: center;
+}
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel ul {
     text-align: center;
 }
 
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul li,
+.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul li {
+    height: 50px;
+    border-bottom: 1px solid #1288AC;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel ul li {
     height: 50px;
     border-bottom: 1px solid #1288AC;
@@ -309,7 +334,7 @@ li{
     cursor: pointer;
 }
 
-.main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul li:first-child,
+/* .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul li:first-child,
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel ul li:first-child {
     font-size: 22px;
 }
@@ -317,7 +342,7 @@ li{
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-travel ul li:hover,
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .where-to-hotel ul li:hover {
     background: skyblue;
-}
+} */
 
 /* tab메뉴2 항공 */
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .how-to-go {

@@ -561,7 +561,7 @@ function showTab(tabName) {
                         <div class="free-travel-flow">
                             <ul class="free-travel-list">
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             
                                                 <div class="imgcover2"><img src="./image/main_index/package/paris_hotel1.png">
@@ -575,7 +575,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/barca_hotel1.png" alt="이베로스타 셀렉션 파세오 데 그라시아">
                                             </div>
@@ -601,7 +601,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/paris_disney_hotel1.jpg" alt="파리 디즈니 호텔 산타 페">
                                             </div>
@@ -614,7 +614,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/london_hotel1.png"
                                                     alt="스트랜드 팰리스 호텔 런던">
@@ -628,7 +628,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/liverpool_hotel1.png"
                                                     alt="스테이브리지 스위트 리버풀">
@@ -642,7 +642,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/pac_main6.jpg" alt="호텔샬롬">
                                             </div>
@@ -669,7 +669,7 @@ function showTab(tabName) {
                                 </li>
                                
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/milan_hotel1.png"
                                                     alt="이비스 밀라노 센트로">
@@ -683,7 +683,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/edinburgh_hotel1.png"
                                                     alt="노보텔 에든버러 파크">
@@ -697,7 +697,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/benezia_hotel1.png" alt="루치니 팰리스 호텔">
                                             </div>
@@ -710,7 +710,7 @@ function showTab(tabName) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="package.html">
+                                    <a href="main.hotel?uname=hmain">
                                         <div class="free-travel-package">
                                             <div class="imgcover2"><img src="./image/main_index/package/monaco_hotel1.png"
                                                     alt="호텔 콜럼버스 몬테 카를로">
@@ -728,6 +728,27 @@ function showTab(tabName) {
                         <button class="btn free-travel-prev"><i class="xi-angle-left"></i></button>
                         <button class="btn free-travel-next"><i class="xi-angle-right"></i></button>
                     </div>
+<!-- jQuery 로드 -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- 자바스크립트 코드 -->
+<script>
+  $(document).ready(function () {
+    // 이전 버튼 클릭 시
+    $(".free-travel-prev").click(function () {
+      // 가장 마지막 이미지를 첫 번째로 이동
+      $(".free-travel-list").prepend($(".free-travel-list li:last"));
+    });
+
+    // 다음 버튼 클릭 시
+    $(".free-travel-next").click(function () {
+      // 첫 번째 이미지를 마지막으로 이동
+      $(".free-travel-list").append($(".free-travel-list li:first"));
+    });
+  });
+</script>
+
+                    
                 </div>
                 <!-- 배너 -->
                 <div class="con-box discount-package recommend" style="height: 320px;">
