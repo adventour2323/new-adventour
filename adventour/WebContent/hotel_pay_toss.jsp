@@ -4,11 +4,14 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      <link rel="stylesheet" type="text/css" href="css/h_pay_toss.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>결제위젯 샘플</title>
+        <link rel="stylesheet" type="text/css" href="css/h_pay_toss.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />  
     <script src="https://js.tosspayments.com/v1/payment-widget"></script>
+      
+      <title>결제위젯 샘플</title>
   </head>
   
   <script>
@@ -66,7 +69,8 @@ var h_user_mail = getCookie("h_user_mail");
   <h2 class="total_price" style="font-weight:bold;">결제 예정 금액 : <%= total_price  %>원</h2>
   </div>
       <div id="payment-method"> </div>
-    <button id="payment-request-button" style="width: 200px; height:50px; background-color: blue; color:white;font-weight:bold; margin-left: 30px; border-radius: 5px;" >결제하기</button>
+    <button id="payment-request-button" style="width: 200px; height:50px; 
+    background-color: blue; color:white;font-weight:bold; margin-left: 30px; border-radius: 5px;" >결제하기</button>
    
 
 <script>
@@ -94,8 +98,7 @@ var h_user_mail = getCookie("h_user_mail");
        var customerMobilePhone  = '<%= user_tel %>';
   
        // alert(customerName);
-       
-       
+             
       paymentWidget.renderPaymentMethods("#payment-method", 
       { value: totalPrice},
       { variantKey: "DEFAULT"});

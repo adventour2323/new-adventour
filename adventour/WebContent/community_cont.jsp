@@ -63,25 +63,9 @@ if (session.getAttribute("id") == null) {
 
     <div class="c_date_div" name="c_date_div">
   작성날짜 : 
-  <%
-    // 원래 날짜 문자열
-    String originalDateStr = obj.getC_date();
-    
-    // SimpleDateFormat을 사용하여 날짜 형식을 변환
-    SimpleDateFormat originalDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
-    SimpleDateFormat targetDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    
-    try {
-      Date originalDate = originalDateFormat.parse(originalDateStr);
-      String formattedDateStr = targetDateFormat.format(originalDate);
-  %>
-  <%= formattedDateStr %>
-  <%
-    } catch (Exception e) {
-      e.printStackTrace();
-      // 오류 처리
-  }
-  %>
+
+  <%= obj.getC_date() %>
+
 </div><!--c_date_div-->
     </div><!--c_info_div-->
 
@@ -150,7 +134,8 @@ if (session.getAttribute("id") == null) {
        
     <%
     }else{%>
-    	<img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>">
+     <!--  <img class="c_con_pho1_img" src="c_upload/<%= obj.getC_pho1() %>"> -->
+    	<img class="c_con_pho1_img" src="image/community/<%= obj.getC_pho1() %>">
   <%   }
     %>
     </div>
@@ -162,7 +147,8 @@ if (session.getAttribute("id") == null) {
        
     <%
     }else{%>
-    	<img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>">
+    	<!-- <img class="c_con_pho2_img" src="c_upload/<%= obj.getC_pho2() %>"> -->
+    	 <img class="c_con_pho2_img" src="image/community/<%= obj.getC_pho2() %>">
   <%   }
     %>
     </div>
@@ -174,7 +160,8 @@ if (session.getAttribute("id") == null) {
        
     <%
     }else{%>
-    	<img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>">
+    	<!--  <img class="c_con_pho3_img" src="c_upload/<%= obj.getC_pho3() %>"> -->
+    	<img class="c_con_pho3_img" src="image/community/<%= obj.getC_pho3() %>">
   <%   }
     %>
     </div>
@@ -186,7 +173,8 @@ if (session.getAttribute("id") == null) {
        
     <%
     }else{%>
-    	<img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>">
+    	<!--   <img class="c_con_pho4_img" src="c_upload/<%= obj.getC_pho4() %>"> --> 
+    	<img class="c_con_pho4_img" src="image/community/<%= obj.getC_pho4() %>"> 
   <%   }
     %>
     </div>
@@ -198,7 +186,8 @@ if (session.getAttribute("id") == null) {
        
     <%
     }else{%>
-    	<img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>">
+    	<!-- <img class="c_con_pho5_img" src="c_upload/<%= obj.getC_pho5() %>"> -->
+    	<img class="c_con_pho5_img" src="image/community/<%= obj.getC_pho5() %>">
   <%   }
     %>
     </div>
