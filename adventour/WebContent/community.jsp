@@ -29,15 +29,15 @@ if (session.getAttribute("id") != null) {
 <form name="c_form" action="c_fileupload.jsp"  method="post" enctype="multipart/form-data">
 
   <div class="c_div" name="c_div">
-    <h2> < 여행여정  공유  글  작성 > </h2>
+    <label><h2> < 여행여정  공유  글  작성 > </h2></label>
 
     <div class="c_info_div">
      <div class="c_writer_div" name="c_writer_div">
-       작성자 : <input type="text" class="c_writer" name="c_writer" readonly  value="<%= session.getAttribute("id")%>"/> <!-- 확인용 아이디 로그인 후 자동으로 받아오도록 해야함 -->
+       <label>작성자 : </label><input type="text" class="c_writer" name="c_writer" readonly  value="<%= session.getAttribute("id")%>"/> <!-- 확인용 아이디 로그인 후 자동으로 받아오도록 해야함 -->
      </div><!--c_writer_div-->
 
      <div class="c_date_div" name="c_date_div">
-       작성날짜 : <p id="clock" class="c_date" name="c_date" >c_date</p>
+       <label>작성날짜 : <p id="clock" class="c_date" name="c_date" >c_date</p></label>
      </div><!--c_date_div-->
 
 
@@ -46,7 +46,7 @@ if (session.getAttribute("id") != null) {
 
 
     <div class="c_title_div" name="c_title_div">
-      제목 : <input type="text" class="c_title" name="c_title" placeholder="제목을 입력하세요."/>
+      <label>제목 : </label><input type="text" class="c_title" name="c_title" placeholder="제목을 입력하세요."/>
     </div><!--c_title_div-->
 
     <div class="c_city_div" name="c_city_div">

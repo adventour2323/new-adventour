@@ -425,7 +425,7 @@ li{
 
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .start-travel-date,
 .main-visual .visualSearchBox .visual-res .visual-res-tab li div .end-travel-date {
-    width: 190px;
+    width: 390px;
     height: 40px;
     border-radius: 5px;
     border: none;
@@ -915,6 +915,7 @@ li{
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .main .best-goods .goods-nav li:hover span {
@@ -1038,15 +1039,15 @@ li{
     background-image: url(../image/main_index/contents/barca_hotel2.jpg);
 }
 
-.main .best-goods .goods-view .goods-rentcar .first {
+.main .best-goods .goods-view .goods-tour .first {
     background-image: url(../image/main_index/contents/versailles.jpg);
 }
 
-.main .best-goods .goods-view .goods-rentcar .second {
+.main .best-goods .goods-view .goods-tour .second {
     background-image: url(../image/main_index/contents/beatles_tour.png);
 }
 
-.main .best-goods .goods-view .goods-rentcar .third {
+.main .best-goods .goods-view .goods-tour .third {
     background-image: url(../image/main_index/contents/flamenco.jpg);
 }
 

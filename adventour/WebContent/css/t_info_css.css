@@ -307,6 +307,7 @@ height: 1300px;
     margin-right: 50px;
     text-align: center; /* 가운데 정렬 */
     margin-top: 20px; /* 원하는 상단 여백 설정 */
+    margin-left: 30px;
 }
 
 .tour-rating-star {

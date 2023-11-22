@@ -43,104 +43,64 @@
 
         <section id="visual" class="main-visual">
             <div class="inner">
-                <div class="visualSearchBox" style="margin-top: 100px;">
+               <div class="visualSearchBox" style="margin-top: 100px;">
     <strong>
         <em>어떤 곳으로 떠날까요?</em>
     </strong>
     <div class="visual-res">
         <ul class="visual-sel-tab">
             <li class="on" onclick="showTab('tour')" data-tab="tour">투어</li>
-            <li onclick="showTab('bus')" data-tab="bus">버스</li>
             <li onclick="showTab('hotel')" data-tab="hotel">호텔</li>
+            <li onclick="showTab('bus')" data-tab="bus">버스</li>            
         </ul>
         <!-- 검색 탭 -->
         <ul class="visual-res-tab">
             <!-- 투어탭 -->
             <li id="tourTab" class="res-tab-pack on">
-                <!-- Your existing tour tab content -->
                 <div>
-                    <input type="text" name="" id="" class="whereToGo" placeholder="어디로 떠나세요?">
-                    <div class="where-to-travel">
-                        
+                    <input type="text" id="whereToGoInput" placeholder="어디로 떠나세요?" onclick="toggleDestinationList()">
+  					<div class="where-to-travel" id="destinationList">
                         <div class="where-to-uk">
-                        <ul>
-                            <li>영국</li>
-                            <li>런던</li>
-                            <li>리버풀</li>
-                            <li>에딘버러</li> 
-                        </ul>
+                            <ul>
+                                <li onclick="selectDestination('영국')">영국</li>
+                                <li onclick="selectDestination('런던')">런던</li>
+                                <li onclick="selectDestination('리버풀')">리버풀</li>
+                                <li onclick="selectDestination('에딘버러')">에딘버러</li> 
+                            </ul>
+                        </div>
+                        <div class="where-to-france">
+                            <ul>
+                                <li onclick="selectDestination('프랑스')">프랑스</li>
+                                <li onclick="selectDestination('파리')">파리</li>
+                                <li onclick="selectDestination('마르세유')">마르세유</li>
+                                <li onclick="selectDestination('모나코')">모나코</li>
+                            </ul>
+                        </div>
+                        <div class="where-to-spain">
+                            <ul>
+                                <li onclick="selectDestination('스페인')">스페인</li>
+                                <li onclick="selectDestination('마드리드')">마드리드</li>
+                                <li onclick="selectDestination('바르셀로나')">바르셀로나</li>
+                                <li onclick="selectDestination('세비야')">세비야</li>
+                            </ul>
+                        </div>
+                        <div class="where-to-italy">
+                            <ul>
+                                <li onclick="selectDestination('이탈리아')">이탈리아</li>
+                                <li onclick="selectDestination('로마')">로마</li>
+                                <li onclick="selectDestination('베네치아')">베네치아</li>
+                                <li onclick="selectDestination('밀라노')">밀라노</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="where-to-france">
-                        <ul>
-                            <li>프랑스</li>
-                            <li>파리</li>
-                            <li>마르세유</li>
-                            <li>모나코</li>
-                        </ul>
-                    </div>
-                    <div class="where-to-spain">
-                        <ul>
-                            <li>스페인</li>
-                            <li>마드리드</li>
-                            <li>바르셀로나</li>
-                            <li>세비야</li>
-                        </ul>
-                    </div>
-                    <div class="where-to-italy">
-                        <ul>
-                            <li>이탈리아</li>
-                            <li>로마</li>
-                            <li>베네치아</li>
-                            <li>밀라노</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="depart-start">
-                    
-
-                    <button class="start-travel-date">
-                        <i class="xi-calendar"></i><span>여행시작일 선택</span>
-                    </button>
-                    <div class="startTravelCalendar">
-                        <table class="Calendar">
-                            <thead>
-                                <tr>
-                                    <td style="cursor:pointer;">&#60;
-                                    </td>
-                                    <td colspan="5">
-                                        <span id="calYear"></span>년
-                                        <span id="calMonth"></span>월
-                                    </td>
-                                    <td style="cursor:pointer;">&#62;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>일</td>
-                                    <td>월</td>
-                                    <td>화</td>
-                                    <td>수</td>
-                                    <td>목</td>
-                                    <td>금</td>
-                                    <td>토</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                    <a href="tour_login.jsp"><button class="res-tab-submit">투어 검색</button></a>
+                    <a href="main.tour?tour=main"><button class="res-tab-submit">투어 검색</button></a>
                 </div>
             </li>
             <!-- 호텔 탭 -->
             <li id="hotelTab" class="res-tab-hotel">
-                <!-- Your existing hotel tab content -->
                 <div>
-                    <input type="text" name="" id="hotelsearch" class="whereToHotel" placeholder="어디로 떠나세요?">
+                    <input type="text" name="" id="" class="whereToGo" placeholder="어디로 떠나세요?" onclick="showWhereToTravel()">
                     <div class="where-to-hotel">
-
-                         
                         <div class="where-to-uk">
                             <ul>
                                 <li>영국</li>
@@ -173,12 +133,9 @@
                                 <li>밀라노</li>
                             </ul>
                         </div>
-
                     </div>
-                    <!-- 호텔 숙박 검색 탭 여기까지 // -->
-                    
                     <div class="depart-start">
-                        <button class="start-travel-date">
+                        <button class="start-travel-date" style="margin-right: 10px">
                             <i class="xi-calendar"></i><span>여행시작일 선택</span>
                         </button>
                         <div class="startTravelCalendarStart">
@@ -265,12 +222,9 @@
             </li>
             <!-- 버스 탭 -->
             <li id="busTab" class="res-tab-bus">
-                <!-- Your existing bus tab content -->
                 <div>
                     <input type="text" name="" id="" class="howToGo" placeholder="출발 도시를 선택해주세요">
                     <div class="how-to-go">
-                        
-                        <!--  -->
                         <div class="where-to-uk">
                             <ul>
                                 <li>영국</li>
@@ -303,16 +257,10 @@
                                 <li>밀라노</li>
                             </ul>
                         </div>
-                        <!--  -->
-                        
                     </div>
-                    <!-- 도착 도시 -->
                     <div>
-                        <!-- 수정 필요 -->
                         <input type="text" name="" id="" class="howToGo" placeholder="도착 도시를 선택해주세요" style="margin-top: 10px;">
-                        
                         <div class="how-to-go">
-                            
                             <div class="where-to-uk">
                                 <ul>
                                     <li>영국</li>
@@ -345,14 +293,9 @@
                                     <li>밀라노</li>
                                 </ul>
                             </div>
-
                         </div>
-                        </div>
-
-
-                    <!--  -->
+                    </div>
                     <div class="depart-start">
-                         
                         <button class="start-travel-date">
                             <i class="xi-calendar"></i><span>여행시작일 선택</span>
                         </button>
@@ -393,27 +336,63 @@
 
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var whereToTravel = document.getElementById('destinationList');
+    whereToTravel.classList.add('active');
+});
+
+function toggleDestinationList() {
+    console.log("toggleDestinationList 함수 호출됨");
+    var whereToTravel = document.getElementById('destinationList');
+
+    // 하위 li 요소들을 가져옴
+    var destinationItems = document.querySelectorAll('.where-to-travel li');
+
+    if (whereToTravel.style.display === 'none' || whereToTravel.style.display === '') {
+        whereToTravel.style.display = 'flex';
+
+        // 하위 li 요소들을 보이게 함
+        destinationItems.forEach(function(item) {
+            item.style.display = 'list-item'; // 기본 값인 list-item으로 변경
+        });
+    } else {
+        whereToTravel.style.display = 'none';
+    }
+}
+
+
+
+
+  function selectDestination(destination) {
+    document.getElementById('whereToGoInput').value = destination;
+    toggleDestinationList(); // 선택 후에는 목록을 숨깁니다
+  }
+
+
 function showTab(tabName) {
-    // Hide all tabs
+    var whereToTravel = document.querySelector('.where-to-travel');
+    whereToTravel.style.display = 'none';
+
     document.querySelectorAll('.visual-res-tab li').forEach(function (tab) {
         tab.style.display = 'none';
     });
 
-    // Show the selected tab
     document.getElementById(tabName + 'Tab').style.display = 'block';
 
-    // Remove 'on' class from all tab buttons
     document.querySelectorAll('.visual-sel-tab li').forEach(function (tabButton) {
         tabButton.classList.remove('on');
     });
 
-    // Add 'on' class to the selected tab button
     var selectedTabButton = document.querySelector('.visual-sel-tab li[data-tab="' + tabName + '"]');
     if (selectedTabButton) {
         selectedTabButton.classList.add('on');
     }
 }
+
+
+    
 </script>
+
 
 
                 <div class="visualBanner">
@@ -769,7 +748,6 @@ function showTab(tabName) {
                         <ul class="goods-nav">
                             <li class="on"><span>호텔</span></li>
                             <li class=""><span>투어</span></li>
-                            <li class=""><span>쇼핑몰</span></li>
                         </ul>
                         <ul class="goods-view">
                             <li class="goods-hotel on">
@@ -812,7 +790,7 @@ function showTab(tabName) {
                                     </a>
                                 </div>
                             </li>
-                            <li class="goods-rentcar">
+                            <li class="goods-tour">
                                 <a href="tour.html">
                                     <div class="first">
                                         <div class="badge">
@@ -852,46 +830,7 @@ function showTab(tabName) {
                                     </a>
                                 </div>
                             </li>
-                            <li class="goods-place">
-                                <a href="shop_index.html">
-                                    <div class="first">
-                                        <div class="badge">
-                                            <span>TOP</span>
-                                            <em>1</em>
-                                        </div>
-                                        <p>
-                                            <strong>유럽 4G SIM card</strong>
-                                            <strong>16,990원~</strong>
-                                        </p>
-                                    </div>
-                                </a>
-                                <div class="view-right">
-                                    <a href="shop_index.html">
-                                        <div class="second">
-                                            <div class="badge">
-                                                <span>TOP</span>
-                                                <em>2</em>
-                                            </div>
-                                            <p>
-                                                <strong>뮤지엄 패스</strong>
-                                                <strong>92,000원~</strong>
-                                            </p>
-                                        </div>
-                                    </a>
-                                    <a href="shop_index.html">
-                                        <div class="third">
-                                            <div class="badge">
-                                                <span>TOP</span>
-                                                <em>3</em>
-                                            </div>
-                                            <p>
-                                                <strong>파리 디즈니랜드 입장권</strong>
-                                                <strong>88,500원~</strong>
-                                            </p>
-                                        </div>
-                                    </a> 
-                                </div>
-                            </li>
+                            
                         </ul>
 
                     </div>

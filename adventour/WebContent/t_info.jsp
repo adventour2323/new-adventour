@@ -548,9 +548,7 @@
 	
 			            </div> <!-- hotel-info -->
         			</div> <!--hotel-card  -->
-        		<%
-        	   		}
-        		%>
+        		<% } %>
 	    		</div> <!-- hotel-list  -->
 			</div> <!-- hotel-container -->
 
