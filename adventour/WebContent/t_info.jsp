@@ -52,12 +52,14 @@
 	<div class="content"> <!-- 전체 content -->
 		
 		<div class="div-text">
-			<strong>	
+			<h3>
+			 <strong>	
 				<a href="main.tour?tour=main">투어</a> > 
 				<a href="main.tour?tour=tourlist">투어 리스트</a> > 
 				<a href="t_list_country.jsp?country_eng=<%=g.getCountry_eng()%>&country=<%=g.getCountry() %>"><%=g.getCountry() %></a> > 
 				<a href="t_info.jsp?t_id=<%=g.getT_id()%>"><%=g.getT_name() %></a> 
 			</strong>
+			</h3>
 		</div>
 				
 		<div class="top_area" >
@@ -182,13 +184,13 @@
 						<h1 class="t_name_text"><%=g.getT_name() %></h1>
 					</div>
 					<!--  -->
-							<div class="tour-rating-star" id="tour-rating-star" style="flex;">
+							<div class="tour-rating-star" id="tour-rating-star" style="flex; height: 30px;">
 	        					<% String t_id_avg = g.getT_id();
     	    						ArrayList<t_r_getset> rv1 = id.t7(t_id_avg);  
         							for (t_r_getset tr : rv1) {
 	        					%>
-    	    					<div >평점     
-        							<span> <%= tr.getT_rating() %> </span> 
+    	    					<div style="font-size: 25px;">
+    	    						평점:  <span> <%= tr.getT_rating() %></span>점 
         						</div>
         						<% } %>
     						</div>	
@@ -271,7 +273,8 @@
 				<div class="tour_info_div" >
 					<div style="display: flex;">
 						<img alt="icon" src="./image/tour/travel_guide_icon.png" style="margin-left: auto; margin-right: 10px;" width="50px;">
-						<h3 style="margin: auto auto auto 0;">투어 소개</h3>
+						<!-- <h3 style="margin: auto auto auto 0;">투어 소개</h3> -->
+						<span style="margin: auto auto auto 0; font-size: 30px; font-weight: bold;">투어 소개</span>
 					</div>
 					<div class="tour_info" id="tour_info">						
 						<%= g.getT_info() %>
@@ -378,9 +381,10 @@
 							<label for="rate5">★</label>
 						</div>
 							
-						<div class="text-bold" style="margin-right: 50px;">
+						<!-- <div class="text-bold" style="margin-right: 50px;">
 							별점을 남겨주세요!
-						</div>
+						</div> -->
+						<h2><strong ><div style="margin-right: 50px;">별점을 남겨주세요</div></strong></h2>
 							
 					
 					</fieldset>

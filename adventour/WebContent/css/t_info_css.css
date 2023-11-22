@@ -391,7 +391,7 @@ height: 1300px;
 }
 /*댓글창*/
     .review-form-container {
-        width: 700px;
+        width: 900px;
         margin: 0 auto; /* 가운데 정렬 */
         background: #f8f8f8;
         border: 1px solid #ccc;

@@ -508,7 +508,7 @@ function showTab(tabName) {
                         <h3>지금 놓치면 후회할 ✨추천상품✨ 모음집!!</h3>
                         <ul>
                             <li>
-                                <a href="airport.html">
+                                <a href="main.tour?tour=main">
                                     <div class="discount-pack1">
                                         
                                         <div class="imgcover1"><img src="./image/main_index/md/london_tour1.png" alt="런던 투어"></div>
@@ -519,7 +519,7 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="airport.html">
+                                <a href="main.tour?tour=main">
                                     <div class="discount-pack2">
                                         <div class="imgcover1"><img src="./image/main_index/md/louvre.png" alt="루브르 투어"></div>
                                                 <strong>루브르 박물관 가이드 투어</strong>
@@ -529,7 +529,7 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="package.html">
+                                <a href="main.tour?tour=main">
                                     <div class="discount-pack3">
                                         <div class="imgcover1"><img src="./image/main_index/md/sagrada.jpg" alt="사그라다 파밀리아">
                                         </div>
@@ -541,7 +541,7 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="package.html">
+                                <a href="main.tour?tour=main">
                                     <div class="discount-pack4">
                                         <div class="imgcover1"><img src="./image/main_index/md/rome.png" alt="48시간 제주여행 올-패스">
                                         </div>
