@@ -93,7 +93,7 @@ if (session.getAttribute("id") == null) {
    <!-- 왼쪽 메뉴바-->
 	<div id="content_left">
 	<div id="content_list">
-	<h2 id="content_list_title">마이페이지</h2>
+	<h2 id="content_list_title"><label>마이페이지</label></h2>
 	<ul id="m_menu_ul">
 	<li id="li1"><p><label style="cursor: pointer;">예약내역</label></p></li>
 	<li id="li2"><p><label style="cursor: pointer;">찜</label></p></li>
