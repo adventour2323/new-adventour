@@ -93,6 +93,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                     <a href="main.tour?tour=main"><button class="res-tab-submit">투어 검색</button></a>
                 </div>
             </li>
@@ -766,10 +767,10 @@ function showTab(tabName) {
                     <div class="inner">
                         <h3>BEST 인기상품</h3>
                         <!-- 이미지는 css에 연결해놓았음// best 인기상품 사진 검색하면 나옴  -->
-                        <ul class="goods-nav">
-                            <li class="on"><span>호텔</span></li>
-                            <li class=""><span>투어</span></li>
-                        </ul>
+<ul class="goods-nav">
+    <li class="on" data-category="hotel"><span>호텔</span></li>
+    <li class="" data-category="tour"><span>투어</span></li>
+</ul>
                         <ul class="goods-view">
                             <li class="goods-hotel on">
                                 <a href="hotel.html">
@@ -856,7 +857,42 @@ function showTab(tabName) {
 
                     </div>
                 </div>
+<script >
+document.addEventListener('DOMContentLoaded', function () {
+    // 페이지가 로드되면 실행되는 부분
+    // 초기에 호텔 상품 목록을 보여줍니다.
+    showGoods('hotel');
 
+    // 이벤트 리스너를 설정합니다.
+    document.querySelectorAll('.goods-nav li').forEach(function (item) {
+        item.addEventListener('click', function () {
+            var category = this.getAttribute('data-category');
+            showGoods(category);
+
+            // 현재 클릭한 요소에 'on' 클래스를 추가하고 나머지에서는 제거합니다.
+            document.querySelectorAll('.goods-nav li').forEach(function (item) {
+                item.classList.remove('on');
+            });
+            this.classList.add('on');
+        });
+    });
+});
+
+function showGoods(category) {
+    // 모든 목록을 숨깁니다.
+    document.querySelectorAll('.goods-view > li').forEach(function (item) {
+        item.style.display = 'none';
+    });
+
+    // 선택한 카테고리에 해당하는 목록을 보여줍니다.
+    document.querySelectorAll('.goods-view > li.goods-' + category).forEach(function (item) {
+        item.style.display = 'flex';
+    });
+}
+
+
+
+</script>
                 
 
             </section>
