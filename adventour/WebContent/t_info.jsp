@@ -181,7 +181,7 @@
 		<div class="middle_area">
 			<div class="name_star" style="display: flex; justify-content: center;">
 					<div class="t_name">
-						<h1 class="t_name_text"><%=g.getT_name() %></h1>
+						<h1 class="t_name_text"><label><%=g.getT_name() %></label></h1>
 					</div>
 					<!--  -->
 							<div class="tour-rating-star" id="tour-rating-star" style="flex; height: 30px;">
@@ -190,7 +190,7 @@
         							for (t_r_getset tr : rv1) {
 	        					%>
     	    					<div style="font-size: 25px;">
-    	    						평점:  <span> <%= tr.getT_rating() %></span>점 
+    	    						<label>평점:  </label><span><label> <%= tr.getT_rating() %></label></span><label>점</label> 
         						</div>
         						<% } %>
     						</div>	
@@ -203,7 +203,7 @@
     			
 			<hr>
 				<div style=" display: flex; margin-bottom: 30px; margin-top: 20px;" >
-					<img alt="info_icon" src="./image/tour/t_info_icon.png" style="margin-left: auto; margin-right: 10px;" width="32px;"><h2 style="margin: auto auto auto 0;">여행 정보</h2>
+					<img alt="info_icon" src="./image/tour/t_info_icon.png" style="margin-left: auto; margin-right: 10px;" width="32px;"><h2 style="margin: auto auto auto 0;"><label>여행 정보</label></h2>
 				</div>
 			<!--  -->	
 			
@@ -239,21 +239,21 @@
 
 			<div id="tour_spot" class="tabcontent">
 				<div class="tour_spot_div" >
-					<h3 style="text-align: center;">투어 코스</h3>
+					<h3 style="text-align: center;"><label>투어 코스</label></h3>
 						<div class="tour_spot" style="display: flex;">
 							<%-- <%= g.getT_spot1() %>, <%= g.getT_spot2() %>, <%= g.getT_spot3() %> --%>
 							<div class="spot1_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
 								<div class="spot1_map" id="spot1_map" style="width: 260px; height: 230px; margin-bottom: 15px;">
 									<!-- 지도 -->
 								</div>
-								<%=g.getT_spot1() %>
+								<h3><label><%=g.getT_spot1() %></label></h3>
 							</div> 
 							<% if(g.getT_spot2() != null) { %>	
 								<div class="spot2_map_div" style="text-align: center; margin-right: auto; margin-left: auto;">
 									<div class="spot2_map" id="spot2_map"  style="width: 260px; height: 230px; margin-bottom: 15px;">
 										<!-- 지도 -->									
 									</div>
-									<%=g.getT_spot2() %>
+									<h3><label><%=g.getT_spot2() %></label></h3>
 								</div>
 								
 								<%if(g.getT_spot3() != null) { %>
@@ -261,7 +261,7 @@
 										<div class="spot3_map" id="spot3_map" style="width: 260px; height: 230px; margin-bottom: 15px; ">
 											<!-- 지도 -->
 										</div>
-										<%=g.getT_spot3() %>
+										<h3><label><%=g.getT_spot3() %></label></h3>
 									</div>
 							<% } } %>
 
@@ -272,9 +272,9 @@
 			<div id="tour_info_div" class="tabcontent">
 				<div class="tour_info_div" >
 					<div style="display: flex;">
-						<img alt="icon" src="./image/tour/travel_guide_icon.png" style="margin-left: auto; margin-right: 10px;" width="50px;">
+						<img alt="icon" src="./image/tour/travel_guide_icon.png" style="margin-left: auto; margin-right: 10px;" width="45px;">
 						<!-- <h3 style="margin: auto auto auto 0;">투어 소개</h3> -->
-						<span style="margin: auto auto auto 0; font-size: 30px; font-weight: bold;">투어 소개</span>
+						<span style="margin: auto auto auto 0; font-size: 30px; font-weight: bold;"><label>투어 소개</label></span>
 					</div>
 					<div class="tour_info" id="tour_info">						
 						<%= g.getT_info() %>
@@ -282,6 +282,7 @@
 						<!--  -->
 						
 					<div class="guide_introduce_div" style="margin-top: 20px;">
+					<hr><br>
 						<h3 style="text-align: center; margin-bottom: 10px;"><label>담당 가이드</label></h3>
 						<div class="guide_introduce" >
 							<%
@@ -292,7 +293,7 @@
             				<div class="table-container" >
 								<div class="guide-table">
         							<div class="guide-row">
-            							<div class="image-cell">
+            							<div class="image-cell" title="클릭하면 이동합니다.">
             								<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><img alt="가이드 사진" src="<%=gg.getImg()%>" ></a>
             							</div>
             							<div style="display: block; ">
@@ -302,7 +303,7 @@
 														<label><strong>이름</strong></label>
 													</div>
 													<div class="data-cell">
-														<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><%=gg.getName()%></a>
+														<a href="g_info.jsp?g_id=<%=gg.getG_id()%>"><strong style="cursor: pointer;"><%=gg.getName()%></strong></a>
 													</div>
 												</div>
 												<div class="guide_contact" style="display: flex;">
@@ -325,7 +326,7 @@
 															if (!tn.getT_name().equals(g.getT_name())) {
 																if (hasOtherProducts) {
 													%>
-																<span style="margin-top: 15px;">, </span>
+																<span style="padding-top: 15px; background-color: bisque;"><label>,</label> </span>
 																<% } %>
 													<div class="data-cell">
 														<div class="t_name2" title="<%=tn.getT_name()%>">
@@ -340,7 +341,7 @@
 														if (!hasOtherProducts) {
 													%>
 													<div class="data-cell">
-														추천 투어가 없습니다.
+														<label>추천 투어가 없습니다.</label>
 													</div>
 													<% } %>
 												</div> <!-- guide_item -->
@@ -384,7 +385,7 @@
 						<!-- <div class="text-bold" style="margin-right: 50px;">
 							별점을 남겨주세요!
 						</div> -->
-						<h2><strong ><div style="margin-right: 50px;">별점을 남겨주세요</div></strong></h2>
+						<h2><strong ><div style="margin-left: 20px;">별점을 남겨주세요</div></strong></h2>
 							
 					
 					</fieldset>

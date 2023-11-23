@@ -436,7 +436,7 @@
 				
 				<!-- 영국 호텔  -->
 				<div class="recommend_hotel" id="recommend_hotel_uk">
-					<div style="display: flex;"><img alt="ukflag" src="./image/tour/ukflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">영국</h3></div>
+					<div style="display: flex; justify-content: center;" title="영국"><a href="main.hotel?uname=uk"><img alt="ukflag" src="./image/tour/ukflag.png" height="40px;" style="cursor: pointer; "></a></div>
     				<div class="recommend_img">
         				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedUkHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedUkHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
     				</div>
@@ -457,17 +457,17 @@
 
 				<!-- 프랑스 호텔  -->
 				<div class="recommend_hotel" id="recommend_hotel_france">
-					<div style="display: flex;"><img alt="frflag" src="./image/tour/frflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">프랑스</h3></div>
+					<div style="display: flex; justify-content: center;"  title="프랑스"><a href="main.hotel?uname=hmain"><img alt="frflag" src="./image/tour/frflag.png" height="40px;" style="cursor: pointer;  "></a></div>
     				<div class="recommend_img">
         				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedFranceHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedFranceHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
     				</div>
     				<div style="text-align: center; margin-top: 15px;">
         				<div class="hotel_info" >
             				<div>
-                				<%= selectedFranceHotel.getCountry_ko() %>, <%= selectedFranceHotel.getCity_ko() %>
+                				<label><%= selectedFranceHotel.getCountry_ko() %>, <%= selectedFranceHotel.getCity_ko() %></label>
             				</div>
             				<div>
-                				★ <%= selectedFranceHotel.getH_grade() %> 성급
+                				<label>★ <%= selectedFranceHotel.getH_grade() %> 성급</label>
             				</div>
         				</div>
         				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
@@ -478,17 +478,17 @@
 
 				<!-- 스페인 호텔  -->
 				<div class="recommend_hotel" id="recommend_hotel_spain">
-					<div style="display: flex;"><img alt="esflag" src="./image/tour/esflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">스페인</h3></div>
+					<div style="display: flex; justify-content: center;" title="스페인"><a href="main.hotel?uname=spain"><img alt="esflag" src="./image/tour/esflag.png" height="40px;"  style="cursor: pointer;  "></a></div>
     				<div class="recommend_img">
         				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedSpainHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedSpainHotel.getH_pho() %>"  alt="추천 호텔 1"></a>
     				</div>
     				<div style="text-align: center; margin-top: 15px;">
         				<div class="hotel_info" >
             				<div>
-                				<%= selectedSpainHotel.getCountry_ko() %>, <%= selectedSpainHotel.getCity_ko() %>
+                				<label><%= selectedSpainHotel.getCountry_ko() %>, <%= selectedSpainHotel.getCity_ko() %></label>
 				            </div>
             				<div>
-                				★ <%= selectedSpainHotel.getH_grade() %> 성급
+                				<label>★ <%= selectedSpainHotel.getH_grade() %> 성급</label>
             				</div>
         				</div>
         				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">
@@ -499,17 +499,17 @@
 				
 				<!-- 이탈리아 호텔  -->
 				<div class="recommend_hotel" id="recommend_hotel_italy">
-					<div style="display: flex;"><img alt="itaflag" src="./image/tour/itaflag.png" height="30px;" style="margin-left: auto; "><h3 style="margin: auto auto auto 0;">이탈리아</h3></div>
+					<div style="display: flex; justify-content: center;" title="이탈리아"><a href="main.hotel?uname=italy"><img alt="itaflag" src="./image/tour/itaflag.png" height="40px;"  style="cursor: pointer;  "></a></div>
 				    <div class="recommend_img">
         				<a href="information.hotel?uname=hotelinfom&hotelname=<%= selectedItalyHotel.getH_name_eng() %>"><img src="./image/hotel/h_image/<%= selectedItalyHotel.getH_pho() %>" alt="추천 호텔 1"></a>
     				</div>
     				<div style="text-align: center; margin-top: 15px;">
         				<div class="hotel_info" >
             				<div>
-                				<%= selectedItalyHotel.getCountry_ko() %>, <%= selectedItalyHotel.getCity_ko() %>
+                				<label><%= selectedItalyHotel.getCountry_ko() %>, <%= selectedItalyHotel.getCity_ko() %></label>
             				</div>
             				<div>
-                				★ <%= selectedItalyHotel.getH_grade() %> 성급
+                				<label>★ <%= selectedItalyHotel.getH_grade() %> 성급</label>
             				</div>
         				</div>
         				<div style="height: 40px; margin-top: auto; margin-bottom: auto;">

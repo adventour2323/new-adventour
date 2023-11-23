@@ -446,7 +446,10 @@ table {
         .recommend_hotel{
         width: 255px;
         /* padding: 10px; */
-        margin-right: 10px;
+        /* margin-right: 10px; */
+    	margin-right: 5px;
+    	padding: 0 7px;
+    	background-color: #B2EBF4;        
          
         }
 /*         .recommend_hotel img{
