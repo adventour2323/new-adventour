@@ -125,7 +125,7 @@ if (session.getAttribute("id") == null) {
                         H_getset aaa = h_m_list.get(i);
          %>                    
         <div id="content_hotel">
-         <div id="content_hotel_title"><h2> 호텔 예약 내역 </h2></div>
+         <div id="content_hotel_title"><h2> <label>호텔 예약 내역</label> </h2></div>
          <div id="content_hotel_info">
          <div id="content_hotel_img">
          <img id="hotel_img" src="image/hotel/h_image/<%= aaa.getH_pho() %>">
@@ -158,7 +158,7 @@ if (session.getAttribute("id") == null) {
 %>
 	
 	<div id="content_tour">
-	<div id="content_tour_title"><h2> 투어 예약 내역 </h2></div>
+	<div id="content_tour_title"><h2> <label>투어 예약 내역</label> </h2></div>
 	<div id="content_tour_info">
 	<div id="content_tour_img">
     <img id="tour_img" src="./image/tour/marseille_tour.jpg"> 
@@ -187,13 +187,13 @@ if (session.getAttribute("id") == null) {
      
      
  <div id="like_div1">
-    <div id="like_title"><h2>찜 목록</h2></div>
+    <div id="like_title"><h2><label>찜 목록</label></h2></div>
 	<div id="like_tap_div">	
 	<div id="like_tour"><h3><label style="cursor: pointer;">투어</label></h3></div>
 	<div id="like_hotel"><h3><label style="cursor: pointer;">호텔</label></h3></div>
 	</div><!-- like_tap_div -->
 	<div id="like_div">
-       <p id="like-title">상품 명</p>
+       <p id="like-title"><label>상품 명</label></p>
       
       
        <ul id="like_ul">
