@@ -13,7 +13,7 @@ $(document).ready(function() {
 		  
 		  const map = new google.maps.Map(document.getElementById("map"), {
 		    center: { lat: parseFloat(lat_info), lng: parseFloat(lng_info) }, 
-		    zoom: 10, 
+		    zoom: 15, 
 		  });
 		  
 		  new google.maps.Marker({

@@ -218,11 +218,11 @@ var h_user_mail = getCookie("h_user_mail");
 %>
 <script> 
 // 결제 성공시 데이터 베이스 저장 후 파이페이지로 이동
- var m_id = $("#sess_id").val();
+ var m_id = $("#sess_id").val();rnsl
  
  alert("m_id 확인용");
  alert("m_id"+m_id);
 
- var url = 'Mypage.mypage?uname=mypage&&customer='+'m_id'
+ var url = 'Mypage.mypage?uname=mypage&&customer='+m_id
  window.location.href = url;
 </script>
