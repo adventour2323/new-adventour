@@ -184,7 +184,7 @@ session.getAttribute("id");
 	        slides.eq(currentIndex).show();
 
 	        // 순번 업데이트
-	        slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+	        //slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
 	    });
 
 	    // 이전 슬라이드로 이동

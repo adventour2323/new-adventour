@@ -76,6 +76,7 @@ $('.hotel_info_pho6_text').hide(); // 실행시에는 글씨가 보이지 않음
 $('.h_info_title_pho1').on('mouseenter click', function() { //이미지 위에 마우스가 올라가면 
   $('.h_info_title_pho1').css('filter','brightness(0.7)'); //이미지의 색이 어두워지고
   $('.hotel_info_pho1_text').show(); //글씨가 보이고
+  $('this').css('cusor','pointer'); 
 });
 
 $('.h_info_title_pho1').on('mouseleave', function() { //이미지위에 마우스가 없으면
@@ -143,9 +144,6 @@ $('.h_info_title_pho5').on('mouseenter click', function() { //이미지 위에 �
 	
 	
 });
-
-
-
 
 
 </script>
@@ -876,6 +874,13 @@ var country_eng = $(".h_info_touradC").val();
 	
 
 	// 검색창 버튼 
+		// 검색창 버튼
+	$(".h_info_search_btn").click(function(e) {
+
+	  
+
+
+
 
 
       // 입력된 검색어 가져오기
@@ -883,10 +888,8 @@ var country_eng = $(".h_info_touradC").val();
       var indate = $("#sch_indate").val();
       var outdate = $("#sch_outdate").val();
       var peo= $(".sch_peo").val();
-      var night= $(".night_time").val();
-      
+      var night= $(".night_time").val(); 
 
-   
       
        $.ajax({
         type: "GET",
@@ -903,7 +906,7 @@ var country_eng = $(".h_info_touradC").val();
         }
 
       });
-        
+	});
  	// 이전 페이지로 리디렉션하는 JavaScript 코드
  	function redirectToPreviousPage() {
  	    window.history.go(-1);

@@ -180,7 +180,9 @@ public class C_dbsave {
     }
     public ArrayList<C_getset> h_info_search(String h_name_eng, int h_roompeo, String h_indate, String h_outdate) throws Exception {
         ArrayList<C_getset> arr = new ArrayList<C_getset>();
-        System.out.println("h_roomtype: " +h_name_eng);
+        System.out.println("h_name_eng: " +h_name_eng);
+        System.out.println("h_name_eng: " +h_indate);
+        System.out.println("h_name_eng: " +h_outdate);
         try {
             connec();
             if (conn == null)
@@ -191,8 +193,8 @@ public class C_dbsave {
             	    "AND h_room.h_roompeo >= " + h_roompeo + " " +
             	    "AND h_room.h_roomnum NOT IN " +
             	    "(SELECT h_reserve.h_roomnum FROM h_reserve " +
-            	    "WHERE (h_reserve.h_indate <= '" + h_outdate + "' " +
-            	    "AND h_reserve.h_outdate >= '" + h_indate + "')) " +
+            	    "WHERE (STR_TO_DATE(h_reserve.h_indate, '%Y-%m-%d') <= STR_TO_DATE('" + h_outdate + "', '%Y-%m-%d') " +
+            	    "AND STR_TO_DATE(h_reserve.h_outdate, '%Y-%m-%d') >= STR_TO_DATE('" + h_indate + "', '%Y-%m-%d'))) " +
             	    "AND h_room.h_roomtype = 'double' LIMIT 1 )" +
             	    "UNION " +
             	    "(SELECT h_room.* FROM h_room " +
@@ -200,18 +202,11 @@ public class C_dbsave {
             	    "AND h_room.h_roompeo >= " + h_roompeo + " " +
             	    "AND h_room.h_roomnum NOT IN " +
             	    "(SELECT h_reserve.h_roomnum FROM h_reserve " +
-            	    "WHERE (h_reserve.h_indate <= '" + h_outdate + "' " +
-            	    "AND h_reserve.h_outdate >= '" + h_indate + "')) " +
+            	    "WHERE (STR_TO_DATE(h_reserve.h_indate, '%Y-%m-%d') <= STR_TO_DATE('" + h_outdate + "', '%Y-%m-%d') " +
+            	    "AND STR_TO_DATE(h_reserve.h_outdate, '%Y-%m-%d') >= STR_TO_DATE('" + h_indate + "', '%Y-%m-%d'))) " +
             	    "AND h_room.h_roomtype = 'suite' LIMIT 1);");
             
-            
-            
-            
-            
-            
-            
-            
-             
+                  
             while (rs.next()) {
                 C_getset obj = new C_getset();
                 obj.setH_roomtype(rs.getString("h_roomtype"));
