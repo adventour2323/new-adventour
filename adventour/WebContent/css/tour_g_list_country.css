@@ -51,8 +51,10 @@ body {
 		margin-right: auto;
 		margin-left: auto;		
 		/*  */
+	padding: 5px 40px;		
     width: 100px;
     height: 63px;		
+    
 		}
 
 
@@ -196,7 +198,7 @@ table {
     text-decoration-line: none;
   }
   a:link {
-    color : black;
+   /*  color : black; */
   }
   a:visited {
     color : black;

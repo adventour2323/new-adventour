@@ -62,41 +62,41 @@
             <%
 				for(g_getset info : a1) {
 			%>
-            <table style="width: 700px; " >
+            <table style="width: 700px; margin-bottom: 10px;" >
                 <tbody>
                 <tr align="center">
-                  <td rowspan="11" style="width: 200px"><img src="<%=info.getImg()%>" style="height: 200px; width: 200px; "></td>
-                  <td style="background-color: #f2f2f2;">이름</td>
-                  <td><%= info.getName()%></td>
+                  <td rowspan="11" style="width: 200px"><img src="<%=info.getImg()%>" style="height: 200px; width: 200px; margin-right: 10px; "></td>
+                  <th style="background-color: #f2f2f2; border-right: solid 1px;">이름</th>
+                  <td style="background-color: bisque;"><strong><label><%= info.getName()%></label></strong></td>
                 </tr>
 
                 <tr align="center">
-					<th style="background-color: #f2f2f2;">성별</th>
-					<td><%=info.getGender()%></td>
+					<th style="background-color: #f2f2f2; border-right: solid 1px;">성별</th>
+					<td style="background-color: bisque;"><label><%=info.getGender()%></label></td>
 				</tr>
 				
 				<tr align="center">
-					<th style="background-color: #f2f2f2;">출생년도</th>
-					<td><%=info.getYear()%>년</td>
+					<th style="background-color: #f2f2f2; border-right: solid 1px;">출생년도</th>
+					<td style="background-color: bisque;"><label><%=info.getYear()%>년</label></td>
 				</tr>
 						
           	
                 <tr align="center">
-                  <td style="background-color: #f2f2f2;">가이드 지역</td>
-                  <td><%= info.getCountry()%>, <%=info.getCity() %></td>
+                  <th style="background-color: #f2f2f2; border-right: solid 1px;">가이드 지역</th>
+                  <td style="background-color: bisque;"><a href="g_list_country.jsp?g_country_eng=<%= info.getG_country_eng()%>"><strong><%= info.getCountry()%>, <%=info.getCity() %></strong></a></td>
                 </tr>
                 <tr align="center">
-                    <td style="background-color: #f2f2f2;">테마</td>
-                    <td><%= info.getTheme() %></td>
+                    <th style="background-color: #f2f2f2; border-right: solid 1px;">테마</th>
+                    <td style="background-color: bisque;"><label><%= info.getTheme() %></label></td>
                   </tr>
                 
                 <tr align="center">
-                    <td style="background-color: #f2f2f2;">연락처</td>
-                    <td><%= info.getPnum()%></td>
+                    <th style="background-color: #f2f2f2; border-right: solid 1px;">연락처</th>
+                    <td style="background-color: bisque;"><%= info.getPnum()%></td>
                 </tr>
                 <tr align="center">
-                    <td style="background-color: #f2f2f2;">이메일</td>
-                    <td><%= info.getEmail()%></td>
+                    <th style="background-color: #f2f2f2; border-right: solid 1px;">이메일</th>
+                    <td style="background-color: bisque;"><%= info.getEmail()%></td>
                 </tr>
                 <!--  -->
                 
@@ -107,6 +107,12 @@
               <% } %>
         </div>
         
+        <div class="guide_ad" style="position: fixed; top: 200px; right: 200px; height: 300px; width: 200px; background-color: green;">
+        	광고 광고
+        </div>
+        <div class="etc_ad" style="left:90px; top: 230px; height: 280px; width: 300px; background-color: aqua; position: absolute;">
+            가장 평점이 좋은 상품
+        </div>
         <hr>
         
         <div style="height: 400px;  width: 100%; margin-top: 20px;"  >
@@ -115,7 +121,7 @@
 			<%
 				for(g_getset info : a1) {
 			%>
-       	 		<h4 style="text-align: center;">자기소개</h4><br>
+       	 		<h2 style="text-align: center;">자기소개</h2><br>
        	 		<div style="height: 100px;  margin-bottom: 30px; margin-left: auto; margin-right: auto; ">
         	    	<div >
     	        		<%=info.getG_introduce()%>
@@ -129,7 +135,7 @@
 	     	<div  style="margin-top: 20px;">
         		
         		<div style="margin-right: auto; margin-right: auto; text-align: center;">
-        			<h4 style="text-align: center; ">모집 중인 투어 </h4><br>
+        			<h2 style="text-align: center; ">모집 중인 투어 </h2><br>
         		</div>
         		
         		<div class="tour-container" style="height: 200px; ">
@@ -147,7 +153,7 @@
     	            		<div class="tour-info">
                 
         	        			<div class="tour_title_div" >
-            	        			<h3 class="tour-title">
+            	        			<h3 class="tour-title"  title="<%=tn.getT_name()%>">
                 	    	    		<a href="t_info.jsp?t_id=<%=tn.getT_id() %>"><%= tn.getT_name() %></a>
                     				</h3>
                     			</div>
@@ -155,21 +161,21 @@
                     
                     			<div class="tour_location_div">
 	                    			<p class="tour-location">
-    	                    			<%= tn.getCountry() %>, <%= tn.getCity() %>
+    	                    			<label><%= tn.getCountry() %>, <%= tn.getCity() %></label>
         	            			</p>
             	        		</div>
                 	    		<div class="tour_price_div">
                     				<p class="tour-price">
-                        				₩ <%= tn.getT_price() %>~
+                        				<label>₩ <%= tn.getT_price() %></label>
                     				</p>
                     			</div>
                     
 	                		</div>
             			</div> <!--tour-item  -->
             			<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
-            			<div>
+<!--             			<div>
             			
-            			</div>
+            			</div> -->
 						<!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  --><!--  -->
 						<% } %>	
 

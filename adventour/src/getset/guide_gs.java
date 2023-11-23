@@ -18,9 +18,17 @@ public class guide_gs {
 	String g_agree1;
 	String g_agree2;
 	String g_introduce;
+	String g_theme_code;
 	
 	
 	
+	
+	public String getG_theme_code() {
+		return g_theme_code;
+	}
+	public void setG_theme_code(String g_theme_code) {
+		this.g_theme_code = g_theme_code;
+	}
 	public String getG_id() {
 		return g_id;
 	}

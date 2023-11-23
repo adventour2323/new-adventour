@@ -189,8 +189,8 @@ if (session.getAttribute("id") == null) {
  <div id="like_div1">
     <div id="like_title"><h2>찜 목록</h2></div>
 	<div id="like_tap_div">	
-	<div id="like_tour"><h3>투어</h3></div>
-	<div id="like_hotel"><h3>호텔</h3></div>
+	<div id="like_tour"><h3><label style="cursor: pointer;">투어</label></h3></div>
+	<div id="like_hotel"><h3><label style="cursor: pointer;">호텔</label></h3></div>
 	</div><!-- like_tap_div -->
 	<div id="like_div">
        <p id="like-title">상품 명</p>

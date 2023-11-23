@@ -1,7 +1,13 @@
 @charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+}
 
 .content{
 height: 1100px;
+width: 1000px;
+margin: auto;
 }
    /* tab 색상 유지 */
      .movet {
@@ -28,12 +34,15 @@ border: none;
             /* width: calc(33.33% - 20px); */
             box-sizing: border-box;
             margin: 0 10px 20px;
-            width: 380px;
+            /* width: 380px; */
+            width: 280px;
         }
 
         .tour-item img {
-            width: 380px;
-            height: 250px;
+/*             width: 380px;
+            height: 250px; */
+            width: 280px;
+            height: 180px
         }
 
         .tour-info {

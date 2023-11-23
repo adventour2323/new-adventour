@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-
+import adventour.t_getset;
 import adventour.g_getset;
 import getset.H_getset;
 
@@ -242,6 +242,8 @@ public class g_list_print {
 			table.setT_img1(rs.getString("t_img1"));
 			table.setT_img2(rs.getString("t_img2"));
 			table.setT_img3(rs.getString("t_img3"));
+			table.setT_theme_code(rs.getString("t_theme_code"));
+			table.setG_id(rs.getString("g_id"));
 			arr.add(table);
 		}
 	} finally {

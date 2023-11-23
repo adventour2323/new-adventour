@@ -38,9 +38,16 @@ public class t_getset {
 	String g_email;
 //
 	String m_id;
+	String t_theme_code;
 	
 	
-   /*member id*/	
+   public String getT_theme_code() {
+		return t_theme_code;
+	}
+	public void setT_theme_code(String t_theme_code) {
+		this.t_theme_code = t_theme_code;
+	}
+	/*member id*/	
 	public String getM_id() {
 		return m_id;
 	}

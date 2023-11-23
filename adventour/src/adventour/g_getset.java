@@ -16,7 +16,7 @@ public class g_getset {
 	String g_introduce;
 	
 	String g_country_eng;
-	
+	String g_theme_code;
 	
 	   
 
@@ -25,6 +25,12 @@ public class g_getset {
 	 */
 	public String getG_country_eng() {
 		return g_country_eng;
+	}
+	public String getG_theme_code() {
+		return g_theme_code;
+	}
+	public void setG_theme_code(String g_theme_code) {
+		this.g_theme_code = g_theme_code;
 	}
 	/**
 	 * @param g_country_eng the g_country_eng to set

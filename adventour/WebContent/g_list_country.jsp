@@ -140,25 +140,25 @@ border: none;
 
                 				<td>
                     				<div style="margin: 0px 10px; width: 100%;">
-                        				<table width="95%" cellpadding="0" cellspacing="0" border="0" class="guide_css" style="border-top: 1px solid #0066b3; padding-left: 10px; padding-right: 10px;">
+                        				<table width="95%" cellpadding="0" cellspacing="0" border="0" class="guide_css" style="border-top: 1px solid #0066b3; border-bottom: 1px solid #0066b3; padding-left: 10px; padding-right: 10px;">
                                                 <tbody>
                                                     <tr>
                                                         <th width="100" style="background-color: #f2f2f2;"><label>이름</label></th>
-                                                        <td>
-                                                            <div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><label><%=g.getName()%></label></a></div>
+                                                        <td style="background-color: bisque;">
+                                                            <div><a href="g_info.jsp?g_id=<%=g.getG_id()%>"><label><strong style="cursor: pointer;"><%=g.getName()%></strong></label></a></div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <th style="background-color: #f2f2f2;"><label>국가</label></th>
-                                                        <td><label><%=g.getCountry()%></label></td>
+                                                        <td style="background-color: bisque;"><label><%=g.getCountry()%></label></td>
                                                     </tr>
                                                     <tr>
                                                         <th style="background-color: #f2f2f2;"><label>도시</label></th>
-                                                        <td><label><%=g.getCity()%></label></td>
+                                                        <td style="background-color: bisque;"><label><%=g.getCity()%></label></td>
                                                     </tr>
                                                     <tr>
                                                         <th style="background-color: #f2f2f2;"><label>테마</label></th>
-                                                        <td><label><%=g.getTheme()%></label></td>
+                                                        <td style="background-color: bisque;"><label><%=g.getTheme()%></label></td>
                                                     </tr>
                                                 </tbody>
                         				</table>
@@ -191,6 +191,7 @@ border: none;
         	var h2 = countryElements[i].querySelector('h2'); // h2 요소를 찾습니다.
 	        if (h2.innerText.trim() === country) { // 텍스트 내용 일치 여부 확인
     	        countryElements[i].style.backgroundColor = 'rgba(0, 0, 0, 0.1)'; // 예시로 배경색을 변경
+    	        countryElements[i].style.padding = '5px 40px'; // 예시로 배경색을 변경
         	}
     	}
 	});

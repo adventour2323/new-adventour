@@ -325,10 +325,10 @@
 															if (!tn.getT_name().equals(g.getT_name())) {
 																if (hasOtherProducts) {
 													%>
-																<span>, </span>
+																<span style="margin-top: 15px;">, </span>
 																<% } %>
 													<div class="data-cell">
-														<div class="t_name2">
+														<div class="t_name2" title="<%=tn.getT_name()%>">
 															<a href="t_info.jsp?t_id=<%=tn.getT_id()%>">
 																<%=tn.getT_name()%>
 															</a>
