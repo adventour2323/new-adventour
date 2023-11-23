@@ -142,8 +142,11 @@
         						ArrayList<t_r_getset> rv = id.t7(t_id);  
         						for (t_r_getset tr : rv) {
     						%>
-    							<div class="star-rating">
-       								<strong>평점</strong><span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+    							<div style="text-align: center; margin-right: auto; margin-left: auto;">
+    								<strong>평점</strong>
+    								<div class="star-rating">
+       									<span class="star" data-rating="<%= tr.getT_rating() %>"></span>
+    								</div>
     							</div>
     						<% } %>
 						</div> <!-- tour-rating-star -->

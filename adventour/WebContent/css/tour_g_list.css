@@ -190,7 +190,7 @@ table {
     text-decoration-line: none;
   }
   a:link {
-    color : black;
+   /*  color : black; */
   }
   a:visited {
     color : black;

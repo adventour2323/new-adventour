@@ -116,3 +116,7 @@ border: none;
         .tour-img:hover:before {
             opacity: 1;
         }
+        
+  a:hover {
+    color : red;
+  }        
