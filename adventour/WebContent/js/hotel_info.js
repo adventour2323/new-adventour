@@ -190,7 +190,7 @@ $(document).ready(function() {
     	        // 현재 슬라이드 숨기기
     	        slides.eq(currentIndex).hide();
 
-    	        // 다음 슬라이드로 이동 (순환 처리)
+    	         // 다음 슬라이드로 이동 (순환 처리)
     	        currentIndex = (currentIndex + 1) % slides.length;
 
     	        // 다음 슬라이드 표시

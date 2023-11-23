@@ -883,7 +883,7 @@ var country_eng = $(".h_info_touradC").val();
 
 
 
-      // 입력된 검색어 가져오기
+      // 입력된 검색어 가져오기 
       var name_eng = $(".h_info_search_nameeng").val();
       var indate = $("#sch_indate").val();
       var outdate = $("#sch_outdate").val();

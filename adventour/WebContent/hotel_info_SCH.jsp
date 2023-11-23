@@ -48,7 +48,7 @@ $(document).ready(function() {
 <body>
 
 
-<%
+<% 
 session.getAttribute("id");
 %>
 
