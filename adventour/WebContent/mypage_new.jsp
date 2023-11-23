@@ -95,12 +95,12 @@ if (session.getAttribute("id") == null) {
 	<div id="content_list">
 	<h2 id="content_list_title">마이페이지</h2>
 	<ul id="m_menu_ul">
-	<li id="li1"><p>예약내역</p></li>
-	<li id="li2"><p>찜</p></li>
-	<li id="li3"><p>1 : 1 문의</p></li>
-	<li id="li4"><p>자주 찾는 질문</p></li>
-	<li id="li5"><p>나의 리뷰</p></li>
-	<li id="li6"><p>나의 게시글</p></li>	
+	<li id="li1"><p><label style="cursor: pointer;">예약내역</label></p></li>
+	<li id="li2"><p><label style="cursor: pointer;">찜</label></p></li>
+	<li id="li3"><p><label style="cursor: pointer;">1 : 1 문의</label></p></li>
+	<li id="li4"><p><label style="cursor: pointer;">자주 찾는 질문</label></p></li>
+	<li id="li5"><p><label style="cursor: pointer;">나의 리뷰</label></p></li>
+	<li id="li6"><p><label style="cursor: pointer;">나의 게시글</label></p></li>	
 	</ul>
 	</div>  <!-- content_list -->
 	</div>	<!-- content_left -->
