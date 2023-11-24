@@ -293,7 +293,7 @@ if (list != null) {
 </div>
 
           <div class="h_restar">
-          <h3 class="h_tirestar">리뷰별점</h3> <!--  리뷰 작성 후 숫자로 보여줄것  -->
+          <h3 class="h_tirestar">4.0 / 5</h3> <!--  리뷰 작성 후 숫자로 보여줄것  -->
           </div>
 
           <div class="h_addr">
