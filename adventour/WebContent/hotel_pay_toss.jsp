@@ -96,6 +96,7 @@ var h_user_mail = getCookie("h_user_mail");
        var user_mail = '<%= user_mail %>';
        var user_mail = '<%= user_mail %>';
        var customerMobilePhone  = '<%= user_tel %>';
+       var m_id  = '<%=  session.getAttribute("id") %>';
   
        // alert(customerName);
              
@@ -136,13 +137,16 @@ var h_user_mail = getCookie("h_user_mail");
         /** 결제 요청s
          * @docs https://docs.tosspayments.com/reference/widget-sdk#requestpayment%EA%B2%B0%EC%A0%9C-%EC%A0%95%EB%B3%B4
          */
-        paymentWidget.requestPayment({
+
+        
+     
+         paymentWidget.requestPayment({
           orderId: generateRandomString(),
           orderName: orderName,
           customerName:customerName,
           ccustomerMobilePhone :customerMobilePhone ,
           customerEmail: user_mail,
-          successUrl: currentURL + "h_pay_success.jsp",
+          successUrl: currentURL + " Mypage.mypage?uname=mypage&&customer="+m_id,
           failUrl:  currentURL + "h_pay_fail.jsp",
         });
       });
