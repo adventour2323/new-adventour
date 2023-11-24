@@ -26,26 +26,23 @@ border:solid 1px;
   margin-left: 450px;
 }
 
+    .lili_0 {
+         background-color: rgba(224, 224, 224, 0.5); /* 첫 번째 아이템 배경색: 빨간색 */
+    }
 
+
+        .lili_2 {
+         background-color: rgba(224, 224, 224, 0.5); /* 두 번째 아이템 배경색: 초록색 */
+    }
+
+
+        .lili_4 {
+         background-color: rgba(224, 224, 224, 0.5); /* 첫 번째 아이템 배경색: 빨간색 */
+    }
     </style>
     
 </head>
-<script>
 
-$(document).ready(function() {
-
-    $('lili_1').on('mouseenter click', function() {
-        $(this).css('background-color', '#D9E5FF');
-    });
-
-	$('lili_1').on('mouseleave', function() {
-		  $(this).css('background-color', '');
-		});
-	
-  
-});
-
-</script>
 <body>
     <%
         // request attribute에서 폼 데이터 및 파일명을 가져옵니다.

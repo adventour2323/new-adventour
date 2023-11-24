@@ -474,7 +474,7 @@ border: solid 1px;
   
   width: 300px;
   height: 250px;
-  margin-top: -210px;
+  margin-top: -230px;
   margin-left: 300px; 
 }
 #h_room_options2 h4{
@@ -1173,8 +1173,10 @@ padding-top: 30px;
 }
 #slideNumber{
   width: 270px;
-  height: 20px;
+  height: 0px;
   text-align:center;
+  padding-top:10px;
+ 
 
 }
 /* 이미지 슬라이더 내부 요소 */

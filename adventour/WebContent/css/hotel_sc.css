@@ -118,6 +118,7 @@ body {
 	border-width: 1.5px;
 	margin-left: 160px;
 	margin-top: 70px;
+	 background-color: rgba(224, 224, 224, 0.5);
 }
 
 .sch1 {
@@ -214,6 +215,7 @@ body {
 	height: 250px;
 	margin-top: 65px;
 	margin-left: 50px;
+	background-color: rgba(224, 224, 224, 0.5);
 	/* color: rgb(20, 3, 78);*/
 }
 
@@ -223,6 +225,7 @@ body {
 	height: 250px;
 	margin-top: 50px;
 	margin-left: 50px;
+	background-color: rgba(224, 224, 224, 0.5);
 	/* color: rgb(20, 3, 78);*/
 }
 /*메인 사진*/

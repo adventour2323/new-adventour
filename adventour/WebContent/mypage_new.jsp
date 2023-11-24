@@ -193,8 +193,6 @@ if (session.getAttribute("id") == null) {
 	<div id="like_hotel"><h3><label style="cursor: pointer;">호텔</label></h3></div>
 	</div><!-- like_tap_div -->
 	<div id="like_div">
-       <p id="like-title"><label>상품 명</label></p>
-      
       
        <ul id="like_ul">
        </ul><!-- like_ul -->
