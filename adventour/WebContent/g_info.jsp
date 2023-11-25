@@ -129,7 +129,7 @@
         </div>
     </div>
     </a>
-    <div style="margin-top: 10px">같은 테마의 이런 여행! 어떠신가요?!? </div>
+    <div style="margin-top: 10px">이런 테마의 여행! 어떠신가요?!? </div>
 </div>           
               <% } %>
         </div>
