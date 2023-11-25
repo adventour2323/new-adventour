@@ -20,7 +20,7 @@ public class H_Select_Top10_conn {
 	
 	public List<H_getset> h_top1010(String top10_info) {
 		
-		System.out.println("2번확인"+top10_info); //매개변수 넘어오는지 확인 ok
+		System.out.println("2번확인22"+top10_info); //매개변수 넘어오는지 확인 ok
 		 
 	    SqlSession ret_dbconn = dbconnect.openSession();
 	  //리턴타입 확인 후 객체화- openSession = 데이터베이스 명령문을 그대로 집어넣는게 아닌 클래스를 이용하기위해

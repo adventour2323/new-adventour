@@ -69,6 +69,9 @@ $(document).ready(function() {
 //	    }
 //  	
 
+
+		
+		
  // 숫자에 콤마 찍기
 	var elements = document.querySelectorAll(".h_room_price");
 

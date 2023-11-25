@@ -25,7 +25,7 @@
   </head>
 <script >
 $(document).ready(function() {
-	$("#roompay_btn").on('click', function(e) { 
+	$(".roompay_btn").on('click', function(e) { 
  	    e.preventDefault(); // 기본 submit 동작을 막음
 
  	    var id_sess = '<%=(String)session.getAttribute("id")%>';
@@ -112,7 +112,7 @@ session.getAttribute("id");
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
    <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
-   <p id="slideNumber">1/7</p>
+   <p id="slideNumber"> 1/7 </p>
       </div><!-- img_div -->
 
 
@@ -170,7 +170,7 @@ session.getAttribute("id");
 
 	    // 초기에 첫 번째 슬라이드 이미지와 순번 표시
 	    slides.eq(currentIndex).show();
-	    slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
+	  //  slideNumber.text(`${currentIndex + 1} / ${slides.length}`);
 
 	    // 다음 슬라이드로 이동
 	    nextButton.click(function() {

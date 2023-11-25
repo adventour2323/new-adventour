@@ -46,6 +46,39 @@ var night_time = getCookie("night_time");
 //alert("h_outdateY: " + h_outdateY); // 확인 ok
 //alert("night_time: " +night_time); // 확인 ok
 
+		// 검색창 버튼
+		$(document).ready(function() {
+	      // 입력된 검색어 가져오기 
+	      var name_eng = $(".h_info_search_nameeng").val();
+	      var indate = $("#sch_indate").val();
+	      var outdate = $("#sch_outdate").val();
+	      var peo= $(".sch_peo").val();
+	      var night= $(".night_time").val(); 
+
+	      
+	       $.ajax({
+	        type: "GET",
+	        url: "hotel_info_SCH.jsp", // 검색 결과를 처리할 JSP 페이지 URL
+	        data: { h_name_eng:name_eng,
+	        	    h_indate: indate,
+	        	    h_outdate: outdate,
+	        	    h_roompeo:peo,
+	        	    night_time:night
+	        	    }, // 검색어를 서버로 전송
+	        success: function(data) {
+	       
+	          $("#info_SCH").html(data);
+	        }
+
+	      });
+		}); 
+	 	// 이전 페이지로 리디렉션하는 JavaScript 코드
+	 	function redirectToPreviousPage() {
+	 	    window.history.go(-1);
+	 	}
+
+
+
 $(document).ready(function() {
 	$("#roompay_btn").on('click', function(e) { 
  	    e.preventDefault(); // 기본 submit 동작을 막음
@@ -431,7 +464,7 @@ if (top_list != null) {
     <pre class="db_h_hotel_info" id="db_h_hotel_info">
        <%= aaa.getH_hotel_info() %>
       
-      <!--     Atolon Park Hotel의 위치는 시티투어를 하기 편리한 관광명소에 있습니다. <br>
+      <!-- Atolon Park Hotel의 위치는 시티투어를 하기 편리한 관광명소에 있습니다. <br>
       Atolon Park Hotel 예약은 Bernolsheim 여행을 더욱 편안하게 만들어 드립니다.<br>
           스트라스부르역 및 엔츠하임국제공항로부터 21km, 36km 정도 떨어져 있습니다.<br>
           바쁜 일정 후에는 호텔에서 휴식을 취하거나, 주변 명소들을 둘러보실 수 있습니다.<br> 
@@ -449,7 +482,7 @@ if (top_list != null) {
 
 
  <div class="yes_reserv_room">
- <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1>
+ <h1 class="yes_reserv_room_title" >객실 및 가격 비교하기</h1> 
  
  <div class="h_info_search">
 <%
@@ -608,7 +641,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <img id="h_room_phoi6" class="slide" src="image/hotel/h_image/<%=  bbb.getH_roompho6() %>">
         </div>
    <div class="nextButton">   <button id="nextButton"> &gt; </button></div>  
-  <p id="slideNumber"> 1/7</p>
+  <p id="slideNumber"> 1/7 </p>
       </div><!-- img_div -->
       
         <div id="h_room_options1" >
@@ -630,7 +663,7 @@ for (int ii = 0; i < top_list.size(); i++) {
 
 
     </div><!-- h_room_options1 -->
-      </div><!-- hotel_room_info -->
+</div><!-- hotel_room_info -->
      
 <%  
 }
@@ -876,12 +909,6 @@ var country_eng = $(".h_info_touradC").val();
 	// 검색창 버튼 
 		// 검색창 버튼
 	$(".h_info_search_btn").click(function(e) {
-
-	  
-
-
-
-
 
       // 입력된 검색어 가져오기 
       var name_eng = $(".h_info_search_nameeng").val();

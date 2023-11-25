@@ -46,6 +46,7 @@ if (session.getAttribute("id") != null) {
 </header>
 
 <body>
+<div id="content_all">
 <form name="reserv_to_pay" action="hotel_pay_toss.jsp" method="post">
 <%  
 String checkin = request.getParameter("checkin");
@@ -67,7 +68,7 @@ if ( infoshc_list != null) {
 	    H_getset reserv =  infoshc_list.get(i); 
 %>
 
-<div id="content_all">
+
 	<div id="content_left"></div>	
 
     <!--  결제 정보 불러오기  -->
