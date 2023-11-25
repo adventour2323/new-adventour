@@ -104,15 +104,38 @@
 				 
                 <!--  -->
               </tbody></table>
+<%
+    ArrayList<t_getset> t_ad = id.g4(info.getTheme(), info.getG_id());
+
+    // 무작위로 하나의 항목을 선택하기 위해 Random 객체 생성
+    java.util.Random random = new java.util.Random();
+    int randomIndex = random.nextInt(t_ad.size()); // 무작위 인덱스 생성
+
+    t_getset ad = t_ad.get(randomIndex); // 선택된 항목 가져오기
+
+    // t_img1, t_img2, t_img3, t_img4 중에서 무작위로 하나 선택
+    String[] imgArray = {ad.getT_img1(), ad.getT_img2(), ad.getT_img3(), ad.getT_img4()};
+    int randomImgIndex = random.nextInt(imgArray.length); // 무작위 인덱스 생성
+
+    // 선택된 이미지 출력
+    String selectedImg = imgArray[randomImgIndex];
+%>
+<a href="t_info.jsp?t_id=<%=ad.getT_id()%>">
+<div class="guide_ad" style="position: fixed; top: 200px; right: 180px; height: 250px; width: 250px; cursor: pointer; border-radius: 10%; background-color: rgb(59 7 7 / 7%);" title="누르면 이동합니다.">
+    <div style="position: relative;">
+        <img alt="ad_img" src="<%=selectedImg%>" width="250px" height="200px" style=" border-top-right-radius: 10%; border-top-left-radius: 10%; ">
+        <div style="position: absolute; bottom: 2%; left: 0; width: 100%; text-align: center; color: white; background: rgba(0, 0, 0, 0.5);">
+            <%=ad.getT_name()%>
+        </div>
+    </div>
+    </a>
+    <div style="margin-top: 10px">같은 테마의 이런 여행! 어떠신가요?!? </div>
+</div>           
               <% } %>
         </div>
         
-        <div class="guide_ad" style="position: fixed; top: 200px; right: 200px; height: 300px; width: 200px; background-color: green;">
-        	광고 광고
-        </div>
-        <div class="etc_ad" style="left:90px; top: 230px; height: 280px; width: 300px; background-color: aqua; position: absolute;">
-            가장 평점이 좋은 상품
-        </div>
+
+
         <hr>
         
         <div style="height: 400px;  width: 100%; margin-top: 20px;"  >

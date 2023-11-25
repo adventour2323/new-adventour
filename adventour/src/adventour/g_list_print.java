@@ -129,6 +129,33 @@ public class g_list_print {
 					}
 		return arr2;
 }
+	
+	public ArrayList<t_getset> g4(String theme ,String g_id) throws Exception {
+
+		ArrayList<t_getset> arr2 = new ArrayList<t_getset>();
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT * FROM tour WHERE t_theme = '"+theme+"' and g_id !='"+g_id+"';");
+
+		while(rs.next()) {
+			t_getset table = new t_getset();
+			
+
+			table.setT_name(rs.getString("t_name"));
+			table.setT_img1(rs.getString("t_img1"));
+			table.setT_img2(rs.getString("t_img2"));
+			table.setT_img3(rs.getString("t_img3"));
+			table.setT_img4(rs.getString("t_img4"));
+			table.setT_price(rs.getString("t_price"));
+			table.setT_id(rs.getString("t_id"));
+			arr2.add(table);
+						}
+			} finally {
+				discon();
+					}
+		return arr2;
+}	
 	// ↓↓ 확인l
 	
 /* public ArrayList<g_getset> g3(String g_country) throws Exception { */ 
