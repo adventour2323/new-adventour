@@ -76,6 +76,12 @@
     padding-left: 20px;
 
 }
+#m_menu_ul li p {
+padding-top:20px;
+
+    padding-left: 0px;
+
+}
 #li1:hover,#li2:hover,#li3:hover,
 #li4:hover,#li5:hover,#li6:hover{
     border-bottom: solid 1px rgb(117, 165, 236) ;
@@ -144,21 +150,21 @@
     border-bottom: 1px solid;
 }
 #like_ul{
-
+ 
 	width: 900px;
 	min-height: 100px;
 	max-height: 600px;
-	margin-top: 30px;
+
 	transition: min-height 0.3s, max-height 0.3s;
 }
 #like_ul li{
 
-    margin-top: 10px;
 	border-bottom: 1px solid;
 	width: 850px;
-	height: 70px;
+	height: 90px;
 	padding-left: 50px;
-	padding-bottom: 20px;
+	padding-top: 10px;
+
 }
 #li_eng{	
 	width: 650px;
@@ -405,4 +411,3 @@ width: 240px;
 footer {
      margin-top: 100px;
 }  
-

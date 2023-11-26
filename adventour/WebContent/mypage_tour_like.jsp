@@ -6,6 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+  
     <title></title>
 
     <style>
@@ -62,7 +63,7 @@ border:solid 1px;
         ArrayList<adventour.t_getset> currentPageList = new ArrayList<>(m_like_db1.subList(startIdx, endIdx));
     %>
 
-    <ul>
+   
         <%
             if (!currentPageList.isEmpty()) {
             	 for (int i = 0; i < currentPageList.size(); i++) {
@@ -83,7 +84,7 @@ border:solid 1px;
         <%
             }
         %>
-    </ul>
+  
 
     <!-- Pagination links -->
     <div class="pagination">
