@@ -104,9 +104,12 @@ if(session.getAttribute("id") == null) {
         <h1 style="text-align: center;">결제 정보 입력</h1>
 
 <% 
+	request.setCharacterEncoding("UTF-8");   
     String totalPeople = request.getParameter("total_people");
     String tourDate = request.getParameter("trip-start");
     int totalPrice = Integer.parseInt(request.getParameter("total_price"));
+    String name = request.getParameter("tour_name");	
+	String mem_id	= request.getParameter("mem_id");
 
     // 숫자 포맷: 1,000,000 형식으로 변경
     java.text.NumberFormat nf = java.text.NumberFormat.getInstance();
@@ -130,6 +133,15 @@ if(session.getAttribute("id") == null) {
             <td>인원:</td>
             <td><%= totalPeople %> 명</td>
         </tr>
+        <tr>
+        	<td>name: </td>
+        	<td><%=name	 %></td>
+        </tr>
+        <tr>
+        	<td>id: </td>
+        	<td><%=mem_id	 %> 님</td>
+        </tr>
+                
     </table>
 </div>
 

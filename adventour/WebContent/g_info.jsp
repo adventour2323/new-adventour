@@ -121,7 +121,7 @@
     String selectedImg = imgArray[randomImgIndex];
 %>
 <a href="t_info.jsp?t_id=<%=ad.getT_id()%>">
-<div class="guide_ad" style="position: fixed; top: 200px; right: 180px; height: 250px; width: 250px; cursor: pointer; border-radius: 10%; background-color: rgb(59 7 7 / 7%);" title="누르면 이동합니다.">
+<div class="guide_ad" style="position: fixed; top: 280px; right: 150px; height: 230px; width: 250px; cursor: pointer; border-radius: 10%; background-color: rgb(59 7 7 / 7%);" title="누르면 이동합니다.">
     <div style="position: relative;">
         <img alt="ad_img" src="<%=selectedImg%>" width="250px" height="200px" style=" border-top-right-radius: 10%; border-top-left-radius: 10%; ">
         <div style="position: absolute; bottom: 2%; left: 0; width: 100%; text-align: center; color: white; background: rgba(0, 0, 0, 0.5);">
@@ -129,7 +129,7 @@
         </div>
     </div>
     </a>
-    <div style="margin-top: 10px">이런 테마의 여행! 어떠신가요?!? </div>
+    <div>이런 테마의 여행! 어떠신가요?!? </div>
 </div>           
               <% } %>
         </div>

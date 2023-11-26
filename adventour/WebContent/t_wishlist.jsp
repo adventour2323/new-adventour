@@ -21,7 +21,7 @@
 		request.setCharacterEncoding("UTF-8");   
 		String t_id = request.getParameter("t_id");
 		String t_name = request.getParameter("t_name");
-		String t_price = request.getParameter("t_price");	
+		String t_price = request.getParameter("t_price");
 	%>
 	<div>
 	t_id = <%=t_id %><br>

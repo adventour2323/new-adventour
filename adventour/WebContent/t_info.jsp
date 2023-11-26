@@ -120,7 +120,8 @@
 			<div class="option_div" >
 				<label><h5>옵션 선택</h5></label>
 					<hr>
-				<form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return Form();">
+				<!-- <form id="purchaseForm" action="t_payment.jsp" method="post" onsubmit="return Form();"> -->
+				<form id="purchaseForm" action="tour_pay.jsp" method="post" onsubmit="return Form();">
 					<div class="date_select" style="display: flex; align-items: center;">
     					<label style="margin-right: 10px;"><h5 style="margin: 0;">날짜</h5></label>
     					<div style="display: flex; align-items: center;">
@@ -157,7 +158,9 @@
     					<label style="margin-right: 10px;"><strong id="totalPrice" style="color: red;"><%= g.getT_price() %></strong><strong> 원</strong></label>
     					 <input type="hidden" id="total_price" name="total_price" value="<%= g.getT_price() %>">
 					</div>
-				
+					<input type="hidden" id="tour_id" name="tour_id" value="<%= g.getT_id() %>">
+					<input type="hidden" id="tour_name" name="tour_name" value="<%= g.getT_name() %>">
+					<input type="hidden" id="mem_id" name="mem_id" value=" <%= session.getAttribute("id") %> ">
 					<div class="buttons">
     					<input type="submit" value="구매하기" class="buy_btn">
 					</div>

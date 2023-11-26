@@ -40,8 +40,17 @@ public class t_getset {
 	String m_id;
 	String t_theme_code;
 	
+//
+	String g_pnum;
+//
 	
-   public String getT_theme_code() {
+   public String getG_pnum() {
+		return g_pnum;
+	}
+	public void setG_pnum(String g_pnum) {
+		this.g_pnum = g_pnum;
+	}
+public String getT_theme_code() {
 		return t_theme_code;
 	}
 	public void setT_theme_code(String t_theme_code) {

@@ -532,7 +532,75 @@ public class g_list_print {
 		}
 	
 //
+	public ArrayList<t_getset> t9(String t_id) throws Exception {
 
+		ArrayList<t_getset> arr = new ArrayList<t_getset>();
+
+		try{
+			con();
+		
+		ResultSet rs = stmt.executeQuery("SELECT "
+				+ "    t.t_id, "
+				+ "    t.t_name, "
+				+ "    t.g_id, "
+				+ "    t.country, "
+				+ "    t.country_eng, "
+				+ "    t.city, "
+				+ "    t.depart_time, "
+				+ "    t.meeting_spot, "
+				+ "    t.meeting_x, "
+				+ "    t.meeting_y, "
+				+ "    t.t_price, "
+				+ "    t.t_theme, "
+				+ "    t.t_headcount, "
+				+ "    t.t_img1, "
+				+ "    t.t_img2, "
+				+ "    t.t_img3, "
+				+ "    t.t_img4, "
+				+ "    g.g_name, "
+				+ "    g.g_img, "
+				+ "    g.g_email, "
+				+ "    g.g_pnum "
+				+ "FROM "
+				+ "    adventour.tour AS t "
+				+ "JOIN "
+				+ "    adventour.guide AS g ON t.g_id = g.g_id "
+				+ "WHERE "
+				+ "    t.t_id = '"+t_id+"';");
+
+		while(rs.next()) {
+			t_getset table = new t_getset();
+			table.setT_id(rs.getString("t_id"));
+			table.setT_name(rs.getString("t_name"));
+			table.setCountry(rs.getString("country"));
+			table.setCountry_eng(rs.getString("country_eng"));
+			table.setCity(rs.getString("city"));
+			table.setD_time(rs.getString("depart_time"));
+			table.setM_spot(rs.getString("meeting_spot"));
+			table.setM_x(rs.getString("meeting_x"));
+			table.setM_y(rs.getString("meeting_y"));
+			table.setT_price(rs.getString("t_price"));
+			table.setT_img1(rs.getString("t_img1"));
+			table.setT_img2(rs.getString("t_img2"));
+			table.setT_img3(rs.getString("t_img3"));
+			table.setT_img4(rs.getString("t_img4"));			
+			table.setG_id(rs.getString("g_id"));
+			table.setG_name(rs.getString("g_name"));
+			table.setG_img(rs.getString("g_img"));
+			table.setG_email(rs.getString("g_email"));
+			table.setG_pnum(rs.getString("g_pnum"));
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+		
+	
+
+
+//	
 	
 //	호텔 ↓↓
 	public ArrayList<H_getset> h1() throws Exception {
