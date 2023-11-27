@@ -583,7 +583,7 @@
         // 마커를 추가할 위치의 위도와 경도
         var markerLatLng = { lat: <%=g.getM_x() %>, lng:<%=g.getM_y() %>  };
 
-        // 마커 생성
+        // 마커 생성 
         var marker = new google.maps.Marker({
             position: markerLatLng,
             map: map,
