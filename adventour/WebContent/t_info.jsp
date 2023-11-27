@@ -585,7 +585,7 @@
 
         // 마커 생성 
         var marker = new google.maps.Marker({
-            position: markerLatLng,
+            position: markerLatLng, 
             map: map,
             title: '집합 장소'
         });
