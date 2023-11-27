@@ -571,7 +571,7 @@
 		</footer> --%>
 		
 		<!-- google map -->
-<script>
+<script> 
     function initMap() {
         var mapOptions = {
             center: { lat: <%=g.getM_x() %>, lng: <%=g.getM_y() %> },
