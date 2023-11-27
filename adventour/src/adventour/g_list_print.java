@@ -156,6 +156,79 @@ public class g_list_print {
 					}
 		return arr2;
 }	
+	
+	//
+	
+	public ArrayList<g_r_getset> g5(String g_id) throws Exception {
+
+		ArrayList<g_r_getset> arr = new ArrayList<g_r_getset>();
+
+		try{
+			con();
+		
+			ResultSet rs = stmt.executeQuery(
+				    "SELECT "
+				    + "  g_review_id, " +
+				    "  g_review, " +
+				    "  g_rating, " +
+				    "  g_id, " +
+				    "  m_id, " +
+				    "  DATE_FORMAT(g_review_date, '%Y-%m-%d %H:%i') AS g_review_date "
+				    + "FROM guide_rating "
+				    + "WHERE g_id = '" + g_id + "' ORDER BY g_review_date DESC;");
+
+
+		while(rs.next()) {
+			g_r_getset table = new g_r_getset();
+			table.setG_review_id(rs.getString("g_review_id"));
+			table.setG_review(rs.getString("g_review"));
+			table.setG_rating(rs.getInt("g_rating"));
+			table.setG_id(rs.getString("g_id"));
+			table.setM_id(rs.getString("m_id"));
+			table.setG_review_date(rs.getString("g_review_date"));
+
+			
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+	//
+	
+	public ArrayList<g_r_getset> g6(String g_id) throws Exception {
+
+		ArrayList<g_r_getset> arr = new ArrayList<g_r_getset>();
+
+		try{
+			con();
+		
+			ResultSet rs = stmt.executeQuery(
+				    "SELECT "
+				    + "  g_id, "
+				    + "  AVG(g_rating) as g_rating "
+				    + "FROM guide_rating "
+				    + "WHERE g_id = '" + g_id + "';");
+
+
+		while(rs.next()) {
+			g_r_getset table = new g_r_getset();
+			
+			table.setG_id(rs.getString("g_id"));
+			table.setG_rating(rs.getInt("g_rating"));			
+						
+			arr.add(table);
+		}
+	} finally {
+		discon();
+		}
+		return arr;
+		}
+	
+	//
+	
 	// ↓↓ 확인l
 	
 /* public ArrayList<g_getset> g3(String g_country) throws Exception { */ 

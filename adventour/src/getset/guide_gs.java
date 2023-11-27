@@ -20,9 +20,20 @@ public class guide_gs {
 	String g_introduce;
 	String g_theme_code;
 	
+	double avg_rating;
 	
 	
 	
+	
+	
+	
+	
+	public double getAvg_rating() {
+		return avg_rating;
+	}
+	public void setAvg_rating(double avg_rating) {
+		this.avg_rating = avg_rating;
+	}
 	public String getG_theme_code() {
 		return g_theme_code;
 	}

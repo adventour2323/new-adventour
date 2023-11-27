@@ -191,9 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </jsp:useBean>
     </div>
 
-    <footer>
+    <%-- <footer>
         <jsp:include page="footer.html"></jsp:include>
-    </footer>
+    </footer> --%>
     
     <!-- 별점 -->
     <script>

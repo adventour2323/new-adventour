@@ -73,11 +73,11 @@
 </head>
 <script>
 
-function getCookie(name) {
+/* function getCookie(name) {
     var value = "; " + document.cookie;
     var parts = value.split("; " + name + "=");
     if (parts.length === 2) return parts.pop().split(";").shift();
-}
+} */
 
 /* // 쿠키에서 값을 가져옵니다.
 var  h_roomnum = getCookie("h_roomnum");
@@ -90,14 +90,14 @@ var h_user_name = getCookie("h_user_name");
 var h_user_pnum = getCookie("h_user_pnum");
 var h_user_mail = getCookie("h_user_mail"); */
 //쿠키에서 값을 가져옵니다. (투어)
-var t_id = getCookie("t_id");
+/* var t_id = getCookie("t_id");
 var m_id = getCookie("m_id");
 var t_r_date = getCookie("t_r_date");
 var t_total_price = getCookie("t_total_price");
 var t_total_headcount = getCookie("t_total_headcount");
 var t_user_name = getCookie("t_user_name");
 var t_user_mail = getCookie("t_user_mail");
-
+ */
 
 //alert("3번"+ h_m_id);
 

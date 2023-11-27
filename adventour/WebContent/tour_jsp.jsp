@@ -401,7 +401,7 @@
     			</div>
     		</div>
     <div class="hotel-container">
-        <div class="hotel-div">
+        <div class="hotel-div" style="margin-bottom: 20px;">
        <%
         ArrayList<H_getset> a3 = id.h1();
         ArrayList<H_getset> allHotels = new ArrayList<>();
@@ -530,9 +530,9 @@
 	</jsp:useBean>
 		</div>  <!--content-->
 
-		<footer>
+<!-- 		<footer>
 			<div id="footer"></div>
-		</footer>
+		</footer> -->
 
 	
 </body>
