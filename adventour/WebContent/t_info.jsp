@@ -592,7 +592,7 @@
     }
 
     initMap(); // initMap 함수 호출
-</script>
+</script> 
 
 <script>
   // Google 지도를 생성하고 spot1_map에 표시하는 코드
