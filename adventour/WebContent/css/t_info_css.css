@@ -547,3 +547,15 @@ height: 1300px;
   a:hover {
     color : red;
   }		
+  
+  /* 노란 별 스타일 */
+.yellow-star {
+    color: gold; /* 또는 다른 원하는 노란색 */
+    font-size: 20px
+}
+
+/* 회색 별 스타일 */
+.gray-star {
+    color: gray; /* 또는 다른 원하는 회색 */
+    font-size: 20px;
+    }

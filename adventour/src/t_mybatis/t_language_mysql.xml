@@ -5,27 +5,28 @@
 <mapper namespace="db_mapper">
 
 	<select id="guide_list" resultType="getset.guide_gs">
-		select *from guide;
-<!-- SELECT 
-	g.g_id
+		<!-- select *from guide; -->
+SELECT 
+    g.g_id,
     g.g_name,  
     g.g_country, 
     g.g_country_eng,
     g.g_img,
     AVG(COALESCE(t_avg.avg_rating, 0)) AS avg_rating
 FROM
-    (SELECT 
-        t.g_id, AVG(COALESCE(tr.t_rating, 0)) AS avg_rating
-    FROM
-        tour_rating tr
-    JOIN tour t ON tr.t_id = t.t_id
-    GROUP BY t.g_id , tr.t_id) t_avg
+    (
+        SELECT 
+            t.g_id, 
+            COALESCE(AVG(tr.t_rating), 0) AS avg_rating
+        FROM
+            tour_rating tr
+        JOIN tour t ON tr.t_id = t.t_id
+        GROUP BY t.g_id
+    ) t_avg
 JOIN
     guide g ON t_avg.g_id = g.g_id
 GROUP BY
-    g.g_id, g.g_name, g.g_country, g.g_country_eng, g.g_img; -->
-
-
+    g.g_id, g.g_name, g.g_country, g.g_country_eng, g.g_img;
 
 		
 

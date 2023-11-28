@@ -452,13 +452,13 @@
             %>
                 <!-- 기존의 테이블 행 등 -->
                 <tr>
-						<td style="text-align: center;"><%= count - i %></td> <!-- 업데이트된 부분 -->
-						<td style="text-align: center;"><%= tr.getM_id() %></td>
-						<td><%= tr.getT_review() %></td>
-						<td style="text-align: center;"><%= sdf1.format(reviewDate) %></td>
-						<td style="text-align: center;"> 
+						<td style="text-align: center; width:50px;"><%= count - i %></td> <!-- 업데이트된 부분 -->
+						<td style="text-align: center; width: 150px;"><%= tr.getM_id() %></td>
+						<td style="max-width: 474px; word-wrap: break-word;"><%= tr.getT_review() %></td>
+						<td style="text-align: center; width: 145px;"><%= sdf1.format(reviewDate) %></td>
+						<td style="text-align: center; width: 110px;"> 
 							<div class="star-rating">
-								<%
+<%-- 								<%
 									int ratingStr = tr.getT_rating();
 										try {
 											int rating = ratingStr;
@@ -470,7 +470,21 @@
 												catch (NumberFormatException e) {
                         						// 숫자로 파싱할 수 없는 경우에 대한 예외 처리
 													}
-										%>
+										%> --%>
+<% 
+                int rating = tr.getT_rating();
+                for (int j = 1; j <= 5; j++) {
+                    if (j <= rating) {
+            %>
+                       <label> <span class="yellow-star">&#9733;</span></label>
+            <%
+                    } else {
+            %>
+                       <label> <span class="gray-star">&#9733;</span></label>
+            <%
+                    }
+                }
+            %>										
 							</div> <!-- star-rating -->
 						</td>
 					</tr>
@@ -538,7 +552,7 @@
                             		int rating = Integer.parseInt(ratingStr);
                             		for (int j = 0; j < rating; j++) {
                     		%>
-                            	<i class="fas fa-star" style="color: #FFBB00;"></i>
+                            	<i class="fas fa-star" style="color: #ff9b00;"></i>
                             	<%
 	                            }} catch (NumberFormatException e) {
     	                        // 숫자로 파싱할 수 없는 경우에 대한 예외 처리

@@ -71,41 +71,58 @@
 
 					<section id="guide_uk">
 						<!--  -->
-						<%
-							for (int i = 0; i < a1.size(); i++) {
-																guide_gs g = a1.get(i);
-																	if (g.getG_country().equals("영국") == true) {
-						%>
-						<div class="container" style="margin-right: 50px; float: left;">
+<%
+    int ukrank = 1; // 등수 초기화
+    for (int i = 0; i < a1.size(); i++) {
+        guide_gs g = a1.get(i);
+        if (g.getG_country().equals("영국") == true) {
+%>
+            <div class="container" style="margin-right: 50px; float: left;">
+                <table style="width: 100px;">
+                    <thead>
+                        <tr>
+                            <th style="cursor: pointer;">
+                                <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <figure class="guide-figure" data-index="<%= i %>">
+                                        <img alt="img" src="<%=g.getG_img()%>" width="200px" height="200px">
+                                        <% if (ukrank == 1) { %>
+                                            <img src="./image/tour/1st.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (ukrank == 2) { %>
+                                            <img src="./image/tour/2nd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (ukrank == 3) { %>
+                                            <img src="./image/tour/3rd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } %>		
+                                        <figcaption>자세히 보기</figcaption>
+                                    </figure>
+                                </a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-top: 10px;">
+                                <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <label style="cursor: pointer;"><%=g.getG_name()%></label>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<%
+            ukrank++; // 등수 증가
+        }
+    }
+%>
 
-							<table style="width: 100px;">
-								<thead>
-									<tr>
-										<th style="cursor: pointer;">
-										<a href="g_info.jsp?g_id=<%=g.getG_id()%>">
-												<figure>
-													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
-													<figcaption>자세히보기</figcaption>
-												</figure>
-										</a>
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<%
-							}}
-						%>
+
+
 						<!--  -->
 					</section>
-
+    
 					<section id="guide_fr">
 						<%
+						int frrank = 1; // 등수 초기화
 							for (int i = 0; i < a1.size(); i++) {
 																guide_gs g = a1.get(i);
 																	if (g.getG_country().equals("프랑스") == true) {
@@ -118,28 +135,41 @@
 										<th style="cursor: pointer;"><a
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
-													<%-- <% out.println("<img src='" + g.getG_img() + "' width='200px' alt='img'>"); %> --%>
 													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
-													<figcaption>자세히보기</figcaption>
+                                        <% if (frrank == 1) { %>
+                                            <img src="./image/tour/1st.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (frrank == 2) { %>
+                                            <img src="./image/tour/2nd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (frrank == 3) { %>
+                                            <img src="./image/tour/3rd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } %>															
+													<figcaption>자세히 보기</figcaption>
 												</figure>
 										</a></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
+                            <td style="padding-top: 10px;">
+                                <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <label style="cursor: pointer;"><%=g.getG_name()%></label>
+                                </a>
+                            </td>
 									</tr>
 								</tbody>
 							</table>
 
 						</div>
 						<%
-							}}
-						%>
+            frrank++; // 등수 증가
+        }
+    }
+%>
 					</section>
 
 					<section id="guide_es">
 						<%
+						int esrank = 1; // 등수 초기화
 							for (int i = 0; i < a1.size(); i++) {
 																guide_gs g = a1.get(i);
 																	if (g.getG_country().equals("스페인") == true) {
@@ -153,14 +183,25 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
-													<figcaption>자세히보기</figcaption>
+                                        <% if (esrank == 1) { %>
+                                            <img src="./image/tour/1st.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (esrank == 2) { %>
+                                            <img src="./image/tour/2nd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (esrank == 3) { %>
+                                            <img src="./image/tour/3rd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } %>	                  												
+													<figcaption>자세히 보기</figcaption>
 												</figure>
 										</a></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
+                            <td style="padding-top: 10px;">
+                                <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <label style="cursor: pointer;"><%=g.getG_name()%></label>
+                                </a>
+                            </td>
 									</tr>
 								</tbody>
 							</table>
@@ -168,12 +209,15 @@
 						</div>
 
 						<%
-							}}
-						%>
+            esrank++; // 등수 증가
+        }
+    }
+%>
 					</section>
 
 					<section id="guide_ita">
 						<%
+						int itarank = 1; // 등수 초기화
 							for (int i = 0; i < a1.size(); i++) {
 																guide_gs g = a1.get(i);
 																	if (g.getG_country().equals("이탈리아") == true) {
@@ -187,14 +231,25 @@
 											href="g_info.jsp?g_id=<%=g.getG_id()%>">
 												<figure>
 													<img alt="img" src=" <%=g.getG_img()%>" width="200px" height="200px">
-													<figcaption>자세히보기</figcaption>
+                                        <% if (itarank == 1) { %>
+                                            <img src="./image/tour/1st.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (itarank == 2) { %>
+                                            <img src="./image/tour/2nd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } else if (itarank == 3) { %>
+                                            <img src="./image/tour/3rd.png" alt="메달" style="position: absolute; bottom: 5px; right: 0px; width: 96px; height: 96px;">
+                                        <% } %>	   												
+													<figcaption>자세히 보기</figcaption>
 												</figure>
 										</a></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td style="padding-top: 20px;"><%=g.getG_name()%></td>
+                            <td style="padding-top: 10px;">
+                                <a href="g_info.jsp?g_id=<%=g.getG_id()%>">
+                                    <label style="cursor: pointer;"><%=g.getG_name()%></label>
+                                </a>
+                            </td>
 									</tr>
 								</tbody>
 							</table>
@@ -202,8 +257,10 @@
 						</div>
 
 						<%
-							}}
-						%>
+            itarank++; // 등수 증가
+        }
+    }
+%>
 					</section>
 
 				</div>
@@ -375,8 +432,26 @@
 								<div class="rating_num">
 									<strong>평점</strong>
 									<div class="star-rating">
-    									<div class="star-rating" style="color: rgba(250, 208, 0, 0.99);">
-       										<span class="star" data-rating="<%=rating.getAvg_rating() %>"></span>
+
+    									<div class="star-rating">
+    										<span>
+    											<label> 
+													<% 
+														int rating1 = rating.getAvg_rating();
+														for (int j = 1; j <= 5; j++) {
+															if (j <= rating1) {
+													%>
+														<span class="yellow-star">&#9733;</span>
+													<%
+														} else {
+													%>
+														<span class="gray-star">&#9733;</span>
+													<%
+														} } 
+													%>
+												</label>
+    										</span>
+    										
     									</div>										
 									</div>
 								</div>

@@ -561,29 +561,11 @@ public class g_list_print {
 			con();
 		
 		ResultSet rs = stmt.executeQuery
-				("SELECT  " + 
-				"    t.t_id, " + 
-				"    t.t_name, " + 
-				"    t.t_price, " + 
-				"    t.country, " + 
-				"    t.city, " + 
-				"    t.t_img1, " + 
-				"    tr.review_count, " + 
-				"    tr.avg_rating " + 
-				"FROM " + 
-				"    tour t " + 
-				"        LEFT OUTER JOIN " + 
-				"    (SELECT  " + 
-				"        t_id, " + 
-				"            COUNT(t_id) AS review_count, " + 
-				"            AVG(t_rating) AS avg_rating " + 
-				"    FROM " + 
-				"        tour_rating " + 
-				"    WHERE " + 
-				"        review_date BETWEEN NOW() - INTERVAL 1 WEEK AND NOW() " + 
-				"    GROUP BY t_id) tr ON t.t_id = tr.t_id " + 
-				"ORDER BY tr.review_count DESC " + 
-				"LIMIT 3");
+				("SELECT t.t_id, t.t_name, t.t_price, t.country, t.city, t.t_img1, tr.review_count, tr.avg_rating FROM tour t "
+						+ "LEFT OUTER JOIN ( SELECT t_id, COUNT(t_id) AS review_count, AVG(t_rating) AS avg_rating "
+						+ "FROM tour_rating WHERE review_date BETWEEN NOW() + INTERVAL 9 HOUR - INTERVAL 1 WEEK AND NOW() + INTERVAL 9 HOUR GROUP BY t_id ) tr ON t.t_id = tr.t_id "
+						+ "ORDER BY tr.review_count DESC LIMIT 3"); 				
+			
 
 		while(rs.next()) {
 			t_rating_getset table = new t_rating_getset();
