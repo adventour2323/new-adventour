@@ -212,28 +212,28 @@ if (top_list != null) {
 
       <div id="hotel_info_phos">
 
-        <div id="hotel_info_pho1">
+        <div id="hotel_info_pho1"style="cursor: pointer;">
         <img class="h_info_title_pho1" class="h_info_title_pho1" 
         src="image/hotel/h_image/<%= aaa.getH_pho() %>" >
         <h2 class="hotel_info_pho1_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho2">
+        <div id="hotel_info_pho2"style="cursor: pointer;">
           <img class="h_info_title_pho2" class="h_info_title_pho2" src="image/hotel/h_image/<%= aaa.getH_pho1() %>" >
            <h2 class="hotel_info_pho2_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho3">
+        <div id="hotel_info_pho3"style="cursor: pointer;">
           <img class="h_info_title_pho3" class="h_info_title_pho3" src="image/hotel/h_image/<%= aaa.getH_pho2() %>" >
            <h2 class="hotel_info_pho3_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho4">
+        <div id="hotel_info_pho4"style="cursor: pointer;">
           <img class="h_info_title_pho4" class="h_info_title_pho4" src="image/hotel/h_image/<%= aaa.getH_pho3() %>"  >
            <h2 class="hotel_info_pho4_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho5">
+        <div id="hotel_info_pho5"style="cursor: pointer;">
           <img class="h_info_title_pho5" class="h_info_title_pho5" src="image/hotel/h_image/<%= aaa.getH_pho4() %>"  >
            <h2 class="hotel_info_pho5_text"> 크게 보기 </h2>
         </div>
-        <div id="hotel_info_pho6">
+        <div id="hotel_info_pho6"style="cursor: pointer;">
           <img class="h_info_title_pho6" class="h_info_title_pho6" src="image/hotel/h_image/<%= aaa.getH_pho5() %>"  >
            <h2 class="hotel_info_pho6_text"> 크게 보기 </h2>
         </div>
@@ -612,7 +612,7 @@ if (night_time != null) {
 </select>
  <!--  <input type="text" id="sch_peo" class="sch_peo" name="sch_peo"  placeholder="1박" >-->
 
-<input type="button" class="h_info_search_btn"  value="검색하기">
+<input type="button" class="h_info_search_btn"  value="검색하기"style="cursor: pointer;">
 
  </div><!-- h_info_search -->
 
@@ -658,7 +658,7 @@ for (int ii = 0; i < top_list.size(); i++) {
           <h4 class="h_room_outtime"> 체크아웃 : <%=  bbb.getH_room_outime()%> </h4>
           <h2 id="h_room_price" class="h_room_price"> &#8361;<%=  bbb.getH_roompri()%>  / 1박</h2>
     
-          <input type="button" id="roompay_btn"  class="roompay_btn" value="결제하기"/>
+          <input type="button" id="roompay_btn"  class="roompay_btn" value="결제하기"style="cursor: pointer;"/>
         </div><!--h_room_options2-->
 
 
@@ -866,10 +866,10 @@ for (int ii = 0; i < top_list.size(); i++) {
 </div>
 
 
-  <footer>
-<!-- footer.html import-->
+  <!-- <footer>
+footer.html import
 	<div id="footer"></div>
-  </footer>
+  </footer> -->
 
   
 

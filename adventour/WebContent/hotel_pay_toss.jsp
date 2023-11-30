@@ -70,7 +70,7 @@ var h_user_mail = getCookie("h_user_mail");
   </div>
       <div id="payment-method"> </div>
     <button id="payment-request-button" style="width: 200px; height:50px; 
-    background-color: blue; color:white;font-weight:bold; margin-left: 30px; border-radius: 5px;" >결제하기</button>
+    background-color: blue; color:white;font-weight:bold; margin-left: 30px; border-radius: 5px; cursor: pointer;" >결제하기</button>
    
 
 <script>

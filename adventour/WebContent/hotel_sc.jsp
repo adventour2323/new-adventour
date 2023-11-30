@@ -300,7 +300,7 @@ if (list != null) {
            <h4 class="h_tiaddr"><%= ukAll.getH_addr() %></h4> 
            
           <input type="button" class="h_mapbtn" type="button" name="h_mapbtn" value="지도보기" 
-          onclick="showMap(<%= ukAll.getH_lat()%>, <%= ukAll.getH_lon()%>)">
+          onclick="showMap(<%= ukAll.getH_lat()%>, <%= ukAll.getH_lon()%>)" style="cursor: pointer;">
           
           <input type="hidden" class="hh_lat" name="hh_lat" value="<%= ukAll.getH_lat()%>" />
            <input type="hidden" class="hh_lng" name="hh_lng" value="<%= ukAll.getH_lon()%>" />
@@ -314,7 +314,7 @@ if (list != null) {
          <div class="h_prices">
           <h2 class="h_tiprice"><%= ukAll.getMin_h_roompri() %> ~ </h2>
           <a href="information.hotel?uname=hotelinfom&hotelname=<%= ukAll.getH_name_eng() %>">
-          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom&hotelname=<%= ukAll.getH_name_eng() %>"/>
+          <input type="button" class="move_h" name="move_h" value="호텔 보기" href="information.hotel?uname=hotelinfom&hotelname=<%= ukAll.getH_name_eng() %>"style="cursor: pointer;"/>
           </a>
          </div>
 
@@ -323,7 +323,7 @@ if (list != null) {
 if (session.getAttribute("id") != null) {
 %>
 <a href="h_like.jsp?m_id=<%= session.getAttribute("id") %>&h_name_eng=<%= ukAll.getH_name_eng() %>">
-  <input type="button" class="beheart" value="♥ 찜하기">
+  <input type="button" class="beheart" value="♥ 찜하기" style="cursor: pointer;">
 </a> 
 <%
 } 
@@ -350,10 +350,10 @@ if (session.getAttribute("id") != null) {
 
   </div><!--content-->
 
-  <footer>
-<!-- footer.html import-->
+  <!-- <footer>
+footer.html import
 	<div id="footer"></div>
-  </footer>
+  </footer> -->
 
 </body>
 <script>

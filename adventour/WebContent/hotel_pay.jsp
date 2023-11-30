@@ -283,7 +283,7 @@ int total_price = (int) ( night_pri + tax + tax2 + sale);
     -->
     
      <h3 id="toss_pay_title" >결제방식</h3>
-     <input type="submit" id="toss_pay" name="toss_pay" value="toss">
+     <input type="submit" id="toss_pay" name="toss_pay" value="toss" style="cursor: pointer;">
 	  <!-- 토스 페이 API 가져오기 --> 
 	 </div>
 	 

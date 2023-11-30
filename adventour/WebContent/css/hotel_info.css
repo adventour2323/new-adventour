@@ -502,6 +502,7 @@ border: solid 1px;
 }
 #roompay_btn:hover {
     background-color:#111;
+    cursor: pointer;
 }
 
 #map{

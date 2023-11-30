@@ -136,7 +136,7 @@ if (session.getAttribute("id") == null) {
 
 				
 			<input type="hidden" id="night_time" class="night_time" name="night_time">
-			   <input type="submit" class="b_maintbtn"  name="bsch_btn" value="검색하기">
+			   <input type="submit" class="b_maintbtn"  name="bsch_btn" value="검색하기"style="cursor: pointer;">
 			    
 			</div>
 			<!--b_picsch-->
@@ -287,7 +287,7 @@ if (session.getAttribute("id") == null) {
 	</div>
 
 	<!-- footer.html import-->
-	<div id="footer"></div>
+	<!-- <div id="footer"></div> -->
 
 
 
