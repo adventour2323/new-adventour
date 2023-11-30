@@ -201,8 +201,8 @@ border: none;
 </jsp:useBean>
 		</body>
 		
-		<%-- <footer>
+		 <footer>
 			<jsp:include page="footer.html"></jsp:include>
-		</footer> --%>
+		</footer>
 		
 	</html>	

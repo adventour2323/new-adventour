@@ -866,10 +866,10 @@ for (int ii = 0; i < top_list.size(); i++) {
 </div>
 
 
-  <!-- <footer>
-footer.html import
+   <footer>
+<!-- footer.html import -->
 	<div id="footer"></div>
-  </footer> -->
+  </footer> 
 
   
 

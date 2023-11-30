@@ -78,7 +78,8 @@ if (session.getAttribute("id") != null) {
 	<div id="content">
 		<h1 id="t_reserv_title">투어 예약 정보 </h1>
 		<div id="content_div"><!-- 예약 전체 정보 -->
-	   
+	   		
+	   		<div style="display: flex;">
 			<div id="content_div_left"><!-- 예약 호텔 및 룸 전체 정보 왼쪽 -->
 	   <!--  예약한 호텔 정보   -->
 	 
@@ -272,7 +273,7 @@ if (session.getAttribute("id") != null) {
 				<%-- <% }} %> --%>	 
 	 	
 			</div><!-- content_div_right -->
-	
+			</div>
 		
 		</div><!--content_div -->
 	</div><!--content -->

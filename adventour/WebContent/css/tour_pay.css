@@ -259,8 +259,10 @@ text-align: right;
 
 	width: 450px;
     height: 1550px;
-        margin-left: 650px;
-     margin-top: -1560px;
+        /* margin-left: 650px; */
+        margin-left: 30px;
+     /* margin-top: -1560px; */
+     margin-top: 30px;
      padding-top: 10px;	
 }
 #content_div_right h2{
@@ -396,7 +398,7 @@ text-align: right;
 
 #content_right{
     width: 400px;
-    height: 700px;
+    /* height: 700px; */
     float: right;
 }
 

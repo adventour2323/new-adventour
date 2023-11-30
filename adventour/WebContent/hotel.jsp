@@ -287,7 +287,7 @@ if (session.getAttribute("id") == null) {
 	</div>
 
 	<!-- footer.html import-->
-	<!-- <div id="footer"></div> -->
+	 <div id="footer"></div> 
 
 
 

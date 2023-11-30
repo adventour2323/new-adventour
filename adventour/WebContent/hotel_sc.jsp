@@ -350,10 +350,10 @@ if (session.getAttribute("id") != null) {
 
   </div><!--content-->
 
-  <!-- <footer>
-footer.html import
+  <footer>
+<!-- footer.html import -->
 	<div id="footer"></div>
-  </footer> -->
+  </footer>
 
 </body>
 <script>

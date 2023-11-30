@@ -167,9 +167,9 @@
         <!--  -->
     </div> <!--tour-container  -->
 </jsp:useBean>
-    <%-- <footer>
+    <footer>
         <jsp:include page="footer.html"></jsp:include>
-    </footer> --%>
+    </footer> 
 </body>
 
 <script>

@@ -605,9 +605,9 @@
 	</jsp:useBean>
 		</div>  <!--content-->
 
-<!-- 		<footer>
+ 		<footer>
 			<div id="footer"></div>
-		</footer> -->
+		</footer>
 
 	
 </body>

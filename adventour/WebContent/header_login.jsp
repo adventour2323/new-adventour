@@ -47,7 +47,7 @@
     </div><!--menu--> 
   </div><!--header-->
 
- 	<div class="schtop">
+ 	<!-- <div class="schtop">
 		<div class="schtop_margin_box">
 			<div class="uk_top">
 				<ul class="h_cityli1">
@@ -86,4 +86,4 @@
 				</ul>
 			</div>
 	</div>
-</div><!--schtop-->
+</div>schtop -->

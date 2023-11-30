@@ -899,9 +899,9 @@ function showGoods(category) {
         </main>
         <!-- // main -->
 
-		<%-- <footer>
+		<footer>
 			<jsp:include page="footer.html"></jsp:include>
-		</footer> --%>
+		</footer>
         <!-- // footer -->
     <!-- </div> -->
     
