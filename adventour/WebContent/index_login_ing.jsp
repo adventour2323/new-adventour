@@ -815,7 +815,7 @@ function showTab(tabName) {
                             <li class="goods-tour">
                                 <a href="tour.html">
                                     <div class="first">
-                                        <div class="badge">
+                                        <div class="badge"> 
                                             <span>TOP</span>
                                             <em>1</em>
                                         </div>
