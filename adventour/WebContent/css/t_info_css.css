@@ -544,9 +544,18 @@ height: 1300px;
 		text-overflow: ellipsis;				
 		}
 		
-  a:hover {
+  .div-text a:hover {
     color : red;
-  }		
+  }
+  
+  .guide_introduce a:hover {
+    color : red;
+  }
+  
+  .hotel-list a:hover {
+    color : red;
+  }
+  		
   
   /* 노란 별 스타일 */
 .yellow-star {

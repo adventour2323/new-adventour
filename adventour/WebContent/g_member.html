@@ -15,9 +15,9 @@
         <!--이미지  회원가입 감싸는 클래스-->
         <div class="top_box">
             <!-- 로고이미지 -->
-            <div class="logo_img"><a href="index.html"><img src="image/share/main_logo_T_G.png" ></a></div>
+            <div class="logo_img"><a href="index_login_ing.jsp"><img src="image/share/main_logo_T_G.png" ></a></div>
             <!-- '회원가입'  텍스트 박스-->
-            <div class="memship_t"><h3>가이드 가입</h3></div>
+            <div class="memship_t"><label><h3>가이드 가입</h3></label></div>
         </div><br/>
         <!-- ---------------------------------------------------------------------------------------------------------------------------------- -->
 
@@ -29,11 +29,12 @@
         
 <!--         <form class="form_n" name="myForm" onsubmit="return false;"> -->
             <!-- '가입 정보 입력하기'  텍스트 박스-->
-            <h3 class="margin_top margin_btm">가입 정보 입력하기</h3>
+            <label><h3 class="detail_title">가입 정보 입력하기</h3></label>
             
             <!-- cc태그는 임의로 만든 태그, 텍스트에 토마토색 입히고 싶어서 임의로 만든 것 -->
             
-            아이디<cc class="star_col_red">*</cc><br/>   
+            <label>아이디
+            <cc class="star_col_red">*</cc></label><br/>   
             <input class="l_size margin_rght no_korean" type="text" name="g_id" id="g_id" title="아이디" minlength="5"
             maxlength="12" placeholder="아이디를 입력해주세요." required>
             <div class="id_check"></div><br/>
@@ -92,9 +93,8 @@
              <input class="s_btn btn_color" type="button" name="g_img_btn" value="첨부파일">  -->
             <!-- <input type="file" name="g_img" id="g_img" class="g_img"> -->
             <div class="file-upload">
+            <label>이미지<cc class="star_col_red">*</cc><br></label>
 			    <label for="g_img" class="file-label">
-        			이미지<cc class="star_col_red">*</cc><br>
-        			<span class="custom-file-upload">파일 선택</span>
         			<input type="file" name="g_img" id="g_img" class="g_img">        			
     			</label>
 			</div>
@@ -155,8 +155,8 @@
                     <h6 class="ck_txt">당사는 플랫폼을 통하여 여행자가 원하는 조건에 맞추어 파트너와 여행계약을 체결하고 서비스를 제공받는 것을 중개하는 업무만을 수행합니다.</h6></label>
                 </div>
             </div>
-            <h2 class="star_col_red">* 필수 입력</h2><br/><br/>
-            <input class="l_btn btn_color " type="submit" name="gMsBtn" value="회원가입">
+            <label><h2 class="star_col_red">* 필수 입력</h2></label><br/><br/>
+            <input class="l_btn btn_color " type="submit" name="gMsBtn" value="회원가입" style="cursor: pointer;">
         </form>
         
 		</div>

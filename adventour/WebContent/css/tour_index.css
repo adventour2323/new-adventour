@@ -379,12 +379,26 @@ a:link {
 a:visited {
   color : black;
 }
-a:hover {
+
+.hotel-container a:hover {
   color : red;
 }
-a:active {
-  color : green;
+
+.recommend_city a:hover {
+  color : red;
 }
+
+ .t_flag a:hover {
+  color : red;
+}
+
+ .tab_list a:hover {
+  color : red;
+}
+
+/* a:active {
+  color : green;
+} */
 
 
 table {

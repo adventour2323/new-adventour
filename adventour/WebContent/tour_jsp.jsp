@@ -50,7 +50,7 @@
 				<div class="gom_ment" style="margin-bottom: 20px;">
 					<div class="gom_title">
 						<img alt="guide icon1" src="./image/tour/guide_icon1.png" style="margin-left: auto;">
-						<h1 class="gom_comment" style="margin: auto 10px; ">인기 가이드</h1>
+						<h1 class="gom_comment" style="margin: auto 10px; "><label>인기 가이드</label></h1>
 						<img alt="guide icon2" src="./image/tour/guide_icon2.png" style="margin-right: auto;">
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 						<label class="g_label" for="tab3">스페인</label> 
 					<input id="tab4" type="radio" name="tabs"> 
 						<label class="g_label" for="tab4">이탈리아</label>
-					<div style="float: right; cursor: pointer; margin-top: auto;"
+					<div style="float: right; cursor: pointer; margin-top: 20px;"
 						onclick="location.href='./g_list.jsp'">전체보기</div>
 
 					<section id="guide_uk">
@@ -274,7 +274,7 @@
     <div class="t_country" >
 	
 	<div> 
-	<h1 style="float: left;"> 국가별 투어</h1>
+	<h1 style="float: left;"> <label>국가별 투어</label></h1>
 	<div style="float: right; cursor: pointer;" onclick="location.href='main.tour?tour=tourlist'">전체보기</div> 
 	<br><br><hr>
 	</div>
@@ -368,7 +368,7 @@
 			<div class="popular_tour_div">
 				<div class="popular_tour">
 					<img alt="hot" src="./image/tour/hot.png" style="margin-left: auto;" >
-					<h1>이번 주에 가장 사랑받은 여행이에요</h1>
+					<h1><label>이번 주에 가장 사랑받은 여행이에요</label></h1>
 					<img alt="hot" src="./image/tour/hot.png" style="margin-right: auto;">
 				</div>
 
@@ -472,7 +472,7 @@
     				<img alt="hotel title icon" src="./image/tour/hotel_title.png">
     			</div>
     			<div>
-    				<h1 style="text-align: center; margin-bottom: 15px;">추천 호텔</h1>
+    				<h1 style="text-align: center; margin-bottom: 15px;"><label>추천 호텔</label></h1>
     			</div>
     		</div>
     <div class="hotel-container">

@@ -252,18 +252,21 @@ table {
   a {
     text-decoration-line: none;
   }
-  a:link {
+/*   a:link {
     color : black;
-  }
-  a:visited {
+  } */
+/*   a:visited {
     color : black;
-  }
-  a:hover {
+  } */
+  .tour-item a:hover {
     color : red;
   }
-  a:active {
-    color : green;
+  .country_list a:hover {
+    color : red;
   }
+  /* a:active {
+    color : green;
+  } */
 
 
 

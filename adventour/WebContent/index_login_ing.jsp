@@ -509,7 +509,7 @@ function showTab(tabName) {
                         <h3>지금 놓치면 후회할 ✨추천상품✨ 모음집!!</h3>
                         <ul>
                             <li>
-                                <a href="main.tour?tour=main">
+                                <a href="t_info.jsp?t_id=l_night_tour">
                                     <div class="discount-pack1">
                                         
                                         <div class="imgcover1"><img src="./image/main_index/md/london_tour1.png" alt="런던 투어"></div>
@@ -520,7 +520,7 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="main.tour?tour=main">
+                                <a href="t_info.jsp?t_id=p_l_tour">
                                     <div class="discount-pack2">
                                         <div class="imgcover1"><img src="./image/main_index/md/louvre.png" alt="루브르 투어"></div>
                                                 <strong>루브르 박물관 가이드 투어</strong>
@@ -530,7 +530,7 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="main.tour?tour=main">
+                                <a href="t_info.jsp?t_id=m_g_tour1">
                                     <div class="discount-pack3">
                                         <div class="imgcover1"><img src="./image/main_index/md/sagrada.jpg" alt="사그라다 파밀리아">
                                         </div>
@@ -542,12 +542,12 @@ function showTab(tabName) {
                                 </a>
                             </li>
                             <li>
-                                <a href="main.tour?tour=main">
+                                <a href="t_info.jsp?t_id=r_b_tour">
                                     <div class="discount-pack4">
                                         <div class="imgcover1"><img src="./image/main_index/md/rome.png" alt="48시간 제주여행 올-패스">
                                         </div>
-                                        <strong>로마 역사 투어</strong>
-                                        <span>콜로세움, 포로 로마노, 팔라티노 언덕 가이드 </span>
+                                        <strong>로마 버스 투어</strong>
+                                        <span>콜로세움, 트레비 분수, 베네치아 광장을 버스타고</span>
                                         <p class="price">15,900<em>원~</em></p>
                                     </div>
                                 </a>

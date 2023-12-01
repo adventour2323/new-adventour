@@ -47,7 +47,7 @@
       
       <div style=" padding-top: 65px; ">
       	<h1 style="text-align: center; margin-bottom: 20px; ">
-      		가이드 프로필
+      		<label>가이드 프로필</label>
       	</h1>
       </div>
       
@@ -63,7 +63,7 @@
 			
 
        		
-        <div style="text-align: center; margin-right: auto; margin-left: auto; width: 700px;">
+        <div class="table_div" style="text-align: center; margin-right: auto; margin-left: auto; width: 700px;">
             <%
 				for(g_getset info : a1) {
 			%>
@@ -157,7 +157,7 @@
         </div>
     </div>
     
-    <div>이런 테마의 여행! 어떠신가요?!? </div>
+    <div class="ad_title">이런 테마의 여행! 어떠신가요?!? </div>
 </div>
 </a>           
               <% } %>
@@ -173,7 +173,7 @@
 			<%
 				for(g_getset info : a1) {
 			%>
-       	 		<h2 style="text-align: center;">자기소개</h2><br>
+       	 		<h2 style="text-align: center;"><label>자기소개</label></h2><br>
        	 		<div style="height: 100px;  margin-bottom: 30px; margin-left: auto; margin-right: auto; ">
         	    	<div >
     	        		<%=info.getG_introduce()%>
@@ -187,7 +187,7 @@
 	     	<div  style="margin-top: 20px;">
         		
         		<div style="margin-right: auto; margin-right: auto; text-align: center;">
-        			<h2 style="text-align: center; ">모집 중인 투어 </h2><br>
+        			<h2 style="text-align: center; "><label>모집 중인 투어</label> </h2><br>
         		</div>
         		
         		<div class="tour-container" >
@@ -254,7 +254,7 @@
 			%>        	
         	<div style="margin-top: 20px;"> <!-- 가이드 리뷰 -->        	
         		
-        		<h2 style="text-align: center;">가이드 후기</h2>
+        		<h2 style="text-align: center;"><label>가이드 후기</label></h2>
         	<!--  -->
         		<div class="rating-div" style="margin-bottom: 30px; margin-top: 30px;">
 					<form name="rating_comment" id="rating_comment" action="./guide_review_process.jsp" method="post" >

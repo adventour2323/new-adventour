@@ -31,6 +31,9 @@ select{
     margin-right: auto;
 }
 /* 로고이미지 박스 */
+.logo_img{
+	height: 45px;
+}
 .logo_img img{
     width: 300px;
     height: 45px;
@@ -62,10 +65,10 @@ select{
 }
 /* form 전체 박스 안의 작은 박스, 패딩 한 번에 주고 싶어서 만든 것. */
 .form_n{
-    width: 550px;
+    /* width: 550px; */
     height: 1790px;
-    padding-left: 50px;
-    float: left;
+    /* padding-left: 50px; */
+    /* float: left; */
 }
 /* 폼 '정보입력(영어)'박스 클래스 */
 .form_n h3{
@@ -83,7 +86,7 @@ select{
 /* 필수 및 선택 사항 전체 박스 클래스 */
 .ck_box{
     width: 540px;
-    height: 180px;
+    /* height: 180px; */
     float: left;
     padding: 5px 0px 0px 10px;
     border: solid rgb(17, 27, 17);
@@ -149,13 +152,13 @@ select{
 /* ------------------셀렉 클래스주기-------------------------  */
 /* 작은 사이즈 셀렉박 */
 .s_size_slct{
-    width: 149px;
+    width: 140px;
     height: 51px;
     margin: 5px 0px 10px 0px;
  }
  
 .m_size_email_slct{
-    width: 190px;
+    width: 527px;
     height: 51px;
     margin-top: 5px; 
     margin-bottom: 10px;
@@ -232,5 +235,21 @@ input[type="checkbox"]{
     height: 25px;
 }
 
-
+/* 첨부파일  */
+.g_img {
+	padding-top: 10px;
+    padding-bottom: 10px;
+    width: 510px;
+    cursor: pointer;
 	
+}
+
+.m_size_theme{
+	padding-top: 10px;
+    padding-bottom: 10px;
+    width: 525px;
+}
+	
+.detail_title{
+	
+}

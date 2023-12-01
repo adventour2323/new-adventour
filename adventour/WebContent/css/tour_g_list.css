@@ -189,18 +189,28 @@ table {
   a {
     text-decoration-line: none;
   }
-  a:link {
-   /*  color : black; */
-  }
-  a:visited {
+/*   a:link {
     color : black;
-  }
-  a:hover {
+  } */
+/*   a:visited {
+    color : black;
+  } */
+  
+  .country_list a:hover {
     color : red;
   }
-  a:active {
-    color : green;
+  
+  
+  tbody a:hover {
+    color : red;
   }
+  
+  
+  
+  
+/*   a:active {
+    color : green;
+  } */
 
 
 

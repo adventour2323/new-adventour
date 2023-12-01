@@ -128,9 +128,7 @@ border: none;
             opacity: 1;
         }
         
-  a:hover {
-    color : red;
-  }        
+        
   
   /* review */
   .star-div {
@@ -292,4 +290,23 @@ border: none;
 }
   
   /* /review  */
+
+  tbody a:hover {
+    color : red;
+  }
   
+  .table_div a:hover{
+  color: red;
+  }
+  
+  .tour-item a:hover {
+    color : red;
+  }
+  
+  .guide_ad a:hover {
+  color: : red;
+  }
+  
+  .ad_title a:hover {
+    color : red;
+  }      

@@ -50,7 +50,7 @@ if (session.getAttribute("id") != null) {
 %>
 
 <jsp:useBean id="ub" class="adventour.g_list_print">
-<form name="reserv_to_pay" action="tour_pay_toss.jsp" method="post">
+<!-- <form name="reserv_to_pay" action="tour_pay_toss.jsp" method="post"> -->
 
 	<% 
 	request.setCharacterEncoding("UTF-8");   
@@ -282,7 +282,7 @@ if (session.getAttribute("id") != null) {
 
 </div><!-- content_all -->
 <%} %>
-</form>
+<!-- </form> -->
 </jsp:useBean>
 
 
